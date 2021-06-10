@@ -28,3 +28,4 @@ Display.show syntax
     If using a generator as the ``iterable``, then take care not to allocate any memory
     in the generator as allocating memory in an interrupt is prohibited and will raise a
     ``MemoryError``.
+

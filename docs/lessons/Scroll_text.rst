@@ -47,4 +47,7 @@ To scroll a string, "Hi" across the display, use::
 
 .. admonition:: Tasks
 
-    #. 
+    Experiment
+
+
+
