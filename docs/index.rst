@@ -43,8 +43,9 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
 
     breadboards/RGB_LED.rst
     breadboards/Plotting_capacitor_charging.rst
-	
 
+
+    
 .. toctree::
     :maxdepth: 2
     :caption: Lessons
@@ -55,21 +56,22 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
 	lessons/Scroll_text.rst
 	lessons/Show_text.rst
 	lessons/Built_in_images.rst
-	lessons/Display_Challenge.rst
 	lessons/Buttons_and_selection.rst
 	lessons/While_loops.rst
 	lessons/For_loops.rst
 	lessons/For_loops_with_range.rst
-	lessons/Lesson_review.rst
-	lessons/Practice_tasks.rst
-	
+
+
 
 .. toctree::
     :maxdepth: 2
     :caption: Lessons_2
     :numbered:
 
-	lessons/Organising_with_selection_and_definitions.rst
+	lessons/Display_Challenge.rst
+    lessons/Lesson_review.rst
+	lessons/Practice_tasks.rst
+    lessons/Organising_with_selection_and_definitions.rst
 	radio/radio_intro.rst
 	radio/radio_messaging.rst
 	radio/radio_syntax.rst
