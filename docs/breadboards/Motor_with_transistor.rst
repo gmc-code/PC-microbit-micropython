@@ -1,5 +1,5 @@
 ==========================
-Combined models
+Motor_with_transistor
 ==========================
 
 Tasks

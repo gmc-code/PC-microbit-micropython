@@ -1,5 +1,5 @@
 ==========================
-Combined models
+Potentiometer
 ==========================
 
 Tasks

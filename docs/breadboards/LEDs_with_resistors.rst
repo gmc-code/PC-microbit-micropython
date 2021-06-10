@@ -1,5 +1,5 @@
 ==========================
-Combined models
+LEDs_with_resistors
 ==========================
 
 Tasks

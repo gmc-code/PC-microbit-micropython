@@ -1,5 +1,5 @@
 ==========================
-Combined models
+Potentiometer_with_LED
 ==========================
 
 Tasks

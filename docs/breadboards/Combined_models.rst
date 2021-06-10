@@ -2,7 +2,7 @@
 Combined models
 ==========================
 
-Tasks
+Tasks 
 --------------------------
 
 | Use at least 2 different types of devices on the **breadboard**, such as an **LED**, a **buzzer**, a **potentiometer**, a **motor** with transistor.
