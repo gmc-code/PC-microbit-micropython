@@ -28,13 +28,13 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
 
     lessons/Mu_editor.rst
     lessons/Microbit_library.rst
-	lessons/Scroll_text.rst
-	lessons/Show_text.rst
-	lessons/Built_in_images.rst
-	lessons/Buttons_and_selection.rst
-	lessons/While_loops.rst
-	lessons/For_loops.rst
-	lessons/For_loops_with_range.rst
+    lessons/Scroll_text.rst
+    lessons/Show_text.rst
+    lessons/Built_in_images.rst
+    lessons/Buttons_and_selection.rst
+    lessons/While_loops.rst
+    lessons/For_loops.rst
+    lessons/For_loops_with_range.rst
 
 
 .. toctree::
