@@ -146,6 +146,7 @@ All Images
 | The code below displays all the built in images.
 
 .. code-block:: python
+
     from microbit import *
 
     built_in_images = [Image.HEART, Image.HEART_SMALL,
@@ -169,3 +170,5 @@ All Images
 
     while True:
         display.show(built_in_images, delay=100)
+
+        
