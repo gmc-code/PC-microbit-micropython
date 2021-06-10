@@ -93,12 +93,12 @@ Image lists
 
 ----
 
-Built in Image lists
+Built-in Image lists
 ----------------------------------------
 
 | When the list of images is more than a few, it is usual to put the list in a variable.
-| The code below displays the built in list of clock images.
-| The built in lists of images are called ``Image.ALL_CLOCKS`` and ``Image.ALL_ARROWS``:
+| The code below displays the built-in list of clock images.
+| The built-in lists of images are called ``Image.ALL_CLOCKS`` and ``Image.ALL_ARROWS``:
 
 .. code-block:: python
 
@@ -110,7 +110,7 @@ Built in Image lists
 
 .. admonition:: Tasks
 
-    #. Write code to display the images in the built in image list: ``Image.ALL_ARROWS``.    
+    #. Write code to display the images in the built-in image list: ``Image.ALL_ARROWS``.    
 
 ----
 
@@ -171,4 +171,3 @@ All Images
     while True:
         display.show(built_in_images, delay=100)
 
-        
