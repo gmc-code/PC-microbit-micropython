@@ -1,5 +1,5 @@
 ====================================================
-Microbit_library
+Microbit library
 ====================================================
 
 Import the microbit library

@@ -1,5 +1,5 @@
 ====================================================
-Show_text
+Show text
 ====================================================
 
 Display.show syntax
@@ -29,3 +29,5 @@ Display.show syntax
     in the generator as allocating memory in an interrupt is prohibited and will raise a
     ``MemoryError``.
 
+
+Text

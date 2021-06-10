@@ -27,7 +27,7 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
     :numbered:
 
     lessons/Mu_editor.rst
-	lessons/Microbit_library.rst
+    lessons/Microbit_library.rst
 	lessons/Scroll_text.rst
 	lessons/Show_text.rst
 	lessons/Built_in_images.rst
@@ -42,7 +42,7 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
     :caption: BreadBoards
     :numbered:
 
-    breadboards/breadboard_intro.rst
+    breadboards/Breadboard_intro.rst
     breadboards/Edge_Connector.rst
     breadboards/LEDs_with_resistors.rst
     breadboards/Piezo_Buzzer_and_music.rst
