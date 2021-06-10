@@ -19,7 +19,7 @@ Micropython API
 
 The main reference for using micropython with the microbit is at: https://microbit-micropython.readthedocs.io/en/v2-docs/index.html
 
-Some references to using the microbit library have ``microbit.`` before the function or method. When importing the microbit library using: ``from microbit import *``, the ``microbit.`` prefix must be omitted.
+References to the microbit library syntax may have ``microbit.`` before the function or method. When importing the microbit library using: ``from microbit import *``, the ``microbit.`` prefix is omitted.
 
 e.g Use ``display.scroll("Hi")`` instead of ``microbit.display.scroll("Hi")``
 

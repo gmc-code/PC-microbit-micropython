@@ -36,6 +36,15 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
     lessons/For_loops.rst
     lessons/For_loops_with_range.rst
 
+    
+.. toctree::
+    :maxdepth: 2
+    :caption: Lessons_2
+    :numbered:
+
+	lessons/Practice_tasks.rst
+    lessons/Practice_tasks_Answers.rst
+
 
 .. toctree::
     :maxdepth: 2
@@ -63,12 +72,9 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
 
 .. toctree::
     :maxdepth: 2
-    :caption: Lessons_2
+    :caption: Lessons_3
     :numbered:
 
-	lessons/Display_Challenge.rst
-    lessons/Lesson_review.rst
-	lessons/Practice_tasks.rst
     lessons/Organising_with_selection_and_definitions.rst
 	radio/radio_intro.rst
 	radio/radio_messaging.rst

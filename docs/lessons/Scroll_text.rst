@@ -38,20 +38,171 @@ To scroll the float, 3.14, across the display, use:
 
     display.scroll(3.14)
 
+------
 
-.. py:function:: scroll(value, delay=150, \*, wait=True, loop=False, monospace=False)
+.. admonition:: Tasks
 
-.. py:function:: scroll(value, delay=150, wait=True, loop=False, monospace=False)
-Display.scroll full syntax
+    #. Write code to scroll your name.    
+    #. Write code to scroll your age.
+    #. Write code to scroll the chances of getting a tail on a coin throw.
+
+----
+
+Display.scroll with delay
 ----------------------------------------
 
+.. py:function:: scroll(value, delay=150)
 
+    | Scrolls ``value`` horizontally on the display. If ``value`` is an integer or float (a decimal) it is
+    first converted to a string using ``str()`` automatically. 
+    | The ``delay`` parameter controls how fast the text scrolls. The default is 150ms.
+    | The delay can be specified with the parameter name as in ``display.scroll('Hi', delay=150)``, or just as a number as in ``display.scroll('Hi', 150)``.
+
+To scroll the string, "Hi", across the display quickly use a short delay of about 50:
+
+.. code-block:: python
+
+    from microbit import *
+
+    display.scroll('Hi', 50)
+
+To scroll the float, 3.14159, across the display slowly use a long delay of about 300:
+
+.. code-block:: python
+
+    from microbit import *
+
+    display.scroll(3.14159, delay=300)
+
+----
+
+.. admonition:: Tasks
+
+    #. Write code to scroll info about the number of people in your family.    
+    #. Write code to scroll info about the number of rooms in your house.
+    #. Write code to scroll info about the yout favourite phone app or electronic game.
+
+----
+
+while True loops
+----------------------------------------
+
+| Microbit code can be repeated using a ``while True:`` loop.
+| This continues forever.
+| The code under it to be repeated has to be indented with a tab character.
+| Python uses indenting to group the lines of code together in a ``while`` loop.
+
+.. code-block:: python
+
+    from microbit import *
+
+    while True:
+        display.scroll('I like to watch', delay=60)
+        display.scroll('AFL', delay=120)
+
+----
+
+.. admonition:: Tasks
+
+    1. Modify the code below to display your favourite sport.
+
+    .. code-block:: python
+
+        from microbit import *
+
+        while True:
+            display.scroll('I like to play', delay=60)
+            display.scroll('table tennis', delay=120)
+
+
+    2. Modify the code below to display your name and age in years.
+
+    .. code-block:: python
+
+        from microbit import *
+
+        while True:
+            display.scroll('My name is', 60)
+            display.scroll('?????', 120)
+            display.scroll('I am', 60)
+            display.scroll('??', 120)
+
+----
+
+Display.scroll using variables
+----------------------------------------
+
+| In the code below, 3 variables are used to hold a string, integer and float.
+| These variables are then scrolled repetedly in the ``while True:`` loop.
+| This makes it easy to see and edit the values of the variables being used in the code.
+
+.. code-block:: python
+
+    from microbit import *
+
+    player = 'Locket'
+    goals = 1360
+    goals_per_game = 4.84
+
+    while True:
+        display.scroll('Player', 50)
+        display.scroll(player, 50)
+        display.scroll('Goals', 50)
+        display.scroll(goals, 150)
+        display.scroll('Goals per game', 50)
+        display.scroll(goals_per_game, 300)
+
+
+----
+
+.. admonition:: Tasks
+
+    1. Modify the value of the variables below to display info for another great goal kicker.
+
+        .. code-block:: python
+
+        from microbit import *
+
+        player = '????????'
+        goals = ????
+        goals_per_game = ?.??
+
+        while True:
+            display.scroll('Player', 50)
+            display.scroll(player, 50)
+            display.scroll('Goals', 50)
+            display.scroll(goals, 150)
+            display.scroll('Goals per game', 50)
+            display.scroll(goals_per_game, 300)
+
+    2. Modify the code below to display info for another batsman.
+
+        .. code-block:: python
+
+        from microbit import *
+
+        batsman = 'Sobers'
+        runs = 8032
+        ave = 57.8
+
+        while True:
+            display.scroll('batsman', 50)
+            display.scroll(batsman, 50)
+            display.scroll('runs', 50)
+            display.scroll(runs, 150)
+            display.scroll('ave', 50)
+            display.scroll(ave, 300)
+
+----
+
+Display.scroll full syntax
+----------------------------------------
 
 .. py:function:: scroll(value, delay=150, \*, wait=True, loop=False, monospace=False)
 
     Scrolls ``value`` horizontally on the display. If ``value`` is an integer or float (a decimal) it is
     first converted to a string using ``str()`` automatically. The ``delay`` parameter controls how fast
-    the text is scrolling.
+    the text scrolls.
 
     If ``wait`` is ``True``, this function will block until the animation is
     finished, otherwise the animation will happen in the background.
@@ -66,13 +217,6 @@ Display.scroll full syntax
 
 
 
-
-
-----
-
-.. admonition:: Tasks
-
-    Experiment
 
 
 
