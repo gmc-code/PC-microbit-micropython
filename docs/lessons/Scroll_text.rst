@@ -28,14 +28,19 @@ Display.scroll syntax
 Display.scroll examples
 ----------------------------------------
 
-To continuously scroll a string across the display, and do it in the background,
-you can use::
+.. py:function:: scroll(value)
+
+To scroll a string, "Hi" across the display, use::
 
 .. code-block:: python
 
     from microbit import *
 
     display.scroll('Hi')
+
+.. py:function:: scroll(value, delay=150, \*, wait=True, loop=False, monospace=False)
+
+.. py:function:: scroll(value, delay=150, wait=True, loop=False, monospace=False)
 
 
 ----
