@@ -155,6 +155,6 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
     :caption: Advanced
     :numbered:
 
-REPL/REPL.rst
-python/classes_for_the_microbit.rst
+    REPL/REPL.rst
+    python/classes_for_the_microbit.rst
 
