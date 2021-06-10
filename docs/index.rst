@@ -11,7 +11,6 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
 | https://pc-microbit-micropython.readthedocs.io/en/latest/#
 
 
-
 ----
 
 .. toctree::
@@ -20,8 +19,8 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
     :numbered:
 
     introduction/introduction.rst
- 
-            
+
+
 .. toctree::
     :maxdepth: 2
     :caption: BreadBoards
