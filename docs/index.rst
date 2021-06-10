@@ -20,6 +20,22 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
 
     introduction/introduction.rst
 
+    
+.. toctree::
+    :maxdepth: 2
+    :caption: Lessons
+    :numbered:
+
+    lessons/Mu_editor.rst
+	lessons/Microbit_library.rst
+	lessons/Scroll_text.rst
+	lessons/Show_text.rst
+	lessons/Built_in_images.rst
+	lessons/Buttons_and_selection.rst
+	lessons/While_loops.rst
+	lessons/For_loops.rst
+	lessons/For_loops_with_range.rst
+
 
 .. toctree::
     :maxdepth: 2
@@ -43,24 +59,6 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
 
     breadboards/RGB_LED.rst
     breadboards/Plotting_capacitor_charging.rst
-
-
-    
-.. toctree::
-    :maxdepth: 2
-    :caption: Lessons
-    :numbered:
-
-    lessons/Mu_editor.rst
-	lessons/Microbit_library.rst
-	lessons/Scroll_text.rst
-	lessons/Show_text.rst
-	lessons/Built_in_images.rst
-	lessons/Buttons_and_selection.rst
-	lessons/While_loops.rst
-	lessons/For_loops.rst
-	lessons/For_loops_with_range.rst
-
 
 
 .. toctree::
