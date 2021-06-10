@@ -2,15 +2,11 @@
 Edge_Connector
 ==========================
 
-Tasks
---------------------------
+Connecting microbit to edge connector
+----------------------------------------------------
 
-| text
+| Place the mcirobit in the edge connector next to the breadboard, with the front button side of the microbit facing the breadboard.
 
-
-.. admonition:: Tasks
-
-    text
 
 
 

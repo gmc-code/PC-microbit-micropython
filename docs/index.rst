@@ -42,8 +42,19 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
     :caption: Lessons_2
     :numbered:
 
-	lessons/Practice_tasks.rst
+    lessons/Practice_tasks.rst
     lessons/Practice_tasks_Answers.rst
+    lessons/Organising_with_selection_and_definitions.rst
+
+    
+.. toctree::
+    :maxdepth: 2
+    :caption: Python
+    :numbered:
+
+	python/variables.rst
+	python/selection.rst
+	python/functions.rst
 
 
 .. toctree::
@@ -75,7 +86,7 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
     :caption: Lessons_3
     :numbered:
 
-    lessons/Organising_with_selection_and_definitions.rst
+
 	radio/radio_intro.rst
 	radio/radio_messaging.rst
 	radio/radio_syntax.rst
@@ -124,16 +135,6 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
 	bots/MiniBit_motors.rst
 	bots/NeoPixels.rst
 	bots/NeoPixels_fun.rst
-
-
-.. toctree::
-    :maxdepth: 2
-    :caption: Python
-    :numbered:
-
-	python/variables.rst
-	python/selection.rst
-	python/functions.rst
 
 
 .. toctree::
