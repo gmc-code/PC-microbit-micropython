@@ -52,13 +52,10 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
 
     lessons/Mu_editor.rst
 	lessons/Microbit_library.rst
-	lessons/Scrolling_text.rst
+	lessons/Scroll_text.rst
 	lessons/Show_text.rst
-	lessons/Show_built_in_images.rst
-	lessons/Scrolling_text_variables.rst
-	lessons/Show_text_variables.rst
+	lessons/Built_in_images.rst
 	lessons/Display_Challenge.rst
-	lessons/Display_Challenge_Solution.rst
 	lessons/Buttons_and_selection.rst
 	lessons/While_loops.rst
 	lessons/For_loops.rst

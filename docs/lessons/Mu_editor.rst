@@ -34,11 +34,11 @@ Keyboard shortcuts
 
 Useful keyboard shortcuts are at: https://codewith.mu/en/tutorials/1.1/shortcuts
 
-**Microbit**
-F3
-Flash code onto device (the same as clicking "Flash").
+| **Microbit**
+| F3
+| Flash code onto device (the same as clicking "Flash").
 
-**Text Editing**
+| **Text Editing**
 | CTRL F
 | Show the find and replace dialog.
 | CTRL K
