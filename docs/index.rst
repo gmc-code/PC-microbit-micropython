@@ -49,16 +49,6 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
 
 .. toctree::
     :maxdepth: 2
-    :caption: Python
-    :numbered:
-
-    python_basics/variables.rst
-    python_basics/selection.rst
-    python_basics/functions.rst
-
-
-.. toctree::
-    :maxdepth: 2
     :caption: BreadBoards
     :numbered:
 
@@ -70,3 +60,14 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
     breadboards/Potentiometer.rst
     breadboards/Potentiometer_with_LED.rst
     breadboards/Combined_models.rst
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Python basics
+    :numbered:
+
+    python_basics/variables.rst
+    python_basics/selection.rst
+    python_basics/functions.rst
+
