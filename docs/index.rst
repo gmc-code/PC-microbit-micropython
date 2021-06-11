@@ -20,7 +20,21 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
 
     introduction/introduction.rst
 
-    
+.. toctree::
+    :maxdepth: 2
+    :caption: BreadBoards
+    :numbered:
+
+    breadboards/Breadboard_intro.rst
+    breadboards/Edge_Connector.rst
+    breadboards/LEDs_with_resistors.rst
+    breadboards/Piezo_Buzzer_and_music.rst
+    breadboards/Motor_with_transistor.rst
+    breadboards/Potentiometer.rst
+    breadboards/Potentiometer_with_LED.rst
+    breadboards/Combined_models.rst
+
+
 .. toctree::
     :maxdepth: 2
     :caption: Lessons
@@ -36,7 +50,7 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
     lessons/For_loops.rst
     lessons/For_loops_with_range.rst
 
-    
+
 .. toctree::
     :maxdepth: 2
     :caption: Lessons_2
@@ -45,21 +59,6 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
     lessons/Practice_tasks.rst
     lessons/Practice_tasks_Answers.rst
     lessons/Organising_with_selection_and_definitions.rst
-
-
-.. toctree::
-    :maxdepth: 2
-    :caption: BreadBoards
-    :numbered:
-
-    breadboards/Breadboard_intro.rst
-    breadboards/Edge_Connector.rst
-    breadboards/LEDs_with_resistors.rst
-    breadboards/Piezo_Buzzer_and_music.rst
-    breadboards/Motor_with_transistor.rst
-    breadboards/Potentiometer.rst
-    breadboards/Potentiometer_with_LED.rst
-    breadboards/Combined_models.rst
 
 
 .. toctree::
