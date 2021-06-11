@@ -35,28 +35,24 @@ Keyboard shortcuts
 Useful keyboard shortcuts are at: https://codewith.mu/en/tutorials/1.1/shortcuts
 
 | **Microbit**
-| F3
-| Flash code onto device (the same as clicking "Flash").
+=============  ======================================================================
+ Keys          Action
+=============  ======================================================================
+ F3            Flash code onto device (the same as clicking "Flash").
+=============  ======================================================================
 
 | **Text Editing**
-| CTRL F
-| Show the find and replace dialog.
-| CTRL K
-| Toggle comments for the current or selected lines of code.
-| TAB
-| Indent the current or selected lines by four spaces.
-| SHIFT TAB
-| Unindent the current or selected lines by four spaces.
-| CTRL Z
-| Undo (keep pressing to keep undoing).
-| CTRL Y
-| Redo (keep pressing to keep redoing).
-| CTRL A
-| Select all
-| CTRL X
-| Cut selected text into the clipboard.
-| CTRL C
-| Copy selected text into the clipboard.
-| CTRL V
-| Paste text from the clipboard.
-
+=============  ======================================================================
+ Keys          Action
+=============  ======================================================================
+ CTRL F        Show the find and replace dialog.
+ CTRL K        Toggle comments for the current or selected lines of code.
+ TAB           Indent the current or selected lines by four spaces.
+ SHIFT TAB     Unindent the current or selected lines by four spaces.
+ CTRL Z        Undo (keep pressing to keep undoing).
+ CTRL Y        Redo (keep pressing to keep redoing).
+ CTRL A        Select all
+ CTRL X        Cut selected text into the clipboard.
+ CTRL C        Copy selected text into the clipboard.
+ CTRL V        Paste text from the clipboard.
+=============  ======================================================================
