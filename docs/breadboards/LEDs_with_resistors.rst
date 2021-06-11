@@ -32,8 +32,8 @@ Model
 Write digital
 ----------------------------------------
 
-| To turn on the LED fully use ``pin0.write_digital(1)`` for the LED on pin0.
-| To turn on the LED off use ``pin0.write_digital(0)`` for the LED on pin0.
+| To turn the LED on fully use ``pin0.write_digital(1)`` for the LED on pin0.
+| To turn the LED off use ``pin0.write_digital(0)`` for the LED on pin0.
 | For the other pins, just replace ``pin0`` with ``pin1`` or ``pin2``.
 
 
@@ -98,26 +98,46 @@ Blink All
             blink_all()
         sleep(500)
 
+Blink All using for in range
+----------------------------------------
+
+| Repeated blinking can be done with a for loop. 
+
+.. code-block:: python
+
+    from microbit import *
+
+    def blink0():
+        for i in range(3):
+            pin0.write_digital(1)
+            sleep(1000)
+            pin0.write_digital(0)
+            sleep(1000)
+
+    blink0()
+
+
 ----
 
 .. admonition:: Tasks
 
     #. Write code so that pressing A turns on the green LED only and pressing B turns on the yellow LED for 3 seconds then turns on the red LED only.   
+    #. Write code so that pressing A blinks red and yellow 3 times, while pressing B blinks yellow and green 3 times.
 
 ----
 
 Write analog
 ----------------------------------------
 
-| To turn on the LED fully use ``pin0.write_analog(1023)`` for the LED on pin0.
-| To turn on the LED off use ``pin0.write_analog(0)`` for the LED on pin0.
+| To turn the LED on fully use ``pin0.write_analog(1023)`` for the LED on pin0.
+| To turn the LED off use ``pin0.write_analog(0)`` for the LED on pin0.
 | ``write_analog`` can have values from 0 to 1023.
 | ``write_analog`` can be used to dim the LED.
 
 | Here is some sample code making use of ``write_analog`` on pin0.
 
-    #LED analog
-    # LEDS
+.. code-block:: python
+
     from microbit import *
     import random
 
@@ -139,7 +159,7 @@ Write analog
 
     while True:
         if button_a.is_pressed():
-            pulpulse_onse()
+            pulpulse_on()
         elif button_b.is_pressed():
             pulse_off()
         sleep(500)

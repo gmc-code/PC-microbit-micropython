@@ -99,7 +99,7 @@ Built in music
     from microbit import *
     import music
 
-    melodies_list = [music.DADADADUM, music.ENTERTAINER]
+    melodies_list = [music.PYTHON, music.BADDY, music.CHASE]
     for melody in melodies_list:
         music.play(melody)
 
