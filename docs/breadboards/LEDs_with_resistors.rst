@@ -98,7 +98,7 @@ Blink All
             blink_all()
         sleep(500)
 
-Blink All using for in range
+Blink using for i in range
 ----------------------------------------
 
 | Repeated blinking can be done with a for loop. 
