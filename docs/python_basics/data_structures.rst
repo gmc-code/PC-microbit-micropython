@@ -72,8 +72,7 @@ will delete the last element in the list.
 
 .. _here: https://docs.python.org/2/tutorial/datastructures.html#tuples-and-sequences
 
-.. note:: You might be wondering whether strings can be considered to be a list. Even though string is an array of characters and we can even do similar operations on 
-	them (like slicing), they are both different types of objects with different methods (try to type ``dir(str)`` and ``dir(list)`` in your console). 
+.. note:: You might be wondering whether strings can be considered to be a list. Even though string is an array of characters and we can even do similar operations on them (like slicing), they are both different types of objects with different methods (try to type ``dir(str)`` and ``dir(list)`` in your console). 
 
 Sorting
 ---------

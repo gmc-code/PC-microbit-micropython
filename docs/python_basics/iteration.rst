@@ -61,7 +61,7 @@ temperature data. Here is an example of some code to repeat forever:
 .. code-block:: python
 
 	from microbit import *
-	
+
 	while True:
         display.scroll("Hello UCL)
 
