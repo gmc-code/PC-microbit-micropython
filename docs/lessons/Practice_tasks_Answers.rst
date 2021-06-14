@@ -109,9 +109,8 @@ Practice tasks Answers
 
     from microbit import *
     
-    n = range(1,10)
     while True:
-        for x in n:
+        for x in range(1,10):
             display.show(x, delay=50)
 
 
