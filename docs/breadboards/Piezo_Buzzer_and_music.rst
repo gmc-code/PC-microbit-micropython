@@ -91,6 +91,15 @@ Built in music
 
 | There are built in melodies that can be found by typing ``music.``
 | Melodies can be played using ``music.play(melody).
+
+.. code-block:: python
+
+    from microbit import *
+    import music
+
+    music.play(music.PYTHON)
+
+
 | The code below uses a for loop to loop through each melody in the ``melodies_list`` and play it.
 | For a list of built in meodies see: https://microbit-micropython.readthedocs.io/en/v2-docs/music.html
 
