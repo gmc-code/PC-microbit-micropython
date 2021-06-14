@@ -107,6 +107,7 @@ See: https://pc-microbit-micropython.readthedocs.io/en/latest/lessons/Organising
 .. code-block:: python 
 
     from microbit import *
+    import music
 
     def display_startupmessage():
         # replace pass with the code to display some text
