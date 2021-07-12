@@ -5,7 +5,10 @@ Introduction
 PC-Microbit-Micropython documentation!
 ----------------------------------------
 
-If you are using a trackpad, navigate to various sections and pages by clicking on a heading and then use the arrow keys to move up and down.
+.. admonition:: Tip
+    
+    If you are using a trackpad, navigate to various sections and pages by clicking on a heading in the left sidebar, then use the arrow keys to move up and down.
+
 
 | These docs will help you code your microbit using micropython.
 | Micropython is similar to python, but is specialised for microcontrollers like the microbit.

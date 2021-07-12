@@ -13,7 +13,7 @@ Import the microbit library
     from microbit import *
 
 | All microbit libraries or modules are imported at the top of the file.
-| Always place 2 blank lines after importing libraries.
+| Always place 2 blank lines following the the importing of libraries to separate those lines form the rest of the code.
 
 | For other forms of importing libraries see:
 | https://www.w3schools.com/python/python_modules.asp

@@ -28,6 +28,7 @@ To scroll the integer, 5, across the display, use:
 
     from microbit import *
 
+
     display.scroll(5)
 
 
@@ -36,6 +37,7 @@ To scroll the float, 3.14, across the display, use:
 .. code-block:: python
 
     from microbit import *
+
 
     display.scroll(3.14)
 
@@ -65,6 +67,7 @@ To scroll the string, "Hi", across the display quickly use a short delay of abou
 
     from microbit import *
 
+
     display.scroll('Hi', 50)
 
 To scroll the float, 3.14159, across the display slowly use a long delay of about 300:
@@ -72,6 +75,7 @@ To scroll the float, 3.14159, across the display slowly use a long delay of abou
 .. code-block:: python
 
     from microbit import *
+
 
     display.scroll(3.14159, delay=300)
 
@@ -97,6 +101,7 @@ while True loops
 
     from microbit import *
 
+
     while True:
         display.scroll('I like to watch', delay=60)
         display.scroll('AFL', delay=120)
@@ -111,6 +116,7 @@ while True loops
 
         from microbit import *
 
+
         while True:
             display.scroll('I like to play', delay=60)
             display.scroll('table tennis', delay=120)
@@ -121,6 +127,7 @@ while True loops
     .. code-block:: python
 
         from microbit import *
+
 
         while True:
             display.scroll('My name is', 60)
@@ -140,6 +147,7 @@ Display.scroll using variables
 .. code-block:: python
 
     from microbit import *
+
 
     player = 'Locket'
     goals = 1360
@@ -162,37 +170,39 @@ Display.scroll using variables
 
         .. code-block:: python
 
-        from microbit import *
+            from microbit import *
 
-        player = '????????'
-        goals = ????
-        goals_per_game = ?.??
 
-        while True:
-            display.scroll('Player', 50)
-            display.scroll(player, 50)
-            display.scroll('Goals', 50)
-            display.scroll(goals, 150)
-            display.scroll('Goals per game', 50)
-            display.scroll(goals_per_game, 300)
+            player = '????????'
+            goals = ????
+            goals_per_game = ?.??
+
+            while True:
+                display.scroll('Player', 50)
+                display.scroll(player, 50)
+                display.scroll('Goals', 50)
+                display.scroll(goals, 150)
+                display.scroll('Goals per game', 50)
+                display.scroll(goals_per_game, 300)
 
     2. Modify the code below to display info for another batsman.
 
         .. code-block:: python
 
-        from microbit import *
+            from microbit import *
 
-        batsman = 'Sobers'
-        runs = 8032
-        ave = 57.8
 
-        while True:
-            display.scroll('batsman', 50)
-            display.scroll(batsman, 50)
-            display.scroll('runs', 50)
-            display.scroll(runs, 150)
-            display.scroll('ave', 50)
-            display.scroll(ave, 300)
+            batsman = 'Sobers'
+            runs = 8032
+            ave = 57.8
+
+            while True:
+                display.scroll('batsman', 50)
+                display.scroll(batsman, 50)
+                display.scroll('runs', 50)
+                display.scroll(runs, 150)
+                display.scroll('ave', 50)
+                display.scroll(ave, 300)
 
 ----
 
