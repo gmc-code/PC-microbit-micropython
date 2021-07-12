@@ -10,13 +10,14 @@ Display.scroll simple version
 .. py:function:: scroll(value)
 
     | Scrolls ``value`` horizontally on the microbit LED display. 
-    | If ``value`` is an integer or float (a decimal) it is first converted to a string using ``str()`` automatically.
+    | ``value`` can be an integer or float (a decimal) or a string.
 
-To scroll the string, "Hi", across the display, use:
+To scroll the string, 'Hi', across the display, use:
 
 .. code-block:: python
 
     from microbit import *
+
 
     display.scroll('Hi')
 
@@ -115,7 +116,7 @@ while True loops
             display.scroll('table tennis', delay=120)
 
 
-    2. Modify the code below to display your name and age in years.
+    1. Modify the code below to display your name and age in years.
 
     .. code-block:: python
 

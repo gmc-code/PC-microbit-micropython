@@ -15,7 +15,7 @@ Installing at school
 
 #. Do a windows search for ``Software centre`` and open it.
 #. Seach for Mu.
-#. Install Mu.
+#. Install Mu editor.
 
 ----
 

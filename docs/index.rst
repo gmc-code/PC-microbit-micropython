@@ -1,10 +1,10 @@
 .. PC-Microbit-Micropython documentation master file.
 
 ====================================================
-PC-Microbit-Micropython documentation!
+PC-Microbit-Micropython documentation
 ====================================================
 
-If you are using a trackpad, navigate to various sections and pages by clicking on a heading and then using the arrow keys.
+If you are using a trackpad, navigate to various sections and pages by clicking on a heading and then use the arrow keys.
 
 
 | Home page:
@@ -19,20 +19,6 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
     :numbered:
 
     introduction/introduction.rst
-
-.. toctree::
-    :maxdepth: 2
-    :caption: BreadBoards
-    :numbered:
-
-    breadboards/Breadboard_intro.rst
-    breadboards/Edge_Connector.rst
-    breadboards/LEDs_with_resistors.rst
-    breadboards/Piezo_Buzzer_and_music.rst
-    breadboards/Motor_with_transistor.rst
-    breadboards/Potentiometer.rst
-    breadboards/Potentiometer_with_LED.rst
-    breadboards/Combined_models.rst
 
 
 .. toctree::
@@ -73,3 +59,18 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
     python_basics/iteration.rst
     python_basics/functions.rst
     python_basics/variables_scope.rst
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: BreadBoards
+    :numbered:
+
+    breadboards/Breadboard_intro.rst
+    breadboards/Edge_Connector.rst
+    breadboards/LEDs_with_resistors.rst
+    breadboards/Piezo_Buzzer_and_music.rst
+    breadboards/Motor_with_transistor.rst
+    breadboards/Potentiometer.rst
+    breadboards/Potentiometer_with_LED.rst
+    breadboards/Combined_models.rst
