@@ -80,6 +80,7 @@ Display.show with delay
 
     | Display letters/digits of a string, float or integer, in sequence.
     | Each letter, digit is shown with ``delay`` milliseconds between them.
+    | The default delay is 400ms. When no delay is specified the default of 400ms is used.
     | The delay can be specified with the parameter name as in ``display.show('Hi', delay=400)``, or just as a number as in ``display.show('Hi', 400)``.
 
 To show the string, "Hi", with a short delay of 200ms:
@@ -181,7 +182,7 @@ Display.show using variables
 ----------------------------------------
 
 | In the code below, 3 variables are used to hold a string, integer and float.
-| These variables are then showed repetedly in the ``while True:`` loop.
+| These variables are then showed repeatedly in the ``while True:`` loop.
 | This makes it easy to see and edit the values of the variables being used in the code.
 
 .. code-block:: python
@@ -256,8 +257,9 @@ Display.show full syntax
 
 .. py:function:: show(value, delay=400, \*, wait=True, loop=False, clear=False)
 
-    Display letters/digits of a string, float,  in sequence.
-    Each letter, digit or image is shown with ``delay`` milliseconds between them.
+    | Display letters/digits of a string, float, in sequence. 
+    | Each letter, digit or image is shown with ``delay`` milliseconds between them. 
+    | The default delay is 400ms. When no delay is specified the default of 400ms is used.
 
     The use of ``\*,`` in the syntax is to indicate that for those parameters after it, ``wait``, ``loop`` and ``clear``, the arguments must be specified using their keyword.
 
@@ -268,7 +270,9 @@ Display.show full syntax
 
     If ``clear`` is ``True``, the display will be cleared after it has finished.
 
-    Note that the ``wait``, ``loop`` and ``clear`` arguments must be specified
-    using their keyword.
+----
 
+.. admonition:: Tasks
+
+    1. Experiment with the ``show`` named parameters by trying them out with True or False to see what effect they have.
 

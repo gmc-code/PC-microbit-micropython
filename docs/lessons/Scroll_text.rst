@@ -22,7 +22,7 @@ To scroll the string (in single quotes), 'Hi', across the display, use:
     display.scroll('Hi')
 
 
-Strings can be in double quotes :
+Strings can be in double quotes like "Hello" :
 
 .. code-block:: python
 
@@ -68,7 +68,8 @@ Display.scroll with delay
 
     | Scrolls ``value`` horizontally on the display. 
     | ``value`` can be an integer or float (a decimal) or a string.
-    | The ``delay`` parameter controls how fast the text scrolls. The default is 150ms.
+    | The ``delay`` parameter controls how fast the text scrolls. 
+    | The default delay is 150ms. When no delay is specified the default of 150ms is used.
     | The delay can be specified with the parameter name as in ``display.scroll('Hi', delay=150)``, or just as a number as the second argument as in ``display.scroll('Hi', 150)``.
 
 To scroll the string, 'Hi', across the display quickly, use a short delay of about 50:
@@ -227,6 +228,7 @@ Display.scroll full syntax
     | Scrolls ``value`` horizontally on the display.     
     | ``value`` can be an integer or float (a decimal) or a string.
     | The ``delay`` parameter controls how fast the text scrolls.
+    | The default delay is 150ms. When no delay is specified the default of 150ms is used.
 
     The use of ``\*,`` in the syntax is to indicate that for those parameters after it, ``wait``, ``loop`` and ``monospace``, the arguments must be specified using their keyword.
 
@@ -239,6 +241,11 @@ Display.scroll full syntax
     in width, otherwise there will be exactly 1 blank pixel-column between each
     character as they scroll.
 
+----
+
+.. admonition:: Tasks
+
+    1. Experiment with the ``scroll`` named parameters by trying them out with True or False to see what effect they have.
 
 
 

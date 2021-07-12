@@ -4,9 +4,9 @@ Built in images
 
 | The microbit library contains several built in images.
 | e.g ``Image.HEART``
-| The ``Image`` object must have a capital I.
-| The built in image name must be in capitals.
-| No quotation marks are used.
+| The ``Image`` object must have a capital ``I``.
+| The built in image name must be in capitals.  e.g ``HEART`` not ``heart``.
+| No quotation marks are used. e.g ``Image.HEART`` not ``'Image.HEART'``.
 | The same syntax that was used to show text can be used for images.
 | When typing in ``Image.``, as soon as the stop is typed a drop list of images will be displayed in Mu editor to allow selection of an image.
 
@@ -24,6 +24,7 @@ Display.show a built in Image
 .. code-block:: python
 
     from microbit import *
+
 
     display.show(Image.HEART)
 
@@ -51,6 +52,7 @@ Display.show a list of images
 
     from microbit import *
 
+
     display.show([Image.HAPPY, Image.SMILE, Image.SAD, Image.CONFUSED, Image.ANGRY], delay=500)
 
 ----
@@ -72,6 +74,7 @@ Image lists
 .. code-block:: python
 
     from microbit import *
+
 
     shape_list = [
         Image.TRIANGLE,
@@ -104,6 +107,7 @@ Built-in Image lists
 
     from microbit import *
 
+
     display.show(Image.ALL_CLOCKS, loop=True, delay=100)
 
 ----
@@ -124,6 +128,7 @@ Image sentences
 
     from microbit import *
 
+
     while True:
         display.scroll('I')
         sleep(300)
@@ -136,7 +141,7 @@ Image sentences
 
 .. admonition:: Tasks
 
-    #. Write a few different code sentences.
+    #. Write a few different code sentences combining words and images.
 
 ----
 
@@ -148,6 +153,7 @@ All Images
 .. code-block:: python
 
     from microbit import *
+
 
     built_in_images = [Image.HEART, Image.HEART_SMALL,
                         Image.HAPPY, Image.SMILE, Image.SAD, Image.CONFUSED,
