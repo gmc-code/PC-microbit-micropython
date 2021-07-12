@@ -95,7 +95,7 @@ To scroll the float, 3.14159, across the display slowly, use a long delay of abo
 
     #. Write code, using the delay parameter, to scroll info about the number of people in your family.    
     #. Write code, using the delay parameter, to scroll info about the number of rooms in your house.
-    #. Write code, using the delay parameter, to scroll info about the yout favourite phone app or electronic game.
+    #. Write code, using the delay parameter, to scroll info about the your favourite phone app or electronic game.
 
 ----
 
