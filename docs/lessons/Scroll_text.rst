@@ -12,7 +12,7 @@ Display.scroll simple version
     | Scrolls ``value`` horizontally on the microbit LED display. 
     | ``value`` can be an integer or float (a decimal) or a string.
 
-To scroll the string, 'Hi', across the display, use:
+To scroll the string (in single quotes), 'Hi', across the display, use:
 
 .. code-block:: python
 
@@ -20,6 +20,16 @@ To scroll the string, 'Hi', across the display, use:
 
 
     display.scroll('Hi')
+
+
+Strings can be in double quotes :
+
+.. code-block:: python
+
+    from microbit import *
+
+
+    display.scroll("Hello")
 
 
 To scroll the integer, 5, across the display, use:
@@ -56,12 +66,12 @@ Display.scroll with delay
 
 .. py:function:: scroll(value, delay=150)
 
-    | Scrolls ``value`` horizontally on the display. If ``value`` is an integer or float (a decimal) it is
-    first converted to a string using ``str()`` automatically. 
+    | Scrolls ``value`` horizontally on the display. 
+    | ``value`` can be an integer or float (a decimal) or a string.
     | The ``delay`` parameter controls how fast the text scrolls. The default is 150ms.
-    | The delay can be specified with the parameter name as in ``display.scroll('Hi', delay=150)``, or just as a number as in ``display.scroll('Hi', 150)``.
+    | The delay can be specified with the parameter name as in ``display.scroll('Hi', delay=150)``, or just as a number as the second argument as in ``display.scroll('Hi', 150)``.
 
-To scroll the string, "Hi", across the display quickly use a short delay of about 50:
+To scroll the string, 'Hi', across the display quickly, use a short delay of about 50:
 
 .. code-block:: python
 
@@ -70,7 +80,7 @@ To scroll the string, "Hi", across the display quickly use a short delay of abou
 
     display.scroll('Hi', 50)
 
-To scroll the float, 3.14159, across the display slowly use a long delay of about 300:
+To scroll the float, 3.14159, across the display slowly, use a long delay of about 300:
 
 .. code-block:: python
 
@@ -83,9 +93,9 @@ To scroll the float, 3.14159, across the display slowly use a long delay of abou
 
 .. admonition:: Tasks
 
-    #. Write code to scroll info about the number of people in your family.    
-    #. Write code to scroll info about the number of rooms in your house.
-    #. Write code to scroll info about the yout favourite phone app or electronic game.
+    #. Write code, using the delay parameter, to scroll info about the number of people in your family.    
+    #. Write code, using the delay parameter, to scroll info about the number of rooms in your house.
+    #. Write code, using the delay parameter, to scroll info about the yout favourite phone app or electronic game.
 
 ----
 
@@ -94,8 +104,8 @@ while True loops
 
 | Microbit code can be repeated using a ``while True:`` loop.
 | This continues forever.
-| The code under it to be repeated has to be indented with a tab character.
-| Python uses indenting to group the lines of code together in a ``while`` loop.
+| The code to be repeated has to be indented with a tab character.
+| Python uses indenting to group together the lines of code in a ``while`` loop.
 
 .. code-block:: python
 
@@ -154,13 +164,16 @@ Display.scroll using variables
     goals_per_game = 4.84
 
     while True:
-        display.scroll('Player', 50)
+        display.scroll('Player=', 50)
         display.scroll(player, 50)
-        display.scroll('Goals', 50)
+        display.scroll('Goals=', 50)
         display.scroll(goals, 150)
-        display.scroll('Goals per game', 50)
+        display.scroll('Goals per game=', 50)
         display.scroll(goals_per_game, 300)
 
+
+| For rules on variable names see: 
+| https://pc-microbit-micropython.readthedocs.io/en/latest/python_basics/variables.html
 
 ----
 
@@ -178,14 +191,14 @@ Display.scroll using variables
             goals_per_game = ?.??
 
             while True:
-                display.scroll('Player', 50)
+                display.scroll('Player=', 50)
                 display.scroll(player, 50)
-                display.scroll('Goals', 50)
+                display.scroll('Goals=', 50)
                 display.scroll(goals, 150)
-                display.scroll('Goals per game', 50)
+                display.scroll('Goals per game=', 50)
                 display.scroll(goals_per_game, 300)
 
-    2. Modify the code below to display info for another batsman.
+    2. Modify the code below to display info for a different batsman.
 
         .. code-block:: python
 
@@ -197,11 +210,11 @@ Display.scroll using variables
             ave = 57.8
 
             while True:
-                display.scroll('batsman', 50)
+                display.scroll('Batsman=', 50)
                 display.scroll(batsman, 50)
-                display.scroll('runs', 50)
+                display.scroll('Runs=', 50)
                 display.scroll(runs, 150)
-                display.scroll('ave', 50)
+                display.scroll('Ave=', 50)
                 display.scroll(ave, 300)
 
 ----
@@ -211,9 +224,11 @@ Display.scroll full syntax
 
 .. py:function:: scroll(value, delay=150, \*, wait=True, loop=False, monospace=False)
 
-    Scrolls ``value`` horizontally on the display. If ``value`` is an integer or float (a decimal) it is
-    first converted to a string using ``str()`` automatically. The ``delay`` parameter controls how fast
-    the text scrolls.
+    | Scrolls ``value`` horizontally on the display.     
+    | ``value`` can be an integer or float (a decimal) or a string.
+    | The ``delay`` parameter controls how fast the text scrolls.
+
+    The use of ``\*,`` in the syntax is to indicate that for those parameters after it, ``wait``, ``loop`` and ``monospace``, the arguments must be specified using their keyword.
 
     If ``wait`` is ``True``, this function will block until the animation is
     finished, otherwise the animation will happen in the background.
@@ -224,7 +239,6 @@ Display.scroll full syntax
     in width, otherwise there will be exactly 1 blank pixel-column between each
     character as they scroll.
 
-    The use of ``\*,`` in the syntax is to indicate that for those parameters after it, ``wait``, ``loop`` and ``monospace``, the arguments must be specified using their keyword.
 
 
 
