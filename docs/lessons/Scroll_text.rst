@@ -133,7 +133,7 @@ while True loops
             display.scroll('table tennis', delay=120)
 
 
-    1. Modify the code below to display your name and age in years.
+    2. Modify the code below to display your name and age in years.
 
     .. code-block:: python
 
@@ -151,8 +151,41 @@ while True loops
 Display.scroll using variables
 ----------------------------------------
 
+| Instead of placing an integer, a float or a string directly in the brackets of ``display.scroll``, a variable can be used.
+| This can make the code easier to read, since the variable value is separate from its use (here it is just being displayed).
+
+.. code-block:: python
+
+    from microbit import *
+
+
+    strvalue = "abc"
+    while True:
+        display.scroll(strvalue)
+
+
+.. code-block:: python
+
+    from microbit import *
+
+
+    intvalue = 123
+    while True:
+        display.scroll(intvalue)
+
+
+.. code-block:: python
+
+    from microbit import *
+
+
+    floatvalue = 0.93
+    while True:
+        display.scroll(floatvalue)
+
+
 | In the code below, 3 variables are used to hold a string, integer and float.
-| These variables are then scrolled repetedly in the ``while True:`` loop.
+| These variables are then scrolled repeatedly in the ``while True:`` loop.
 | This makes it easy to see and edit the values of the variables being used in the code.
 
 .. code-block:: python

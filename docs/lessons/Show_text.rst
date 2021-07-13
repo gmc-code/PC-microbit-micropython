@@ -93,7 +93,7 @@ To show the string, "Hi", with a short delay of 200ms:
     display.show('Hi', 200)
     display.clear()
 
-To show the float, 3.14159, across the display slowly use a long delay of about 300:
+To show the float, 3.14159, across the display slowly use a long delay of about 300ms:
 
 .. code-block:: python
 
@@ -161,7 +161,7 @@ while True loops
             display.clear()
             sleep(500)
 
-    1. Modify the code below to display your name and age in years.
+    2. Modify the code below to display your name and age in years.
 
     .. code-block:: python
 

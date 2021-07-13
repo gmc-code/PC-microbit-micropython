@@ -55,4 +55,5 @@ Useful keyboard shortcuts are at: https://codewith.mu/en/tutorials/1.1/shortcuts
  CTRL X        Cut selected text into the clipboard.
  CTRL C        Copy selected text into the clipboard.
  CTRL V        Paste text from the clipboard.
+ CTRL SHIFT S  Save the current tab with a new name (or double click the tab's name).
 =============  ======================================================================

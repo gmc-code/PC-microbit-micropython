@@ -18,6 +18,7 @@ PC-Microbit-Micropython documentation!
 
 Key references:
 
+* https://microbit-micropython.readthedocs.io/en/v2-docs/index.html
 * https://microbit-micropython.readthedocs.io/en/latest/index.html
 * https://microbit-challenges.readthedocs.io/en/latest/index.html
 * http://multiwingspan.co.uk/micro.php (no access from school)

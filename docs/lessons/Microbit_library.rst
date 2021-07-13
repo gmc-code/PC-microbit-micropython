@@ -24,6 +24,8 @@ Micropython API
 ------------------------------------------
 
 | The main reference for using micropython with the microbit is at:
+| https://microbit-micropython.readthedocs.io/en/v1.0.1/index.html
+| For new microbits (v2) from 2022 see:
 | https://microbit-micropython.readthedocs.io/en/v2-docs/index.html
 
 | References to the microbit library syntax may have ``microbit.`` before the function or method. 
@@ -33,6 +35,8 @@ Micropython API
 | e.g This allows the shorter form, ``display.scroll("Hi")``, instead of the longer form, ``microbit.display.scroll("Hi")``.
 
 | For a list of what is available in the microbit library see:
+| https://microbit-micropython.readthedocs.io/en/v1.0.1/microbit_micropython_api.html
+| For new microbits (v2) from 2022 see:
 | https://microbit-micropython.readthedocs.io/en/v2-docs/microbit_micropython_api.html
 
 
