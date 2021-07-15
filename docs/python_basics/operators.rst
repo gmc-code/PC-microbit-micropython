@@ -8,33 +8,33 @@ Arithmetic operators
 Arithmetic operators are used with numbers to perform common mathematical operations.
 
 .. list-table::
-	:widths: 20 60 20
-	:header-rows: 1
+    :widths: 20 60 20
+    :header-rows: 1
 
-	*   - **Operator** 
-	    - **Description**  
-	    - **Example**
-	*	- \+
-		- Addition	
-		- x + y
-	*	- \-
-		- Subtraction	
-		- x - y
-	*	- \*	
-		- Multiplication	
-		- x * y
-	*	- /	
-		- Division	
-		- x / y
-	*	- %	
-		- Modulus	
-		- x % y
-	*	- \**	
-		- Exponentiation	
-		- x ** y
-	*	- //	
-		- Floor division	
-		- x // y
+    *   - **Operator** 
+        - **Description**  
+        - **Example**
+    *    - \+
+        - Addition    
+        - x + y
+    *    - \-
+        - Subtraction    
+        - x - y
+    *    - \*    
+        - Multiplication    
+        - x * y
+    *    - /    
+        - Division    
+        - x / y
+    *    - %    
+        - Modulus    
+        - x % y
+    *    - \**    
+        - Exponentiation    
+        - x ** y
+    *    - //    
+        - Floor division    
+        - x // y
 
 
 | Modulus gives the remainder from a division.
@@ -78,16 +78,16 @@ Arithmetic operators are used with numbers to perform common mathematical operat
 
     from microbit import *
 
-	celsiusTemp = temperature()
-	fahrenheitTemp = celsiusTemp * 9 / 5 + 32  
+    celsiusTemp = temperature()
+    fahrenheitTemp = celsiusTemp * 9 / 5 + 32  
 
 
 Operator ``%``, called ``mod`` is used to calculate the remainder when one value is divided by another. For example: maybe you'd like to know whether a number is odd or even, you could try dividing it by 2, if it's even, then there will be no remainder.
 
 .. code-block:: python
 
-	number = 3
-	if number % 2 == 1:
+    number = 3
+    if number % 2 == 1:
         print("The number is odd")
     else:
         print("The number is even")
@@ -103,8 +103,8 @@ Strings (``str`` type in Python) are sequences of characters, with a length limi
 
 .. code-block:: python
 
-	name = "Hayley"
-	message = "Well done " + name + ". You are victorious!"
+    name = "Hayley"
+    message = "Well done " + name + ". You are victorious!"
 
 This will concatenate the items on the right hand side of ``=`` and put the result in the variable called ``message``.
 
@@ -112,8 +112,8 @@ To join numbers and strings together, you must first convert the number to a str
 
 .. code-block:: python
 
-	x = temperature
-	if temperature < 6:
+    x = temperature
+    if temperature < 6:
         display.scroll("Cold" + str(temperature))
 
 
@@ -128,16 +128,16 @@ Comparison
 Comparison operations are useful to test variable values in conditional statements or loops. Here are some examples of 
 comparisons written in English::
 
-	score is greater than 100
-	name equals "Harry"
+    score is greater than 100
+    name equals "Harry"
     x acceleration is not equal to 0
 
 Rewriting the comparisons above in Python would be.
 
 .. code-block:: python
 
-	score > 100
-	name ==  "Harry"
+    score > 100
+    name ==  "Harry"
     acceleration  != 0
 
 Python comparison operators:
@@ -172,7 +172,7 @@ Logical operators test the truth value of their operands.
 +--------------+---------------------------------+-------------------+
 | not          |  Operand is false               | ``not False``     |
 +--------------+---------------------------------+-------------------+
-	
+    
 
 Membership operations
 ---------------------------
@@ -196,19 +196,19 @@ show an arrow changing in direction according to acceleration.
 
 .. code-block:: python
 
-	from microbit import *
-	
-	while True:
+    from microbit import *
+    
+    while True:
         x_bearing = accelerometer.get_x()
 
         if (x_bearing <= 100) and (x_acceleration >= 50):
-		display.show(Image.ARROW_N)
+        display.show(Image.ARROW_N)
 
         elif x_bearing > 100:
             display.show(Image.ARROW_E) 
-	
+    
         elif  x_bearing < 50:
             display.show(Image.ARROW_W) 
 
         else:
-            display.show(Image.ARROW_S)	 
+            display.show(Image.ARROW_S)     
