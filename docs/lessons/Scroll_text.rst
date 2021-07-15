@@ -159,9 +159,9 @@ Display.scroll using variables
     from microbit import *
 
 
-    strvalue = "abc"
+    str_value = "abc"
     while True:
-        display.scroll(strvalue)
+        display.scroll(str_value)
 
 
 .. code-block:: python
@@ -169,9 +169,9 @@ Display.scroll using variables
     from microbit import *
 
 
-    intvalue = 123
+    int_value = 123
     while True:
-        display.scroll(intvalue)
+        display.scroll(int_value)
 
 
 .. code-block:: python
@@ -179,9 +179,9 @@ Display.scroll using variables
     from microbit import *
 
 
-    floatvalue = 0.93
+    float_value = 0.93
     while True:
-        display.scroll(floatvalue)
+        display.scroll(float_value)
 
 
 | In the code below, 3 variables are used to hold a string, integer and float.

@@ -81,18 +81,6 @@ if the temperature on the micro:bit goes below a certain value so you'll need to
 
 	display.show(Image.HAPPY)
 
-----
-
-Practice Questions
---------------------
-
-.. admonition:: Tasks
-
-    1. Display a different image depending on which side microbit is tilted in.
-    2. Program an LED 'sprite' that moves in the direction micro:bit is tilted in.
-    3. Program an LED sprite to run in a circle. Try to extend it to a snake by adding a tail of LEDs to the original sprite.
-    4. Do the same as in previous question, but this time make the sprite stop when a button is being pressed and restart if it's pressed again.
-
 
 
 
