@@ -5,7 +5,7 @@ Operators
 Arithmetic operators
 -----------------------
 
-Arithmetic operators are used with numbers to perform common mathematical operations
+Arithmetic operators are used with numbers to perform common mathematical operations.
 
 .. list-table::
 	:widths: 20 60 20
@@ -41,45 +41,50 @@ Arithmetic operators are used with numbers to perform common mathematical operat
 | Floor division rounds down the result from a division to the nearest integer.
 | Exponentiation raises to a power. 
 
-a=9
-b=2
+.. code-block:: python
 
-print('a =', a, ',', 'b =', b)
-# a = 9 , b = 2
+    a=9
+    b=2
 
-print('Addition : a + b =', a + b)
-# Addition : a + b = 11
+    print('a =', a, ',', 'b =', b)
+    # a = 9 , b = 2
 
-print('Subtraction : a - b =', a - b)
-# Subtraction : a - b = 7
+    print('Addition : a + b =', a + b)
+    # Addition : a + b = 11
 
-print('Multiplication : a * b =', a * b)
-# Multiplication : a * b = 18
+    print('Subtraction : a - b =', a - b)
+    # Subtraction : a - b = 7
 
-print('Division (float) : a / b =', a / b)
-# Division (float) : a / b = 4.5
+    print('Multiplication : a * b =', a * b)
+    # Multiplication : a * b = 18
 
-print('Division (floor) : a // b =', a // b)
-# Division (floor) : a // b = 4
+    print('Division (float) : a / b =', a / b)
+    # Division (float) : a / b = 4.5
 
-print('Modulus (remainder) : a % b =', a % b)
-# Modulus (remainder) : a % b = 1
+    print('Division (floor) : a // b =', a // b)
+    # Division (floor) : a // b = 4
 
-print('Exponent (power) : a ** b =', a ** b)
-# Exponent (power) : a ** b = 81
+    print('Modulus (remainder) : a % b =', a % b)
+    # Modulus (remainder) : a % b = 1
+
+    print('Exponent (power) : a ** b =', a ** b)
+    # Exponent (power) : a ** b = 81
 
 
-Basic arithmetic operators: ``+,-,*,/`` are used in the same way as you would with a calculator. 
-Let's look at an example using arithmetic operators the temperature read by the micro:bit in Celsius to Fahrenheit::
+| Basic arithmetic operators: ``+,-,*,/`` are used in the same way as a calculator. 
+| Below is an example using arithmetic operators for the temperature read by the micro:bit in Celsius to Fahrenheit::
+
+.. code-block:: python
+
+    from microbit import *
 
 	celsiusTemp = temperature()
 	fahrenheitTemp = celsiusTemp * 9 / 5 + 32  
 
-.. warning:: Python recognises two division operators: ``/`` and ``//``. First one outputs the result you'd expect, but the second one does integer division: the 
-	return value is actually the floor of the result. This means that the return value is always rounded down.
 
-Operator ``%``, called ``mod`` is used to calculate the remainder when one value is divided by another. For example: maybe you'd like to know whether a number is odd or 
-even, you could try dividing it by 2, if it's even, then there will be no remainder::
+Operator ``%``, called ``mod`` is used to calculate the remainder when one value is divided by another. For example: maybe you'd like to know whether a number is odd or even, you could try dividing it by 2, if it's even, then there will be no remainder::
+
+.. code-block:: python
 
 	number = 3
 	if number % 2 == 1:
@@ -93,30 +98,29 @@ You might write this program in a different way. People think about problems in 
 
 Strings
 --------
-As stated above, strings (``str`` type in Python) are sequences of characters, with a length limited only by the memory of your machine. A useful fact to note is 
-that they can be concatenated using a ``+`` symbol::
+
+Strings (``str`` type in Python) are sequences of characters, with a length limited only by the memory of your machine. A useful fact to note is  that they can be concatenated using a ``+`` symbol::
+
+.. code-block:: python
 
 	name = "Hayley"
-
 	message = "Well done " + name + ". You are victorious!"
 
 This will concatenate the items on the right hand side of ``=`` and put the result in the variable called ``message``.
 
 To join numbers and strings together, you must first convert the number to a string using the ``str()`` function if you want to do that::
 
+.. code-block:: python
+
 	x = temperature
 	if temperature < 6:
         display.scroll("Cold" + str(temperature))
 
-.. note:: Python natively provides a lot of methods_, which makes using strings much easier and saves lot of time (although implementing them on your own initially 
-	might be a good programming exercise). 
-
-.. _methods: https://www.programiz.com/python-programming/methods/string
 
 Booleans
 ---------
-A Boolean value is a value that is either ``True`` or ``False``, also represented by `1` and `0`. In Python, there is a number of operations that 
-allow you to manipulate boolean expressions.  
+| A Boolean value is a value that is either ``True`` or ``False``, also represented by `1` and `0`. 
+| In Python, there is a number of operations that allow you to manipulate boolean expressions.  
 
 Comparison
 --------------
@@ -128,7 +132,15 @@ comparisons written in English::
 	name equals "Harry"
     x acceleration is not equal to 0
 
-Python has a set of comparison operators that allow us to write comparisons easily:
+Rewriting the comparisons above in Python would be::
+
+.. code-block:: python
+
+	score > 100
+	name ==  "Harry"
+    acceleration  != 0
+
+Python comparison operators:
 
 .. tabularcolumns:: |L|l|
 
@@ -144,11 +156,7 @@ Python has a set of comparison operators that allow us to write comparisons easi
 | !=                             | not equal to                           |
 +--------------------------------+----------------------------------------+
 
-Rewriting the comparisons above in Python would be::
 
-	score > 100
-	name ==  "Harry"
-    acceleration  != 0
 
 Logical operations
 -------------------------
@@ -183,7 +191,10 @@ Using Boolean operations
 ----------------------------
 
 You may have already used some examples that do this. In this example, the micro:bit will 
-show an arrow changing in direction according to acceleration:: 
+show an arrow changing in direction according to acceleration.
+
+
+.. code-block:: python
 
 	from microbit import *
 	
