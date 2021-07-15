@@ -82,7 +82,7 @@ Arithmetic operators are used with numbers to perform common mathematical operat
 	fahrenheitTemp = celsiusTemp * 9 / 5 + 32  
 
 
-Operator ``%``, called ``mod`` is used to calculate the remainder when one value is divided by another. For example: maybe you'd like to know whether a number is odd or even, you could try dividing it by 2, if it's even, then there will be no remainder::
+Operator ``%``, called ``mod`` is used to calculate the remainder when one value is divided by another. For example: maybe you'd like to know whether a number is odd or even, you could try dividing it by 2, if it's even, then there will be no remainder.
 
 .. code-block:: python
 
@@ -99,7 +99,7 @@ You might write this program in a different way. People think about problems in 
 Strings
 --------
 
-Strings (``str`` type in Python) are sequences of characters, with a length limited only by the memory of your machine. A useful fact to note is  that they can be concatenated using a ``+`` symbol::
+Strings (``str`` type in Python) are sequences of characters, with a length limited only by the memory of your machine. A useful fact to note is  that they can be concatenated using a ``+`` symbol.
 
 .. code-block:: python
 
@@ -108,7 +108,7 @@ Strings (``str`` type in Python) are sequences of characters, with a length limi
 
 This will concatenate the items on the right hand side of ``=`` and put the result in the variable called ``message``.
 
-To join numbers and strings together, you must first convert the number to a string using the ``str()`` function if you want to do that::
+To join numbers and strings together, you must first convert the number to a string using the ``str()`` function if you want to do that.
 
 .. code-block:: python
 
@@ -132,7 +132,7 @@ comparisons written in English::
 	name equals "Harry"
     x acceleration is not equal to 0
 
-Rewriting the comparisons above in Python would be::
+Rewriting the comparisons above in Python would be.
 
 .. code-block:: python
 
