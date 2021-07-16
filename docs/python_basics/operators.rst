@@ -112,9 +112,9 @@ To join numbers and strings together, you must first convert the number to a str
 
 .. code-block:: python
 
-    x = temperature
+    temperature = 4
     if temperature < 6:
-        display.scroll("Cold" + str(temperature))
+        display.scroll(str(temperature) + " is cold")
 
 
 Booleans
