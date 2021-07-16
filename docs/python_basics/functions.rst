@@ -79,7 +79,7 @@ Functions with default parameters
     from microbit import *
 
     def blink_LED(pin=pin0, repcount=3, sleepms=100):
-        # for i in range(repcount):
+        for i in range(repcount):
             pin.write_digital(1)
             sleep(sleepms)
             pin.write_digital(0)
