@@ -1,8 +1,8 @@
 ==========================
-Control Structures
+Iteration
 ==========================
 
-The three basic control structures are:
+Iteration is one of the three basic control structures:
 
 #. Sequence (steps in order)
 #. Selection (branching using ``if`` ... ``elif`` ... ``else``)
@@ -27,12 +27,12 @@ to turn on the LEDs on the uppermost horizontal and rightmost vertical side. You
 
     from microbit import *
 
-	for i in range (5):
+    for i in range (5):
         # set the pixel in column 0, row i to 9 
         display.set_pixel(0, i, 9) 
 
-        # set the pixel in column 4, row i to 9	
-        display.set_pixel(4, i, 9)	 
+        # set the pixel in column 4, row i to 9    
+        display.set_pixel(4, i, 9)     
 
 Here is another example.  You could use a ``for loop`` to turn on all the LEDs in sequence, one at a time:
 
@@ -60,9 +60,9 @@ temperature data. Here is an example of some code to repeat forever:
 
 .. code-block:: python
 
-	from microbit import *
+    from microbit import *
 
-	while True:
+    while True:
         display.scroll("Hello UCL)
 
 This code will repeatedly display the message ``Hello UCL``. You will likely have at least one ``while True:`` loop in your program
@@ -73,13 +73,13 @@ if the temperature on the micro:bit goes below a certain value so you'll need to
 
 .. code-block:: python
 
-	from microbit import *
+    from microbit import *
 
-	while (temperature() < 18):
+    while (temperature() < 18):
         display.scroll(Image.SAD)
         sleep(1000)
 
-	display.show(Image.HAPPY)
+    display.show(Image.HAPPY)
 
 
 

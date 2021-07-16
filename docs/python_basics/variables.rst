@@ -9,10 +9,10 @@ Variables
 | e.g In ``user_name = GMC``, the variable names is ``user_name``, the type is ``str`` (string) and the value is ``GMC``.
 
 Rules for Python variable names:
-	• A variable name must start with a letter or the underscore character
-	• A variable name cannot start with a number
-	• A variable name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ )
-	• Variable names are case-sensitive (``age``, ``Age`` and ``AGE`` are three different variables)
+    • A variable name must start with a letter or the underscore character
+    • A variable name cannot start with a number
+    • A variable name can only contain alpha-numeric characters and underscores (A-z, 0-9, and _ )
+    • Variable names are case-sensitive (``age``, ``Age`` and ``AGE`` are three different variables)
 
 ----
 

@@ -10,11 +10,11 @@ List is a data structure used to store any data type in order. It's a data struc
 
 To create a list, you specify its contents enclosed within brackets and delimited by commas: :: 
 
-	from microbit import *
+    from microbit import *
 
-	high_scores = [25, 20, 10, 15, 30]    # Create a list and store some values in it.
-	print(high_scores[0])			# Print 25
-	print(high_scores[3])			# Print 15
+    high_scores = [25, 20, 10, 15, 30]    # Create a list and store some values in it.
+    print(high_scores[0])            # Print 25
+    print(high_scores[3])            # Print 15
 
 
 Finding the value of one of the elements in a list is straightforward as long as you keep in mind that Python counts the elements from '0'. In the ``high_scores`` list 
@@ -24,29 +24,29 @@ Here you can also see that particular elements in a list can be accessed by thei
 on the index. If you only want the first three, you can write ``high_scores[0:3]``, or, since we are starting at 0, we can shorten it to ``high_scores[:3]``. Mind that
 the right endpoint is alway excluded, so the 'slice' above refers to the mathematical interval ``[0,2]``.
 
-Not surprisingly, Python has features for working with lists. The code snippet below calculates the sum of all elements and then calculates the average high score. ::		
+Not surprisingly, Python has features for working with lists. The code snippet below calculates the sum of all elements and then calculates the average high score. ::        
 
-	total_score = 0
+    total_score = 0
 
-	for score in high_scores: 		# For each element ...
-		total_score = total_score + score
+    for score in high_scores:         # For each element ...
+        total_score = total_score + score
 
-	average = total_score / len(high_scores)  # Use the len() function here to find the length of the array 
+    average = total_score / len(high_scores)  # Use the len() function here to find the length of the array 
 
 The same can be done in one line using the ``sum`` function::
 
-	average_quick = sum(high_score) / len(high_score)	 
+    average_quick = sum(high_score) / len(high_score)     
 
 
 Since you don't necessarily know what values in the list are going to be, or how large the list will be, it's useful to know the ``append`` function. 
 For example, you can use it to fill a list with temperature readings or accelerometer values:: 
 
-	from microbit import *
+    from microbit import *
 
-	recorded_temperature = [] 		# Create an empty list
-	for i in range(100):			# Add 100 temperature values
-		recorded_temperature.append(temperature())
-		sleep(1000)			 
+    recorded_temperature = []         # Create an empty list
+    for i in range(100):            # Add 100 temperature values
+        recorded_temperature.append(temperature())
+        sleep(1000)             
 
 The ``for`` loop is executed 100 times and ``i`` will have values from 0 to 99. This will measure the temperature every second for 100 seconds and append the value 
 to the end of the list. 
@@ -54,16 +54,16 @@ to the end of the list.
 
 Deleting items from a list is just as straightforward::
 
-	high_scores.delete(24)
+    high_scores.delete(24)
 
 This will delete the first element with the value 24.
 Alternatively, you might want to delete an element at a specific position, if you know it:: 
 
-	high_scores.pop(3)
+    high_scores.pop(3)
 
 This will delete or 'pop' the element at the given position in the list. Note that::
 
-	high_scores.pop() 
+    high_scores.pop() 
 
 will delete the last element in the list.
 
@@ -80,19 +80,19 @@ Sorting
 Often you'll find the need to have data in your list sorted, for example when implementing search algorithms. In Python, sorting lists is easy using the 
 ``sort(key=, reverse=)`` method::
 
-	high_scores = [25, 20, 10, 15, 30]
-	high_scores.sort()
+    high_scores = [25, 20, 10, 15, 30]
+    high_scores.sort()
 
-You don't only have to sort numbers - its optional key parameter allows you to specify your own	function for comparing elements in your list (for example, while 
+You don't only have to sort numbers - its optional key parameter allows you to specify your own    function for comparing elements in your list (for example, while 
 sorting a list of strings according to length, you can pass the len() function as the parameter). Passing false to reverse parameter allows you to sort in a descending 
 order. ::
 
-	list = ['longest', 'short', 'longer']
+    list = ['longest', 'short', 'longer']
 
-	# Sort list in ascending order of string length
-	list.sort(key=len)
-	# Sort list in descending order of string length
-	list.sort(key=len, reverse=True)
+    # Sort list in ascending order of string length
+    list.sort(key=len)
+    # Sort list in descending order of string length
+    list.sort(key=len, reverse=True)
 
 Tuples
 ----------
@@ -117,37 +117,37 @@ Sets
 Unlike lists and tuples, sets hold an **unordered** collection of elements with no duplicates. This makes them suitable for testing membership or removing 
 duplicate elements. ::
 
-	set = {8, 12, 22}
+    set = {8, 12, 22}
 
-	# Add a single element to set
-	set.add(42)
+    # Add a single element to set
+    set.add(42)
 
-	# Add several elements to set
-	set.update([16, 32, 64])
+    # Add several elements to set
+    set.update([16, 32, 64])
 
-	# Remove an element from set - throws an error if element not in set 
-	set.remove(42)
+    # Remove an element from set - throws an error if element not in set 
+    set.remove(42)
 
-	# Remove an element if present in set 
-	set.discard(42)
+    # Remove an element if present in set 
+    set.discard(42)
 
 
 
 Since a set is an unordered collection of elements, indexing is not possible. Python supports typical set operation methods: ::
 
-	set_a = {1,2,3,4,5}
-	set_b = {4,5,6,7}
-	set_c = {1,2}
+    set_a = {1,2,3,4,5}
+    set_b = {4,5,6,7}
+    set_c = {1,2}
 
-	# Check for membership
-	2 in set_a
+    # Check for membership
+    2 in set_a
 
-	# Return elements in the intersection of set_a and set_b
-	set_a.intersection(set_b)
-	# Return true if set_a contains all the elements of set_c
-	set_a.issuperset(set_c)
+    # Return elements in the intersection of set_a and set_b
+    set_a.intersection(set_b)
+    # Return true if set_a contains all the elements of set_c
+    set_a.issuperset(set_c)
 
-An empty set is created using a ``set()`` method, as using braces creates an empty dictionary (see below).  	
+An empty set is created using a ``set()`` method, as using braces creates an empty dictionary (see below).      
 
 For more methods, visit Python documentation_.
 
@@ -163,29 +163,29 @@ you can retrieve a value from a dictionary by using the key as an index.
 
 For example, you can store the highscores of all the players: ::
 
-	game_register = { 'googolplex': 100,
+    game_register = { 'googolplex': 100,
                     'terminat0r': 27,
                     'r00t': 150,
                     'dent': 42,
                     'teapot418' : 0 } 
 
-	# Access elements
-	game_register['dent']
+    # Access elements
+    game_register['dent']
 
-	# Add or update and existing entry
-	game_register['pepper'] = 50
+    # Add or update and existing entry
+    game_register['pepper'] = 50
 
-	# Delete an entry
-	del game_register['pepper']	
+    # Delete an entry
+    del game_register['pepper']    
 
-	# Delete all entries
-	game_register.clear()
+    # Delete all entries
+    game_register.clear()
 
-	# Delete the dictionary
-	del game_register
+    # Delete the dictionary
+    del game_register
 
-	# Retrieve a value for the key or default if not in dicionary
-	game_register.get('dent')		
+    # Retrieve a value for the key or default if not in dicionary
+    game_register.get('dent')        
 
 
 Practice Questions
