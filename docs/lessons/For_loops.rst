@@ -5,6 +5,7 @@ For loops
 For loops with strings
 ----------------------------------------
 
+| Python can loop through each character in a string and do something with it.
 | ``for letter in my_string`` takes each character in the string ``my_string`` and puts it in the variable ``letter`` for display.
 
 .. code-block:: python
@@ -12,37 +13,44 @@ For loops with strings
     from microbit import *
 
     my_string = 'Hi Mb user'
-    for letter in my_string:
-        display.show(letter)
-        sleep(200)
+    while True:
+        for letter in my_string:
+            display.show(letter)
+            sleep(200)
 
 ----
 
 For loops with lists
 ----------------------------------------
 
+| Python can loop through each element in a list and do something with it.
 | ``num in my_list`` takes each element in the list ``my_list`` and puts it in the variable ``num`` for use in the loop.
+| In the code below, each number in the list is displayed then it is doubled and that is scrolled.
 
 .. code-block:: python
 
     from microbit import *
 
     my_list = [2, 3, 5, 7]
-    for num in my_list:
-        display.show(num)
-        sleep(300)
-        num = num * 2
-        display.scroll(num, delay = 50)
+    while True:
+        for num in my_list:
+            display.show(num)
+            sleep(300)
+            num = num * 2
+            display.scroll(num, delay = 50)
+            sleep(300)
 
 ----
 
 Nested For loops
 ----------------------------------------
 
+| A loop with another loop within is called a nested loop.
 | ``for col in my_col`` takes each element in the list ``my_col`` and puts it in the variable ``col`` for use in the loop.
 | ``for row in my_row`` takes each element in the list ``my_row`` and puts it in the variable ``row`` for use in the loop.
-| Each time the out loop, ``for col in my_col``, is run, the inner loop, ``for row in my_row``, completes all 4 loops since there are 4 elements in its list.
-| The ested loops run a total of 3 * 4 or 12 times.
+| Each time the outer loop, ``for col in my_col``, is run, the inner loop, ``for row in my_row``, completes all 4 loops since there are 4 elements in its list.
+| The nested loops run a total of 3 * 4 or 12 times.
+| The ``+`` in ``col + row`` does a text join. When ``col`` = "A" and ``row`` = '1', ``col + row`` will result in ``"A1"``.
 
 .. code-block:: python
 
@@ -71,3 +79,12 @@ Nested For loops
             display.scroll(num_1 * num_2, delay=100)
 
 
+
+----
+
+.. admonition:: Tasks
+
+    #. Write a for loop to show each letter in "winner".    
+    #. Write a for loop to show each name in the list ``['Arianna', 'Kate', 'Emma'].
+    #. Write a for loop that shows the result from multiplying each number in the list, ``[3, 5, 7]`` by 5.    
+    #. Write a for loop that finds the sum of two numbers from hte two lists: ``[2, 4, 6]`` qnd ``[3, 5,7]``.

@@ -3,7 +3,7 @@ While_loops
 ====================================================
 
 | See: https://www.w3schools.com/python/python_while_loops.asp
-| While loop run a set of statements as long as a condition is true.
+| While loops run a set of statements as long as a condition is true.
 | The statements within the loop are indented.
 
 While true
@@ -26,9 +26,10 @@ Counters
 | While loops have a condition that is tested each time the loop runs.
 | The condition must be True for the loop to run.
 | If the condition is False, the loop is exited.
+
 | A counter can be used in the while loop condition.
 | The counter is set before the while loop.
-| The counter is incremented in a while loop. 
+| The counter is incremented (increased by a constant amount) in a while loop. 
 
 ----
 
@@ -37,7 +38,10 @@ Counting up
 
 | In the example below, ``i`` is the counter.
 | ``i`` starts off at 0 and is increased by 1 in the while loop line: ``i += 1``.
-| The while runs while ``i`` increases from 0 to 9, but then exits when ``i`` is 10.
+| ``i += 1`` is the same as ``i = i + 1``
+| While the condition, ``i < 10``,  is True the while loop runs.
+| ``i += 1`` causes ``i`` to increase from 0 to 9.
+| The while loop exits when ``i`` is 10 since ``i < 10`` will be False when ``i = 10``.
 
 .. code-block:: python
 
@@ -53,9 +57,10 @@ Counting up
 Counting down
 ----------------------------------------
 
-| ``i`` starts off at 5 and is decreased by 1 in the while loop line: ``i -= 1``.
+| In the code below, ``i`` starts off at 5 and is decreased by 1 in the while loop line: ``i -= 1``.
+| ``i -+= 1`` is the same as ``i = i - 1``
 | The test uses a ``>`` sign when counting down.
-| The loop below stops when is no longer greater than 1, i.e. when it is 1.
+| The loop below stops when ``i`` is no longer greater than 1, i.e. when it is 1.
 
 .. code-block:: python
 

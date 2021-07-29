@@ -177,3 +177,11 @@ All Images
     while True:
         display.show(built_in_images, delay=100)
 
+----
+
+.. admonition:: Tasks
+
+    #. Edit the built in images list from above to just include animals.
+    #. Edit the built in images list from above to just include faces.
+    #. Edit the built in images list from above to just include objects.
+    #. Edit the built in images list from above to just include shapes.

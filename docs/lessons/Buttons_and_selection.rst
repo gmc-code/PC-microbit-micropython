@@ -19,9 +19,10 @@ Selection
 
 | ``if``, ``elif`` and ``else`` provide choices or branches in the code.
 | Each end with a colon, ``:``.
-| ``if``, ``elif`` have a condition that returns ``True`` or ``False``. Their indented code block runs if the condition is True.
+| Both ``if`` and  ``elif`` have a condition that returns ``True`` or ``False``. Their indented code block runs if the condition is True. e.g ``if button_a.is_pressed():``.
 | Multiple  ``elif`` can be used to provide more choices.
-| The ``else`` block only runs if all hte previous conditions were ``False``.
+| The ``else`` block does not have a condition.
+| The ``else`` block only runs if all the previous conditions were ``False``.
 
 ----
 
@@ -38,6 +39,15 @@ If
         if button_a.is_pressed():
             display.show("A")
         sleep(200)
+
+----
+
+.. admonition:: Tasks
+
+    #. Edit the code to scroll your name when the A button is pressed.
+    #. Edit the code to display a happy face when the A button is pressed.
+    #. Edit the code to display a happy face when the B button is pressed.
+
 
 ----
 
@@ -59,6 +69,14 @@ If else
 
 ----
 
+.. admonition:: Tasks
+
+    #. Edit the code to scroll your name when the A button is pressed and to show "?" when nothing is pressed.
+    #. Edit the code to display a happy face when the A button is pressed and a sad face when nothing is pressed.
+    #. Edit the code to display a happy face when the B button is pressed and a sad face when nothing is pressed.
+
+----
+
 If elif
 ----------------------------------------
 
@@ -75,6 +93,14 @@ If elif
         elif button_b.is_pressed():
             display.show("B")
         sleep(200)
+
+----
+
+.. admonition:: Tasks
+
+    #. Edit the code to scroll your name when the A button is pressed and your house name when the B button is pressed.
+    #. Edit the code to display a happy face when the A button is pressed and a smiling face when the B button is pressed.
+
 
 ----
 
@@ -101,6 +127,14 @@ If elif else
 
 ----
 
+.. admonition:: Tasks
+
+    #. Edit the code to scroll your name when the A button is pressed and your house when the B button is pressed and your Tutor group when nothing is pressed.
+    #. Edit the code to display a happy face when the A button is pressed and a smiling face when the B button is pressed and a sad face when nothing is pressed.
+
+
+----
+
 If elif elif else
 ----------------------------------------
 
@@ -121,7 +155,13 @@ If elif elif else
         elif button_b.is_pressed():
             display.show(Image.ARROW_E)
         else:
-            display.show(" ")
+            display.clear()
         sleep(100)
 
 
+----
+
+.. admonition:: Tasks
+
+    #. Edit the code to scroll your favourite subject when both buttons are pressed together, your best subject when the A button is pressed, your favourite sport when the B button is pressed, and nothing when nothing is pressed.
+    #. Edit the code to display a giraffe face when both buttons are pressed, a duck when the A button is pressed, a snake when the B button is pressed and nothing when nothing is pressed.
