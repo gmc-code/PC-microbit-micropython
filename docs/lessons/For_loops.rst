@@ -13,11 +13,12 @@ For loops with strings
     from microbit import *
 
 
-    my_string = 'Hi Mb user'
     while True:
-        for letter in my_string:
-            display.show(letter)
-            sleep(200)
+        my_string = 'Hi Mb user'
+        while True:
+            for letter in my_string:
+                display.show(letter)
+                sleep(200)
 
 ----
 
@@ -33,14 +34,15 @@ For loops with lists
     from microbit import *
 
 
-    my_list = [2, 3, 5, 7]
     while True:
-        for num in my_list:
-            display.show(num)
-            sleep(300)
-            num = num * 2
-            display.scroll(num, delay = 50)
-            sleep(300)
+        my_list = [2, 3, 5, 7]
+        while True:
+            for num in my_list:
+                display.show(num)
+                sleep(300)
+                num = num * 2
+                display.scroll(num, delay = 50)
+                sleep(300)
 
 ----
 
@@ -59,12 +61,13 @@ Nested For loops
     from microbit import *
 
 
-    my_col = ["A", "B", "C"]
-    my_row  = ['1', '2', '3', '4']
+    while True:
+        my_col = ["A", "B", "C"]
+        my_row  = ['1', '2', '3', '4']
 
-    for col in my_col:
-        for row in my_row:
-            display.scroll(col + row, delay=200)
+        for col in my_col:
+            for row in my_row:
+                display.scroll(col + row, delay=200)
 
 
 ----
@@ -76,11 +79,12 @@ Nested For loops
     from microbit import *
 
 
-    nums_1 = [7, 9]
-    nums_2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-    for num_1 in nums_1:
-        for num_2 in nums_2:
-            display.scroll(num_1 * num_2, delay=100)
+    while True:
+        nums_1 = [7, 9]
+        nums_2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        for num_1 in nums_1:
+            for num_2 in nums_2:
+                display.scroll(num_1 * num_2, delay=100)
 
 
 

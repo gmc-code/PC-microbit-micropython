@@ -49,10 +49,11 @@ Counting up
     from microbit import *
 
 
-    i = 0
-    while i < 10:
-        display.scroll(i, delay=50)
-        i += 1
+    while True:
+        i = 0
+        while i < 10:
+            display.scroll(i, delay=50)
+            i += 1
 
 ----
 
@@ -69,10 +70,11 @@ Counting down
     from microbit import *
 
 
-    i = 5
-    while i > 1:
-        display.scroll(i, delay=50)
-        i -= 1
+    while True:
+        i = 5
+        while i > 1:
+            display.scroll(i, delay=50)
+            i -= 1
 
 ----
 
@@ -87,10 +89,11 @@ Step size
     from microbit import *
 
 
-    i = 0
-    while i < 11:
-        display.scroll(i, delay=50)
-        i += 2
+    while True:
+        i = 0
+        while i < 11:
+            display.scroll(i, delay=50)
+            i += 2
 
 ----
 
