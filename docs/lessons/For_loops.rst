@@ -91,5 +91,5 @@ Nested For loops
     #. Write a for loop to show each letter in "winner".    
     #. Write a for loop to show each name in the list ``['Arianna', 'Kate', 'Emma'].
     #. Write a for loop that shows the result from multiplying each number in the list, ``[3, 5, 7]`` by 5.    
-    #. Write a for loop that finds the sum of two numbers from hte two lists: ``[2, 4, 6]`` qnd ``[3, 5,7]``.
+    #. Write a for loop that finds the sum of two numbers from the two lists: ``[2, 4, 6]`` and ``[3, 5,7]``.
 
