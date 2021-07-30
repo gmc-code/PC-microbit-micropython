@@ -12,6 +12,7 @@ For loops with strings
 
     from microbit import *
 
+
     my_string = 'Hi Mb user'
     while True:
         for letter in my_string:
@@ -30,6 +31,7 @@ For loops with lists
 .. code-block:: python
 
     from microbit import *
+
 
     my_list = [2, 3, 5, 7]
     while True:
@@ -56,6 +58,7 @@ Nested For loops
 
     from microbit import *
 
+
     my_col = ["A", "B", "C"]
     my_row  = ['1', '2', '3', '4']
 
@@ -71,6 +74,7 @@ Nested For loops
 .. code-block:: python
 
     from microbit import *
+
 
     nums_1 = [7, 9]
     nums_2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
@@ -88,3 +92,4 @@ Nested For loops
     #. Write a for loop to show each name in the list ``['Arianna', 'Kate', 'Emma'].
     #. Write a for loop that shows the result from multiplying each number in the list, ``[3, 5, 7]`` by 5.    
     #. Write a for loop that finds the sum of two numbers from hte two lists: ``[2, 4, 6]`` qnd ``[3, 5,7]``.
+

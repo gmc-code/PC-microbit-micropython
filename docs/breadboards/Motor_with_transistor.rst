@@ -44,6 +44,7 @@ Turn on and off pin0
 
     from microbit import *
 
+
     def turn_on():
         pin0.write_digital(1)
 
@@ -72,6 +73,7 @@ Write analog
 
     from microbit import *
     import random
+
 
     def pulse_on():
         sleeptime = 4

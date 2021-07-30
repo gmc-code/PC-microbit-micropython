@@ -15,6 +15,7 @@ While true
 
     from microbit import *
 
+
     while True:
         display.scroll('I am a microbit', delay=80)
 
@@ -47,6 +48,7 @@ Counting up
 
     from microbit import *
 
+
     i = 0
     while i < 10:
         display.scroll(i, delay=50)
@@ -65,6 +67,8 @@ Counting down
 .. code-block:: python
 
     from microbit import *
+
+
     i = 5
     while i > 1:
         display.scroll(i, delay=50)
@@ -81,6 +85,7 @@ Step size
 .. code-block:: python
 
     from microbit import *
+
 
     i = 0
     while i < 11:

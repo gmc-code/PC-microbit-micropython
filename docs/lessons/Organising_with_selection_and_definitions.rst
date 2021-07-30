@@ -2,26 +2,27 @@
 Organising with selection and definitions
 ====================================================
 
-Defintions
+Definitions
 ----------------------------------------
 
-| Use defintions for one purpose. 
-| Defintions help break up lengthy code into smaller well defined blocks.
-| Defintions use the same naming conventions as for variables. (See variables in the python section)
-| Defintions start with the ``def`` keyword.
+| Use definitions for one purpose. 
+| Definitions help break up lengthy code into smaller well defined blocks.
+| Definitions use the same naming conventions as for variables. (See variables in the python section)
+| Definitions start with the ``def`` keyword.
 | All the code for a definition is indented.
-| Below is an example of a defition that scrolls some text and displays an image.
-| The defintion is run by calling it via ``doA()``.
+| Below is an example of a definition that scrolls some text and displays an image.
+| The definition is run by calling it via ``doA()``.
 
 .. code-block:: python
 
     from microbit import *
-    
+
+
     def doA():
         display.scroll('A')
         display.show(Image.HAPPY)
 
-        doA()
+    doA()
 
 ----
 
@@ -41,6 +42,7 @@ Organising blocks into definitions
 
     from microbit import *
 
+
     while True:
         if button_a.is_pressed():
             display.scroll('A')
@@ -57,6 +59,7 @@ Organising blocks into definitions
 .. code-block:: python
 
     from microbit import *
+
 
     def doA():
         display.scroll('A')

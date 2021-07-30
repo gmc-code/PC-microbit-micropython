@@ -99,7 +99,7 @@ Scaffold for Tasks
 See : https://pc-microbit-micropython.readthedocs.io/en/latest/python/functions.html
 See: https://pc-microbit-micropython.readthedocs.io/en/latest/lessons/Organising_with_selection_and_definitions.html
 
-| Break the code up into spearate blocks using definitions.
+| Break the code up into separate blocks using definitions.
 | For each different type of action to do on the microbit have a separate definition.
 | An example of such a code structure is below.
 | In the scaffold, delete all the ``pass`` statements and replace them with the specific code. 
@@ -108,6 +108,7 @@ See: https://pc-microbit-micropython.readthedocs.io/en/latest/lessons/Organising
 
     from microbit import *
     import music
+
 
     def display_startupmessage():
         # replace pass with the code to display some text
@@ -180,9 +181,9 @@ Sample Edited Scaffold
 | When A is pressed, turn on the motor for 3 sec. 
 | When B is pressed, turn on the green LED for 2 sec.
 
-| From the scaffold, remove def blocks that are not needed, and defintion calls in the ``while True`` loop that are not needed.
+| From the scaffold, remove def blocks that are not needed, and definition calls in the ``while True`` loop that are not needed.
 | Import all required libraries first.
-| Place the code for the defintions next.
+| Place the code for the definitions next.
 | Place the main code last with some code before the ``while True`` loop.
 
 .. code-block:: python 
@@ -191,6 +192,7 @@ Sample Edited Scaffold
 
     def display_startupmessage():
         display.scroll('Hi')
+
 
     def use_motorA():
         # on pin 0
@@ -212,7 +214,7 @@ Sample Edited Scaffold
             use_LEDsB()
         sleep(100)
 
-        
+
 
 
 

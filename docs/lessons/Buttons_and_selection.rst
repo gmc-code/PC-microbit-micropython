@@ -35,6 +35,7 @@ If
 
     from microbit import *
 
+
     while True:
         if button_a.is_pressed():
             display.show("A")
@@ -59,6 +60,7 @@ If else
 .. code-block:: python
 
     from microbit import *
+
 
     while True:
         if button_a.is_pressed():
@@ -87,6 +89,7 @@ If elif
 
     from microbit import *
 
+
     while True:
         if button_a.is_pressed():
             display.show("A")
@@ -114,6 +117,7 @@ If elif else
 .. code-block:: python
 
     from microbit import *
+
 
     while True:
         if button_a.is_pressed():
@@ -147,6 +151,7 @@ If elif elif else
 
     from microbit import *
 
+
     while True:
         if button_a.is_pressed() and button_b.is_pressed():
             display.show(Image.ARROW_N)
@@ -165,3 +170,4 @@ If elif elif else
 
     #. Edit the code to scroll your favourite subject when both buttons are pressed together, your best subject when the A button is pressed, your favourite sport when the B button is pressed, and nothing when nothing is pressed.
     #. Edit the code to display a giraffe face when both buttons are pressed, a duck when the A button is pressed, a snake when the B button is pressed and nothing when nothing is pressed.
+

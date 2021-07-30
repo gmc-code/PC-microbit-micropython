@@ -47,6 +47,7 @@ Turn on and off pin0
 
     from microbit import *
 
+
     def turnon_0():
         pin0.write_digital(1)
 
@@ -70,6 +71,7 @@ Blink All
 .. code-block:: python
 
     from microbit import *
+
 
     def blink_all_in_sequence():
         pin0.write_digital(1)
@@ -98,6 +100,7 @@ Blink All
             blink_all()
         sleep(500)
 
+
 Blink using for i in range
 ----------------------------------------
 
@@ -106,6 +109,7 @@ Blink using for i in range
 .. code-block:: python
 
     from microbit import *
+
 
     def blink0():
         for i in range(3):
@@ -141,6 +145,7 @@ Write analog
     from microbit import *
     import random
 
+
     def pulse_on():
         sleeptime = 4
         stepsize = 30
@@ -169,3 +174,4 @@ Write analog
 .. admonition:: Tasks
 
     #. Write code so pulse all 3 LEDs.    
+

@@ -22,6 +22,7 @@ Range function examples
 
     from microbit import *
 
+
     for n in range(6):
         display.scroll(n, delay=80)
     sleep(500)
@@ -40,6 +41,7 @@ Range function examples
 
     from microbit import *
 
+
     for n in range(1, 5):
         display.scroll(n, delay=80)
     sleep(500)
@@ -57,6 +59,7 @@ Range function examples
 .. code-block:: python
 
     from microbit import *
+
 
     for n in range(1, 10, 2):
         display.scroll(n, delay=50)
