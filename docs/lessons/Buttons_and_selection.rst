@@ -169,5 +169,5 @@ If elif elif else
 .. admonition:: Tasks
 
     #. Edit the code to scroll your favourite subject when both buttons are pressed together, your best subject when the A button is pressed, your favourite sport when the B button is pressed, and nothing when nothing is pressed.
-    #. Edit the code to display a giraffe face when both buttons are pressed, a duck when the A button is pressed, a snake when the B button is pressed and nothing when nothing is pressed.
+    #. Edit the code to display a giraffe when both buttons are pressed, a duck when the A button is pressed, a snake when the B button is pressed and nothing when nothing is pressed.
 
