@@ -77,7 +77,7 @@ Range function examples
     #. Write a for loop that counts up from 0 to 5.    
     #. Write a for loop that counts up from 0 to 9 in steps of 3.
     #. Write a for loop that counts down from 9 to 0.    
-    #. Write a for loop that counts up from 9 to 0 in steps of 3.
+    #. Write a for loop that counts up from 9 to 0 in steps of 3. 
 
 
 
