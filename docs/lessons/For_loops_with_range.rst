@@ -69,6 +69,22 @@ Range function examples
         sleep(500)
 
 
+Using range to count down with negative stepsize
+------------------------------------------------
+
+
+| range(10, 0, -1) counts down from 10 to 1.
+
+.. code-block:: python
+
+    from microbit import *
+
+
+    while True:
+        for n in range(10, 0, -1):
+            display.scroll(n, delay=80)
+        sleep(500)
+
 
 ----
 
