@@ -13,12 +13,17 @@ For loops with strings
     from microbit import *
 
 
+    my_string = 'Hi Mb user'
     while True:
-        my_string = 'Hi Mb user'
-        while True:
-            for letter in my_string:
-                display.show(letter)
-                sleep(200)
+        for letter in my_string:
+            display.show(letter)
+            sleep(300)
+----
+
+.. admonition:: Tasks
+
+    #. Write a for loop to show each letter in "winner".    
+    #. Write a for loop to show each character in "2021".    
 
 ----
 
@@ -26,8 +31,22 @@ For loops with lists
 ----------------------------------------
 
 | Python can loop through each element in a list and do something with it.
-| ``num in my_list`` takes each element in the list ``my_list`` and puts it in the variable ``num`` for use in the loop.
-| In the code below, each number in the list is displayed then it is doubled and that is scrolled.
+| In the code below, each element in the list is displayed.
+
+.. code-block:: python
+
+    from microbit import *
+
+
+    while True:
+        my_list = ['Novak', 'Roger', 'Rafael']
+        while True:
+            for element in my_list:
+                display.show(how()
+                sleep(300)
+
+
+| In the code below, each number in the list is displayed then it is doubled and scrolled.
 
 .. code-block:: python
 
@@ -40,9 +59,14 @@ For loops with lists
             for num in my_list:
                 display.show(num)
                 sleep(300)
-                num = num * 2
-                display.scroll(num, delay = 50)
-                sleep(300)
+
+
+----
+
+.. admonition:: Tasks
+
+    #. Write a for loop to show each name in the list ``['Ariarna', 'Kate', 'Emma'].
+    #. Write a for loop to show each number in the list ``[1, 3, 1, 5, 1, 7].
 
 ----
 
@@ -92,8 +116,6 @@ Nested For loops
 
 .. admonition:: Tasks
 
-    #. Write a for loop to show each letter in "winner".    
-    #. Write a for loop to show each name in the list ``['Arianna', 'Kate', 'Emma'].
     #. Write a for loop that shows the result from multiplying each number in the list, ``[3, 5, 7]`` by 5.    
     #. Write a for loop that finds the sum of two numbers from the two lists: ``[2, 4, 6]`` and ``[3, 5,7]``.
 
