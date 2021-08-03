@@ -76,7 +76,7 @@ Practice tasks Answers
     while True:
         i = 1
         while I < 10:
-            display.show(i, delay=50)
+            display.scroll(i, delay=50)
             i += 1
 
 ----
@@ -91,7 +91,7 @@ Practice tasks Answers
     while True:
         i = 5
         while I > -1
-            display.show(i, delay=50)
+            display.scroll(i, delay=50)
             i -= 1
 
 ----
@@ -106,7 +106,7 @@ Practice tasks Answers
     n = [2, 3, 5, 7, 11, 13, 17, 19]
     while True:
         for x in n:
-            display.show(x, delay=50)
+            display.scroll(x, delay=50)
 
 ----
 
@@ -119,7 +119,7 @@ Practice tasks Answers
 
     while True:
         for x in range(1,10):
-            display.show(x, delay=50)
+            display.scroll(x, delay=50)
 
 
 
