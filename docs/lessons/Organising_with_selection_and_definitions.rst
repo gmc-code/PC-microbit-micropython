@@ -80,3 +80,13 @@ Organising blocks into definitions
         else:
             doC()
         sleep(1000)
+
+
+----
+
+.. admonition:: Tasks
+
+    1.  Reorganise the code in the answer to task 3 in the practice tasks 2 to follow the structure of the examples above.
+    2.  Reorganise the code in the answer to task 4 in the practice tasks 2 to follow the structure of the examples above.
+
+    
