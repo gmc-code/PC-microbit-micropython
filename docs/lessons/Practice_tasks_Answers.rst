@@ -4,18 +4,17 @@ Practice tasks Answers
 
 .. admonition:: Tasks
 
-    1.	Write code to repetitively display "Hello" one character at a time.
-    2.	Write code to repetitively scroll "microbit".
-    3.	Write code to repetitively display a heart and a giraffe.
-    4.	Write code to repetitively display 3 different shapes using a list.
-    5.	Write code to repetitively scroll the numbers 1 to 9 using a while loop.
-    6.	Write code to repetitively scroll the numbers 5 to 0 using a while loop.
-    7.	Write code to repetitively scroll the numbers from the list 2, 3, 5, 7, 11, 13, 17, 19 via a for loop.
-    8.	Write code to repetitively scroll the numbers 1 to 9 using a for loop using the range function.
+    1.  Write code to repetitively display "Hello" one character at a time.
+    2.  Write code to repetitively scroll "microbit".
+    3.  Write code to repetitively display a heart and a giraffe.
+    4.  Write code to repetitively display 3 different shapes using a list.
+    5.  Write code to repetitively scroll the numbers 1 to 9 using a while loop.
+    6.  Write code to repetitively scroll the numbers 5 to 0 using a while loop.
+    7.  Write code to repetitively scroll the numbers from the list 2, 3, 5, 7, 11, 13, 17, 19 via a for loop.
+    8.  Write code to repetitively scroll the numbers 1 to 9 using a for loop using the range function.
 
 
-
-1.	Write code to repetitively display "Hello" one character at a time.
+1.  Write code to repetitively display "Hello" one character at a time.
 
 .. code-block:: python
 
@@ -25,9 +24,10 @@ Practice tasks Answers
     while True:
         display.show("Hello")
 
+
 ----
 
-2.	Write code to repetitively scroll "microbit".
+2.  Write code to repetitively scroll "microbit".
 
 .. code-block:: python
 
@@ -39,7 +39,7 @@ Practice tasks Answers
 
 ----
 
-3.	Write code to repetitively display a heart and a giraffe.
+3.  Write code to repetitively display a heart and a giraffe.
 
 .. code-block:: python
 
@@ -54,7 +54,7 @@ Practice tasks Answers
 
 ----
 
-4.	Write code to repetitively display 3 different shapes using a list.
+4.  Write code to repetitively display 3 different shapes using a list.
 
 .. code-block:: python
 
@@ -66,7 +66,7 @@ Practice tasks Answers
 
 ----
 
-5.	Write code to repetitively scroll the numbers 1 to 9 using a while loop.
+5.  Write code to repetitively scroll the numbers 1 to 9 using a while loop.
 
 .. code-block:: python
 
@@ -81,7 +81,7 @@ Practice tasks Answers
 
 ----
 
-6.	Write code to repetitively scroll the numbers 5 to 0 using a while loop.
+6.  Write code to repetitively scroll the numbers 5 to 0 using a while loop.
 
 .. code-block:: python
 
@@ -96,7 +96,7 @@ Practice tasks Answers
 
 ----
 
-7.	Write code to repetitively scroll the numbers from the list 2, 3, 5, 7, 11, 13, 17, 19 via a for loop.
+7.  Write code to repetitively scroll the numbers from the list 2, 3, 5, 7, 11, 13, 17, 19 via a for loop.
 
 .. code-block:: python
 
@@ -110,7 +110,7 @@ Practice tasks Answers
 
 ----
 
-8.	Write code to repetitively scroll the numbers 1 to 9 using a for loop using the range function.
+8.  Write code to repetitively scroll the numbers 1 to 9 using a for loop using the range function.
 
 .. code-block:: python
 
