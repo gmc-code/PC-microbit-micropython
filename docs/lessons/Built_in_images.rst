@@ -46,7 +46,8 @@ Display.show a list of images
 .. py:function:: show(imagelist, delay=400)
 
     | Display images from a list in sequence.
-    | Each image in a list of images is shown with ``delay`` milliseconds between them. The delay defaults to 400ms if it is omitted.
+    | Each image in a list of images is shown with ``delay`` milliseconds between them.
+    | The delay defaults to 400ms if it is omitted.
 
 
 | The code below shows a sequence of 5 face images.

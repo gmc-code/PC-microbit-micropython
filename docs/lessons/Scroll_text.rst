@@ -12,14 +12,15 @@ Display.scroll simple version
     | Scrolls ``value`` horizontally on the microbit LED display. 
     | ``value`` can be an integer or float (a decimal) or a string.
 
-To scroll the string (in single quotes), 'Hi', across the display, use:
+To scroll the string (in single quotes), 'Hi', across the display, use ``display.scroll('Hi')``:
 
 .. code-block:: python
 
     from microbit import *
 
 
-    display.scroll('Hi')
+    while True:
+        display.scroll('Hi')
 
 
 Strings can be in double quotes like "Hello" :
@@ -29,7 +30,8 @@ Strings can be in double quotes like "Hello" :
     from microbit import *
 
 
-    display.scroll("Hello")
+    while True:
+        display.scroll("Hello")
 
 
 To scroll the integer, 5, across the display, use:
@@ -39,7 +41,8 @@ To scroll the integer, 5, across the display, use:
     from microbit import *
 
 
-    display.scroll(5)
+    while True:
+        display.scroll(5)
 
 
 To scroll the float, 3.14, across the display, use:
@@ -49,7 +52,8 @@ To scroll the float, 3.14, across the display, use:
     from microbit import *
 
 
-    display.scroll(3.14)
+    while True:
+        display.scroll(3.14)
 
 ------
 
@@ -79,7 +83,8 @@ To scroll the string, 'Hi', across the display quickly, use a short delay of abo
     from microbit import *
 
 
-    display.scroll('Hi', 50)
+    while True:
+        display.scroll('Hi', 50)
 
 To scroll the float, 3.14159, across the display slowly, use a long delay of about 300:
 
@@ -88,7 +93,8 @@ To scroll the float, 3.14159, across the display slowly, use a long delay of abo
     from microbit import *
 
 
-    display.scroll(3.14159, delay=300)
+    while True:
+        display.scroll(3.14159, delay=300)
 
 ----
 

@@ -13,14 +13,15 @@ Display.show simple version
     | Each letter, digit is shown with 400 milliseconds between them.
 
 
-To show the string, "Hi", one character at a time on the display, use:
+To show the string, 'Hi', one character at a time on the display, use ``display.show('Hi')``:
 
 .. code-block:: python
 
     from microbit import *
 
 
-    display.show('Hi')
+    while True:
+        display.show('Hi')
 
 
 To show the integer, 16, one digit at a time on the display, use:
@@ -30,7 +31,8 @@ To show the integer, 16, one digit at a time on the display, use:
     from microbit import *
 
 
-    display.show(16)
+    while True:
+        display.show(16)
 
 
 To show the float, 3.14, one digit at a time on the display, use:
@@ -40,7 +42,8 @@ To show the float, 3.14, one digit at a time on the display, use:
     from microbit import *
 
 
-    display.show(3.14)
+    while True:
+        display.show(3.14)
 
 ----
 
@@ -67,9 +70,9 @@ Display.clear
 
     from microbit import *
 
-
-    display.show(3.14)
-    display.clear()
+    while True:
+        display.show(3.14)
+        display.clear()
 
 ----
 
@@ -89,9 +92,9 @@ To show the string, "Hi", with a short delay of 200ms:
 
     from microbit import *
 
-
-    display.show('Hi', 200)
-    display.clear()
+    while True:
+        display.show('Hi', 200)
+        display.clear()
 
 To show the float, 3.14159, across the display slowly use a long delay of about 300ms:
 
@@ -100,8 +103,9 @@ To show the float, 3.14159, across the display slowly use a long delay of about 
     from microbit import *
 
 
-    display.show(3.14159, delay=300)
-    display.clear()
+    while True:
+        display.show(3.14159, delay=300)
+        display.clear()
 
 ----
 
