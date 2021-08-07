@@ -20,6 +20,7 @@ Sleep
 
     sleep(1000)
 
+| Sleeps are often used after displaying text and images to have a pause before other actions.
 
 ----
 
