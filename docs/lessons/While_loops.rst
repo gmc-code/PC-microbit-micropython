@@ -10,21 +10,6 @@ While_loops
     :scale: 60 %
 
 
-While true
-----------------------------------------
-
-| ``while True:`` loops run forever.
-
-.. code-block:: python
-
-    from microbit import *
-
-
-    while True:
-        display.scroll('I am a microbit', delay=80)
-
-----
-
 Counters
 ----------------------------------------
 

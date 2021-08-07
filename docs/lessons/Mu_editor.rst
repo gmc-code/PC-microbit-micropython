@@ -14,7 +14,7 @@ Installing at school
 --------------------------
 
 #. Do a windows search for ``Software centre`` and open it.
-#. Seach for Mu.
+#. Search for Mu.
 #. Install Mu editor.
 
 ----
@@ -57,3 +57,13 @@ Useful keyboard shortcuts are at: https://codewith.mu/en/tutorials/1.1/shortcuts
  CTRL V        Paste text from the clipboard.
  CTRL SHIFT S  Save the current tab with a new name (or double click the tab's name).
 =============  ======================================================================
+
+----
+
+Fixing indenting quickly
+--------------------------
+
+| Select multiple lines at once.
+| Unindent them all at once using ``SHIFT TAB``.
+| Indent them all at once using ``TAB``
+

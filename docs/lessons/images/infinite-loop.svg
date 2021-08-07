@@ -30,14 +30,14 @@
      inkscape:pagecheckerboard="0"
      showgrid="false"
      inkscape:zoom="2.2573727"
-     inkscape:cx="199.12529"
+     inkscape:cx="199.34679"
      inkscape:cy="186.72149"
      inkscape:window-width="1920"
      inkscape:window-height="1027"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="g66" />
+     inkscape:current-layer="switch10" />
   <defs
      id="defs2" />
   <g
@@ -79,19 +79,21 @@
                  style="display: inline-block; font-size: 18px; font-family: Helvetica; color: #000000; line-height: 1.2; pointer-events: all; font-weight: bold; white-space: normal; word-wrap: normal; ">Infinite<xhtml:br
    style="font-size: 18px" />
 
+
+
 Loop</xhtml:div>
             </xhtml:div>
           </xhtml:div>
         </foreignObject>
         <text
-           x="251"
-           y="261"
+           x="242.14014"
+           y="268.53088"
            fill="#000000"
            font-family="Helvetica"
            font-size="18px"
            text-anchor="middle"
            font-weight="bold"
-           id="text8">Infinite...</text>
+           id="text8">forever</text>
       </switch>
     </g>
     <path
