@@ -9,7 +9,7 @@ Sleep
 
     | Wait for n milliseconds. 
     | n can be an integer or a decimal (floating point number). 
-    | One second is 1000 milliseconds.
+    | 1000 milliseconds is one second.
 
 | ``sleep(1000)`` will pause the program for one second. 
 
@@ -23,7 +23,7 @@ Sleep
 
 ----
 
-.. admonition:: Tasks
+.. admonition:: Questions
 
     #. Write a sleep for half a second.
     #. Write a sleep for two seconds. 

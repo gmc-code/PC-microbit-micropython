@@ -28,7 +28,7 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
 
     lessons/Mu_editor.rst
     lessons/Microbit_library.rst
-    lessons/Event_loop.rst
+    lessons/Infinite_loop.rst
     lessons/Sleep.rst
     lessons/Scroll_text.rst
     lessons/Show_text.rst

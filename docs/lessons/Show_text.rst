@@ -65,6 +65,7 @@ Display.clear
 
 | After ``display.show`` is used, the last digit or character will be left displayed.
 | Use ``display.clear()`` to remove the last digit or character from the display.
+| Use a sleep after the clear so htat the display remains blank for a short time.
 
 .. code-block:: python
 
@@ -73,6 +74,7 @@ Display.clear
     while True:
         display.show(3.14)
         display.clear()
+        sleep(500)
 
 ----
 
@@ -95,6 +97,7 @@ To show the string, "Hi", with a short delay of 200ms:
     while True:
         display.show('Hi', 200)
         display.clear()
+        sleep(500)
 
 To show the float, 3.14159, across the display slowly use a long delay of about 300ms:
 
@@ -106,6 +109,7 @@ To show the float, 3.14159, across the display slowly use a long delay of about 
     while True:
         display.show(3.14159, delay=300)
         display.clear()
+        sleep(500)
 
 ----
 
@@ -116,26 +120,10 @@ To show the float, 3.14159, across the display slowly use a long delay of about 
 
 ----
 
-Sleep
-----------------------------------------
-.. py:function:: sleep(n)
-
-    | Wait for n milliseconds. One second is 1000 milliseconds.
-    | ``n`` can be an integer or a floating point number.
-
-| ``sleep(1000)`` will pause the microbit for one second. 
-| ``sleep(500)`` will pause the microbit for half a second. 
-| ``sleep(100)`` will pause the microbit for 0.1 sec. 
-
-----
-
-while True loops
+show at different speeds
 ----------------------------------------
 
-| Microbit code can be repeated using a ``while True:`` loop.
-| This continues forever.
-| The code to be repeated has to be indented with a tab character.
-| Python uses indenting to group the lines of code together in a ``while`` loop.
+| The code below uses a shorter delay for the initial text then a longer delay for the main information.
 
 .. code-block:: python
 
@@ -165,7 +153,7 @@ while True loops
             display.clear()
             sleep(500)
 
-    2. Modify the code below to display your name and age in years.
+    1. Modify the code below to display your name and age in years.
 
     .. code-block:: python
 
