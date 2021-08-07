@@ -81,9 +81,18 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
 
 .. toctree::
     :maxdepth: 2
-    :caption: Bots
+    :caption: Bots/MoveMotor
     :numbered:
 
-    breadboards/Move_Motor_info.rst
-    breadboards/Move_Motor_LEDs.rst
-    breadboards/Move_Motor.rst
+    bots/MoveMotor/Move_Motor_info.rst
+    bots/MoveMotor/Move_Motor_LEDs.rst
+    bots/MoveMotor/Move_Motor.rst
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Bots/BitBotXL
+    :numbered:
+
+    bots/BitBotXL/BitBotXL_info.rst
+    bots/BitBotXL/BitBotXL_LEDs.rst
+    bots/BitBotXL/BitBotXL.rst
