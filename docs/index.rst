@@ -28,6 +28,7 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
 
     lessons/Mu_editor.rst
     lessons/Microbit_library.rst
+    lessons/Event_loop.rst
     lessons/Scroll_text.rst
     lessons/Show_text.rst
     lessons/Built_in_images.rst
@@ -76,3 +77,13 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
     breadboards/Potentiometer.rst
     breadboards/Potentiometer_with_LED.rst
     breadboards/Combined_models.rst
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Bots
+    :numbered:
+
+    breadboards/Move_Motor_info.rst
+    breadboards/Move_Motor_LEDs.rst
+    breadboards/Move_Motor.rst
