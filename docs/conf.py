@@ -80,8 +80,8 @@ html_theme_options = {
     # 'style_nav_header_background': 'blue',
     'style_nav_header_background': 'linear-gradient(to right, blueviolet 15%, limegreen 50%, royalblue 80%)',
     # Toc options; 
-    'collapse_navigation': False,  # False so nav entries have the [+] icons
-    'sticky_navigation': True,  # False so the nav does not scroll
+    'collapse_navigation': True,  # True so nav entries have the [+] icons
+    'sticky_navigation': True,  # True so the nav scrolls with main page
     'navigation_depth': 4,  # -1 for no limit
     'includehidden': True,  # displays toctree that are hidden
     'titles_only': True  # False so page subheadings are in the nav.
