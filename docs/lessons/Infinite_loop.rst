@@ -13,7 +13,10 @@ While true
 ----------------------------------------
 
 | ``while True:`` loops run forever.
+| Instead of using a condition that returns True or False, ``True`` is used to make the while loop run forever.
+
 | The statements within the loop are indented with the tab key which is equivalent to 4 spaces.
+
 | The ``while True`` loop below scrolls the text ``I never stop`` across the LED display over and over again.
 
 .. code-block:: python
