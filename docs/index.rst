@@ -92,6 +92,7 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
     :maxdepth: 2
     :caption: Bots/BitBotXL
     :numbered:
+    :hidden:
 
     bots/BitBotXL/BitBotXL_info.rst
     bots/BitBotXL/BitBotXL_LEDs.rst
