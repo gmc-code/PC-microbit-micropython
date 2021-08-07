@@ -46,14 +46,18 @@ Display.show a list of images
 .. py:function:: show(imagelist, delay=400)
 
     | Display images from a list in sequence.
-    | Each image in a list of images is shown with ``delay`` milliseconds between them.
+    | Each image in a list of images is shown with ``delay`` milliseconds between them. The delay defaults to 400ms if it is omitted.
+
+
+| The code below shows a sequence of 5 face images.
 
 .. code-block:: python
 
     from microbit import *
 
 
-    display.show([Image.HAPPY, Image.SMILE, Image.SAD, Image.CONFUSED, Image.ANGRY], delay=500)
+    while True:
+        display.show([Image.HAPPY, Image.SMILE, Image.SAD, Image.CONFUSED, Image.ANGRY], delay=500)
 
 ----
 
@@ -69,7 +73,20 @@ Image lists
 ----------------------------------------
 
 | When the list of images is more than a few, it is usual to put the list in a variable.
-| The code below displays a list of shapes, so the vaibale name chosen is ``shape_list``.
+| The list of 5 images is placed in hte variable ``face_list``.
+
+.. code-block:: python
+
+    from microbit import *
+
+
+    face_list = [Image.HAPPY, Image.SMILE, Image.SAD, Image.CONFUSED, Image.ANGRY]
+    while True:
+        display.show(face_list, delay=500)
+
+
+| The code below displays a list of shapes, so the variable name chosen is ``shape_list``.
+| Whitespace (tabes, spaces, line endings) are ignored with a list, so a long list can be set out like that below, all lined up for easy reading.
 
 .. code-block:: python
 
@@ -84,7 +101,8 @@ Image lists
         Image.SQUARE,
         Image.SQUARE_SMALL
     ]
-    display.show(shape_list, delay=100)
+    while True:
+        display.show(shape_list, delay=100)
 
 ----
 
@@ -99,22 +117,22 @@ Image lists
 Built-in Image lists
 ----------------------------------------
 
-| When the list of images is more than a few, it is usual to put the list in a variable.
+| The built-in lists of images are called ``Image.ALL_CLOCKS`` and ``Image.ALL_ARROWS``:.
 | The code below displays the built-in list of clock images.
-| The built-in lists of images are called ``Image.ALL_CLOCKS`` and ``Image.ALL_ARROWS``:
 
 .. code-block:: python
 
     from microbit import *
 
 
-    display.show(Image.ALL_CLOCKS, loop=True, delay=100)
+    while True:
+        display.show(Image.ALL_CLOCKS, delay=100)
 
 ----
 
 .. admonition:: Tasks
 
-    #. Write code to display the images in the built-in image list: ``Image.ALL_ARROWS``.    
+    #. Write code to display the images in the built-in image list: ``Image.ALL_ARROWS``.
 
 ----
 
