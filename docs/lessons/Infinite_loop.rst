@@ -13,7 +13,7 @@ While true
 ----------------------------------------
 
 | ``while True:`` loops run forever.
-| Instead of using a condition that returns True or False, ``True`` is used to make the while loop run forever.
+| Instead of using a condition that returns True or False, ``True`` is used in place of the condition to make the while loop run forever.
 
 | The statements within the loop are indented with the tab key which is equivalent to 4 spaces.
 
