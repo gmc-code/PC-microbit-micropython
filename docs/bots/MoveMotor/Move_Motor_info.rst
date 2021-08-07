@@ -2,7 +2,7 @@
 Move Motor Info
 ====================================================
 
-.. image:: images/move-motor.jpg
+.. image:: images/move-motor_2.jpg
     :scale: 50 %
 
 | Length 110mm.

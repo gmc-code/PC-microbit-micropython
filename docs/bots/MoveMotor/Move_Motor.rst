@@ -1,7 +1,10 @@
 ====================================================
-Mu editor
+Move Motor
 ====================================================
 
+.. image:: images/move-motor.jpg
+    :scale: 50 %
+    
 Mu editor is the simplest choice of windows apps to use when programming the microbit with micropython.
 
 It can be downlaoded from: https://codewith.mu/en/download

@@ -22,7 +22,7 @@ Installing at school
 First use
 --------------------------
 
-#. Click the **Mode** icon and set to **BBC** mdoe
+#. Click the **Mode** icon and set the mode to **BBC micro:bit**.
 #. Create a new file and save it in a folder called "DigiStem".
 #. Create code for the microbit then click **Check** to check for any errors.
 #. To put code onto the microbit, connect it via USB then click the **Flash** icon.

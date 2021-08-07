@@ -11,25 +11,18 @@ NeoPixel module
 -----------------
 
 | The neopixel module allows use of WS2812 individually addressable RGB LEDs with the micro:bit. 
-| First, import the neopixel library.
+| First, import the neopixel library with ``import neopixel``.
 
 .. code-block:: python
 
     from microbit import *
-
-----
-
-
     import neopixel
-
-.. py:module:: neopixel
-
 
 
 Setup LEDs
 ----------------------------------------
 
-.. py:class:: NeoPixel(pin, n)
+.. py:method:: neopixel.NeoPixel(pin, n)
 
     | Initialise a strip of neopixel LEDs 
     | ``pin`` is the pin that they are connected by.
