@@ -3,8 +3,12 @@ While_loops
 ====================================================
 
 | See: https://www.w3schools.com/python/python_while_loops.asp
-| While loops run a set of statements as long as a condition is true.
+| While loops run a set of statements as long as a test condition is true.
 | The statements within the loop are indented.
+
+.. image:: images/while-loop.jpg
+    :scale: 60 %
+
 
 While true
 ----------------------------------------
