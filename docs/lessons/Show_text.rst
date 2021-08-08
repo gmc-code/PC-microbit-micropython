@@ -88,7 +88,7 @@ Display.show with delay
     | The default delay is 400ms. When no delay is specified the default of 400ms is used.
     | The delay can be specified with the parameter name as in ``display.show('Hi', delay=400)``, or just as a number as in ``display.show('Hi', 400)``.
 
-To show the string, "Hi", with a short delay of 200ms:
+To show the string, '``Hi``', with a short delay of 200ms:
 
 .. code-block:: python
 
@@ -99,7 +99,7 @@ To show the string, "Hi", with a short delay of 200ms:
         display.clear()
         sleep(500)
 
-To show the float, 3.14159, across the display slowly use a long delay of about 300ms:
+To show the float, ``3.14159``, across the display slowly use a long delay of about 300ms:
 
 .. code-block:: python
 
