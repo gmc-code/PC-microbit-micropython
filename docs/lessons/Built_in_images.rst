@@ -2,13 +2,13 @@
 Built in images
 ====================================================
 
-| The microbit library contains several built in images.
+| The microbit library contains over 60 built in images that have specific names.
 | e.g ``Image.HEART``
 | The ``Image`` object must have a capital ``I``.
 | The built in image name must be in capitals.  e.g ``HEART`` not ``heart``.
 | No quotation marks are used. e.g ``Image.HEART`` not ``'Image.HEART'``.
 | The same syntax that was used to show text can be used for images.
-| When typing in ``Image.``, as soon as the stop is typed a drop list of images will be displayed in Mu editor to allow selection of an image.
+| In Mu editor, when typing ``Image.``, as soon as the stop is typed, a drop list of images will be displayed to allow selection of an image.
 
 ----
 
@@ -50,7 +50,7 @@ Display.show a list of images
     | The delay defaults to 400ms if it is omitted.
 
 
-| The code below shows a sequence of 5 face images.
+| The code below shows a sequence of 5 face images with half a second between them.
 
 .. code-block:: python
 
@@ -74,7 +74,7 @@ Image lists
 ----------------------------------------
 
 | When the list of images is more than a few, it is usual to put the list in a variable.
-| The list of 5 images is placed in hte variable ``face_list``.
+| The list of 5 images is placed in the variable ``face_list``.
 
 .. code-block:: python
 
