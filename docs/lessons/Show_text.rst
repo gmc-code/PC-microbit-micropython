@@ -283,3 +283,11 @@ Display.show full syntax
 
     1. Experiment with the ``show`` named parameters by trying them out with True or False to see what effect they have.
 
+----
+
+.. admonition:: Tip
+
+    | Display.show has a ``wait`` parameter that can be set to ``False`` so that displaying information on the microbit display doesn't hold up other actions like driving motors on a bot. 
+    | e.g. ``display.show(motor_speed, wait=False)``
+
+
