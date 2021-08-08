@@ -252,3 +252,4 @@ Reverse direction of list using the reversed function
     while True:
         display.show(clock_list_antickwise, delay=200)
 
+
