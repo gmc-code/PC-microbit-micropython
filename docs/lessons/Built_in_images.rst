@@ -75,6 +75,7 @@ Image lists
 
 | When the list of images is more than a few, it is usual to put the list in a variable.
 | The list of 5 images is placed in the variable ``face_list``.
+| The variable is then used to display the images: ``display.show(face_list, delay=500)``.
 
 .. code-block:: python
 
@@ -87,7 +88,7 @@ Image lists
 
 
 | The code below displays a list of shapes, so the variable name chosen is ``shape_list``.
-| Whitespace (tabes, spaces, line endings) are ignored with a list, so a long list can be set out like that below, all lined up for easy reading.
+| Whitespace (tabes, spaces, line endings) are ignored within a list, so a long list can be set out like that below, with all the Images lined up for easy reading.
 
 .. code-block:: python
 
