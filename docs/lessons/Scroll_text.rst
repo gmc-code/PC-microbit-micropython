@@ -203,7 +203,7 @@ Display.scroll using variables
 
     while True:
         display.scroll('Player=', 50)
-        display.scroll(player, 50)
+        display.scroll(player, 80)
         display.scroll('Goals=', 50)
         display.scroll(goals, 150)
         display.scroll('Goals per game=', 50)
@@ -230,7 +230,7 @@ Display.scroll using variables
 
             while True:
                 display.scroll('Player=', 50)
-                display.scroll(player, 50)
+                display.scroll(player, 80)
                 display.scroll('Goals=', 50)
                 display.scroll(goals, 150)
                 display.scroll('Goals per game=', 50)
@@ -249,7 +249,7 @@ Display.scroll using variables
 
             while True:
                 display.scroll('Batsman=', 50)
-                display.scroll(batsman, 50)
+                display.scroll(batsman, 80)
                 display.scroll('Runs=', 50)
                 display.scroll(runs, 150)
                 display.scroll('Ave=', 50)
