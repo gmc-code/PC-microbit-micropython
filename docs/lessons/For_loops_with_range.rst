@@ -42,11 +42,12 @@ Range function with start and stop values
 
 .. py:function:: range(startvalue, stopvalue)
 
-    Returns a sequence of numbers, starting from the ``startvalue`` number, and increments by 1 (by default), and ends before the ``stopvalue`` number. 
+    Returns a sequence of numbers, starting at the ``startvalue`` number, and increments by 1 (by default), and ends before the ``stopvalue`` number. 
 
-| range(2, 6) returns the numbers 2,3,4,5. It starts at 1. It goes up by 1. It stops before 6, at 5.
+| range(2, 6) returns the numbers 2,3,4,5. It starts at 2. It goes up by 1. It stops before 6, at 5.
+| range(2, 6) can be read as 'range of 2 up to but not including 6'.
 
-| The code below will display the numbers from 1 to 4.
+| The code below will display the numbers 2,3,4,5.
 
 .. code-block:: python
 
@@ -54,7 +55,7 @@ Range function with start and stop values
 
 
     while True:
-        for n in range(1, 5):
+        for n in range(2, 6):
             display.scroll(n, delay=80)
         sleep(500)
 
@@ -62,8 +63,8 @@ Range function with start and stop values
 
 .. admonition:: Tasks
 
-    #. Write a for loop that displays the numbers from 0 to 5. 
-    #. Write a for loop that displays the numbers from 0 up to but not including 10. 
+    #. Write a for loop that displays the numbers 3,4,5,6,7. 
+    #. Write a for loop that displays the numbers from 4 up to but not including 9. 
 
 ----
 
