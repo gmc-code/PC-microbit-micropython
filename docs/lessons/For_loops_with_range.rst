@@ -1,10 +1,10 @@
 ====================================================
-For loops with range
+For loops using the range function
 ====================================================
 
 See: https://www.w3schools.com/python/python_for_loops.asp
 
-| To loop through a set of code a specified number of times, we can use the range() function,
+| To loop through a set of code a specified number of times, use the range() function.
 | The range() function returns a sequence of numbers, starting from 0 by default, and increments by 1 (by default), and ends at a specified number.
 
 Range function examples
@@ -16,7 +16,7 @@ Range function examples
 
 | range(3) returns the numbers 0, 1, 2. It starts at 0. It goes up by 1. It stops before 3, at 2.
 
-| The code below will display the numbers from 0 to 5.
+| The code below will display the numbers from 0 to 2.
 
 .. code-block:: python
 
@@ -24,9 +24,16 @@ Range function examples
 
 
     while True:
-        for n in range(6):
+        for n in range(3):
             display.scroll(n, delay=80)
         sleep(500)
+
+----
+
+.. admonition:: Tasks
+
+    #. Write a for loop that displays the numbers from 0 to 5. 
+    #. Write a for loop that displays the numbers from 0 up to but not including 10. 
 
 ----
 
@@ -50,6 +57,13 @@ Range function examples
 
 ----
 
+.. admonition:: Tasks
+
+    #. Write a for loop that displays the numbers from 0 to 5. 
+    #. Write a for loop that displays the numbers from 0 up to but not including 10. 
+
+----
+
 .. py:function:: range(startvalue, stopvalue, stepsize)
 
     Returns a sequence of numbers, starting from the ``startvalue`` number, and increments by ``stepsize``, and ends before the ``stopvalue`` number. 
@@ -68,6 +82,14 @@ Range function examples
             display.scroll(n, delay=50)
         sleep(500)
 
+----
+
+.. admonition:: Tasks
+
+    #. Write a for loop that displays the numbers from 0 to 5. 
+    #. Write a for loop that displays the numbers from 0 up to but not including 10. 
+
+----
 
 Using range to count down with negative stepsize
 ------------------------------------------------
