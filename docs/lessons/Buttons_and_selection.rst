@@ -37,6 +37,20 @@ Selection
 if
 ----------------------------------------
 
+
+.. |img_sel_1| image:: images/if.jpg
+    :scale: 75 %
+
+.. |img_sel_2| .. image:: images/if_else.jpg
+    :scale: 75 %
+
+.. |img_sel_3| .. image:: images/if_elif_else.jpg
+    :scale: 75 %
+
++-----------+-----------+-----------+
+| img_sel_1 | img_sel_2 | img_sel_3 |
++-----------+-----------+-----------+
+
 | ``if`` requires a condition that returns ``True`` or ``False``.
 | The code below checks if the A button is pressed and displays "A" if it is.
 | A short sleep pauses the code between presses.
