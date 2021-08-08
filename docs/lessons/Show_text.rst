@@ -81,8 +81,15 @@ Display.clear
 .. admonition:: Tip
 
     The clear parameter can be set to True to clear the last displayed character.
-    show('Hi', delay=400, clear=True)
-    See the last section fo this page for the full syntax.
+    ``show('Hi', clear=True)``
+    See the last section of this page for the full syntax.
+
+    .. code-block:: python
+
+        from microbit import *
+
+        while True:
+            display.show(3.14, clear=True)
 
 
 ----
