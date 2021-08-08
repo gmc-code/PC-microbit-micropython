@@ -256,4 +256,9 @@ Reverse direction of list using the reversed function
     while True:
         display.show(clock_list_antickwise, delay=200)
 
+----
 
+.. admonition:: Tasks
+
+    #. Write code to display all the clock images clockwise then anticlockwise.
+    #. Write code to display all the arrow images clockwise then anticlockwise.
