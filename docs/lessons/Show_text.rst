@@ -153,7 +153,7 @@ show at different speeds
             display.clear()
             sleep(500)
 
-    1. Modify the code below to display your name and age in years.
+    2. Modify the code below to display your name and age in years.
 
     .. code-block:: python
 
