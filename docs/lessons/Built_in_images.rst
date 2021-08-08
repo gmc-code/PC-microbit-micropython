@@ -214,18 +214,20 @@ Advanced use of Built-in Image lists
 ----------------------------------------
 
 | Image.ALL_CLOCKS and Image.ALL_ARROWS are python objects that can be converted to lists of Image objects.
+| Once converted to a list of Images, the list can be reversed to so that the images can be displayed in an anticlockwise direction instead of clockwise.
 
 | ``list(Image.ALL_CLOCKS)`` can convert ``Image.ALL_CLOCKS`` to the list: 
-| ``[Image.CLOCK12, Image.CLOCK1, Image.CLOCK2, Image.CLOCK3, Image.CLOCK4, Image.CLOCK5, Image.CLOCK6, Image.CLOCK7, Image.CLOCK8, Image.CLOCK9, Image.CLOCK10, Image.CLOCK11]``
+| [Image.CLOCK12, Image.CLOCK1, Image.CLOCK2, Image.CLOCK3, Image.CLOCK4, Image.CLOCK5, Image.CLOCK6, Image.CLOCK7, Image.CLOCK8, Image.CLOCK9, Image.CLOCK10, Image.CLOCK11]
 
 | ``list(Image.ALL_ARROWS)`` can convert ``Image.ALL_ARROWS`` to the list:
-| ``[Image.ARROW_N, Image.ARROW_NE, Image.ARROW_E, Image.ARROW_SE, Image.ARROW_S, Image.ARROW_SW, Image.ARROW_W, Image.ARROW_NW]``
+| [Image.ARROW_N, Image.ARROW_NE, Image.ARROW_E, Image.ARROW_SE, Image.ARROW_S, Image.ARROW_SW, Image.ARROW_W, Image.ARROW_NW]
 
 
 Reverse direction of list using list slicing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | A list, ``arrow_list``, can be reversed using the slicing technique: ``arrow_list[::-1]``.
+| ``arrow_list_antickwise = arrow_list[::-1]`` reverses the list and places it in a the variable ``arrow_list_antickwise``.
 
 .. code-block:: python
 
@@ -242,7 +244,7 @@ Reverse direction of list using the reversed function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | A list, ``clock_list``, can be reversed using the reversed function: ``reversed(clock_list)``.
-| This python object from the reversed function can be converted to a list for reuse by using ``list(reversed(clock_list))``.
+| The python object obtained from the reversed function can be converted to a list for reuse by using ``list(reversed(clock_list))`` and placing the result in the variable ``clock_list_antickwise``.
 
 .. code-block:: python
 
