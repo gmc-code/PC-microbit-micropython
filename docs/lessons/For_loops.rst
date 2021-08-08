@@ -6,24 +6,24 @@ For loops with strings
 ----------------------------------------
 
 | Python can loop through each character in a string and do something with it.
-| ``for letter in my_string`` takes each character in the string ``my_string`` and puts it in the variable ``letter``.
+| ``for letter in welcome_string`` takes each character in the string ``welcome_string`` and puts it in the variable ``letter``.
 
 .. code-block:: python
 
     from microbit import *
 
 
-    my_string = 'Hi Mb user'
+    welcome_string = 'Hi Mb user'
     while True:
-        for letter in my_string:
+        for letter in welcome_string:
             display.show(letter)
             sleep(300)
 ----
 
 .. admonition:: Tasks
 
-    #. Write a for loop to show each letter in "winner".    
-    #. Write a for loop to show each character in "2021".    
+    #. Write a for loop to show each letter in 'winner'.    
+    #. Write a for loop to show each character in '2021'.    
 
 ----
 
@@ -63,8 +63,8 @@ For loops with lists
 
 .. admonition:: Tasks
 
-    #. Write a for loop to scroll each name in the list ``['Ariarne', 'Cate', 'Emma', 'Kaylee'].
-    #. Write a for loop to show each number in the list ``[1, 1, 2, 3, 5, 8].
+    #. Write a for loop to scroll each name in the list ``['Ariarne', 'Cate', 'Emma', 'Kaylee']``.
+    #. Write a for loop to show each number in the list ``[1, 1, 2, 3, 5, 8]``.
 
 ----
 
