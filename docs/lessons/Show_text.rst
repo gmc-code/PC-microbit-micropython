@@ -80,9 +80,8 @@ Display.clear
 
 .. admonition:: Tip
 
-    The clear parameter can be set to True to clear the last displayed character.
-    ``show('Hi', clear=True)``
-    See the last section of this page for the full syntax.
+    | Display.show has a ``clear`` parameter that can be set to True to clear the last displayed character. e.g. ``display.show('Hi', clear=True)``
+    | See the last section of this page for the full syntax.
 
     .. code-block:: python
 
