@@ -10,7 +10,7 @@ Display.scroll simple version
 .. py:function:: scroll(value)
 
     | Scrolls ``value`` horizontally on the microbit LED display. 
-    | ``value`` can be an integer or float (a decimal) or a string.
+    | ``value`` can be an integer or float (a decimal) or a string (text in quotes).
 
 To scroll the string (in single quotes), 'Hi', across the display, use ``display.scroll('Hi')``:
 
