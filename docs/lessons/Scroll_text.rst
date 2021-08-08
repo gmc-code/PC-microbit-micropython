@@ -87,6 +87,7 @@ To scroll the string, 'Hi', across the display quickly, use a short delay of abo
     while True:
         display.scroll('Hi', 50)
 
+
 To scroll the float, 3.14159, across the display slowly, use a long delay of about 300:
 
 .. code-block:: python
