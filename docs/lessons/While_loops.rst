@@ -6,9 +6,9 @@ While loops
 | While loops run a set of statements as long as a test condition is true.
 | The statements within the loop are indented.
 
-.. image:: images/while-loop.jpg
-    :scale: 60 %
-
+.. image:: images/while_loop.png
+    :scale: 75 %
+    :align: center
 
 Counters
 ----------------------------------------
@@ -25,6 +25,10 @@ Counters
 
 Counting up
 ----------------------------------------
+
+.. image:: images/while_counter.png
+    :scale: 75 %
+    :align: center
 
 | In the example below, ``i`` is the counter.
 | ``i`` starts off at 0 and is increased by 1 in the while loop line: ``i += 1``.
