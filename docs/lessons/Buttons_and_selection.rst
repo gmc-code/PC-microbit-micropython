@@ -9,8 +9,13 @@ See https://microbit-micropython.readthedocs.io/en/latest/tutorials/buttons.html
 Button is pressed
 ----------------------------------------
 
-| ``button_a.is_pressed()`` returns ``True`` if the A button is being pressed or ``False`` if not.
-| ``button_b.is_pressed()`` returns ``True`` if the B button is being pressed or ``False`` if not.
+.. py:function:: button_a.is_pressed()
+
+    | returns ``True`` if the A button is being pressed or ``False`` if not.
+
+.. py:function:: button_b.is_pressed()
+
+    | returns ``True`` if the B button is being pressed or ``False`` if not.
 
 ----
 
