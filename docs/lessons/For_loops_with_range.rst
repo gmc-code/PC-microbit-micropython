@@ -32,8 +32,8 @@ Range function starting at 0
 
 .. admonition:: Tasks
 
-    #. Write a for loop that displays the numbers from 0 to 5. 
-    #. Write a for loop that displays the numbers from 0 up to but not including 10. 
+    #. Using the range function, write a for loop that displays the numbers from 0 to 5. 
+    #. Using the range function, write a for loop that displays the numbers from 0 up to but not including 10. 
 
 ----
 
@@ -63,8 +63,8 @@ Range function with start and stop values
 
 .. admonition:: Tasks
 
-    #. Write a for loop that displays the numbers 3,4,5,6,7. 
-    #. Write a for loop that displays the numbers from 4 up to but not including 9. 
+    #. Using the range function, write a for loop that displays the numbers 3,4,5,6,7. 
+    #. Using the range function, write a for loop that displays the numbers from 4 up to but not including 9. 
 
 ----
 
@@ -73,11 +73,12 @@ Range function with a step size
 
 .. py:function:: range(startvalue, stopvalue, stepsize)
 
-    Returns a sequence of numbers, starting from the ``startvalue`` number, and increments by ``stepsize``, and ends before the ``stopvalue`` number. 
+    Returns a sequence of numbers, starting at the ``startvalue`` number, increments by ``stepsize``, and ends before the ``stopvalue`` number. 
 
 | range(1, 6, 2) returns the numbers 1,3,5. It starts at 1. It goes up by 2. It stops before 6, at 5.
+| range(1, 6, 2) can be read as 'range of 2 up to but not including 6 in steps of 2'.
 
-| The code below will display the numbers 1, 3, 5, 7, 9.
+| The code below will display the numbers 1, 3, 5.
 
 .. code-block:: python
 
@@ -85,7 +86,7 @@ Range function with a step size
 
 
     while True:
-        for n in range(1, 10, 2):
+        for n in range(1, 6, 2):
             display.scroll(n, delay=50)
         sleep(500)
 
@@ -93,8 +94,8 @@ Range function with a step size
 
 .. admonition:: Tasks
 
-    #. Write a for loop that displays the numbers from 0 to 5. 
-    #. Write a for loop that displays the numbers from 0 up to but not including 10. 
+    #. Using the range function, write a for loop that displays the numbers 2,4,6,8. 
+    #. Using the range function, write a for loop that displays the numbers 3,7,11,15. 
 
 ----
 
@@ -119,10 +120,8 @@ Using range to count down with a negative step size
 
 .. admonition:: Tasks
 
-    #. Write a for loop that counts up from 0 to 5.    
-    #. Write a for loop that counts up from 0 to 9 in steps of 3.
-    #. Write a for loop that counts down from 9 to 0.    
-    #. Write a for loop that counts up from 9 to 0 in steps of 3. 
+    #. Using the range function, write a for loop that displays the numbers 9,7,5,3. 
+    #. Using the range function, write a for loop that displays the numbers 8,5,2.  
 
 
 
