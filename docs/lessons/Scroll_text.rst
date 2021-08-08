@@ -12,7 +12,7 @@ Display.scroll simple version
     | Scrolls ``value`` horizontally on the microbit LED display. 
     | ``value`` can be an integer or float (a decimal) or a string (text in quotes).
 
-To scroll the string (in single quotes), 'Hi', across the display, use ``display.scroll('Hi')``:
+To scroll the string (in single quotes), '``Hi``', across the display, use ``display.scroll('Hi')``:
 
 .. code-block:: python
 
@@ -23,7 +23,7 @@ To scroll the string (in single quotes), 'Hi', across the display, use ``display
         display.scroll('Hi')
 
 
-Strings can be in double quotes like "Hello" :
+To scroll the string (in double quotes), '``Hello``', across the display, use ``display.scroll("Hello")``:
 
 .. code-block:: python
 
@@ -34,7 +34,7 @@ Strings can be in double quotes like "Hello" :
         display.scroll("Hello")
 
 
-To scroll the integer, 5, across the display, use:
+To scroll the integer, ``5``, across the display, use ``display.scroll(5)``:
 
 .. code-block:: python
 
@@ -45,7 +45,7 @@ To scroll the integer, 5, across the display, use:
         display.scroll(5)
 
 
-To scroll the float, 3.14, across the display, use:
+To scroll the float, ``3.14``, across the display, use ``display.scroll(3.14)``:
 
 .. code-block:: python
 
@@ -139,7 +139,7 @@ while True loops
             display.scroll('table tennis', delay=120)
 
 
-    2. Modify the code below to display your name and age in years.
+    1. Modify the code below to display your name and age in years.
 
     .. code-block:: python
 
