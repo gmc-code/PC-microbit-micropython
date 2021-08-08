@@ -78,6 +78,15 @@ Display.clear
 
 ----
 
+.. admonition:: Tip
+
+    The clear parameter can be set to True to clear the last displayed character.
+    show('Hi', delay=400, clear=True)
+    See the last section fo this page for the full syntax.
+
+
+----
+
 Display.show with delay
 ----------------------------------------
 
@@ -153,7 +162,7 @@ show at different speeds
             display.clear()
             sleep(500)
 
-    2. Modify the code below to display your name and age in years.
+    1. Modify the code below to display your name and age in years.
 
     .. code-block:: python
 
