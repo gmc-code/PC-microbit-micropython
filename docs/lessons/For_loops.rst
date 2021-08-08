@@ -96,25 +96,23 @@ Nested For loops
 ----
 
 | The nested loops below perform multiplication tables for 7 and 9.
+| The nested loops run a total of 2 * 9 or 18 times.
 
 .. code-block:: python
 
     from microbit import *
 
-
+    nums_1 = [7, 9]
+    nums_2 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     while True:
-        nums_1 = [7, 9]
-        nums_2 = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
         for num_1 in nums_1:
             for num_2 in nums_2:
-                display.scroll(num_1 * num_2, delay=100)
-
-
+                display.scroll(num_1 * num_2, delay=80)
 
 ----
 
 .. admonition:: Tasks
 
     #. Write a for loop that shows the result from multiplying each number in the list, ``[3, 5, 7]`` by 5.    
-    #. Write a for loop that finds the sum of two numbers from the two lists: ``[2, 4, 6]`` and ``[3, 5,7]``.
+    #. Write a nested for loop that finds the sum of every different combination of two numbers from the two lists: ``[2, 4, 6]`` and ``[3, 5,7]``.
 
