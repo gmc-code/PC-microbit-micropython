@@ -119,10 +119,10 @@ Image lists
 Built-in Image lists
 ----------------------------------------
 
-| There are 2 built-in lists of images.
+| There are 2 built-in collections of images.
 | They are: ``Image.ALL_CLOCKS`` and ``Image.ALL_ARROWS``.
-| Both lists have images that follow a clockwise sequence.
-| The code below displays the built-in list of clock images.
+| Both collections have images that follow a clockwise sequence.
+| The code below displays the built-in collection of clock images.
 
 .. code-block:: python
 
@@ -136,7 +136,7 @@ Built-in Image lists
 
 .. admonition:: Tasks
 
-    #. Write code to display the images in the built-in image list: ``Image.ALL_ARROWS``.
+    #. Write code to display the images in the built-in image collection: ``Image.ALL_ARROWS``.
 
 ----
 
@@ -215,11 +215,11 @@ Advanced use of Built-in Image lists
 
 | Image.ALL_CLOCKS and Image.ALL_ARROWS are python objects that can be converted to lists of Image objects.
 
-| ``list(Image.ALL_CLOCKS)`` can convert Image.ALL_CLOCKS to the list: 
-| [Image.CLOCK12, Image.CLOCK1, Image.CLOCK2, Image.CLOCK3, Image.CLOCK4, Image.CLOCK5, Image.CLOCK6, Image.CLOCK7, Image.CLOCK8, Image.CLOCK9, Image.CLOCK10, Image.CLOCK11]
+| ``list(Image.ALL_CLOCKS)`` can convert ``Image.ALL_CLOCKS`` to the list: 
+| ``[Image.CLOCK12, Image.CLOCK1, Image.CLOCK2, Image.CLOCK3, Image.CLOCK4, Image.CLOCK5, Image.CLOCK6, Image.CLOCK7, Image.CLOCK8, Image.CLOCK9, Image.CLOCK10, Image.CLOCK11]``
 
-| ``list(Image.ALL_ARROWS)`` can convert Image.ALL_ARROWS to the list:
-| [Image.ARROW_N, Image.ARROW_NE, Image.ARROW_E, Image.ARROW_SE, Image.ARROW_S, Image.ARROW_SW, Image.ARROW_W, Image.ARROW_NW]
+| ``list(Image.ALL_ARROWS)`` can convert ``Image.ALL_ARROWS`` to the list:
+| ``[Image.ARROW_N, Image.ARROW_NE, Image.ARROW_E, Image.ARROW_SE, Image.ARROW_S, Image.ARROW_SW, Image.ARROW_W, Image.ARROW_NW]``
 
 
 Reverse direction of list using list slicing
