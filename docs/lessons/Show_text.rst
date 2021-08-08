@@ -13,7 +13,7 @@ Display.show simple version
     | Each letter, character or digit is shown with 400 milliseconds between them.
 
 
-To show the string, 'Hi', one character at a time on the display, use ``display.show('Hi')``:
+To show the string, '``Hi``', one character at a time on the display, use ``display.show('Hi')``:
 
 .. code-block:: python
 
@@ -24,7 +24,7 @@ To show the string, 'Hi', one character at a time on the display, use ``display.
         display.show('Hi')
 
 
-To show the integer, 16, one digit at a time on the display, use ``display.show(16)``:
+To show the integer, ``16``, one digit at a time on the display, use ``display.show(16)``:
 
 .. code-block:: python
 
@@ -35,7 +35,7 @@ To show the integer, 16, one digit at a time on the display, use ``display.show(
         display.show(16)
 
 
-To show the float, 3.14, one digit at a time on the display, use ``display.show(3.14)``:
+To show the float, ``3.14``, one digit at a time on the display, use ``display.show(3.14)``:
 
 .. code-block:: python
 
