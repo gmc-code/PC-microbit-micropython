@@ -67,7 +67,7 @@ if
 
 ----
 
-if along with else
+if - else
 ----------------------------------------
 
 .. image:: images/if_else.jpg
@@ -101,7 +101,7 @@ if along with else
 
 ----
 
-if along with elif
+if - elif
 ----------------------------------------
 
 .. image:: images/if_elif.jpg
@@ -134,7 +134,7 @@ if along with elif
 
 ----
 
-If elif else
+If - elif - else
 ----------------------------------------
 
 .. image:: images/if_elif_else.jpg
@@ -171,7 +171,7 @@ If elif else
 
 ----
 
-If elif elif else
+If - elif - elif - else
 ----------------------------------------
 
 | Using ``if``, two ``elif`` and ``else`` together provides 4  branches in the code.
