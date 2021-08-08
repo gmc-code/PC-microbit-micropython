@@ -231,6 +231,7 @@ Reverse direction of list using list slicing
 
     from microbit import *
 
+
     arrow_list = list(Image.ALL_ARROWS)
     arrow_list_antickwise = arrow_list[::-1]
     while True:
@@ -246,6 +247,7 @@ Reverse direction of list using the reversed function
 .. code-block:: python
 
     from microbit import *
+
 
     clock_list = list(Image.ALL_CLOCKS)
     clock_list_antickwise = list(reversed(clock_list))
