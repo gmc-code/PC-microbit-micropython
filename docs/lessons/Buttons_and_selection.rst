@@ -37,7 +37,7 @@ Selection
 if
 ----------------------------------------
 
-.. image:: images/if.jpg
+.. image:: images/if.png
     :scale: 75 %
     :align: center
 
@@ -70,7 +70,7 @@ if
 if - else
 ----------------------------------------
 
-.. image:: images/if_else.jpg
+.. image:: images/if_else.png
     :scale: 75 %
     :align: center
 
@@ -104,7 +104,7 @@ if - else
 if - elif
 ----------------------------------------
 
-.. image:: images/if_elif.jpg
+.. image:: images/if_elif.png
     :scale: 75 %
     :align: center
 
@@ -137,7 +137,7 @@ if - elif
 If - elif - else
 ----------------------------------------
 
-.. image:: images/if_elif_else.jpg
+.. image:: images/if_elif_else.png
     :scale: 75 %
     :align: center
 
@@ -174,7 +174,7 @@ If - elif - else
 If - elif - elif - else
 ----------------------------------------
 
-.. image:: images/if_elif_elif_else.jpg
+.. image:: images/if_elif_elif_else.png
     :scale: 75 %
     :align: center
 
