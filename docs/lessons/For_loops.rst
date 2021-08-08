@@ -6,7 +6,7 @@ For loops with strings
 ----------------------------------------
 
 | Python can loop through each character in a string and do something with it.
-| ``for letter in my_string`` takes each character in the string ``my_string`` and puts it in the variable ``letter`` for display.
+| ``for letter in my_string`` takes each character in the string ``my_string`` and puts it in the variable ``letter``.
 
 .. code-block:: python
 
@@ -38,35 +38,33 @@ For loops with lists
     from microbit import *
 
 
+    tennis_champs = ['Novak', 'Roger', 'Rafael']
     while True:
-        my_list = ['Novak', 'Roger', 'Rafael']
-        while True:
-            for element in my_list:
-                display.show(how()
-                sleep(300)
+        for tennis_star in tennis_champs:
+            display.scroll(tennis_star, delay=80)
+            sleep(300)
 
 
-| In the code below, each number in the list is displayed then it is doubled and scrolled.
+| In the code below, each number in the list is displayed.
 
 .. code-block:: python
 
     from microbit import *
 
 
+    primes = [2, 3, 5, 7]
     while True:
-        my_list = [2, 3, 5, 7]
-        while True:
-            for num in my_list:
-                display.show(num)
-                sleep(300)
+        for num in primes:
+            display.show(num)
+            sleep(300)
 
 
 ----
 
 .. admonition:: Tasks
 
-    #. Write a for loop to show each name in the list ``['Ariarna', 'Kate', 'Emma'].
-    #. Write a for loop to show each number in the list ``[1, 3, 1, 5, 1, 7].
+    #. Write a for loop to scroll each name in the list ``['Ariarne', 'Cate', 'Emma', 'Kaylee'].
+    #. Write a for loop to show each number in the list ``[1, 1, 2, 3, 5, 8].
 
 ----
 

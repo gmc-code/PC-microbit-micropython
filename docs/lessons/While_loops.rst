@@ -29,14 +29,14 @@ Events as conditions
         while button_a.is_pressed():
             display.show(['I',Image.HEART,'U'], delay=400)
             sleep(300)
-        display.show(Image.SAD)
+        display.show(Image.ALL_CLOCKS, delay=50)
 
 ----
 
 .. admonition:: Tasks
 
-    #. Write a while loop that displays a happy face while the A button is pressed, and when it is not,  Image.ALL_CLOCKS is used.   
-    #. Write a while loop that displays a sad face while the B button is pressed, and when it is not, Image.ALL_CLOCKS is used.
+    #. Write a while loop that displays a happy face while the A button is pressed, and when it is not,  Image.ALL_CLOCKS is used to display a rotating clock hand.   
+    #. Write a while loop that displays a sad face while the B button is pressed, and when it is not, Image.ALL_CLOCKS is used to display a rotating clock hand.
 
 ----
 
