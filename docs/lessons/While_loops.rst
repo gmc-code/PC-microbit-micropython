@@ -10,6 +10,36 @@ While loops
     :scale: 75 %
     :align: center
 
+Events as conditions
+----------------------------------------
+
+| While loops have a condition that is tested each time the loop runs.
+| The condition must be True for the loop to run.
+| If the condition is False, the loop is exited.
+
+| Button pressing can be used as the condition in a while loop.
+| In the code below, the code within the while loop runs only while the A button is being held down.
+
+.. code-block:: python
+
+    from microbit import *
+
+
+    while True:
+        while button_a.is_pressed():
+            display.show(['I',Image.HEART,'U'], delay=400)
+            sleep(300)
+        display.show(Image.SAD)
+
+----
+
+.. admonition:: Tasks
+
+    #. Write a while loop that displays a happy face while the A button is pressed, and when it is not,  Image.ALL_CLOCKS is used.   
+    #. Write a while loop that displays a sad face while the B button is pressed, and when it is not, Image.ALL_CLOCKS is used.
+
+----
+
 Counters
 ----------------------------------------
 
