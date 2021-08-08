@@ -23,7 +23,7 @@ To scroll the string (in single quotes), '``Hi``', across the display, use ``dis
         display.scroll('Hi')
 
 
-To scroll the string (in double quotes), '``Hello``', across the display, use ``display.scroll("Hello")``:
+To scroll the string (in double quotes), "``Hello``", across the display, use ``display.scroll("Hello")``:
 
 .. code-block:: python
 
