@@ -23,7 +23,7 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
 
 .. toctree::
     :maxdepth: 2
-    :caption: Lessons
+    :caption: Lessons_1
     :numbered:
 
     lessons/Mu_editor.rst
@@ -41,7 +41,7 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
 
 .. toctree::
     :maxdepth: 2
-    :caption: Lessons_2
+    :caption: Lessons_1_Practice
     :numbered:
 
     lessons/Practice_tasks_1.rst
@@ -52,7 +52,7 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
 
 .. toctree::
     :maxdepth: 2
-    :caption: Lessons_3
+    :caption: Lessons_2
     :numbered:
 
     lessons/Organising_with_selection_and_definitions.rst
