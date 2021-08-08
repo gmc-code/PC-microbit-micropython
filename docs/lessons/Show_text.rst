@@ -84,7 +84,7 @@ Display.show with delay
 .. py:function:: show(value, delay=400)
 
     | Display letters, characters, and digits of a string, float or integer, in sequence.
-    | Each letter, digit is shown with ``delay`` milliseconds between them.
+    | Each letter, character or digit is shown with ``delay`` milliseconds between them.
     | The default delay is 400ms. When no delay is specified the default of 400ms is used.
     | The delay can be specified with the parameter name as in ``display.show('Hi', delay=400)``, or just as a number as in ``display.show('Hi', 400)``.
 
