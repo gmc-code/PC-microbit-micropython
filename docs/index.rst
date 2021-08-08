@@ -44,10 +44,17 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
     :caption: Lessons_2
     :numbered:
 
-    lessons/Practice_tasks.rst
-    lessons/Practice_tasks_Answers.rst
+    lessons/Practice_tasks_1.rst
+    lessons/Practice_tasks_1_Answers.rst
     lessons/Practice_tasks_2.rst
     lessons/Practice_tasks_2_Answers.rst
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Lessons_3
+    :numbered:
+
     lessons/Organising_with_selection_and_definitions.rst
 
 
