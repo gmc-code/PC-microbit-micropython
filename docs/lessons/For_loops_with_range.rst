@@ -7,7 +7,7 @@ See: https://www.w3schools.com/python/python_for_loops.asp
 | To loop through a set of code a specified number of times, use the range() function.
 | The range() function returns a sequence of numbers, starting from 0 by default, and increments by 1 (by default), and ends at a specified number.
 
-Range function examples
+Range function starting at 0
 ----------------------------------------
 
 .. py:function:: range(stopvalue)
@@ -37,6 +37,9 @@ Range function examples
 
 ----
 
+Range function with start and stop values
+--------------------------------------------
+
 .. py:function:: range(startvalue, stopvalue)
 
     Returns a sequence of numbers, starting from the ``startvalue`` number, and increments by 1 (by default), and ends before the ``stopvalue`` number. 
@@ -63,6 +66,9 @@ Range function examples
     #. Write a for loop that displays the numbers from 0 up to but not including 10. 
 
 ----
+
+Range function with a step size
+--------------------------------------------
 
 .. py:function:: range(startvalue, stopvalue, stepsize)
 
@@ -91,8 +97,8 @@ Range function examples
 
 ----
 
-Using range to count down with negative stepsize
-------------------------------------------------
+Using range to count down with a negative step size
+----------------------------------------------------
 
 
 | range(10, 0, -1) counts down from 10 to 1.
