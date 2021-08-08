@@ -174,6 +174,10 @@ If - elif - else
 If - elif - elif - else
 ----------------------------------------
 
+.. image:: images/if_elif_elif_else.jpg
+    :scale: 75 %
+    :align: center
+
 | Using ``if``, two ``elif`` and ``else`` together provides 4  branches in the code.
 | The code below first checks whether both buttons are pressed. 
 | The logical keyword ``and`` requires both conditions to be True for the combined condition to be True.
