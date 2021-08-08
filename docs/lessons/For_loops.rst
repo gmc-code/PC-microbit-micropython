@@ -6,7 +6,7 @@ For loops with strings
 ----------------------------------------
 
 | Python can loop through each character in a string and do something with it.
-| ``for letter in welcome_string`` takes each character in the string ``welcome_string`` and puts it in the variable ``letter``.
+| ``for character in welcome_string`` takes each character in the string ``welcome_string`` and puts it in the variable ``letter``.
 
 .. code-block:: python
 
@@ -15,15 +15,15 @@ For loops with strings
 
     welcome_string = 'Hi Mb user'
     while True:
-        for letter in welcome_string:
-            display.show(letter)
+        for character in welcome_string:
+            display.show(character)
             sleep(300)
 ----
 
 .. admonition:: Tasks
 
     #. Write a for loop to show each letter in 'winner'.    
-    #. Write a for loop to show each character in '2021'.    
+    #. Write a for loop to show each digit in '2021'.    
 
 ----
 
@@ -71,26 +71,27 @@ For loops with lists
 Nested For loops
 ----------------------------------------
 
-| A loop with another loop within is called a nested loop.
-| ``for col in my_col`` takes each element in the list ``my_col`` and puts it in the variable ``col`` for use in the loop.
-| ``for row in my_row`` takes each element in the list ``my_row`` and puts it in the variable ``row`` for use in the loop.
-| Each time the outer loop, ``for col in my_col``, is run, the inner loop, ``for row in my_row``, completes all 4 loops since there are 4 elements in its list.
-| The nested loops run a total of 3 * 4 or 12 times.
-| The ``+`` in ``col + row`` does a text join. When ``col`` = "A" and ``row`` = '1', ``col + row`` will result in ``"A1"``.
+| A loop within another loop within is called a nested loop.
+| The code below loops through each list and displays the result of joining each string.
 
 .. code-block:: python
 
     from microbit import *
 
 
+    col_letters = ['A', 'B', 'C']
+    row_nums  = ['1', '2', '3', '4']
     while True:
-        my_col = ["A", "B", "C"]
-        my_row  = ['1', '2', '3', '4']
-
-        for col in my_col:
-            for row in my_row:
+        for col in col_letters:
+            for row in row_nums:
                 display.scroll(col + row, delay=200)
 
+| ``for col in col_letters`` takes each element in the list ``col_letters`` and puts it in the variable ``col`` for use in the loop.
+| ``for row in row_nums`` takes each element in the list ``row_nums`` and puts it in the variable ``row`` for use in the loop.
+| Each time the outer loop, ``for col in col_letters``, runs 3 times since there are 3 elements in ``['A', 'B', 'C']``.
+| Each time the outer loop is run, the inner loop, ``for row in row_nums``, runs 4 times since there are 4 elements in ``['1', '2', '3', '4']``.
+| The nested loops run a total of 3 * 4 or 12 times.
+| The ``+`` in ``col + row`` does a text join. When ``col`` = 'A' and ``row`` = '1', ``col + row`` will result in ``'A1'``.
 
 ----
 
