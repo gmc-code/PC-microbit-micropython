@@ -119,7 +119,9 @@ Image lists
 Built-in Image lists
 ----------------------------------------
 
-| The built-in lists of images are called ``Image.ALL_CLOCKS`` and ``Image.ALL_ARROWS``:.
+| There are 2 built-in lists of images.
+| They are: ``Image.ALL_CLOCKS`` and ``Image.ALL_ARROWS``.
+| Both lists have images that follow a clockwise sequence.
 | The code below displays the built-in list of clock images.
 
 .. code-block:: python
@@ -205,4 +207,48 @@ All Images
     #. Edit the built in images list from above to just include faces.
     #. Edit the built in images list from above to just include objects.
     #. Edit the built in images list from above to just include shapes.
+
+----
+
+Advanced use of Built-in Image lists
+----------------------------------------
+
+| Image.ALL_CLOCKS and Image.ALL_ARROWS are python objects that can be converted to lists of Image objects.
+
+| ``list(Image.ALL_CLOCKS)`` can convert Image.ALL_CLOCKS to the list: 
+| [Image.CLOCK12, Image.CLOCK1, Image.CLOCK2, Image.CLOCK3, Image.CLOCK4, Image.CLOCK5, Image.CLOCK6, Image.CLOCK7, Image.CLOCK8, Image.CLOCK9, Image.CLOCK10, Image.CLOCK11]
+
+| ``list(Image.ALL_ARROWS)`` can convert Image.ALL_ARROWS to the list:
+| [Image.ARROW_N, Image.ARROW_NE, Image.ARROW_E, Image.ARROW_SE, Image.ARROW_S, Image.ARROW_SW, Image.ARROW_W, Image.ARROW_NW]
+
+
+Reverse direction of list using list slicing
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| A list, ``arrow_list``, can be reversed using the slicing technique: ``arrow_list[::-1]``.
+
+.. code-block:: python
+
+    from microbit import *
+
+    arrow_list = list(Image.ALL_ARROWS)
+    arrow_list_antickwise = arrow_list[::-1]
+    while True:
+        display.show(arrow_list_antickwise, delay=200)
+
+
+Reverse direction of list using the reversed function
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| A list, ``clock_list``, can be reversed using the reversed function: ``reversed(clock_list)``.
+| This python object from the reversed function can be converted to a list for reuse by using ``list(reversed(clock_list))``.
+
+.. code-block:: python
+
+    from microbit import *
+
+    clock_list = list(Image.ALL_CLOCKS)
+    clock_list_antickwise = list(reversed(clock_list))
+    while True:
+        display.show(clock_list_antickwise, delay=200)
 
