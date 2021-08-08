@@ -104,7 +104,7 @@ if along with else
 if along with elif
 ----------------------------------------
 
-.. image:: images/if_elif_else.jpg
+.. image:: images/if_elif.jpg
     :scale: 75 %
     :align: center
 
@@ -136,6 +136,10 @@ if along with elif
 
 If elif else
 ----------------------------------------
+
+.. image:: images/if_elif_else.jpg
+    :scale: 75 %
+    :align: center
 
 | Using ``if``, ``elif`` and ``else`` together provides 3  branches in the code.
 | The code below checks if the A button is pressed and displays "A" if it is.
