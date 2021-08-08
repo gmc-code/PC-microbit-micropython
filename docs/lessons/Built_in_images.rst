@@ -227,7 +227,7 @@ Reverse direction of list using list slicing
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | A list, ``arrow_list``, can be reversed using the slicing technique: ``arrow_list[::-1]``.
-| ``arrow_list_antickwise = arrow_list[::-1]`` reverses the list and places it in a the variable ``arrow_list_antickwise``.
+| ``arrow_list_anticlockwise = arrow_list[::-1]`` reverses the list and places it in a the variable ``arrow_list_anticlockwise``.
 
 .. code-block:: python
 
@@ -235,16 +235,16 @@ Reverse direction of list using list slicing
 
 
     arrow_list = list(Image.ALL_ARROWS)
-    arrow_list_antickwise = arrow_list[::-1]
+    arrow_list_anticlockwise = arrow_list[::-1]
     while True:
-        display.show(arrow_list_antickwise, delay=200)
+        display.show(arrow_list_anticlockwise, delay=200)
 
 
 Reverse direction of list using the reversed function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | A list, ``clock_list``, can be reversed using the reversed function: ``reversed(clock_list)``.
-| The python object obtained from the reversed function can be converted to a list for reuse by using ``list(reversed(clock_list))`` and placing the result in the variable ``clock_list_antickwise``.
+| The python object obtained from the reversed function can be converted to a list for reuse by using ``list(reversed(clock_list))`` and placing the result in the variable ``clock_list_anticlockwise``.
 
 .. code-block:: python
 
@@ -252,9 +252,9 @@ Reverse direction of list using the reversed function
 
 
     clock_list = list(Image.ALL_CLOCKS)
-    clock_list_antickwise = list(reversed(clock_list))
+    clock_list_anticlockwise = list(reversed(clock_list))
     while True:
-        display.show(clock_list_antickwise, delay=200)
+        display.show(clock_list_anticlockwise, delay=200)
 
 ----
 
