@@ -61,6 +61,7 @@ To scroll the float, ``3.14``, across the display, use ``display.scroll(3.14)``:
 
     #. Write code to scroll your name.    
     #. Write code to scroll your age.
+    #. Write code to scroll the number of teams in the AFL.
     #. Write code to scroll the chances of getting a tail on a coin throw.
 
 ----
@@ -76,7 +77,7 @@ Display.scroll with delay
     | The default delay is 150ms. When no delay is specified the default of 150ms is used.
     | The delay can be specified with the parameter name as in ``display.scroll('Hi', delay=150)``, or just as a number as the second argument as in ``display.scroll('Hi', 150)``.
 
-To scroll the string, 'Hi', across the display quickly, use a short delay of about 50:
+To scroll the string, 'Hi', across the display quickly, use a short delay of about 50ms:
 
 .. code-block:: python
 
@@ -106,13 +107,10 @@ To scroll the float, 3.14159, across the display slowly, use a long delay of abo
 
 ----
 
-while True loops
+scroll at different speeds
 ----------------------------------------
 
-| Microbit code can be repeated using a ``while True:`` loop.
-| This continues forever.
-| The code to be repeated has to be indented with a tab character.
-| Python uses indenting to group together the lines of code in a ``while`` loop.
+| The code below uses a shorter delay for the initial text then a longer delay for the main information.
 
 .. code-block:: python
 
