@@ -37,19 +37,9 @@ Selection
 if
 ----------------------------------------
 
-
-.. |img_sel_1| image:: images/if.jpg
+.. image:: images/if.jpg
     :scale: 75 %
-
-.. |img_sel_2| .. image:: images/if_else.jpg
-    :scale: 75 %
-
-.. |img_sel_3| .. image:: images/if_elif_else.jpg
-    :scale: 75 %
-
-+-----------+-----------+-----------+
-| img_sel_1 | img_sel_2 | img_sel_3 |
-+-----------+-----------+-----------+
+    :align: center
 
 | ``if`` requires a condition that returns ``True`` or ``False``.
 | The code below checks if the A button is pressed and displays "A" if it is.
@@ -80,6 +70,11 @@ if
 if along with else
 ----------------------------------------
 
+.. image:: images/if_else.jpg
+    :scale: 75 %
+    :align: center
+
+
 | The ``else`` block does not have a condition.
 | The ``else`` block only runs if all the previous conditions were ``False``.
 | The code below checks if the A button is pressed and displays "A" if it is or "X" if not.
@@ -108,6 +103,10 @@ if along with else
 
 if along with elif
 ----------------------------------------
+
+.. image:: images/if_elif_else.jpg
+    :scale: 75 %
+    :align: center
 
 | ``elif`` can be used to provide another choice by testing to see if its condition is True.
 | The code below checks if the A button is pressed and displays "A" if it is.
