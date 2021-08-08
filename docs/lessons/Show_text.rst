@@ -65,7 +65,7 @@ Display.clear
 
 | After ``display.show`` is used, the last digit or character will be left displayed.
 | Use ``display.clear()`` to remove the last digit or character from the display.
-| Use a sleep after the clear so htat the display remains blank for a short time.
+| Use a sleep after the clear so that the display remains blank for a short time.
 
 .. code-block:: python
 
@@ -83,7 +83,7 @@ Display.show with delay
 
 .. py:function:: show(value, delay=400)
 
-    | Display letters/digits of a string, float or integer, in sequence.
+    | Display letters, characters, and digits of a string, float or integer, in sequence.
     | Each letter, digit is shown with ``delay`` milliseconds between them.
     | The default delay is 400ms. When no delay is specified the default of 400ms is used.
     | The delay can be specified with the parameter name as in ``display.show('Hi', delay=400)``, or just as a number as in ``display.show('Hi', 400)``.
