@@ -44,8 +44,16 @@ Use KitronikMOVEMotor library
 Set up buggy
 ----------------------------------------
 
-.. py:function:: range(stopvalue)
+.. py:function:: KitronikMOVEMotor.MOVEMotor()
 
-    Returns a sequence of numbers, starting from 0 by default, and increments by 1 (by default), and ends before the ``stopvalue`` number. 
+    Set up the buggy motors for use.
 
+.. code-block:: python
+
+    from microbit import *
+    import KitronikMOVEMotor
+
+
+    # setup buggy
+    buggy = KitronikMOVEMotor.MOVEMotor()
 
