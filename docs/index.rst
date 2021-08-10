@@ -92,9 +92,9 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
     :caption: Bots/MoveMotor
     :numbered:
 
-    bots/MoveMotor/Move_Motor_info.rst
+    bots/MoveMotor/Move_Motor_pins.rst
     bots/MoveMotor/Move_Motor_LEDs.rst
-    bots/MoveMotor/Move_Motor.rst
+    bots/MoveMotor/Move_Motor_motors.rst
 
 .. toctree::
     :maxdepth: 2
