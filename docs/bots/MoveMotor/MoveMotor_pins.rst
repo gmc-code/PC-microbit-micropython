@@ -1,5 +1,5 @@
 ====================================================
-Move Motor pins
+MoveMotor pins
 ====================================================
 
 .. image:: images/move-motor_2.jpg
@@ -12,7 +12,7 @@ Move Motor pins
 Pins
 ---------
 
-The pin numbers used to control different parts of the :MOVE MOTOR are below.
+The pin numbers used to control different parts of the :MOVEMotor are below.
 
 =======  ===========================
  Pin     Purpose

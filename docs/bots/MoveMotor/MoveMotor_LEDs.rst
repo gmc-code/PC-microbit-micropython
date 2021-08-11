@@ -1,9 +1,9 @@
 ====================================================
-Move Motor LEDs
+MoveMotor LEDs
 ====================================================
 
 
-| The Move Motor uses 4 ZIP LEDs (WS2812) on pin8.
+| The MOVEMotor uses 4 ZIP LEDs (WS2812) on pin8.
 | Each LED can produce a full spectrum of colours independent to all of the other LEDs on the bus. 
 | Each ZIP LED has a Red, Green and Blue element within the LED, and each of these can achieve 256 levels of brightness.
 
