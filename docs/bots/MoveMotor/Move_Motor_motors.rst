@@ -57,3 +57,53 @@ Set up buggy
     # setup buggy
     buggy = KitronikMOVEMotor.MOVEMotor()
 
+----
+
+Independent motor control
+----------------------------------------
+
+.. py:function:: LeftMotor(speed)
+
+    | Make the left motor run. 
+    | Speed values are integers from -10 to 10.
+    | If speed < 0 the motor goes in reverse.
+
+
+| The code below runs the left motor at about half speed.
+
+.. code-block:: python
+
+    from microbit import *
+    import KitronikMOVEMotor
+
+
+    # setup buggy
+    buggy = KitronikMOVEMotor.MOVEMotor()
+    # run left motor
+    buggy.LeftMotor(5)
+
+----
+
+.. py:function:: RightMotor(speed)
+
+    | Make the left motor run. 
+    | Speed values are integers from -10 to 10.
+    | If speed < 0 the motor goes in reverse.
+
+
+| The code below runs the right motor in reverse at full speed.
+
+.. code-block:: python
+
+    from microbit import *
+    import KitronikMOVEMotor
+
+
+    # setup buggy
+    buggy = KitronikMOVEMotor.MOVEMotor()
+    # run right motor
+    buggy.RightMotor(-10)
+
+----
+
+
