@@ -54,25 +54,25 @@ class MOVEMotor:
         i2c.write(CHIP_ADDR, buffer, False)
 
     # analog signal required is about 60 to 255
-    # input -10 to 0 to 10 as integers only
+    # input -10 to 0 to 10
 
     @staticmethod
     def AnalogSpeed(speed):
-        # input speed = 10 to 0 to 10
+        # input speed = -10 to 0 to 10
         # output = 60 to 255
-        if speed < 0:
-            return (speed * -21) + 45
-        elif speed > 0:
-            return (speed * 21) + 45
+        if speed < 0 and speed >= -10:
+            return int((speed * -21) + 45)
+        elif speed > 0 and speed <= 10:
+            return int((speed * 21) + 45)
         else:
             return 0
 
-    def LeftMotor(self, speed):
+    def LeftMotor(self, speed=1):
         analog_speed = self.AnalogSpeed(speed)
         motorBuffer = bytearray(2)
         gndPinBuffer = bytearray(2)
         motorBuffer[1] = analog_speed
-        gndPinBuffer[1] = 0x00
+        gndPinBuffer[1] = 0
         if (speed < 0):
             # going backwards
             motorBuffer[0] = LEFT_MOTOR_REV
@@ -88,12 +88,12 @@ class MOVEMotor:
         i2c.write(CHIP_ADDR, motorBuffer, False)
         i2c.write(CHIP_ADDR, gndPinBuffer, False)
 
-    def RightMotor(self, speed):
+    def RightMotor(self, speed=1):
         analog_speed = self.AnalogSpeed(speed)
         motorBuffer = bytearray(2)
         gndPinBuffer = bytearray(2)
         motorBuffer[1] = analog_speed
-        gndPinBuffer[1] = 0x00
+        gndPinBuffer[1] = 0
         if (speed < 0):
             # going backwards
             motorBuffer[0] = RIGHT_MOTOR_REV
@@ -111,14 +111,14 @@ class MOVEMotor:
     def StopLeft(self):
         stopBuffer = bytearray(2)
         stopBuffer[0] = LEFT_MOTOR
-        stopBuffer[1] = 0x00
+        stopBuffer[1] = 0
         i2c.write(CHIP_ADDR, stopBuffer, False)
         stopBuffer[0] = LEFT_MOTOR_REV
         i2c.write(CHIP_ADDR, stopBuffer, False)
 
     def StopRight(self):
         stopBuffer = bytearray(2)
-        stopBuffer[1] = 0x00
+        stopBuffer[1] = 0
         stopBuffer[0] = RIGHT_MOTOR
         i2c.write(CHIP_ADDR, stopBuffer, False)
         stopBuffer[0] = RIGHT_MOTOR_REV
@@ -128,7 +128,7 @@ class MOVEMotor:
         self.StopLeft()
         self.StopRight()
 
-    def Reverse(self, speed, decrease_left=0, decrease_right=0):
+    def Reverse(self, speed=1, decrease_left=0, decrease_right=0):
         analog_speed = self.AnalogSpeed(speed)
         motorBuffer = bytearray(5)
         motorBuffer[0] = ALL_MOTOR
@@ -139,7 +139,7 @@ class MOVEMotor:
         motorBuffer[4] = analog_speed - decrease_left
         i2c.write(CHIP_ADDR, motorBuffer, False)
 
-    def Forward(self, speed, decrease_left=0, decrease_right=0):
+    def Forward(self, speed=1, decrease_left=0, decrease_right=0):
         analog_speed = self.AnalogSpeed(speed)
         motorBuffer = bytearray(5)
         motorBuffer[0] = ALL_MOTOR
@@ -159,7 +159,7 @@ class MOVEMotor:
         else:   # standard
             return 3
 
-    def Left(self, speed, tightness='standard'):
+    def Left(self, speed=1, tightness='standard'):
         # right motor faster than left
         # tightness: tight 8, standard 4, wide 2
         analog_speed = self.AnalogSpeed(speed)
@@ -173,7 +173,7 @@ class MOVEMotor:
         motorBuffer[4] = 0
         i2c.write(CHIP_ADDR, motorBuffer, False)
 
-    def Right(self, speed, tightness='standard'):
+    def Right(self, speed=1, tightness='standard'):
         # left motor faster than right
         # tightness: tight 8, standard 4, wide 2
         analog_speed = self.AnalogSpeed(speed)
@@ -187,7 +187,7 @@ class MOVEMotor:
         motorBuffer[4] = 0
         i2c.write(CHIP_ADDR, motorBuffer, False)
 
-    def Spin(self, speed, direction='right'):
+    def Spin(self, speed=1, direction='left'):
         analog_speed = self.AnalogSpeed(speed)
         motorBuffer = bytearray(5)
         motorBuffer[0] = ALL_MOTOR
