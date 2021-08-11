@@ -75,7 +75,7 @@ Independent motor control
     | If speed < 0 the motor goes in reverse.
 
 
-| The code below runs the left motor at about half speed.
+| The code below, using ``LeftMotor(5)``,  runs the left motor at about half speed.
 
 .. code-block:: python
 
@@ -98,7 +98,7 @@ Independent motor control
     | If speed < 0 the motor goes in reverse.
 
 
-| The code below runs the right motor in reverse at full speed.
+| The code below, using ``RightMotor(-10)``, runs the right motor in reverse at full speed.
 
 .. code-block:: python
 
@@ -158,7 +158,7 @@ Independent motor control
 
 ----
 
-Stop motors
+Stop both motors
 ----------------------------------------
 
 .. py:function:: Stop()
@@ -176,10 +176,70 @@ Stop motors
 
     # setup buggy
     buggy = KitronikMOVEMotor.MOVEMotor()
-    # run left motor
+    
     buggy.LeftMotor(5)
+    buggy.RightMotor()
+    sleep(1000)
+    buggy.Stop()
+
 
 ----
+
+.. admonition:: Tasks
+
+    #. Write code to drive the left motor at speed 2 for 1 second, stop it, run the right motor at speed 2 for 1 sec then stop it.
+    #. Write code to drive the right motor at speed 3 while the left motor runs at speed 2 for 3 sec then stop it.
+    #. Write code to drive the left motor at speed 3 while the right motor runs at speed 2 for 3 sec then stop it.
+    #. Write code that drives the left side faster than the right side then the right side faster the left side so that it zig zags for 5 sec then stop it.
+    #. Write code that it repetitively zig zags forwards for 5 zigs and zags then reverses backwards for 5 zigs and zags.
+    #. Modify the zig zag code so that it uses variables for the 2 motor speeds, the number of zig zags forwards and in reverse, and the time for each zig and zag.
+
+----
+
+Straight line control
+----------------------------------------
+
+| The left and right motors can be run so that the buggy moves forwards or backwards in a straight line:
+| ``Forward(speed=1, decrease_left=0, decrease_right=0)``
+| ``Reverse(speed=1, decrease_left=0, decrease_right=0)``
+
+.. py:function:: Forward(speed=1, decrease_left=0, decrease_right=0)
+
+    | Drive the buggy forwards.
+    | Speed values are integers or floats (decimals) from -10 to 10.
+    | Default speed is 1.
+    | decrease_left and decrease_right are used to adjust the motor speed on each side in case the buggy doesn't go straight due to one motor being slightly faster than the other.
+    | decrease_left and decrease_right take numbers from 0 to 20. These are subtracted from the analog motor speed which has a maximum value of 255 when the speed is 10 and converted to a percentage change so they have similar effect at any speed. 
+    | What works to give a straight line is best found by experimentation.
+
+
+| The code below, has an adjustment to the left motor to slow it down by 6 when the speed is 10. This is a decrease of 6 compared to the maximum analog value of 255. This is roughly a 2% (6/255) adjustment.
+
+.. code-block:: python
+
+    from microbit import *
+    import KitronikMOVEMotor
+
+
+    # setup buggy
+    buggy = KitronikMOVEMotor.MOVEMotor()
+
+    buggy.Forward(10, decrease_left=6, decrease_right=0)
+    sleep(3000)
+    buggy.Stop()
+
+----
+
+.. py:function:: Reverse(speed=1, decrease_left=0, decrease_right=0)
+
+    | Drive the buggy backwards.
+    | Speed values are integers or floats (decimals) from -10 to 10.
+    | Default speed is 1.
+    | decrease_left and decrease_right are used to adjust the motor speed on each side in case the buggy doesn't go straight due to one motor being slightly faster than the other.
+    | decrease_left and decrease_right take numbers from 0 to 20. These are subtracted from the analog motor speed which has a maximum value of 255 when the speed is 10 and converted to a percentage change so they have similar effect at any speed. 
+
+    
+
 
 
 
