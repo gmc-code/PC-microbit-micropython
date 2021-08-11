@@ -19,12 +19,12 @@ MOVEMotor.py module
 
 Before copying:
 
-.. image:: images/Mu_files.PNG
+.. image:: images/Mu_files.png
     :scale: 50 %
 
 After copying:
 
-.. image:: images/Mu_files_copied.PNG
+.. image:: images/Mu_files_copied.png
     :scale: 50 %
 
 
