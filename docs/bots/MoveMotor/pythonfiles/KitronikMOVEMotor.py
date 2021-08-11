@@ -128,15 +128,25 @@ class MOVEMotor:
         self.StopLeft()
         self.StopRight()
 
+    @staticmethod
+    def StraightLimiter(speed):
+        # limit to 0 to 10
+        if speed < 0:
+            return 0
+        elif speed > 10:
+            return 20
+        else:
+            return int(speed)
+
     def Reverse(self, speed=1, decrease_left=0, decrease_right=0):
         analog_speed = self.AnalogSpeed(speed)
         motorBuffer = bytearray(5)
         motorBuffer[0] = ALL_MOTOR
         # [1 to 4] is RIGHT_MOTOR_REV; RIGHT_MOTOR; LEFT_MOTOR; LEFT_MOTOR_REV
-        motorBuffer[1] = analog_speed - decrease_right
+        motorBuffer[1] = analog_speed - StraightLimiter(decrease_right)
         motorBuffer[2] = 0
         motorBuffer[3] = 0
-        motorBuffer[4] = analog_speed - decrease_left
+        motorBuffer[4] = analog_speed - StraightLimiter(decrease_left)
         i2c.write(CHIP_ADDR, motorBuffer, False)
 
     def Forward(self, speed=1, decrease_left=0, decrease_right=0):
@@ -145,8 +155,8 @@ class MOVEMotor:
         motorBuffer[0] = ALL_MOTOR
         # [1 to 4] is RIGHT_MOTOR_REV; RIGHT_MOTOR; LEFT_MOTOR; LEFT_MOTOR_REV
         motorBuffer[1] = 0
-        motorBuffer[2] = analog_speed - decrease_right
-        motorBuffer[3] = analog_speed - decrease_left
+        motorBuffer[2] = analog_speed - StraightLimiter(decrease_right)
+        motorBuffer[3] = analog_speed - StraightLimiter(decrease_left)
         motorBuffer[4] = 0
         i2c.write(CHIP_ADDR, motorBuffer, False)
 
