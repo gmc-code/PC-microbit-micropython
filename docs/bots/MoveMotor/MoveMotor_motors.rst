@@ -269,20 +269,20 @@ Turning
 ----------------------------------------
 
 | The left and right motors can be run so that the buggy moves forwards or backwards in a straight line:
-| ``Left(self, speed=1, tightness='standard')``
-| ``Right(self, speed=1, tightness='standard')``
+| ``left(speed=1, radius=25)``
+| ``right(speed=1, radius=25)``
 
-.. py:function:: forward(speed=1, decrease_left=0, decrease_right=0)
+.. py:function:: left(speed=1, radius=25)
 
-    | Drive the buggy forwards.
+    | Drive the buggy forwards to the left.
     | Speed values are integers or floats (decimals) from -10 to 10.
     | Default speed is 1.
-    | decrease_left and decrease_right take numbers from 0 to 20. These are converted to a percentage of the maximum analog motor speed of 255 (speed setting 10) so they have similar effect at any speed.
-    | decrease_left and decrease_right default values are 0.
-    | What works to give a straight line is best found by experimentation.
+    | radius values are 4 to 800 (in cm)
+    | Default radius is 25 (in cm).
+    | The turning radius is approximate only, and is estimated using 8.5 cm distance between the 2 wheels.
 
 
-| The code below, has an adjustment of 6 to the left motor. This is roughly a 2% (6/255) decrease in speed.
+| The code below, the buggy turns left in a circular path of approximate radius or 25 cm.
 
 .. code-block:: python
 
@@ -293,13 +293,55 @@ Turning
     # setup buggy
     buggy = MOVEMotor.MOVEMotor_motors()
 
-    buggy.forward(speed=10, decrease_left=6, decrease_right=0)
-    sleep(3000)
+    buggy.left(speed=1, radius=25)
+    sleep(4000)
+    buggy.stop()
+
+
+----
+
+.. admonition:: Tasks
+
+    #. Write code to drive the buggy to the left at speed 2 in small circles of 10 cm radius.
+    #. Write code to drive the buggy to the left at speed 5 in medium circles of 50 cm radius.
+    #. Write code to drive the buggy to the left at speed 8 in circles of 20, 40 and 60 cm radius for 5 seconds each. Use a for loop and a list of the radii.
+
+----
+
+.. py:function:: right(speed=1, radius=25)
+
+    | Drive the buggy forwards to the right.
+    | Speed values are integers or floats (decimals) from -10 to 10.
+    | Default speed is 1.
+    | radius values are 4 to 800 (in cm)
+    | Default radius is 25 (in cm).
+    | The turning radius is approximate only, and is estimated using 8.5 cm distance between the 2 wheels.
+
+
+| The code below, the buggy turns right in a circular path of approximate radius or 40 cm.
+
+.. code-block:: python
+
+    from microbit import *
+    import MOVEMotor
+
+
+    # setup buggy
+    buggy = MOVEMotor.MOVEMotor_motors()
+
+    buggy.left(speed=1, radius=40)
+    sleep(4000)
     buggy.stop()
 
 ----
 
+.. admonition:: Tasks
 
+    #. Write code to drive the buggy to the right at speed 4 in small circles of 5 cm radius.
+    #. Write code to drive the buggy to the right at speed 7 in medium circles of 80 cm radius.
+    #. Write code to drive the buggy to the right at speed 10 in in circles of increasing size. Use a range function to increase the radius every 4 seconds from 10 to 100 in steps of 10.
+
+----
 
 
 
