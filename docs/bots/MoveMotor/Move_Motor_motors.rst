@@ -8,10 +8,9 @@ Move Motor motors
 KitronikMOVEMotor.py module
 ----------------------------------------
 
-See :download:`KitronikMOVEMotor.py module <pythonfiles/KitronikMOVEMotor.py>`.
 
 | The KitronikMOVEMotor module is required to control the motors.
-| Download the file.
+| Download the library python file :download:`KitronikMOVEMotor.py module <pythonfiles/KitronikMOVEMotor.py>`.
 | Place it in the mu_code folder: C:\\Users\\username\\mu_code
 | The file needs to be copied onto the microbit.
 | In Mu editor, with the microbit attached by USB, click the Files icon.
