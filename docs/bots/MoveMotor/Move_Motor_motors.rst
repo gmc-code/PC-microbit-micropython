@@ -61,11 +61,109 @@ Set up buggy
 Independent motor control
 ----------------------------------------
 
-.. py:function:: LeftMotor(speed)
+| The left and right motors can be run independently using the four methods below:
+| ``LeftMotor(speed=1)`` runs the left motor.
+| ``RightMotor(speed=1)`` runs the right motor.
+| ``StopLeft()`` stops the left motor.
+| ``StopRight()`` stops the right motor.
+
+.. py:function:: LeftMotor(speed=1)
 
     | Make the left motor run. 
-    | Speed values are integers from -10 to 10.
+    | Speed values are integers or floats (decimals) from -10 to 10.
+    | Default speed is 1.
     | If speed < 0 the motor goes in reverse.
+
+
+| The code below runs the left motor at about half speed.
+
+.. code-block:: python
+
+    from microbit import *
+    import KitronikMOVEMotor
+
+
+    # setup buggy
+    buggy = KitronikMOVEMotor.MOVEMotor()
+
+    buggy.LeftMotor(5)
+
+----
+
+.. py:function:: RightMotor(speed=1)
+
+    | Make the left motor run. 
+    | Speed values are integers or floats (decimals) from -10 to 10.
+    | Default speed is 1.
+    | If speed < 0 the motor goes in reverse.
+
+
+| The code below runs the right motor in reverse at full speed.
+
+.. code-block:: python
+
+    from microbit import *
+    import KitronikMOVEMotor
+
+
+    # setup buggy
+    buggy = KitronikMOVEMotor.MOVEMotor()
+
+    buggy.RightMotor(-10)
+
+----
+
+.. py:function:: StopLeft()
+
+    | Stops the left motor.
+
+
+| The code below runs the left motor then stops it.
+
+.. code-block:: python
+
+    from microbit import *
+    import KitronikMOVEMotor
+
+
+    # setup buggy
+    buggy = KitronikMOVEMotor.MOVEMotor()
+
+    buggy.LeftMotor()
+    sleep(1000)
+    buggy.StopLeft()
+
+
+----
+
+.. py:function:: StopRight()
+
+    | Stops the right motor.
+
+
+| The code below runs the right motor then stops it.
+
+.. code-block:: python
+
+    from microbit import *
+    import KitronikMOVEMotor
+
+
+    # setup buggy
+    buggy = KitronikMOVEMotor.MOVEMotor()
+
+    buggy.RightMotor()
+    sleep(1000)
+    buggy.StopRight()
+
+----
+
+Stop motors
+----------------------------------------
+
+.. py:function:: Stop()
+
+    | Stops both motors.
 
 
 | The code below runs the left motor at about half speed.
@@ -83,26 +181,5 @@ Independent motor control
 
 ----
 
-.. py:function:: RightMotor(speed)
-
-    | Make the left motor run. 
-    | Speed values are integers from -10 to 10.
-    | If speed < 0 the motor goes in reverse.
-
-
-| The code below runs the right motor in reverse at full speed.
-
-.. code-block:: python
-
-    from microbit import *
-    import KitronikMOVEMotor
-
-
-    # setup buggy
-    buggy = KitronikMOVEMotor.MOVEMotor()
-    # run right motor
-    buggy.RightMotor(-10)
-
-----
 
 
