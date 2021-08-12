@@ -401,7 +401,7 @@ Spinning
     #. Write code to spin the buggy to the left at speed 4 for 5 seconds.
     #. Write code to spin the buggy to the right at speed 6 for 3 seconds.
     #. Write code to spin the buggy to the left for 3 seconds then to right for 3 seconds at speed 6.
-    #. Write code to drive the buggy in a polygonal path by combing short drives forward with short spins.
+    #. Write code to drive the buggy in a polygonal path (many straight sides) by combing short drives forward with short spins.
 
 
 
