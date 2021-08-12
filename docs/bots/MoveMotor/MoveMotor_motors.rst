@@ -39,7 +39,7 @@ Use MOVEMotor library
     import MOVEMotor
 
 
-Set up buggy
+Set up the buggy
 ----------------------------------------
 
 .. py:function:: MOVEMotor.MOVEMotor_motors()
@@ -71,7 +71,7 @@ Independent motor control
     | Make the left motor run. 
     | Speed values are integers or floats (decimals) from -10 to 10.
     | Default speed is 1.
-    | If speed < 0 the motor goes in backward.
+    | If speed < 0 the motor turns the wheel backwards.
 
 
 | The code below, using ``left_motor(5)``,  runs the left motor at about half speed.
@@ -94,10 +94,10 @@ Independent motor control
     | Make the left motor run. 
     | Speed values are integers or floats (decimals) from -10 to 10.
     | Default speed is 1.
-    | If speed < 0 the motor goes in backward.
+    | If speed < 0 the motor turns the wheel backwards.
 
 
-| The code below, using ``right_motor(-10)``, runs the right motor in backward at full speed.
+| The code below, using ``right_motor(-10)``, runs the right motor backwards at full speed.
 
 .. code-block:: python
 
@@ -117,7 +117,7 @@ Independent motor control
     | stops the left motor.
 
 
-| The code below runs the left motor then stops it.
+| The code below runs the left motor for 1 sec then stops it.
 
 .. code-block:: python
 
@@ -140,7 +140,7 @@ Independent motor control
     | stops the right motor.
 
 
-| The code below runs the right motor then stops it.
+| The code below runs the right motor for 1 sec then stops it.
 
 .. code-block:: python
 
@@ -190,8 +190,8 @@ Stop both motors
     #. Write code to drive the right motor at speed 3 while the left motor runs at speed 2 for 3 sec then stop it.
     #. Write code to drive the left motor at speed 3 while the right motor runs at speed 2 for 3 sec then stop it.
     #. Write code that drives the left side faster than the right side then the right side faster the left side so that it zig zags for 5 sec then stop it.
-    #. Write code that it repetitively zig zags forwards for 5 zigs and zags then backwards backwards for 5 zigs and zags.
-    #. Modify the zig zag code so that it uses variables for the 2 motor speeds, the number of zig zags forwards and in backward, and the time for each zig and zag.
+    #. Write code so that the buggy repetitively zig zags forwards for 5 zigs and zags then backwards backwards for 5 zigs and zags.
+    #. Modify the zig zag code so that it uses variables for the 2 motor speeds, the number of zig zags forwards and backward, and the time for each zig and zag.
 
 ----
 
