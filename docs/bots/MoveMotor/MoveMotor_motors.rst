@@ -4,7 +4,8 @@ MoveMotor motors
 
 .. image:: images/move-motor.jpg
     :scale: 50 %
-    
+    :align: center
+
 MOVEMotor.py module
 ----------------------------------------
 
