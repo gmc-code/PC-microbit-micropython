@@ -277,6 +277,8 @@ Turning
 | The left and right motors are adjusted to turn the buggy:
 | ``left(speed=1, radius=25)``
 | ``right(speed=1, radius=25)``
+| When turning left the left wheel is slowed slightly based on the radius value.
+| When turning right the right wheel is slowed slightly based on the radius value.
 | The turning radius is approximate only, and is automatically calculated using 8.5 cm as the distance between the 2 wheels.
 
 .. py:function:: left(speed=1, radius=25)
@@ -290,7 +292,7 @@ Turning
 
 | ``left()`` and ``left(1, 25)`` and ``left(speed=1, radius=25)`` all set the speed to 1 with radius 25cm.
 
-| The code below, ``left(speed=3, radius=20)``, drives the buggy forward at speed 3 while it turns left in a circular path of approximate radius of 20 cm.
+| The code below, ``left(speed=3, radius=20)``, drives the buggy forward at speed 3 while it turns left in a circular path of approximate radius 20 cm.
 
 .. code-block:: python
 
@@ -327,7 +329,7 @@ Turning
 
 | ``right()`` and ``right(1, 25)`` and ``right(speed=1, radius=25)`` all set the speed to 1 with radius 25cm.
 
-| The code below, ``left(speed=3, radius=20)``, drives the buggy forward at speed 2 while it turns right in a circular path of approximate radius of 40 cm.
+| The code below, ``left(speed=3, radius=20)``, drives the buggy forward at speed 2 while it turns right in a circular path of approximate radius 40 cm.
 
 .. code-block:: python
 
