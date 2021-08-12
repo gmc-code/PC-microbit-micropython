@@ -93,7 +93,6 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
     :numbered:
 
     bots/MoveMotor/MoveMotor_pins.rst
-    bots/MoveMotor/MoveMotor_module.rst
     bots/MoveMotor/MoveMotor_motors.rst
     bots/MoveMotor/MoveMotor_LEDs.rst
 
