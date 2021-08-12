@@ -283,8 +283,10 @@ Turning
 
 .. py:function:: left(speed=1, radius=25)
 
-    | Drive the buggy forwards to the left.
+    | Drive the buggy to the left.
     | ``speed`` values are integers or floats (decimals) from -10 to 10.
+    | ``speed`` values above 0 drive the buggy forwards to the left.
+    | ``speed`` values below 0 drive the buggy backwards to the left.
     | Default ``speed`` is 1.
     | ``radius`` values are 4 to 800 (in cm)
     | Default ``radius`` is 25 (in cm).
@@ -320,8 +322,10 @@ Turning
 
 .. py:function:: right(speed=1, radius=25)
 
-    | Drive the buggy forwards to the right.
+    | Drive the buggy to the right.
     | ``speed`` values are integers or floats (decimals) from -10 to 10.
+    | ``speed`` values above 0 drive the buggy forwards to the right.
+    | ``speed`` values below 0 drive the buggy backwards to the right.
     | Default ``speed`` is 1.
     | ``radius`` values are 4 to 800 (in cm)
     | Default ``radius`` is 25 (in cm).
