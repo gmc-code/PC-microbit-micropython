@@ -54,6 +54,17 @@ class MOVEMotor_motors:
         i2c.write(CHIP_ADDR, buffer, False)
 
     @staticmethod
+    def analog_speed_positive(speed):
+        # input speed = 0 to 10
+        # output = 60 to 255
+        if speed < 0:
+            return 0
+        elif speed > 0 and speed <= 10:
+            return int((speed * 21) + 45)
+        else:
+            return 0
+
+    @staticmethod
     def analog_speed(speed):
         # input speed = -10 to 0 to 10
         # output = 60 to 255
@@ -136,7 +147,7 @@ class MOVEMotor_motors:
         return int(analog_speed * (255 - adjustment)/255)
 
     def backward(self, speed=1, decrease_left=0, decrease_right=0):
-        analog_speed = self.analog_speed(speed)
+        analog_speed = self.analog_speed_positive(speed)
         motor_buffer = bytearray(5)
         motor_buffer[0] = ALL_MOTOR
         # [1 to 4] is RIGHT_MOTOR_REV; RIGHT_MOTOR; LEFT_MOTOR; LEFT_MOTOR_REV
@@ -147,7 +158,7 @@ class MOVEMotor_motors:
         i2c.write(CHIP_ADDR, motor_buffer, False)
 
     def forward(self, speed=1, decrease_left=0, decrease_right=0):
-        analog_speed = self.analog_speed(speed)
+        analog_speed = self.analog_speed_positive(speed)
         motor_buffer = bytearray(5)
         motor_buffer[0] = ALL_MOTOR
         # [1 to 4] is RIGHT_MOTOR_REV; RIGHT_MOTOR; LEFT_MOTOR; LEFT_MOTOR_REV

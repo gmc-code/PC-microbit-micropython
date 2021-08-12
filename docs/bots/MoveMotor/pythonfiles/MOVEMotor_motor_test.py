@@ -70,8 +70,6 @@ def forward_backward_test():
     sleep(1000)
     buggy.forward(2.5)
     sleep(1000)
-    buggy.backward(-2.5)
-    sleep(1000)
     buggy.backward(5)
     sleep(1000)
     buggy.stop()

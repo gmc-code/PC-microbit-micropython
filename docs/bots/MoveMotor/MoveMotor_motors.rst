@@ -69,10 +69,11 @@ Independent motor control
 .. py:function:: left_motor(speed=1)
 
     | Make the left motor run. 
-    | Speed values are integers or floats (decimals) from -10 to 10.
-    | Default speed is 1.
+    | ``speed`` values are integers or floats (decimals) from -10 to 10.
+    | Default ``speed`` is 1.
     | If speed < 0 the motor turns the wheel backwards.
 
+| ``left_motor()`` and ``left_motor(1)`` and ``left_motor(speed=1)`` all set the speed to 1.
 
 | The code below, using ``left_motor(5)``,  runs the left motor at about half speed.
 
@@ -92,10 +93,11 @@ Independent motor control
 .. py:function:: right_motor(speed=1)
 
     | Make the left motor run. 
-    | Speed values are integers or floats (decimals) from -10 to 10.
-    | Default speed is 1.
+    | ``speed`` values are integers or floats (decimals) from -10 to 10.
+    | Default ``speed`` is 1.
     | If speed < 0 the motor turns the wheel backwards.
 
+| ``right_motor()`` and ``right_motor(1)`` and ``right_motor(speed=1)`` all set the speed to 1.
 
 | The code below, using ``right_motor(-10)``, runs the right motor backwards at full speed.
 
@@ -114,7 +116,7 @@ Independent motor control
 
 .. py:function:: stop_left()
 
-    | stops the left motor.
+    | Stop the left motor.
 
 
 | The code below runs the left motor for 1 sec then stops it.
@@ -137,7 +139,7 @@ Independent motor control
 
 .. py:function:: stop_right()
 
-    | stops the right motor.
+    | Stop the right motor.
 
 
 | The code below runs the right motor for 1 sec then stops it.
@@ -162,7 +164,7 @@ Stop both motors
 
 .. py:function:: stop()
 
-    | Stops both motors.
+    | Stop both motors.
 
 
 | The code below runs the left motor at about half speed.
@@ -201,16 +203,18 @@ Straight line control
 | The left and right motors can be run so that the buggy moves forwards or backwards in a straight line:
 | ``forward(speed=1, decrease_left=0, decrease_right=0)``
 | ``backward(speed=1, decrease_left=0, decrease_right=0)``
+| ``decrease_left`` and ``decrease_right`` are used to adjust the motor speed on either side in case the buggy doesn't go straight due to one motor being slightly faster than the other.
 
 .. py:function:: forward(speed=1, decrease_left=0, decrease_right=0)
 
     | Drive the buggy forwards.
-    | Speed values are integers or floats (decimals) from -10 to 10.
-    | Default speed is 1.
-    | decrease_left and decrease_right take numbers from 0 to 20. These are converted to a percentage of the maximum analog motor speed of 255 (speed setting 10) so they have similar effect at any speed.
-    | decrease_left and decrease_right default values are 0.
-    | What works to give a straight line is best found by experimentation.
+    | ``speed`` values are integers or floats (decimals) from 0 to 10.
+    | Default ``speed`` is 1.
+    | ``decrease_left`` and ``decrease_right`` take numbers from 0 to 20. These are converted to a percentage of the maximum analog motor speed of 255 (speed setting 10) so they have similar effect at any speed.
+    | ``decrease_left`` and ``decrease_right`` default values are 0.
+    | Any ``decrease_left`` and ``decrease_right`` values used to give a straight line are best found by experimentation.
 
+| ``forward(10, 6)`` and ``forward(10, 6, 0)`` and ``forward(speed=10, decrease_left=6)`` all set the speed to 10 with the left wheel slowed by roughly 2% (6/255).
 
 | The code below, has an adjustment of 6 to the left motor. This is roughly a 2% (6/255) decrease in speed.
 
@@ -232,13 +236,13 @@ Straight line control
 .. py:function:: backward(speed=1, decrease_left=0, decrease_right=0)
 
     | Drive the buggy backwards.
-    | Speed values are integers or floats (decimals) from -10 to 10.
-    | Default speed is 1.
-    | decrease_left and decrease_right are used to adjust the motor speed on each side in case the buggy doesn't go straight due to one motor being slightly faster than the other.
-    | decrease_left and decrease_right take numbers from 0 to 20. These are converted to a percentage of the maximum analog motor speed of 255 (speed setting 10) so they have similar effect at any speed.
-    | decrease_left and decrease_right default values are 0.
-    | What works to give a straight line is best found by experimentation.
+    | ``speed`` values are integers or floats (decimals) from 0 to 10.
+    | Default ``speed`` is 1.
+    | ``decrease_left`` and ``decrease_right`` take numbers from 0 to 20. These are converted to a percentage of the maximum analog motor speed of 255 (speed setting 10) so they have similar effect at any speed.
+    | ``decrease_left`` and ``decrease_right`` default values are 0.
+    | Any ``decrease_left`` and ``decrease_right`` values used to give a straight line are best found by experimentation.
 
+| ``backward(10, 0, 3)`` and ``backward(speed=10, decrease_right=3)`` all set the speed to 10 with the right wheel slowed by roughly 1% (3/255).
 
 | The code below, has an adjustment of 3 to the right motor. This is roughly a 1% (3/255) decrease in speed.
 | The parameter names have been omitted in ``forward(10, 0, 3)``; instead values are in their specified order.
@@ -268,21 +272,22 @@ Straight line control
 Turning
 ----------------------------------------
 
-| The left and right motors can be run so that the buggy moves forwards or backwards in a straight line:
+| The left and right motors are adjusted to turn the buggy:
 | ``left(speed=1, radius=25)``
 | ``right(speed=1, radius=25)``
 
 .. py:function:: left(speed=1, radius=25)
 
     | Drive the buggy forwards to the left.
-    | Speed values are integers or floats (decimals) from -10 to 10.
-    | Default speed is 1.
-    | radius values are 4 to 800 (in cm)
-    | Default radius is 25 (in cm).
-    | The turning radius is approximate only, and is estimated using 8.5 cm distance between the 2 wheels.
+    | ``speed`` values are integers or floats (decimals) from -10 to 10.
+    | Default ``speed`` is 1.
+    | ``radius`` values are 4 to 800 (in cm)
+    | Default ``radius`` is 25 (in cm).
+    | The turning radius is approximate only, and is automatically calculated using 8.5 cm as the distance between the 2 wheels.
 
+| ``left()`` and ``left(1, 25)`` and ``left(speed=1, radius=25)`` all set the speed to 1 with radius 25cm.
 
-| The code below, the buggy turns left in a circular path of approximate radius or 25 cm.
+| The code below, ``left(speed=3, radius=20)``, drives the buggy forward at speed 3 while it turns left in a circular path of approximate radius of 20 cm.
 
 .. code-block:: python
 
@@ -293,7 +298,7 @@ Turning
     # setup buggy
     buggy = MOVEMotor.MOVEMotor_motors()
 
-    buggy.left(speed=1, radius=25)
+    buggy.left(speed=3, radius=20)
     sleep(4000)
     buggy.stop()
 
@@ -311,14 +316,15 @@ Turning
 .. py:function:: right(speed=1, radius=25)
 
     | Drive the buggy forwards to the right.
-    | Speed values are integers or floats (decimals) from -10 to 10.
-    | Default speed is 1.
-    | radius values are 4 to 800 (in cm)
-    | Default radius is 25 (in cm).
-    | The turning radius is approximate only, and is estimated using 8.5 cm distance between the 2 wheels.
+    | ``speed`` values are integers or floats (decimals) from -10 to 10.
+    | Default ``speed`` is 1.
+    | ``radius`` values are 4 to 800 (in cm)
+    | Default ``radius`` is 25 (in cm).
+    | The turning radius is approximate only, and is automatically calculated using 8.5 cm as the distance between the 2 wheels.
 
+| ``right()`` and ``right(1, 25)`` and ``right(speed=1, radius=25)`` all set the speed to 1 with radius 25cm.
 
-| The code below, the buggy turns right in a circular path of approximate radius or 40 cm.
+| The code below, ``left(speed=3, radius=20)``, drives the buggy forward at speed 2 while it turns right in a circular path of approximate radius of 40 cm.
 
 .. code-block:: python
 
@@ -329,7 +335,7 @@ Turning
     # setup buggy
     buggy = MOVEMotor.MOVEMotor_motors()
 
-    buggy.left(speed=1, radius=40)
+    buggy.left(speed=2, radius=40)
     sleep(4000)
     buggy.stop()
 
