@@ -204,7 +204,9 @@ Straight line control
 | The left and right motors can be run so that the buggy moves forwards or backwards in a straight line:
 | ``forward(speed=1, decrease_left=0, decrease_right=0)``
 | ``backward(speed=1, decrease_left=0, decrease_right=0)``
-| ``decrease_left`` and ``decrease_right`` are used to adjust the motor speed on either side in case the buggy doesn't go straight due to one motor being slightly faster than the other.
+| ``decrease_left`` is used to reduce the motor speed on the left side in case the buggy drifts to the right due to the left motor being slightly faster than the right.
+| ``decrease_right`` is used to reduce the motor speed on the right side in case the buggy drifts to the left due to the right motor being slightly faster than the left.
+| Any ``decrease_left`` and ``decrease_right`` values used to give a straight line are best found by experimentation.
 
 .. py:function:: forward(speed=1, decrease_left=0, decrease_right=0)
 
@@ -213,7 +215,7 @@ Straight line control
     | Default ``speed`` is 1.
     | ``decrease_left`` and ``decrease_right`` take numbers from 0 to 20. These are converted to a percentage of the maximum analog motor speed of 255 (speed setting 10) so they have similar effect at any speed.
     | ``decrease_left`` and ``decrease_right`` default values are 0.
-    | Any ``decrease_left`` and ``decrease_right`` values used to give a straight line are best found by experimentation.
+
 
 | ``forward(10, 6)`` and ``forward(10, 6, 0)`` and ``forward(speed=10, decrease_left=6)`` all set the speed to 10 with the left wheel slowed by roughly 2% (6/255).
 
@@ -241,7 +243,6 @@ Straight line control
     | Default ``speed`` is 1.
     | ``decrease_left`` and ``decrease_right`` take numbers from 0 to 20. These are converted to a percentage of the maximum analog motor speed of 255 (speed setting 10) so they have similar effect at any speed.
     | ``decrease_left`` and ``decrease_right`` default values are 0.
-    | Any ``decrease_left`` and ``decrease_right`` values used to give a straight line are best found by experimentation.
 
 | ``backward(10, 0, 3)`` and ``backward(speed=10, decrease_right=3)`` all set the speed to 10 with the right wheel slowed by roughly 1% (3/255).
 
