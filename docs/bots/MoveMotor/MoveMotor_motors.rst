@@ -220,6 +220,7 @@ Straight line control
 | ``forward(10, 6)`` and ``forward(10, 6, 0)`` and ``forward(speed=10, decrease_left=6)`` all set the speed to 10 with the left wheel slowed by roughly 2% (6/255).
 
 | The code below, has an adjustment of 6 to the left motor. This is roughly a 2% (6/255) decrease in speed.
+| It drives the buggy forwards at speed 10 for 5 secs.
 
 .. code-block:: python
 
@@ -231,7 +232,7 @@ Straight line control
     buggy = MOVEMotor.MOVEMotor_motors()
 
     buggy.forward(speed=10, decrease_left=6, decrease_right=0)
-    sleep(3000)
+    sleep(5000)
     buggy.stop()
 
 ----
@@ -248,6 +249,7 @@ Straight line control
 
 | The code below, has an adjustment of 3 to the right motor. This is roughly a 1% (3/255) decrease in speed.
 | The parameter names have been omitted in ``forward(10, 0, 3)``; instead values are in their specified order.
+| It drives the buggy forwards at speed 10 for 5 secs.
 
 .. code-block:: python
 
@@ -259,7 +261,7 @@ Straight line control
     buggy = MOVEMotor.MOVEMotor_motors()
 
     buggy.forward(10, 0, 3)
-    sleep(3000)
+    sleep(5000)
     buggy.stop()
 
 
@@ -267,7 +269,7 @@ Straight line control
 
 .. admonition:: Tasks
 
-    #. Write code to drive the buggy as close as possible to a straight line by experimenting with the decrease_left and decrease_right values.
+    #. Write code to drive the buggy as close as possible to a straight line by experimenting with the ``decrease_left`` and ``decrease_right`` values.
 
 ----
 
@@ -294,7 +296,7 @@ Turning
 
 | ``left()`` and ``left(1, 25)`` and ``left(speed=1, radius=25)`` all set the speed to 1 with radius 25cm.
 
-| The code below, ``left(speed=3, radius=20)``, drives the buggy forward at speed 3 while it turns left in a circular path of approximate radius 20 cm.
+| The code below, ``left(speed=3, radius=20)``, drives the buggy forward at speed 3 while it turns left in a circular path of approximate radius 20 cm for 4 secs.
 
 .. code-block:: python
 
@@ -333,7 +335,7 @@ Turning
 
 | ``right()`` and ``right(1, 25)`` and ``right(speed=1, radius=25)`` all set the speed to 1 with radius 25cm.
 
-| The code below, ``right(speed=2, radius=40)``, drives the buggy forwards at speed 2 while it turns right in a circular path of approximate radius 40 cm.
+| The code below, ``right(speed=2, radius=40)``, drives the buggy forwards at speed 2 while it turns right in a circular path of approximate radius 40 cm for 4 secs.
 
 .. code-block:: python
 
@@ -358,6 +360,49 @@ Turning
 
 ----
 
+Spinning
+----------------------------------------
+
+| Spin the buggy to the left or right at the chosen speed:
+| ``spin(speed=1, direction='left')``
+| When spining left, the left wheel goes backwards while the right wheel goes forwards.
+| When spining right, the right wheel goes backwards while the left wheel goes forwards.
+
+
+.. py:function:: spin(speed=1, direction='left')
+
+    | Spin the buggy on the spot.
+    | ``speed`` values are integers or floats (decimals) from 0 to 10.
+    | Default ``speed`` is 1.
+    | ``direction`` values are ``left`` or ``right``, while any other values will spin the buggy left. 
+
+
+| ``spin()`` and ``spin(1, 'left')`` and ``spin(speed=1, direction='left')`` all spin the buggy to the left at speed 1.
+
+| The code below, ``spin(2, 'right')``, spins the buggy to the right at speed 2 for 4 secs.
+
+.. code-block:: python
+
+    from microbit import *
+    import MOVEMotor
+
+
+    # setup buggy
+    buggy = MOVEMotor.MOVEMotor_motors()
+
+    buggy.spin(2, 'right')
+    sleep(4000)
+    buggy.stop()
+
+----
+
+.. admonition:: Tasks
+
+    #. Write code to drive the buggy to the right at speed 4 in small circles of 5 cm radius.
+    #. Write code to drive the buggy to the right at speed 7 in medium circles of 80 cm radius.
+    #. Write code to drive the buggy to the right at speed 10 in in circles of increasing size. Use a range function to increase the radius every 4 seconds from 10 to 100 in steps of 10.
+
+----
 
 
 
