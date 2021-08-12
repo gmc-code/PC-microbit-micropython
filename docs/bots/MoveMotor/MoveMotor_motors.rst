@@ -363,7 +363,7 @@ Turning
 Spinning
 ----------------------------------------
 
-| Spin the buggy to the left or right at the chosen speed:
+| Spin the buggy to the left or right at the chosen speed using:
 | ``spin(speed=1, direction='left')``
 | When spining left, the left wheel goes backwards while the right wheel goes forwards.
 | When spining right, the right wheel goes backwards while the left wheel goes forwards.
@@ -375,7 +375,7 @@ Spinning
     | ``speed`` values are integers or floats (decimals) from 0 to 10.
     | Default ``speed`` is 1.
     | ``direction`` values are ``left`` or ``right``, while any other values will spin the buggy left. 
-
+    | Default ``direction`` is 'left'.
 
 | ``spin()`` and ``spin(1, 'left')`` and ``spin(speed=1, direction='left')`` all spin the buggy to the left at speed 1.
 
@@ -398,11 +398,12 @@ Spinning
 
 .. admonition:: Tasks
 
-    #. Write code to drive the buggy to the right at speed 4 in small circles of 5 cm radius.
-    #. Write code to drive the buggy to the right at speed 7 in medium circles of 80 cm radius.
-    #. Write code to drive the buggy to the right at speed 10 in in circles of increasing size. Use a range function to increase the radius every 4 seconds from 10 to 100 in steps of 10.
+    #. Write code to spin the buggy to the left at speed 4 for 5 seconds.
+    #. Write code to spin the buggy to the right at speed 6 for 3 seconds.
+    #. Write code to spin the buggy to the left for 3 seconds then to right for 3 seconds at speed 6.
+    #. Write code to drive the buggy in a polygon path by combing short drives forward with short spins.
 
-----
+
 
 
 
