@@ -4,6 +4,7 @@ MoveMotor pins
 
 .. image:: images/move-motor_2.jpg
     :scale: 50 %
+    :align: center
 
 | Length 110mm.
 | Width 90mm.
