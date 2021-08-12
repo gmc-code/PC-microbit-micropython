@@ -333,7 +333,7 @@ Turning
 
 | ``right()`` and ``right(1, 25)`` and ``right(speed=1, radius=25)`` all set the speed to 1 with radius 25cm.
 
-| The code below, ``left(speed=3, radius=20)``, drives the buggy forward at speed 2 while it turns right in a circular path of approximate radius 40 cm.
+| The code below, ``right(speed=2, radius=40)``, drives the buggy forwards at speed 2 while it turns right in a circular path of approximate radius 40 cm.
 
 .. code-block:: python
 
@@ -344,7 +344,7 @@ Turning
     # setup buggy
     buggy = MOVEMotor.MOVEMotor_motors()
 
-    buggy.left(speed=2, radius=40)
+    buggy.right(speed=2, radius=40)
     sleep(4000)
     buggy.stop()
 
