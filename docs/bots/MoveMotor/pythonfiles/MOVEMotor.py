@@ -1,15 +1,17 @@
 # microbit-module: MOVEMotor
-# Gerard McCarthy
+# Gerard McCarthy; 2021
 
 # based on microbit-module: KitronikMOVEMotor@1.0.0
 # and MakeCode module: https://github.com/KitronikLtd/pxt-kitronik-motor-driver
 # Copyright (c) Kitronik Ltd 2019.
 # The MIT License (MIT)
 
-# for quick lookups of hex values see https://www.prepressure.com/library/technology/ascii-binary-hex
+# for quick lookups of hex values
+# see https://www.prepressure.com/library/technology/ascii-binary-hex
 # See datasheet: https://www.nxp.com/docs/en/data-sheet/PCA9632.pdf
 
 from microbit import i2c
+from time import sleep_ms
 
 
 # A module to simplify the driving of the motors on Kitronik
@@ -38,7 +40,7 @@ LEFT_MOTOR_REV = 0x05    # PWM3
 ALL_MOTOR = 0xA2    # 10100010
 
 
-class MOVEMotor_motors:
+class MOVEMotorMotors:
 
     # An initialisation function to setup the PCA9632 chip correctly
     def __init__(self):
@@ -75,7 +77,7 @@ class MOVEMotor_motors:
         else:
             return 0
 
-    def left_motor(self, speed=1):
+    def left_motor(self, speed=1, duration=None):
         analog_speed = self.analog_speed(speed)
         motor_buffer = bytearray(2)
         gnd_pin_buffer = bytearray(2)
@@ -95,8 +97,11 @@ class MOVEMotor_motors:
             gnd_pin_buffer[0] = LEFT_MOTOR
         i2c.write(CHIP_ADDR, motor_buffer, False)
         i2c.write(CHIP_ADDR, gnd_pin_buffer, False)
+        if duration is not None:
+            sleep_ms(duration)
+            self.stop_left()
 
-    def right_motor(self, speed=1):
+    def right_motor(self, speed=1, duration=None):
         analog_speed = self.analog_speed(speed)
         motor_buffer = bytearray(2)
         gnd_pin_buffer = bytearray(2)
@@ -115,6 +120,9 @@ class MOVEMotor_motors:
             gnd_pin_buffer[0] = RIGHT_MOTOR
         i2c.write(CHIP_ADDR, motor_buffer, False)
         i2c.write(CHIP_ADDR, gnd_pin_buffer, False)
+        if duration is not None:
+            sleep_ms(duration)
+            self.stop_right()
 
     def stop_left(self):
         stop_buffer = bytearray(2)
@@ -146,7 +154,7 @@ class MOVEMotor_motors:
             adjustment = 20
         return int(analog_speed * (255 - adjustment)/255)
 
-    def backward(self, speed=1, decrease_left=0, decrease_right=0):
+    def backward(self, speed=1, duration=None, decrease_left=0, decrease_right=0):
         analog_speed = self.analog_speed_positive(speed)
         motor_buffer = bytearray(5)
         motor_buffer[0] = ALL_MOTOR
@@ -156,8 +164,11 @@ class MOVEMotor_motors:
         motor_buffer[3] = 0
         motor_buffer[4] = self.straight_line_adjustment(analog_speed, decrease_left)
         i2c.write(CHIP_ADDR, motor_buffer, False)
+        if duration is not None:
+            sleep_ms(duration)
+            self.stop()
 
-    def forward(self, speed=1, decrease_left=0, decrease_right=0):
+    def forward(self, speed=1, duration=None, decrease_left=0, decrease_right=0):
         analog_speed = self.analog_speed_positive(speed)
         motor_buffer = bytearray(5)
         motor_buffer[0] = ALL_MOTOR
@@ -167,6 +178,9 @@ class MOVEMotor_motors:
         motor_buffer[3] = self.straight_line_adjustment(analog_speed, decrease_left)
         motor_buffer[4] = 0
         i2c.write(CHIP_ADDR, motor_buffer, False)
+        if duration is not None:
+            sleep_ms(duration)
+            self.stop()
 
     @staticmethod
     def turn_radius_factor(radius=25):
@@ -179,7 +193,7 @@ class MOVEMotor_motors:
             radius = 800
         return (radius + 8.5) / radius
 
-    def left(self, speed=1, radius=25):
+    def left(self, speed=1, radius=25, duration=None):
         # right motor faster than left
         analog_speed = self.analog_speed(speed)
         turn_radius_factor = self.turn_radius_factor(radius)
@@ -191,8 +205,11 @@ class MOVEMotor_motors:
         motor_buffer[3] = int(analog_speed/turn_radius_factor)
         motor_buffer[4] = 0
         i2c.write(CHIP_ADDR, motor_buffer, False)
+        if duration is not None:
+            sleep_ms(duration)
+            self.stop()
 
-    def right(self, speed=1, radius=25):
+    def right(self, speed=1, radius=25, duration=None):
         # left motor faster than right
         analog_speed = self.analog_speed(speed)
         turn_radius_factor = self.turn_radius_factor(radius)
@@ -204,20 +221,34 @@ class MOVEMotor_motors:
         motor_buffer[3] = analog_speed
         motor_buffer[4] = 0
         i2c.write(CHIP_ADDR, motor_buffer, False)
+        if duration is not None:
+            sleep_ms(duration)
+            self.stop()
 
-    def spin(self, speed=1, direction='left'):
-        analog_speed = self.analog_speed(speed)
+    def spin(self, speed=1, direction='left', duration=None):
+        analog_speed = self.analog_speed_positive(speed)
         motor_buffer = bytearray(5)
         motor_buffer[0] = ALL_MOTOR
         # [1 to 4] is RIGHT_MOTOR_REV; RIGHT_MOTOR; LEFT_MOTOR; LEFT_MOTOR_REV
-        if direction == 'left':
+        if direction == 'right':
             motor_buffer[1] = analog_speed
             motor_buffer[2] = 0
             motor_buffer[3] = analog_speed
             motor_buffer[4] = 0
-        else:  # right
+        elif direction == 'left':
+            motor_buffer[1] = 0
+            motor_buffer[2] = analog_speed
+            motor_buffer[3] = 0
+            motor_buffer[4] = analog_speed
+        else:  # left
             motor_buffer[1] = 0
             motor_buffer[2] = analog_speed
             motor_buffer[3] = 0
             motor_buffer[4] = analog_speed
         i2c.write(CHIP_ADDR, motor_buffer, False)
+        if duration is not None:
+            sleep_ms(duration)
+            self.stop()
+
+
+
