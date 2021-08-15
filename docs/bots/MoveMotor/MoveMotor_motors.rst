@@ -43,7 +43,7 @@ Use MOVEMotor library
 Set up the buggy
 ----------------------------------------
 
-.. py:function:: MOVEMotor.MOVEMotor_motors()
+.. py:class:: MOVEMotor.MOVEMotorMotors()
 
     Set up the buggy motors for use.
 
@@ -54,7 +54,7 @@ Set up the buggy
 
 
     # setup buggy
-    buggy = MOVEMotor.MOVEMotor_motors()
+    buggy = MOVEMotor.MOVEMotorMotors()
 
 ----
 
@@ -78,7 +78,7 @@ Independent motor control
 | ``stop_left()`` stops the left motor.
 | ``stop_right()`` stops the right motor.
 
-.. py:function:: left_motor(speed=1, duration=None)
+.. py:method:: left_motor(speed=1, duration=None)
 
     | Make the left motor run. 
     | ``speed`` values are integers or floats (decimals) from -10 to 10.
@@ -101,7 +101,7 @@ Independent motor control
 
 
     # setup buggy
-    buggy = MOVEMotor.MOVEMotor_motors()
+    buggy = MOVEMotor.MOVEMotorMotors()
 
     buggy.left_motor(5)
 
@@ -114,13 +114,13 @@ Independent motor control
 
 
     # setup buggy
-    buggy = MOVEMotor.MOVEMotor_motors()
+    buggy = MOVEMotor.MOVEMotorMotors()
 
     buggy.left_motor(2, 5000)
 
 ----
 
-.. py:function:: right_motor(speed=1, duration=None)
+.. py:method:: right_motor(speed=1, duration=None)
 
     | Make the left motor run. 
     | ``speed`` values are integers or floats (decimals) from -10 to 10.
@@ -143,7 +143,7 @@ Independent motor control
 
 
     # setup buggy
-    buggy = MOVEMotor.MOVEMotor_motors()
+    buggy = MOVEMotor.MOVEMotorMotors()
 
     buggy.right_motor(-10)
 
@@ -157,13 +157,13 @@ Independent motor control
 
 
     # setup buggy
-    buggy = MOVEMotor.MOVEMotor_motors()
+    buggy = MOVEMotor.MOVEMotorMotors()
 
     buggy.right_motor(speed=4, duration=3000)
 
 ----
 
-.. py:function:: stop_left()
+.. py:method:: stop_left()
 
     | Stop the left motor.
 
@@ -177,7 +177,7 @@ Independent motor control
 
 
     # setup buggy
-    buggy = MOVEMotor.MOVEMotor_motors()
+    buggy = MOVEMotor.MOVEMotorMotors()
 
     buggy.left_motor()
     sleep(1000)
@@ -186,7 +186,7 @@ Independent motor control
 
 ----
 
-.. py:function:: stop_right()
+.. py:method:: stop_right()
 
     | Stop the right motor.
 
@@ -200,7 +200,7 @@ Independent motor control
 
 
     # setup buggy
-    buggy = MOVEMotor.MOVEMotor_motors()
+    buggy = MOVEMotor.MOVEMotorMotors()
 
     buggy.right_motor(4)
     sleep(2000)
@@ -211,7 +211,7 @@ Independent motor control
 Stop both motors
 ----------------------------------------
 
-.. py:function:: stop()
+.. py:method:: stop()
 
     | Stop both motors.
 
@@ -225,7 +225,7 @@ Stop both motors
 
 
     # setup buggy
-    buggy = MOVEMotor.MOVEMotor_motors()
+    buggy = MOVEMotor.MOVEMotorMotors()
     
     buggy.left_motor(5)
     buggy.right_motor(2)
@@ -256,7 +256,7 @@ Straight line control
 | ``decrease_right`` is used to reduce the motor speed on the right side in case the buggy drifts to the left due to the right motor being slightly faster than the left.
 | Any ``decrease_left`` and ``decrease_right`` values used to give a straight line are best found by experimentation.
 
-.. py:function:: forward(speed=1, duration=None, decrease_left=0, decrease_right=0)
+.. py:method:: forward(speed=1, duration=None, decrease_left=0, decrease_right=0)
 
     | Drive the buggy forwards.
     | ``speed`` values are integers or floats (decimals) from 0 to 10.
@@ -281,14 +281,14 @@ Straight line control
 
 
     # setup buggy
-    buggy = MOVEMotor.MOVEMotor_motors()
+    buggy = MOVEMotor.MOVEMotorMotors()
 
     buggy.forward(speed=10, duration=5000, decrease_left=6, decrease_right=0)
 
 
 ----
 
-.. py:function:: backward(speed=1, duration=None, decrease_left=0, decrease_right=0)
+.. py:method:: backward(speed=1, duration=None, decrease_left=0, decrease_right=0)
 
     | Drive the buggy backwards.
     | ``speed`` values are integers or floats (decimals) from 0 to 10.
@@ -314,7 +314,7 @@ Straight line control
 
 
     # setup buggy
-    buggy = MOVEMotor.MOVEMotor_motors()
+    buggy = MOVEMotor.MOVEMotorMotors()
 
     buggy.forward(8, 4000, 0, 3)
 
@@ -338,7 +338,7 @@ Turning
 | When turning right the right wheel is slowed slightly based on the radius value.
 | The turning radius is approximate only, and is automatically calculated using 8.5 cm as the distance between the 2 wheels.
 
-.. py:function:: left(speed=1, radius=25, duration=None)
+.. py:method:: left(speed=1, radius=25, duration=None)
 
     | Drive the buggy to the left.
     | ``speed`` values are integers or floats (decimals) from -10 to 10.
@@ -364,7 +364,7 @@ Turning
 
 
     # setup buggy
-    buggy = MOVEMotor.MOVEMotor_motors()
+    buggy = MOVEMotor.MOVEMotorMotors()
 
     buggy.left(speed=3, radius=20, duration=4000)
 
@@ -379,7 +379,7 @@ Turning
 
 ----
 
-.. py:function:: right(speed=1, radius=25, duration=None)
+.. py:method:: right(speed=1, radius=25, duration=None)
 
     | Drive the buggy to the right.
     | ``speed`` values are integers or floats (decimals) from -10 to 10.
@@ -405,7 +405,7 @@ Turning
 
 
     # setup buggy
-    buggy = MOVEMotor.MOVEMotor_motors()
+    buggy = MOVEMotor.MOVEMotorMotors()
 
     buggy.right(speed=2, radius=40, duration=3000)
 
@@ -428,7 +428,7 @@ Spinning
 | When spining right, the right wheel goes backwards while the left wheel goes forwards.
 
 
-.. py:function:: spin(speed=1, direction='left', duration=None)
+.. py:method:: spin(speed=1, direction='left', duration=None)
 
     | Spin the buggy on the spot.
     | ``speed`` values are integers or floats (decimals) from 0 to 10.
@@ -452,7 +452,7 @@ Spinning
 
 
     # setup buggy
-    buggy = MOVEMotor.MOVEMotor_motors()
+    buggy = MOVEMotor.MOVEMotorMotors()
 
     buggy.spin(2, 'right', 4000)
 

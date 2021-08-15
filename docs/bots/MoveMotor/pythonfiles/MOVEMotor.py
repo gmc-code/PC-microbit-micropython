@@ -1,22 +1,20 @@
+# MOVEMotor module for motors, line following and distance sensing
 # microbit-module: MOVEMotor
-# Gerard McCarthy; 2021
-
-# based on microbit-module: KitronikMOVEMotor@1.0.0
-# and MakeCode module: https://github.com/KitronikLtd/pxt-kitronik-motor-driver
-# Copyright (c) Kitronik Ltd 2019.
+# GMC-code; 2021
 # The MIT License (MIT)
 
+# A microbit micropython module for the Kitronik :MOVE Motor buggy
+# see Kitronic MakeCode module: https://github.com/KitronikLtd/pxt-kitronik-motor-driver
 # for quick lookups of hex values
 # see https://www.prepressure.com/library/technology/ascii-binary-hex
 # See datasheet: https://www.nxp.com/docs/en/data-sheet/PCA9632.pdf
 
-from microbit import i2c
-from time import sleep_ms
+from microbit import i2c, pin1, pin2, pin13, pin14
+import machine
+import utime
 
 
-# A module to simplify the driving of the motors on Kitronik
-# :MOVE Motor buggy with micro:bit
-# main constants
+# constants
 CHIP_ADDR = 0x62
 # CHIP_ADDR is the standard chip address for the PCA9632,
 # datasheet refers to LED control but chip is used for PWM to motor driver
@@ -39,10 +37,8 @@ LEFT_MOTOR = 0x04        # PWM2
 LEFT_MOTOR_REV = 0x05    # PWM3
 ALL_MOTOR = 0xA2    # 10100010
 
-
 class MOVEMotorMotors:
 
-    # An initialisation function to setup the PCA9632 chip correctly
     def __init__(self):
         buffer = bytearray(2)
         buffer[0] = MODE_1_REG_ADDR
@@ -54,75 +50,6 @@ class MOVEMotorMotors:
         buffer[0] = MOTOR_OUT_ADDR
         buffer[1] = MOTOR_OUT_VALUE
         i2c.write(CHIP_ADDR, buffer, False)
-
-    @staticmethod
-    def analog_speed_positive(speed):
-        # input speed = 0 to 10
-        # output = 60 to 255
-        if speed < 0:
-            return 0
-        elif speed > 0 and speed <= 10:
-            return int((speed * 21) + 45)
-        else:
-            return 0
-
-    @staticmethod
-    def analog_speed(speed):
-        # input speed = -10 to 0 to 10
-        # output = 60 to 255
-        if speed < 0 and speed >= -10:
-            return int((speed * -21) + 45)
-        elif speed > 0 and speed <= 10:
-            return int((speed * 21) + 45)
-        else:
-            return 0
-
-    def left_motor(self, speed=1, duration=None):
-        analog_speed = self.analog_speed(speed)
-        motor_buffer = bytearray(2)
-        gnd_pin_buffer = bytearray(2)
-        motor_buffer[1] = analog_speed
-        gnd_pin_buffer[1] = 0
-        if (speed > 0):
-            # going forwards
-            motor_buffer[0] = LEFT_MOTOR
-            gnd_pin_buffer[0] = LEFT_MOTOR_REV
-        elif (speed < 0):
-            # going backwards
-            motor_buffer[0] = LEFT_MOTOR_REV
-            gnd_pin_buffer[0] = LEFT_MOTOR
-        else:
-            # 0 speed
-            motor_buffer[0] = LEFT_MOTOR_REV
-            gnd_pin_buffer[0] = LEFT_MOTOR
-        i2c.write(CHIP_ADDR, motor_buffer, False)
-        i2c.write(CHIP_ADDR, gnd_pin_buffer, False)
-        if duration is not None:
-            sleep_ms(duration)
-            self.stop_left()
-
-    def right_motor(self, speed=1, duration=None):
-        analog_speed = self.analog_speed(speed)
-        motor_buffer = bytearray(2)
-        gnd_pin_buffer = bytearray(2)
-        motor_buffer[1] = analog_speed
-        gnd_pin_buffer[1] = 0
-        if (speed > 0):
-            # going forwards
-            motor_buffer[0] = RIGHT_MOTOR
-            gnd_pin_buffer[0] = RIGHT_MOTOR_REV
-        elif (speed < 0):
-            # going backwards
-            motor_buffer[0] = RIGHT_MOTOR_REV
-            gnd_pin_buffer[0] = RIGHT_MOTOR
-        else:
-            motor_buffer[0] = RIGHT_MOTOR_REV
-            gnd_pin_buffer[0] = RIGHT_MOTOR
-        i2c.write(CHIP_ADDR, motor_buffer, False)
-        i2c.write(CHIP_ADDR, gnd_pin_buffer, False)
-        if duration is not None:
-            sleep_ms(duration)
-            self.stop_right()
 
     def stop_left(self):
         stop_buffer = bytearray(2)
@@ -145,6 +72,53 @@ class MOVEMotorMotors:
         self.stop_right()
 
     @staticmethod
+    def analog_speed(speed):
+        # input speed = -10 to 0 to 10
+        # output = 60 to 255
+        if speed < 0 and speed >= -10:
+            return int((speed * -21) + 45)
+        elif speed > 0 and speed <= 10:
+            return int((speed * 21) + 45)
+        else:
+            return 0
+
+    def run_left(self, speed=1, duration=None):
+        analog_speed = self.analog_speed(speed)
+        motor_buffer = bytearray(2)
+        gnd_pin_buffer = bytearray(2)
+        motor_buffer[1] = analog_speed
+        gnd_pin_buffer[1] = 0
+        if (speed > 0):
+            motor_buffer[0] = LEFT_MOTOR
+            gnd_pin_buffer[0] = LEFT_MOTOR_REV
+        else:
+            motor_buffer[0] = LEFT_MOTOR_REV
+            gnd_pin_buffer[0] = LEFT_MOTOR
+        i2c.write(CHIP_ADDR, motor_buffer, False)
+        i2c.write(CHIP_ADDR, gnd_pin_buffer, False)
+        if duration is not None:
+            utime.sleep_ms(duration)
+            self.stop_left()
+
+    def run_right(self, speed=1, duration=None):
+        analog_speed = self.analog_speed(speed)
+        motor_buffer = bytearray(2)
+        gnd_pin_buffer = bytearray(2)
+        motor_buffer[1] = analog_speed
+        gnd_pin_buffer[1] = 0
+        if (speed > 0):
+            motor_buffer[0] = RIGHT_MOTOR
+            gnd_pin_buffer[0] = RIGHT_MOTOR_REV
+        else:
+            motor_buffer[0] = RIGHT_MOTOR_REV
+            gnd_pin_buffer[0] = RIGHT_MOTOR
+        i2c.write(CHIP_ADDR, motor_buffer, False)
+        i2c.write(CHIP_ADDR, gnd_pin_buffer, False)
+        if duration is not None:
+            utime.sleep_ms(duration)
+            self.stop_right()
+
+    @staticmethod
     def straight_line_adjustment(analog_speed, adjustment):
         # limit adjustment to 0 to 20
         # make percentage adjustment (adjustment/max analog) to analog_speed
@@ -165,7 +139,7 @@ class MOVEMotorMotors:
         motor_buffer[4] = self.straight_line_adjustment(analog_speed, decrease_left)
         i2c.write(CHIP_ADDR, motor_buffer, False)
         if duration is not None:
-            sleep_ms(duration)
+            utime.sleep_ms(duration)
             self.stop()
 
     def forward(self, speed=1, duration=None, decrease_left=0, decrease_right=0):
@@ -179,7 +153,7 @@ class MOVEMotorMotors:
         motor_buffer[4] = 0
         i2c.write(CHIP_ADDR, motor_buffer, False)
         if duration is not None:
-            sleep_ms(duration)
+            utime.sleep_ms(duration)
             self.stop()
 
     @staticmethod
@@ -206,7 +180,7 @@ class MOVEMotorMotors:
         motor_buffer[4] = 0
         i2c.write(CHIP_ADDR, motor_buffer, False)
         if duration is not None:
-            sleep_ms(duration)
+            utime.sleep_ms(duration)
             self.stop()
 
     def right(self, speed=1, radius=25, duration=None):
@@ -222,7 +196,7 @@ class MOVEMotorMotors:
         motor_buffer[4] = 0
         i2c.write(CHIP_ADDR, motor_buffer, False)
         if duration is not None:
-            sleep_ms(duration)
+            utime.sleep_ms(duration)
             self.stop()
 
     def spin(self, speed=1, direction='left', duration=None):
@@ -247,8 +221,43 @@ class MOVEMotorMotors:
             motor_buffer[4] = analog_speed
         i2c.write(CHIP_ADDR, motor_buffer, False)
         if duration is not None:
-            sleep_ms(duration)
+            utime.sleep_ms(duration)
             self.stop()
 
+class MOVEMotorLineSensors:
 
+    def __init__(self):
+        self.left_offset = 0
+        self.right_offset = 0
 
+    def line_sensor_calibrate(self):
+        rightLineSensor = pin1.read_analog()
+        leftLineSensor = pin2.read_analog()
+        offset = int(abs(rightLineSensor-leftLineSensor)/2)
+        if leftLineSensor > rightLineSensor:
+            self.left_offset = -offset
+            self.right_offset = offset
+        else:
+            self.left_offset = offset
+            self.right_offset = -offset
+
+    def line_sensor_read(self, sensor):
+        if sensor == 'left':
+            return pin2.read_analog() + self.left_offset
+        elif sensor == 'right':
+            return pin1.read_analog() + self.right_offset
+
+class MOVEMotorDistanceSensors:
+
+    def distanceCm(self):
+        pin14.set_pull(pin14.NO_PULL)
+        pin13.write_digital(0)
+        utime.sleep_us(2)
+        pin13.write_digital(1)
+        utime.sleep_us(10)
+        pin13.write_digital(0)
+        distance = machine.time_pulse_us(pin14, 1, 1160000)
+        if distance > 0:
+            return round(distance/58)
+        else:
+            return round(distance)
