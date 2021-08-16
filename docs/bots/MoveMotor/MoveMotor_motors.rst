@@ -6,6 +6,7 @@ MoveMotor motors
     :scale: 50 %
     :align: center
 
+
 MOVEMotor.py module
 ----------------------------------------
 
@@ -43,7 +44,7 @@ Use MOVEMotor library
 Set up the buggy
 ----------------------------------------
 
-.. py:class:: MOVEMotor.MOVEMotorMotors()
+.. py:class:: MOVEMotorMotors() 
 
     Set up the buggy motors for use.
 
