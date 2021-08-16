@@ -13,12 +13,27 @@ the compass should be calibrated, otherwise the readings may be wrong.
     | Calibration consists of tilting the microbit to fill the LED display.
 
 
-Functions
+Main Functions
 ----------------
 
 .. py:function:: calibrate()
 
     Starts the calibration process. A message 'TILT TO FILL SCREEN' will be scrolled to the user after which the user will need to tilt the microbit to fill the LED display.
+
+    
+.. py:function:: heading()
+
+    Gives the compass heading, calculated from the above readings, as an
+    integer in the range from 0 to 360, representing the angle in degrees,
+    clockwise, with north as 0.
+
+.. image:: images/compass_angles.jpg
+    :scale: 30 %
+
+----
+
+Other Functions
+----------------
 
 .. py:function:: is_calibrated()
 
@@ -50,13 +65,6 @@ Functions
     Gives the reading of the magnetic field strength on the ``z`` axis in nano 
     tesla, as a positive or negative integer, depending on the direction of the
     field.
-
-
-.. py:function:: heading()
-
-    Gives the compass heading, calculated from the above readings, as an
-    integer in the range from 0 to 360, representing the angle in degrees,
-    clockwise, with north as 0.
 
 
 .. py:function:: get_field_strength()

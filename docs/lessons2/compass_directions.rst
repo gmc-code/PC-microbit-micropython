@@ -28,13 +28,8 @@ Use ``compass.heading()`` to get an angle from True North where North is 0.
 
 ----
 
-.. |img1| image:: images/clock_compass.png
+.. image:: images/clock_compass.png
     :scale: 100 %
-
-.. |img2| image:: images/compass_angles.jpg
-    :scale: 30 %
-
-|img1| |img2|
 
 Compass Pointer
 --------------------
