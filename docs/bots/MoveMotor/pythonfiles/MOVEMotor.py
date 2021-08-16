@@ -1,9 +1,9 @@
 # MOVEMotor module for motors, line following and distance sensing
-# microbit-module: MOVEMotor
+# requires microbit v2
 # GMC-code; 2021
 # The MIT License (MIT)
 
-# A microbit micropython module for the Kitronik :MOVE Motor buggy
+# A microbit v2 micropython module for the Kitronik :MOVE Motor buggy
 # see Kitronic MakeCode module: https://github.com/KitronikLtd/pxt-kitronik-motor-driver
 # for quick lookups of hex values
 # see https://www.prepressure.com/library/technology/ascii-binary-hex
@@ -82,7 +82,7 @@ class MOVEMotorMotors:
         else:
             return 0
 
-    def run_left(self, speed=1, duration=None):
+    def left_motor(self, speed=1, duration=None):
         analog_speed = self.analog_speed(speed)
         motor_buffer = bytearray(2)
         gnd_pin_buffer = bytearray(2)
@@ -100,7 +100,7 @@ class MOVEMotorMotors:
             utime.sleep_ms(duration)
             self.stop_left()
 
-    def run_right(self, speed=1, duration=None):
+    def right_motor(self, speed=1, duration=None):
         analog_speed = self.analog_speed(speed)
         motor_buffer = bytearray(2)
         gnd_pin_buffer = bytearray(2)
@@ -129,7 +129,7 @@ class MOVEMotorMotors:
         return int(analog_speed * (255 - adjustment)/255)
 
     def backward(self, speed=1, duration=None, decrease_left=0, decrease_right=0):
-        analog_speed = self.analog_speed_positive(speed)
+        analog_speed = abs(self.analog_speed(speed))
         motor_buffer = bytearray(5)
         motor_buffer[0] = ALL_MOTOR
         # [1 to 4] is RIGHT_MOTOR_REV; RIGHT_MOTOR; LEFT_MOTOR; LEFT_MOTOR_REV
@@ -143,7 +143,7 @@ class MOVEMotorMotors:
             self.stop()
 
     def forward(self, speed=1, duration=None, decrease_left=0, decrease_right=0):
-        analog_speed = self.analog_speed_positive(speed)
+        analog_speed = abs(self.analog_speed(speed))
         motor_buffer = bytearray(5)
         motor_buffer[0] = ALL_MOTOR
         # [1 to 4] is RIGHT_MOTOR_REV; RIGHT_MOTOR; LEFT_MOTOR; LEFT_MOTOR_REV
@@ -200,7 +200,7 @@ class MOVEMotorMotors:
             self.stop()
 
     def spin(self, speed=1, direction='left', duration=None):
-        analog_speed = self.analog_speed_positive(speed)
+        analog_speed = abs(self.analog_speed(speed))
         motor_buffer = bytearray(5)
         motor_buffer[0] = ALL_MOTOR
         # [1 to 4] is RIGHT_MOTOR_REV; RIGHT_MOTOR; LEFT_MOTOR; LEFT_MOTOR_REV
@@ -224,6 +224,7 @@ class MOVEMotorMotors:
             utime.sleep_ms(duration)
             self.stop()
 
+
 class MOVEMotorLineSensors:
 
     def __init__(self):
@@ -246,6 +247,7 @@ class MOVEMotorLineSensors:
             return pin2.read_analog() + self.left_offset
         elif sensor == 'right':
             return pin1.read_analog() + self.right_offset
+
 
 class MOVEMotorDistanceSensors:
 

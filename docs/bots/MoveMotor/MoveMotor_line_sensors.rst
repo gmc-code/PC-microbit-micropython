@@ -46,8 +46,7 @@ Set up the buggy
 
 .. py:class:: MOVEMotorMotors() 
 
-| Set up the buggy motors for use.
-| Use ``buggy = MOVEMotor.MOVEMotorMotors()`` to be able to use the motor methods on the buggy.
+    Set up the buggy motors for use.
 
 .. code-block:: python
 
@@ -60,10 +59,10 @@ Set up the buggy
 
 ----
 
-Duration parameter
+Methods with duration parameter
 ----------------------------------------
 
-| The Buggy methods that drive the motors have a duration parameter. 
+| Buggy methods that drive the motors have a duration parameter. 
 | The duration parameter specifies how long the motor runs for.
 | The default duration is ``None``. If the duration is ``None`` or is not specified the motor will run continuously until another command is sent to it.
 | e.g. using the duration parameter: ``buggy.forward(10, duration=5000)``  the buggy stops after 5 sec.
@@ -466,6 +465,7 @@ Spinning
     #. Write code to spin the buggy to the right at speed 6 for 3 seconds.
     #. Write code to spin the buggy to the left for 3 seconds then to right for 3 seconds at speed 6.
     #. Write code to drive the buggy in a polygonal path (many straight sides) by combining short drives forward with short spins.
+
 
 
 

@@ -1,6 +1,10 @@
 ====================================================
-MoveMotor pins
+MoveMotor info
 ====================================================
+
+| The Kitronic :MOVEMotor features 2 independent motors, infrared line sensors for line tracking, distance sensors for obstacle avoidance, 4 ZIP Leds and a buzzer, all powered by 4 AA batteries below the board. 
+| The servo outputs are not used here.
+
 
 .. image:: images/move-motor_2.jpg
     :scale: 50 %
@@ -13,7 +17,7 @@ MoveMotor pins
 Pins
 ---------
 
-The pin numbers used to control different parts of the :MOVEMotor are below.
+The pin numbers used to control different parts of the Kitronic :MOVEMotor are below.
 
 =======  ===========================
  Pin     Purpose
