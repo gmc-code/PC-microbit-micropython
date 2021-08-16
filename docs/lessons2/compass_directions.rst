@@ -1,5 +1,5 @@
 ====================================================
-Direction
+Compass Directions
 ====================================================
 
 Compass Readings
@@ -28,6 +28,13 @@ Use ``compass.heading()`` to get an angle from True North where North is 0.
 
 ----
 
+.. |img1| image:: images/clock_compass.png
+    :scale: 100 %
+
+.. |img2| image:: images/compass_angles.jpg
+    :scale: 30 %
+
+|img1| |img2|
 
 Compass Pointer
 --------------------
@@ -59,5 +66,5 @@ Compass Pointer
     #. What are the readings for 1 o'clock?
     #. What are the readings for 3 o'clock?
     #. What are the readings for 6 o'clock?
-    #. Place a small piec of paper on the ground. Point to 0 o'clock and walk 5 paces. Turn to 4 o'clock and walk 5 paces. Turn to 8 o'clock and walk 5 paces. Did you end up at your starting point?
+    #. Place a small piece of paper on the ground. Point to 0 o'clock and walk 5 paces. Turn to 4 o'clock and walk 5 paces. Turn to 8 o'clock and walk 5 paces. Did you end up at your starting point?
 
