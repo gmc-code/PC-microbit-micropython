@@ -56,7 +56,7 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
     :numbered:
 
 
-    lessons2/compass.rst
+    lessons2/compass_syntax.rst
     lessons2/direction.rst
     lessons2/accelerometer.rst
     lessons2/gestures.rst
