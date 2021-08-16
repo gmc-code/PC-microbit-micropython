@@ -55,7 +55,12 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
     :caption: Lessons_2
     :numbered:
 
-    lessons/Practice_tasks_1.rst
+
+    lessons2/compass.rst
+    lessons2/direction.rst
+    lessons2/accelerometer.rst
+    lessons2/gestures.rst
+    lessons2/movement.rst
 
 
 .. toctree::
