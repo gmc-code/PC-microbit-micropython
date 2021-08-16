@@ -9,9 +9,8 @@ the compass should be calibrated, otherwise the readings may be wrong.
 
 .. warning::
 
-    Calibrating the compass will cause your program to pause until calibration
-    is complete. Calibration consists of a little game to draw a circle on the
-    LED display by rotating the device.
+    | Calibrating the compass will cause your program to pause until calibration is complete. 
+    | Calibration consists of tilting the microbit to fill the LED display.
 
 
 Functions
@@ -19,9 +18,7 @@ Functions
 
 .. py:function:: calibrate()
 
-    Starts the calibration process. An instructive message will be scrolled
-    to the user after which they will need to rotate the device in order to
-    draw a circle on the LED display.
+    Starts the calibration process. A message 'TILT TO FILL SCREEN' will be scrolled to the user after which the user will need to tilt the microbit to fill the LED display.
 
 .. py:function:: is_calibrated()
 
