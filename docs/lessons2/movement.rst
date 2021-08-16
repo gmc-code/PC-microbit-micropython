@@ -47,38 +47,3 @@ its screen, it's because it uses an accelerometer in exactly the same way as
 the program above. Game controllers also contain accelerometers to help you
 steer and move around in games.
 
-Musical Mayhem
--------------------
-
-One of the most wonderful aspects of MicroPython on the BBC micro:bit is how it
-lets you easily link different capabilities of the device together. For
-example, let's turn it into a musical instrument (of sorts).
-
-Connect a speaker as you did in the music tutorial. Use crocodile clips to
-attach pin 0 and GND to the positive and negative inputs on the speaker - it
-doesn't matter which way round they are connected to the speaker.
-
-.. image:: pin0-gnd.png
-
-What happens if we take the readings from the accelerometer and play them as
-pitches? Let's find out::
-
-    from microbit import *
-    import music
-
-    while True:
-        music.pitch(accelerometer.get_y(), 10)
-
-The key line is at the end and remarkably simple. We *nest* the reading from
-the Y axis as the frequency to feed into the ``music.pitch`` method. We only
-let it play for 10 milliseconds because we want the tone to change quickly as
-the device is tipped. Because the device is in an infinite ``while`` loop it
-is constantly reacting to changes in the Y axis measurement.
-
-That's it!
-
-Tip the device forwards and backwards. If the reading along the Y axis is
-positive it'll change the pitch of the tone played by the micro:bit.
-
-Imagine a whole symphony orchestra of these devices. Can you play a tune? How
-would you improve the program to make the micro:bit sound more musical?
