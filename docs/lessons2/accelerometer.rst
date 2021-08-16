@@ -76,16 +76,4 @@ Functions
     calls to some accelerometer method to do the gesture detection. Usually 
     gestures can be detected using a loop with a small :func:`microbit.sleep` delay.
 
-Examples
---------
 
-A fortune telling magic 8-ball. Ask a question then shake the device for an
-answer.
-
-.. include:: ../examples/magic8.py
-    :code: python
-
-Simple Slalom. Move the device to avoid the obstacles.
-
-.. include:: ../examples/simple_slalom.py
-    :code: python
