@@ -1,11 +1,13 @@
+====================================================
 Direction
----------
+====================================================
 
 There is a compass on the BBC micro:bit. If you ever make a weather station
 use the device to work out the wind direction.
 
-Compass
-+++++++
+
+Compass Directions
+--------------------
 
 It can also tell you the direction of North like this::
 

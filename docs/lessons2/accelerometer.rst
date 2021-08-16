@@ -1,7 +1,8 @@
+====================================================
 Accelerometer
-*************
+====================================================
 
-.. py:module:: microbit.accelerometer
+.. py:module:: accelerometer
 
 This object gives you access to the on-board accelerometer. The accelerometer
 also provides convenience functions for detecting gestures. The
@@ -14,7 +15,7 @@ The accelerometer returns a value in the range 0..1024 for each axis, which is
 then scaled accordingly.
 
 Functions
-=========
+-----------
 
 .. py:function:: get_x()
 

@@ -1,5 +1,6 @@
+====================================================
 Movement
---------
+====================================================
 
 Your BBC micro:bit comes with an accelerometer. It measures movement along
 three axes:
@@ -47,7 +48,7 @@ the program above. Game controllers also contain accelerometers to help you
 steer and move around in games.
 
 Musical Mayhem
-++++++++++++++
+-------------------
 
 One of the most wonderful aspects of MicroPython on the BBC micro:bit is how it
 lets you easily link different capabilities of the device together. For

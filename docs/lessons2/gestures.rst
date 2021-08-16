@@ -1,5 +1,6 @@
+====================================================
 Gestures
---------
+====================================================
 
 The really interesting side-effect of having an accelerometer is gesture
 detection. If you move your BBC micro:bit in a certain way (as a gesture) then
@@ -35,7 +36,7 @@ then use the display to show a happy face. Otherwise, the device is made to
 look angry!
 
 Magic-8
-+++++++
+-------------
 
 A Magic-8 ball is a toy first invented in the 1950s. The idea is to ask
 it a yes/no question, shake it and wait for it to reveal the truth. It's rather

@@ -1,7 +1,8 @@
+====================================================
 Compass
-*******
+====================================================
 
-.. py:module:: microbit.compass
+.. py:module:: compass
 
 This module lets you access the built-in electronic compass. Before using,
 the compass should be calibrated, otherwise the readings may be wrong.
@@ -14,7 +15,7 @@ the compass should be calibrated, otherwise the readings may be wrong.
 
 
 Functions
-=========
+----------------
 
 .. py:function:: calibrate()
 
@@ -66,9 +67,3 @@ Functions
     Returns an integer indication of the magnitude of the magnetic field around
     the device in nano tesla.
 
-
-Example
-=======
-
-.. include:: ../examples/compass.py
-    :code: python
