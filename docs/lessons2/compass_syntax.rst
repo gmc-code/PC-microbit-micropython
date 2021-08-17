@@ -7,7 +7,7 @@ Compass syntax
 This module lets you access the built-in electronic compass. Before using,
 the compass should be calibrated, otherwise the readings may be wrong.
 
-.. warning::
+.. tip::
 
     | Calibrating the compass will cause your program to pause until calibration is complete. 
     | Calibration consists of tilting the microbit to fill the LED display.

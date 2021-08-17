@@ -34,7 +34,7 @@ Use ``compass.heading()`` to get an angle from True North where North is 0.
 Compass Pointer
 --------------------
 
-| The compass has readings from 0 to 360 degrees. 
+| The compass has readings from 0 to 359 degrees. (360 degrees is 0 degrees.)
 | This can be divided up into 12 directions like the hours on a clock.
 | The code below is to test the formula used.
 | For readings from 346 to 15, the clock position should be at 12 or 0 o'clock.
