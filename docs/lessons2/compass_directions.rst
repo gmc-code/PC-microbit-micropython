@@ -30,6 +30,7 @@ Use ``compass.heading()`` to get an angle from True North where North is 0.
 
 .. image:: images/clock_compass.png
     :scale: 100 %
+    :align: center
 
 Compass Pointer
 --------------------
@@ -40,7 +41,9 @@ Compass Pointer
 | For readings from 346 to 15, the clock position should be at 12 or 0 o'clock.
 | For readings from 16 to 45, the clock position should be at 11 o'clock.
 | For readings from 46 to 75, the clock position should be at 10 o'clock.
-| So the clock hand points towards north, while teh reading is the direction the top (where the USB connection is) of the microbit is pointing towards.
+| For readings from 316 to 345, the clock position should be at 1 o'clock.
+| For readings from 286 to 315, the clock position should be at 2 o'clock.
+| So the clock hand points towards north, while the reading is the direction the top (where the USB connection is) of the microbit is pointing towards.
 
 .. code-block:: python
 
@@ -62,5 +65,6 @@ Compass Pointer
     #. What are the readings for 1 o'clock?
     #. What are the readings for 3 o'clock?
     #. What are the readings for 6 o'clock?
-    #. Place a small piece of paper on the ground. Point to 0 o'clock and walk 5 paces. Turn to 4 o'clock and walk 5 paces. Turn to 8 o'clock and walk 5 paces. Did you end up at your starting point?
-
+    #. What are the readings for 11 o'clock?
+    #. Place a small piece of paper on the ground. Turn so the clock hand points to 0 o'clock and walk 5 paces. Turn so the clock hand points to 4 o'clock and walk 5 paces. Turn so the clock hand points to 8 o'clock and walk 5 paces. Did you end up at your starting point?
+    #. Place a small piece of paper on the ground. Turn so the clock hand points to 0 o'clock and walk 5 paces. Turn so the clock hand points to 3 o'clock and walk 5 paces. Turn so the clock hand points to 6 o'clock and walk 5 paces. Turn so the clock hand points to 9 o'clock and walk 5 paces. Did you end up at your starting point?

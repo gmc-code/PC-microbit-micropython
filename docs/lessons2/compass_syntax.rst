@@ -29,6 +29,7 @@ Main Functions
 
 .. image:: images/compass_angles.jpg
     :scale: 30 %
+    :align: center
 
 ----
 
