@@ -59,7 +59,7 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
     lessons2/compass_syntax.rst
     lessons2/compass_directions.rst
     lessons2/thermometer.rst
-    lessons2/accelerometer.rst
+    lessons2/accelerometer_syntax.rst
     lessons2/gestures.rst
     lessons2/movement.rst
 

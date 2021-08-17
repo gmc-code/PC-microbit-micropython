@@ -11,6 +11,7 @@ Use ``compass.heading()`` to get an angle from True North where North is 0.
 
     from microbit import *
 
+
     compass.calibrate()
 
     while True:
@@ -49,7 +50,8 @@ Compass Pointer
 
     from microbit import *
 
-    # compass.calibrate()
+
+    # compass.calibrate()  # should be OK without  recalibrating
 
     while True:
         display.scroll(compass.heading(), delay=60)

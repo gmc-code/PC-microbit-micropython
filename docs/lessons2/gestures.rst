@@ -2,22 +2,38 @@
 Gestures
 ====================================================
 
-The really interesting side-effect of having an accelerometer is gesture
-detection. If you move your BBC micro:bit in a certain way (as a gesture) then
-MicroPython is able to detect this.
+| The accelerometer returns the following gestures moving the microbit: ``up``, ``down``, ``left``, ``right``, ``face up``, ``face down``, ``freefall``, ``3g``, ``6g``,
+``8g``, ``shake``. 
+| Gestures are always represented as strings. 
+| ``3g``, ``6g`` and ``8g`` gestures apply when the micorbit experiences large levels of g-force.
 
-MicroPython is able to recognise the following gestures: ``up``, ``down``,
-``left``, ``right``, ``face up``, ``face down``, ``freefall``, ``3g``, ``6g``,
-``8g``, ``shake``. Gestures are always represented as strings. While most of
-the names should be obvious, the ``3g``, ``6g`` and ``8g`` gestures apply when
-the device encounters these levels of g-force (like when an astronaut is
-launched into space).
+Current gesture
+-------------------------
 
-To get the current gesture use the ``accelerometer.current_gesture`` method.
-Its result is going to be one of the named gestures listed above. For example,
-this program will only make your device happy if it is face up::
+.. py:function:: current_gesture()
+
+    Return the name of the current gesture as a string. The gestures are: ``"up"``, ``"down"``, ``"left"``, ``"right"``, ``"face up"``, ``"face down"``, ``"freefall"``, ``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``.
+
+
+| The code below displays teh current gesture.
+
+.. code-block:: python
 
     from microbit import *
+
+
+    while True:
+        gesture = accelerometer.current_gesture()
+        display.scroll(gesture)
+        sleep(500)
+
+
+| The code below displays a happy image if the microbit is face up, or an angry image if it is not.
+
+.. code-block:: python
+
+    from microbit import *
+
 
     while True:
         gesture = accelerometer.current_gesture()
@@ -26,14 +42,15 @@ this program will only make your device happy if it is face up::
         else:
             display.show(Image.ANGRY)
 
-Once again, because we want the device to react to changing circumstances we
-use a ``while`` loop. Within the *scope* of the loop the current gesture is
-read and put into ``gesture``. The ``if`` conditional checks if ``gesture`` is
-equal to ``"face up"`` (Python uses ``==`` to test for equality, a single
-equals sign ``=`` is used for assignment - just like how we assign the gesture
-reading to the ``gesture`` object). If the gesture is equal to ``"face up"``
-then use the display to show a happy face. Otherwise, the device is made to
-look angry!
+----
+
+.. admonition:: Tasks
+
+    #. What are the readings for 1 o'clock?
+    #. What are the readings for 3 o'clock?
+    #. What are the readings for 6 o'clock?
+
+----
 
 Magic-8
 -------------
