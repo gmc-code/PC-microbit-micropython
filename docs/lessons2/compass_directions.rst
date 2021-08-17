@@ -40,6 +40,7 @@ Compass Pointer
 | For readings from 346 to 15, the clock position should be at 12 or 0 o'clock.
 | For readings from 16 to 45, the clock position should be at 11 o'clock.
 | For readings from 46 to 75, the clock position should be at 10 o'clock.
+| So the clock hand points towards north, while teh reading is the direction the top (where the USB connection is) of the microbit is pointing towards.
 
 .. code-block:: python
 
