@@ -32,12 +32,14 @@ Microbit software:
 Comparison of microbit programming options:
 
 
-Mu editor app for laptops is the first choice for coding on the microbit.
-The main drawback is that it lacks a microbit simulator.
+The Mu editor for laptops, https://codewith.mu/en/tutorials/1.1/microbit, is the first choice for coding on the microbit.
 
-The standard micropython editor: https://python.microbit.org/v/2 is an online editor consistent with Mu editor. It lacks a simulator.
+The standard micropython editor: https://python.microbit.org/v/2 is an online editor consistent with Mu editor.
 
-Edublocks, https://app.edublocks.org/#MicroBit, has both blocky code and micropython consistent with Mu editor, and can display the block code and micropython code side by side. It lacks a simulator.
+Edublocks, https://app.edublocks.org/#MicroBit, is an online editor with both blocky code and micropython consistent with Mu editor, and can display the block code and micropython code side by side.
+
+Microbit software with simulators:
+----------------------------------------
 
 Create with code UK, https://create.withcode.uk/, works with standard python or micropython. Starting the code with "from microbit import *" will pop up the simulator when the code is run.
 
