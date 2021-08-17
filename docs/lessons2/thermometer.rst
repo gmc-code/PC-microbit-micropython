@@ -27,7 +27,8 @@ The temperature the thermometer measures will typically be higher than the true 
 
 .. admonition:: Tasks
 
-    * Plug in hte battery pack and move the microbit to a warmer or cooler place. What temperatures do you get?
-    * Use an if block so that one image is shown when it is below 20 degrees and another image is shown when it is above 20 degrees.
+    * Plug in the battery pack and move the microbit to a warmer or cooler place. What temperatures do you get?
     * Compare the temperature inside with that outside.
+    * Use an if block so that one image is shown when it is below 20 degrees and another image is shown when it is above 20 degrees.
+
 
