@@ -43,13 +43,7 @@ Microbit software with simulators:
 
 Create with code UK, https://create.withcode.uk/, works with standard python or micropython. Starting the code with "from microbit import *" will pop up the simulator when the code is run.
 
-The Makecode website https://makecode.microbit.org/# allows blocky code use, but it has its own unique version of micropython based on its own translation of the typescript code that it uses, and so it will not work with Mu editor or the standard online micropython editor. It has an excellent simulator and vast extensions library for exploring other devices that can be connected to the microbit.
-
-----
-
-For beginners, using blocky code, these sites may be useful:
-
-* https://microbit.org/projects/make-it-code-it/?filters=python
+The Makecode website https://makecode.microbit.org/ allows blocky code use, but it has its own unique version of micropython based on its own translation of the typescript code that it uses, and so it will not work with Mu editor or the standard online micropython editor. It has an excellent simulator and vast extensions library for exploring other devices that can be connected to the microbit.
 
 ----
 
@@ -63,6 +57,13 @@ Key references:
 * https://microbit.pinout.xyz/pin-3v-power.html
 
 ----
+
+For beginners, using blocky code, these sites may be useful:
+
+* https://microbit.org/projects/make-it-code-it/?filters=python
+
+----
+
 
 Python references:
 ------------------
