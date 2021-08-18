@@ -406,10 +406,10 @@ Spinning
     | ``duration`` values are integers above 0.
     | Default ``duration`` is None.
     | The motor will stop after a given duration in milliseconds.
-    | If the duration is None, the motor runs without stopping.
+    | If the duration is None, the motor runs without stopping, until another command is sent to the motor.
 
 | ``spin()`` and ``spin(1, 'left')`` and ``spin(speed=1, direction='left')`` all spin the buggy to the left at speed 1.
-| ``spin(3, 'left', 2000)`` and ``spin(3,direction='left', duration=2000)`` and ``spin(speed=3, direction='left', duration=2000)`` all spin the buggy to the left at speed 3 for 2 secs.
+| ``spin(3, 'left', 2000)`` and ``spin(3, direction='left', duration=2000)`` and ``spin(speed=3, direction='left', duration=2000)`` all spin the buggy to the left at speed 3 for 2 secs.
 
 | The code below, ``spin(2, 'right', 4000)``, spins the buggy to the right at speed 2 for 4 secs.
 
