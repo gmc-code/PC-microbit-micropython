@@ -3,13 +3,14 @@ Thermometer
 ====================================================
 
 
-Basic Functions
-----------------
-There is only one basic function for the thermometer – to get the temperature, which is returned as an integer in degrees Celsius:
+Temperature Function
+----------------------
+
+The thermometer gets the temperature as an integer in degrees Celsius.
 
 .. py:function:: temperature()
 
-    Return the temperature of the micro:bit in degrees Celcius.
+    Return the temperature of the microbit in degrees Celsius.
 
 
 .. code-block:: python
@@ -21,7 +22,7 @@ There is only one basic function for the thermometer – to get the temperature,
         display.scroll(str(temp) + 'C')
         sleep(500)
 
-The temperature the thermometer measures will typically be higher than the true temperature because it’s getting heated from both the room and the electronics on the board. 
+The temperature the thermometer measures will typically be higher than the true temperature because due to the nearby the electronics on the microbit. 
 
 ----
 
@@ -30,5 +31,5 @@ The temperature the thermometer measures will typically be higher than the true 
     * Plug in the battery pack and move the microbit to a warmer or cooler place. What temperatures do you get?
     * Compare the temperature inside with that outside.
     * Use an if block so that one image is shown when it is below 20 degrees and another image is shown when it is above 20 degrees.
-    * Use the A button to store the temperature in the variable ``tempA``. Use the B button to store the temperature in the variable ``tempB``, then scroll the difference between them ``tempA - tempB``.
+    * Use the A button to store the temperature in the variable ``tempA``. Use the B button to store the temperature in the variable ``tempB``, then calculate the difference between them using ``tempA - tempB`` then scroll the difference.
 
