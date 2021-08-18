@@ -2,38 +2,14 @@
 MoveMotor distance sensors
 ====================================================
 
-.. image:: images/move-motor.jpg
-    :scale: 50 %
-    :align: center
-
-
-MOVEMotor.py module
+Set up the distance sensors
 ----------------------------------------
 
-| The MOVEMotor module is required to control the motors.
-| Download the python file :download:`MOVEMotor.py module <pythonfiles/MOVEMotor.py>`.
-| Place it in the mu_code folder: C:\\Users\\username\\mu_code
-| The file needs to be copied onto the microbit.
-| In Mu editor, with the microbit attached by USB, click the Files icon.
-| Files on the microbit are shown on the left.
-| Files in the mu_code folder are listed on the right.
-| Click and drag the MOVEMotor.py file from the right window to the left window to copy it to the microbit.
+.. py:class:: MOVEMotorDistanceSensors() 
 
-Before copying:
-
-.. image:: images/Mu_files.png
-    :scale: 50 %
-
-After copying:
-
-.. image:: images/Mu_files_copied.png
-    :scale: 50 %
-
-
-Use MOVEMotor library
-----------------------------------------
-
-| To use the MOVEMotor module, import it via: ``import MOVEMotor``.
+| Set up the Distance Sensors for use.
+| Import the MOVEMotor module first.
+| Use ``distance_sensor = MOVEMotor.MOVEMotorDistanceSensors()`` to be able to use the distance sensing methods.
 
 .. code-block:: python
 
@@ -41,49 +17,34 @@ Use MOVEMotor library
     import MOVEMotor
 
 
-Set up the line sensors
+    # setup distance_sensor
+    distance_sensor = MOVEMotor.MOVEMotorDistanceSensors()
+
+
+Distance to an object
 ----------------------------------------
 
-.. py:class:: MOVEMotorMotors() 
+| The distance, in cm, to an object can be found using: ``distance()``.
 
-    Set up the buggy motors for use.
+.. py:method:: distance()
 
-.. code-block:: python
+    Returns the distance, in cm, to an object.
 
-    from microbit import *
-    import MOVEMotor
-
-
-    # setup buggy
-    buggy = MOVEMotor.MOVEMotorMotors()
+sonar = HCSR04()
+while True:
+    if button_a.is_pressed():
+        distance = round(sonar.distance_mm()/10)
+        if distance < 10:
+            display.show(str(distance))
+        else:
+            display.scroll(str(distance))
+        while button_a.is_pressed():
+            sleep(100)
+    sleep(100)
 
 ----
 
-
-Independent motor control
-----------------------------------------
-
-| The left and right motors can be run independently using the four methods below:
-| ``left_motor(speed=1, duration=None)`` runs the left motor.
-| ``right_motor(speed=1, duration=None)`` runs the right motor.
-| ``stop_left()`` stops the left motor.
-| ``stop_right()`` stops the right motor.
-
-.. py:method:: left_motor(speed=1, duration=None)
-
-    | Make the left motor run. 
-    | ``speed`` values are integers or floats (decimals) from -10 to 10.
-    | Default ``speed`` is 1.
-    | If speed < 0 the motor turns the wheel backwards.
-    | ``duration`` values are integers above 0.
-    | Default ``duration`` is None.
-    | The motor will stop after a given duration in milliseconds.
-    | If the duration is None, the motor runs without stopping.
-
-| ``left_motor()`` and ``left_motor(1)`` and ``left_motor(speed=1)`` all set the speed to 1.
-| ``left_motor(2, 1000)`` and ``left_motor(2, duration=1000)`` and ``left_motor(speed=2, duration=1000)`` all run the left motor at speed to 2 for 1 sec.
-
-| The code below, using ``left_motor(5)``,  runs the left motor at about half speed.
+| The code below, using ``distance_sensor.distance() < 10``,  measures the distance to objects and if the distance is less than 10cm it spins the buggy to the left for 1 second.
 
 .. code-block:: python
 
@@ -93,12 +54,44 @@ Independent motor control
 
     # setup buggy
     buggy = MOVEMotor.MOVEMotorMotors()
-
-    buggy.left_motor(5)
+    
+    # setup distance_sensor
+    distance_sensor = MOVEMotor.MOVEMotorDistanceSensors()
+    
+    while True:
+        buggy.forward()
+        if distance_sensor.distance() < 10:
+            buggy.spin(speed=1, direction='left', duration=1000)
+        sleep(200)
 
 ----
 
 .. admonition:: Tasks
 
-    #. Write code to drive the left motor at speed 2 for 1 second, stop it, run the right motor at speed 2 for 1 sec then stop it.
-    #. Write code to drive the right motor at speed 3 while the left motor runs at speed 2 for 3 sec then stop it.
+    #. Write code to drive the buggy forward until it measures and object 100cm in front and then stops.
+    #. Write code to drive the buggy forward until it measures and object 50cm in front and then it stops for 500ms, goes backwards for 500ms, then spins, goes forwards and repeats.
+
+-----
+
+HC-SR04 Distance sensor
+----------------------------------------
+
+.. image:: images/HC-SR04.png
+    :scale: 50 %
+
+| The HC-SR04 Distance sensor measures distances to objects in the range 2cm to 400cm with a ranging accuracy of 3mm. The angle to objects can be up to 15 degrees.
+
+| Using the same principle as bats (Echo location), this the HC-SR04 uses the Trigger pin13 to send a signal and the Echo pin14 to listen for it to be 'bounced back'.
+
+            def distanceCm(self):
+            pin14.set_pull(pin14.NO_PULL)
+            pin13.write_digital(0)
+            utime.sleep_us(2)
+            pin13.write_digital(1)
+            utime.sleep_us(10)
+            pin13.write_digital(0)
+            distance = machine.time_pulse_us(pin14, 1, 1160000)
+            if distance > 0:
+                return round(distance/58)
+            else:
+                return round(distance)

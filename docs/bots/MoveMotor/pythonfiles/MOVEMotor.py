@@ -13,7 +13,6 @@ from microbit import i2c, pin1, pin2, pin13, pin14
 import machine
 import utime
 
-
 # constants
 CHIP_ADDR = 0x62
 # CHIP_ADDR is the standard chip address for the PCA9632,
@@ -36,6 +35,7 @@ RIGHT_MOTOR = 0x03       # PWM1
 LEFT_MOTOR = 0x04        # PWM2
 LEFT_MOTOR_REV = 0x05    # PWM3
 ALL_MOTOR = 0xA2    # 10100010
+
 
 class MOVEMotorMotors:
 
@@ -72,7 +72,7 @@ class MOVEMotorMotors:
         self.stop_right()
 
     @staticmethod
-    def analog_speed(speed):
+    def _analog_speed(speed):
         # input speed = -10 to 0 to 10
         # output = 60 to 255
         if speed < 0 and speed >= -10:
@@ -83,10 +83,9 @@ class MOVEMotorMotors:
             return 0
 
     def left_motor(self, speed=1, duration=None):
-        analog_speed = self.analog_speed(speed)
         motor_buffer = bytearray(2)
         gnd_pin_buffer = bytearray(2)
-        motor_buffer[1] = analog_speed
+        motor_buffer[1] = self._analog_speed(speed)
         gnd_pin_buffer[1] = 0
         if (speed > 0):
             motor_buffer[0] = LEFT_MOTOR
@@ -101,10 +100,9 @@ class MOVEMotorMotors:
             self.stop_left()
 
     def right_motor(self, speed=1, duration=None):
-        analog_speed = self.analog_speed(speed)
         motor_buffer = bytearray(2)
         gnd_pin_buffer = bytearray(2)
-        motor_buffer[1] = analog_speed
+        motor_buffer[1] = self._analog_speed(speed)
         gnd_pin_buffer[1] = 0
         if (speed > 0):
             motor_buffer[0] = RIGHT_MOTOR
@@ -119,9 +117,9 @@ class MOVEMotorMotors:
             self.stop_right()
 
     @staticmethod
-    def straight_line_adjustment(analog_speed, adjustment):
+    def _straight_line_adjustment(analog_speed, adjustment):
         # limit adjustment to 0 to 20
-        # make percentage adjustment (adjustment/max analog) to analog_speed
+        # make percentage adjustment (adjustment/max analog) to _analog_speed
         if adjustment < 0:
             adjustment = 0
         elif adjustment > 20:
@@ -129,27 +127,27 @@ class MOVEMotorMotors:
         return int(analog_speed * (255 - adjustment)/255)
 
     def backward(self, speed=1, duration=None, decrease_left=0, decrease_right=0):
-        analog_speed = abs(self.analog_speed(speed))
+        analog_speed = abs(self._analog_speed(speed))
         motor_buffer = bytearray(5)
         motor_buffer[0] = ALL_MOTOR
         # [1 to 4] is RIGHT_MOTOR_REV; RIGHT_MOTOR; LEFT_MOTOR; LEFT_MOTOR_REV
-        motor_buffer[1] = self.straight_line_adjustment(analog_speed, decrease_right)
+        motor_buffer[1] = self._straight_line_adjustment(analog_speed, decrease_right)
         motor_buffer[2] = 0
         motor_buffer[3] = 0
-        motor_buffer[4] = self.straight_line_adjustment(analog_speed, decrease_left)
+        motor_buffer[4] = self._straight_line_adjustment(analog_speed, decrease_left)
         i2c.write(CHIP_ADDR, motor_buffer, False)
         if duration is not None:
             utime.sleep_ms(duration)
             self.stop()
 
     def forward(self, speed=1, duration=None, decrease_left=0, decrease_right=0):
-        analog_speed = abs(self.analog_speed(speed))
+        analog_speed = abs(self._analog_speed(speed))
         motor_buffer = bytearray(5)
         motor_buffer[0] = ALL_MOTOR
         # [1 to 4] is RIGHT_MOTOR_REV; RIGHT_MOTOR; LEFT_MOTOR; LEFT_MOTOR_REV
         motor_buffer[1] = 0
-        motor_buffer[2] = self.straight_line_adjustment(analog_speed, decrease_right)
-        motor_buffer[3] = self.straight_line_adjustment(analog_speed, decrease_left)
+        motor_buffer[2] = self._straight_line_adjustment(analog_speed, decrease_right)
+        motor_buffer[3] = self._straight_line_adjustment(analog_speed, decrease_left)
         motor_buffer[4] = 0
         i2c.write(CHIP_ADDR, motor_buffer, False)
         if duration is not None:
@@ -157,7 +155,7 @@ class MOVEMotorMotors:
             self.stop()
 
     @staticmethod
-    def turn_radius_factor(radius=25):
+    def _turn_radius_factor(radius=25):
         # limit radius (in cm) of inner wheel to 4 to 800 cm
         # calculate the relative speed factor of the inner to outer wheel
         # uses approximate distance between buggy wheels of 8.5 cm
@@ -169,8 +167,8 @@ class MOVEMotorMotors:
 
     def left(self, speed=1, radius=25, duration=None):
         # right motor faster than left
-        analog_speed = self.analog_speed(speed)
-        turn_radius_factor = self.turn_radius_factor(radius)
+        analog_speed = self._analog_speed(speed)
+        turn_radius_factor = self._turn_radius_factor(radius)
         motor_buffer = bytearray(5)
         motor_buffer[0] = ALL_MOTOR
         # [1 to 4] is RIGHT_MOTOR_REV; RIGHT_MOTOR; LEFT_MOTOR; LEFT_MOTOR_REV
@@ -185,8 +183,8 @@ class MOVEMotorMotors:
 
     def right(self, speed=1, radius=25, duration=None):
         # left motor faster than right
-        analog_speed = self.analog_speed(speed)
-        turn_radius_factor = self.turn_radius_factor(radius)
+        analog_speed = self._analog_speed(speed)
+        turn_radius_factor = self._turn_radius_factor(radius)
         motor_buffer = bytearray(5)
         motor_buffer[0] = ALL_MOTOR
         # [1 to 4] is RIGHT_MOTOR_REV; RIGHT_MOTOR; LEFT_MOTOR; LEFT_MOTOR_REV
@@ -200,7 +198,7 @@ class MOVEMotorMotors:
             self.stop()
 
     def spin(self, speed=1, direction='left', duration=None):
-        analog_speed = abs(self.analog_speed(speed))
+        analog_speed = abs(self._analog_speed(speed))
         motor_buffer = bytearray(5)
         motor_buffer[0] = ALL_MOTOR
         # [1 to 4] is RIGHT_MOTOR_REV; RIGHT_MOTOR; LEFT_MOTOR; LEFT_MOTOR_REV
@@ -251,7 +249,7 @@ class MOVEMotorLineSensors:
 
 class MOVEMotorDistanceSensors:
 
-    def distanceCm(self):
+    def distance_cm(self):
         pin14.set_pull(pin14.NO_PULL)
         pin13.write_digital(0)
         utime.sleep_us(2)
