@@ -47,62 +47,19 @@ Current gesture
 .. admonition:: Tasks
 
     #. What are the readings for 1 o'clock?
-    #. What are the readings for 3 o'clock?
-    #. What are the readings for 6 o'clock?
 
 ----
 
-Magic-8
+
 -------------
 
-A Magic-8 ball is a toy first invented in the 1950s. The idea is to ask
-it a yes/no question, shake it and wait for it to reveal the truth. It's rather
-easy to turn into a program::
 
     from microbit import *
     import random
 
-    answers = [
-        "It is certain",
-        "It is decidedly so",
-        "Without a doubt",
-        "Yes, definitely",
-        "You may rely on it",
-        "As I see it, yes",
-        "Most likely",
-        "Outlook good",
-        "Yes",
-        "Signs point to yes",
-        "Reply hazy try again",
-        "Ask again later",
-        "Better not tell you now",
-        "Cannot predict now",
-        "Concentrate and ask again",
-        "Don't count on it",
-        "My reply is no",
-        "My sources say no",
-        "Outlook not so good",
-        "Very doubtful",
-    ]
-
     while True:
         display.show("8")
-        if accelerometer.was_gesture("shake"):
+        if accelerometer.was_gesture("right"):
             display.clear()
             sleep(1000)
-            display.scroll(random.choice(answers))
 
-Most of the program is a list called ``answers``. The actual game is in the
-``while`` loop at the end.
-
-The default state of the game is to show the character ``"8"``. However, the
-program needs to detect if it has been shaken. The ``was_gesture`` method uses
-its argument (in this case, the string ``"shake"`` because we want to detect
-a shake) to return a ``True`` / ``False`` response. If the device was shaken
-the ``if`` conditional drops into its block of code where it clears the screen,
-waits for a second (so the device appears to be thinking about your question)
-and displays a randomly chosen answer.
-
-Why not ask it if this is the greatest program ever written? What could you do
-to "cheat" and make the answer always positive or negative? (Hint: use the
-buttons.)
