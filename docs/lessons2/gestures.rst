@@ -15,7 +15,7 @@ Current gesture
     Return the name of the current gesture as a string. The gestures are: ``"up"``, ``"down"``, ``"left"``, ``"right"``, ``"face up"``, ``"face down"``, ``"freefall"``, ``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``.
 
 
-| The code below displays teh current gesture.
+| The code below displays the current gesture. It can be slow to change and may require small movement of the microbit to register properly.
 
 .. code-block:: python
 
@@ -46,20 +46,6 @@ Current gesture
 
 .. admonition:: Tasks
 
-    #. What are the readings for 1 o'clock?
+    #. Write code to display different arrow images when ithe microbit is tilted in each direction.
 
-----
-
-
--------------
-
-
-    from microbit import *
-    import random
-
-    while True:
-        display.show("8")
-        if accelerometer.was_gesture("right"):
-            display.clear()
-            sleep(1000)
 

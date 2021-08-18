@@ -43,5 +43,7 @@ Z axis.
 .. admonition:: Tasks
 
     #. Modify the code above to display 'F' for tilting the top up and 'B' for tilting the bottom down.
-    #. Combine the code above to display 'L', 'R', 'F' or 'B' based on which way it is titled.
+    #. Combine the code above to scroll 'LF', 'LB', 'RF' or 'RB' based on which way it is titled. Use logical ``and`` in the conditions like: ``if x_reading > 20 and y_reading > 20:``
+    #. Modify the code above to display and left arrow for tilting left and a right arrow for tilting right.
+    #. Modify the code above to display and up arrow for tilting the top up and a down arrow for tilting the bottom down.
     #. Modify the code above to display 'U' for moving up and 'D' for moving down.
