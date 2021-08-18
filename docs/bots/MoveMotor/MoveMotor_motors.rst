@@ -133,7 +133,8 @@ Independent motor control
     | Stop the left motor.
 
 
-| The code below runs the left motor continuously, has a 1 sec sleep, then stops it.
+| The code below runs the left motor continuously, but after 1 sec, it stops it.
+| The motor keeps running during the sleep.
 
 .. code-block:: python
 
