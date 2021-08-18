@@ -299,11 +299,11 @@ Straight line control
 Turning
 ----------------------------------------
 
-| The left and right motors are adjusted to turn the buggy:
+| The left and right motors are adjusted to turn the buggy with a given radius:
 | ``left(speed=1, radius=25)``
 | ``right(speed=1, radius=25)``
-| When turning left the left wheel is slowed slightly based on the radius value.
-| When turning right the right wheel is slowed slightly based on the radius value.
+| When turning left the left wheel is slowed based on the radius value.
+| When turning right the right wheel is slowed based on the radius value.
 | The turning radius is approximate only, and is automatically calculated using 8.5 cm as the distance between the 2 wheels.
 
 .. py:method:: left(speed=1, radius=25, duration=None)
@@ -318,7 +318,7 @@ Turning
     | ``duration`` values are integers above 0.
     | Default ``duration`` is None.
     | The motor will stop after a given duration in milliseconds.
-    | If the duration is None, the motor runs without stopping.
+    | If the duration is None, the motor runs without stopping, until another command is sent to the motor.
 
 | ``left()`` and ``left(1, 25)`` and ``left(speed=1, radius=25)`` all set the speed to 1 with a left turn of radius 25cm.
 | ``left(2, 50, 1000)`` and ``left(2, radius=50, duration=1000)`` and ``left(speed=2, radius=50, duration=1000)`` all set the speed to 2 with a left turn of radius 50cm for 1sec.
@@ -359,7 +359,7 @@ Turning
     | ``duration`` values are integers above 0.
     | Default ``duration`` is None.
     | The motor will stop after a given duration in milliseconds.
-    | If the duration is None, the motor runs without stopping.
+    | If the duration is None, the motor runs without stopping, until another command is sent to the motor.
 
 | ``right()`` and ``right(1, 25)`` and ``right(speed=1, radius=25)`` all set the speed to 1 with radius 25cm.
 | ``right(2, 50, 1000)`` and ``right(2, radius=50, duration=1000)`` and ``right(speed=2, radius=50, duration=1000)`` all set the speed to 2 with a right turn of radius 50cm for 1sec.
