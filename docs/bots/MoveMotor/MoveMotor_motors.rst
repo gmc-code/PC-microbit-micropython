@@ -237,7 +237,8 @@ Straight line control
 
 | ``forward(10, None, 6)`` and ``forward(10, None, 6, 0)`` and ``forward(speed=10, decrease_left=6)`` all set the speed to 10 with the left wheel slowed by roughly 2% (6/255).
 
-| The code below, has an adjustment of 6 to the left motor. This is roughly a 2% (6/255) decrease in speed.
+| The code below, has an adjustment of 6 to the left motor. 
+| This is roughly a 2% (6/255) decrease in speed.
 | It drives the buggy forwards at speed 10 for 5 secs.
 
 .. code-block:: python
@@ -269,7 +270,8 @@ Straight line control
 
 | ``backward(10, None, 0, 3)`` and ``backward(speed=10, decrease_right=3)`` both set the speed to 10 with the right wheel slowed by roughly 1% (3/255).
 
-| The code below, has an adjustment of 3 to the right motor. This is roughly a 1% (3/255) decrease in speed.
+| The code below, has an adjustment of 3 to the right motor. 
+| This is roughly a 1% (3/255) decrease in speed.
 | The parameter names have been omitted in ``forward(8, 4000, 0, 3)``; instead values are in their specified order.
 | It drives the buggy forwards at speed 8 for 4 secs.
 
