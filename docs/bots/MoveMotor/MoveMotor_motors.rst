@@ -323,7 +323,7 @@ Turning
 | ``left()`` and ``left(1, 25)`` and ``left(speed=1, radius=25)`` all set the speed to 1 with a left turn of radius 25cm.
 | ``left(2, 50, 1000)`` and ``left(2, radius=50, duration=1000)`` and ``left(speed=2, radius=50, duration=1000)`` all set the speed to 2 with a left turn of radius 50cm for 1sec.
 
-| The code below, ``left(speed=3, radius=20)``, drives the buggy forward at speed 3 while it turns left in a circular path of approximate radius 20 cm for 4 secs.
+| The code below, ``left(speed=3, radius=20, duration=4000)``, drives the buggy forward at speed 3 while it turns left in a circular path of approximate radius 20 cm for 4 secs.
 
 .. code-block:: python
 
@@ -364,7 +364,7 @@ Turning
 | ``right()`` and ``right(1, 25)`` and ``right(speed=1, radius=25)`` all set the speed to 1 with radius 25cm.
 | ``right(2, 50, 1000)`` and ``right(2, radius=50, duration=1000)`` and ``right(speed=2, radius=50, duration=1000)`` all set the speed to 2 with a right turn of radius 50cm for 1sec.
 
-| The code below, ``right(speed=2, radius=40)``, drives the buggy forwards at speed 2 while it turns right in a circular path of approximate radius 40 cm for 3 secs.
+| The code below, ``right(speed=2, radius=40, duration=3000)``, drives the buggy forwards at speed 2 while it turns right in a circular path of approximate radius 40 cm for 3 secs.
 
 .. code-block:: python
 
@@ -383,7 +383,7 @@ Turning
 
     #. Write code to drive the buggy to the right at speed 4 in small circles of 5 cm radius.
     #. Write code to drive the buggy to the right at speed 7 in medium circles of 80 cm radius.
-    #. Write code to drive the buggy to the right at speed 10 in in circles of increasing size. Use a range function to increase the radius every 4 seconds from 10 to 100 in steps of 10.
+    #. Write code to drive the buggy to the right at speed 10 in circles of increasing size. Use a range function to increase the radius every 4 seconds from 10 to 100 in steps of 10.
 
 ----
 
