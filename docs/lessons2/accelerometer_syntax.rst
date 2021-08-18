@@ -9,31 +9,8 @@ Accelerometer syntax
 | The recognised gestures are: ``up``, ``down``, ``left``, ``right``, ``face up``, ``face down``, ``freefall``, ``3g``, ``6g``, ``8g``, ``shake``.
 | The accelerometer range is from -2g to +2g.
 
-Functions
------------
-
-.. py:function:: get_x()
-
-    Get the acceleration measurement in the ``x`` axis, as a positive or
-    negative integer, depending on the direction. The measurement is given in
-    milli-g within the range of +/- 2000mg.
-
-.. py:function:: get_y()
-
-    Get the acceleration measurement in the ``y`` axis, as a positive or
-    negative integer, depending on the direction. The measurement is given in
-    milli-g within the range of +/- 2000mg.
-
-.. py:function:: get_z()
-
-    Get the acceleration measurement in the ``z`` axis, as a positive or
-    negative integer, depending on the direction. The measurement is given in
-    milli-g within the range of +/- 2000mg.
-
-.. py:function:: get_values()
-
-    Get the acceleration measurements in all axes at once, as a three-element
-    tuple of integers ordered as X, Y, Z, each within the range of +/-2000mg.
+Gesture Functions
+-------------------
 
 .. py:function:: current_gesture()
 
@@ -59,4 +36,31 @@ Functions
     calls to some accelerometer method to do the gesture detection. Usually 
     gestures can be detected using a loop with a small :func:`sleep` delay.
 
+----
+
+Acceleration Functions
+-------------------------
+
+.. py:function:: get_x()
+
+    Get the acceleration measurement in the ``x`` axis, as a positive or
+    negative integer, depending on the direction. The measurement is given in
+    milli-g within the range of +/- 2000mg.
+
+.. py:function:: get_y()
+
+    Get the acceleration measurement in the ``y`` axis, as a positive or
+    negative integer, depending on the direction. The measurement is given in
+    milli-g within the range of +/- 2000mg.
+
+.. py:function:: get_z()
+
+    Get the acceleration measurement in the ``z`` axis, as a positive or
+    negative integer, depending on the direction. The measurement is given in
+    milli-g within the range of +/- 2000mg.
+
+.. py:function:: get_values()
+
+    Get the acceleration measurements in all axes at once, as a three-element
+    tuple of integers ordered as X, Y, Z, each within the range of +/-2000mg.
 
