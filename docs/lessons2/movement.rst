@@ -22,11 +22,12 @@ how level the device is along the X axis:
 
     from microbit import *
 
+
     while True:
         x_reading = accelerometer.get_x()
         if x_reading > 20:
             display.show("R")
-        elif reading < -20:
+        elif x_reading < -20:
             display.show("L")
         else:
             display.show("-")
