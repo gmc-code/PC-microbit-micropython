@@ -5,7 +5,7 @@ Gestures
 | The accelerometer returns the following gestures moving the microbit: ``up``, ``down``, ``left``, ``right``, ``face up``, ``face down``, ``freefall``, ``3g``, ``6g``,
 ``8g``, ``shake``. 
 | Gestures are always represented as strings. 
-| ``3g``, ``6g`` and ``8g`` gestures apply when the micorbit experiences large levels of g-force.
+| ``3g``, ``6g`` and ``8g`` gestures apply when the microbit experiences large levels of g-force.
 
 Current gesture
 -------------------------
@@ -46,6 +46,6 @@ Current gesture
 
 .. admonition:: Tasks
 
-    #. Write code to display different arrow images when ithe microbit is tilted in each direction.
+    #. Write code to display different arrow images when the microbit is tilted in each direction.
 
 
