@@ -62,3 +62,7 @@ U+2198
 U+2199
 .. |nearr| 
 swarr
+larr
+darr
+uarr
+.. |rarr|
