@@ -29,7 +29,8 @@ The temperature the thermometer measures will typically be higher than the true 
 .. admonition:: Tasks
 
     * Plug in the battery pack and move the microbit to a warmer or cooler place. What temperatures do you get?
-    * Compare the temperature inside with that outside.
+    * Compare the temperature inside with that outside.    
+    * Place the microbit on a paper towel in the freezer or fridge for 2 min and read teh temperature.
     * Use an if block so that one image is shown when it is below 20 degrees and another image is shown when it is above 20 degrees.
     * Use the A button to store the temperature in the variable ``tempA``. Use the B button to store the temperature in the variable ``tempB``, then calculate the difference between them using ``tempA - tempB`` then scroll the difference.
 
