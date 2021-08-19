@@ -24,23 +24,29 @@ Set up the distance sensors
 Distance to an object
 ----------------------------------------
 
-| The distance, in cm, to an object can be found using: ``distance()``.
-
 .. py:method:: distance()
 
     Returns the distance, in cm, to an object.
 
-sonar = HCSR04()
-while True:
-    if button_a.is_pressed():
-        distance = round(sonar.distance_mm()/10)
-        if distance < 10:
-            display.show(str(distance))
-        else:
-            display.scroll(str(distance))
-        while button_a.is_pressed():
-            sleep(100)
-    sleep(100)
+
+
+| The code below, uses ``distance_sensor.distance()`` to measure the distance to objects.
+
+
+    .. code-block:: python
+
+    from microbit import *
+    import MOVEMotor
+
+
+    distance_sensor = MOVEMotor.MOVEMotorDistanceSensors()
+
+
+    while True:
+        dist = distance_sensor.distance()
+        display.scroll(dist, delay=100)
+        sleep(500)
+
 
 ----
 
@@ -68,8 +74,8 @@ while True:
 
 .. admonition:: Tasks
 
-    #. Write code to drive the buggy forward until it measures and object 100cm in front and then stops.
-    #. Write code to drive the buggy forward until it measures and object 50cm in front and then it stops for 500ms, goes backwards for 500ms, then spins, goes forwards and repeats.
+    #. Write code to drive the buggy forward until it measures and object 50cm in front and then stops.
+    #. Write code to drive the buggy forward until it measures and object 20cm in front and then it stops for 500ms, goes backwards for 500ms, then spins, goes forwards and repeats.
 
 -----
 
@@ -77,13 +83,25 @@ HC-SR04 Distance sensor
 ----------------------------------------
 
 .. image:: images/HC-SR04.png
-    :scale: 50 %
+    :scale: 30 %
 
 | The HC-SR04 Distance sensor measures distances to objects in the range 2cm to 400cm with a ranging accuracy of 3mm. The angle to objects can be up to 15 degrees.
+| It may return values as high as 10000 cm but the accuracy is not guaranteed.
 
-| Using the same principle as bats (Echo location), this the HC-SR04 uses the Trigger pin13 to send a signal and the Echo pin14 to listen for it to be 'bounced back'.
+-----
 
-            def distanceCm(self):
+A look inside the MOVEMotor module code for the HC-SR04 Distance sensor
+----------------------------------------------------------------------------
+
+| Using Echo location, the HC-SR04 uses the Trigger pin13 to send a signal and the Echo pin14 to listen for it to be 'bounced back'.
+
+.. code-block:: python
+
+    from microbit import *
+
+    class MOVEMotorDistanceSensors:
+
+        def distance(self):
             pin14.set_pull(pin14.NO_PULL)
             pin13.write_digital(0)
             utime.sleep_us(2)
@@ -92,6 +110,7 @@ HC-SR04 Distance sensor
             pin13.write_digital(0)
             distance = machine.time_pulse_us(pin14, 1, 1160000)
             if distance > 0:
+                # distance in cm
                 return round(distance/58)
             else:
-                return round(distance)
+                return 0
