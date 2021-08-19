@@ -10,17 +10,5 @@ You need to think about the examples and find ways to vary or modify or build on
 | Home page:
 | https://pc-microbit-micropython.readthedocs.io/en/latest/index.html
 
-Key references:
-
-* https://microbit-micropython.readthedocs.io/en/latest/index.html
-* https://microbit-challenges.readthedocs.io/en/latest/index.html
-* http://multiwingspan.co.uk/micro.php (no access from school)
-* https://microbit.pinout.xyz/pin-3v-power.html
-* 
-
-For beginners, using to blocky code, these sites may be useful:
-
-* https://app.edublocks.org/#MicroBit
-* https://microbit.org/projects/make-it-code-it/?filters=python
 
 
