@@ -33,7 +33,7 @@ Distance to an object
 | The code below, uses ``distance_sensor.distance()`` to measure the distance to objects.
 
 
-    .. code-block:: python
+.. code-block:: python
 
     from microbit import *
     import MOVEMotor
@@ -95,6 +95,8 @@ A look inside the MOVEMotor module code for the HC-SR04 Distance sensor
 
 | Using Echo location, the HC-SR04 uses the Trigger pin13 to send a signal and the Echo pin14 to listen for it to be 'bounced back'.
 
+| Here is the code for the sensors.
+
 .. code-block:: python
 
     from microbit import *
@@ -114,3 +116,30 @@ A look inside the MOVEMotor module code for the HC-SR04 Distance sensor
                 return round(distance/58)
             else:
                 return 0
+
+
+.. py:method::set_pull(value)
+
+        | Set the pull state to one of three possible values: ``pin.PULL_UP``,
+        ``pin.PULL_DOWN`` or ``pin.NO_PULL`` (where ``pin`` is a pin like pin13).
+        | Calling set_pull will configure the pin to be in read_digital mode with the given pull mode.
+
+
+| ``pin14.set_pull(pin14.NO_PULL)``
+| This prepares the echo pin, pin14, to receive the reflected pulse.
+
+| ``utime.sleep_us(10)``
+| A 10 micro second sleep is needed so that the trigger pin, pin13, sends its pulse.
+
+.. py:method:: machine.time_pulse_us(pin, pulse_level, timeout_us=1000000)
+
+    Time a pulse on the given pin, and return the duration of the pulse in microseconds. The pulse_level argument should be 0 to time a low pulse or 1 to time a high pulse.
+
+| ``distance = machine.time_pulse_us(pin14, 1, 1160000)`` measures the time for the pulse to be reflected back.
+
+| Distance is calculated using distance = pulse duration * speed of sound * 0.5
+| ``0.5`` is used since the distance for the pulse is twice the distance to the object  since hte pulse has to travel to and from the object.
+| The speed of sound is 0.0343 cm per microsecond.
+| Multiplication by ``speed of sound * 0.5`` is simplified to division by 58 in ``round(distance/58)``.
+
+
