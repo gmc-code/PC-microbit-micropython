@@ -48,4 +48,6 @@ Z axis.
     #. Modify the code above to display and left arrow for tilting left and a right arrow for tilting right.
     #. Modify the code above to display and up arrow for tilting the top up and a down arrow for tilting the bottom down.
     #. Modify the code above to display 'U' for moving up and 'D' for moving down.
-    #. Advanced Challenge: Write code above to indicate all 9 possible tilts: 'RF', 'RB','LF', 'LB', 'R', 'L', 'F', 'B', '-'.
+    #. Advanced Challenge: Write code to scroll all 9 possible tilts: 'RF', 'RB','LF', 'LB', 'R', 'L', 'F', 'B', '-'.
+    #. Advanced Challenge2: Write code to indicate all 9 possible tilts with 8 different arrows instead of text: 'RF', 'RB','LF', 'LB', 'R', 'L', 'F', 'B', '-'.
+    #. Super Advanced Challenge: Combine the two advanced challenges and use text if the a button **was** pressed and use arrows if the b button **was** pressed.
