@@ -28,29 +28,29 @@ hr {
 /* ========================================== */
 /* Custom admonition */
 
-div.admonition-answers,
-div.admonition-answer{
+div.admonition-answer,
+div.admonition-answers{
     color: blue;
     border: 2px solid;
     background-color: #e7f2fa;
 }
 
-div.admonition-answers p.admonition-title,
-div.admonition-answer p.admonition-title{
+div.admonition-answer p.admonition-title,
+div.admonition-answers p.admonition-title{
     text-transform: capitalize;
     color: black!important;
     background-color: #6ab0de;
 }
 
-div.admonition-questions,
-div.admonition-question{
+div.admonition-question,
+div.admonition-questions{
     color: blue;
     border: 2px solid gold;
     background-color: lightyellow!important;
 }
 
-div.admonition-questions p.admonition-title,
-div.admonition-question p.admonition-title{
+div.admonition-question p.admonition-title,
+div.admonition-questions p.admonition-title{
     text-transform: capitalize;
     color: black!important;
     background-color: gold!important;
@@ -70,14 +70,14 @@ div.admonition-tasks p.admonition-title {
     background-color: gold!important;
 }
 
-div.admonition-projects,
+div.admonition-project,
 div.admonition-projects {
     color: blue;
     border: 2px solid gold;
     background-color: lightyellow!important;
 }
 
-div.admonition-projects p.admonition-title,
+div.admonition-project p.admonition-title,
 div.admonition-projects p.admonition-title {
     text-transform: capitalize;
     color: black!important;
