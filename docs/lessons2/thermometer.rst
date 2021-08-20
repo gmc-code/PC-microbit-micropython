@@ -38,6 +38,12 @@ The temperature the thermometer measures will typically be higher than the true 
 
 .. admonition:: Project
 
-    * Keep track of the lowest and highest temperatures recorded by using 3 variables: current_temp is the current temperature reading, max_temp is the maximum temperature and min_temp is the minimum temperature. At the start, set all 3 variables to the same value and scrolls that value. Then use a while loop to take a reading every second and put it in current_temp, then update the max_temp or min_temp depending on the new reading. If current_temp is less than (<) min_temp, update min_temp. If the current_temp is greater than (>) max_temp, update max_temp. Use the A button to scroll min_temp. Use the B button to scroll max_temp. Press down both A and B buttons together to scroll the difference between the max and min temperatures
+    | Keep track of the lowest and highest temperatures recorded by using 3 variables: current_temp is the current temperature reading, max_temp is the maximum temperature and min_temp is the minimum temperature. 
+    | At the start, set all 3 variables to the same value and scrolls that value. Then use a while loop to take a reading every second and put it in current_temp, then update the max_temp or min_temp depending on the new reading. 
+    | If current_temp is less than (<) min_temp, update min_temp. 
+    | If the current_temp is greater than (>) max_temp, update max_temp. 
+    | Use the A button to scroll min_temp. 
+    | Use the B button to scroll max_temp. 
+    | Press down both A and B buttons together to scroll the difference between the max and min temperatures.
 
 
