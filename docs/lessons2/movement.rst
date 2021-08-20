@@ -4,16 +4,29 @@ Movement
 
 Mobile phone knows which up to show the images on its screen because it uses an accelerometer. Game controllers also contain accelerometers to steer and move around in games.
 
-The microbit comes with an accelerometer. It measures movement along
-three axes:
+| The microbit comes with an accelerometer. It measures movement along
+three axes in milli-g's. 
+| When the reading is 0 the microbit is "level"
+along that particular axis. 
+| Titling it in one direction will give a positive reading; in the opposite direction a negative reading is given.
 
-* X - tilting from left to right.
-* Y - tilting forwards and backwards.
-* Z - moving up and down.
+``accelerometer.get_x()``   * X - tilting left and right.
+``accelerometer.get_y()`` * Y - tilting forwards and backwards.
+``accelerometer.get_z()`` * Z - moving up and down.
 
-There is a method for each axis that returns a positive or negative number
-indicating a measurement in milli-g's. When the reading is 0 the microbit is "level"
-along that particular axis.
+| The code below scrolls teh reading for tilting left or right.
+
+.. code-block:: python
+
+    from microbit import *
+
+
+    while True:
+        display.scrolls(accelerometer.get_x())
+
+
+----
+
 
 For example, here's a very simple spirit-level that uses ``get_x`` to measure
 how level the device is along the X axis:
