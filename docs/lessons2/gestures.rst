@@ -167,19 +167,19 @@ from microbit import *
 shake step counter
 -------------------------
 
-| The code below checks for a shake gesture and adds 1 to the steps variable it the gesture is True.
+| The code below checks for a shake gesture and adds 1 to the count variable it the gesture is True.
 
 .. code-block:: python
 
     from microbit import *
 
 
-    steps=0
+    count = 0
 
     while True:
         if accelerometer.was_gesture('shake'):
-            steps += 1
-            display.show(steps)
+            count += 1
+            display.show(count)
 
 
 ----
@@ -188,7 +188,7 @@ shake step counter
 
     #. Add code to reset the count back to 0 when the A button is pressed.
     #. Edit the code to reset the count to a number 10 less than the current count when the B button is pressed.
-    #. Write code to count the number of tilts to the left or right.
-    #. Write code to count the number of tilts to the front or back.
-
+    #. Write code to count the total number of tilts to the left or right.
+    #. Write code to count the total number of tilts to the front or back.
+    #. Write code to count the total number of tilts to the left or right or front or back.
 
