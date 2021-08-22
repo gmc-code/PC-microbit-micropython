@@ -184,6 +184,30 @@ shake step counter
 
 ----
 
+tilt sideways counter
+-------------------------
+
+| The code below checks for a sideways tilt and adds 1 to the count variable if the microbit has been tilted left or right.
+| The two calls to the accelerometer are connected by a logical ``or`` which returns True if one of them is True.
+| The backslash, ``\``, is a continuation character, that breaks up long lines for easier reading.
+
+.. code-block:: python
+
+    from microbit import *
+
+
+    count = 0
+    display.show(count)
+    while True:
+        if accelerometer.was_gesture('left') or \
+        accelerometer.was_gesture('right'):
+            count += 1
+            display.scroll(count, delay=60)
+        sleep(20)
+
+
+----
+
 .. admonition:: Tasks
 
     #. Add code to reset the count back to 0 when the A button is pressed.
