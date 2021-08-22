@@ -62,6 +62,7 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
     lessons2/accelerometer_syntax.rst
     lessons2/gestures.rst
     lessons2/movement.rst
+    lessons2/custom_images.rst
 
 
 .. toctree::
