@@ -12,6 +12,11 @@ Accelerometer syntax
 Gesture Functions
 -------------------
 
+.. note::
+
+    Gestures are not updated in the background so there needs to be constant calls to some accelerometer method to do the gesture detection. Usually gestures can be detected using a loop with a small :func:`sleep` delay.
+
+
 .. py:function:: current_gesture()
 
     Return the name of the current gesture as a string. The gestures are: ``"up"``, ``"down"``, ``"left"``, ``"right"``, ``"face up"``, ``"face down"``, ``"freefall"``, ``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``.
@@ -30,12 +35,6 @@ Gesture Functions
     | Return a tuple of the gesture history. The most recent is listed last.
     | Also clears the gesture history before returning.
     
-.. note::
-
-    Gestures are not updated in the background so there needs to be constant 
-    calls to some accelerometer method to do the gesture detection. Usually 
-    gestures can be detected using a loop with a small :func:`sleep` delay.
-
 ----
 
 Acceleration Functions
