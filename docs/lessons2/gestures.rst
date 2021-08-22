@@ -228,6 +228,7 @@ get_gestures()
 
 
 | The code below will typically get 4 to 8 gestures with a 2 sec sleep.
+| The gestures tuple can be displayed by using a for loop to each item in the tuple for display.
 
 .. code-block:: python
 
