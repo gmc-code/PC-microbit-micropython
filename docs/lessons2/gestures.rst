@@ -218,22 +218,36 @@ tilt sideways counter
 
 ----
 
-get_gestures() counts
+get_gestures()
 -------------------------
 
-| The code below
+.. py:function:: get_gestures()
 
+    | Return a tuple of the gesture history. The most recent is listed last.
+    | Also clears the gesture history before returning.
+
+
+| The code below will typically get 4 to 8 gestures with a 2 sec sleep.
 
 .. code-block:: python
 
     from microbit import *
 
 
+    display.show('-')
     while True:
         gestures = accelerometer.get_gestures()
         if len(gestures) > 0:
+            display.show(len(gestures))
+            sleep(1000)
             for g in gestures:
                 display.scroll(g, delay=60)
-        sleep(20)
+            display.scroll('-')
+        sleep(2000)
 
+----
 
+.. admonition:: Tasks
+
+    #. Try adjusting the sleep from 2 up to 10 seconds and spinning the microbit on its edge to give the gestures in order: right, down, left, up.
+    #. Try adjusting the sleep from 2 up to 10 seconds and spinning the microbit to give the gestures in order: face up, left, face down, right.
