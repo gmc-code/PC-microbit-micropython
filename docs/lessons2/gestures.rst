@@ -160,7 +160,7 @@ from microbit import *
 
     #. Edit the code to reset the count back to 10 when the count gets to 0.
     #. Edit code to reset the count to 10 when the A button is pressed.
-    #. Edit code to reset the count to 10 when the A button is pressed or reset the count back 10 when the B button is pressed.
+    #. Edit code to reset the count to 10 when the A button is pressed and raise the count by 5 when the B button is pressed.
 
 ----
 
@@ -211,8 +211,29 @@ tilt sideways counter
 .. admonition:: Tasks
 
     #. Add code to reset the count back to 0 when the A button is pressed.
-    #. Edit the code to reset the count to a number 10 less than the current count when the B button is pressed.
+    #. Edit the code to reset the count to a number 5 less than the current count when the B button is pressed.
     #. Write code to count the total number of tilts to the left or right.
     #. Write code to count the total number of tilts to the front or back.
     #. Write code to count the total number of tilts to the left or right or front or back.
+
+----
+
+get_gestures() counts
+-------------------------
+
+| The code below
+
+
+.. code-block:: python
+
+    from microbit import *
+
+
+    while True:
+        gestures = accelerometer.get_gestures()
+        if len(gestures) > 0:
+            for g in gestures:
+                display.scroll(g, delay=60)
+        sleep(20)
+
 
