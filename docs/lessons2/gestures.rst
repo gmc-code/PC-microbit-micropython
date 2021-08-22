@@ -143,7 +143,7 @@ was_gesture counts
 
 .. code-block:: python
 
-from microbit import *
+    from microbit import *
 
 
     count = 10
