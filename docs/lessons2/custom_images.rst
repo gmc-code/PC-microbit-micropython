@@ -1,80 +1,84 @@
 ====================================================
-Built in images
+Custom images
 ====================================================
 
-| The microbit library contains over 60 built in images that have specific names.
-| e.g ``Image.HEART``
-| The ``Image`` object must have a capital ``I``.
-| The built in image name must be in capitals.  e.g ``HEART`` not ``heart``.
-| No quotation marks are used. e.g ``Image.HEART`` not ``'Image.HEART'``.
-| The same syntax that was used to show text can be used for images.
-| In Mu editor, when typing ``Image.``, as soon as the stop is typed, a drop list of images will be displayed to allow selection of an image.
+Image strings
+----------------
 
-----
-
-Display.show a built in Image
-----------------------------------------
+| The basic syntax for showing an image is:
 
 .. py:function:: show(image)
 
     | Display an image.
 
-| The code below displays a heart.
+
+| The image can be a string made up of a 25 integers where each integer is the brightness from 0 to 9, where 0 if off and 9 is full brightness.
+| The 25 values are broken up into 5 lines of 5 with a colon between them.
+| e.g. Image("11111:33333:55555:77777:99999")
+
+| The code below shows a vertical brightness gradient from the top to the bottom.
 
 .. code-block:: python
 
     from microbit import *
 
 
-    display.show(Image.HEART)
-
-----
-
-.. admonition:: Tasks
-
-    #. Write code to show an ARROW_N.    
-    #. Write code to show a GIRAFFE.   
-    #. Write code to show a SMILE.   
-
-----
-
-Display.show a list of images
-----------------------------------------
-
-| A list of images can be displayed in sequence.
-
-.. py:function:: show(imagelist, delay=400)
-
-    | Display images from a list in sequence.
-    | Each image in a list of images is shown with ``delay`` milliseconds between them.
-    | The delay defaults to 400ms if it is omitted.
-
-
-| The code below shows a sequence of 5 face images with half a second between them.
+    display.show(Image("11111:33333:55555:77777:99999"))
+    
+| The code below shows a diagonal brightness gradient from the top left to the bottom right.
 
 .. code-block:: python
 
     from microbit import *
 
 
-    while True:
-        display.show([Image.HAPPY, Image.SMILE, Image.SAD, Image.CONFUSED, Image.ANGRY], delay=500)
+    display.show(Image("12345:23456:34567:45678:56789"))
 
 ----
 
 .. admonition:: Tasks
 
-    #. Write code to show a list of 3 different animals with an 0.5 sec delay between them.    
-    #. Write code to show a list of 4 different arrows with an 0.4 sec delay between them.   
-    #. Write code to show a list of 3 different shapes with an 0.3 sec delay between them.    
+    #. Write code for a horizontal brightness gradient from the left to right.
+    #. Write code for a vertical brightness gradient from the bottom to the top.
+    #. Write code for a diagonal brightness gradient from the bottom left to the top right.   
 
 ----
 
-Image lists
+Image strings: line by line
+------------------------------
+
+| The vertical gradient Image("11111:33333:55555:77777:99999") can be rewritten so that the 5 rows are lined up under each other like a 5 by 5 grid. Extra spaces can by used to line up each line.
+
+.. code-block:: python
+
+    from microbit import *
+
+    vertical_gradient = Image("11111:"
+                              "33333:"
+                              "55555:"
+                              "77777:"
+                              "99999")
+    display.show(vertical_gradient)
+
+
+----
+
+.. admonition:: Tasks
+
+    #. Write code for a diagonal brightness gradient by lining up the 5 rows under each other.   
+
+----
+
+Pixel controls
 ----------------------------------------
 
-| When the list of images is more than a few, it is usual to put the list in a variable.
-| The list of 5 images is placed in the variable ``face_list``.
+| Each pixel on the 5 by 5 grid can be controlled individually.
+
+.. py:function:: display.set_pixel(x, y, value)
+
+    Set the brightness of the LED at column x and row y to value, which has to be an integer between 0 and 9.
+
+
 | The variable is then used to display the images: ``display.show(face_list, delay=500)``.
 
 .. code-block:: python
