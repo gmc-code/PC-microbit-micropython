@@ -137,6 +137,7 @@ Pixel rows and columns
     #. Write code to turn on teh pixels in row 3.
     #. Write code to turn on the pixel in column 2.
 
+
 ----
 
 Boat sinking animation
