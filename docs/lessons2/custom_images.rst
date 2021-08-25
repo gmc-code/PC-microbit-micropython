@@ -14,9 +14,18 @@ Image strings
 
 | The image can be a string made up of a 25 integers where each integer is the brightness from 0 to 9, where 0 if off and 9 is full brightness.
 | The 25 values are broken up into 5 lines of 5 with a colon between them.
-| e.g. Image('11111:33333:55555:77777:99999')
+| e.g. Image('01234:56789:09090:98765:43210')
 
-| The code below shows a vertical brightness gradient from the top to the bottom.
+| The code below shows a large dull square.
+
+.. code-block:: python
+
+    from microbit import *
+
+
+    display.show(Image('11111:10001:10001:10001:11111'))
+
+| The code below shows a vertical brightness gradient (dull to bright) from the top to the bottom.
 
 .. code-block:: python
 
@@ -25,7 +34,7 @@ Image strings
 
     display.show(Image('11111:33333:55555:77777:99999'))
     
-| The code below shows a diagonal brightness gradient from the top left to the bottom right.
+| The code below shows a diagonal brightness gradient (dull to bright) from the top left to the bottom right.
 
 .. code-block:: python
 
@@ -38,39 +47,48 @@ Image strings
 
 .. admonition:: Tasks
 
-    #. Write code for a horizontal brightness gradient from the left to right.
-    #. Write code for a vertical brightness gradient from the bottom to the top.
-    #. Write code for a diagonal brightness gradient from the bottom left to the top right.   
+    #. Write code for a large square of brightness 9.
+    #. Write code for a vertical brightness gradient (dull to bright) from the bottom to the top.
+    #. Write code for a horizontal brightness gradient (dull to bright) from the left to right.
+    #. Write code for a diagonal brightness gradient (dull to bright) from the bottom left to the top right.   
 
 ----
 
 Image strings: line by line
 ------------------------------
 
-| The vertical gradient Image('11111:33333:55555:77777:99999') can be rewritten so that the 5 rows are lined up under each other like a 5 by 5 grid. Extra spaces can by used to line up each line.
+| The large square Image('11111:10001:10001:10001:11111') can be rewritten so that the 5 rows are lined up under each other like a 5 by 5 grid. Extra spaces can by used to line up each line.
 
 .. code-block:: python
 
     from microbit import *
 
-    vertical_gradient = Image('11111:'
-                              '33333:'
-                              '55555:'
-                              '77777:'
-                              '99999')
-    display.show(vertical_gradient)
+    large_square = Image('11111:'
+                         '10001:'
+                         '10001:'
+                         '10001:'
+                         '11111')
+    display.show(large_square)
 
 
 ----
 
 .. admonition:: Tasks
 
-    #. Write code for a diagonal brightness gradient by lining up the 5 rows under each other.   
+    #. Write code for a large square of brightness 9 by lining up the 5 rows of the image under each other.
+    #. Write code for a small square of brightness 9 by lining up the 5 rows of the image under each other.
+    #. Write code for 2 horizontal lines by lining up the 5 rows of the image under each other.  
+    #. Write code for 2 vertical lines by lining up the 5 rows of the image under each other.
 
 ----
 
 Pixel controls
 ---------------------
+
+
+.. image:: images/microbit_numbering.png
+    :scale: 100 %
+    :align: center
 
 | Each pixel on the 5 by 5 grid can be controlled individually.
 | The column numbers are 0 to 4 from left to right.
@@ -196,5 +214,3 @@ Boat sinking animation
     #. Write a list variable, ``boats_rising``, that lists the boats in reverse order and animate a rising boat.
     #. Combine the 2 animations to show a boat sinking and rising over and over again.
 
-
-    
