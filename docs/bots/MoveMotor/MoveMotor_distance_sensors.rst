@@ -20,6 +20,7 @@ Set up the distance sensors
     # setup distance_sensor
     distance_sensor = MOVEMotor.MOVEMotorDistanceSensors()
 
+----
 
 Distance to an object
 ----------------------------------------
@@ -77,7 +78,7 @@ Distance to an object
     #. Write code to drive the buggy forward until it measures an object 50cm in front and then stops.
     #. Write code to drive the buggy forward until it measures an object 20cm in front and then it stops for 500ms, goes backwards for 500ms, then spins, goes forwards and repeats.
 
------
+----
 
 HC-SR04 Distance sensor
 ----------------------------------------
@@ -88,18 +89,19 @@ HC-SR04 Distance sensor
 | The HC-SR04 Distance sensor measures distances to objects in the range 2cm to 400cm with a ranging accuracy of 3mm. The angle to objects can be up to 15 degrees.
 | It may return values as high as 10000 cm but the accuracy is not guaranteed.
 
------
+----
 
-A look inside the MOVEMotor module code for the HC-SR04 Distance sensor
-----------------------------------------------------------------------------
+A technical look: MOVEMotorDistanceSensors
+--------------------------------------------
 
 | Using Echo location, the HC-SR04 uses the Trigger pin13 to send a signal and the Echo pin14 to listen for it to be 'bounced back'.
 
-| Here is the code for the sensors.
+| Here is the code in the MOVEMotor library for the sensors.
 
 .. code-block:: python
 
     from microbit import *
+
 
     class MOVEMotorDistanceSensors:
 
@@ -138,7 +140,7 @@ A look inside the MOVEMotor module code for the HC-SR04 Distance sensor
 | ``distance = machine.time_pulse_us(pin14, 1, 1160000)`` measures the time for the pulse to be reflected back.
 
 | Distance is calculated using distance = pulse duration * speed of sound * 0.5
-| ``0.5`` is used since the distance for the pulse is twice the distance to the object  since hte pulse has to travel to and from the object.
+| ``0.5`` is used since the distance for the pulse is twice the distance to the object since the pulse has to travel to and from the object.
 | The speed of sound is 0.0343 cm per microsecond.
 | Multiplication by ``speed of sound * 0.5`` is simplified to division by 58 in ``round(distance/58)``.
 
