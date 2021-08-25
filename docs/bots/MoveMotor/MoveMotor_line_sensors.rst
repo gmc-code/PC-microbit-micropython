@@ -49,6 +49,7 @@ Calibrate the line sensors
 
     # setup line sensor
     line_sensor = MOVEMotor.MOVEMotorLineSensors()
+
     line_sensor.line_sensor_calibrate()
 
 ----
@@ -58,7 +59,9 @@ Read values from the line sensors
 
 .. py:method:: line_sensor_read(sensor)
 
-    | Read the line sensor value.
+    | Return the line sensor value. 
+    | Typical values over white are 150 to 200, while over black they are 50.
+    | ``sensor`` is 'left' or 'right'
 
 .. code-block:: python
 
@@ -70,9 +73,13 @@ Read values from the line sensors
     line_sensor = MOVEMotor.MOVEMotorLineSensors()
     line_sensor.line_sensor_calibrate()
 
+    left_reading = line_sensor.line_sensor_read('left')
+    display.scroll(left_reading)
+
 ----
 
 .. admonition:: Tasks
 
-    #. Write code to drive the left motor at speed 2 for 1 second, stop it, run the right motor at speed 2 for 1 sec then stop it.
-    #. Write code to drive the right motor at speed 3 while the left motor runs at speed 2 for 3 sec then stop it.
+    #. Write code to read the right line sensor and display its value.
+    #. Write code to read both the left and the right line sensor and display their values wiht 'L' before the left reading and 'R' before the right reading.
+
