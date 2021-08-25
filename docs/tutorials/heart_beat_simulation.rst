@@ -5,7 +5,7 @@ Heart beat simulation
 Pin touching
 ----------------
 
-| To simulate being connected to a heart monitor, touching pin0 and the Ground pin (GND) will be used.
+| To simulate being connected to a heart monitor, touching pin0 (or pin1 or pin2) and the Ground pin (GND) will be used.
 | Hold the GND pin with thumb and forefinger of the right hand.
 | Touch pin0 with the tip of a finger of the left hand.
 
