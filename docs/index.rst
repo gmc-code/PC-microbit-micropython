@@ -106,7 +106,6 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
     :maxdepth: 2
     :caption: Tutorials
     :numbered:
-    :hidden:
 
     tutorials/heart_beat_simulation.rst
 
