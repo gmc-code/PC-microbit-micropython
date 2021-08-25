@@ -17,7 +17,6 @@ Mobile phone knows which up to show the images on its screen because it uses an 
     :scale: 50 %
     :align: center
 
-
 | The code below scrolls the reading for tilting left or right. An ``*`` is shown in between readings to make it easier to tell tehm apart.
 
 .. code-block:: python

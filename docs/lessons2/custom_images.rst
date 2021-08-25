@@ -2,6 +2,7 @@
 Custom images
 ====================================================
 
+
 Image strings
 ----------------
 
@@ -85,10 +86,15 @@ Image strings: line by line
 Pixel controls
 ---------------------
 
-
 .. image:: images/microbit_numbering.png
     :scale: 100 %
     :align: center
+
+.. image:: images/microbit-led-coords.png
+    :scale: 60 %
+    :align: center
+
+
 
 | Each pixel on the 5 by 5 grid can be controlled individually.
 | The column numbers are 0 to 4 from left to right.
