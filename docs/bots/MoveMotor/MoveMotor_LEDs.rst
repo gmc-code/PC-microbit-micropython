@@ -115,79 +115,81 @@ step..!
     shown.
 
 Example
-=======
+---------
 
-    Repeatedly displays random colours onto the LED strip.
-    This example requires a strip of 8 Neopixels (WS2812) connected to pin0.
+| Repeatedly displays random colours onto the LED strip.
+| This example requires a strip of 4 Neopixels (WS2812) connected to pin0.
 
-"""
-from microbit import *
-import neopixel
-from random import randint
+.. code-block:: python
 
-# Setup the Neopixel strip on pin0 with a length of 8 pixels
-np = neopixel.NeoPixel(pin0, 8)
+    from microbit import *
+    import neopixel
+    from random import randint
 
-while True:
-    #Iterate over each LED in the strip
+    # Setup the Neopixel strip on pin0 with a length of 4 pixels
+    np = neopixel.NeoPixel(pin0, 48)
 
-    for pixel_id in range(0, len(np)):
-        red = randint(0, 60)
-        green = randint(0, 60)
-        blue = randint(0, 60)
+    while True:
+        #Iterate over each LED in the strip
 
-        # Assign the current LED a random red, green and blue value between 0 and 60
-        np[pixel_id] = (red, green, blue)
+        for pixel_id in range(0, len(np)):
+            red = randint(0, 60)
+            green = randint(0, 60)
+            blue = randint(0, 60)
 
-        # Display the current pixel data on the Neopixel strip
-        np.show()
-        sleep(100)
+            # Assign the current LED a random red, green and blue value between 0 and 60
+            np[pixel_id] = (red, green, blue)
+
+            # Display the current pixel data on the Neopixel strip
+            np.show()
+            sleep(100)
 
 ----
-"""
-    Repeatedly display random colours on the 4 LEDs connected to pin8.
-"""
 
-from microbit import *
-import neopixel
-import random
+| Repeatedly display random colours on the 4 LEDs connected to pin8.
 
+.. code-block:: python
 
-# Setup the Neopixel strip on pin8 with a length of 4 pixels
-NUM_PIXELS = 4
-LED_PIN = pin8
-np = neopixel.NeoPixel(LED_PIN, NUM_PIXELS)
-
-def front_lights():
-    # LED 0 and 1; red, green and blue value between 0 and 255
-    np[0] = (0, 255, 0)
-    np[1] = (0, 255, 0)
-    # Display the current pixel data on the Neopixel strip
-    np.show()
-
-def rear_lights():
-    # LED 2 and 3; red, green and blue value between 0 and 255
-    np[2] = (255, 0, 0)
-    np[3] = (255, 0, 0)
-    # Display the current pixel data on the Neopixel strip
-    np.show()
-
-def same_random_pixels():
-    # Iterate over each LED in the strip
-    red = random.randint(0, 255)
-    green = random.randint(0, 255)
-    blue = random.randint(0, 255)
-    for pixel_id in range(NUM_PIXELS):
-        # Assign the current LED a random red, green and blue value between 0 and 60
-        np[pixel_id] = (red, green, blue)
-    # Display the current pixel data on the Neopixel strip
-    np.show()
+    from microbit import *
+    import neopixel
+    import random
 
 
-front_lights()
-rear_lights()
+    # Setup the Neopixel strip on pin8 with a length of 4 pixels
+    NUM_PIXELS = 4
+    LED_PIN = pin8
+    np = neopixel.NeoPixel(LED_PIN, NUM_PIXELS)
 
-while True:
-    sleep(400)
-    same_random_pixels()
+    def front_lights():
+        # LED 0 and 1; red, green and blue value between 0 and 255
+        np[0] = (0, 255, 0)
+        np[1] = (0, 255, 0)
+        # Display the current pixel data on the Neopixel strip
+        np.show()
+
+    def rear_lights():
+        # LED 2 and 3; red, green and blue value between 0 and 255
+        np[2] = (255, 0, 0)
+        np[3] = (255, 0, 0)
+        # Display the current pixel data on the Neopixel strip
+        np.show()
+
+    def same_random_pixels():
+        # Iterate over each LED in the strip
+        red = random.randint(0, 255)
+        green = random.randint(0, 255)
+        blue = random.randint(0, 255)
+        for pixel_id in range(NUM_PIXELS):
+            # Assign the current LED a random red, green and blue value between 0 and 60
+            np[pixel_id] = (red, green, blue)
+        # Display the current pixel data on the Neopixel strip
+        np.show()
+
+
+    front_lights()
+    rear_lights()
+
+    while True:
+        sleep(400)
+        same_random_pixels()
 
