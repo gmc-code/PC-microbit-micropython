@@ -4,8 +4,8 @@ MoveMotor LEDs
 
 | The MOVEMotor uses 4 ZIP LEDs (WS2812) on pin8.
 | The neopixel module is used to drive these RGB LEDs.
-| Each LED can produce a full spectrum of colours independent to all of the other LEDs. 
-| Each ZIP LED has a Red, Green and Blue element within the LED, and each of these can have brightness from 0 to 255.
+| Each RGB LED can produce a full spectrum of colours independent to all of the other RGB LEDs. 
+| Each ZIP LED has a Red, Green and Blue element within the LED, and each of these can have brightness set from 0 to 255.
 
 NeoPixel module
 -----------------
@@ -18,9 +18,10 @@ NeoPixel module
     from microbit import *
     import neopixel
 
+----
 
 Setup LEDs
-----------------------------------------
+-------------
 
 .. py:method:: neopixel.NeoPixel(pin, n)
 
@@ -28,69 +29,62 @@ Setup LEDs
     | ``pin`` is the pin that they are connected by.
     | ``n`` is the number of LEDs
 
-| The code below sets up 4 LEDs connected to pin0 via: ``np = neopixel.NeoPixel(pin0, 4)``.
+| The code below sets up 4 LEDs connected to pin8 via: ``np = neopixel.NeoPixel(pin8, 4)``.
 | The variable, np, is then used to control the LEDs.
 
 .. code-block:: python
 
     from microbit import *
-
-
     import neopixel
-    np = neopixel.NeoPixel(pin0, 4)
 
 
-| Each LED is addressed by a position (starting from 0). 
-| Neopixels are given RGB (red, green, blue) values between 0-255 as a tuple. 
-| For example, ``(255,255,255)`` is white.
+    np = neopixel.NeoPixel(pin8, 4)
 
+----
 
-.. py:method:: clear()
+Set LED colour and brightness
+------------------------------
 
-        Clear all the LEDs.
+.. py:method:: np[n] = (red, green, blue)
 
+    Set the red, green and blue brightness from 0 to 255 for RGB LED at position n.
 
-.. py:method:: show()
+| Each LED is set by indexing it (like with a Python list, starting from 0). 
+| e.g the LED in position 0,  e.g. ``np[0]``. 
+| Neopixels are given RGB (red, green, blue) values between 0-255 as a tuple.
+| A value of 0 is off, while 255 is full brightness. 
+| When red, green and blue are all full brightness, ``(255, 255, 255)``, the colour is white.
+| For quick RGB values for common colours, see https://www.rapidtables.com/web/color/RGB_Color.html
 
-        Show the LEDs using their colour settings. This must be called for any updates to teh LEDs to become visible.
-
-
-
-Operations
-==========
-
-Writing the colour doesn't update the display (use ``show()`` for that).
+| The code below sets the colours to (255, 255, 255) for the LED in position 0.
 
 .. code-block:: python
 
     from microbit import *
-
-
     import neopixel
 
-    np[0] = (255, 0, 128)  # first element
-    np[-1] = (0, 255, 0)  # last element
-    np.show()  # only now will the updated value be shown
 
-To read the colour of a specific pixel just reference it.
+    np = neopixel.NeoPixel(pin8, 4)
+    np[0] = (255, 255, 255)
 
-.. code::
+| Setting the colours for LEDs don't change the displayed colour of the LEDs until ``show()`` is used on the neopixel object that was set up. e.g. ``np.show()``
 
-    print(np[0])
+.. py:method:: show()
 
-Using Neopixels
----------------------
+        Show the LEDs using their colour settings. This must be called for any updates to the LEDs to become visible.
 
-| Interact with Neopixels as if they were a list of tuples. 
-| Each tuple represents the RGB (red, green and blue) mix of colours for a specific pixel. 
-| The RGB values can range between 0 to 255.
+| The code below displays the set colours for the neopixel LEDS using ``np.show()``
 
+.. code-block:: python
 
-
+    from microbit import *
     import neopixel
-    np = neopixel.NeoPixel(pin0, 8)
 
-Set pixels by indexing them (like with a Python list). For instance, to
+
+    np = neopixel.NeoPixel(pin8, 4)
+    np[0] = (255, 255, 255)
+    np.show()
+
 set the first pixel to full brightness red, you would use::
 
     np[0] = (255, 0, 0)
@@ -98,6 +92,32 @@ set the first pixel to full brightness red, you would use::
 Or the final pixel to purple::
 
     np[-1] = (255, 0, 255)
+    
+
+Clearing Neopixels
+-------------------
+
+.. py:method:: clear()
+
+        Clear all the LEDs.
+
+
+
+
+
+
+Neopixels values
+-------------------
+
+To read the colour of a specific pixel just reference it.
+
+.. code::
+
+    print(np[0])
+
+
+get
+------------------------
 
 Get the current colour value of a pixel by indexing it. For example, to print
 the first pixel's RGB value use::
@@ -122,7 +142,7 @@ Example
 ---------
 
 | Repeatedly displays random colours onto the LED strip.
-| This example requires a strip of 4 Neopixels (WS2812) connected to pin0.
+| This example requires a strip of 4 Neopixels (WS2812) connected to pin8.
 
 .. code-block:: python
 
@@ -130,8 +150,8 @@ Example
     import neopixel
     from random import randint
 
-    # Setup the Neopixel strip on pin0 with a length of 4 pixels
-    np = neopixel.NeoPixel(pin0, 48)
+    # Setup the Neopixel strip on pin8 with a length of 4 pixels
+    np = neopixel.NeoPixel(pin8, 48)
 
     while True:
         #Iterate over each LED in the strip
