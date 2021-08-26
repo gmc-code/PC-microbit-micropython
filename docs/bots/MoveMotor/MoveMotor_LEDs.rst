@@ -148,23 +148,21 @@ Clear LEDs
 
 .. admonition:: Tasks
 
-    | For quick RGB values for common colours, see https://www.rapidtables.com/web/color/RGB_Color.html
-
-    #. | Modify the colours used in the code by changing the variable names and their values. | Use yellow and purple instead of red and blue.
+    #. Modify the code to turn on the front lights for 2 sec then turn on the rear lights for 2 sec.
 
 ----
 
 LED values
 -------------------
 
-To read the colour of a specific pixel just reference it.
+To read the colour of a specific RGB LED use its index position.
 
 
 .. py:method:: np[n]
 
     Return the red, green and blue value for the RGB LED at position n.
 
-| The code below sets the LED to a sandy brown colour. The ``for`` loop displays each value in the tuple ``(255, 0, 0)``.
+| The code below sets the LED to red. The ``for`` loop displays each value in the tuple ``(255, 0, 0)``.
 
 .. code-block:: python
 
@@ -174,8 +172,8 @@ To read the colour of a specific pixel just reference it.
 
     buggy_lights = neopixel.NeoPixel(pin8, 4)
     buggy_lights[0] = (255, 0, 0)
-    for i in buggy_lights[0]:
-        display.scroll(i)
+    for rgb_value in buggy_lights[0]:
+        display.scroll(rgb_value)
 
 ----
 
@@ -184,14 +182,15 @@ Colour lists
 
 | A list of colours can be used to create a colourful display.
 | 2 for loops are used, one nested inside the other.
-| ``for c in colour_list:`` loops through the colours.
-| ``for i in range(4):`` loops through each LED to set the colour for it.
+| ``for colour in colour_list:`` loops through the colours.
+| ``for led_num in range(4):`` loops through each LED to set its colour.
 
 .. code-block:: python
 
     from microbit import *
     import neopixel
 
+    buggy_lights = neopixel.NeoPixel(pin8, 4)
 
     white = (255, 255, 255)
     red = (255, 0, 0)
@@ -201,105 +200,31 @@ Colour lists
     blue = (0, 0, 255)
     magenta = (255, 0, 255)
 
-    colour_list = [white, red, yellow, green, cyan, blue, magenta, ]
+    colour_list = [white, red, yellow, green, cyan, blue, magenta]
 
-    buggy_lights = neopixel.NeoPixel(pin8, 4)
-    for c in colour_list:
-        for i in range(4):
-            buggy_lights[i]=c
+    for colour in colour_list:
+        for led_num in range(4):
+            buggy_lights[led_num]=colour
         buggy_lights.show()
         sleep(200)
 
-
 ----
 
-.. admonition:: Tasks
+Primary and secondary colours 
+------------------------------
 
+.. image:: images/primary_colours.png
+    :scale: 50 %
+    :align: left
+
+.. image:: images/secondary_colours.png
+    :scale: 50 %
+    :align: center
+
+
+.. admonition:: Tasks
 
     See https://www.indezine.com/products/powerpoint/learn/color/color-rgb.html
 
     #. Modify the code to use a shorter list of colours, with just the primary colours.
     #. Modify the code to use a shorter list of colours, with just the secondary colours.
-
-
-----
-
-Random brightness
------------------
-
-| Repeatedly displays random colours onto the LED strip.
-| This example requires a strip of 4 Neopixels (WS2812) connected to pin8.
-
-.. code-block:: python
-
-    from microbit import *
-    import neopixel
-    from random import randint
-
-    # Setup the Neopixel strip on pin8 with a length of 4 pixels
-    np = neopixel.NeoPixel(pin8, 48)
-
-    while True:
-        #Iterate over each LED in the strip
-
-        for pixel_id in range(0, len(np)):
-            red = randint(0, 60)
-            green = randint(0, 60)
-            blue = randint(0, 60)
-
-            # Assign the current LED a random red, green and blue value between 0 and 60
-            np[pixel_id] = (red, green, blue)
-
-            # Display the current pixel data on the Neopixel strip
-            np.show()
-            sleep(100)
-
-----
-
-| Repeatedly display random colours on the 4 LEDs connected to pin8.
-
-.. code-block:: python
-
-    from microbit import *
-    import neopixel
-    import random
-
-
-    # Setup the Neopixel strip on pin8 with a length of 4 pixels
-    NUM_PIXELS = 4
-    LED_PIN = pin8
-    np = neopixel.NeoPixel(LED_PIN, NUM_PIXELS)
-
-    def front_lights():
-        # LED 0 and 1; red, green and blue value between 0 and 255
-        np[0] = (0, 255, 0)
-        np[1] = (0, 255, 0)
-        # Display the current pixel data on the Neopixel strip
-        np.show()
-
-    def rear_lights():
-        # LED 2 and 3; red, green and blue value between 0 and 255
-        np[2] = (255, 0, 0)
-        np[3] = (255, 0, 0)
-        # Display the current pixel data on the Neopixel strip
-        np.show()
-
-    def same_random_pixels():
-        # Iterate over each LED in the strip
-        red = random.randint(0, 255)
-        green = random.randint(0, 255)
-        blue = random.randint(0, 255)
-        for pixel_id in range(NUM_PIXELS):
-            # Assign the current LED a random red, green and blue value between 0 and 60
-            np[pixel_id] = (red, green, blue)
-        # Display the current pixel data on the Neopixel strip
-        np.show()
-
-
-    front_lights()
-    rear_lights()
-
-    while True:
-        sleep(400)
-        same_random_pixels()
-
