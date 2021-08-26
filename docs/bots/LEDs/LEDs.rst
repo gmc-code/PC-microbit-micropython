@@ -1,7 +1,6 @@
 ====================================================
-MoveMotor LEDs
+LEDs
 ====================================================
-
 
 | The MOVEMotor uses 4 ZIP LEDs (WS2812) on pin8.
 | The neopixel module is used to drive these RGB LEDs.
