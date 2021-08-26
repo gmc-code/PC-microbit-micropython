@@ -60,7 +60,7 @@ Read values from the line sensors
 .. py:method:: line_sensor_read(sensor)
 
     | Return the line sensor value. 
-    | Typical values over white are 150 to 200, while over black they are 50.
+    | Typical values over white are 150 to 200, while over black they are often around 50.
     | ``sensor`` is 'left' or 'right'
 
 .. code-block:: python
@@ -81,5 +81,5 @@ Read values from the line sensors
 .. admonition:: Tasks
 
     #. Write code to read the right line sensor and display its value.
-    #. Write code to read both the left and the right line sensor and display their values wiht 'L' before the left reading and 'R' before the right reading.
+    #. Write code to read both the left and the right line sensor and display their values with 'L' before the left reading and 'R' before the right reading.
 

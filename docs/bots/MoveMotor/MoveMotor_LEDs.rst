@@ -2,15 +2,15 @@
 MoveMotor LEDs
 ====================================================
 
-
 | The MOVEMotor uses 4 ZIP LEDs (WS2812) on pin8.
-| Each LED can produce a full spectrum of colours independent to all of the other LEDs on the bus. 
-| Each ZIP LED has a Red, Green and Blue element within the LED, and each of these can achieve 256 levels of brightness.
+| The neopixel module is used to drive these RGB LEDs.
+| Each LED can produce a full spectrum of colours independent to all of the other LEDs. 
+| Each ZIP LED has a Red, Green and Blue element within the LED, and each of these can have brightness from 0 to 255.
 
 NeoPixel module
 -----------------
 
-| The neopixel module allows use of WS2812 individually addressable RGB LEDs with the micro:bit. 
+| The neopixel module allows use of multiple RGB LEDs connected to one pin so that each can have their own colour and brightness set.
 | First, import the neopixel library with ``import neopixel``.
 
 .. code-block:: python
@@ -24,10 +24,12 @@ Setup LEDs
 
 .. py:method:: neopixel.NeoPixel(pin, n)
 
-    | Initialise a strip of neopixel LEDs 
+    | Initialise a strip of RGB LEDs 
     | ``pin`` is the pin that they are connected by.
     | ``n`` is the number of LEDs
 
+| The code below sets up 4 LEDs connected to pin0 via: ``np = neopixel.NeoPixel(pin0, 4)``.
+| The variable, np, is then used to control the LEDs.
 
 .. code-block:: python
 
@@ -35,20 +37,23 @@ Setup LEDs
 
 
     import neopixel
+    np = neopixel.NeoPixel(pin0, 4)
+
+
+| Each LED is addressed by a position (starting from 0). 
+| Neopixels are given RGB (red, green, blue) values between 0-255 as a tuple. 
+| For example, ``(255,255,255)`` is white.
 
 
 .. py:method:: clear()
 
-        Clear all the pixels.
+        Clear all the LEDs.
 
 
 .. py:method:: show()
 
-        Show the pixels. This must be called for any updates to become visible.
+        Show the LEDs using their colour settings. This must be called for any updates to teh LEDs to become visible.
 
-    | Each pixel is addressed by a position (starting from 0). 
-    | Neopixels are given RGB (red, green, blue) values between 0-255 as a tuple. 
-    | For example, ``(255,255,255)`` is white.
 
 
 Operations
@@ -80,8 +85,7 @@ Using Neopixels
 | Each tuple represents the RGB (red, green and blue) mix of colours for a specific pixel. 
 | The RGB values can range between 0 to 255.
 
-For example, initialise a strip of 8 neopixels on a strip connected to pin0
-like this::
+
 
     import neopixel
     np = neopixel.NeoPixel(pin0, 8)
