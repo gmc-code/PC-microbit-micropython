@@ -54,7 +54,7 @@ Set LED colour and brightness
 | Neopixels are given RGB (red, green, blue) values between 0-255 as a tuple.
 | A value of 0 is off, while 255 is full brightness. 
 | When red, green and blue are all full brightness, ``(255, 255, 255)``, the colour is white.
-| For quick RGB values for common colours, see https://www.rapidtables.com/web/color/RGB_Color.html
+
 
 | The code below sets the colours to (255, 255, 255) for the LED in position 0.
 
@@ -67,7 +67,35 @@ Set LED colour and brightness
     np = neopixel.NeoPixel(pin8, 4)
     np[0] = (255, 255, 255)
 
-| Setting the colours for LEDs don't change the displayed colour of the LEDs until ``show()`` is used on the neopixel object that was set up. e.g. ``np.show()``
+| The code below sets the colours of the 4 LEDs: np[0] is white, np[1] is red, np[2] is green and np[3] is blue, with all at full brightness.
+
+.. code-block:: python
+
+    from microbit import *
+    import neopixel
+
+
+    np = neopixel.NeoPixel(pin8, 4)
+    np[0] = (255, 255, 255)
+    np[1] = (255, 0, 0)
+    np[2] = (0, 255, 0)    
+    np[3] = (0, 0, 255)
+
+----
+
+.. admonition:: Tasks
+
+    | For quick RGB values for common colours, see https://www.rapidtables.com/web/color/RGB_Color.html
+
+    #. Write code to set the last three LEDS yellow, cyan and magenta.
+    #. Pick 4 other colours from the website colours above and set the LEDs to those colours.
+
+----
+
+Show LED colour and brightness
+--------------------------------
+
+| Setting the colours for LEDs doesn't change the displayed colour of the LEDs until ``show()`` is used on the neopixel object that was set up. e.g. ``np.show()``
 
 .. py:method:: show()
 
@@ -85,14 +113,6 @@ Set LED colour and brightness
     np[0] = (255, 255, 255)
     np.show()
 
-set the first pixel to full brightness red, you would use::
-
-    np[0] = (255, 0, 0)
-
-Or the final pixel to purple::
-
-    np[-1] = (255, 0, 255)
-    
 
 Clearing Neopixels
 -------------------
