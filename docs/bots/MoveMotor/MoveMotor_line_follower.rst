@@ -24,7 +24,7 @@ Line following code step 1
 ----------------------------------------
 
 | Import the MOVEmotor module and setup the buggy and line sensor.
-| Make sure that the buggy is over a consistent white surface so that when it calibrates, the left and right line sensors have similar readings.
+| Make sure that the buggy is over a consistent white surface so that when the line sensors are calibrated, the left and right line sensors have similar readings.
 
 .. code-block:: python
 
