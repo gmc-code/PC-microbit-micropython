@@ -20,7 +20,7 @@ Thick track
 | The buggy can be placed over the **thick** track so that the line sensors are over **black** paper. When a line sensor comes over the white surrounding paper, that side needs to turn away from the track edge back into the black area.
 
 
-Line following code step 1
+Set up buggy and sensors
 ----------------------------------------
 
 | Import the MOVEmotor module and setup the buggy and line sensor.
@@ -37,10 +37,14 @@ Line following code step 1
     line_sensor = MOVEMotor.MOVEMotorLineSensors()
     line_sensor.line_sensor_calibrate()
 
+----
+
+Set speed constants
+----------------------------------------
 
 | Create some constants so that the values can be changed in one place when testing the performance of the buggy.
-| Set a ``CHANGETHRESHOLD`` constant to be the minimum change in the line sensor reading to indicate that the colour below it is no longer full white. A value of 40 works seems to work well.
-| The buggy should only move slowly so that it doesn't go to far over the black line. Hence the speed settings must be very low.
+| Set a ``CHANGETHRESHOLD`` constant to be the minimum change in the line sensor reading when the colour below it is no longer full white. A value of 40 works seems to work well.
+| The buggy should only move slowly so that it doesn't go too far over the black line. Hence the speed settings must be very low.
 | Set a ``MAXSPEED`` constant to be the speed for the motors when going straight forward.
 | Set a ``MAXTURN`` constant to be the speed for the outside motor on a turn which needs to be greater than the speed of the inside motor.
 | Set a ``MINTURN`` constant to be the speed for inside motor on a turn. This is best if it is negative so it goes backwards.
@@ -52,9 +56,20 @@ Line following code step 1
     MAXTURN = 1
     MINTURN = -1
 
+----
+
+Define follow_thin_line
+----------------------------------------
 
 | Define ``follow_thin_line()`` so that the buggy keeps a thin black line between both line sensors.
 | Get the line sensor readings.
+| Set ``black_left`` to True if the left sensor is over part of the black line.
+| ``black_left``, which is equal to ``left_sensor + CHANGETHRESHOLD < left_sensorStart``, will be True if the left sensor reading has dropped by more than 40 compared to the original reading when it was flashed the code.
+| Set ``black_right`` to True if the right sensor is over part of the black line.
+| When both line sensors are over white, the buggy goes forward.
+| When the left sensor is over black, the buggy turns to the left to try to get the left line sensor back over white.
+| When the right sensor is over black, the buggy turns to the right to try to get the right line sensor back over white.
+| When both line sensors are over black, the buggy spins to try to make just one sensor over black.
 
 
 .. code-block:: python
@@ -77,26 +92,25 @@ Line following code step 1
             buggy.left_motor(MAXTURN)
             buggy.right_motor(-MAXTURN)
 
+----
 
+while True loop
+----------------------------------------
 
-| Define ``follow_thin_line()`` so that teh buggy keeps a thin black line between both line sensors.
+| The while True loop first stops both motors then does the line following for 20ms.
 
 .. code-block:: python
 
     while True:
-        sleep(20)
-        buggy.stop_left()
-        buggy.stop_right()
+        buggy.stop()
         sleep(10)
-        if calflag:
-            left_sensor = line_sensor.line_sensor_read('left')
-            right_sensor = line_sensor.line_sensor_read('right')
-            display.scroll('L' + str(left_sensor), delay=60)
-            display.scroll('R' + str(right_sensor), delay=60)
-            calflag = False
-        else:
-            follow_thin_line()
+        follow_thin_line()
+        sleep(20)
 
+----
+
+Code for thin line following
+----------------------------------------
 
 | Define ``follow_thin_line()`` so that teh buggy keeps a thin black line between both line sensors.
 
@@ -113,8 +127,6 @@ Line following code step 1
     left_sensorStart = line_sensor.line_sensor_read('left')
     right_sensorStart = line_sensor.line_sensor_read('right')
 
-    calflag = True
-    thin_line_follow_flag = True
     CHANGETHRESHOLD = 40
     MAXSPEED = 1
     MINTURN = -1
@@ -139,22 +151,13 @@ Line following code step 1
             buggy.right_motor(-MAXTURN)
 
     while True:
-        sleep(20)
-        buggy.stop_left()
-        buggy.stop_right()
+        buggy.stop()
         sleep(10)
-        if calflag:
-            left_sensor = line_sensor.line_sensor_read('left')
-            right_sensor = line_sensor.line_sensor_read('right')
-            display.scroll('L' + str(left_sensor), delay=60)
-            display.scroll('R' + str(right_sensor), delay=60)
-            calflag = False
-        else:
-            follow_thin_line()
+        follow_thin_line()
+        sleep(20)
 
 
-
-
+----
 
 Line following code in full
 ----------------------------------------
