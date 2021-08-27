@@ -4,7 +4,7 @@ MOVEMotor module
 
 
 | The MOVEMotor module is required to control the MOVEmotor buggy.
-| Download the python file :download:`MOVEMotor.py module <pythonfiles/MOVEMotor.py>`.
+| Download the python file :download:`MOVEMotor.py module <files/MOVEMotor.py>`.
 | Place it in the mu_code folder: C:\\Users\\username\\mu_code
 | The file needs to be copied onto the microbit.
 | In Mu editor, with the microbit attached by USB, click the Files icon.
