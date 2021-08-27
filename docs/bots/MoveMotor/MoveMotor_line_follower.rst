@@ -129,10 +129,10 @@ Line following code
             buggy.right_motor(MAXSPEED)
 
     def spin_from_obstacle():
-            display.show(' ')
-            both_indicator()
-            buggy.left_motor(MAXTURN)
-            buggy.right_motor(-MAXTURN)
+        display.show(' ')
+        both_indicator()
+        buggy.left_motor(MAXTURN)
+        buggy.right_motor(-MAXTURN)
 
 
     while True:
