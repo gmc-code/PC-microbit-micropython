@@ -6,8 +6,8 @@ Track templates
 ----------------------------------------
 
 | The track templates have various track segments that can be cut out to make a line following track.
-| For a track with a thin line download the word file :download:`MOVEMotor.py module <files/linefollowtiles -thin.docx>`.
-| For a track with a thick line download the word file :download:`MOVEMotor.py module <files/linefollowtiles -thick.docx>`.
+| For a track with a thin line download the word file :download:`linefollowtiles -thin.docx <files/linefollowtiles -thin.docx>`.
+| For a track with a thick line download the word file :download:`linefollowtiles -thick.docx <files/linefollowtiles -thick.docx>`.
 
 
 
