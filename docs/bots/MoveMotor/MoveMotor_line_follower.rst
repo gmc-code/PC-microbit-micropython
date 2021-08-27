@@ -2,6 +2,10 @@
 MoveMotor line follower
 ====================================================
 
+| The buggy can be programmed to follow a thin black line or a wide black track.
+| Track templates are provided for printing. They can be cut up to create tacks of your own design.
+| Several pages can be printed multiple times. The page numbers can be listed multipel tiems in the print dialog. e.g. 2,2,2,2,2,2,3,3,3,3 will print 6 copies of page 2 and 4 copies of page 3.
+
 Track templates
 ----------------------------------------
 
