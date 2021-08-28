@@ -21,7 +21,7 @@ Thick track
 ~~~~~~~~~~~~~~~~~~~~~
 
 | For a track with a thick line, download the word file :download:`linefollowtiles_thick.docx <files/linefollowtiles_thick.docx>`.
-For a wide thick line, download the word file :download:`linefollowtiles_wide.docx <files/linefollowtiles_wide.docx>`.
+| For a wide thick line, download the word file :download:`linefollowtiles_wide.docx <files/linefollowtiles_wide.docx>`.
 | The buggy can be placed over the **thick** track or **wide** track so that the line sensors are over **black** paper. When a line sensor comes over the white surrounding paper, that side needs to turn away from the track edge back into the black area.
 
 ----
@@ -49,12 +49,12 @@ Set speed constants
 ----------------------------------------
 
 | Create some constants so that the values can be changed in one place when testing the performance of the buggy.
-| Set a ``CHANGETHRESHOLD`` constant to be the minimum change in the line sensor reading when the colour below it is no longer full white. A value of 40 works seems to work well.
-| The buggy should only move slowly so that it doesn't go too far over the black line. Hence the speed settings must be very low.
+| Set a ``CHANGETHRESHOLD`` constant to be the minimum change in the line sensor reading when the colour below it is no longer fully white. A value of 40 works seems to work well.
+| The buggy should only move slowly so that it doesn't go too far over the black line. Hence the speed settings must be very low. Speeds of 1 work best for the tracks provided.
 | Set a ``MAXSPEED`` constant to be the speed for the motors when going straight forward.
 | Set a ``MAXTURN`` constant to be the speed for the outside motor on a turn which needs to be greater than the speed of the inside motor.
 | Set a ``MINTURN`` constant to be the speed for inside motor on a turn. This is best if it is negative so it goes backwards.
-| Set a ``MOTORTIME`` constant to be 20 ms for the motors to run before stopping and checking line sensors again.
+| Set a ``MOTORTIME`` constant to be 20 ms for the motors to run before stopping and checking the line sensors again.
 
 .. code-block:: python
 
@@ -70,6 +70,7 @@ Define follow_thin_line
 ----------------------------------------
 
 | Define ``follow_thin_line()`` so that the buggy keeps a thin black line between both line sensors.
+| Use a default parameter, ``drive_time=20``, which controls the sleep time during which the motors keep running.
 | Get the line sensor readings.
 | Set ``black_left`` to True if the left sensor is over part of the black line.
 | ``black_left``, which is equal to ``left_sensor + CHANGETHRESHOLD < left_sensorStart``, will be True if the left sensor reading has dropped by more than 40 compared to the original reading when it was flashed the code.
@@ -106,14 +107,14 @@ Define follow_thin_line
 while True loop
 ----------------------------------------
 
-| The while True loop first stops both motors then does the line following for 20ms.
+| The while True loop does the line following for MOTORTIME ms then stops both motors and then pauses for a short sleep of 10 ms.
 
 .. code-block:: python
 
     while True:
+        follow_thin_line(MOTORTIME)
         buggy.stop()
         sleep(10)
-        follow_thin_line()
 
 ----
 
@@ -161,10 +162,9 @@ Code for thin line following
         sleep(drive_time)
 
     while True:
+        follow_thin_line(MOTORTIME)
         buggy.stop()
         sleep(10)
-        follow_thin_line()
-
 
 ----
 
@@ -307,9 +307,6 @@ Line following code in full
 
     start_buggy()
     while True:
-        buggy.stop_left()
-        buggy.stop_right()
-        sleep(10)
         if button_a.is_pressed() and not button_b.is_pressed():
             display.scroll('A', delay=100)
             thin_line_follow_flag = True
@@ -323,7 +320,8 @@ Line following code in full
         # check for obstacle and spin and go back
         if distance_sensor.distance() < 10:
             spin_from_obstacle(SPINTIME)
-
+        buggy.stop()
+        sleep(10)
 
 
 
