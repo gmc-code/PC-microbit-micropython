@@ -69,16 +69,17 @@ Set speed constants
 Define follow_thin_line
 ----------------------------------------
 
-| Define ``follow_thin_line()`` so that the buggy keeps a thin black line between both line sensors.
+| Define ``follow_thin_line(drive_time=20)`` so that the buggy keeps a thin black line between both line sensors.
 | Use a default parameter, ``drive_time=20``, which controls the sleep time during which the motors keep running.
 | Get the line sensor readings.
 | Set ``black_left`` to True if the left sensor is over part of the black line.
-| ``black_left``, which is equal to ``left_sensor + CHANGETHRESHOLD < left_sensorStart``, will be True if the left sensor reading has dropped by more than 40 compared to the original reading when it was flashed the code.
+| ``black_left``, which is equal to ``left_sensor + CHANGETHRESHOLD < left_sensorStart``, will be True if the left sensor reading has dropped by more than 40 compared to the original reading when the microbit started.
 | Set ``black_right`` to True if the right sensor is over part of the black line.
-| When both line sensors are over white, the buggy goes forward.
-| When the left sensor is over black, the buggy turns to the left to try to get the left line sensor back over white.
-| When the right sensor is over black, the buggy turns to the right to try to get the right line sensor back over white.
-| When both line sensors are over black, the buggy spins to try to make just one sensor over black.
+| ``black_right``, which is equal to ``right_sensor + CHANGETHRESHOLD < right_sensorStart``, will be True if the right sensor reading has dropped by more than 40 compared to the original reading when the microbit started.
+| When both line sensors are over white (``not(black_left) and not(black_right)``), the buggy goes forward.
+| When the left sensor is over black (``black_left and not(black_right)``), the buggy turns to the left to try to get the left line sensor back over white.
+| When the right sensor is over black (``black_right and not(black_left)``), the buggy turns to the right to try to get the right line sensor back over white.
+| When both line sensors are over black (``black_left and black_right``), the buggy spins to try to make just one sensor over black.
 
 
 .. code-block:: python
@@ -121,7 +122,7 @@ while True loop
 Code for thin line following
 ----------------------------------------
 
-| Define ``follow_thin_line()`` so that the buggy keeps a thin black line between both line sensors.
+| Below is the basic code for thin line following.
 
 .. code-block:: python
 
@@ -166,6 +167,122 @@ Code for thin line following
         buggy.stop()
         sleep(10)
 
+----
+
+----
+
+Adding obstacle detection: set up distance sensor
+---------------------------------------------------
+
+| Add code to use the distance sensor so that if something blocks the track the buggy will turn around and go back the other way.
+
+| Set up the buggy's distance sensor.
+
+.. code-block:: python
+
+    distance_sensor = MOVEMotor.MOVEMotorDistanceSensors()
+
+----
+
+Add obstacle detection: spin function
+----------------------------------------
+
+| Define ``spin_from_obstacle(spin_time=800)`` so that the buggy spins on the spot. As the left motor goes forward, the right motor reverses.
+| Use a default parameter, ``spin_time=800``, which will set the sleep so that the buggy turns about 180 degrees (when the motor speed is the default of 1).
+
+
+.. code-block:: python
+
+    def spin_from_obstacle(spin_time=800):
+        buggy.left_motor(MAXTURN)
+        buggy.right_motor(-MAXTURN)
+        sleep(spin_time)
+
+----
+
+Add obstacle detection: spin time constant
+---------------------------------------------
+
+| Add the ``SPINTIME`` constant to the code with the other constants.
+| This will be passed to the ``spin_from_obstacle`` function to set the spin time.
+
+.. code-block:: python
+
+    SPINTIME = 800
+
+----
+
+Add obstacle detection: add to while True loop
+---------------------------------------------------
+
+| Define ``follow_thin_line()`` so that the buggy keeps a thin black line between both line sensors.
+
+.. code-block:: python
+
+    # check for obstacle and spin and go back
+    if distance_sensor.distance() < 10:
+        spin_from_obstacle(SPINTIME)
+
+----
+
+Code for thin line following with the distance sensor
+-------------------------------------------------------
+
+.. code-block:: python
+
+    from microbit import *
+    import MOVEMotor
+
+
+    buggy = MOVEMotor.MOVEMotorMotors()
+    buggy.stop()
+    line_sensor = MOVEMotor.MOVEMotorLineSensors()
+    line_sensor.line_sensor_calibrate()
+    left_sensor_start = line_sensor.line_sensor_read('left')
+    right_sensor_start = line_sensor.line_sensor_read('right')
+    distance_sensor = MOVEMotor.MOVEMotorDistanceSensors()
+
+    CHANGETHRESHOLD = 40
+    MAXSPEED = 1
+    MINTURN = -1
+    MAXTURN = 1
+    MOTORTIME = 20
+    SPINTIME = 800
+
+    def follow_thin_line(drive_time=20):
+        left_sensor = line_sensor.line_sensor_read('left')
+        right_sensor = line_sensor.line_sensor_read('right')
+        black_left = left_sensor + CHANGETHRESHOLD < left_sensor_start
+        black_right = right_sensor + CHANGETHRESHOLD < right_sensor_start
+        if not(black_left) and not(black_right):
+            buggy.left_motor(MAXSPEED)
+            buggy.right_motor(MAXSPEED)
+        elif black_left and not(black_right):
+            buggy.left_motor(MINTURN)
+            buggy.right_motor(MAXTURN)
+        elif black_right and not(black_left):
+            buggy.left_motor(MAXTURN)
+            buggy.right_motor(MINTURN)
+        else:
+            buggy.left_motor(MAXTURN)
+            buggy.right_motor(-MAXTURN)
+        sleep(drive_time)
+
+    def spin_from_obstacle(spin_time=800):
+        buggy.left_motor(MAXTURN)
+        buggy.right_motor(-MAXTURN)
+        sleep(spin_time)
+
+    while True:
+        follow_thin_line(MOTORTIME)
+        # check for obstacle and spin and go back
+        if distance_sensor.distance() < 10:
+            spin_from_obstacle(SPINTIME)
+        buggy.stop()
+        sleep(10)
+
+
+----
 ----
 
 Line following code in full
