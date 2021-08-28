@@ -189,12 +189,13 @@ Line following code in full
     right_sensor_start = line_sensor.line_sensor_read('right')
     distance_sensor = MOVEMotor.MOVEMotorDistanceSensors()
 
-    calflag = True
     thin_line_follow_flag = True
     CHANGETHRESHOLD = 40
     MAXSPEED = 1
     MINTURN = -1
     MAXTURN = 1
+    MOTORTIME = 20
+    SPINTIME = 800
     # Setup the Neopixels on pin8 with a length of 4 pixels
     NUM_PIXELS = 4
     LED_PIN = pin8
@@ -234,7 +235,7 @@ Line following code in full
                 music.pitch(freq, 30, wait=False)
                 sleep(20)
 
-    def follow_thin_line():
+    def follow_thin_line(drive_time=20):
         left_sensor = line_sensor.line_sensor_read('left')
         right_sensor = line_sensor.line_sensor_read('right')
         black_left = left_sensor + CHANGETHRESHOLD < left_sensor_start
@@ -259,8 +260,9 @@ Line following code in full
             both_indicators()
             buggy.left_motor(MAXTURN)
             buggy.right_motor(-MAXTURN)
-
-    def follow_thick_line():
+        sleep(drive_time)
+        
+    def follow_thick_line(drive_time=20):
         left_sensor = line_sensor.line_sensor_read('left')
         right_sensor = line_sensor.line_sensor_read('right')
         black_left = left_sensor + CHANGETHRESHOLD < left_sensor_start
@@ -268,7 +270,7 @@ Line following code in full
         if not(black_left) and not(black_right):
             display.show(' ')
             both_indicators()
-            buggy.left_motor(MAXTURN)
+            buggy.left_motor(-MAXTURN)
             buggy.right_motor(-MAXTURN)
         elif black_left and not(black_right):
             display.show(Image.ARROW_E)
@@ -285,43 +287,42 @@ Line following code in full
             head_lights()
             buggy.left_motor(MAXSPEED)
             buggy.right_motor(MAXSPEED)
+        sleep(drive_time)
 
-    def spin_from_obstacle():
+    def spin_from_obstacle(spin_time=800):
         display.show(' ')
         both_indicators()
         buggy.left_motor(MAXTURN)
         buggy.right_motor(-MAXTURN)
+        sleep(spin_time)
+        
+    def start_buggy():
+        left_sensor = line_sensor.line_sensor_read('left')
+        right_sensor = line_sensor.line_sensor_read('right')
+        display.scroll('L' + str(left_sensor), delay=60)
+        display.scroll('R' + str(right_sensor), delay=60)
+        head_lights()
+        police_siren()
+        both_indicators()
 
-
+    start_buggy()
     while True:
-        sleep(20)
         buggy.stop_left()
         buggy.stop_right()
         sleep(10)
-        if calflag:
-            left_sensor = line_sensor.line_sensor_read('left')
-            right_sensor = line_sensor.line_sensor_read('right')
-            display.scroll('L' + str(left_sensor), delay=60)
-            display.scroll('R' + str(right_sensor), delay=60)
-            head_lights()
-            police_siren()
-            both_indicators()
-            calflag = False
+        if button_a.is_pressed() and not button_b.is_pressed():
+            display.scroll('A', delay=100)
+            thin_line_follow_flag = True
+        elif button_b.is_pressed() and not button_a.is_pressed():
+            display.scroll('B', delay=100)
+            thin_line_follow_flag = False
+        if thin_line_follow_flag:
+            follow_thin_line(MOTORTIME)
         else:
-            if button_a.is_pressed() and not button_b.is_pressed():
-                display.scroll('A', delay=100)
-                thin_line_follow_flag = True
-            elif button_b.is_pressed() and not button_a.is_pressed():
-                display.scroll('B', delay=100)
-                thin_line_follow_flag = False
-            if thin_line_follow_flag:
-                follow_thin_line()
-            else:
-                follow_thick_line()
-            # check for obstacle and spin and go back
-            if distance_sensor.distance() < 10:
-                spin_from_obstacle()
-                sleep(800)
+            follow_thick_line(MOTORTIME)
+        # check for obstacle and spin and go back
+        if distance_sensor.distance() < 10:
+            spin_from_obstacle(SPINTIME)
 
 
 
