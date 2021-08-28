@@ -173,6 +173,7 @@ Version 1 Code for thin line following
 .. admonition:: Tasks
 
     #. Try adjusting the constants to see if the performance of the buggy can be improved. Can a faster motor speed be used and still keep the buggy on the track around corners?
-
+    #. Try adjusting the MOTORTIME to see if the performance of the buggy can be improved. Use the A button to increase MOTORTIME by 10 and the B button to decrease MOTORTIME by 5.
+    #. Try adjusting the MAXSPEED to see if the performance of the buggy can be improved. Use the A button to increase MAXSPEED by 1 and the B button to decrease MAXSPEED by 0.5.
 
 

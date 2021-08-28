@@ -118,7 +118,7 @@ Version 2 Code for thin line following with obstacle detection
 .. admonition:: Tasks
 
     #. Try adding some obstacles on the track or just to the side of the track to see how well the buggy detects them. 
-    #. Try adjusting the SPINTIME constant to see if a better outcomes can be obtained when turning the the buggy away from obstacles.
+    #. Try adjusting the SPINTIME constant to see if a better outcomes can be obtained when turning the the buggy away from obstacles. Use the A button to increase SPINTIME by 100 and the B button to decrease SPINTIME by 50.
 
 
 

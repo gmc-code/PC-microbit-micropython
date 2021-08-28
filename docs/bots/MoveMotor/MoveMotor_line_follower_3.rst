@@ -289,3 +289,4 @@ Version 3 Code for thin line following with lights and sound
 
     #. Add siren sounds when the buggy spins to avoid an obstacle.
     #. Add a beep sound when the buggy turns left or right.
+    #. Add constants for different LED colours and use them when the buggy spins around.
