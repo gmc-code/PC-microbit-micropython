@@ -121,7 +121,11 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
     bots/MoveMotor/MoveMotor_LEDs.rst
     bots/MoveMotor/MoveMotor_distance_sensors.rst
     bots/MoveMotor/MoveMotor_line_sensors.rst
-    bots/MoveMotor/MoveMotor_line_follower.rst
+    bots/MoveMotor/MoveMotor_line_follower_1.rst
+    bots/MoveMotor/MoveMotor_line_follower_2.rst
+    bots/MoveMotor/MoveMotor_line_follower_3.rst
+    bots/MoveMotor/MoveMotor_line_follower_4.rst
+
 
 .. toctree::
     :maxdepth: 2
