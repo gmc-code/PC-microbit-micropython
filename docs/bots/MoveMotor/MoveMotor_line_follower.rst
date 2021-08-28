@@ -29,7 +29,7 @@ For a wide thick line, download the word file :download:`linefollowtiles_wide.do
 Set up buggy and sensors
 ----------------------------------------
 
-| Import the MOVEmotor module and setup the buggy and line sensor.
+| Import the MOVEmotor module and set up the buggy and line sensor.
 | Make sure that the buggy is over a consistent white surface so that when the line sensors are calibrated, the left and right line sensors have similar readings.
 
 .. code-block:: python
@@ -54,6 +54,7 @@ Set speed constants
 | Set a ``MAXSPEED`` constant to be the speed for the motors when going straight forward.
 | Set a ``MAXTURN`` constant to be the speed for the outside motor on a turn which needs to be greater than the speed of the inside motor.
 | Set a ``MINTURN`` constant to be the speed for inside motor on a turn. This is best if it is negative so it goes backwards.
+| Set a ``MOTORTIME`` constant to be 20 ms for the motors to run before stopping and checking line sensors again.
 
 .. code-block:: python
 
@@ -61,6 +62,7 @@ Set speed constants
     MAXSPEED = 1
     MAXTURN = 1
     MINTURN = -1
+    MOTORTIME = 20
 
 ----
 
@@ -80,7 +82,7 @@ Define follow_thin_line
 
 .. code-block:: python
 
-    def follow_thin_line():
+    def follow_thin_line(drive_time=20):
         left_sensor = line_sensor.line_sensor_read('left')
         right_sensor = line_sensor.line_sensor_read('right')
         black_left = left_sensor + CHANGETHRESHOLD < left_sensorStart
@@ -97,6 +99,7 @@ Define follow_thin_line
         else:
             buggy.left_motor(MAXTURN)
             buggy.right_motor(-MAXTURN)
+        sleep(drive_time)
 
 ----
 
@@ -111,14 +114,13 @@ while True loop
         buggy.stop()
         sleep(10)
         follow_thin_line()
-        sleep(20)
 
 ----
 
 Code for thin line following
 ----------------------------------------
 
-| Define ``follow_thin_line()`` so that teh buggy keeps a thin black line between both line sensors.
+| Define ``follow_thin_line()`` so that the buggy keeps a thin black line between both line sensors.
 
 .. code-block:: python
 
@@ -137,8 +139,9 @@ Code for thin line following
     MAXSPEED = 1
     MINTURN = -1
     MAXTURN = 1
+    MOTORTIME = 20
 
-    def follow_thin_line():
+    def follow_thin_line(drive_time=20):
         left_sensor = line_sensor.line_sensor_read('left')
         right_sensor = line_sensor.line_sensor_read('right')
         black_left = left_sensor + CHANGETHRESHOLD < left_sensorStart
@@ -155,12 +158,12 @@ Code for thin line following
         else:
             buggy.left_motor(MAXTURN)
             buggy.right_motor(-MAXTURN)
+        sleep(drive_time)
 
     while True:
         buggy.stop()
         sleep(10)
         follow_thin_line()
-        sleep(20)
 
 
 ----
