@@ -49,6 +49,7 @@ Add thick line following: modify while True
 ------------------------------------------------------
 
 | Add to the section of code where the constants are set, to include a boolean variable, ``thin_line_follow_flag``, which is True if the buggy follows a thin line or False if the buggy follows a thick line.
+| Set ``thin_line_follow_flag = True`` to cause thin line following as the default.
 
 .. code-block:: python
 
@@ -57,7 +58,7 @@ Add thick line following: modify while True
 
 ----
 
-Add thick line following: modify while True
+Add thick line following: modify the while True loop
 ------------------------------------------------------
 
 | Add button pressing to change the line following mode.
@@ -242,6 +243,8 @@ Version 4 Line following code in full
 
 .. admonition:: Tasks
 
-    #. Write code to read the right line sensor and display its value.
-    #. Write code to read both the left and the right line sensor and display their values with 'L' before the left reading and 'R' before the right reading.
+    #. Set up a thin line track and a thick line track and switch the buggy from one track to the other using button pressing.
+    #. Use the track templates to create identically shaped thin and thick tracks and time the buggy on each to find out which track it is better at following.
+
+
 
