@@ -129,6 +129,21 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
 
 .. toctree::
     :maxdepth: 2
+    :caption: Bots/Maqueen
+    :numbered:
+    :hidden:
+
+    bots/Maqueen/Maqueen_info.rst
+    bots/Maqueen/Maqueen_module.rst
+    bots/Maqueen/Maqueen_motors.rst
+    bots/Maqueen/Maqueen_LEDs.rst
+    bots/Maqueen/Maqueen_distance_sensors.rst
+    bots/Maqueen/Maqueen_line_sensors.rst
+    bots/Maqueen/Maqueen_line_follower.rst
+
+
+.. toctree::
+    :maxdepth: 2
     :caption: Bots/BitBotXL
     :numbered:
     :hidden:

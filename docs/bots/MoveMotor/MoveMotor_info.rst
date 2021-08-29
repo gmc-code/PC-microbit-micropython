@@ -30,8 +30,8 @@ The pin numbers used to control different parts of the Kitronic :MOVEMotor are b
  Pin     Purpose
 =======  ===========================
  pin0    Audio Buzzer
- pin1    right Line Follow (IR)
- pin2    left Line Follow (IR)
+ pin1    Right Line Follow (IR)
+ pin2    Left Line Follow (IR)
  pin8    4x ZIP LEDs
  pin13   Ultrasonic Trigger
  pin14   Ultrasonic Echo

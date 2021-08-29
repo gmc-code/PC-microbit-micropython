@@ -1,0 +1,38 @@
+====================================================
+Maqueen info
+====================================================
+
+| See: https://wiki.dfrobot.com/micro_Maqueen_for_micro_bit_SKU_ROB0148-E
+| See: https://edu.dfrobot.com/makelog-308323.html
+
+| The DFRobot Maqueen features 2 independent motors, infrared line sensors for line tracking, distance sensors for obstacle avoidance, 4 ZIP Leds and a buzzer, all powered by 3 AAA batteries. 
+| The servo outputs are not used here.
+
+
+.. image:: images/maqueen.png
+    :scale: 50 %
+    :align: center
+
+| Dimensions 81mm x 85 mm x 44mm
+
+Pins
+---------
+
+The pin numbers used to control different parts are below.
+
+=======  ===========================
+ Pin     Purpose
+=======  ===========================
+ pin0    Buzzer
+ pin1    Ultrasonic Trigger
+ pin2    Ultrasonic Echo
+ pin8    Left Red LED
+ pin12   Right Red LED
+ pin13   Left Line Follow (IR)
+ pin14   Right Line Follow (IR)
+ pin15   4x LEDs
+ pin16   InfraR
+ pin19   motor (via I2C)
+ pin20   motor (via I2C)
+ pin     Servo Connection
+=======  ===========================
