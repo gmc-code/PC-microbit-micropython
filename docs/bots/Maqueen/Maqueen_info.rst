@@ -31,8 +31,10 @@ The pin numbers used to control different parts are below.
  pin13   Left Line Follow (IR)
  pin14   Right Line Follow (IR)
  pin15   4x LEDs
- pin16   InfraR
- pin19   motor (via I2C)
- pin20   motor (via I2C)
- pin     Servo Connection
+ pin16   InfraRed
+ pin19   Motor (via I2C)
+ pin20   Motor (via I2C)
+
 =======  ===========================
+
+Servo Connection is also by I2C
