@@ -31,7 +31,7 @@ Organising blocks into definitions
 
 | Compare the two code examples below. 
 | The first example does not have any definitions.
-| The second example takes each block of code in the various branches of the if block and reallocates tehm to separate definitions.
+| The second example takes each block of code in the various branches of the if block and reallocates them to separate definitions.
 | This makes the main block of code in the ``while True`` loop more compact and more readable.
 | Each definition block can be easily edited and changed.
 
@@ -89,4 +89,3 @@ Organising blocks into definitions
     1.  Reorganise the code in the answer to task 3 in the practice tasks 2 to follow the structure of the examples above.
     2.  Reorganise the code in the answer to task 4 in the practice tasks 2 to follow the structure of the examples above.
 
-    
