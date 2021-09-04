@@ -6,13 +6,12 @@ MoveMotor motor tests
 | Vary the paths the buggy takes.
 | When testing, it is useful to test the various forms of the syntax:
 
-#. Test defaults by not passing #. Test using positional arguments. e.g ``buggy.forward(2, 200, 5, 0)``
-. e.g. ``buggy.forward()``
+#. Test defaults by not passing arguments. e.g. ``buggy.forward()``
 #. Test using named arguments. e.g. ``buggy.forward(speed=2, duration=200, decrease_left=5, decrease_right=0)``
-#. #. Test using named arguments not in order. e.g. ``buggy.forward(decrease_left=5, decrease_right=0, speed=2, duration=200)``
+#. Test using named arguments not in order. e.g. ``buggy.forward(decrease_left=5, decrease_right=0, speed=2, duration=200)``
 #. Test using positional arguments. e.g ``buggy.forward(2, 200, 5, 0)``
 
-| The tests below generally use positional arguments for simplicity, with the syntax commented first as a reminder.
+| The tests below generally use positional arguments for simplicity, with the syntax on a commented line as a reminder.
 
 
 Set up the buggy
