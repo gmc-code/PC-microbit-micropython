@@ -13,7 +13,13 @@ from microbit import i2c, pin1, pin2, pin13, pin14
 import machine
 import utime
 
+
 # constants
+RIGHT_LINE_SENSOR_PIN = pin1
+LEFT_LINE_SENSOR_PIN = pin2
+TRIGGER_PIN = pin14
+ECHO_PIN = pin13
+
 CHIP_ADDR = 0x62
 # CHIP_ADDR is the standard chip address for the PCA9632,
 # datasheet refers to LED control but chip is used for PWM to motor driver
@@ -230,8 +236,8 @@ class MOVEMotorLineSensors:
         self.right_offset = 0
 
     def line_sensor_calibrate(self):
-        rightLineSensor = pin1.read_analog()
-        leftLineSensor = pin2.read_analog()
+        rightLineSensor = RIGHT_LINE_SENSOR_PIN.read_analog()
+        leftLineSensor = LEFT_LINE_SENSOR_PIN.read_analog()
         offset = int(abs(rightLineSensor-leftLineSensor)/2)
         if leftLineSensor > rightLineSensor:
             self.left_offset = -offset
@@ -242,22 +248,23 @@ class MOVEMotorLineSensors:
 
     def line_sensor_read(self, sensor):
         if sensor == 'left':
-            return pin2.read_analog() + self.left_offset
+            return LEFT_LINE_SENSOR_PIN.read_analog() + self.left_offset
         elif sensor == 'right':
-            return pin1.read_analog() + self.right_offset
+            return RIGHT_LINE_SENSOR_PIN.read_analog() + self.right_offset
 
 
 class MOVEMotorDistanceSensors:
 
-    def distance_cm(self):
-        pin14.set_pull(pin14.NO_PULL)
-        pin13.write_digital(0)
+    def distance(self):
+        ECHO_PIN.set_pull(ECHO_PIN.NO_PULL)
+        TRIGGER_PIN.write_digital(0)
         utime.sleep_us(2)
-        pin13.write_digital(1)
+        TRIGGER_PIN.write_digital(1)
         utime.sleep_us(10)
-        pin13.write_digital(0)
-        distance = machine.time_pulse_us(pin14, 1, 1160000)
+        TRIGGER_PIN.write_digital(0)
+        distance = machine.time_pulse_us(ECHO_PIN, 1, 1160000)
         if distance > 0:
+            # distance in cm
             return round(distance/58)
         else:
-            return round(distance)
+            return 0
