@@ -311,7 +311,7 @@ Polygon test
     # setup buggy
     buggy = MOVEMotor.MOVEMotorMotors()
 
-    def polygon_test(spin_duration=320, sides=20):
+    def polygon_test(spin_duration=240, sides=20):
         for i in range(sides):
             buggy.forward(3, 800)
             buggy.spin(1, 'left', spin_duration)
@@ -380,11 +380,11 @@ Oval test
     buggy = MOVEMotor.MOVEMotorMotors()
 
     def oval_test():
-        radii = [20, 60, 70, 80, 70, 60]
-        durations = [400, 400, 800, 1000, 800, 400]
+        radii = [20, 40, 60, 80, 60, 40]
+        durations = [500, 600, 1000, 1000, 1000, 600]
         for i in range(6):
             for r, d in zip(radii, durations):
-                buggy.left(5, r, d)
+                buggy.left(3, r, d)
         buggy.stop()
         sleep(2000)
 
