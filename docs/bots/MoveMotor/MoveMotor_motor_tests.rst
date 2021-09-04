@@ -289,7 +289,7 @@ Zig Zag test
 .. admonition:: Tasks
 
     #. Modify the code to just zig zag forwards.
-    #. Modify the new zig zag forwards code so that ``zigzag_count=1``, and place ``zigzag_test(2, fast_speed, 5, 1000)`` in for-loop and vary ``fast_speed`` from 3 to 8.
+    #. Modify the new zig zag forwards code with ``zigzag_count=1``, and place ``zigzag_test(2, fast_speed, 5, 1000)`` in a for-loop and vary ``fast_speed`` from 3 to 8.
 
 ----
 
