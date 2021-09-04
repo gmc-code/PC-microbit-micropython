@@ -17,8 +17,6 @@ MoveMotor motor tests
 Set up the buggy
 ----------------------------------------
 
-.. py:class:: MOVEMotorMotors() 
-
 | Set up the buggy motors for testing their use.
 
 .. code-block:: python
@@ -42,7 +40,7 @@ Forward backward test
 .. py:method:: forward(speed=1, duration=None, decrease_left=0, decrease_right=0)
 .. py:method:: backward(speed=1, duration=None, decrease_left=0, decrease_right=0)
 
-| Go forwards then backwards starting at speed 2 up to speed 10.
+| Use ``for i in range(2, 11, 2)`` to go forwards then backwards from speed 2 to speed 10 in steps of 2.
 
 .. code-block:: python
 
@@ -96,9 +94,8 @@ Straight line test
     # setup buggy
     buggy = MOVEMotor.MOVEMotorMotors()
 
-    def straight_line_test():
+    def straight_line_test(delta=5):
         # straight line test with smooth start and stop
-        delta = 5
         buggy.forward(speed=2, duration=200, decrease_left=delta, decrease_right=0)
         buggy.forward(5, 200, delta, 0)
         buggy.forward(9, 1000, delta, 0)
@@ -113,7 +110,7 @@ Straight line test
         buggy.stop()
         sleep(2000)
 
-    straight_line_test()
+    straight_line_test(5)
 
 ----
 
@@ -164,10 +161,10 @@ Individual motors test
 
     #. Modify the code to just use the left motor.
     #. Modify the code to just use the right motor.
-    #. Modify the code to just go forwards with each motor.
-    #. Modify the code to just go backwards with each motor.
-    #. Modify the code to change the speed in steps of 1 for 100ms each.
-    #. Modify the code to change the speed in steps of 5 for 400ms each.
+    #. Modify the for-loop to just go forwards with each motor.
+    #. Modify the for-loop to just go backwards with each motor.
+    #. Modify the for-loop to change the speed in steps of 1 for 100ms each.
+    #. Modify the for-loop to change the speed in steps of 5 for 400ms each.
 
 ----
 
