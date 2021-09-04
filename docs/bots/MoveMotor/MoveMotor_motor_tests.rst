@@ -314,7 +314,7 @@ Polygon test
         buggy.stop()
         sleep(2000)
 
-    polygon_test(320)
+    polygon_test(240)
 
 ----
 
@@ -361,10 +361,10 @@ Oval test
 ----------------------------------------
 
 | Move the buggy in the shape of an oval.
-| Use the zip function on a list of radii and a list of durations so that both lists can be used in a for-loop.
-| Use ``for r, d in zip(radii, durations)`` to create an iterator that produces tuples of the form ``(r, d)`` from the two lists, radii and durations. 
-| ``radii`` has values in order for each expected radius for the turn.
-| ``durations`` has values in order for each expected duration for the turn.
+| Use the zip function on a list of ``radii`` and a list of ``durations`` so that both lists can be used in a for-loop.
+| Use ``for r, d in zip(radii, durations)`` to create an iterator that produces tuples of the form ``(r, d)`` from the two lists: ``radii`` and ``durations``. 
+| ``radii`` has values for each expected radius for the turn.
+| ``durations`` has values for each expected duration for the turn.
 
 .. code-block:: python
 
@@ -397,6 +397,7 @@ Oval test
 Loops test
 ----------------------------------------
 
+| The shape is an epitrochoid.
 
 .. image:: images/epitrochoid.png
     :scale: 50 %
