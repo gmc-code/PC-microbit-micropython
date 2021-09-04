@@ -3,7 +3,7 @@ MoveMotor info
 ====================================================
 
 
-.. Warning:: v2 only
+.. Warning::
 
     | Only v2 microbits can be used. 
     | v1 microbits lack the memory space for the MOVEMotor module.
