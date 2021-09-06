@@ -42,7 +42,6 @@ Distance to an object
 
     distance_sensor = maqueen.MaqueenDistanceSensors()
 
-
     while True:
         dist = distance_sensor.distance()
         display.scroll(dist, delay=100)
@@ -103,16 +102,19 @@ A technical look: MaqueenDistanceSensors
     from microbit import *
 
 
+    TRIGGER_PIN = pin1
+    ECHO_PIN = pin2
+
     class MaqueenDistanceSensors:
 
         def distance(self):
-            pin14.set_pull(pin14.NO_PULL)
-            pin13.write_digital(0)
+            ECHO_PIN.set_pull(ECHO_PIN.NO_PULL)
+            TRIGGER_PIN.write_digital(0)
             utime.sleep_us(2)
-            pin13.write_digital(1)
+            TRIGGER_PIN.write_digital(1)
             utime.sleep_us(10)
-            pin13.write_digital(0)
-            distance = machine.time_pulse_us(pin14, 1, 1160000)
+            TRIGGER_PIN.write_digital(0)
+            distance = machine.time_pulse_us(ECHO_PIN, 1, 1160000)
             if distance > 0:
                 # distance in cm
                 return round(distance/58)
@@ -123,15 +125,15 @@ A technical look: MaqueenDistanceSensors
 .. py:method::set_pull(value)
 
         | Set the pull state to one of three possible values: ``pin.PULL_UP``,
-        ``pin.PULL_DOWN`` or ``pin.NO_PULL`` (where ``pin`` is a pin like pin13).
+        ``pin.PULL_DOWN`` or ``pin.NO_PULL`` (where ``pin`` is a pin like pin2).
         | Calling set_pull will configure the pin to be in read_digital mode with the given pull mode.
 
 
-| ``pin14.set_pull(pin14.NO_PULL)``
-| This prepares the echo pin, pin14, to receive the reflected pulse.
+| ``pin2.set_pull(pin2.NO_PULL)``
+| This prepares the echo pin, pin2, to receive the reflected pulse.
 
 | ``utime.sleep_us(10)``
-| A 10 micro second sleep is needed so that the trigger pin, pin13, sends its pulse.
+| A 10 micro second sleep is needed so that the trigger pin, pin1, sends its pulse.
 
 .. py:method:: machine.time_pulse_us(pin, pulse_level, timeout_us=1000000)
 
