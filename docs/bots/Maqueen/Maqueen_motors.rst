@@ -42,6 +42,9 @@ Independent motor control
 | ``stop_left()`` stops the left motor.
 | ``stop_right()`` stops the right motor.
 
+left_motor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 .. py:method:: left_motor(speed=1, duration=None)
 
     | Make the left motor run. 
@@ -83,6 +86,9 @@ Independent motor control
     buggy.left_motor(2, 5000)
 
 ----
+
+right_motor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. py:method:: right_motor(speed=1, duration=None)
 
@@ -127,6 +133,9 @@ Independent motor control
 
 ----
 
+stop_left
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 .. py:method:: stop_left()
 
     | Stop the left motor.
@@ -149,6 +158,9 @@ Independent motor control
 
 
 ----
+
+stop_right
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. py:method:: stop_right()
 
@@ -217,6 +229,9 @@ Forward and backward
 | ``forward(speed=1, duration=None)``
 | ``backward(speed=1, duration=None)``
 
+forward
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 .. py:method:: forward(speed=1, duration=None)
 
     | Drive the buggy forward.
@@ -242,6 +257,9 @@ Forward and backward
 
 
 ----
+
+backward
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. py:method:: backward(speed=1, duration=None)
 
@@ -287,6 +305,9 @@ Turning
 | When turning right, the right wheel is slowed based on the tightness value.
 | The turning tightness is greatest with a value of 5.
 
+left
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 .. py:method:: left(tightness=5, duration=None)
 
     | Drive the buggy to the left.
@@ -320,6 +341,9 @@ Turning
     #. Write code to drive the buggy to the left at increasing tightness. Use a for loop to change the tightness from 1 to 5, with each turn lasting for 2 seconds.
 
 ----
+
+right
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. py:method:: right(tightness=5, duration=None)
 

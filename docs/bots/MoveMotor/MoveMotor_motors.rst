@@ -42,6 +42,9 @@ Independent motor control
 | ``stop_left()`` stops the left motor.
 | ``stop_right()`` stops the right motor.
 
+left_motor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 .. py:method:: left_motor(speed=1, duration=None)
 
     | Make the left motor run. 
@@ -83,6 +86,9 @@ Independent motor control
     buggy.left_motor(2, 5000)
 
 ----
+
+right_motor
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. py:method:: right_motor(speed=1, duration=None)
 
@@ -127,6 +133,9 @@ Independent motor control
 
 ----
 
+stop_left
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 .. py:method:: stop_left()
 
     | Stop the left motor.
@@ -150,6 +159,9 @@ Independent motor control
 
 
 ----
+
+stop_right
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. py:method:: stop_right()
 
@@ -221,6 +233,9 @@ Straight line control
 | ``decrease_right`` is used to reduce the motor speed on the right side in case the buggy drifts to the left due to the right motor being slightly faster than the left.
 | Any ``decrease_left`` and ``decrease_right`` values used to give a straight line are best found by experimentation.
 
+forward
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 .. py:method:: forward(speed=1, duration=None, decrease_left=0, decrease_right=0)
 
     | Drive the buggy forward.
@@ -253,6 +268,9 @@ Straight line control
 
 
 ----
+
+backward
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. py:method:: backward(speed=1, duration=None, decrease_left=0, decrease_right=0)
 
@@ -305,6 +323,9 @@ Turning
 | When turning right, the right wheel is slowed based on the radius value.
 | The turning radius is approximate only, and is automatically calculated using 8.5 cm as the distance between the 2 wheels.
 
+left
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 .. py:method:: left(speed=1, radius=25, duration=None)
 
     | Drive the buggy to the left.
@@ -345,6 +366,9 @@ Turning
     #. Write code to drive the buggy to the left at speed 8 in circles of 20, 40 and 60 cm radius for 5 seconds each. Use a for loop and a list of the radii.
 
 ----
+
+right
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. py:method:: right(speed=1, radius=25, duration=None)
 
@@ -431,9 +455,4 @@ Spinning
     #. Write code to spin the buggy to the right at speed 6 for 3 seconds.
     #. Write code to spin the buggy to the left for 3 seconds then to right for 3 seconds at speed 6.
     #. Write code to drive the buggy in a polygonal path (many straight sides) by combining short drives forward with short spins.
-
-
-
-
-
 
