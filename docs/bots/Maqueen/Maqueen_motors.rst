@@ -358,7 +358,7 @@ Spinning
 ----------------------------------------
 
 | Spin the buggy to the left or right at the chosen speed using:
-| ``spin(speed=1, direction='left, duration=None)``
+| ``spin(speed=1, direction='left', duration=None)``
 | When spining left, the left wheel goes forward while the right wheel goes forward.
 | When spining right, the right wheel goes forward while the left wheel goes forward.
 
