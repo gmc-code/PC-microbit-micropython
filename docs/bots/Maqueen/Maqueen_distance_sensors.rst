@@ -8,7 +8,7 @@ Set up the distance sensors
 .. py:class:: MaqueenDistanceSensors() 
 
 | Set up the Distance Sensors for use.
-| Import the Maqueen module first.
+| Import the maqueen module first.
 | Use ``distance_sensor = maqueen.MaqueenDistanceSensors()`` to be able to use the distance sensing methods.
 
 .. code-block:: python
@@ -30,9 +30,7 @@ Distance to an object
     Returns the distance, in cm, to an object.
 
 
-
 | The code below, uses ``distance_sensor.distance()`` to measure the distance to objects.
-
 
 .. code-block:: python
 
@@ -46,7 +44,6 @@ Distance to an object
         dist = distance_sensor.distance()
         display.scroll(dist, delay=100)
         sleep(500)
-
 
 ----
 

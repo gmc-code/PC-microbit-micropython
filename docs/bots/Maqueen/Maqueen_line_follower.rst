@@ -29,7 +29,7 @@ Thick track
 Set up buggy and sensors
 ----------------------------------------
 
-| Import the Maqueen module and set up the buggy and line sensor.
+| Import the maqueen module and set up the buggy and line sensor.
 | Make sure that the buggy is over a consistent white surface so that when the line sensors are calibrated, the left and right line sensors have similar readings.
 
 .. code-block:: python
