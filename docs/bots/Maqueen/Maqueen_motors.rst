@@ -210,10 +210,10 @@ Stop both motors
 
 ----
 
-Straight line control
+Forward and backward
 ----------------------------------------
 
-| The left and right motors can be run so that the buggy moves forward or forward in a straight line:
+| The left and right motors can be run so that the buggy moves forward or backward in a straight line:
 | ``forward(speed=1, duration=None)``
 | ``backward(speed=1, duration=None)``
 
@@ -272,9 +272,10 @@ Straight line control
 
 .. admonition:: Tasks
 
-    #. Write code to drive the buggy forward at speed 1, then 3, then 5 for 2 seconds each.
-    #. Write code to drive the buggy backward at speed 1, then 3, then 5 for 2 seconds each.
-    #. 
+    #. Write code to drive the buggy forward at speed 3 for 3 seconds.
+    #. Write code to drive the buggy backward at speed 1 for 2 seconds.
+    #. Write code to drive the buggy forward at speed 1 for 3 seconds then backward at speed 1 for 3 seconds.
+
 ----
 
 Turning

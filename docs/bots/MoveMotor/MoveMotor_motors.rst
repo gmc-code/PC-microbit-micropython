@@ -47,7 +47,7 @@ Independent motor control
     | Make the left motor run. 
     | ``speed`` values are integers or floats (decimals) from -10 to 10.
     | Default ``speed`` is 1.
-    | If speed < 0 the motor turns the wheel backwards.
+    | If speed < 0 the motor turns the wheel backward.
     | ``duration`` values are integers above 0.
     | Default ``duration`` is None.
     | The motor will stop after a given duration in milliseconds.
@@ -89,7 +89,7 @@ Independent motor control
     | Make the left motor run. 
     | ``speed`` values are integers or floats (decimals) from -10 to 10.
     | Default ``speed`` is 1.
-    | If speed < 0 the motor turns the wheel backwards.
+    | If speed < 0 the motor turns the wheel backward.
     | ``duration`` values are integers above 0.
     | Default ``duration`` is None.
     | The motor will stop after a given duration in milliseconds.
@@ -111,7 +111,7 @@ Independent motor control
 
     buggy.right_motor(speed=4, duration=3000)
 
-| The code below, using ``right_motor(-10)``, runs the right motor backwards at full speed.
+| The code below, using ``right_motor(-10)``, runs the right motor backward at full speed.
 
 .. code-block:: python
 
@@ -206,15 +206,15 @@ Stop both motors
     #. Write code to drive the right motor at speed 3 while the left motor runs at speed 2 for 3 sec then stop it.
     #. Write code to drive the left motor at speed 3 while the right motor runs at speed 2 for 3 sec then stop it.
     #. Write code that drives the left side faster than the right side then the right side faster the left side so that it zig zags for 5 sec then stop it.
-    #. Write code so that the buggy repetitively zig zags forwards for 5 zigs and zags then backwards backwards for 5 zigs and zags.
-    #. Modify the zig zag code so that it uses variables for the 2 motor speeds, the number of zig zags forwards and backward, and the time for each zig and zag.
+    #. Write code so that the buggy repetitively zig zags forward for 5 zigs and zags then backward backward for 5 zigs and zags.
+    #. Modify the zig zag code so that it uses variables for the 2 motor speeds, the number of zig zags forward and backward, and the time for each zig and zag.
 
 ----
 
 Straight line control
 ----------------------------------------
 
-| The left and right motors can be run so that the buggy moves forwards or backwards in a straight line:
+| The left and right motors can be run so that the buggy moves forward or backward in a straight line:
 | ``forward(speed=1, duration=None, decrease_left=0, decrease_right=0)``
 | ``backward(speed=1, duration=None, decrease_left=0, decrease_right=0)``
 | ``decrease_left`` is used to reduce the motor speed on the left side in case the buggy drifts to the right due to the left motor being slightly faster than the right.
@@ -223,7 +223,7 @@ Straight line control
 
 .. py:method:: forward(speed=1, duration=None, decrease_left=0, decrease_right=0)
 
-    | Drive the buggy forwards.
+    | Drive the buggy forward.
     | ``speed`` values are integers or floats (decimals) from 0 to 10.
     | Default ``speed`` is 1.
     | ``duration`` values are integers above 0.
@@ -238,7 +238,7 @@ Straight line control
 
 | The code below, has an adjustment of 6 to the left motor. 
 | This is roughly a 2% (6/255) decrease in speed.
-| It drives the buggy forwards at speed 10 for 5 secs.
+| It drives the buggy forward at speed 10 for 5 secs.
 
 .. code-block:: python
 
@@ -256,7 +256,7 @@ Straight line control
 
 .. py:method:: backward(speed=1, duration=None, decrease_left=0, decrease_right=0)
 
-    | Drive the buggy backwards.
+    | Drive the buggy backward.
     | ``speed`` values are integers or floats (decimals) from 0 to 10.
     | Default ``speed`` is 1.
     | ``duration`` values are integers above 0.
@@ -272,7 +272,7 @@ Straight line control
 | The code below, has an adjustment of 3 to the right motor. 
 | This is roughly a 1% (3/255) decrease in speed.
 | The parameter names have been omitted in ``forward(8, 4000, 0, 3)``; instead values are in their specified order.
-| It drives the buggy forwards at speed 8 for 4 secs.
+| It drives the buggy backward at speed 8 for 4 secs.
 
 .. code-block:: python
 
@@ -283,7 +283,7 @@ Straight line control
     # setup buggy
     buggy = MOVEMotor.MOVEMotorMotors()
 
-    buggy.forward(8, 4000, 0, 3)
+    buggy.backward(8, 4000, 0, 3)
 
 
 
@@ -309,8 +309,8 @@ Turning
 
     | Drive the buggy to the left.
     | ``speed`` values are integers or floats (decimals) from -10 to 10.
-    | ``speed`` values above 0 drive the buggy forwards to the left.
-    | ``speed`` values below 0 drive the buggy backwards to the left.
+    | ``speed`` values above 0 drive the buggy forward to the left.
+    | ``speed`` values below 0 drive the buggy backward to the left.
     | Default ``speed`` is 1.
     | ``radius`` values are 4 to 800 (in cm)
     | Default ``radius`` is 25 (in cm).
@@ -350,8 +350,8 @@ Turning
 
     | Drive the buggy to the right.
     | ``speed`` values are integers or floats (decimals) from -10 to 10.
-    | ``speed`` values above 0 drive the buggy forwards to the right.
-    | ``speed`` values below 0 drive the buggy backwards to the right.
+    | ``speed`` values above 0 drive the buggy forward to the right.
+    | ``speed`` values below 0 drive the buggy backward to the right.
     | Default ``speed`` is 1.
     | ``radius`` values are 4 to 800 (in cm)
     | Default ``radius`` is 25 (in cm).
@@ -363,7 +363,7 @@ Turning
 | ``right()`` and ``right(1, 25)`` and ``right(speed=1, radius=25)`` all set the speed to 1 with radius 25cm.
 | ``right(2, 50, 1000)`` and ``right(2, radius=50, duration=1000)`` and ``right(speed=2, radius=50, duration=1000)`` all set the speed to 2 with a right turn of radius 50cm for 1sec.
 
-| The code below, ``right(speed=2, radius=40, duration=3000)``, drives the buggy forwards at speed 2 while it turns right in a circular path of approximate radius 40 cm for 3 secs.
+| The code below, ``right(speed=2, radius=40, duration=3000)``, drives the buggy forward at speed 2 while it turns right in a circular path of approximate radius 40 cm for 3 secs.
 
 .. code-block:: python
 
@@ -391,8 +391,8 @@ Spinning
 
 | Spin the buggy to the left or right at the chosen speed using:
 | ``spin(speed=1, direction='left, duration=None)``
-| When spining left, the left wheel goes backwards while the right wheel goes forwards.
-| When spining right, the right wheel goes backwards while the left wheel goes forwards.
+| When spining left, the left wheel goes backward while the right wheel goes forward.
+| When spining right, the right wheel goes backward while the left wheel goes forward.
 
 
 .. py:method:: spin(speed=1, direction='left', duration=None)
