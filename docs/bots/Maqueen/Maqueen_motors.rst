@@ -9,16 +9,16 @@ Set up the buggy
 .. py:class:: MaqueenMotors() 
 
 | Set up the buggy motors for use.
-| Use ``buggy = Maqueen.MaqueenMotors()`` to be able to use the motor methods on the buggy.
+| Use ``buggy = maqueen.MaqueenMotors()`` to be able to use the motor methods on the buggy.
 
 .. code-block:: python
 
     from microbit import *
-    import Maqueen
+    import maqueen
 
 
     # setup buggy
-    buggy = Maqueen.MaqueenMotors()
+    buggy = maqueen.MaqueenMotors()
 
 ----
 
@@ -61,11 +61,11 @@ Independent motor control
 .. code-block:: python
 
     from microbit import *
-    import Maqueen
+    import maqueen
 
 
     # setup buggy
-    buggy = Maqueen.MaqueenMotors()
+    buggy = maqueen.MaqueenMotors()
 
     buggy.left_motor(5)
 
@@ -74,11 +74,11 @@ Independent motor control
 .. code-block:: python
 
     from microbit import *
-    import Maqueen
+    import maqueen
 
 
     # setup buggy
-    buggy = Maqueen.MaqueenMotors()
+    buggy = maqueen.MaqueenMotors()
 
     buggy.left_motor(2, 5000)
 
@@ -103,26 +103,26 @@ Independent motor control
 .. code-block:: python
 
     from microbit import *
-    import Maqueen
+    import maqueen
 
 
     # setup buggy
-    buggy = Maqueen.MaqueenMotors()
+    buggy = maqueen.MaqueenMotors()
 
     buggy.right_motor(speed=4, duration=3000)
 
-| The code below, using ``right_motor(-10)``, runs the right motor backwards at full speed.
+| The code below, using ``right_motor(-5)``, runs the right motor backwards at full speed.
 
 .. code-block:: python
 
     from microbit import *
-    import Maqueen
+    import maqueen
 
 
     # setup buggy
-    buggy = Maqueen.MaqueenMotors()
+    buggy = maqueen.MaqueenMotors()
 
-    buggy.right_motor(-10)
+    buggy.right_motor(-5)
 
 
 ----
@@ -138,11 +138,11 @@ Independent motor control
 .. code-block:: python
 
     from microbit import *
-    import Maqueen
+    import maqueen
 
 
     # setup buggy
-    buggy = Maqueen.MaqueenMotors()
+    buggy = maqueen.MaqueenMotors()
 
     buggy.left_motor()
     sleep(1000)
@@ -161,11 +161,11 @@ Independent motor control
 .. code-block:: python
 
     from microbit import *
-    import Maqueen
+    import maqueen
 
 
     # setup buggy
-    buggy = Maqueen.MaqueenMotors()
+    buggy = maqueen.MaqueenMotors()
 
     buggy.right_motor(4)
     sleep(2000)
@@ -186,11 +186,11 @@ Stop both motors
 .. code-block:: python
 
     from microbit import *
-    import Maqueen
+    import maqueen
 
 
     # setup buggy
-    buggy = Maqueen.MaqueenMotors()
+    buggy = maqueen.MaqueenMotors()
     
     buggy.left_motor(5)
     buggy.right_motor(2)
@@ -243,11 +243,11 @@ Straight line control
 .. code-block:: python
 
     from microbit import *
-    import Maqueen
+    import maqueen
 
 
     # setup buggy
-    buggy = Maqueen.MaqueenMotors()
+    buggy = maqueen.MaqueenMotors()
 
     buggy.forward(speed=10, duration=5000, decrease_left=6, decrease_right=0)
 
@@ -277,11 +277,11 @@ Straight line control
 .. code-block:: python
 
     from microbit import *
-    import Maqueen
+    import maqueen
 
 
     # setup buggy
-    buggy = Maqueen.MaqueenMotors()
+    buggy = maqueen.MaqueenMotors()
 
     buggy.forward(8, 4000, 0, 3)
 
@@ -327,11 +327,11 @@ Turning
 .. code-block:: python
 
     from microbit import *
-    import Maqueen
+    import maqueen
 
 
     # setup buggy
-    buggy = Maqueen.MaqueenMotors()
+    buggy = maqueen.MaqueenMotors()
 
     buggy.left(speed=3, radius=20, duration=4000)
 
@@ -368,11 +368,11 @@ Turning
 .. code-block:: python
 
     from microbit import *
-    import Maqueen
+    import maqueen
 
 
     # setup buggy
-    buggy = Maqueen.MaqueenMotors()
+    buggy = maqueen.MaqueenMotors()
 
     buggy.right(speed=2, radius=40, duration=3000)
 
@@ -415,11 +415,11 @@ Spinning
 .. code-block:: python
 
     from microbit import *
-    import Maqueen
+    import maqueen
 
 
     # setup buggy
-    buggy = Maqueen.MaqueenMotors()
+    buggy = maqueen.MaqueenMotors()
 
     buggy.spin(2, 'right', 4000)
 

@@ -16,10 +16,10 @@ Maqueen module
 Use Maqueen library
 ----------------------------------------
 
-| To use the Maqueen module, import it via: ``import Maqueen``.
+| To use the Maqueen module, import it via: ``import maqueen``.
 
 .. code-block:: python
 
     from microbit import *
-    import Maqueen
+    import maqueen
 

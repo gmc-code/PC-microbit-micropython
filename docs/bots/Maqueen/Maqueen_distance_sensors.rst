@@ -9,16 +9,16 @@ Set up the distance sensors
 
 | Set up the Distance Sensors for use.
 | Import the Maqueen module first.
-| Use ``distance_sensor = Maqueen.MaqueenDistanceSensors()`` to be able to use the distance sensing methods.
+| Use ``distance_sensor = maqueen.MaqueenDistanceSensors()`` to be able to use the distance sensing methods.
 
 .. code-block:: python
 
     from microbit import *
-    import Maqueen
+    import maqueen
 
 
     # setup distance_sensor
-    distance_sensor = Maqueen.MaqueenDistanceSensors()
+    distance_sensor = maqueen.MaqueenDistanceSensors()
 
 ----
 
@@ -37,10 +37,10 @@ Distance to an object
 .. code-block:: python
 
     from microbit import *
-    import Maqueen
+    import maqueen
 
 
-    distance_sensor = Maqueen.MaqueenDistanceSensors()
+    distance_sensor = maqueen.MaqueenDistanceSensors()
 
 
     while True:
@@ -56,14 +56,14 @@ Distance to an object
 .. code-block:: python
 
     from microbit import *
-    import Maqueen
+    import maqueen
 
 
     # setup buggy
-    buggy = Maqueen.MaqueenMotors()
+    buggy = maqueen.MaqueenMotors()
     
     # setup distance_sensor
-    distance_sensor = Maqueen.MaqueenDistanceSensors()
+    distance_sensor = maqueen.MaqueenDistanceSensors()
     
     while True:
         buggy.forward()

@@ -35,12 +35,12 @@ Set up buggy and sensors
 .. code-block:: python
 
     from microbit import *
-    import Maqueen
+    import maqueen
 
 
-    buggy = Maqueen.MaqueenMotors()
+    buggy = maqueen.MaqueenMotors()
     buggy.stop()
-    line_sensor = Maqueen.MaqueenLineSensors()
+    line_sensor = maqueen.MaqueenLineSensors()
     line_sensor.line_sensor_calibrate()
 
 ----
@@ -127,12 +127,12 @@ Version 1 Code for thin line following
 .. code-block:: python
 
     from microbit import *
-    import Maqueen
+    import maqueen
 
 
-    buggy = Maqueen.MaqueenMotors()
+    buggy = maqueen.MaqueenMotors()
     buggy.stop()
-    line_sensor = Maqueen.MaqueenLineSensors()
+    line_sensor = maqueen.MaqueenLineSensors()
     line_sensor.line_sensor_calibrate()
     left_sensorStart = line_sensor.line_sensor_read('left')
     right_sensorStart = line_sensor.line_sensor_read('right')

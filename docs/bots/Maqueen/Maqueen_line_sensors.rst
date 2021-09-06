@@ -5,12 +5,12 @@ Maqueen line sensors
 Use Maqueen library
 ----------------------------------------
 
-| To use the Maqueen module, import it via: ``import Maqueen``.
+| To use the Maqueen module, import it via: ``import maqueen``.
 
 .. code-block:: python
 
     from microbit import *
-    import Maqueen
+    import maqueen
 
 
 Set up the line sensors
@@ -23,11 +23,11 @@ Set up the line sensors
 .. code-block:: python
 
     from microbit import *
-    import Maqueen
+    import maqueen
 
 
     # setup line sensor
-    line_sensor = Maqueen.MaqueenLineSensors()
+    line_sensor = maqueen.MaqueenLineSensors()
 
 ----
 
@@ -44,11 +44,11 @@ Calibrate the line sensors
 .. code-block:: python
 
     from microbit import *
-    import Maqueen
+    import maqueen
 
 
     # setup line sensor
-    line_sensor = Maqueen.MaqueenLineSensors()
+    line_sensor = maqueen.MaqueenLineSensors()
 
     line_sensor.line_sensor_calibrate()
 
@@ -66,11 +66,11 @@ Read values from the line sensors
 .. code-block:: python
 
     from microbit import *
-    import Maqueen
+    import maqueen
 
 
     # setup line sensor
-    line_sensor = Maqueen.MaqueenLineSensors()
+    line_sensor = maqueen.MaqueenLineSensors()
     line_sensor.line_sensor_calibrate()
 
     left_reading = line_sensor.line_sensor_read('left')
