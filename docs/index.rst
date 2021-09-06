@@ -112,6 +112,14 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
 
 .. toctree::
     :maxdepth: 4
+    :caption: Bots/Track_templates
+    :numbered:
+
+    bots/Track_templates/Track_templates.rst
+
+
+    .. toctree::
+    :maxdepth: 4
     :caption: Bots/MoveMotor
     :numbered:
 
