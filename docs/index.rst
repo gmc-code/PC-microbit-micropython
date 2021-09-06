@@ -111,7 +111,7 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
 
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 4
     :caption: Bots/MoveMotor
     :numbered:
 
@@ -129,7 +129,7 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
 
 
 .. toctree::
-    :maxdepth: 2
+    :maxdepth: 4
     :caption: Bots/Maqueen
     :numbered:
 
