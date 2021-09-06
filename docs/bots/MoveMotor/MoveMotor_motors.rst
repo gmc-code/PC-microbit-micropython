@@ -301,8 +301,8 @@ Turning
 | The left and right motors are adjusted to turn the buggy with a given radius:
 | ``left(speed=1, radius=25)``
 | ``right(speed=1, radius=25)``
-| When turning left the left wheel is slowed based on the radius value.
-| When turning right the right wheel is slowed based on the radius value.
+| When turning left, the left wheel is slowed based on the radius value.
+| When turning right, the right wheel is slowed based on the radius value.
 | The turning radius is approximate only, and is automatically calculated using 8.5 cm as the distance between the 2 wheels.
 
 .. py:method:: left(speed=1, radius=25, duration=None)

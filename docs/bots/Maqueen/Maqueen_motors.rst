@@ -267,7 +267,6 @@ Forward and backward
     buggy.backward(5, 3000)
 
 
-
 ----
 
 .. admonition:: Tasks
@@ -281,31 +280,24 @@ Forward and backward
 Turning
 ----------------------------------------
 
-| The left and right motors are adjusted to turn the buggy with a given radius:
-| ``left(speed=1, radius=25)``
-| ``right(speed=1, radius=25)``
-| When turning left the left wheel is slowed based on the radius value.
-| When turning right the right wheel is slowed based on the radius value.
-| The turning radius is approximate only, and is automatically calculated using 8.5 cm as the distance between the 2 wheels.
+| The left and right motors are adjusted to turn the buggy with a given turn tightness:
+| ``left(tightness=5, duration=None)``
+| ``right(tightness=5, duration=None)``
+| When turning left, the left wheel is slowed based on the tightness value.
+| When turning right, the right wheel is slowed based on the tightness value.
+| The turning tightness is greatest with a value of 5.
 
-.. py:method:: left(speed=1, radius=25, duration=None)
+.. py:method:: left(tightness=5, duration=None)
 
     | Drive the buggy to the left.
-    | ``speed`` values are integers or floats (decimals) from -10 to 10.
-    | ``speed`` values above 0 drive the buggy forward to the left.
-    | ``speed`` values below 0 drive the buggy forward to the left.
-    | Default ``speed`` is 1.
-    | ``radius`` values are 4 to 800 (in cm)
-    | Default ``radius`` is 25 (in cm).
+    | ``tightness`` values are integers from 1 to 5
+    | Default ``tightness`` is 5 (a tight turn).
     | ``duration`` values are integers above 0.
     | Default ``duration`` is None.
     | The motor will stop after a given duration in milliseconds.
     | If the duration is None, the motor runs without stopping, until another command is sent to the motor.
 
-| ``left()`` and ``left(1, 25)`` and ``left(speed=1, radius=25)`` all set the speed to 1 with a left turn of radius 25cm.
-| ``left(2, 50, 1000)`` and ``left(2, radius=50, duration=1000)`` and ``left(speed=2, radius=50, duration=1000)`` all set the speed to 2 with a left turn of radius 50cm for 1sec.
-
-| The code below, ``left(speed=3, radius=20, duration=4000)``, drives the buggy forward at speed 3 while it turns left in a circular path of approximate radius 20 cm for 4 secs.
+| The code below, ``left(tightness=5, duration=4000)``, turns the buggy left through a tight turn for 4 secs.
 
 .. code-block:: python
 
@@ -316,37 +308,30 @@ Turning
     # setup buggy
     buggy = maqueen.MaqueenMotors()
 
-    buggy.left(speed=3, radius=20, duration=4000)
+    buggy.left(tightness=5, duration=4000)
 
 
 ----
 
 .. admonition:: Tasks
 
-    #. Write code to drive the buggy to the left at speed 2 in small circles of 10 cm radius.
-    #. Write code to drive the buggy to the left at speed 5 in medium circles of 50 cm radius.
-    #. Write code to drive the buggy to the left at speed 8 in circles of 20, 40 and 60 cm radius for 5 seconds each. Use a for loop and a list of the radii.
+    #. Write code to drive the buggy to the left at tightness 3 for 5 seconds.
+    #. Write code to drive the buggy to the left at tightness 1 for 5 seconds.
+    #. Write code to drive the buggy to the left at increasing tightness. Use a for loop to change the tightness from 1 to 5, with each turn lasting for 2 seconds.
 
 ----
 
-.. py:method:: right(speed=1, radius=25, duration=None)
+.. py:method:: right(tightness=5, duration=None)
 
     | Drive the buggy to the right.
-    | ``speed`` values are integers or floats (decimals) from -10 to 10.
-    | ``speed`` values above 0 drive the buggy forward to the right.
-    | ``speed`` values below 0 drive the buggy forward to the right.
-    | Default ``speed`` is 1.
-    | ``radius`` values are 4 to 800 (in cm)
-    | Default ``radius`` is 25 (in cm).
+    | ``tightness`` values are integers from 1 to 5
+    | Default ``tightness`` is 5 (a tight turn).
     | ``duration`` values are integers above 0.
     | Default ``duration`` is None.
     | The motor will stop after a given duration in milliseconds.
     | If the duration is None, the motor runs without stopping, until another command is sent to the motor.
 
-| ``right()`` and ``right(1, 25)`` and ``right(speed=1, radius=25)`` all set the speed to 1 with radius 25cm.
-| ``right(2, 50, 1000)`` and ``right(2, radius=50, duration=1000)`` and ``right(speed=2, radius=50, duration=1000)`` all set the speed to 2 with a right turn of radius 50cm for 1sec.
-
-| The code below, ``right(speed=2, radius=40, duration=3000)``, drives the buggy forward at speed 2 while it turns right in a circular path of approximate radius 40 cm for 3 secs.
+| The code below, ``right(5, 4000)``, turns the buggy right through a tight turn for 4 secs.
 
 .. code-block:: python
 
@@ -357,15 +342,15 @@ Turning
     # setup buggy
     buggy = maqueen.MaqueenMotors()
 
-    buggy.right(speed=2, radius=40, duration=3000)
+    buggy.right(5, 4000)
 
 ----
 
 .. admonition:: Tasks
 
-    #. Write code to drive the buggy to the right at speed 4 in small circles of 5 cm radius.
-    #. Write code to drive the buggy to the right at speed 7 in medium circles of 80 cm radius.
-    #. Write code to drive the buggy to the right at speed 10 in circles of increasing size. Use a range function to increase the radius every 4 seconds from 10 to 100 in steps of 10.
+    #. Write code to drive the buggy to the right at tightness 4 for 2 seconds.
+    #. Write code to drive the buggy to the right at tightness 1 for 2 seconds.
+    #. Write code to drive the buggy to the right at decreasing tightness. Use a for loop to change the tightness from 5 to 1, with each turn lasting for 2 seconds.
 
 ----
 
@@ -381,7 +366,7 @@ Spinning
 .. py:method:: spin(speed=1, direction='left', duration=None)
 
     | Spin the buggy on the spot.
-    | ``speed`` values are integers or floats (decimals) from 0 to 10.
+    | ``speed`` values are integers from 0 to 5.
     | Default ``speed`` is 1.
     | ``direction`` values are ``left`` or ``right``, while any other values will spin the buggy left. 
     | Default ``direction`` is 'left'.
@@ -411,12 +396,6 @@ Spinning
 .. admonition:: Tasks
 
     #. Write code to spin the buggy to the left at speed 4 for 5 seconds.
-    #. Write code to spin the buggy to the right at speed 6 for 3 seconds.
-    #. Write code to spin the buggy to the left for 3 seconds then to right for 3 seconds at speed 6.
+    #. Write code to spin the buggy to the right at speed 2 for 3 seconds.
+    #. Write code to spin the buggy to the left for 3 seconds then to right for 3 seconds at speed 4.
     #. Write code to drive the buggy in a polygonal path (many straight sides) by combining short drives forward with short spins.
-
-
-
-
-
-
