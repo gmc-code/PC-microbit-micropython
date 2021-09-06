@@ -40,7 +40,7 @@ Forward backward test
 .. py:method:: forward(speed=1, duration=None, decrease_left=0, decrease_right=0)
 .. py:method:: backward(speed=1, duration=None, decrease_left=0, decrease_right=0)
 
-| Use ``for i in range(2, 11, 2)`` to go forwards then backwards from speed 2 to speed 10 in steps of 2.
+| Use ``for i in range(2, 11, 2)`` to go forward then backward from speed 2 to speed 10 in steps of 2.
 
 .. code-block:: python
 
@@ -129,9 +129,9 @@ Individual motors test
 .. py:method:: left_motor(speed=1, duration=None)
 .. py:method:: right_motor(speed=1, duration=None)
 
-| Test the left motor backwards and forwards.
-| Then, test the right motor backwards and forwards.
-| Use a for-loop to vary the speed from -10 (max backwards) to 10 (max forwards) for each motor separately.
+| Test the left motor backward and forward.
+| Then, test the right motor backward and forward.
+| Use a for-loop to vary the speed from -10 (max backward) to 10 (max forward) for each motor separately.
 
 .. code-block:: python
 
@@ -161,8 +161,8 @@ Individual motors test
 
     #. Modify the code to just use the left motor.
     #. Modify the code to just use the right motor.
-    #. Modify the for-loop to just go forwards with each motor.
-    #. Modify the for-loop to just go backwards with each motor.
+    #. Modify the for-loop to just go forward with each motor.
+    #. Modify the for-loop to just go backward with each motor.
     #. Modify the for-loop to change the speed in steps of 1 for 100ms each.
     #. Modify the for-loop to change the speed in steps of 5 for 400ms each.
 
@@ -288,15 +288,15 @@ Zig Zag test
 
 .. admonition:: Tasks
 
-    #. Modify the code to just zig zag forwards.
-    #. Modify the new zig zag forwards code with ``zigzag_count=1``, and place ``zigzag_test(2, fast_speed, 5, 1000)`` in a for-loop and vary ``fast_speed`` from 3 to 8.
+    #. Modify the code to just zig zag forward.
+    #. Modify the new zig zag forward code with ``zigzag_count=1``, and place ``zigzag_test(2, fast_speed, 5, 1000)`` in a for-loop and vary ``fast_speed`` from 3 to 8.
 
 ----
 
 Polygon test
 ----------------------------------------
 
-| Move the buggy forwards in straight lines then spin it and repeat to move in the shape of a polygon.
+| Move the buggy forward in straight lines then spin it and repeat to move in the shape of a polygon.
 
 .. code-block:: python
 

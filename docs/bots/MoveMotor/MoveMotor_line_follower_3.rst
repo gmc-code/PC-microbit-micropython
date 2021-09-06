@@ -126,7 +126,7 @@ Adding lights and sound: add lights to line following and spin
 -----------------------------------------------------------------
 
 | Add lights to line following and spin functions.
-| For ``follow_thin_line``, display arrows to indicate the direction the buggy will go and adjust the front lights depending on whether the buggy will go forwards, turn or spin.
+| For ``follow_thin_line``, display arrows to indicate the direction the buggy will go and adjust the front lights depending on whether the buggy will go forward, turn or spin.
 | For ``spin_from_obstacle``, clear the display and show both front indicators.
 
 .. code-block:: python

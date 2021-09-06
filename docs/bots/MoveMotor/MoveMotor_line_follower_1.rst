@@ -53,7 +53,7 @@ Set speed constants
 | The buggy should only move slowly so that it doesn't go too far over the black line. Hence the speed settings must be very low. Speeds of 1 work best for the tracks provided.
 | Set a ``MAXSPEED`` constant to be the speed for the motors when going straight forward.
 | Set a ``MAXTURN`` constant to be the speed for the outside motor on a turn which needs to be greater than the speed of the inside motor.
-| Set a ``MINTURN`` constant to be the speed for inside motor on a turn. This is best if it is negative so it goes backwards.
+| Set a ``MINTURN`` constant to be the speed for inside motor on a turn. This is best if it is negative so it goes backward.
 | Set a ``MOTORTIME`` constant to be 20 ms for the motors to run before stopping and checking the line sensors again.
 
 .. code-block:: python
