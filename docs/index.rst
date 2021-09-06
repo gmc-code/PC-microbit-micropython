@@ -132,7 +132,6 @@ If you are using a trackpad, navigate to various sections and pages by clicking 
     :maxdepth: 2
     :caption: Bots/Maqueen
     :numbered:
-    :hidden:
 
     bots/Maqueen/Maqueen_info.rst
     bots/Maqueen/Maqueen_module.rst

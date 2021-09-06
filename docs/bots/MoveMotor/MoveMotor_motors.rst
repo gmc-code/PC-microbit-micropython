@@ -98,7 +98,7 @@ Independent motor control
 | ``right_motor()`` and ``right_motor(1)`` and ``right_motor(speed=1)`` all set the speed to 1.
 | ``right_motor(2, 1000)`` and ``right_motor(2, duration=1000)`` and ``right_motor(speed=2, duration=1000)`` all run the right motor at speed 2 for 1sec.
 
-| The code below, using ``right_motor(4)``, runs the right motor at speed 4 for 3 sec.
+| The code below, using ``right_motor(speed=4, duration=3000)``, runs the right motor at speed 4 for 3 sec.
 
 .. code-block:: python
 

@@ -12,16 +12,6 @@ Maqueen module
 | Files in the mu_code folder are listed on the right.
 | Click and drag the Maqueen.py file from the right window to the left window to copy it to the microbit.
 
-Before copying:
-
-.. image:: images/Mu_files.png
-    :scale: 50 %
-
-After copying:
-
-.. image:: images/Mu_files_copied.png
-    :scale: 50 %
-
 
 Use Maqueen library
 ----------------------------------------
