@@ -9,7 +9,7 @@ Maqueen info
 | The servo outputs and infrared sensor on pin16 are not used here.
 
 
-.. image:: images/maqueen.png
+.. image:: images/Maqueen.png
     :scale: 50 %
     :align: center
 
