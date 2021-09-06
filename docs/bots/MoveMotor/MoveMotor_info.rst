@@ -9,7 +9,7 @@ MoveMotor info
     | v1 microbits lack the memory space for the MOVEMotor module.
 
 
-| The Kitronic :MOVEMotor features 2 independent motors, infrared line sensors for line tracking, distance sensors for obstacle avoidance, 4 ZIP Leds and a buzzer, all powered by 4 AA batteries below the board. 
+| The Kitronic :MOVEMotor has 2 independent motors, 2 infrared line sensors for line tracking, a distance sensor for obstacle avoidance, 4 ZIP Leds and a buzzer, all powered by 4 AA batteries below the board. 
 | The servo outputs are not used here.
 
 
