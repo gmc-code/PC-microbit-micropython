@@ -45,7 +45,7 @@ Independent motor control
 .. py:method:: left_motor(speed=1, duration=None)
 
     | Make the left motor run. 
-    | ``speed`` values are integers or floats (decimals) from -10 to 10.
+    | ``speed`` values are integers or floats (decimals) from -5 to 5.
     | Default ``speed`` is 1.
     | If speed < 0 the motor turns the wheel backwards.
     | ``duration`` values are integers above 0.
@@ -56,7 +56,7 @@ Independent motor control
 | ``left_motor()`` and ``left_motor(1)`` and ``left_motor(speed=1)`` all set the speed to 1.
 | ``left_motor(2, 1000)`` and ``left_motor(2, duration=1000)`` and ``left_motor(speed=2, duration=1000)`` all run the left motor at speed to 2 for 1 sec.
 
-| The code below, using ``left_motor(5)``,  runs the left motor at about half speed.
+| The code below, using ``left_motor(5)``,  runs the left motor at full speed.
 
 .. code-block:: python
 
@@ -87,7 +87,7 @@ Independent motor control
 .. py:method:: right_motor(speed=1, duration=None)
 
     | Make the left motor run. 
-    | ``speed`` values are integers or floats (decimals) from -10 to 10.
+    | ``speed`` values are integers or floats (decimals) from -5 to 5.
     | Default ``speed`` is 1.
     | If speed < 0 the motor turns the wheel backwards.
     | ``duration`` values are integers above 0.
@@ -98,7 +98,7 @@ Independent motor control
 | ``right_motor()`` and ``right_motor(1)`` and ``right_motor(speed=1)`` all set the speed to 1.
 | ``right_motor(2, 1000)`` and ``right_motor(2, duration=1000)`` and ``right_motor(speed=2, duration=1000)`` all run the right motor at speed 2 for 1sec.
 
-| The code below, using ``right_motor(4)``, runs the right motor at speed 4 for 3 sec.
+| The code below, using ``right_motor(4, 3000)``, runs the right motor at speed 4 for 3 sec.
 
 .. code-block:: python
 
