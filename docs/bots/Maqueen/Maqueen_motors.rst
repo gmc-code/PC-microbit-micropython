@@ -28,8 +28,8 @@ Duration parameter
 | The Buggy methods that drive the motors have a duration parameter. 
 | The duration parameter specifies how long the motor runs for.
 | The default duration is ``None``. If the duration is ``None`` or is not specified the motor will run continuously until another command is sent to it.
-| e.g. using the duration parameter: ``buggy.forward(10, duration=5000)``  the buggy stops after 5 sec.
-| e.g. not using the duration parameter: ``buggy.forward(10)`` the buggy runs forward continuously.
+| e.g. using the duration parameter: ``buggy.forward(1, duration=5000)``  the buggy stops after 5 sec.
+| e.g. not using the duration parameter: ``buggy.forward(1)`` the buggy runs forward continuously.
 
 ----
 
@@ -45,10 +45,10 @@ Independent motor control
 .. py:method:: left_motor(speed=1, duration=None)
 
     | Make the left motor run. 
-    | ``speed`` values are integers or floats (decimals) from -5 to 5.
+    | ``speed`` values are **integers** from -5 to 5.
     | Default ``speed`` is 1.
     | If speed < 0 the motor turns the wheel backwards.
-    | ``duration`` values are integers above 0.
+    | ``duration`` values are **integers** above 0.
     | Default ``duration`` is None.
     | The motor will stop after a given duration in milliseconds.
     | If the duration is None, the motor runs without stopping.
@@ -87,10 +87,10 @@ Independent motor control
 .. py:method:: right_motor(speed=1, duration=None)
 
     | Make the left motor run. 
-    | ``speed`` values are integers or floats (decimals) from -5 to 5.
+    | ``speed`` values are **integers** from -5 to 5.
     | Default ``speed`` is 1.
     | If speed < 0 the motor turns the wheel backwards.
-    | ``duration`` values are integers above 0.
+    | ``duration`` values are **integers** above 0.
     | Default ``duration`` is None.
     | The motor will stop after a given duration in milliseconds.
     | If the duration is None, the motor runs without stopping.
