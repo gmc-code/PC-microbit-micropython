@@ -54,7 +54,7 @@ Independent motor control
     | If the duration is None, the motor runs without stopping.
 
 | ``left_motor()`` and ``left_motor(1)`` and ``left_motor(speed=1)`` all set the speed to 1.
-| ``left_motor(2, 1000)`` and ``left_motor(2, duration=1000)`` and ``left_motor(speed=2, duration=1000)`` all run the left motor at speed to 2 for 1 sec.
+| ``left_motor(2, 3000)`` and ``left_motor(2, duration=3000)`` and ``left_motor(speed=2, duration=3000)`` all run the left motor at speed to 2 for 3 sec.
 
 | The code below, using ``left_motor(5)``,  runs the left motor at full speed.
 
@@ -96,7 +96,7 @@ Independent motor control
     | If the duration is None, the motor runs without stopping.
 
 | ``right_motor()`` and ``right_motor(1)`` and ``right_motor(speed=1)`` all set the speed to 1.
-| ``right_motor(2, 1000)`` and ``right_motor(2, duration=1000)`` and ``right_motor(speed=2, duration=1000)`` all run the right motor at speed 2 for 1sec.
+| ``right_motor(2, 4000)`` and ``right_motor(2, duration=4000)`` and ``right_motor(speed=2, duration=4000)`` all run the right motor at speed 2 for 4sec.
 
 | The code below, using ``right_motor(4, 3000)``, runs the right motor at speed 4 for 3 sec.
 
@@ -132,7 +132,7 @@ Independent motor control
     | Stop the left motor.
 
 
-| The code below runs the left motor continuously during the sleep then is stopped.
+| The code below runs the left motor continuously during the sleep of 2 sec then is stopped.
 
 .. code-block:: python
 
@@ -144,7 +144,7 @@ Independent motor control
     buggy = maqueen.MaqueenMotors()
 
     buggy.left_motor()
-    sleep(1000)
+    sleep(2000)
     buggy.stop_left()
 
 
@@ -220,7 +220,7 @@ Forward and backward
 .. py:method:: forward(speed=1, duration=None)
 
     | Drive the buggy forward.
-    | ``speed`` values are integers or floats (decimals) from 0 to 10.
+    | ``speed`` values are integers from 0 to 5.
     | Default ``speed`` is 1.
     | ``duration`` values are integers above 0.
     | Default ``duration`` is None.
@@ -246,7 +246,7 @@ Forward and backward
 .. py:method:: backward(speed=1, duration=None)
 
     | Drive the buggy forward.
-    | ``speed`` values are integers or floats (decimals) from 0 to 10.
+    | ``speed`` values are integers from 0 to 5.
     | Default ``speed`` is 1.
     | ``duration`` values are integers above 0.
     | Default ``duration`` is None.
