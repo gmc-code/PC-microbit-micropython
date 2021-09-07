@@ -11,18 +11,19 @@ PC-Microbit-Micropython documentation!
 
 
 | These docs will help you code your microbit using micropython.
-| Micropython is similar to python, but is specialised for microcontrollers like the microbit.
+| Micropython is similar to python, but is specialised for micro-controllers like the microbit.
 
 .. image:: images/microbit_happy.png
     :scale: 30 %
 
 ----
 
-Home page:
+Home pages:
 ---------------------
 
 https://pc-microbit-micropython.readthedocs.io/en/latest/index.html
-
+https://pc-microbit-extension.readthedocs.io/en/latest/index.html
+https://pc-python.readthedocs.io/en/latest/index.html
 
 ----
 
