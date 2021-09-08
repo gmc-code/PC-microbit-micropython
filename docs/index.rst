@@ -4,12 +4,26 @@
 PC-Microbit-Micropython documentation
 ====================================================
 
-If you are using a trackpad, navigate to various sections and pages by clicking on a heading and then use the arrow keys.
+.. admonition:: Tip
+    
+    If you are using a trackpad, navigate to various sections and pages by clicking on the same heading in the left sidebar twice, then use the arrow keys to move up and down.
 
+----
 
-| Home page:
-| https://pc-microbit-micropython.readthedocs.io/en/latest/#
+Home pages:
+---------------------
 
+| https://pc-microbit-micropython.readthedocs.io/en/latest/index.html
+| https://pc-microbit-extension.readthedocs.io/en/latest/index.html
+| https://pc-python.readthedocs.io/en/latest/index.html
+
+----
+
+Key references:
+---------------------
+
+| python: https://www.w3schools.com/python/
+| microbit: https://microbit-micropython.readthedocs.io/en/v2-docs/index.html
 
 ----
 

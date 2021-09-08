@@ -2,7 +2,7 @@
 Introduction
 ====================================================
 
-PC-Microbit-Micropython documentation!
+PC-Microbit-Micropython documentation
 ----------------------------------------
 
 .. admonition:: Tip
@@ -11,7 +11,8 @@ PC-Microbit-Micropython documentation!
 
 
 | These docs will help you code your microbit using micropython.
-| Micropython is similar to python, but is specialised for micro-controllers like the microbit.
+| This is an extension to https://pc-microbit-micropython.readthedocs.io/en/latest/index.html.
+
 
 .. image:: images/microbit_happy.png
     :scale: 30 %
@@ -21,9 +22,17 @@ PC-Microbit-Micropython documentation!
 Home pages:
 ---------------------
 
-https://pc-microbit-micropython.readthedocs.io/en/latest/index.html
-https://pc-microbit-extension.readthedocs.io/en/latest/index.html
-https://pc-python.readthedocs.io/en/latest/index.html
+| https://pc-microbit-micropython.readthedocs.io/en/latest/index.html
+| https://pc-microbit-extension.readthedocs.io/en/latest/index.html
+| https://pc-python.readthedocs.io/en/latest/index.html
+
+----
+
+Key references:
+---------------------
+
+| python: https://www.w3schools.com/python/
+| microbit: https://microbit-micropython.readthedocs.io/en/v2-docs/index.html
 
 ----
 
@@ -42,13 +51,13 @@ Edublocks, https://app.edublocks.org/#MicroBit, is an online editor with both bl
 Microbit software with simulators:
 ----------------------------------------
 
-Create with code UK, https://create.withcode.uk/, works with standard python or micropython. Starting the code with "from microbit import *" will pop up the simulator when the code is run.
+Create with code UK, https://create.withcode.uk/, works with standard python or micropython. Starting the code with "from microbit import /*" will pop up the simulator when the code is run.
 
 The Makecode website https://makecode.microbit.org/ allows blocky code use, but it has its own unique version of micropython based on its own translation of the typescript code that it uses, and so it will not work with Mu editor or the standard online micropython editor. It has an excellent simulator and vast extensions library for exploring other devices that can be connected to the microbit.
 
 ----
 
-Key references:
+References:
 ------------------
 
 * https://microbit-micropython.readthedocs.io/en/v2-docs/index.html
@@ -69,7 +78,8 @@ For beginners, using blocky code, these sites may be useful:
 Python references:
 ------------------
 
-For a simple introduction to python see:
+For an introduction to python see:
 
 * https://www.w3schools.com/python/default.asp
-
+* https://www.programiz.com/python-programming
+* https://www.pythontutorial.net/
