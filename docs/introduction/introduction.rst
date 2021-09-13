@@ -9,10 +9,7 @@ PC-Microbit-Micropython documentation
     
     If you are using a trackpad, navigate to various sections and pages by clicking on the same heading in the left sidebar twice, then use the arrow keys to move up and down.
 
-
 | These docs will help you code your microbit using micropython.
-| This is an extension to https://pc-microbit-micropython.readthedocs.io/en/latest/index.html.
-
 
 .. image:: images/microbit_happy.png
     :scale: 30 %
