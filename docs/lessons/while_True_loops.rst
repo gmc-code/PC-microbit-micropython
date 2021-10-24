@@ -18,7 +18,7 @@ While true
 
 | The statements within the loop are indented with the tab key (which is equivalent to 4 spaces) to make those lines part of the while loop.
 
-| The ``while True`` loop below scrolls the text ``I never stop`` across the LED display over and over again.
+| The ``while True`` loop below scrolls the text ``I never stop`` across the LED display, over and over again.
 
 .. code-block:: python
 
