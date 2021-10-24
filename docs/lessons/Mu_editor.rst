@@ -4,10 +4,6 @@ Mu editor
 
 Mu editor is the simplest choice of windows apps to use when programming the microbit with micropython.
 
-The latest version can be downloaded from: https://codewith.mu/en/download
-
-Useful keyboard shortcuts are at: https://codewith.mu/en/tutorials/1.1/shortcuts
-
 ----
 
 Installing at school
@@ -67,3 +63,9 @@ Fixing indenting quickly
 | Unindent them all at once using ``SHIFT TAB``.
 | Indent them all at once using ``TAB``
 
+----
+
+Downloads
+--------------------------
+
+The latest version can be downloaded from: https://codewith.mu/en/download

@@ -10,6 +10,7 @@ PC-Microbit-Micropython documentation
     If you are using a trackpad, navigate to various sections and pages by clicking on the same heading in the left sidebar twice, then use the arrow keys to move up and down.
 
 | These docs will help you code your microbit using micropython.
+| Micropython is a version of python for running on small devices like the microbit.
 
 .. image:: images/microbit_happy.png
     :scale: 30 %
@@ -29,26 +30,33 @@ Key references:
 ---------------------
 
 | python: https://www.w3schools.com/python/
-| microbit: https://microbit-micropython.readthedocs.io/en/v2-docs/index.html
-
+| microbit v1 in 2021: https://microbit-micropython.readthedocs.io/en/v1.0.1/index.html
+| microbit v2 in 2022: https://microbit-micropython.readthedocs.io/en/v2-docs/index.html
 ----
 
-Microbit software:
----------------------
+Microbit software using micropython:
+------------------------------------------
 
 Comparison of microbit programming options:
 
+The **Mu** editor for laptops, https://codewith.mu/en/tutorials/1.1/microbit, is the first choice for coding on the microbit.
 
-The Mu editor for laptops, https://codewith.mu/en/tutorials/1.1/microbit, is the first choice for coding on the microbit.
+The standard **micropython** editor: https://python.microbit.org/v/2 is an online editor consistent with Mu editor.
 
-The standard micropython editor: https://python.microbit.org/v/2 is an online editor consistent with Mu editor.
+**Thonny** for laptops, can be downloaded from https://thonny.org/.
+See: https://core-electronics.com.au/tutorials/how-to-program-a-microbit-using-thonny.html for setting up the microbit to use Thonny.
 
-Edublocks, https://app.edublocks.org/#MicroBit, is an online editor with both blocky code and micropython consistent with Mu editor, and can display the block code and micropython code side by side.
+**Edublocks**, https://app.edublocks.org/#MicroBit, is an online editor with both blocky code and micropython consistent with Mu editor, and can display the block code and micropython code side by side.
 
-Microbit software with simulators:
+Micropython simulator:
 ----------------------------------------
 
 Create with code UK, https://create.withcode.uk/, works with standard python or micropython. Starting the code with "from microbit import /*" will pop up the simulator when the code is run.
+
+----
+
+Blocky code simulator:
+----------------------------------------
 
 The Makecode website https://makecode.microbit.org/ allows blocky code use, but it has its own unique version of micropython based on its own translation of the typescript code that it uses, and so it will not work with Mu editor or the standard online micropython editor. It has an excellent simulator and vast extensions library for exploring other devices that can be connected to the microbit.
 
