@@ -222,9 +222,9 @@ Display.show using variables
             from microbit import *
 
 
-            player = '????????'
-            goals = ????
-            goals_per_game = ?.??
+            player = 'Romario'
+            goals = 780
+            goals_per_game = 0.78
 
             while True:
                 display.show('Player=', 50)
@@ -236,16 +236,16 @@ Display.show using variables
                 display.clear()
                 sleep(500)
 
-    2. Modify the code below to display info for another bowler.
+    2. Modify the code below to display info for another great bowler.
 
         .. code-block:: python
 
             from microbit import *
 
 
-            bowler = 'Sobers'
-            wickets = 235
-            ave = 34.0
+            bowler = 'Muralitharan'
+            wickets = 800
+            ave = 22.7
 
             while True:
                 display.show('Bowler=', 50)
@@ -256,6 +256,25 @@ Display.show using variables
                 display.show(ave, 300)
                 display.clear()
                 sleep(500)
+
+    3. Modify the code below to display info for another prolific NBA scorer.
+
+        .. code-block:: python
+
+            from microbit import *
+
+
+            player = 'Kareem Abdul-Jabbar'
+            points = 38,387
+            ave = 24.6
+
+            while True:
+                display.scroll('player=', 50)
+                display.scroll(player, 80)
+                display.scroll('Points=', 50)
+                display.scroll(points, 150)
+                display.scroll('Ave=', 50)
+                display.scroll(ave, 300)
 
 ----
 

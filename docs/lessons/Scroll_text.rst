@@ -225,9 +225,9 @@ Display.scroll using variables
             from microbit import *
 
 
-            player = '????????'
-            goals = ????
-            goals_per_game = ?.??
+            player = 'Pele'
+            goals = 775
+            goals_per_game = 0.92
 
             while True:
                 display.scroll('Player=', 50)
@@ -256,7 +256,7 @@ Display.scroll using variables
                 display.scroll('Ave=', 50)
                 display.scroll(ave, 300)
 
-    3. Modify the code below to display info for a different NBA player.
+    3. Modify the code below to display info for another great NBA player.
 
         .. code-block:: python
 
