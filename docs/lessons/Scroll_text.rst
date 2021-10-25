@@ -256,6 +256,25 @@ Display.scroll using variables
                 display.scroll('Ave=', 50)
                 display.scroll(ave, 300)
 
+    3. Modify the code below to display info for a different NBA player.
+
+        .. code-block:: python
+
+            from microbit import *
+
+
+            player = 'Kobe Bryant'
+            points = 33,643
+            ave = 25.0
+
+            while True:
+                display.scroll('player=', 50)
+                display.scroll(player, 80)
+                display.scroll('Points=', 50)
+                display.scroll(points, 150)
+                display.scroll('Ave=', 50)
+                display.scroll(ave, 300)
+
 ----
 
 Display.scroll full syntax
