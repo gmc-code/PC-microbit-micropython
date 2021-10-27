@@ -88,7 +88,7 @@ Image lists
 
 
 | The code below displays a list of shapes, so the variable name chosen is ``shape_list``.
-| Whitespace (tabes, spaces, line endings) are ignored within a list, so a long list can be set out like that below, with all the Images lined up for easy reading.
+| Whitespace (tabs, spaces, line endings) are ignored within a list, so a long list can be set out like that below, with all the Images lined up for easy reading.
 
 .. code-block:: python
 

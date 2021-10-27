@@ -71,6 +71,7 @@ Display.clear
 
     from microbit import *
 
+
     while True:
         display.show(3.14)
         display.clear()
