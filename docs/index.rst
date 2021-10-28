@@ -59,8 +59,16 @@ Key references:
     :numbered:
 
     lessons/Practice_tasks_1.rst
-    lessons/Practice_tasks_1_Answers.rst
     lessons/Practice_tasks_2.rst
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Lessons_1_Practice_Answers
+    :numbered:
+    :hidden:
+
+    lessons/Practice_tasks_1_Answers.rst
     lessons/Practice_tasks_2_Answers.rst
 
 
