@@ -13,11 +13,24 @@ Importing errors
     from microbit import *
 
 
-.. image:: images/import_error_1.png
-    :scale: 60 %
-    :align: center
+.. image:: images/import_error_1b.png
+    :scale: 50 %
+    :align: left
 
 
 
+Importing errors
+--------------------------
 
+.. code-block:: python
+
+    import microbit
+
+
+    display.scroll('hello')
+
+
+.. image:: images/import_error_2.png
+    :scale: 50 %
+    :align: left
 
