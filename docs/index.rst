@@ -42,6 +42,7 @@ Key references:
 
     lessons/Mu_editor.rst
     lessons/Microbit_library.rst
+    lessons/Errors.rst
     lessons/while_True_loops.rst
     lessons/Sleep.rst
     lessons/Scroll_text.rst
