@@ -2,45 +2,33 @@
 Mu editor Errors
 ====================================================
 
+| Working out what has gone wrong and how to fix it is a key part of everyday programming.
+| Some errors will not show up using the **check** button, but instead, will be scrolled on the microbit as an error message when the microbit is flashed.
+| They usually contains the line number for where you should start to identify and fix the issue.
+
+| The examples below are the common errors that you need to be able to fix quickly.
+
+| A syntax error occurs when the code language is not used properly.
+| Press the **check** button in Mu editor to view syntax errors and other errors.
+
+----
+
 Import Errors
 ====================================================
-
-| A syntax error occur when the code language is not used properly.
-| The interpreter reports it in Mu editor when the **check** button is pressed.
 
 Library not imported properly
 ---------------------------------------------
 
-| Normally the microbit is imported via ``from microbit import *``.
-| If the askterisk is left out, a red wavy line will be shown at the end of the line and a **Syntax error** is reported.
+| Normally the full microbit is imported via ``from microbit import *``.
 
 .. code-block:: python
 
     from microbit import 
 
+| If the askterisk is left out, a red wavy line will be shown at the end of the line and a **Syntax error** is reported.
+| It hints that the asterisk, *, is missing.
 
 .. image:: images/import_error_1b.png
-    :scale: 50 %
-
-----
-
-Imported library not used
---------------------------
-
-| If the microbit library is imported via ``import microbit``, all microbit code needs to start with ``microbit.``
-| In the code below, the line should be: ``microbit.display.scroll('hello')``.
-| If ``microbit.`` is left out, a red wavy line will be shown where the errors are.
-| ``display`` will not be recognised since python has not been told that it is in microbit library.
-| The microbit library will also appear not to be used.
-
-.. code-block:: python
-
-    import microbit
-
-
-    display.scroll('hello')
-
-.. image:: images/import_error_2.png
     :scale: 50 %
 
 ----
@@ -59,33 +47,24 @@ Misspelt library: undefined names
 
 ----
 
-Variable used which has no value
------------------------------------
+Imported library not used
+--------------------------
 
-| ``display.scroll('hello')`` will scroll 'hello' across the microbit.
-| If 'hello' is not in quotes, it will be treated as a variable.
-| If ``display.scroll(hello)`` is used by accident, leaving out the quotes, an **undefined name** error occurs. 
+| If the microbit library is imported via ``import microbit``, all microbit code needs to start with ``microbit.``.
+| In the code below, the line should be: ``microbit.display.scroll('hello')``.
+| If ``microbit.`` is left out, a red wavy line will be shown where the errors are.
+| ``display`` will not be recognised since python has not been told that it is in microbit library.
+| The microbit library will also appear not to be used.
 
 .. code-block:: python
 
-    from microbit import *
+    import microbit
 
 
-    display.scroll(hello)
+    display.scroll('hello')
 
-.. image:: images/undefined_name_1.png
+.. image:: images/import_error_2.png
     :scale: 50 %
-
-
-This can also be fixed by giving the variable a value, as shown below:
-
-.. code-block:: python
-    
-    from microbit import *
-
-
-    hello = 'Hi'
-    display.scroll(hello)
 
 ----
 
@@ -164,6 +143,35 @@ else: Missing colon
 
 
 
+----
 
+
+Variable used which has no value
+-----------------------------------
+
+| ``display.scroll('hello')`` will scroll 'hello' across the microbit.
+| If 'hello' is not in quotes, it will be treated as a variable.
+| If ``display.scroll(hello)`` is used by accident, leaving out the quotes, an **undefined name** error occurs. 
+
+.. code-block:: python
+
+    from microbit import *
+
+
+    display.scroll(hello)
+
+.. image:: images/undefined_name_1.png
+    :scale: 50 %
+
+
+This can also be fixed by giving the variable a value, as shown below:
+
+.. code-block:: python
+    
+    from microbit import *
+
+
+    hello = 'Hi'
+    display.scroll(hello)
 
 
