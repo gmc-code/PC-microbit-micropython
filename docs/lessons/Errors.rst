@@ -6,7 +6,7 @@ Mu editor Errors
 Import Errors
 ====================================================
 
-| A syntax error occur when the code language is not used proeprly.
+| A syntax error occur when the code language is not used properly.
 | The interpreter reports it in Mu editor when the **check** button is pressed.
 
 
@@ -23,7 +23,6 @@ Library not imported properly
 
 .. image:: images/import_error_1b.png
     :scale: 50 %
-    :align: left
 
 
 ----
@@ -66,7 +65,6 @@ Misspelt library: undefined names
 
 .. image:: images/import_error_3.png
     :scale: 50 %
-    :align: left
 
 ----
 
@@ -89,7 +87,6 @@ Variable used which has no value
 
 .. image:: images/undefined_name_1.png
     :scale: 50 %
-    :align: center
 
 
 This can also be fixed by giving the variable a value, as shown below:
@@ -105,8 +102,10 @@ This can also be fixed by giving the variable a value, as shown below:
 
 ----
 
-
 Missing colon
+====================================================
+
+If: Missing colon
 -----------------------------------
 
 | The correct code is below.
@@ -141,6 +140,52 @@ Missing colon
 | A red wavy line shown where the colon should have been. 
 | A blue wavy line shows where the unexpected indentation occurred.
 | The indentation is only needed after a colon.
+
+----
+
+else: Missing colon
+-----------------------------------
+
+| The correct code is below.
+| When the A button is pressed, 'A' will be scrolled.
+| If the A button is not pressed, 'X' will be scrolled.
+
+
+.. code-block:: python
+
+    from microbit import *
+
+
+    if button_a.is_presed():
+        display.scroll('A')
+    else:
+        display.scroll('X')        
+
+
+
+| If the colon is left out from the end of the ``else`` line, ``else`` , an error occurs.
+
+
+.. code-block:: python
+
+    from microbit import *
+
+
+    if button_a.is_presed():
+        display.scroll('A')
+    else
+        display.scroll('X')   
+
+
+
+.. image:: images/else_colon_error.png
+    :scale: 50 %
+
+
+| A red wavy line shown where the colon should have been. 
+| A blue wavy line shows where the unexpected indentation occurred.
+| The indentation is only needed after a colon.
+
 
 
 
