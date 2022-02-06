@@ -3,10 +3,15 @@ Mu editor Errors
 ====================================================
 
 | Working out what has gone wrong and how to fix it is a key part of everyday programming.
-| Some errors will not show up using the **check** button, but instead, will be scrolled on the microbit as an error message when the microbit is flashed.
-| They usually contains the line number for where you should start to identify and fix the issue.
+| Some errors will show up using the **check** button.
+| Some errors will not show up using the **check** button, but instead, will be scrolled on the microbit as an error message when the microbit is flashed. They usually contains the line number for where you should start to identify and fix the issue.
 
 | The examples below are the common errors that you need to be able to fix quickly.
+
+----
+
+Checking for errors
+---------------------------------------------
 
 | A syntax error occurs when the code language is not used properly.
 | Press the **check** button in Mu editor to view syntax errors and other errors.
@@ -19,7 +24,8 @@ Import Errors
 Library not imported properly
 ---------------------------------------------
 
-| Normally the full microbit is imported via ``from microbit import *``.
+| Normally the full microbit library is imported via ``from microbit import *``.
+| In the code below, the final ``*`` has been left out.
 
 .. code-block:: python
 
@@ -36,7 +42,7 @@ Library not imported properly
 Misspelt library: undefined names
 -----------------------------------
 
-| If the microbit library is misspelt, then an error occurs, as shown below.
+| If the microbit library is misspelt, then an **undefined names** error occurs, as shown below.
 
 .. code-block:: python
 
@@ -53,7 +59,7 @@ Imported library not used
 | If the microbit library is imported via ``import microbit``, all microbit code needs to start with ``microbit.``.
 | In the code below, the line should be: ``microbit.display.scroll('hello')``.
 | If ``microbit.`` is left out, a red wavy line will be shown where the errors are.
-| ``display`` will not be recognised since python has not been told that it is in microbit library.
+| ``display`` will not be recognised, (**undefined name**), since python has not been told that it is in microbit library.
 | The microbit library will also appear not to be used.
 
 .. code-block:: python
@@ -85,7 +91,7 @@ If: Missing colon
     if button_a.is_presed():
         display.scroll('A')
 
-| If the colon is left out from the end of the ``if`` line, ``if button_a.is_presed()`` , an error occurs.
+| If the colon is left out from the end of the ``if`` line, a **Syntax error** occurs.
 
 .. code-block:: python
 
@@ -98,13 +104,15 @@ If: Missing colon
 | A red wavy line shown where the colon should have been. 
 | A blue wavy line shows where the unexpected indentation occurred.
 | The indentation is only needed after a colon.
+| But, it is not the indentation that needs fixing; the colon just need adding.
+| This shows that it is important to fix code from the top of a python script.
 
 .. image:: images/if_colon_error.png
     :scale: 50 %
 
 ----
 
-else: Missing colon
+Else: Missing colon
 -----------------------------------
 
 | The correct code is below.
@@ -121,7 +129,7 @@ else: Missing colon
     else:
         display.scroll('X')        
 
-| If the colon is left out from the end of the ``else`` line, an error occurs.
+| If the colon is left out from the end of the ``else`` line, a **Syntax error** occurs.
 
 .. code-block:: python
 

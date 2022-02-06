@@ -42,11 +42,11 @@ Key references:
 
     lessons/Mu_editor.rst
     lessons/Microbit_library.rst
-    lessons/Errors.rst
+    lessons/Mu_editor_Errors.rst
     lessons/while_True_loops.rst
-    lessons/Sleep.rst
     lessons/Scroll_text.rst
     lessons/Show_text.rst
+    lessons/Sleep.rst
     lessons/Built_in_images.rst
     lessons/Buttons_and_selection.rst
     lessons/While_loops.rst

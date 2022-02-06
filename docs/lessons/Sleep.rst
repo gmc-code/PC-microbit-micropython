@@ -21,11 +21,24 @@ Sleep
     sleep(1000)
 
 | Sleeps are often used after displaying text and images to have a pause before other actions.
+| A 1000ms sleep has been placed after each scrolled text below.
 
+.. code-block:: python
+
+    from microbit import *
+
+
+    while True:
+        display.scroll('I like', delay=60)
+        sleep(1000)
+        display.scroll('school', delay=120)
+        sleep(1000)
+
+        
 ----
 
 .. admonition:: Questions
 
-    #. Write a sleep for half a second.
-    #. Write a sleep for two seconds. 
-    #. Write a sleep for a tenth of a second. 
+    #. Make the first sleep half a second.
+    #. Make the second sleep half a second.
+    #. Make one sleep 2 seconds and one sleep 250ms.  
