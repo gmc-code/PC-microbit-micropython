@@ -23,7 +23,7 @@ Library not imported properly
 
 .. image:: images/import_error_1b.png
     :scale: 50 %
-    :align: left
+    :align: center
 
 
 ----
@@ -49,7 +49,7 @@ Imported library not used
 
 .. image:: images/import_error_2.png
     :scale: 50 %
-    :align: left
+    :align: center
 
 
 ----
@@ -67,7 +67,7 @@ Misspelt library: undefined names
 
 .. image:: images/import_error_3.png
     :scale: 50 %
-    :align: left
+    :align: center
 
 ----
 
@@ -90,7 +90,7 @@ Variable used which has no value
 
 .. image:: images/undefined_name_1.png
     :scale: 50 %
-    :align: left
+    :align: center
 
 
 This can also be fixed by giving the variable a value, as shown below:
@@ -137,7 +137,7 @@ Missing colon
 
 .. image:: images/if _colon_error.png
     :scale: 50 %
-    :align: left
+    :align: center
 
 | A red wavy line shown where the colon should have been. 
 | A blue wavy line shows where the unexpected indentation occurred.
