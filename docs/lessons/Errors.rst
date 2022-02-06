@@ -90,7 +90,7 @@ Variable used which has no value
 
 .. image:: images/undefined_name_1.png
     :scale: 50 %
-    :align: left
+    :align: center
 
 
 This can also be fixed by giving the variable a value, as shown below:
@@ -137,7 +137,7 @@ Missing colon
 
 .. image:: images/if_colon_error.png
     :scale: 50 %
-    :align: left
+
 
 | A red wavy line shown where the colon should have been. 
 | A blue wavy line shows where the unexpected indentation occurred.
