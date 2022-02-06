@@ -49,7 +49,6 @@ Imported library not used
 
 .. image:: images/import_error_2.png
     :scale: 50 %
-    :align: left
 
 
 ----
