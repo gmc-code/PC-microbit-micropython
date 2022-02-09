@@ -98,7 +98,7 @@ If: Missing colon
     from microbit import *
 
 
-    if button_a.is_presed():
+    if button_a.is_presed()
         display.scroll('A')
 
 | A red wavy line shown where the colon should have been. 
@@ -136,7 +136,7 @@ Else: Missing colon
     from microbit import *
 
 
-    if button_a.is_presed():
+    if button_a.is_presed()
         display.scroll('A')
     else
         display.scroll('X')   

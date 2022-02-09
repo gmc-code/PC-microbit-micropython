@@ -264,7 +264,7 @@ Display.scroll using variables
 
 
             player = 'Kobe Bryant'
-            points = 33,643
+            points = 33643
             ave = 25.0
 
             while True:
