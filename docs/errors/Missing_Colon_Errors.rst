@@ -79,4 +79,44 @@ Else: Missing colon
 .. image:: images/else_colon_error.png
     :scale: 50 %
 
+----
 
+While: Missing colon
+-----------------------------------
+
+| If the colon is left out from the end of the ``while`` line, a **Syntax error** occurs.
+
+.. code-block:: python
+
+    from microbit import *
+
+
+    while True
+        display.scroll("A")
+
+| The Syntax error statement suggests to check for misisng characters. The end colon is missing.
+
+.. image:: images/while_missing_colon.png
+    :scale: 50 %
+
+----
+
+For: Missing colon
+-----------------------------------
+
+| If the colon is left out from the end of the ``for`` line, a **Syntax error** occurs.
+
+.. code-block:: python
+
+    from microbit import *
+
+
+    for num in range(5)
+        display.scroll(num)
+
+| The Syntax error statement suggests to check for misisng characters. The end colon is missing.
+
+.. image:: images/for_missing_colon.png
+    :scale: 50 %
+
+    
