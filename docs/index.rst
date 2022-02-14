@@ -68,14 +68,14 @@ Key references:
     :caption: Errors
     :numbered:
 
-    lessons/Types_of_Errors.rst
-    lessons/Library_Errors.rst
-    lessons/Indentation_Errors.rst    
-    lessons/Missing_Colon_Errors.rst
-    lessons/Variable_Errors.rst
-    lessons/Whitespace_Errors.rst    
-    lessons/Whitespace_NonErrors.rst
-    lessons/Other_Errors.rst
+    errors/Types_of_Errors.rst
+    errors/Library_Errors.rst
+    errors/Indentation_Errors.rst    
+    errors/Missing_Colon_Errors.rst
+    errors/Variable_Errors.rst
+    errors/Whitespace_Errors.rst    
+    errors/Whitespace_NonErrors.rst
+    errors/Other_Errors.rst
 
 .. toctree::
     :maxdepth: 2
