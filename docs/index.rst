@@ -65,20 +65,6 @@ Key references:
 
 .. toctree::
     :maxdepth: 2
-    :caption: Errors
-    :numbered:
-
-    errors/Types_of_Errors.rst
-    errors/Library_Errors.rst
-    errors/Indentation_Errors.rst    
-    errors/Missing_Colon_Errors.rst
-    errors/Variable_Errors.rst
-    errors/Whitespace_Errors.rst    
-    errors/Whitespace_NonErrors.rst
-    errors/Other_Errors.rst
-
-.. toctree::
-    :maxdepth: 2
     :caption: Lessons_1_Practice_Answers
     :numbered:
     :hidden:
@@ -122,6 +108,21 @@ Key references:
     python_basics/iteration.rst
     python_basics/functions.rst
     python_basics/variables_scope.rst
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Errors
+    :numbered:
+
+    errors/Types_of_Errors.rst
+    errors/Library_Errors.rst
+    errors/Indentation_Errors.rst    
+    errors/Missing_Colon_Errors.rst
+    errors/Variable_Errors.rst
+    errors/Whitespace_Errors.rst    
+    errors/Whitespace_NonErrors.rst
+    errors/Other_Errors.rst
 
 
 .. toctree::
