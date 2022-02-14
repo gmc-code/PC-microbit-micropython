@@ -65,6 +65,20 @@ Key references:
 
 .. toctree::
     :maxdepth: 2
+    :caption: Errors
+    :numbered:
+
+    lessons/Types_of_Errors.rst
+    lessons/Library_Errors.rst
+    lessons/Indentation_Errors.rst    
+    lessons/Missing_Colon_Errors.rst
+    lessons/Variable_Errors.rst
+    lessons/Whitespace_Errors.rst    
+    lessons/Whitespace_NonErrors.rst
+    lessons/Other_Errors.rst
+
+.. toctree::
+    :maxdepth: 2
     :caption: Lessons_1_Practice_Answers
     :numbered:
     :hidden:

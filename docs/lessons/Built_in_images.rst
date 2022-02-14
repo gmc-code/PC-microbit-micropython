@@ -89,6 +89,7 @@ Image lists
 
 | The code below displays a list of shapes, so the variable name chosen is ``shape_list``.
 | Whitespace (tabs, spaces, line endings) are ignored within a list, so a long list can be set out like that below, with all the Images lined up for easy reading.
+| Trailing commas are preferred in such lists, making it easy to extend the list with new lines.
 
 .. code-block:: python
 
@@ -101,7 +102,7 @@ Image lists
         Image.DIAMOND,
         Image.DIAMOND_SMALL,
         Image.SQUARE,
-        Image.SQUARE_SMALL
+        Image.SQUARE_SMALL,
     ]
     while True:
         display.show(shape_list, delay=100)

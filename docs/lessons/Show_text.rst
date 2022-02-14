@@ -266,7 +266,7 @@ Display.show using variables
 
 
             player = 'Kareem Abdul-Jabbar'
-            points = 38,387
+            points = 38387
             ave = 24.6
 
             while True:

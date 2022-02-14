@@ -1,5 +1,5 @@
-﻿Data Type,Example,Description
-Integers,``4`` or ``0`` or ``-5``,Positive and negative whole numbers
-Floats,``3.14``,Numbers with a decimal point 
-Strings,"``""Hello World""`` or ``'2.5'``",Characters enclosed by single or double quotation marks
-Booleans,``True`` or ``False``,Values representing true and false values
+﻿Data Type,Example,Description
+Integers,``4`` or ``0`` or ``-5``,Positive and negative whole numbers
+Floats,``3.14``,Numbers with a decimal point 
+Strings,"``""Hello World""`` or ``'2.5'``",Characters enclosed by single or double quotation marks
+Booleans,``True`` or ``False``,Values representing true and false values

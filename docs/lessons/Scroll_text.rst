@@ -164,7 +164,7 @@ Display.scroll using variables
     from microbit import *
 
 
-    str_value = "abc"
+    str_value = 'abc'
     while True:
         display.scroll(str_value)
 

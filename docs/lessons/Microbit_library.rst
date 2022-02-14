@@ -28,6 +28,10 @@ Import the microbit library
 
 | All microbit libraries or modules are imported at the top of the file.
 | Always place **2 blank lines** following the the importing of libraries to separate those lines from the rest of the code.
+| The PEP8 guide is to have 1 blank line after the library imports, but in more advanced cdoe, when classes or definitions are next, then since they should have 2 blank lines before and after them, it is just simpler to use 2 blank lines are importing.
+| For advanced users, see full PEP 8 guide at: https://www.python.org/dev/peps/pep-0008/
+
+----
 
 | For other forms of importing libraries see:
 | https://www.w3schools.com/python/python_modules.asp
