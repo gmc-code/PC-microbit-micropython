@@ -173,5 +173,5 @@ Write analog
 
 .. admonition:: Tasks
 
-    #. Write code so pulse all 3 LEDs.    
+    #. Write code so pulse all 3 LEDs.
 

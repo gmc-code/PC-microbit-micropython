@@ -59,7 +59,7 @@ To scroll the float, ``3.14``, across the display, use ``display.scroll(3.14)``:
 
 .. admonition:: Tasks
 
-    #. Write code to scroll your name.    
+    #. Write code to scroll your name.
     #. Write code to scroll your age.
     #. Write code to scroll the number of teams in the AFL.
     #. Write code to scroll the chances of getting a tail on a coin throw.
@@ -102,7 +102,7 @@ To scroll the float, 3.14159, across the display slowly, use a long delay of abo
 
 .. admonition:: Tasks
 
-    #. Write code, using the delay parameter, to scroll info about the number of people in your family.    
+    #. Write code, using the delay parameter, to scroll info about the number of people in your family.
     #. Write code, using the delay parameter, to scroll info about the number of rooms in your house.
     #. Write code, using the delay parameter, to scroll info about the your favourite phone app or electronic game.
 
@@ -282,7 +282,7 @@ Display.scroll full syntax
 
 .. py:function:: scroll(value, delay=150, \*, wait=True, loop=False, monospace=False)
 
-    | Scrolls ``value`` horizontally on the display.     
+    | Scrolls ``value`` horizontally on the display.
     | ``value`` can be an integer or float (a decimal) or a string.
     | The ``delay`` parameter controls how fast the text scrolls.
     | The default delay is 150ms. When no delay is specified the default of 150ms is used.

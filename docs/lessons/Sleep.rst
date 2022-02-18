@@ -41,4 +41,4 @@ Sleep
 
     #. Make the first sleep half a second.
     #. Make the second sleep half a second.
-    #. Make one sleep 2 seconds and one sleep 250ms.  
+    #. Make one sleep 2 seconds and one sleep 250ms.

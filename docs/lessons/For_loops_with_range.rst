@@ -121,7 +121,7 @@ Using range to count down with a negative step size
 .. admonition:: Tasks
 
     #. Using the range function, write a for loop that displays the numbers 9,7,5,3. 
-    #. Using the range function, write a for loop that displays the numbers 8,5,2.  
+    #. Using the range function, write a for loop that displays the numbers 8,5,2.
 
 
 

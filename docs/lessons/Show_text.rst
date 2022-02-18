@@ -49,7 +49,7 @@ To show the float, ``3.14``, one digit at a time on the display, use ``display.s
 
 .. admonition:: Tasks
 
-    #. Write code to show your house color.    
+    #. Write code to show your house color. 
     #. Write code to show your height in cm.
     #. Write code to show the chances of getting a 6 on a die throw.
 
@@ -131,7 +131,7 @@ To show the float, ``3.14159``, across the display slowly use a long delay of ab
 
 .. admonition:: Tasks
 
-    #. Write code, using a delay, to show info about the number of children in your family.    
+    #. Write code, using a delay, to show info about the number of children in your family.
     #. Write code, using a delay, to show a countdown from 5 to 0.
 
 ----

@@ -27,8 +27,8 @@ Selection
 
 | ``if``, ``elif`` and ``else`` provide choices or branches in the code.
 | They all are used in lines of code which end with a colon, ``:``.
-| Both ``if`` and  ``elif`` test a condition that returns ``True`` or ``False``. Their indented code block runs if the condition is True. e.g ``if button_a.is_pressed():``.
-| Multiple  ``elif`` can be used to provide more choices.
+| Both ``if`` and ``elif`` test a condition that returns ``True`` or ``False``. Their indented code block runs if the condition is True. e.g ``if button_a.is_pressed():``.
+| Multiple ``elif`` can be used to provide more choices.
 | The ``else`` block does not have a condition.
 | The ``else`` block only runs if all the previous conditions were ``False``.
 
@@ -141,7 +141,7 @@ If - elif - else
     :scale: 75 %
     :align: center
 
-| Using ``if``, ``elif`` and ``else`` together provides 3  branches in the code.
+| Using ``if``, ``elif`` and ``else`` together provides 3 branches in the code.
 | The code below checks if the A button is pressed and displays "A" if it is.
 | If A is not pressed, the code then checks if the B button is pressed and displays "B" if it is.
 | If neither A nor B is pressed, "X" is displayed.
@@ -178,7 +178,7 @@ If - elif - elif - else
     :scale: 75 %
     :align: center
 
-| Using ``if``, two ``elif`` and ``else`` together provides 4  branches in the code.
+| Using ``if``, two ``elif`` and ``else`` together provides 4 branches in the code.
 | The code below first checks whether both buttons are pressed. 
 | The logical keyword ``and`` requires both conditions to be True for the combined condition to be True.
 | If either button is not pressed the combined condition with be False.

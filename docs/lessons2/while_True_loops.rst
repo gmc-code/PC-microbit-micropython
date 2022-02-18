@@ -37,6 +37,6 @@ When testing code on the microbit, it can be useful to do it within a ``while Tr
 
     Find the error in the first line of these while loops.
 
-    #. ``while true:``
-    #. ``While True:``
+    #. ``while true:``   
+    #. ``While True:``  
     #. ``while True``

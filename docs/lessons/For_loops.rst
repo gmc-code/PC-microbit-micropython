@@ -22,8 +22,8 @@ For loops with strings
 
 .. admonition:: Tasks
 
-    #. Write a for loop to show each letter in 'winner'.    
-    #. Write a for loop to show each digit in '2021'.    
+    #. Write a for loop to show each letter in 'winner'.
+    #. Write a for loop to show each digit in '2021'.
 
 ----
 
@@ -113,6 +113,6 @@ Nested For loops
 
 .. admonition:: Tasks
 
-    #. Write a for loop that shows the result from multiplying each number in the list, ``[3, 5, 7]`` by 5.    
+    #. Write a for loop that shows the result from multiplying each number in the list, ``[3, 5, 7]`` by 5.
     #. Write a nested for loop that finds the sum of every different combination of two numbers from the two lists: ``[2, 4, 6]`` and ``[3, 5,7]``.
 

@@ -213,10 +213,3 @@ Sample Edited Scaffold
         elif button_b.is_pressed():
             use_LEDsB()
         sleep(100)
-
-
-
-
-
-
-
