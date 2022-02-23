@@ -56,11 +56,11 @@ Key references:
 
 .. toctree::
     :maxdepth: 2
-    :caption: Lessons_1_Projects
+    :caption: Lessons_1_Practice
     :numbered:
 
-    lessons/Project_1.rst
-    lessons/Project_2.rst
+    lessons/Practice_tasks_1.rst
+    lessons/Practice_tasks_2.rst
 
 
 .. toctree::
