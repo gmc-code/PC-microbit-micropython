@@ -27,6 +27,10 @@ Key references:
 
 ----
 
+====================================================
+Index:
+====================================================
+
 .. toctree::
     :maxdepth: 2
     :caption: Introduction
@@ -67,7 +71,6 @@ Key references:
     :maxdepth: 2
     :caption: Lessons_1_Practice_Answers
     :numbered:
-    :hidden:
 
     lessons/Practice_tasks_1_Answers.rst
     lessons/Practice_tasks_2_Answers.rst
@@ -77,7 +80,6 @@ Key references:
     :maxdepth: 2
     :caption: Lessons_2
     :numbered:
-
 
     lessons2/compass_syntax.rst
     lessons2/compass_directions.rst
@@ -146,4 +148,5 @@ Key references:
     :numbered:
 
     tutorials/heart_beat_simulation.rst
+
 
