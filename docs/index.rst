@@ -72,8 +72,8 @@ Index:
     :caption: Lessons_1_Practice_Answers
     :numbered:
 
-    lessons/Practice_tasks_1_Answers.rst
-    lessons/Practice_tasks_2_Answers.rst
+    .. lessons/Practice_tasks_1_Answers.rst
+    .. lessons/Practice_tasks_2_Answers.rst
 
 
 .. toctree::
@@ -86,7 +86,7 @@ Index:
     lessons2/thermometer.rst
     lessons2/accelerometer_syntax.rst
     lessons2/gestures.rst
-    lessons2/movement.rst
+    lessons2/movement.rstS
     lessons2/custom_images.rst
 
 
