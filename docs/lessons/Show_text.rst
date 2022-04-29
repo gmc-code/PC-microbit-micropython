@@ -75,7 +75,7 @@ Display.clear
     while True:
         display.show(3.14)
         display.clear()
-        sleep(500)
+        sleep(2000)
 
 ----
 
@@ -113,7 +113,7 @@ To show the string, '``Hi``', with a short delay of 200ms, use ``display.show('H
     while True:
         display.show('Hi', 200)
         display.clear()
-        sleep(500)
+        sleep(2000)
 
 To show the float, ``3.14159``, across the display slowly use a long delay of about 300ms via ``display.show(3.14159, delay=300)``:
 
@@ -125,7 +125,7 @@ To show the float, ``3.14159``, across the display slowly use a long delay of ab
     while True:
         display.show(3.14159, delay=300)
         display.clear()
-        sleep(500)
+        sleep(2000)
 
 ----
 
@@ -147,10 +147,10 @@ show at different speeds
 
 
     while True:
-        display.show('I like the ', delay=60)
-        display.show('NBA', delay=120)
+        display.show('I like the ', delay=200)
+        display.show('NBA', delay=400)
         display.clear()
-        sleep(500)
+        sleep(2000)
 
 ----
 
@@ -164,10 +164,10 @@ show at different speeds
 
 
         while True:
-            display.show('I like to', delay=60)
-            display.show('ride my bike', delay=120)
+            display.show('I like to', delay=200)
+            display.show('ride my bike', delay=400)
             display.clear()
-            sleep(500)
+            sleep(2000)
 
     1. Modify the code below to display your name and age in years.
 
@@ -177,12 +177,12 @@ show at different speeds
 
 
         while True:
-            display.show('My name is', 60)
-            display.show('?????', 120)
-            display.show('I am', 60)
-            display.show('??', 120)
+            display.show('My name is', 200)
+            display.show('?????', 400)
+            display.show('I am', 200)
+            display.show('??', 400)
             display.clear()
-            sleep(500)
+            sleep(2000)
 
 ----
 
@@ -206,11 +206,11 @@ Display.show using variables
         display.show('Player', 200)
         display.show(player, 400)
         display.show('Goals', 200)
-        display.show(goals, 400)
+        display.show(goals, 500)
         display.show('Goals per game', 200)
-        display.show(goals_per_game, 800)
+        display.show(goals_per_game, 600)
         display.clear()
-        sleep(500)
+        sleep(2000)
 
 ----
 
@@ -228,14 +228,14 @@ Display.show using variables
             goals_per_game = 0.78
 
             while True:
-                display.show('Player=', 50)
-                display.show(player, 100)
-                display.show('Goals=', 50)
-                display.show(goals, 150)
-                display.show('Goals per game=', 50)
-                display.show(goals_per_game, 300)
+                display.show('Player=', 200)
+                display.show(player, 300)
+                display.show('Goals=', 200)
+                display.show(goals, 400)
+                display.show('Goals per game=', 200)
+                display.show(goals_per_game, 500)
                 display.clear()
-                sleep(500)
+                sleep(2000)
 
     2. Modify the code below to display info for another great bowler.
 
@@ -249,14 +249,14 @@ Display.show using variables
             ave = 22.7
 
             while True:
-                display.show('Bowler=', 50)
-                display.show(bowler, 100)
-                display.show('Wickets=', 50)
-                display.show(wickets, 150)
-                display.show('Ave=', 50)
-                display.show(ave, 300)
+                display.show('Bowler=', 200)
+                display.show(bowler, 300)
+                display.show('Wickets=', 200)
+                display.show(wickets, 400)
+                display.show('Ave=', 200)
+                display.show(ave, 500)
                 display.clear()
-                sleep(500)
+                sleep(2000)
 
     3. Modify the code below to display info for another prolific NBA scorer.
 
@@ -270,12 +270,12 @@ Display.show using variables
             ave = 24.6
 
             while True:
-                display.scroll('player=', 50)
-                display.scroll(player, 80)
-                display.scroll('Points=', 50)
-                display.scroll(points, 150)
-                display.scroll('Ave=', 50)
-                display.scroll(ave, 300)
+                display.scroll('player=', 200)
+                display.scroll(player, 300)
+                display.scroll('Points=', 200)
+                display.scroll(points, 400)
+                display.scroll('Ave=', 200)
+                display.scroll(ave, 500)
 
 ----
 
