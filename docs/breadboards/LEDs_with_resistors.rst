@@ -29,7 +29,7 @@ Model
     :scale: 50 %
 
 .. image:: images/LEDS.jpg
-    :scale: 10 %
+    :scale: 20 %
 
 Write digital
 ----------------------------------------
