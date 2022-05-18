@@ -28,6 +28,8 @@ Model
 .. image:: images/3LEDS_3_bb.png
     :scale: 50 %
 
+.. image:: images/LEDS.jpg
+    :scale: 50 %
 
 Write digital
 ----------------------------------------

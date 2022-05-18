@@ -15,7 +15,16 @@ Columns
 
 | Holes in the same lettered column are not connected.
 
+----
 
+Rails
+--------------------------
+
+| Holes in the same rail are connected.
+
+
+.. image:: images/breadboard_landscape.png
+    :scale: 50 %
 
 
 
