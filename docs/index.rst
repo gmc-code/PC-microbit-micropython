@@ -44,7 +44,7 @@ Index:
     :caption: BreadBoards
     :numbered:
 
-    breadboards/Breadboard_intro.rst
+    breadboards/Breadboard_connections.rst
     breadboards/Edge_Connector.rst
     breadboards/LEDs_with_resistors.rst
     breadboards/Piezo_Buzzer_and_music.rst

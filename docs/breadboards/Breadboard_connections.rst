@@ -1,5 +1,5 @@
 ==========================
-Breadboard intro
+Breadboard connections
 ==========================
 
 Rows
