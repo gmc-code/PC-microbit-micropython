@@ -14,6 +14,10 @@ Model
 .. image:: images/potentiometer1_bb.png
     :scale: 50 %
 
+.. image:: images/potentiometer_1.jpg
+    :scale: 30 %
+
+----
 
 Read analog
 ----------------------------------------

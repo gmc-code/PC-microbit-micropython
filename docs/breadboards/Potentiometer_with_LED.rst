@@ -25,6 +25,11 @@ Model
     :scale: 50 %
 
 
+.. image:: images/potentiometer_2.jpg
+    :scale: 30 %
+
+----
+
 Read and Write analog
 ----------------------------------------
 

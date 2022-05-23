@@ -19,6 +19,10 @@ Model
     :scale: 50 %
 
 
+.. image:: images/buzzer.jpg
+    :scale: 30 %
+
+
 Library
 ----------------------------------------
 

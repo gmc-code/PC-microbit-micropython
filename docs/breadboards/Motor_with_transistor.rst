@@ -25,6 +25,8 @@ Model
 .. image:: images/motor_2b_bb.png
     :scale: 50 %
 
+.. image:: images/motor.jpg
+    :scale: 30 %
 
 
 Write digital
