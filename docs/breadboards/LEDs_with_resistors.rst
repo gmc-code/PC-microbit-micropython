@@ -146,7 +146,6 @@ Write analog
 .. code-block:: python
 
     from microbit import *
-    import random
 
 
     def pulse_on():
@@ -167,7 +166,7 @@ Write analog
 
     while True:
         if button_a.is_pressed():
-            pulpulse_on()
+            pulse_on()
         elif button_b.is_pressed():
             pulse_off()
         sleep(500)
