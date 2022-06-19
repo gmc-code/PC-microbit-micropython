@@ -39,35 +39,35 @@ Arithmetic operators are used with numbers to perform common mathematical operat
 
 | Modulus gives the remainder from a division.
 | Floor division rounds down the result from a division to the nearest integer.
-| Exponentiation raises to a power. 
+| Exponentiation raises to a power.
 
 .. code-block:: python
 
     a=9
     b=2
 
-    print('a =', a, ',', 'b =', b)
+    print('a =', a, ',', 'b =', b)
     # a = 9 , b = 2
 
-    print('Addition : a + b =', a + b)
+    print('Addition : a + b =', a + b)
     # Addition : a + b = 11
 
-    print('Subtraction : a - b =', a - b)
+    print('Subtraction : a - b =', a - b)
     # Subtraction : a - b = 7
 
-    print('Multiplication : a * b =', a * b)
+    print('Multiplication : a * b =', a * b)
     # Multiplication : a * b = 18
 
-    print('Division (float) : a / b =', a / b)
+    print('Division (float) : a / b =', a / b)
     # Division (float) : a / b = 4.5
 
-    print('Division (floor) : a // b =', a // b)
+    print('Division (floor) : a // b =', a // b)
     # Division (floor) : a // b = 4
 
-    print('Modulus (remainder) : a % b =', a % b)
+    print('Modulus (remainder) : a % b =', a % b)
     # Modulus (remainder) : a % b = 1
 
-    print('Exponent (power) : a ** b =', a ** b)
+    print('Exponent (power) : a ** b =', a ** b)
     # Exponent (power) : a ** b = 81
 
 
