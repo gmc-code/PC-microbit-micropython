@@ -41,21 +41,6 @@ Index:
 
 .. toctree::
     :maxdepth: 2
-    :caption: BreadBoards
-    :numbered:
-
-    breadboards/Breadboard_connections.rst
-    breadboards/Edge_Connector.rst
-    breadboards/LEDs_with_resistors.rst
-    breadboards/Piezo_Buzzer_and_music.rst
-    breadboards/Motor_with_transistor.rst
-    breadboards/Potentiometer.rst
-    breadboards/Potentiometer_with_LED.rst
-    breadboards/Combined_models.rst
-
-
-.. toctree::
-    :maxdepth: 2
     :caption: Lessons_1
     :numbered:
 
@@ -102,8 +87,8 @@ Index:
     :caption: Lessons_1_Practice_Answers
     :numbered:
 
-    lessons/Practice_tasks_1_Answers.rst
-    lessons/Practice_tasks_2_Answers.rst
+    ..lessons/Practice_tasks_1_Answers.rst
+    ..lessons/Practice_tasks_2_Answers.rst
 
 
 .. toctree::
@@ -118,6 +103,21 @@ Index:
     lessons2/gestures.rst
     lessons2/movement.rstS
     lessons2/custom_images.rst
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: BreadBoards
+    :numbered:
+
+    breadboards/Breadboard_connections.rst
+    breadboards/Edge_Connector.rst
+    breadboards/LEDs_with_resistors.rst
+    breadboards/Piezo_Buzzer_and_music.rst
+    breadboards/Motor_with_transistor.rst
+    breadboards/Potentiometer.rst
+    breadboards/Potentiometer_with_LED.rst
+    breadboards/Combined_models.rst
 
 
 .. toctree::
