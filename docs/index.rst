@@ -45,8 +45,8 @@ Index:
     :numbered:
 
     lessons/Mu_editor.rst
-    lessons/Microbit_library.rst
     lessons/Scroll_text.rst
+    lessons/Microbit_library.rst
     lessons/while_True_loops.rst
     lessons/Mu_editor_Errors.rst
     lessons/Sleep.rst
