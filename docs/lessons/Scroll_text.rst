@@ -138,7 +138,7 @@ scroll at different speeds
             display.scroll('table tennis', delay=120)
 
 
-    1. Modify the code below to display your name and age in years.
+    2. Modify the code below to display your name and age in years.
 
     .. code-block:: python
 
@@ -231,7 +231,7 @@ Display.scroll using variables
 
             while True:
                 display.scroll('Player=', 50)
-                display.scroll(player, 80)
+                display.scroll(player, 100)
                 display.scroll('Goals=', 50)
                 display.scroll(goals, 150)
                 display.scroll('Goals per game=', 50)
@@ -250,7 +250,7 @@ Display.scroll using variables
 
             while True:
                 display.scroll('Batsman=', 50)
-                display.scroll(batsman, 80)
+                display.scroll(batsman, 100)
                 display.scroll('Runs=', 50)
                 display.scroll(runs, 150)
                 display.scroll('Ave=', 50)
@@ -269,7 +269,7 @@ Display.scroll using variables
 
             while True:
                 display.scroll('player=', 50)
-                display.scroll(player, 80)
+                display.scroll(player, 100)
                 display.scroll('Points=', 50)
                 display.scroll(points, 150)
                 display.scroll('Ave=', 50)
