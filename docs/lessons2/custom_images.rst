@@ -17,10 +17,14 @@ Image strings
 | The 25 values are broken up into 5 lines of 5 with a colon between them.
 | e.g. Image('01234:56789:09090:98765:43210')
 
-| The code below shows a large bright square.
 .. image:: images/square.png
     :scale: 50 %
-    :align: center
+    :align: right
+    
+| The code below shows a large bright square.
+
+
+
 .. code-block:: python
 
     from microbit import *

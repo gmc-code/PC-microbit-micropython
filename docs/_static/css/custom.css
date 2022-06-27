@@ -87,16 +87,20 @@ div.admonition-projects p.admonition-title {
 
 
 /* ========================================== */
+/* Hide "Search" section from versions menu */
+div.rst-versions > div.rst-other-versions > div.injected > dl:nth-child(5) {
+    display: none;
+}
 /* Hide "On GitHub" section from versions menu */
 div.rst-versions > div.rst-other-versions > div.injected > dl:nth-child(4) {
     display: none;
 }
-/* Hide "versions" section from versions menu */
-div.rst-versions > div.rst-other-versions > div.injected > dl:nth-child(1) {
-    display: none;
-}
 /* Hide "On Read the Docs" section from versions menu */
 div.rst-versions > div.rst-other-versions > div.injected > dl:nth-child(3) {
+    display: none;
+}
+/* Hide "versions" section from versions menu */
+div.rst-versions > div.rst-other-versions > div.injected > dl:nth-child(1) {
     display: none;
 }
 
