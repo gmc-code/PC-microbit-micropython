@@ -18,7 +18,9 @@ Image strings
 | e.g. Image('01234:56789:09090:98765:43210')
 
 | The code below shows a large bright square.
-
+.. image:: images/square.png
+    :scale: 50 %
+    :align: center
 .. code-block:: python
 
     from microbit import *
@@ -26,9 +28,7 @@ Image strings
 
     display.show(Image('99999:90009:90009:90009:99999'))
 
-.. image:: images/square.png
-    :scale: 100 %
-    :align: center
+
 
 ----
 
