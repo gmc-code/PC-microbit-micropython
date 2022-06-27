@@ -107,6 +107,14 @@ Index:
 
 .. toctree::
     :maxdepth: 2
+    :caption: Radio
+    :numbered:
+
+    radio/radio.rst
+
+
+.. toctree::
+    :maxdepth: 2
     :caption: BreadBoards
     :numbered:
 

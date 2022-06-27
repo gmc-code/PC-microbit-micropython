@@ -17,14 +17,20 @@ Image strings
 | The 25 values are broken up into 5 lines of 5 with a colon between them.
 | e.g. Image('01234:56789:09090:98765:43210')
 
-| The code below shows a large dull square.
+| The code below shows a large bright square.
 
 .. code-block:: python
 
     from microbit import *
 
 
-    display.show(Image('11111:10001:10001:10001:11111'))
+    display.show(Image('99999:90009:90009:90009:99999'))
+
+.. image:: images/square.png
+    :scale: 100 %
+    :align: center
+
+----
 
 | The code below shows a vertical brightness gradient (dull to bright) from the top to the bottom.
 
