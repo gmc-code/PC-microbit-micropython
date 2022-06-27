@@ -15,12 +15,15 @@ Image strings
 
 | The image can be a string made up of a 25 integers where each integer is the brightness from 0 to 9, where 0 if off and 9 is full brightness.
 | The 25 values are broken up into 5 lines of 5 with a colon between them.
-| e.g. Image('01234:56789:09090:98765:43210')
+| e.g. ``Image('01234:56789:09090:98765:43210')``
 
-.. image:: images/square.png
-    :scale: 50 %
-    :align: right
-    
+.. sidebar::
+
+    .. image:: images/square.png
+        :scale: 50 %
+        :align: right
+
+
 | The code below shows a large bright square.
 
 
