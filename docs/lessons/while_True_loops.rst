@@ -40,3 +40,37 @@ When testing code on the microbit, it can be useful to do it within a ``while Tr
     #. ``while true:``
     #. ``While True:``
     #. ``while True``
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                ``while true:``
+
+                .. code-block:: python
+
+                    # must have uppper case T
+                    ``while True:``
+
+            .. tab-item:: Q2
+
+                ``While True:``
+
+                .. code-block:: python
+
+                    # must have lower case w
+                    ``while True:`
+
+            .. tab-item:: Q3
+
+                ``while True``
+
+                .. code-block:: python
+
+                    # must have colon at end
+                    ``while True:`
