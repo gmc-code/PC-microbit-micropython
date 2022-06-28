@@ -120,6 +120,7 @@ Step size
 
 ----
 
+
 .. admonition:: Tasks
 
     #. Write a while loop that counts up from 1 to 5, showing the numbers 1,2,3,4,5.
