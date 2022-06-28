@@ -86,20 +86,11 @@ div.admonition-projects p.admonition-title {
 
 
 /* ========================================== */
-/* Custom dropdown */
+/* Custom dropdown light green bg */
 
 .sd-dropdown-container{
     background-color: #eeffee;
 }
-
-.sd-dropdown-title{
-    background-color: #001a07;
-}
-
-.sd-dropdown-body{
-    background-color: #eeffee;
-}
-
 
 /* ========================================== */
 /* Hide "Search" section from versions menu */
