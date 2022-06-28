@@ -109,6 +109,9 @@ details.sd-dropdown .sd-summary-up, details.sd-dropdown .sd-summary-down {
 .sd-tab-set {
     margin: 0.1em 0.1em;
 }
+.sd-card-body {
+    padding: 0.2rem 0.5rem;
+}
 
 /* ========================================== */
 /* Hide "Search" section from versions menu */

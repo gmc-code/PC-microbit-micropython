@@ -47,6 +47,7 @@ Global  Variables
 
     from microbit import *
 
+
     name = "Joe"
     age = 12
 
@@ -74,6 +75,7 @@ Use arguments instead of global variables
 
     from microbit import *
 
+
     name = "Joe"
     age = 12
 
@@ -96,7 +98,8 @@ Nonlocal variables
 
 .. code-block:: python
 
-    from microbit imp4
+    from microbit import *
+
 
     def outer_func():
         x = 3
@@ -116,9 +119,10 @@ Nonlocal variables
 
 .. code-block:: python
 
-# variable scope 5
+    # variable scope 5
 
     from microbit import *
+
 
     def outer_func():
         x = 3
