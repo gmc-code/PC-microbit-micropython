@@ -186,7 +186,8 @@ Step size
 
 .. admonition:: Answers
 
-    .. dropdown:: Answers
+    .. dropdown::
+        :icon: codescan
 
         .. tab-set::
 
