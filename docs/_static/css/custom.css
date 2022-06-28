@@ -91,6 +91,11 @@ div.admonition-projects p.admonition-title {
     background-color: #eeffee;
 }
 
+/* Custom dropdown reduce padding */
+details.sd-dropdown summary {
+    padding: 0.2em;
+}
+
 /* Custom dropdown move arrow on right up 0.5em cf default */
 details.sd-dropdown .sd-summary-up, details.sd-dropdown .sd-summary-down {
     top: 0.4em;
