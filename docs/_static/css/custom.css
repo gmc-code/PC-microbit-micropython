@@ -87,9 +87,13 @@ div.admonition-projects p.admonition-title {
 
 /* ========================================== */
 /* Custom dropdown light green bg */
-
 .sd-dropdown-container{
     background-color: #eeffee;
+}
+
+/* Custom dropdown move arrow on right up 0.5em cf default */
+details.sd-dropdown .sd-summary-up, details.sd-dropdown .sd-summary-down {
+    top: 0.4em;
 }
 
 /* ========================================== */
