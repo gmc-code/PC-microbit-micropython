@@ -66,11 +66,11 @@ To show the float, ``3.14``, one digit at a time on the display, use ``display.s
 
                 .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
 
-                        while True:
-                            display.show("Hughes")
+                    while True:
+                        display.show("Hughes")
 
             .. tab-item:: Q2
 
@@ -78,11 +78,11 @@ To show the float, ``3.14``, one digit at a time on the display, use ``display.s
 
                 .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
 
-                        while True:
-                            display.show(182)
+                    while True:
+                        display.show(182)
 
             .. tab-item:: Q3
 
@@ -90,11 +90,11 @@ To show the float, ``3.14``, one digit at a time on the display, use ``display.s
 
                 .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
 
-                        while True:
-                            display.show(0.16)
+                    while True:
+                        display.show(0.16)
 
 
 
@@ -157,13 +157,13 @@ Display.clear
 
                 .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
 
-                        while True:
-                            display.show(123)
-                            display.clear()
-                            sleep(1000)
+                    while True:
+                        display.show(123)
+                        display.clear()
+                        sleep(1000)
 
            .. tab-item:: Q2
 
@@ -171,13 +171,13 @@ Display.clear
 
                 .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
 
-                        while True:
-                            display.show("ABC")
-                            display.clear()
-                            sleep(500)
+                    while True:
+                        display.show("ABC")
+                        display.clear()
+                        sleep(500)
 
 
 ----
@@ -236,13 +236,13 @@ To show the float, ``3.14159``, across the display slowly use a medium delay of 
 
                 .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
 
-                        while True:
-                            display.show(99.94, delay=200)
-                            display.clear()
-                            sleep(1000)
+                    while True:
+                        display.show(99.94, delay=200)
+                        display.clear()
+                        sleep(1000)
 
            .. tab-item:: Q2
 
@@ -250,13 +250,13 @@ To show the float, ``3.14159``, across the display slowly use a medium delay of 
 
                 .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
 
-                         while True:
-                            display.show(5.64, delay=150)
-                            display.clear()
-                            sleep(500)
+                        while True:
+                        display.show(5.64, delay=150)
+                        display.clear()
+                        sleep(500)
 
 
 ----
