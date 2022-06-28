@@ -165,7 +165,7 @@ Display.clear
                         display.clear()
                         sleep(1000)
 
-           .. tab-item:: Q2
+            .. tab-item:: Q2
 
                 Write code to show "ABC", then clear the screen for half a sec.
 
@@ -244,7 +244,7 @@ To show the float, ``3.14159``, across the display slowly use a medium delay of 
                         display.clear()
                         sleep(1000)
 
-           .. tab-item:: Q2
+            .. tab-item:: Q2
 
                 Write code, using a short delay of 150ms, to show 5.64, then clear the screen for half a sec.
 
