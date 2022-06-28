@@ -123,7 +123,7 @@ Step size
 .. admonition:: Tasks
 
     #. Write a while loop that counts up from 1 to 5, showing the numbers 1,2,3,4,5.
-        #. .. toggle::
+        .. toggle::
 
         .. code-block:: python
 
@@ -147,11 +147,11 @@ Step size
  
     .. tab-set::
 
-        .. tab-item:: Q
+        .. tab-item:: Q1
 
             Write a while loop that counts up from 1 to 5, showing the numbers 1,2,3,4,5.
 
-        .. tab-item:: A
+        .. tab-item:: A1
 
             .. code-block:: python
 
@@ -164,3 +164,19 @@ Step size
                         display.scroll(i, delay=50)
                         i += 1
 
+        .. tab-item:: Q2
+
+            Write a while loop that counts up from 3 to 12 in steps of 3, scrolling the numbers 3,6,9,12.
+
+        .. tab-item:: A2
+
+            .. code-block:: python
+
+                from microbit import *
+
+
+                while True:
+                    i = 3
+                    while i < 13:
+                        display.scroll(i, delay=50)
+                        i += 3
