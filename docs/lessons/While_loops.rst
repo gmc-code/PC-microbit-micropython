@@ -209,7 +209,7 @@ Step size
  
     .. dropdown::
         :icon: codescan
-        :color: 6ab0de
+        :color: primary
 
         .. tab-set::
 
@@ -279,7 +279,7 @@ Step size
 
 ----
 
-.. admonition:: Tasks
+.. admonition:: Answers
 
     #. Write a while loop that counts up from 1 to 5, showing the numbers 1,2,3,4,5.
     #. Write a while loop that counts up from 3 to 12 in steps of 3, scrolling the numbers 3,6,9,12.
