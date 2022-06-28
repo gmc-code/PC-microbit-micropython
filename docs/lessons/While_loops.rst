@@ -129,8 +129,10 @@ Step size
 
     .. admonition:: Answers
 
-        .. dropdown::
+        .. dropdown:: Answeraadas
             :icon: codescan
+            :color: success
+            :class-container: sd-dropdown-container
 
             .. tab-set::
 
@@ -205,7 +207,7 @@ Step size
     #. Write a while loop that counts down from 9 to 1, showing the numbers 9,8,7,6,5,4,3,2,1.
     #. Write a while loop that counts down from 24 to 18 in steps of 2, scrolling the numbers 24,22,20,18.
  
-    .. dropdown::
+    .. dropdown:: Answeraadas
         :icon: codescan
         :color: success
         :class-container: sd-dropdown-container
