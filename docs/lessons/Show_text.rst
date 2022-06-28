@@ -53,7 +53,7 @@ To show the float, ``3.14``, one digit at a time on the display, use ``display.s
     #. Write code to show your height in cm.
     #. Write code to show the chances of getting a 6 on a die throw.
 
-   .. dropdown::
+    .. dropdown::
         :icon: codescan
         :color: primary
         :class-container: sd-dropdown-container
@@ -144,7 +144,7 @@ Display.clear
     #. Write code to show "ABC", then clear the screen for 2 sec.
 
 
-   .. dropdown::
+    .. dropdown::
         :icon: codescan
         :color: primary
         :class-container: sd-dropdown-container
@@ -223,7 +223,7 @@ To show the float, ``3.14159``, across the display slowly use a medium delay of 
     #. Write code, using a short delay of 150ms, to show 5.64, then clear the screen for half a sec.
 
 
-   .. dropdown::
+    .. dropdown::
         :icon: codescan
         :color: primary
         :class-container: sd-dropdown-container

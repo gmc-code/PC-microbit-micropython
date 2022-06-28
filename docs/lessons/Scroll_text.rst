@@ -64,6 +64,65 @@ To scroll the float, ``3.14``, across the display, use ``display.scroll(3.14)``:
     #. Write code to scroll the number of teams in the AFL.
     #. Write code to scroll the chances of getting a tail on a coin throw.
 
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Write code to scroll your name.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+
+                    while True:
+                        display.show("Gerard")
+
+            .. tab-item:: Q2
+
+                Write code to scroll your age.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+
+                    while True:
+                        display.show(35)
+
+
+            .. tab-item:: Q3
+
+                Write code to scroll the number of teams in the AFL.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+
+                    while True:
+                        display.show(18)
+
+
+            .. tab-item:: Q4
+
+                Write code to scroll the chances of getting a tail on a coin throw.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+
+                    while True:
+                        display.show(0.5)
+
+
+
 ----
 
 Display.scroll with delay
@@ -77,7 +136,7 @@ Display.scroll with delay
     | The default delay is 150ms. When no delay is specified the default of 150ms is used.
     | The delay can be specified with the parameter name as in ``display.scroll('Hi', delay=150)``, or just as a number as the second argument as in ``display.scroll('Hi', 150)``.
 
-To scroll the string, 'Hi', across the display quickly, use a short delay of about 50ms:
+To scroll the string, 'Hi', across the display rapidly, use a short delay of 50ms:
 
 .. code-block:: python
 
@@ -88,7 +147,7 @@ To scroll the string, 'Hi', across the display quickly, use a short delay of abo
         display.scroll('Hi', 50)
 
 
-To scroll the float, 3.14159, across the display slowly, use a long delay of about 300:
+To scroll the float, 3.14159, across the display slowly, use a long delay of 300ms:
 
 .. code-block:: python
 
@@ -98,13 +157,68 @@ To scroll the float, 3.14159, across the display slowly, use a long delay of abo
     while True:
         display.scroll(3.14159, delay=300)
 
+
+To scroll a date as text, "Dec 25", across the display quickly, use a short delay of 100ms:
+
+.. code-block:: python
+
+    from microbit import *
+
+
+    while True:
+        display.scroll("Dec 25", delay=300)
+
 ----
 
 .. admonition:: Tasks
 
-    #. Write code, using the delay parameter, to scroll info about the number of people in your family.
-    #. Write code, using the delay parameter, to scroll info about the number of rooms in your house.
-    #. Write code, using the delay parameter, to scroll info about the your favourite phone app or electronic game.
+    #. Write code, using a short delay, to scroll info about the number of people in your family.
+    #. Write code, using a short delay, to scroll info about the number of rooms in your house.
+    #. Write code, using a short delay, to scroll info about your birth year.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Write code, using a short delay, to scroll info about the number of people in your family.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+
+                    while True:
+                        display.show("5 in family")
+
+            .. tab-item:: Q2
+
+                Write code, using a short delay, to scroll info about the number of rooms in your house.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+
+                    while True:
+                        display.show("12 rooms")
+
+            .. tab-item:: Q3
+
+                Write code, using a short delay, to scroll info about your birth year.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+
+                    while True:
+                        display.show("Born 1987")
+
 
 ----
 
@@ -150,6 +264,7 @@ scroll at different speeds
             display.scroll('?????', 120)
             display.scroll('I am', 60)
             display.scroll('??', 120)
+
 
 ----
 
@@ -287,7 +402,7 @@ Display.scroll full syntax
     | The ``delay`` parameter controls how fast the text scrolls.
     | The default delay is 150ms. When no delay is specified the default of 150ms is used.
 
-    The use of ``\*,`` in the syntax is to indicate that for those parameters after it, ``wait``, ``loop`` and ``monospace``, the arguments must be specified using their keyword.
+    The use of ``\*,`` in the syntax is to indicate that for those parameters after it, ``wait``, ``loop`` and ``monospace``, the arguments must be specified using their keyword. e.g ``wait=True`` is needed; not simply ``True``.
 
     If ``wait`` is ``True``, this function will block until the animation is
     finished, otherwise the animation will happen in the background.
@@ -303,9 +418,4 @@ Display.scroll full syntax
 .. admonition:: Tasks
 
     1. Experiment with the ``scroll`` named parameters by trying them out with True or False to see what effect they have.
-
-
-
-
-
 
