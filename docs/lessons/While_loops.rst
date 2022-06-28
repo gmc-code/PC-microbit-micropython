@@ -208,6 +208,7 @@ Step size
     .. dropdown::
         :icon: codescan
         :color: success
+        :class-container: sd-dropdown-container
 
         .. tab-set::
 

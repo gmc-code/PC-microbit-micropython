@@ -85,6 +85,14 @@ div.admonition-projects p.admonition-title {
 }
 
 
+/* ========================================== */
+/* Custom admonition */
+
+.sd-dropdown-container{
+    border: 2px solid;
+    background-color: #6ab0de;
+}
+
 
 /* ========================================== */
 /* Hide "Search" section from versions menu */
