@@ -86,11 +86,18 @@ div.admonition-projects p.admonition-title {
 
 
 /* ========================================== */
-/* Custom admonition */
+/* Custom dropdown */
 
 .sd-dropdown-container{
-    border: 2px solid;
-    background-color: #6ab0de;
+    background-color: #b5fdc7;
+}
+
+.sd-dropdown-title{
+    background-color: #001a07;
+}
+
+.sd-dropdown-body{
+    background-color: #2a9144;
 }
 
 

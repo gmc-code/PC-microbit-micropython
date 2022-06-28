@@ -209,6 +209,8 @@ Step size
         :icon: codescan
         :color: success
         :class-container: sd-dropdown-container
+        :class-title: sd-dropdown-title
+        :class-body: sd-dropdown-body
 
         .. tab-set::
 
