@@ -40,5 +40,58 @@ Sleep
 .. admonition:: Questions
 
     #. Make the first sleep half a second.
-    #. Make the second sleep half a second.
-    #. Make one sleep 2 seconds and one sleep 250ms.
+    #. Make the second sleep a quarter of a second.
+    #. Make the first sleep 2 seconds and the second sleep 200ms.
+    
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Make the first sleep half a second.
+
+                .. code-block:: python
+
+                        from microbit import *
+
+
+                        while True:
+                            display.scroll('I like', delay=60)
+                            sleep(500)
+                            display.scroll('school', delay=120)
+                            sleep(1000)
+
+
+            .. tab-item:: Q2
+
+                Make the second sleep a quarter of a second.
+
+                .. code-block:: python
+
+                        from microbit import *
+
+
+                        while True:
+                            display.scroll('I like', delay=60)
+                            sleep(1000)
+                            display.scroll('school', delay=120)
+                            sleep(250)
+
+            .. tab-item:: Q3
+
+                Make the first sleep 2 seconds and the second sleep 200ms.
+
+                .. code-block:: python
+
+                        from microbit import *
+
+
+                        while True:
+                            display.scroll('I like', delay=60)
+                            sleep(2000)
+                            display.scroll('school', delay=120)
+                            sleep(200)

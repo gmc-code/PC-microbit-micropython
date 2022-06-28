@@ -49,9 +49,54 @@ To show the float, ``3.14``, one digit at a time on the display, use ``display.s
 
 .. admonition:: Tasks
 
-    #. Write code to show your house color. 
+    #. Write code to show your school house color. 
     #. Write code to show your height in cm.
     #. Write code to show the chances of getting a 6 on a die throw.
+
+   .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Write code to show your school house color.
+
+                .. code-block:: python
+
+                        from microbit import *
+
+
+                        while True:
+                            display.show("Hughes")
+
+            .. tab-item:: Q2
+
+                Write code to show your height in cm.
+
+                .. code-block:: python
+
+                        from microbit import *
+
+
+                        while True:
+                            display.show(182)
+
+            .. tab-item:: Q3
+
+                Write code to show the chances of getting a 6 on a die throw.
+
+                .. code-block:: python
+
+                        from microbit import *
+
+
+                        while True:
+                            display.show(0.16)
+
+
 
 ----
 
@@ -91,6 +136,49 @@ Display.clear
         while True:
             display.show(3.14, clear=True)
 
+----
+
+.. admonition:: Tasks
+
+    #. Write code to show 123, then clear the screen for 1 sec.
+    #. Write code to show "ABC", then clear the screen for 2 sec.
+
+
+   .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Write code to show 123, then clear the screen for 1 sec.
+
+                .. code-block:: python
+
+                        from microbit import *
+
+
+                        while True:
+                            display.show(123)
+                            display.clear()
+                            sleep(1000)
+
+           .. tab-item:: Q2
+
+                Write code to show "ABC", then clear the screen for half a sec.
+
+                .. code-block:: python
+
+                        from microbit import *
+
+
+                        while True:
+                            display.show("ABC")
+                            display.clear()
+                            sleep(500)
+
 
 ----
 
@@ -115,7 +203,7 @@ To show the string, '``Hi``', with a short delay of 200ms, use ``display.show('H
         display.clear()
         sleep(2000)
 
-To show the float, ``3.14159``, across the display slowly use a long delay of about 300ms via ``display.show(3.14159, delay=300)``:
+To show the float, ``3.14159``, across the display slowly use a medium delay of 300ms via ``display.show(3.14159, delay=300)``:
 
 .. code-block:: python
 
@@ -131,8 +219,45 @@ To show the float, ``3.14159``, across the display slowly use a long delay of ab
 
 .. admonition:: Tasks
 
-    #. Write code, using a delay, to show info about the number of children in your family.
-    #. Write code, using a delay, to show a countdown from 5 to 0.
+    #. Write code, using a short delay of 200ms, to show 99.94, then clear the screen for 1 sec.
+    #. Write code, using a short delay of 150ms, to show 5.64, then clear the screen for half a sec.
+
+
+   .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Write code, using a short delay of 200ms, to show 99.94, then clear the screen for 1 sec.
+
+                .. code-block:: python
+
+                        from microbit import *
+
+
+                        while True:
+                            display.show(99.94, delay=200)
+                            display.clear()
+                            sleep(1000)
+
+           .. tab-item:: Q2
+
+                Write code, using a short delay of 150ms, to show 5.64, then clear the screen for half a sec.
+
+                .. code-block:: python
+
+                        from microbit import *
+
+
+                         while True:
+                            display.show(5.64, delay=150)
+                            display.clear()
+                            sleep(500)
+
 
 ----
 
@@ -169,7 +294,7 @@ show at different speeds
             display.clear()
             sleep(2000)
 
-    1. Modify the code below to display your name and age in years.
+    2. Modify the code below to display your name and age in years.
 
     .. code-block:: python
 
