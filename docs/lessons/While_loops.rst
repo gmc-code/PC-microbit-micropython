@@ -38,6 +38,43 @@ Events as conditions
     #. Write a while loop that displays a happy face while the A button is pressed, and when it is not, Image.ALL_CLOCKS is used to display a rotating clock hand.
     #. Write a while loop that displays a sad face while the B button is pressed, and when it is not, Image.ALL_CLOCKS is used to display a rotating clock hand.
 
+    .. dropdown::
+        :icon: codescan
+        :color: success
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Write a while loop that displays a happy face while the A button is pressed, and when it is not, Image.ALL_CLOCKS is used to display a rotating clock hand.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+
+                    while True:
+                        while button_a.is_pressed():
+                            display.show(Image.HAPPY)
+                            sleep(300)
+                        display.show(Image.ALL_CLOCKS, delay=50)
+
+            .. tab-item:: Q2
+
+                Write a while loop that displays a sad face while the B button is pressed, and when it is not, Image.ALL_CLOCKS is used to display a rotating clock hand.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+
+                    while True:
+                        while button_b.is_pressed():
+                            display.show(Image.SAD)
+                            sleep(300)
+                        display.show(Image.ALL_CLOCKS, delay=50)
+
 ----
 
 Counters
@@ -117,86 +154,6 @@ Step size
         while i < 11:
             display.scroll(i, delay=50)
             i += 2
-
-----
-
-
-.. admonition:: Tasks
-
-    #. Write a while loop that counts up from 1 to 5, showing the numbers 1,2,3,4,5.
-    #. Write a while loop that counts up from 3 to 12 in steps of 3, scrolling the numbers 3,6,9,12.
-    #. Write a while loop that counts down from 9 to 1, showing the numbers 9,8,7,6,5,4,3,2,1.
-    #. Write a while loop that counts down from 24 to 18 in steps of 2, scrolling the numbers 24,22,20,18.
-
-    .. admonition:: Answers
-
-        .. dropdown::
-            :icon: codescan
-            :class-container: sd-dropdown-container
-
-            .. tab-set::
-
-                .. tab-item:: Q1
-
-                    Write a while loop that counts up from 1 to 5, showing the numbers 1,2,3,4,5.
-
-                    .. code-block:: python
-
-                        from microbit import *
-
-
-                        while True:
-                            i = 1
-                            while i < 6:
-                                display.scroll(i, delay=50)
-                                i += 1
-
-                .. tab-item:: Q2
-
-                    Write a while loop that counts up from 3 to 12 in steps of 3, scrolling the numbers 3,6,9,12.
-
-                    .. code-block:: python
-
-                        from microbit import *
-
-
-                        while True:
-                            i = 3
-                            while i < 13:
-                                display.scroll(i, delay=50)
-                                i += 3
-
-
-                .. tab-item:: Q3
-
-                    Write a while loop that counts down from 9 to 1, showing the numbers 9,8,7,6,5,4,3,2,1.
-
-                    .. code-block:: python
-
-                        from microbit import *
-
-
-                        while True:
-                            i = 9
-                            while i > 0:
-                                display.scroll(i, delay=50)
-                                i -= 1
-
-
-                .. tab-item:: Q4
-
-                    Write a while loop that counts down from 24 to 18 in steps of 2, scrolling the numbers 24,22,20,18.
-
-                    .. code-block:: python
-
-                        from microbit import *
-
-
-                        while True:
-                            i = 24
-                            while i > 17:
-                                display.scroll(i, delay=50)
-                                i -= 2
 
 ----
 
