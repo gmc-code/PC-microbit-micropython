@@ -209,8 +209,8 @@ Step size
  
     .. dropdown::
         :icon: codescan
-        :color: primary
-        
+        :color: #6ab0de
+
         .. tab-set::
 
             .. tab-item:: Q1
