@@ -40,7 +40,7 @@ Events as conditions
 
     .. dropdown::
         :icon: codescan
-        :color: success
+        :color: primary
         :class-container: sd-dropdown-container
 
         .. tab-set::
@@ -166,7 +166,7 @@ Step size
  
     .. dropdown::
         :icon: codescan
-        :color: success
+        :color: primary
         :class-container: sd-dropdown-container
 
         .. tab-set::
