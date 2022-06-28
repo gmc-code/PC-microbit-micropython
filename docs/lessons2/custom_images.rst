@@ -21,7 +21,7 @@ Image strings
 
     .. image:: images/square.png
         :scale: 50 %
-        :align: right
+        :align: center
 
 
 | The code below shows a large bright square.
