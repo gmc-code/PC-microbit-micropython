@@ -288,7 +288,7 @@ Step size
  
     .. dropdown::
         :icon: codescan
-        :color: light-highlight
+        :color: info
 
         .. tab-set::
 
