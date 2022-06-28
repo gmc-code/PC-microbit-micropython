@@ -87,10 +87,9 @@ div.admonition-projects p.admonition-title {
 
 /* ========================================== */
 /* Custom dropdown light green bg */
-.sd-dropdown-container{
-    background-color: #eeffee;
+.sd-dropdown-container {
+    background-color: #d4e6fb;
 }
-
 /* Custom dropdown reduce padding of dropdown */
 details.sd-dropdown summary {
     padding: 0.2em;
@@ -99,6 +98,11 @@ details.sd-dropdown summary {
 /* Custom dropdown move arrow on right up 0.5em cf default */
 details.sd-dropdown .sd-summary-up, details.sd-dropdown .sd-summary-down {
     top: 0.4em;
+}
+
+/* Custom dropdown override success color */
+.sd-bg-success {
+    background-color: #007bff !important;
 }
 
 /* ========================================== */
