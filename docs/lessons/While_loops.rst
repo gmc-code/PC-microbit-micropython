@@ -180,3 +180,4 @@ Step size
                     while i < 13:
                         display.scroll(i, delay=50)
                         i += 3
+
