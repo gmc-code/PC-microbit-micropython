@@ -86,9 +86,9 @@ div.admonition-projects p.admonition-title {
 
 
 /* ========================================== */
-/* Custom dropdown light primary bg */
+/* Custom dropdown light primary D4D4F7 F7F7FF */
 .sd-dropdown-container {
-    background-color: #D4D4F7; 
+    background-color: #F7F7FF; 
 }
 /* Custom dropdown reduce padding of dropdown */
 details.sd-dropdown summary {
@@ -100,9 +100,9 @@ details.sd-dropdown .sd-summary-up, details.sd-dropdown .sd-summary-down {
     top: 0.4em;
 }
 
-/* Custom dropdown lighten primary color */
+/* Custom dropdown lighten primary color 2E2FE3 7171FF */
 .sd-bg-primary {
-    background-color: #2E2FE3 !important;
+    background-color: #7171FF !important;
 }
 
 /* Custom dropdown reduce margin from 1em 1em */
