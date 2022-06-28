@@ -208,6 +208,107 @@ All Images
     #. Edit the built in images list from above to just include faces.
     #. Edit the built in images list from above to just include objects.
     #. Edit the built in images list from above to just include shapes.
+    
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Edit the built in images list from above to just include animals.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+
+                    animal_images = [
+                                        Image.RABBIT,
+                                        Image.COW,
+                                        Image.DUCK,
+                                        Image.TORTOISE,
+                                        Image.BUTTERFLY,
+                                        Image.GIRAFFE,
+                                        Image.SNAKE,
+                                    ]
+                    while True:
+                        display.show(animal_images, delay=250)
+
+            .. tab-item:: Q2
+
+                Edit the built in images list from above to just include animals.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+
+                    face_images = [
+                                    Image.HAPPY,
+                                    Image.SMILE,
+                                    Image.SAD,
+                                    Image.CONFUSED,
+                                    Image.ANGRY,
+                                    Image.ASLEEP,
+                                    Image.SURPRISED,
+                                    Image.SILLY,
+                                    Image.FABULOUS,
+                                    Image.MEH,
+                                ]
+
+                    while True:
+                        display.show(face_images, delay=250)
+
+            .. tab-item:: Q3
+
+                Edit the built in images list from above to just include objects.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+
+                    object_images = [
+                                    Image.CHESSBOARD,
+                                    Image.PITCHFORK,
+                                    Image.TARGET, 
+                                    Image.TSHIRT,
+                                    Image.ROLLERSKATE, 
+                                    Image.HOUSE,
+                                    Image.STICKFIGURE, 
+                                    Image.GHOST,
+                                    Image.SWORD,
+                                    Image.SKULL,
+                                    Image.UMBRELLA,
+                                ]
+
+                    while True:
+                        display.show(object_images, delay=250)
+
+
+            .. tab-item:: Q4
+
+                Edit the built in images list from above to just include shapes.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+
+                    shape_images = [
+                                    Image.TRIANGLE,
+                                    Image.TRIANGLE_LEFT,
+                                    Image.DIAMOND,
+                                    Image.DIAMOND_SMALL,
+                                    Image.SQUARE,
+                                    Image.SQUARE_SMALL,
+                                ]
+
+                    while True:
+                        display.show(shape_images, delay=250)
 
 ----
 
@@ -263,3 +364,41 @@ Reverse direction of list using the reversed function
 
     #. Write code to display all the clock images clockwise then anticlockwise.
     #. Write code to display all the arrow images clockwise then anticlockwise.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Write code to display all the clock images clockwise then anticlockwise.
+
+                .. code-block:: python
+
+                        from microbit import *
+
+
+                        clock_list = list(Image.ALL_CLOCKS)
+                        clock_list_anticlockwise = list(reversed(clock_list))
+                        while True:
+                            display.show(clock_list, delay=200)
+                            display.show(clock_list_anticlockwise, delay=200)
+
+            .. tab-item:: Q2
+
+                Write code to display all the arrow images clockwise then anticlockwise.
+
+                .. code-block:: python
+
+                        from microbit import *
+
+
+                        arrow_list = list(Image.ALL_ARROWS)
+                        arrow_list_anticlockwise = arrow_list[::-1]
+                        while True:
+                            display.show(arrow_list, delay=200)
+                            display.show(arrow_list_anticlockwise, delay=200)
+
