@@ -91,7 +91,7 @@ div.admonition-projects p.admonition-title {
     background-color: #eeffee;
 }
 
-/* Custom dropdown reduce padding */
+/* Custom dropdown reduce padding of dropdown */
 details.sd-dropdown summary {
     padding: 0.2em;
 }
