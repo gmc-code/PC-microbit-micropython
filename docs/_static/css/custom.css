@@ -104,6 +104,10 @@ details.sd-dropdown .sd-summary-up, details.sd-dropdown .sd-summary-down {
 .sd-bg-primary {
     background-color: #7171FF !important;
 }
+* Custom dropdown reduce margin from 1em 1em */
+.sd-tab-set {
+    margin: 0.1em 0.1em;
+}
 
 /* ========================================== */
 /* Hide "Search" section from versions menu */
