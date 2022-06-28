@@ -166,7 +166,7 @@ To scroll a date as text, "Dec 25", across the display quickly, use a short dela
 
 
     while True:
-        display.scroll("Dec 25", delay=300)
+        display.scroll("Dec 25", delay=100)
 
 ----
 
@@ -193,7 +193,7 @@ To scroll a date as text, "Dec 25", across the display quickly, use a short dela
 
 
                     while True:
-                        display.show("5 in family")
+                        display.show("5 in family", delay=100)
 
             .. tab-item:: Q2
 
@@ -205,7 +205,7 @@ To scroll a date as text, "Dec 25", across the display quickly, use a short dela
 
 
                     while True:
-                        display.show("12 rooms")
+                        display.show("12 rooms", delay=100)
 
             .. tab-item:: Q3
 
@@ -217,7 +217,7 @@ To scroll a date as text, "Dec 25", across the display quickly, use a short dela
 
 
                     while True:
-                        display.show("Born 1987")
+                        display.show("Born 1987", delay=100)
 
 
 ----
