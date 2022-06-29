@@ -85,16 +85,6 @@ Blank Lines
 
 ----
 
-| For other forms of importing libraries see:
-| https://www.w3schools.com/python/python_modules.asp
-
-.. Warning:: 
-
-    | Importing using ``from module_name import *`` is not recommended for general python use.
-    | It is used here to keep the microbit syntax shorter.
-
-----
-
 .. admonition:: Questions
 
     1.  How could the layout of the code be improved?
@@ -150,6 +140,15 @@ Blank Lines
                     while True:
                         display.scroll(num, delay=80)
 
+----
+
+| For other forms of importing libraries see:
+| https://www.w3schools.com/python/python_modules.asp
+
+.. Warning:: 
+
+    | Importing using ``from module_name import *`` is not recommended for general python use.
+    | It is used here to keep the microbit syntax shorter.
 
 ----
 
