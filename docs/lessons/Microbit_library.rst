@@ -68,13 +68,16 @@ Import the microbit library
 
 ----
 
+Blank Lines
+------------------------------------------
+    
 | All microbit libraries or modules are imported at the top of the file.
 | Place **1 blank line** following the the importing of libraries to separate those lines from the rest of the code.
-| The PEP8 guide states that there should be 1 blank line after the library imports. In more advanced code, when classes or definitions are next, they should have 2 blank lines before and after them. So 2 blank lines after importing is used in more advanced code.
+| The PEP8 guide states that there should be 1 blank line after the library imports. In more advanced code, classes or definitions should have 2 blank lines before and after them. So 2 blank lines after importing is used when followed by a class or definition.
 | For advanced users, see full PEP 8 guide at: https://www.python.org/dev/peps/pep-0008/
 
-.. Note:: Blank Lines
-    
+.. Note::
+
     | Surround top-level function and class definitions with two blank lines.
     | Method definitions inside a class are surrounded by a single blank line.
     | Extra blank lines may be used (sparingly) to separate groups of related functions.
