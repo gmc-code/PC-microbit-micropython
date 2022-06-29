@@ -95,6 +95,64 @@ Blank Lines
 
 ----
 
+.. admonition:: Questions
+
+    1.  How could the layout of the code be improved?
+
+    .. code-block:: python
+
+        from microbit import *
+
+
+        while True:
+            display.scroll(char, delay=80)
+
+    2.  How could the layout of the code be improved?
+
+    .. code-block:: python
+
+        from microbit import *
+        num = 12
+        while True:
+            display.scroll(num, delay=80)
+
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                How could the layout of the code be improved?
+                Remove the extra blank line after the library import.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        display.scroll(char, delay=80)
+
+            .. tab-item:: Q2
+
+                How could the layout of the code be improved?
+                Add a blank line after the library import.
+
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    num = 12
+                    while True:
+                        display.scroll(num, delay=80)
+
+
+----
+
 Micropython API
 ------------------------------------------
 
