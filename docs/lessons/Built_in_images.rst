@@ -523,6 +523,10 @@ Reverse direction of list using the reversed function
     while True:
         display.show(clock_list_anticlockwise, delay=200)
 
+.. image:: images/all_clocks_anticlockwise.gif
+    :scale: 100 %
+    :align: center
+
 ----
 
 .. admonition:: Tasks
