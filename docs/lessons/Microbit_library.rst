@@ -24,6 +24,50 @@ Import the microbit library
     #. ``from microbot import *``
     #. ``from microbit *``
 
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                ``from microbit import`` error
+
+                .. code-block:: python
+
+                    # missing * at end
+                    from microbit import *
+
+
+            .. tab-item:: Q2
+
+                ``from microbit import*`` error
+
+                .. code-block:: python
+
+                    # missing sapce before *
+                    from microbit import *
+
+            .. tab-item:: Q3
+
+                ``from microbot import *`` error
+
+                .. code-block:: python
+
+                    # microbit mispelt
+                    from microbit import *
+
+            .. tab-item:: Q4
+
+                ``from microbit *`` error
+
+                .. code-block:: python
+
+                    # missing import before *
+                    from microbit import *
+
 ----
 
 | All microbit libraries or modules are imported at the top of the file.

@@ -50,27 +50,27 @@ When testing code on the microbit, it can be useful to do it within a ``while Tr
 
             .. tab-item:: Q1
 
-                ``while true:``
+                ``while true:`` error
 
                 .. code-block:: python
 
                     # must have uppper case T
-                    ``while True:``
+                    while True:
 
             .. tab-item:: Q2
 
-                ``While True:``
+                ``While True:`` error
 
                 .. code-block:: python
 
                     # must have lower case w
-                    ``while True:`
+                    while True:
 
             .. tab-item:: Q3
 
-                ``while True``
+                ``while True`` error
 
                 .. code-block:: python
 
                     # must have colon at end
-                    ``while True:`
+                    while True:
