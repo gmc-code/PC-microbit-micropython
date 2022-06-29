@@ -145,10 +145,15 @@ Blank Lines
 | For other forms of importing libraries see:
 | https://www.w3schools.com/python/python_modules.asp
 
-.. Warning:: 
 
-    | Importing using ``from module_name import *`` is not recommended for general python use.
-    | It is used here to keep the microbit syntax shorter.
+| Importing using ``from module_name import *`` is not recommended for general python use.
+| It is used here to keep the microbit syntax shorter.
+
+| On other websites, references to the microbit library syntax may have ``microbit.`` before the function or method. 
+| e.g ``microbit.display.scroll("Hi")``
+| This is because it assumes that the microbit library has been imported using ``import microbit``.
+| When importing the microbit library using: ``from microbit import *``, the ``microbit.`` prefix is omitted.
+| e.g This allows the shorter form, ``display.scroll("Hi")``, instead of the longer form, ``microbit.display.scroll("Hi")``.
 
 ----
 
@@ -159,12 +164,6 @@ Micropython API
 | https://microbit-micropython.readthedocs.io/en/v1.0.1/index.html
 | For new microbits (v2) from 2022 see:
 | https://microbit-micropython.readthedocs.io/en/v2-docs/index.html
-
-| References to the microbit library syntax may have ``microbit.`` before the function or method. 
-| e.g ``microbit.display.scroll("Hi")``
-| This is because it assumes that the microbit library has been imported using ``import microbit``.
-| When importing the microbit library using: ``from microbit import *``, the ``microbit.`` prefix is omitted.
-| e.g This allows the shorter form, ``display.scroll("Hi")``, instead of the longer form, ``microbit.display.scroll("Hi")``.
 
 | For a list of what is available in the microbit library see:
 | https://microbit-micropython.readthedocs.io/en/v1.0.1/microbit_micropython_api.html

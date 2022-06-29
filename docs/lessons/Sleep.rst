@@ -36,6 +36,8 @@ Sleep
 
 .. admonition:: Questions
 
+    Use the example code above for the questions below.
+
     #. Make the first sleep half a second.
     #. Make the second sleep a quarter of a second.
     #. Make the first sleep 2 seconds and the second sleep 200ms.
