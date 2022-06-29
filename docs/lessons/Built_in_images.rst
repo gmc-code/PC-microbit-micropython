@@ -10,6 +10,13 @@ Built in images
 | The same syntax that was used to show text can be used for images.
 | In Mu editor, when typing ``Image.``, as soon as the stop is typed, a drop list of images will be displayed to allow selection of an image.
 
+.. admonition:: Tip
+
+    | Variables and functions should only use lower case letetrs.
+    | Classes should use CapWords like ``TeamPlayers``.
+    | Constants shoud be in ALLCAPS, like ``PIN``.
+    | This suggests that ``Image`` is a class, and ``HEART`` is a constant within the ``Image`` class.
+
 ----
 
 Display.show a built in Image
@@ -300,10 +307,35 @@ Image sentences
         sleep(300)
 
 ----
- -+
+ 
 .. admonition:: Tasks
 
-    #. Write a few different code sentences combining words and images.
+    #. Write a code sentence combining words and images.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Write a code sentence combining words and images.
+
+                .. code-block:: python
+
+                    # tortoises live long
+                    from microbit import *
+
+                    while True:
+                        display.show(Image.TORTOISE)
+                        sleep(300)
+                        display.show(Image.HOUSE)
+                        sleep(300)
+                        display.scroll("long")
+                        sleep(300)
+
 
 ----
 
@@ -510,13 +542,13 @@ Reverse direction of list using the reversed function
 
                 .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        clock_list = list(Image.ALL_CLOCKS)
-                        clock_list_anticlockwise = list(reversed(clock_list))
-                        while True:
-                            display.show(clock_list, delay=200)
-                            display.show(clock_list_anticlockwise, delay=200)
+                    clock_list = list(Image.ALL_CLOCKS)
+                    clock_list_anticlockwise = list(reversed(clock_list))
+                    while True:
+                        display.show(clock_list, delay=200)
+                        display.show(clock_list_anticlockwise, delay=200)
 
             .. tab-item:: Q2
 
@@ -524,11 +556,11 @@ Reverse direction of list using the reversed function
 
                 .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        arrow_list = list(Image.ALL_ARROWS)
-                        arrow_list_anticlockwise = arrow_list[::-1]
-                        while True:
-                            display.show(arrow_list, delay=200)
-                            display.show(arrow_list_anticlockwise, delay=200)
+                    arrow_list = list(Image.ALL_ARROWS)
+                    arrow_list_anticlockwise = arrow_list[::-1]
+                    while True:
+                        display.show(arrow_list, delay=200)
+                        display.show(arrow_list_anticlockwise, delay=200)
 
