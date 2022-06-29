@@ -59,7 +59,7 @@ Useful keyboard shortcuts are at: https://codewith.mu/en/tutorials/1.1/shortcuts
 Fixing indenting quickly
 --------------------------
 
-| Select multiple lines at once.
+| Select multiple lines of code.
 | Unindent them all at once using ``SHIFT TAB``.
 | Indent them all at once using ``TAB``
 
@@ -67,9 +67,48 @@ Fixing indenting quickly
 .. image:: images/multi_line_indent_moving.gif
     :scale: 50 %
     :align: center
+
+----
+
+.. admonition:: Questions
+
+    #. What is the shortcut to toggle comments?
+    #. What is the shortcut to increase the indent of selected lines?
+    #. What is the shortcut to decrease the indent of selected lines?
+    #. What is the shortcut to select all the text?
+
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                What is the shortcut to toggle comments?
+                Ctrl: K
+    
+            .. tab-item:: Q2
+
+                What is the shortcut to increase the indent of selected lines?
+                TAB
+
+            .. tab-item:: Q3
+
+                What is the shortcut to decrease the indent of selected lines?
+                SHIFT TAB
+    
+            .. tab-item:: Q4
+
+                What is the shortcut to select all the text?
+                Ctrl: A
+
+
 ----
 
 Downloads
 --------------------------
 
-The latest version can be downloaded from: https://codewith.mu/en/download
+The latest version is at: https://codewith.mu/en/download
