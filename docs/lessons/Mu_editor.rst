@@ -63,9 +63,10 @@ Fixing indenting quickly
 | Unindent them all at once using ``SHIFT TAB``.
 | Indent them all at once using ``TAB``
 
-.. image:: images\multi_line_indent_moving.gif
-    :scale: 50 %
 
+.. image:: images/multi_line_indent_moving.gif
+    :scale: 50 %
+    :align: center
 ----
 
 Downloads
