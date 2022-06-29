@@ -34,6 +34,47 @@ Display.show a built in Image
     #. Write code to show an ARROW_N.
     #. Write code to show a GIRAFFE.
     #. Write code to show a SMILE.
+    
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Write code to show an ARROW_N.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        display.show(Image.ARROW_N)
+
+            .. tab-item:: Q2
+
+                Write code to show a GIRAFFE.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        display.show(Image.GIRAFFE)
+
+            .. tab-item:: Q3
+
+                Write code to show a SMILE.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        display.show(Image.SMILE)
+
 
 ----
 
@@ -65,6 +106,47 @@ Display.show a list of images
     #. Write code to show a list of 3 different animals with an 0.5 sec delay between them.
     #. Write code to show a list of 4 different arrows with an 0.4 sec delay between them.
     #. Write code to show a list of 3 different shapes with an 0.3 sec delay between them.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Write code to show a list of 3 different animals with an 0.5 sec delay between them.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        display.show([Image.RABBIT, Image.COW, Image.GIRAFFE], delay=500)
+
+            .. tab-item:: Q2
+
+                Write code to show a list of 4 different arrows with an 0.4 sec delay between them.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        display.show([Image.ARROW_N, Image.ARROW_E, Image.ARROW_S, Image.ARROW_W], delay=400)
+
+            .. tab-item:: Q3
+
+                Write code to show a list of 3 different shapes with an 0.3 sec delay between them.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        display.show([Image.TRIANGLE, Image.DIAMOND, Image.SQUARE], delay=300)
+
 
 ----
 
@@ -108,8 +190,52 @@ Image lists
 .. admonition:: Tasks
 
     #. Write code to use a variable, ``animal_list``, to show a list of 3 different animals with an 0.5 sec delay between them.
-    #. Write code to use a variable to show a list of 4 different arrows with an 0.4 sec delay between them.
+    #. Write code to use a variable, ``arrow_list``,  to show a list of 4 different arrows with an 0.4 sec delay between them.
     #. Write code to use a variable to show a list of 3 different music images with an 0.3 sec delay between them.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Write code to use a variable, ``animal_list``, to show a list of 3 different animals with an 0.5 sec delay between them.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    animal_list = [Image.RABBIT, Image.COW, Image.GIRAFFE]
+                    while True:
+                        display.show(animal_list, delay=500)
+
+            .. tab-item:: Q2
+
+                Write code to use a variable, ``arrow_list``,  to show a list of 4 different arrows with an 0.4 sec delay between them.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    arrow_list = [Image.ARROW_N, Image.ARROW_E, Image.ARROW_S, Image.ARROW_W]
+                    while True:
+                        display.show(arrow_list, delay=400)
+ 
+            .. tab-item:: Q3
+
+                Write code to use a variable to show a list of 3 different music images with an 0.3 sec delay between them.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    music_list = [Image.MUSIC_CROTCHET, Image.MUSIC_QUAVER, Image.MUSIC_QUAVERS]
+                    while True:
+                        display.show(music_list, delay=300)
+
 
 ----
 
@@ -132,9 +258,28 @@ Built-in Image lists
 
 .. admonition:: Tasks
 
-    #. Write code to display the images in the built-in image collection: ``Image.ALL_ARROWS``.
+    #. Write code to display the images in the built-in image collection: ``Image.ALL_ARROWS``, with a delay of 200ms.
+    
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Write code to display the images in the built-in image collection: ``Image.ALL_ARROWS``, with a delay of 200ms.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        display.show(Image.ALL_ARROWS, delay=200)
 ----
+
+
 
 Image sentences
 ----------------------------------------
@@ -155,7 +300,7 @@ Image sentences
         sleep(300)
 
 ----
-
+ -+
 .. admonition:: Tasks
 
     #. Write a few different code sentences combining words and images.

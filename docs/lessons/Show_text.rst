@@ -163,8 +163,7 @@ Display.show with clear
 .. py:function:: show(value, clear=False)
 
     | Display letters/digits of a string, float, in sequence. 
-
-    | If ``clear`` is ``True``, the display will be cleared after it has finished. Its default value is False.
+    | If ``clear`` is ``True``, the display will be cleared after it has finished. Its default value is False, in which case, the last character is left displayed.
 
 
 | After ``display.show`` is used, the last digit or character will be left displayed.
@@ -328,7 +327,7 @@ Show at different speeds
             display.clear()
             sleep(2000)
 
-    1. Modify the code below to display your name and age in years.
+    2. Modify the code below to display your name and age in years.
 
     .. code-block:: python
 
