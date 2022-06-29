@@ -115,24 +115,10 @@ Display.clear
 
 ----
 
-.. admonition:: Tip
-
-    | Display.show has a ``clear`` parameter that can be set to True to clear the last displayed character. e.g. ``display.show('Hi', clear=True)``
-    | See the last section of this page for the full syntax.
-
-    .. code-block:: python
-
-        from microbit import *
-
-        while True:
-            display.show(3.14, clear=True)
-
-----
-
 .. admonition:: Tasks
 
     #. Write code to show 123, then clear the screen for 1 sec.
-    #. Write code to show "ABC", then clear the screen for 2 sec.
+    #. Write code to show "ABC", then clear the screen for half a sec.
 
 
     .. dropdown::
@@ -167,7 +153,71 @@ Display.clear
                         display.show("ABC")
                         display.clear()
                         sleep(500)
+                        
+----
 
+
+Display.show with clear
+----------------------------------------
+
+.. py:function:: show(value, clear=False)
+
+    | Display letters/digits of a string, float, in sequence. 
+
+    | If ``clear`` is ``True``, the display will be cleared after it has finished. Its default value is False.
+
+
+| After ``display.show`` is used, the last digit or character will be left displayed.
+| Use ``clear=True`` to remove the last digit or character from the display.
+| Use a sleep afterwards so that the display remains blank for a short time.
+| e.g. ``display.show('Hi', clear=True)``
+
+.. code-block:: python
+
+    from microbit import *
+
+    while True:
+        display.show(3.14, clear=True)
+        sleep(500)
+
+----
+
+.. admonition:: Tasks
+
+    #. Write code to show 123, with the last character being removed, then sleep for 1 sec.
+    #. Write code to show "ABC", with the last character being removed, then sleep for half a sec.
+
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Write code to show 123, with the last character being removed, then sleep for 1 sec.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        display.show(123, clear=True)
+                        sleep(1000)
+
+            .. tab-item:: Q2
+
+                Write code to show "ABC", with the last character being removed, then sleep for half a sec.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        display.show("ABC", clear=True)
+                        sleep(500)
 
 ----
 
@@ -247,7 +297,7 @@ To show the float, ``3.14159``, across the display slowly use a medium delay of 
 
 ----
 
-show at different speeds
+Show at different speeds
 ----------------------------------------
 
 | The code below uses a shorter delay for the initial text then a longer delay for the main information.
