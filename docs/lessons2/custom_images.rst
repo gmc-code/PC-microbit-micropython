@@ -32,10 +32,7 @@ Image strings
 
     from microbit import *
 
-
     display.show(Image('99999:90009:90009:90009:99999'))
-
-
 
 ----
 
@@ -45,7 +42,6 @@ Image strings
 
     from microbit import *
 
-
     display.show(Image('11111:33333:55555:77777:99999'))
     
 | The code below shows a diagonal brightness gradient (dull to bright) from the top left to the bottom right.
@@ -53,7 +49,6 @@ Image strings
 .. code-block:: python
 
     from microbit import *
-
 
     display.show(Image('12345:23456:34567:45678:56789'))
 
@@ -123,7 +118,6 @@ Pixel controls
 .. code-block:: python
 
     from microbit import *
-
 
     display.set_pixel(0, 0, 9)
 

@@ -25,8 +25,10 @@ Functions without parameters
 
     from microbit import *
 
+
     def show_welcome():
         display.scroll("Hello Microbit user!", delay=80)
+
 
     show_welcome()
 
@@ -57,8 +59,10 @@ Functions with parameters
 
     from microbit import *
 
+
     def show_welcome(name):
         display.scroll("Hello " + name, delay=80)
+
 
     show_welcome("GMC")
     show_welcome("user")
@@ -78,12 +82,14 @@ Functions with default parameters
 
     from microbit import *
 
+
     def blink_LED(pin=pin0, repcount=3, sleepms=100):
         for i in range(repcount):
             pin.write_digital(1)
             sleep(sleepms)
             pin.write_digital(0)
             sleep(sleepms)
+
 
     while True:
         if button_a.is_pressed():
@@ -113,8 +119,10 @@ Functions returning information
 
     from microbit import *
 
+
     def convert_inches_to_centimetres(inches):
         return inches * 2.54
+
 
     length_cm = convert_inches_to_centimetres(8)
     display.scroll(length_cm, delay=80)
@@ -126,8 +134,10 @@ Functions returning information
 
     from microbit import *
 
+
     def area_of_rectangle(length, width):
         return length * width
+
 
     area = area_of_rectangle(9, 7)
     display.scroll(area, delay=80)
@@ -141,8 +151,10 @@ Functions returning information
 
     from microbit import *
 
+w
     def name_age_greeting(name, age):
         return "Hello " + name + ", you are " + str(age) + " years old."   
+
 
     display.scroll(name_age_greeting("Peter", 21))
     display.scroll(name_age_greeting("Paul", 24))

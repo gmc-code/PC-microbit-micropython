@@ -17,7 +17,6 @@ Sleep
 
     from microbit import *
 
-
     sleep(1000)
 
 | Sleeps are often used after displaying text and images to have a pause before other actions.
@@ -27,14 +26,12 @@ Sleep
 
     from microbit import *
 
-
     while True:
         display.scroll('I like', delay=60)
         sleep(1000)
         display.scroll('school', delay=120)
         sleep(1000)
-
-        
+      
 ----
 
 .. admonition:: Questions
@@ -56,14 +53,13 @@ Sleep
 
                 .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-
-                        while True:
-                            display.scroll('I like', delay=60)
-                            sleep(500)
-                            display.scroll('school', delay=120)
-                            sleep(1000)
+                    while True:
+                        display.scroll('I like', delay=60)
+                        sleep(500)
+                        display.scroll('school', delay=120)
+                        sleep(1000)
 
 
             .. tab-item:: Q2
@@ -72,14 +68,13 @@ Sleep
 
                 .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-
-                        while True:
-                            display.scroll('I like', delay=60)
-                            sleep(1000)
-                            display.scroll('school', delay=120)
-                            sleep(250)
+                    while True:
+                        display.scroll('I like', delay=60)
+                        sleep(1000)
+                        display.scroll('school', delay=120)
+                        sleep(250)
 
             .. tab-item:: Q3
 
@@ -87,11 +82,10 @@ Sleep
 
                 .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-
-                        while True:
-                            display.scroll('I like', delay=60)
-                            sleep(2000)
-                            display.scroll('school', delay=120)
-                            sleep(200)
+                    while True:
+                        display.scroll('I like', delay=60)
+                        sleep(2000)
+                        display.scroll('school', delay=120)
+                        sleep(200)

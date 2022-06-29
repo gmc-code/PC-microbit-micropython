@@ -24,7 +24,6 @@ While true
 
     from microbit import *
 
-
     while True:
         display.scroll('I never stop')
 

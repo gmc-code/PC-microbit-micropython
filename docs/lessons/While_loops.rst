@@ -24,7 +24,6 @@ Events as conditions
 
     from microbit import *
 
-
     while True:
         while button_a.is_pressed():
             display.show(['I',Image.HEART,'U'], delay=400)
@@ -53,7 +52,6 @@ Events as conditions
 
                     from microbit import *
 
-
                     while True:
                         while button_a.is_pressed():
                             display.show(Image.HAPPY)
@@ -67,7 +65,6 @@ Events as conditions
                 .. code-block:: python
 
                     from microbit import *
-
 
                     while True:
                         while button_b.is_pressed():
@@ -108,7 +105,6 @@ Counting up
 
     from microbit import *
 
-
     while True:
         i = 0
         while i < 10:
@@ -129,7 +125,6 @@ Counting down
 
     from microbit import *
 
-
     while True:
         i = 5
         while i > 1:
@@ -147,7 +142,6 @@ Step size
 .. code-block:: python
 
     from microbit import *
-
 
     while True:
         i = 0
@@ -179,7 +173,6 @@ Step size
 
                     from microbit import *
 
-
                     while True:
                         i = 1
                         while i < 6:
@@ -193,7 +186,6 @@ Step size
                 .. code-block:: python
 
                     from microbit import *
-
 
                     while True:
                         i = 3
@@ -210,7 +202,6 @@ Step size
 
                     from microbit import *
 
-
                     while True:
                         i = 9
                         while i > 0:
@@ -225,7 +216,6 @@ Step size
                 .. code-block:: python
 
                     from microbit import *
-
 
                     while True:
                         i = 24

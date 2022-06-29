@@ -53,8 +53,10 @@ Turn on and off pin0
     def turnon_0():
         pin0.write_digital(1)
 
+
     def turnoff_0():
         pin0.write_digital(0)
+
 
     while True:
         if button_a.is_pressed():
@@ -86,6 +88,7 @@ Blink All
         sleep(1000)
         pin2.write_digital(0)
 
+
     def blink_all():
         pin0.write_digital(1)
         pin1.write_digital(1)
@@ -94,6 +97,7 @@ Blink All
         pin0.write_digital(0)
         pin1.write_digital(0)
         pin2.write_digital(0)
+
 
     while True:
         if button_a.is_pressed():
@@ -156,6 +160,7 @@ Write analog
             sleep(sleeptime)
         pin0.write_analog(0)
 
+
     def pulse_off():
         sleeptime = 4
         stepsize = 30
@@ -163,6 +168,7 @@ Write analog
             pin0.write_analog(i)
             sleep(sleeptime)
         pin0.write_analog(0)
+
 
     while True:
         if button_a.is_pressed():

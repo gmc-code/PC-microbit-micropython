@@ -48,7 +48,6 @@ Notes
     from microbit import *
     import music
 
-
     note = 'c4:8'
     music.play(note)
 
@@ -59,7 +58,6 @@ Notes
 
     from microbit import *
     import music
-
 
     notes_list = ['c4:1', 'e:4', 'g:8', 'c5:2', 'e5', 'g4','f#4','bb3:8']
 
@@ -79,7 +77,6 @@ Scales
 
     from microbit import *
     import music
-
 
     cmajor = ['c', 'd', 'e', 'f', 'g', 'a', 'b']
     eminor = ['e', 'f#', 'g', 'a', 'b', 'c', 'd']
@@ -104,7 +101,6 @@ Built in music
     from microbit import *
     import music
 
-
     music.play(music.PYTHON)
 
 
@@ -115,7 +111,6 @@ Built in music
 
     from microbit import *
     import music
-
 
     melodies_list = [music.PYTHON, music.BADDY, music.CHASE]
     for melody in melodies_list:
@@ -133,7 +128,6 @@ All Built in melodies
     from microbit import *
     import music
 
-
     built_in_tunes = [music.DADADADUM, music.ENTERTAINER, music.PRELUDE,
     music.ODE, music.NYAN, music.RINGTONE, music.FUNK, music.BLUES,
     music.BIRTHDAY, music.WEDDING, music.FUNERAL, music.PUNCHLINE,
@@ -145,11 +139,5 @@ All Built in melodies
         for tune in built_in_tunes:
             music.play(tune)
             sleep(1000)
-
-
-
-
-
-
 
 

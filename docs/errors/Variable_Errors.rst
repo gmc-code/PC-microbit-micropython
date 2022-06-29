@@ -14,7 +14,6 @@ Variable used which has no value
 
     from microbit import *
 
-
     display.scroll(hello)
 
 
@@ -27,7 +26,6 @@ This can also be fixed by giving the variable a value, as shown below:
 .. code-block:: python
     
     from microbit import *
-
 
     hello = 'Hi'
     display.scroll(hello)

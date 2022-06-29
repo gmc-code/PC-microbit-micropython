@@ -16,7 +16,6 @@ Practice tasks 2 Answers
 
     from microbit import *
 
-
     while True:
         if button_a.is_pressed():
             for char in 'go team':
@@ -30,7 +29,6 @@ Practice tasks 2 Answers
 .. code-block:: python
 
     from microbit import *
-
 
     while True:
         if button_b.is_pressed():
@@ -46,7 +44,6 @@ Practice tasks 2 Answers
 .. code-block:: python
 
     from microbit import *
-
 
     while True:
         if button_a.is_pressed():
@@ -68,7 +65,6 @@ Practice tasks 2 Answers
 .. code-block:: python
 
     from microbit import *
-
 
     while True:
         if button_a.is_pressed():

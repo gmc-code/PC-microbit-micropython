@@ -12,7 +12,6 @@ For loops with strings
 
     from microbit import *
 
-
     welcome_string = 'Hi Mb user'
     while True:
         for character in welcome_string:
@@ -37,7 +36,6 @@ For loops with lists
 
     from microbit import *
 
-
     tennis_champs = ['Novak', 'Roger', 'Rafael']
     while True:
         for tennis_star in tennis_champs:
@@ -50,7 +48,6 @@ For loops with lists
 .. code-block:: python
 
     from microbit import *
-
 
     primes = [2, 3, 5, 7]
     while True:
@@ -77,7 +74,6 @@ Nested For loops
 .. code-block:: python
 
     from microbit import *
-
 
     col_letters = ['A', 'B', 'C']
     row_nums  = ['1', '2', '3', '4']

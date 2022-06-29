@@ -62,7 +62,6 @@ Sample code
     from microbit import *
 
     a_count = 0
-
     while True:
         if button_a.is_pressed():
             a_count = a_count + 1
@@ -82,8 +81,10 @@ Sample code
 
     MILES_TO_METRES = 1609
 
+
     def convert_miles_to_metres(distance_miles):
         return distance_miles * MILES_TO_METRES
+
 
     while True:
         for dist_miles in range(1, 11):

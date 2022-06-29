@@ -114,41 +114,51 @@ See: https://pc-microbit-micropython.readthedocs.io/en/latest/lessons/Organising
         # replace pass with the code to display some text
         pass
 
+
     def display_textA():
         # replace pass with the code to display some text
         pass
+
 
     def display_textB():
         # replace pass with the code to display some text
         pass
 
+
     def display_imagesA():
         # replace pass with the code to display one or more images
         pass
+
 
     def display_imagesB():
         # replace pass with the code to display one or more images
         pass
 
+
     def use_LEDsA():
         # replace pass with the code to control one of more LEDS on their pins
         pass
 
+
     def use_LEDsB():
         # replace pass with the code to control one of more LEDS on their pins
         pass
-        
+
+
     def use_buzzerA():
         # replace pass with the code to control a buzzer
         pass 
 
+
     def use_buzzerB():
         # replace pass with the code to control a buzzer
-        pass 
-        
+        pass
+
+
     def use_motorA():
         # replace pass with the code to control a motor
         pass 
+
 
     def use_motorB():
         # replace pass with the code to control a motor
@@ -190,6 +200,7 @@ Sample Edited Scaffold
 
     from microbit import *
 
+
     def display_startupmessage():
         display.scroll('Hi')
 
@@ -200,11 +211,13 @@ Sample Edited Scaffold
         sleep(3000)
         pin0.write_digital(0)
 
+
     def use_LEDsB():
         # on pin 1
         pin1.write_digital(1)
         sleep(2000)
         pin1.write_digital(0)
+
 
     display_startupmessage()
     while True:

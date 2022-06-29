@@ -22,7 +22,6 @@ Range function starting at 0
 
     from microbit import *
 
-
     while True:
         for n in range(3):
             display.scroll(n, delay=80)
@@ -52,7 +51,6 @@ Range function with start and stop values
 .. code-block:: python
 
     from microbit import *
-
 
     while True:
         for n in range(2, 6):
@@ -84,7 +82,6 @@ Range function with a step size
 
     from microbit import *
 
-
     while True:
         for n in range(1, 6, 2):
             display.scroll(n, delay=50)
@@ -108,7 +105,6 @@ Using range to count down with a negative step size
 .. code-block:: python
 
     from microbit import *
-
 
     while True:
         for n in range(10, 0, -1):

@@ -14,7 +14,6 @@ Proper use of Whitespace improves readability
     
     from microbit import *
 
-
     shape_list = [
         Image.TRIANGLE,
         Image.TRIANGLE_LEFT,
@@ -38,7 +37,6 @@ Whitespace before parentheses: No Error
     
     from microbit import *
 
-
     display.scroll ("A", delay=200)
 
 
@@ -59,7 +57,6 @@ Whitespace around equals in an argument: no Error
 .. code-block:: python
 
     from microbit import *
-
 
     while True:
         display.scroll("A", delay =200)
@@ -83,7 +80,6 @@ Whitespace before colon: no Error
 
     from microbit import *
 
-
     while True  :
         display.scroll("A", delay=200)
 
@@ -102,7 +98,6 @@ Whitespace after keyword: no Error
 
     from microbit import *
 
-
     while  True:
         display.scroll("B", delay=200)
 
@@ -120,7 +115,6 @@ Whitespace missing arouns equals operator: no Error
 .. code-block:: python
 
     from microbit import *
-
 
     total=2+5
     display.scroll(total, delay=200)

@@ -11,7 +11,6 @@ If: Missing colon
 
     from microbit import *
 
-
     # if button_a.is_presed():
     if button_a.is_presed()
         display.scroll('A')
@@ -35,7 +34,6 @@ Elif: Missing colon
 .. code-block:: python
 
     from microbit import *
-
 
     if button_a.is_presed():
         display.scroll('A')
@@ -64,7 +62,6 @@ Else: Missing colon
 
     from microbit import *
 
-
     if button_a.is_presed():
         display.scroll('A')
     # else:
@@ -90,7 +87,6 @@ While: Missing colon
 
     from microbit import *
 
-
     while True
         display.scroll("A")
 
@@ -109,7 +105,6 @@ For: Missing colon
 .. code-block:: python
 
     from microbit import *
-
 
     for num in range(5)
         display.scroll(num)

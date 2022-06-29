@@ -16,7 +16,6 @@ Missing Indentation after if statement
 
     from microbit import *
 
-
     if button_a.is_presed():
         display.scroll('A')
 
@@ -26,7 +25,6 @@ Missing Indentation after if statement
 .. code-block:: python
 
     from microbit import *
-
 
     if button_a.is_presed():
     display.scroll('A')
@@ -49,7 +47,6 @@ else statement indented by mistake
 
     from microbit import *
 
-
     if button_a.is_presed():
         display.scroll('A')
     else:
@@ -61,7 +58,6 @@ else statement indented by mistake
 .. code-block:: python
 
     from microbit import *
-
 
     if button_a.is_presed():
         display.scroll('A')
@@ -86,7 +82,6 @@ for loop not indented
 
     from microbit import *
 
-
     for num in range(5):
         display.scroll(num)
 
@@ -96,7 +91,6 @@ for loop not indented
 .. code-block:: python
 
     from microbit import *
-
 
     for num in range(5):
     display.scroll(num)

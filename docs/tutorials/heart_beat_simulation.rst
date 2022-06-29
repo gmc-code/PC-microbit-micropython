@@ -19,7 +19,6 @@ Pin touching
 
     from microbit import *
 
-
     while True:
         if pin0.is_touched():
             display.show(0)
@@ -59,7 +58,6 @@ Pulse design
 .. code-block:: python
 
     from microbit import *
-
 
     hb1 = Image("00009:00009:00009:99999:00000")
     hb2 = Image("00090:00090:00090:99999:00009")
@@ -103,15 +101,16 @@ Using a function to calculate the delay for a Heart rate
 
 .. code-block:: python
 
+
     def delay_for_heart_rate(hr=60):
         return int(60000/(hr * 7))
+
 
 | Use the working code below as the starting point for the tasks that follow.
 
 .. code-block:: python
 
     from microbit import *
-
 
     hb1 = Image("00009:00009:00009:99999:00000")
     hb2 = Image("00090:00090:00090:99999:00009")
@@ -123,9 +122,11 @@ Using a function to calculate the delay for a Heart rate
 
     heart_beat = [hb1, hb2, hb3, hb4, hb5, hb6, hb7]
 
+
     def delay_for_heart_rate(hr=60):
         return int(60000/(hr * 7))
-        
+
+ 
     display.show(hb7)
 
     while True:

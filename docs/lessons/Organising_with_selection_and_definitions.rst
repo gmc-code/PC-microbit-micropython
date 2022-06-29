@@ -22,6 +22,7 @@ Definitions
         display.scroll('A')
         display.show(Image.HAPPY)
 
+
     doA()
 
 ----
@@ -41,7 +42,6 @@ Organising blocks into definitions
 .. code-block:: python
 
     from microbit import *
-
 
     while True:
         if button_a.is_pressed():
@@ -65,12 +65,15 @@ Organising blocks into definitions
         display.scroll('A')
         display.show(Image.HAPPY)
 
+
     def doB():
         display.scroll('B')
         display.show(Image.SAD)
 
+
     def doC():
         display.scroll('C')
+
 
     while True:
         if button_a.is_pressed():

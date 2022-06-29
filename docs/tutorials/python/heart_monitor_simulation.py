@@ -1,7 +1,6 @@
 # heart_monitor_simulation
 from microbit import *
 
-
 hb1 = Image("00009:00009:00009:99999:00000")
 hb2 = Image("00090:00090:00090:99999:00009")
 hb3 = Image("00900:00900:00900:99999:00090")
@@ -12,8 +11,10 @@ hb7 = Image("00000:00000:00000:99999:00000")
 
 heart_beat = [hb1, hb2, hb3, hb4, hb5, hb6, hb7]
 
+
 def delay_for_heart_rate(hr=60):
     return int(60000/(hr * 7))
+
 
 display.show(hb7)
 

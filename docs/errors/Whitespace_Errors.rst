@@ -20,7 +20,6 @@ Whitespace before parentheses in button method: Error
     
     from microbit import *
 
-
     if button_a.is_presed ():
         display.scroll('A')
 
@@ -41,7 +40,6 @@ Whitespace in parentheses: Error
 .. code-block:: python
     
     from microbit import *
-
 
     if button_a.is_presed( ):
         display.scroll('A')

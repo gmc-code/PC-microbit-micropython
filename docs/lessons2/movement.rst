@@ -23,12 +23,9 @@ Mobile phone knows which up to show the images on its screen because it uses an 
 
     from microbit import *
 
-
     while True:
         display.scroll(accelerometer.get_x(), delay=80)
         display.show('*')
-
-
 
 ----
 
@@ -39,7 +36,6 @@ how level the device is along the X axis:
 .. code-block:: python
 
     from microbit import *
-
 
     while True:
         x_reading = accelerometer.get_x()

@@ -20,7 +20,6 @@ Practice tasks 1 Answers
 
     from microbit import *
 
-
     while True:
         display.show('Hello')
 
@@ -33,7 +32,6 @@ Practice tasks 1 Answers
 
     from microbit import *
 
-
     while True:
         display.scroll('microbit ')
 
@@ -44,7 +42,6 @@ Practice tasks 1 Answers
 .. code-block:: python
 
     from microbit import *
-
 
     while True:
         display.show(Image.HEART)
@@ -60,7 +57,6 @@ Practice tasks 1 Answers
 
     from microbit import *
 
-
     while True:
         display.show([Image.SQUARE, Image.DIAMOND, Image.TRIANGLE])
 
@@ -71,7 +67,6 @@ Practice tasks 1 Answers
 .. code-block:: python
 
     from microbit import *
-
 
     while True:
         num = 1
@@ -87,7 +82,6 @@ Practice tasks 1 Answers
 
     from microbit import *
 
-
     while True:
         num = 5
         while num > -1
@@ -102,7 +96,6 @@ Practice tasks 1 Answers
 
     from microbit import *
 
-
     num_list = [2, 3, 5, 7, 11, 13, 17, 19]
     while True:
         for num in num_list:
@@ -115,7 +108,6 @@ Practice tasks 1 Answers
 .. code-block:: python
 
     from microbit import *
-
 
     while True:
         for num in range(1,10):

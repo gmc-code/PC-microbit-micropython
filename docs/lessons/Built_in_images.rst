@@ -25,7 +25,6 @@ Display.show a built in Image
 
     from microbit import *
 
-
     display.show(Image.HEART)
 
 ----
@@ -56,7 +55,6 @@ Display.show a list of images
 
     from microbit import *
 
-
     while True:
         display.show([Image.HAPPY, Image.SMILE, Image.SAD, Image.CONFUSED, Image.ANGRY], delay=500)
 
@@ -81,7 +79,6 @@ Image lists
 
     from microbit import *
 
-
     face_list = [Image.HAPPY, Image.SMILE, Image.SAD, Image.CONFUSED, Image.ANGRY]
     while True:
         display.show(face_list, delay=500)
@@ -94,7 +91,6 @@ Image lists
 .. code-block:: python
 
     from microbit import *
-
 
     shape_list = [
         Image.TRIANGLE,
@@ -129,7 +125,6 @@ Built-in Image lists
 
     from microbit import *
 
-
     while True:
         display.show(Image.ALL_CLOCKS, delay=100)
 
@@ -150,7 +145,6 @@ Image sentences
 .. code-block:: python
 
     from microbit import *
-
 
     while True:
         display.scroll('I')
@@ -176,7 +170,6 @@ All Images
 .. code-block:: python
 
     from microbit import *
-
 
     built_in_images = [Image.HEART, Image.HEART_SMALL,
                         Image.HAPPY, Image.SMILE, Image.SAD, Image.CONFUSED,
@@ -224,7 +217,6 @@ All Images
 
                     from microbit import *
 
-
                     animal_images = [
                                         Image.RABBIT,
                                         Image.COW,
@@ -244,7 +236,6 @@ All Images
                 .. code-block:: python
 
                     from microbit import *
-
 
                     face_images = [
                                     Image.HAPPY,
@@ -269,7 +260,6 @@ All Images
                 .. code-block:: python
 
                     from microbit import *
-
 
                     object_images = [
                                     Image.CHESSBOARD,
@@ -296,7 +286,6 @@ All Images
                 .. code-block:: python
 
                     from microbit import *
-
 
                     shape_images = [
                                     Image.TRIANGLE,
@@ -335,7 +324,6 @@ Reverse direction of list using list slicing
 
     from microbit import *
 
-
     arrow_list = list(Image.ALL_ARROWS)
     arrow_list_anticlockwise = arrow_list[::-1]
     while True:
@@ -351,7 +339,6 @@ Reverse direction of list using the reversed function
 .. code-block:: python
 
     from microbit import *
-
 
     clock_list = list(Image.ALL_CLOCKS)
     clock_list_anticlockwise = list(reversed(clock_list))
@@ -380,7 +367,6 @@ Reverse direction of list using the reversed function
 
                         from microbit import *
 
-
                         clock_list = list(Image.ALL_CLOCKS)
                         clock_list_anticlockwise = list(reversed(clock_list))
                         while True:
@@ -394,7 +380,6 @@ Reverse direction of list using the reversed function
                 .. code-block:: python
 
                         from microbit import *
-
 
                         arrow_list = list(Image.ALL_ARROWS)
                         arrow_list_anticlockwise = arrow_list[::-1]

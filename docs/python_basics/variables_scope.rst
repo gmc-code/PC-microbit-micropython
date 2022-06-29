@@ -22,6 +22,7 @@ The code below attempts to use a ``name_age_greeting()`` function and increment 
     name = "Joe"
     age = 12
 
+
     def name_age_greeting():
         age += 1
         return "Hi " + name + ", you are " + str(age) + " years old"
@@ -47,14 +48,15 @@ Global  Variables
 
     from microbit import *
 
-
     name = "Joe"
     age = 12
+
 
     def name_age_greeting():
         global age
         age += 1
         return "Hi " + name + ", you are " + str(age) + " years old"
+
 
     display.scroll(name_age_greeting(), delay=70)
     display.scroll(name_age_greeting(), delay=70)
@@ -75,12 +77,13 @@ Use arguments instead of global variables
 
     from microbit import *
 
-
     name = "Joe"
     age = 12
 
+
     def name_age_greeting(name, age):
         return "Hi " + name + ", you are " + str(age)
+
 
     display.scroll(name_age_greeting(name, age), delay=50)
     age += 1
@@ -112,6 +115,7 @@ Nonlocal variables
         inner_func()
         display.scroll(x, delay=70) # 3
 
+
     outer_func()
 
 
@@ -135,6 +139,7 @@ Nonlocal variables
 
         inner_func()
         display.scroll(x, delay=70) # 7
+
 
     outer_func()
 

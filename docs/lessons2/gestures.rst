@@ -30,7 +30,6 @@ current_gesture
 
     from microbit import *
 
-
     while True:
         gesture = accelerometer.current_gesture()
         display.scroll(gesture)
@@ -52,7 +51,6 @@ is_gesture
 .. code-block:: python
 
     from microbit import *
-
 
     while True:
         if accelerometer.is_gesture("up"):
@@ -82,7 +80,6 @@ is_gesture counts
 .. code-block:: python
 
     from microbit import *
-
 
     count = 0
     display.show(count)
@@ -117,7 +114,6 @@ was_gesture
 
     from microbit import *
 
-
     while True:
         if accelerometer.was_gesture("up"):
             display.show(Image.ARROW_S)
@@ -144,7 +140,6 @@ was_gesture counts
 .. code-block:: python
 
     from microbit import *
-
 
     count = 10
     display.scroll(count)
@@ -173,9 +168,7 @@ shake step counter
 
     from microbit import *
 
-
     count = 0
-
     while True:
         if accelerometer.was_gesture('shake'):
             count += 1
@@ -194,7 +187,6 @@ tilt sideways counter
 .. code-block:: python
 
     from microbit import *
-
 
     count = 0
     display.show(count)
@@ -233,7 +225,6 @@ get_gestures()
 .. code-block:: python
 
     from microbit import *
-
 
     display.show('-')
     while True:

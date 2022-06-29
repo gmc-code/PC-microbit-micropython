@@ -18,7 +18,6 @@ To scroll the string (in single quotes), '``Hi``', across the display, use ``dis
 
     from microbit import *
 
-
     while True:
         display.scroll('Hi')
 
@@ -28,7 +27,6 @@ To scroll the string (in double quotes), "``Hello``", across the display, use ``
 .. code-block:: python
 
     from microbit import *
-
 
     while True:
         display.scroll("Hello")
@@ -40,7 +38,6 @@ To scroll the integer, ``5``, across the display, use ``display.scroll(5)``:
 
     from microbit import *
 
-
     while True:
         display.scroll(5)
 
@@ -50,7 +47,6 @@ To scroll the float, ``3.14``, across the display, use ``display.scroll(3.14)``:
 .. code-block:: python
 
     from microbit import *
-
 
     while True:
         display.scroll(3.14)
@@ -79,7 +75,6 @@ To scroll the float, ``3.14``, across the display, use ``display.scroll(3.14)``:
 
                     from microbit import *
 
-
                     while True:
                         display.show("Gerard")
 
@@ -90,7 +85,6 @@ To scroll the float, ``3.14``, across the display, use ``display.scroll(3.14)``:
                 .. code-block:: python
 
                     from microbit import *
-
 
                     while True:
                         display.show(35)
@@ -104,7 +98,6 @@ To scroll the float, ``3.14``, across the display, use ``display.scroll(3.14)``:
 
                     from microbit import *
 
-
                     while True:
                         display.show(18)
 
@@ -117,11 +110,8 @@ To scroll the float, ``3.14``, across the display, use ``display.scroll(3.14)``:
 
                     from microbit import *
 
-
                     while True:
                         display.show(0.5)
-
-
 
 ----
 
@@ -142,7 +132,6 @@ To scroll the string, 'Hi', across the display rapidly, use a short delay of 50m
 
     from microbit import *
 
-
     while True:
         display.scroll('Hi', 50)
 
@@ -153,7 +142,6 @@ To scroll the float, 3.14159, across the display slowly, use a long delay of 300
 
     from microbit import *
 
-
     while True:
         display.scroll(3.14159, delay=300)
 
@@ -163,7 +151,6 @@ To scroll a date as text, "Dec 25", across the display quickly, use a short dela
 .. code-block:: python
 
     from microbit import *
-
 
     while True:
         display.scroll("Dec 25", delay=100)
@@ -191,7 +178,6 @@ To scroll a date as text, "Dec 25", across the display quickly, use a short dela
 
                     from microbit import *
 
-
                     while True:
                         display.show("5 in family", delay=100)
 
@@ -202,7 +188,6 @@ To scroll a date as text, "Dec 25", across the display quickly, use a short dela
                 .. code-block:: python
 
                     from microbit import *
-
 
                     while True:
                         display.show("12 rooms", delay=100)
@@ -215,10 +200,8 @@ To scroll a date as text, "Dec 25", across the display quickly, use a short dela
 
                     from microbit import *
 
-
                     while True:
                         display.show("Born 1987", delay=100)
-
 
 ----
 
@@ -230,7 +213,6 @@ scroll at different speeds
 .. code-block:: python
 
     from microbit import *
-
 
     while True:
         display.scroll('I like to watch', delay=60)
@@ -246,7 +228,6 @@ scroll at different speeds
 
         from microbit import *
 
-
         while True:
             display.scroll('I like to play', delay=60)
             display.scroll('table tennis', delay=120)
@@ -257,7 +238,6 @@ scroll at different speeds
     .. code-block:: python
 
         from microbit import *
-
 
         while True:
             display.scroll('My name is', 60)
@@ -278,7 +258,6 @@ Display.scroll using variables
 
     from microbit import *
 
-
     str_value = 'abc'
     while True:
         display.scroll(str_value)
@@ -288,7 +267,6 @@ Display.scroll using variables
 
     from microbit import *
 
-
     int_value = 123
     while True:
         display.scroll(int_value)
@@ -297,7 +275,6 @@ Display.scroll using variables
 .. code-block:: python
 
     from microbit import *
-
 
     float_value = 0.93
     while True:
@@ -311,7 +288,6 @@ Display.scroll using variables
 .. code-block:: python
 
     from microbit import *
-
 
     player = 'Locket'
     goals = 1360
@@ -339,7 +315,6 @@ Display.scroll using variables
 
             from microbit import *
 
-
             player = 'Pele'
             goals = 775
             goals_per_game = 0.92
@@ -358,7 +333,6 @@ Display.scroll using variables
 
             from microbit import *
 
-
             batsman = 'Sobers'
             runs = 8032
             ave = 57.8
@@ -376,7 +350,6 @@ Display.scroll using variables
         .. code-block:: python
 
             from microbit import *
-
 
             player = 'Kobe Bryant'
             points = 33643

@@ -19,7 +19,6 @@ To show the string, '``Hi``', one character at a time on the display, use ``disp
 
     from microbit import *
 
-
     while True:
         display.show('Hi')
 
@@ -30,7 +29,6 @@ To show the integer, ``16``, one digit at a time on the display, use ``display.s
 
     from microbit import *
 
-
     while True:
         display.show(16)
 
@@ -40,7 +38,6 @@ To show the float, ``3.14``, one digit at a time on the display, use ``display.s
 .. code-block:: python
 
     from microbit import *
-
 
     while True:
         display.show(3.14)
@@ -68,7 +65,6 @@ To show the float, ``3.14``, one digit at a time on the display, use ``display.s
 
                     from microbit import *
 
-
                     while True:
                         display.show("Hughes")
 
@@ -79,7 +75,6 @@ To show the float, ``3.14``, one digit at a time on the display, use ``display.s
                 .. code-block:: python
 
                     from microbit import *
-
 
                     while True:
                         display.show(182)
@@ -92,11 +87,8 @@ To show the float, ``3.14``, one digit at a time on the display, use ``display.s
 
                     from microbit import *
 
-
                     while True:
                         display.show(0.16)
-
-
 
 ----
 
@@ -115,7 +107,6 @@ Display.clear
 .. code-block:: python
 
     from microbit import *
-
 
     while True:
         display.show(3.14)
@@ -159,7 +150,6 @@ Display.clear
 
                     from microbit import *
 
-
                     while True:
                         display.show(123)
                         display.clear()
@@ -172,7 +162,6 @@ Display.clear
                 .. code-block:: python
 
                     from microbit import *
-
 
                     while True:
                         display.show("ABC")
@@ -209,7 +198,6 @@ To show the float, ``3.14159``, across the display slowly use a medium delay of 
 
     from microbit import *
 
-
     while True:
         display.show(3.14159, delay=300)
         display.clear()
@@ -238,7 +226,6 @@ To show the float, ``3.14159``, across the display slowly use a medium delay of 
 
                     from microbit import *
 
-
                     while True:
                         display.show(99.94, delay=200)
                         display.clear()
@@ -251,7 +238,6 @@ To show the float, ``3.14159``, across the display slowly use a medium delay of 
                 .. code-block:: python
 
                     from microbit import *
-
 
                         while True:
                         display.show(5.64, delay=150)
@@ -270,7 +256,6 @@ show at different speeds
 
     from microbit import *
 
-
     while True:
         display.show('I like the ', delay=200)
         display.show('NBA', delay=400)
@@ -287,19 +272,17 @@ show at different speeds
 
         from microbit import *
 
-
         while True:
             display.show('I like to', delay=200)
             display.show('ride my bike', delay=400)
             display.clear()
             sleep(2000)
 
-    2. Modify the code below to display your name and age in years.
+    1. Modify the code below to display your name and age in years.
 
     .. code-block:: python
 
         from microbit import *
-
 
         while True:
             display.show('My name is', 200)
@@ -321,7 +304,6 @@ Display.show using variables
 .. code-block:: python
 
     from microbit import *
-
 
     player = 'Dunstall'
     goals = 1254
@@ -347,7 +329,6 @@ Display.show using variables
 
             from microbit import *
 
-
             player = 'Romario'
             goals = 780
             goals_per_game = 0.78
@@ -368,7 +349,6 @@ Display.show using variables
 
             from microbit import *
 
-
             bowler = 'Muralitharan'
             wickets = 800
             ave = 22.7
@@ -388,7 +368,6 @@ Display.show using variables
         .. code-block:: python
 
             from microbit import *
-
 
             player = 'Kareem Abdul-Jabbar'
             points = 38387

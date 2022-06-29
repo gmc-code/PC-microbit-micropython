@@ -27,6 +27,7 @@ Potentiometer Classes
     # potentiometer using class
     from microbit import *
 
+
     class Potentiometer:
         def __init__(self, io_pin=pin0):
             self.io_pin = io_pin
@@ -71,6 +72,7 @@ Pixel Classes
     # pixel class with accelerometer
     from microbit import *
 
+
     class Pixel:
         def __init__(self, x_position=2, y_position=2):
             self.x_position = x_position
@@ -79,12 +81,13 @@ Pixel Classes
         def move(self, x_delta, y_delta):
             self.x_position = min(4, max(0, self.x_position + x_delta))
             self.y_position = min(4, max(0, self.y_position + y_delta))
-                    
+
         def show(self):
             display.set_pixel(self.x_position, self.y_position, 9)
             sleep(50)
             display.set_pixel(self.x_position, self.y_position, 2)
-            
+
+        
     def acc_x_change():
         sensitivity = 100
         accx = accelerometer.get_x()
@@ -96,6 +99,7 @@ Pixel Classes
             xd = 0
         return xd
         
+
     def acc_y_change():
         sensitivity = 300
         accy = accelerometer.get_y()
@@ -107,9 +111,9 @@ Pixel Classes
             yd = 0
         return yd
 
+
     # Create an instance of a pixel object
     mypix = Pixel()
-
     mypix.show()
     while True:
         mypix.move(acc_x_change(),acc_y_change())
@@ -130,6 +134,7 @@ Pixel animation using classes
     from microbit import *
     import random
 
+
     class LED():
         def __init__(self, x=2, y=2):
             self.x = x
@@ -143,6 +148,7 @@ Pixel animation using classes
 
         def off(self):
             display.set_pixel(self.x, self.y, 0)
+
 
     led02 = LED(0, 2)
     led12 = LED(1, 2)

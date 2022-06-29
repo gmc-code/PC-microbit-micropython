@@ -43,7 +43,6 @@ For example, you can use it to fill a list with temperature readings or accelero
 
     from microbit import *
 
-    
     recorded_temperature = []         # Create an empty list
     for i in range(100):            # Add 100 temperature values
         recorded_temperature.append(temperature())

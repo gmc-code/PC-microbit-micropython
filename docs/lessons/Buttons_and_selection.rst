@@ -49,7 +49,6 @@ if
 
     from microbit import *
 
-
     while True:
         if button_a.is_pressed():
             display.show("A")
@@ -83,7 +82,6 @@ if - else
 
     from microbit import *
 
-
     while True:
         if button_a.is_pressed():
             display.show("A")
@@ -115,7 +113,6 @@ if - elif
 .. code-block:: python
 
     from microbit import *
-
 
     while True:
         if button_a.is_pressed():
@@ -149,7 +146,6 @@ If - elif - else
 .. code-block:: python
 
     from microbit import *
-
 
     while True:
         if button_a.is_pressed():
@@ -187,7 +183,6 @@ If - elif - elif - else
 .. code-block:: python
 
     from microbit import *
-
 
     while True:
         if button_a.is_pressed() and button_b.is_pressed():

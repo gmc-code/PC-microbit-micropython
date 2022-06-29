@@ -40,7 +40,6 @@ Read and Write analog
 
     from microbit import *
 
-
     while True:
         potval = pin2.read_analog()
         display.scroll(potval, delay=80)
