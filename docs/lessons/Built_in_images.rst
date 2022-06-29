@@ -512,7 +512,7 @@ Reverse direction of list using the reversed function
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | A list, ``clock_list``, can be reversed using the reversed function: ``reversed(clock_list)``.
-| The python object obtained from the reversed function can be converted to a list for reuse by using ``list(reversed(clock_list))`` and placing the result in the variable ``clock_list_anticlockwise``.
+| The python object obtained from the reversed function can be converted to a list for reuse by using ``list(reversed(clock_list))`` and placing the result in the variable ``clock_list_anticlockwise``. 
 
 .. code-block:: python
 
