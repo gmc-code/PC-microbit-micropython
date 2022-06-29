@@ -176,6 +176,7 @@ Image lists
 | The code below displays a list of shapes, so the variable name chosen is ``shape_list``.
 | Whitespace (tabs, spaces, line endings) are ignored within a list, so a long list can be set out like that below, with all the Images lined up for easy reading.
 | Trailing commas are preferred in such lists, making it easy to extend the list with new lines.
+| In Mu Editor, the Tidy button will format a long list like that below.
 
 .. code-block:: python
 
@@ -292,7 +293,7 @@ Image sentences
 ----------------------------------------
 
 | The code below makes a sentence using words and images.
-| Delays, using ``sleep(300)`` are used to prevent it from being too fast to see.
+| Delays, ``sleep(300)`` is used to prevent the sequence from being too fast to see.
 
 .. code-block:: python
 
@@ -526,8 +527,8 @@ Reverse direction of list using the reversed function
 
 .. admonition:: Tasks
 
-    #. Write code to display all the clock images clockwise then anticlockwise.
-    #. Write code to display all the arrow images clockwise then anticlockwise.
+    #. Write code that uses list slicing to display all the arrow images clockwise then anticlockwise.
+    #. Write code that uses the reversed function to display all the clock images clockwise then anticlockwise.
 
     .. dropdown::
         :icon: codescan
@@ -538,7 +539,21 @@ Reverse direction of list using the reversed function
 
             .. tab-item:: Q1
 
-                Write code to display all the clock images clockwise then anticlockwise.
+                Write code that uses list slicing to display all the arrow images clockwise then anticlockwise.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    arrow_list = list(Image.ALL_ARROWS)
+                    arrow_list_anticlockwise = arrow_list[::-1]
+                    while True:
+                        display.show(arrow_list, delay=200)
+                        display.show(arrow_list_anticlockwise, delay=200)
+                        
+            .. tab-item:: Q2
+
+                Write code that uses the reversed function to display all the clock images clockwise then anticlockwise.
 
                 .. code-block:: python
 
@@ -550,17 +565,5 @@ Reverse direction of list using the reversed function
                         display.show(clock_list, delay=200)
                         display.show(clock_list_anticlockwise, delay=200)
 
-            .. tab-item:: Q2
 
-                Write code to display all the arrow images clockwise then anticlockwise.
-
-                .. code-block:: python
-
-                    from microbit import *
-
-                    arrow_list = list(Image.ALL_ARROWS)
-                    arrow_list_anticlockwise = arrow_list[::-1]
-                    while True:
-                        display.show(arrow_list, delay=200)
-                        display.show(arrow_list_anticlockwise, delay=200)
 
