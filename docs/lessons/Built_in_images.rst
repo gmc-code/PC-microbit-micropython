@@ -538,16 +538,19 @@ Reverse direction of list using the reversed function
         :icon: codescan
         :color: primary
         :class-container: sd-dropdown-container
+        :class: no-copybutton
 
         .. tab-set::
+            :class: no-copybutton
 
             .. tab-item:: Q1
-
+                :class: no-copybutton
+                
                 Write code that uses list slicing to display all the arrow images clockwise then anticlockwise.
 
                 .. code-block:: python
                     :class: no-copybutton
-                    
+
                     from microbit import *
 
                     arrow_list = list(Image.ALL_ARROWS)

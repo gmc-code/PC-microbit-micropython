@@ -18,8 +18,9 @@ sphinx:
   fail_on_warning: false
 
 # If using Sphinx, optionally build your docs in additional formats such as PDF
-formats:
-  - pdf
+# gif cuase pdf production to fail
+# formats:
+#  - pdf
 
 # Optionally set the version of Python and requirements required to build your docs
 python:
