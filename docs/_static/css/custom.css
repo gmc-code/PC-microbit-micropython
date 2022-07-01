@@ -184,6 +184,17 @@ a.copybtn > img {
     opacity: 1;
 }
 
+/* Make Copy button visible and coloured, not just on hover */
+button.copybtn {
+    color: blue;
+    opacity: 1;
+ }
+
+.highlight:hover .copybtn {
+    opacity: 1;
+}
+
+/* ========================================== */
 /**
  * A minimal CSS-only tooltip copied from:
  *   https://codepen.io/mildrenben/pen/rVBrpK
