@@ -155,6 +155,7 @@ div.rst-versions > div.rst-other-versions > div.injected > dl:nth-child(1) {
 
 /* ========================================== */
 /* Copy buttons for sphinx-copybutton extension */
+/* https://sphinx-copybutton.readthedocs.io/en/latest/ */
 
 a.copybtn {
     position: absolute;
