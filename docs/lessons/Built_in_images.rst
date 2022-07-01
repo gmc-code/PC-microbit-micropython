@@ -542,7 +542,6 @@ Reverse direction of list using the reversed function
         .. tab-set::
 
             .. tab-item:: Q1
-                :class: no-copybutton
 
                 Write code that uses list slicing to display all the arrow images clockwise then anticlockwise.
 
@@ -561,7 +560,8 @@ Reverse direction of list using the reversed function
 
                 Write code that uses the reversed function to display all the clock images clockwise then anticlockwise.
 
-                .. code-block:: python
+                .. code-block::
+                    :class: no-copybutton
 
                     from microbit import *
 
