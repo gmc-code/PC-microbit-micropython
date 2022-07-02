@@ -22,8 +22,8 @@ For loops with strings
 
 .. admonition:: Tasks
 
-    #. Write a for loop to scroll each letter in 'winner'.
-    #. Write a for loop to scroll each digit in 2023.
+    #. Write a for loop to scroll each letter in 'winner' individually.
+    #. Write a for loop to scroll each digit in 2023 individually.
 
     .. dropdown::
         :icon: codescan
@@ -34,7 +34,7 @@ For loops with strings
 
             .. tab-item:: Q1
 
-                Write a for loop to scroll each letter in 'winner'.
+                Write a for loop to scroll each letter in 'winner' individually.
 
                 .. code-block:: python
 
@@ -48,7 +48,7 @@ For loops with strings
 
             .. tab-item:: Q2
 
-                Write a for loop to scroll each digit in 2023.
+                Write a for loop to scroll each digit in 2023 individually.
 
                 .. code-block:: python
 
@@ -129,7 +129,7 @@ For loops with lists
 
                     from microbit import *
 
-                    num_list = ``[1, 2, 3, 5, 8]``
+                    num_list = [1, 2, 3, 5, 8]
                     while True:
                         for num in num_list:
                             display.scroll(num)
@@ -193,7 +193,7 @@ Nested For loops
 
             .. tab-item:: Q1
 
-                Write a for loop that shows the result from multiplying each number in the list, ``[3, 5, 7]`` by 5, using a variable for each part of the multiplication.
+                Write a for loop that shows the result from **multiplying** each number in the list, ``[3, 5, 7]`` by 5, using a variable for each part of the multiplication.
 
                 .. code-block:: python
 
@@ -207,7 +207,7 @@ Nested For loops
 
             .. tab-item:: Q2
 
-                Write a nested for loop that finds the sum of every different combination of two numbers from the two lists: ``[2, 4, 6]`` and ``[3, 5, 7]``.
+                Write a nested for loop that finds the **sum** of every different combination of two numbers from the two lists: ``[2, 4, 6]`` and ``[3, 5, 7]``.
 
                 .. code-block:: python
 
@@ -218,4 +218,4 @@ Nested For loops
                     while True:
                         for num_1 in nums_1_list:
                             for num_2 in nums_2_list:
-                                display.scroll(num_1 * num_2, delay=80)
+                                display.scroll(num_1 + num_2, delay=80)
