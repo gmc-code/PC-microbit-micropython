@@ -79,10 +79,10 @@ Range function with start and stop values
 
     Returns a sequence of numbers, starting at the ``startvalue`` number, and increments by 1 (by default), and ends before the ``stopvalue`` number. 
 
-| range(2, 6) returns the numbers 2,3,4,5. It starts at 2. It goes up by 1. It stops before 6, at 5.
+| range(2, 6) returns the numbers 2, 3, 4, 5. It starts at 2. It goes up by 1. It stops before 6, at 5.
 | range(2, 6) can be read as 'range of 2 up to but not including 6'.
 
-| The code below will display the numbers 2,3,4,5.
+| The code below will display the numbers 2, 3, 4, 5.
 
 .. code-block:: python
 
@@ -142,7 +142,7 @@ Range function with a step size
 
     Returns a sequence of numbers, starting at the ``startvalue`` number, incremented by ``stepsize``, and ending before the ``stopvalue`` number. 
 
-| range(1, 6, 2) returns the numbers 1,3,5. It starts at 1. It goes up by 2. It stops before 6, at 5.
+| range(1, 6, 2) returns the numbers 1, 3, 5. It starts at 1. It goes up by 2. It stops before 6, at 5.
 | range(1, 6, 2) can be read as 'range of 2 up to but not including 6 in steps of 2'.
 
 | The code below will display the numbers 1, 3, 5.
