@@ -547,7 +547,7 @@ Reverse direction of list using the reversed function
 
                 .. code-block:: python
                     :class: no-copybutton
-
+                    
                     from microbit import *
 
                     arrow_list = list(Image.ALL_ARROWS)
@@ -561,7 +561,6 @@ Reverse direction of list using the reversed function
                 Write code that uses the reversed function to display all the clock images clockwise then anticlockwise.
 
                 .. code-block::
-                    :class: no-copybutton
 
                     from microbit import *
 

@@ -22,6 +22,9 @@ extensions = [
     'sphinx_design',
 ]
 
+# for copybutton to allow use of :class: no-copybutton  in code blocks
+copybutton_selector = "div:not(.no-copybutton) > div.highlight > pre"
+
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
