@@ -155,44 +155,31 @@ div.rst-versions > div.rst-other-versions > div.injected > dl:nth-child(1) {
 
 /* ========================================== */
 /* Copy buttons for sphinx-copybutton extension */
-/* https://sphinx-copybutton.readthedocs.io/en/latest/ */
+/* Copy buttons for sphinx-copybutton extension */
+/* https://github.com/executablebooks/sphinx-copybutton/blob/master/sphinx_copybutton/_static/copybutton.css */
 
-a.copybtn {
-    position: absolute;
-    top: .2em;
-    right: .2em;
-    width: 1.3em;
-    height: 1.3em;
-    opacity: .3;
-    transition: opacity 0.5s;
-    border: none;
-    user-select: none;
-}
-
-div.highlight  {
-    position: relative;
-}
-
-a.copybtn > img {
-    vertical-align: top;
-    margin: 0;
-    top: 0;
-    right: 0;
-    position: absolute;
-}
-
-.highlight:hover .copybtn {
-    opacity: 1;
-}
-
-/* Make Copy button visible and coloured, not just on hover */
+/* w,h orig 1.7 em; top, right .3em opacity: 0 */
 button.copybtn {
-    color: blue;
-    opacity: 1;
- }
+    top: .1em;
+    right: .1em;
+    width: 1.5em;
+    height: 1.5em;
+	opacity: 1;
+    border: #1b1f2426 1px solid;
+    background-color: #f6f8fa;
+    color: blue
+    /* The colors that GitHub uses 
+    border: #1b1f2426 1px solid;
+    background-color: #f6f8fa;
+    color: #57606a; */
+}
 
-.highlight:hover .copybtn {
-    opacity: 1;
+/* w,h orig 1.5 em */
+button.copybtn svg {
+    stroke: currentColor;
+    width: 1.4em;   
+    height: 1.4em;
+    padding: 0.1em;
 }
 
 

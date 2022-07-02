@@ -63,6 +63,65 @@ if
     #. Edit the code to display "B" when the B button is pressed.
     #. Edit the code to display a sad face when the B button is pressed.
 
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Edit the code to scroll your name when the A button is pressed.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        if button_a.is_pressed():
+                            display.scroll("name")
+                        sleep(200)
+
+            .. tab-item:: Q2
+
+                Edit the code to display a happy face when the A button is pressed.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        if button_a.is_pressed():
+                            display.show(Image.HAPPY)
+                        sleep(200)
+
+            .. tab-item:: Q3
+
+                Edit the code to display "B" when the B button is pressed.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        if button_b.is_pressed():
+                            display.scroll("B")
+                        sleep(200)
+
+            .. tab-item:: Q4
+
+                Edit the code to display a sad face when the B button is pressed.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        if button_a.is_pressed():
+                            display.show(Image.SAD)
+                        sleep(200)
+                                                                                          
 
 ----
 
@@ -95,7 +154,59 @@ if - else
 
     #. Edit the code to scroll your name when the A button is pressed and to show "?" when nothing is pressed.
     #. Edit the code to display a happy face when the A button is pressed and a sad face when nothing is pressed.
-    #. Edit the code to display a sad face when the B button is pressed and a happy face when nothing is pressed.
+    #. Edit the code to display a sad face when the B button is pressed and a confused face when nothing is pressed.
+    
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Edit the code to scroll your name when the A button is pressed and to show "?" when nothing is pressed.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        if button_a.is_pressed():
+                            display.scroll("name")
+                        else:
+                            display.show("?")
+                        sleep(200)
+
+            .. tab-item:: Q2
+
+                Edit the code to display a happy face when the A button is pressed and a sad face when nothing is pressed.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        if button_a.is_pressed():
+                            display.show(Image.HAPPY)
+                        else:
+                            display.show(Image.SAD)
+                        sleep(200)
+
+            .. tab-item:: Q3
+
+                Edit the code to display a sad face when the B button is pressed and a confused face when nothing is pressed.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        if button_b.is_pressed():
+                            display.show(Image.SAD)
+                        else:
+                            display.show(Image.CONFUSED)
+                        sleep(200)
 
 ----
 
@@ -125,8 +236,45 @@ if - elif
 
 .. admonition:: Tasks
 
-    #. Edit the code to scroll your name when the A button is pressed and your house name when the B button is pressed.
+    #. Edit the code to scroll your name when the A button is pressed and your tutor group when the B button is pressed.
     #. Edit the code to display a happy face when the A button is pressed and a sad face when the B button is pressed.
+    
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Edit the code to scroll your name when the A button is pressed and your tutor group when the B button is pressed.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        if button_a.is_pressed():
+                            display.scroll("name")
+                        elif button_b.is_pressed():
+                            display.scroll("TG")
+                        sleep(200)
+
+            .. tab-item:: Q2
+
+                Edit the code to display a happy face when the A button is pressed and a sad face when the B button is pressed.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        if button_a.is_pressed():
+                            display.show(Image.HAPPY)
+                        elif button_b.is_pressed():
+                            display.show(Image.SAD)
+                        sleep(200)
 
 
 ----
@@ -161,10 +309,50 @@ If - elif - else
 
 .. admonition:: Tasks
 
-    #. Edit the code to scroll your name when the A button is pressed and your house when the B button is pressed and your Tutor group when nothing is pressed.
+    #. Edit the code to scroll your name when the A button is pressed and your school house when the B button is pressed and your Tutor group when nothing is pressed.
     #. Edit the code to display a happy face when the A button is pressed and a sad face when the B button is pressed and a confused face when nothing is pressed.
 
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Edit the code to scroll your name when the A button is pressed and your school house when the B button is pressed and your Tutor group when nothing is pressed.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        if button_a.is_pressed():
+                            display.scroll("name")
+                        elif button_b.is_pressed():
+                            display.scroll("house")
+                        else:
+                            display.scroll("TG")
+                        sleep(200)
+
+            .. tab-item:: Q2
+
+                Edit the code to display a happy face when the A button is pressed and a sad face when the B button is pressed and a confused face when nothing is pressed.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        if button_a.is_pressed():
+                            display.show(Image.HAPPY)
+                        elif button_b.is_pressed():
+                            display.show(Image.SAD)
+                        else:
+                            display.show(Image.CONFUSED)
+                        sleep(200)
+ 
 ----
 
 If - elif - elif - else
@@ -202,4 +390,49 @@ If - elif - elif - else
 
     #. Edit the code to scroll your favourite subject when both buttons are pressed together, your best subject when the A button is pressed, your favourite sport when the B button is pressed, and your favourite food when nothing is pressed.
     #. Edit the code to display a giraffe when both buttons are pressed, a duck when the A button is pressed, a rabbit when the B button is pressed and a snake when nothing is pressed.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Edit the code to scroll your favourite subject when both buttons are pressed together, your best subject when the A button is pressed, your favourite sport when the B button is pressed, and your favourite food when nothing is pressed.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        if button_a.is_pressed() and button_b.is_pressed():
+                            display.scroll("digistem")
+                        elif button_a.is_pressed():
+                            display.scroll("maths")
+                        elif button_b.is_pressed():
+                            display.scroll("table tennis")
+                        else:
+                            display.scroll("chicken 5 spice")
+                        sleep(100)
+
+            .. tab-item:: Q2
+
+                Edit the code to display a giraffe when both buttons are pressed, a duck when the A button is pressed, a rabbit when the B button is pressed and a snake when nothing is pressed.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        if button_a.is_pressed() and button_b.is_pressed():
+                            display.show(Image.GIRAFFE)
+                        elif button_a.is_pressed():
+                            display.show(Image.DUCK)
+                        elif button_b.is_pressed():
+                            display.show(Image.RABBIT)
+                        else:
+                            display.show(Image.SNAKE)
+                        sleep(100)
 
