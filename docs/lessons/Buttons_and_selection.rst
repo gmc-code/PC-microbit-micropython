@@ -60,7 +60,7 @@ if
 
     #. Edit the code to scroll your name when the A button is pressed.
     #. Edit the code to display a happy face when the A button is pressed.
-    #. Edit the code to display "B" when the B button is pressed.
+    #. Edit the code to scroll your age when the B button is pressed.
     #. Edit the code to display a sad face when the B button is pressed.
 
     .. dropdown::
@@ -98,7 +98,7 @@ if
 
             .. tab-item:: Q3
 
-                Edit the code to display "B" when the B button is pressed.
+                Edit the code to scroll your age when the B button is pressed.
 
                 .. code-block:: python
 
@@ -106,7 +106,7 @@ if
 
                     while True:
                         if button_b.is_pressed():
-                            display.scroll("B")
+                            display.scroll(12)
                         sleep(200)
 
             .. tab-item:: Q4
@@ -118,7 +118,7 @@ if
                     from microbit import *
 
                     while True:
-                        if button_a.is_pressed():
+                        if button_b.is_pressed():
                             display.show(Image.SAD)
                         sleep(200)
                                                                                           

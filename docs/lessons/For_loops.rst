@@ -17,12 +17,49 @@ For loops with strings
         for character in welcome_string:
             display.show(character)
             sleep(300)
+
 ----
 
 .. admonition:: Tasks
 
-    #. Write a for loop to show each letter in 'winner'.
-    #. Write a for loop to show each digit in '2021'.
+    #. Write a for loop to scroll each letter in 'winner'.
+    #. Write a for loop to scroll each digit in 2023.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Write a for loop to scroll each letter in 'winner'.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    string = 'winner'
+                    while True:
+                        for character in string:
+                            display.scroll(character)
+                            sleep(300)
+
+            .. tab-item:: Q2
+
+                Write a for loop to scroll each digit in 2023.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    string = '2023'
+                    while True:
+                        for character in string:
+                            display.scroll(character)
+                            sleep(300)
+
 
 ----
 
@@ -60,8 +97,43 @@ For loops with lists
 
 .. admonition:: Tasks
 
-    #. Write a for loop to scroll each name in the list ``['Ariarne', 'Cate', 'Emma', 'Kaylee']``.
-    #. Write a for loop to show each number in the list ``[1, 1, 2, 3, 5, 8]``.
+    #. Write a for loop to scroll each name in the list ``['Ann', 'Liv', 'Sue']``.
+    #. Write a for loop to scroll each number in the list ``[1, 2, 3, 5, 8]``.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Write a for loop to scroll each name in the list ``['Ann', 'Liv', 'Sue']``.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    names_list= ``['Ann', 'Liv', 'Sue']``
+                    while True:
+                        for name in names_list:
+                            display.scroll(name)
+                            sleep(300)
+
+            .. tab-item:: Q2
+
+                Write a for loop to scroll each number in the list ``[1, 2, 3, 5, 8]``.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    num_list = ``[1, 2, 3, 5, 8]``
+                    while True:
+                        for num in num_list:
+                            display.scroll(num)
+                            sleep(300)
 
 ----
 
@@ -98,17 +170,52 @@ Nested For loops
 
     from microbit import *
 
-    nums_1 = [7, 9]
-    nums_2 = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+    nums_1_list = [7, 9]
+    nums_2_list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
     while True:
-        for num_1 in nums_1:
-            for num_2 in nums_2:
+        for num_1 in nums_1_list:
+            for num_2 in nums_2_list:
                 display.scroll(num_1 * num_2, delay=80)
 
 ----
 
 .. admonition:: Tasks
 
-    #. Write a for loop that shows the result from multiplying each number in the list, ``[3, 5, 7]`` by 5.
-    #. Write a nested for loop that finds the sum of every different combination of two numbers from the two lists: ``[2, 4, 6]`` and ``[3, 5,7]``.
+    #. Write a for loop that shows the result from multiplying each number in the list, ``[3, 5, 7]`` by 5, using a variable for each part of the multiplication.
+    #. Write a nested for loop that finds the sum of every different combination of two numbers from the two lists: ``[2, 4, 6]`` and ``[3, 5, 7]``.
 
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Write a for loop that shows the result from multiplying each number in the list, ``[3, 5, 7]`` by 5, using a variable for each part of the multiplication.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    nums_1_list = [3, 5, 7]
+                    num_2 = 5
+                    while True:
+                        for num_1 in nums_1_list:
+                            display.scroll(num_1 * num_2, delay=80)
+
+            .. tab-item:: Q2
+
+                Write a nested for loop that finds the sum of every different combination of two numbers from the two lists: ``[2, 4, 6]`` and ``[3, 5, 7]``.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    nums_1_list = [2, 4, 6]
+                    nums_2_list = [3, 5, 7]
+                    while True:
+                        for num_1 in nums_1_list:
+                            for num_2 in nums_2_list:
+                                display.scroll(num_1 * num_2, delay=80)
