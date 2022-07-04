@@ -31,7 +31,7 @@ current_gesture
 
     while True:
         gesture = accelerometer.current_gesture()
-        display.scroll(gesture)
+        display.scroll(gesture, delay=80)
         sleep(50)
 
 ----
@@ -42,7 +42,6 @@ is_gesture
 .. py:function:: is_gesture(name)
 
     Return True or False to indicate if the named gesture is currently active.
-
 
 | The code below displays an arrow indicating the direction of tilt when the top is tilted up with the bottom being tilted down.
 | The arrow will continue to be displayed when the microbit is continuously tilted with the top up.
@@ -65,6 +64,8 @@ is_gesture
     #. Modify the code to display a North arrow when the microbit gesture is ``down``.
     #. Modify the code to display a West arrow when the microbit gesture is ``left``.
     #. Modify the code to display an East arrow when the microbit gesture is ``right``.
+    #. Modify the code to display an East or West arrows when the microbit gesture is ``right`` or ``left`` respectively.
+    #. Modify the code to display an North, South, East or West arrows when the microbit gesture is ``down``, ``up``, ``right`` or ``left`` respectively.
 
     .. dropdown::
         :icon: codescan
@@ -114,6 +115,44 @@ is_gesture
                     while True:
                         if accelerometer.is_gesture("right"):
                             display.show(Image.ARROW_E)
+                        else:
+                            display.clear()
+                        sleep(100)
+
+            .. tab-item:: Q4
+
+                Modify the code to display an East or West arrow when the microbit gesture is ``right`` or ``left`` respectively.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        if accelerometer.is_gesture("right"):
+                            display.show(Image.ARROW_E)
+                        elif accelerometer.is_gesture("left"):
+                            display.show(Image.ARROW_W)
+                        else:
+                            display.clear()
+                        sleep(100)
+
+            .. tab-item:: Q5
+
+                Modify the code to display a North, South, East or West arrow when the microbit gesture is ``down``, ``up``, ``right`` or ``left`` respectively.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        if accelerometer.is_gesture("down"):
+                            display.show(Image.ARROW_N)
+                        elif accelerometer.is_gesture("up"):
+                            display.show(Image.ARROW_S)
+                        elif accelerometer.is_gesture("right"):
+                            display.show(Image.ARROW_E)
+                        elif accelerometer.is_gesture("left"):
+                            display.show(Image.ARROW_W)
                         else:
                             display.clear()
                         sleep(100)
