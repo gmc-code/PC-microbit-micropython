@@ -12,8 +12,8 @@ Mobile phone knows which up to show the images on its screen because it uses an 
 | When the reading is 0 the microbit is "level" along that particular axis. 
 | Titling it in one direction will give a positive reading; in the opposite direction a negative reading is given.
 
-``accelerometer.get_x()`` * X - tilting left edge down (-) and right edge down (+).
-``accelerometer.get_y()`` * Y - tilting the top edge down (-) and bottom edge down (+).
+``accelerometer.get_x()`` * X - tilting the left edge down (-) and the right edge down (+).
+``accelerometer.get_y()`` * Y - tilting the top edge down (-) and the bottom edge down (+).
 ``accelerometer.get_z()`` * Z - moving down (-) and moving up (+).
 
 
@@ -92,7 +92,7 @@ Z axis.
                             x_val = "L"
                         else:
                             x_val = "-"
-                        display.show(x_val)
+                        display.scroll(x_val)
 
             .. tab-item:: Q2
 
@@ -127,7 +127,7 @@ Z axis.
                             y_val = "T"
                         else:
                             y_val = "-"
-                        display.show(y_val)
+                        display.scroll(y_val)
 
             .. tab-item:: Q4
 
@@ -160,8 +160,8 @@ Z axis.
 .. admonition:: Tasks
 
     #. Modify the code above to display and left arrow for tilting left and a right arrow for tilting right.
-    #. Modify the code above to display and up arrow for tilting the top down and a down arrow for tilting the bottom down.
-    #. Write code to indicate all 9 possible tilts with 8 different arrows instead of text: ↗, ↘, ↖, ↙, →, ←, ↑, ↓, '-'. Use nested if statements. Add a 250ms sleep to pause briefly before the next reading.
+    #. Modify the code above to display an up arrow for tilting the top down and a down arrow for tilting the bottom down.
+    #. Write code to indicate all 9 possible tilts with 8 different arrows instead of text: ↗, ↘, ↖, ↙, →, ←, ↑, ↓, '-'. Use nested if statements by nesting the y code within each branch of the x code. Add a 250ms sleep to pause briefly before the next reading.
 
     .. dropdown::
         :icon: codescan
@@ -189,7 +189,7 @@ Z axis.
 
             .. tab-item:: Q2
 
-                Modify the code above to display and up arrow for tilting the top up and a down arrow for tilting the bottom down.
+                Modify the code above to display an up arrow for tilting the top down and a down arrow for tilting the bottom down.
 
                 .. code-block:: python
 
@@ -206,7 +206,7 @@ Z axis.
 
             .. tab-item:: Q3
 
-                Write code to indicate all 9 possible tilts with 8 different arrows instead of text: ↗, ↘, ↖, ↙, →, ←, ↑, ↓, '-'. Use nested if statements. Add a 250ms sleep to pause briefly before the next reading.
+                Write code to indicate all 9 possible tilts with 8 different arrows instead of text: ↗, ↘, ↖, ↙, →, ←, ↑, ↓, '-'. Use nested if statements by nesting the y code within each branch of the x code. Add a 250ms sleep to pause briefly before the next reading.
 
                 .. code-block:: python
 
@@ -237,7 +237,7 @@ Z axis.
                             else:
                                 display.show("-")
                         sleep(200)
-                        
+
 ----
 
 .. admonition:: Tasks
