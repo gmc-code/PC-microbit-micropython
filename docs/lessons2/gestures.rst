@@ -184,8 +184,8 @@ is_gesture counts
 .. admonition:: Tasks
 
     #. Modify the code to reset the count back to 0 when the A button is pressed.
-    #. Modify the code to reset the count to a number 10 less than the current count when the B button is pressed.
-    #. Modify the code to reset the count to a number 10 less than the current count, but not lower than 0, when the B button is pressed.
+    #. Modify the code to reset the count to a number 5 less than the current count when the B button is pressed.
+    #. Modify the code to reset the count to a number 2 less than the current count, but not lower than 0, when the B button is pressed.
     #. Modify the code to include both the A button and B button actions.
 
     .. dropdown::
@@ -217,7 +217,7 @@ is_gesture counts
 
             .. tab-item:: Q2
 
-                Modify the code to reset the count to a number 10 less than the current count when the B button is pressed.
+                Modify the code to reset the count to a number 2 less than the current count when the B button is pressed.
 
                 .. code-block:: python
 
@@ -227,7 +227,7 @@ is_gesture counts
                     display.show(count)
                     while True:
                         if button_b.is_pressed():
-                            count = count - 10
+                            count = count - 2
                             display.scroll(count, delay=60)
                             sleep(200)
                         if accelerometer.is_gesture('right'):
@@ -237,7 +237,7 @@ is_gesture counts
 
             .. tab-item:: Q3
 
-                Modify the code to reset the count to a number 10 less than the current count, but not lower than 0, when the B button is pressed.
+                Modify the code to reset the count to a number 2 less than the current count, but not lower than 0, when the B button is pressed.
 
                 .. code-block:: python
 
@@ -247,7 +247,7 @@ is_gesture counts
                     display.show(count)
                     while True:
                         if button_b.is_pressed():
-                            count = max(0, count - 10)
+                            count = max(0, count - 2)
                             display.scroll(count, delay=60)
                             sleep(200)
                         if accelerometer.is_gesture('right'):
@@ -271,7 +271,7 @@ is_gesture counts
                             display.scroll(count, delay=60)
                             sleep(200)
                         elif button_b.is_pressed():
-                            count = max(0, count - 10)
+                            count = max(0, count - 2)
                             display.scroll(count, delay=60)
                             sleep(200)
                         if accelerometer.is_gesture('right'):
@@ -661,5 +661,5 @@ get_gestures()
 
 .. admonition:: Exercises
 
-    #. Try adjusting the sleep from 2 up to 10 seconds and spinning the microbit on its edge to give the gestures in order: right, down, left, up.
-    #. Try adjusting the sleep from 2 up to 10 seconds and spinning the microbit to give the gestures in order: face up, left, face down, right.
+    #. Try adjusting the sleep from 2 up to 5 seconds and spinning the microbit on its edge to give the gestures in order: right, down, left, up.
+    #. Try adjusting the sleep from 2 up to 5 seconds and spinning the microbit to give the gestures in order: face up, left, face down, right.
