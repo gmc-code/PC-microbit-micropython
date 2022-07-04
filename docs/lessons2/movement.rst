@@ -136,7 +136,7 @@ Z axis.
                 .. code-block:: python
 
                     from microbit import *
-5
+
                     while True:
                         x_reading = accelerometer.get_x()
                         if x_reading > 20:
@@ -155,6 +155,7 @@ Z axis.
                         display.scroll(x_val + y_val, delay=80)
                         sleep(250)
 
+----
 
 .. admonition:: Tasks
 
@@ -236,6 +237,8 @@ Z axis.
                             else:
                                 display.show("-")
                         sleep(200)
+                        
+----
 
 .. admonition:: Tasks
 
