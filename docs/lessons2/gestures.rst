@@ -37,7 +37,7 @@ current_gesture
 
 .. admonition:: Exercises
 
-    #. Try getting the following gestures: ``"up"``, ``"down"``, ``"left"``, ``"right"``, ``"face up"``, ``"face down"``, ``"shake"``.
+    #. Try getting the following gestures displayed: ``"up"``, ``"down"``, ``"left"``, ``"right"``, ``"face up"``, ``"face down"``, ``"shake"``.
 
 ----
 

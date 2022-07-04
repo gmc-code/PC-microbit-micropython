@@ -65,8 +65,6 @@ Compass Pointer
     #. What are the readings for 2 o'clock? Write code to test three values at either end of the range.
     #. What are the readings for 11 o'clock? Write code to test three values at either end of the range.
     #. What are the readings for 10 o'clock? Write code to test three values at either end of the range.
-    #. Place a small piece of paper on the ground. Turn so the clock hand points to 0 o'clock and walk 5 paces. Turn so the clock hand points to 4 o'clock and walk 5 paces. Turn so the clock hand points to 8 o'clock and walk 5 paces. Did you end up at your starting point?
-    #. Place a small piece of paper on the ground. Turn so the clock hand points to 0 o'clock and walk 5 paces. Turn so the clock hand points to 3 o'clock and walk 5 paces. Turn so the clock hand points to 6 o'clock and walk 5 paces. Turn so the clock hand points to 9 o'clock and walk 5 paces. Did you end up at your starting point?
 
     .. dropdown::
             :icon: codescan
@@ -146,4 +144,11 @@ Compass Pointer
                                 needle = ((-compass_heading + 15) // 30) % 12
                                 display.show(Image.ALL_CLOCKS[needle])
                                 sleep(500)
+
+----
+
+.. admonition:: Exercises
+    
+    #. Place a small piece of paper on the ground. Turn so the clock hand points to 0 o'clock and walk 5 paces. Turn so the clock hand points to 4 o'clock and walk 5 paces. Turn so the clock hand points to 8 o'clock and walk 5 paces. Did you end up at your starting point?
+    #. Place a small piece of paper on the ground. Turn so the clock hand points to 0 o'clock and walk 5 paces. Turn so the clock hand points to 3 o'clock and walk 5 paces. Turn so the clock hand points to 6 o'clock and walk 5 paces. Turn so the clock hand points to 9 o'clock and walk 5 paces. Did you end up at your starting point?
 
