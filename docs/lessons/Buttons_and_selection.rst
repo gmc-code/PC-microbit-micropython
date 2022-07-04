@@ -121,8 +121,7 @@ if
                         if button_b.is_pressed():
                             display.show(Image.SAD)
                         sleep(200)
-                                                                                          
-
+                                                                                 
 ----
 
 if - else
