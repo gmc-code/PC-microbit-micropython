@@ -101,7 +101,7 @@ Index:
     lessons2/thermometer.rst
     lessons2/accelerometer_syntax.rst
     lessons2/gestures.rst
-    lessons2/movement.rstS
+    lessons2/movement.rst
     lessons2/custom_images.rst
 
 
