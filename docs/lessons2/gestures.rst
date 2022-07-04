@@ -169,7 +169,7 @@ is_gesture counts
 
 | The code below keeps track of tilting to the right.
 | Best results are seen when tilting the microbit to the right, then returning it back to a flat position.
-| Each new tilt to the right tends to increase the count.
+| Each new tilt to the right increases the count.
 | Maintaining the tilt causes the count to increase while tilted.
 
 .. code-block:: python
@@ -189,7 +189,7 @@ is_gesture counts
 .. admonition:: Tasks
 
     #. Modify the code to reset the count back to 0 when the A button is pressed.
-    #. Modify the code to reset the count to a number 5 less than the current count when the B button is pressed.
+    #. Modify the code to reset the count to a number 2 less than the current count when the B button is pressed. Hint: use the max function.
     #. Modify the code to reset the count to a number 2 less than the current count, but not lower than 0, when the B button is pressed.
     #. Modify the code to include both the A button and B button actions.
 
@@ -222,7 +222,7 @@ is_gesture counts
 
             .. tab-item:: Q2
 
-                Modify the code to reset the count to a number 2 less than the current count when the B button is pressed.
+                Modify the code to reset the count to a number 2 less than the current count when the B button is pressed. Hint: use the max function.
 
                 .. code-block:: python
 
@@ -316,6 +316,7 @@ was_gesture
     #. Modify the code to display a North arrow when the microbit gesture was ``down``.
     #. Modify the code to display a West arrow when the microbit gesture was ``left``.
     #. Modify the code to display an East arrow when the microbit gesture was ``right``.
+    #. Modify the code to display an North, South, East or West arrows when the microbit gesture was ``down``, ``up``, ``right`` or ``left`` respectively.
 
     .. dropdown::
         :icon: codescan
@@ -365,6 +366,27 @@ was_gesture
                     while True:
                         if accelerometer.is_gesture("right"):
                             display.show(Image.ARROW_E)
+                        else:
+                            display.clear()
+                        sleep(100)
+
+            .. tab-item:: Q4
+
+                Modify the code to display a North, South, East or West arrow when the microbit gesture was ``down``, ``up``, ``right`` or ``left`` respectively.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        if accelerometer.was_gesture("down"):
+                            display.show(Image.ARROW_N)
+                        elif accelerometer.was_gesture("up"):
+                            display.show(Image.ARROW_S)
+                        elif accelerometer.was_gesture("right"):
+                            display.show(Image.ARROW_E)
+                        elif accelerometer.was_gesture("left"):
+                            display.show(Image.ARROW_W)
                         else:
                             display.clear()
                         sleep(100)
@@ -482,7 +504,7 @@ was_gesture counts
 shake step counter
 -------------------------
 
-| The code below checks for a shake gesture and adds 1 to the count variable it the gesture is True.
+| The code below checks for a shake gesture and adds 1 to the count variable if the microbit was shaken.
 
 .. code-block:: python
 
@@ -494,6 +516,36 @@ shake step counter
             count += 1
             display.show(count)
 
+----
+
+.. admonition:: Tasks
+
+    #. Add code to scroll "win" and reset the count back to 0 when the shake count reaches 3.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Add code to scroll "win" and reset the count back to 0 when the shake count reaches 3.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    count = 0
+                    while True:
+                        if accelerometer.was_gesture('shake'):
+                            count += 1
+                            display.show(count)
+                        if count == 3:
+                            count = 0
+                            display.scroll("win", delay=60)
+                            sleep(20)
 
 ----
 
