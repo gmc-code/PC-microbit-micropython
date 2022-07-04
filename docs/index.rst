@@ -97,7 +97,7 @@ Index:
     :numbered:
 
     lessons2/compass_syntax.rst
-    lessons2/compass_directions.rst
+    lessons2/compass.rst
     lessons2/thermometer.rst
     lessons2/accelerometer_syntax.rst
     lessons2/gestures.rst

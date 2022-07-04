@@ -17,7 +17,8 @@ Model
 
 #.  Place the resistors first.
 #.  Place the LEDs with the long lead (leg) so that it is closest to the pin side of the circuit. In this model, the long lead is on the left side of the breadboard.
-#.  Connect with the jumper wires.
+#.  Check that the red LED is connected to pin0, yellow to pin1, and green to pin2.
+#.  #.  Connect with the jumper wires.
 
 .. image:: images/3LEDS_1_bb.png
     :scale: 50 %
@@ -31,6 +32,8 @@ Model
 .. image:: images/LEDS.jpg
     :scale: 30 %
 
+----
+
 Write digital
 ----------------------------------------
 
@@ -38,6 +41,7 @@ Write digital
 | To turn the LED off use ``pin0.write_digital(0)`` for the LED on pin0.
 | For the other pins, just replace ``pin0`` with ``pin1`` or ``pin2``.
 
+----
 
 Turn on and off pin0
 ----------------------------------------
@@ -65,6 +69,7 @@ Turn on and off pin0
             turnoff_0()
         sleep(500)
 
+----
 
 Blink All
 ----------------------------------------
@@ -106,6 +111,7 @@ Blink All
             blink_all()
         sleep(500)
 
+----
 
 Blink using for i in range
 ----------------------------------------
@@ -134,6 +140,108 @@ Blink using for i in range
     #. Write code so that pressing A turns on the green LED only and pressing B turns on the yellow LED for 3 seconds then turns on the red LED only.   
     #. Write code so that pressing A blinks red and yellow 3 times, while pressing B blinks yellow and green 3 times.
     #. Write code to turn on each of the LED's separately with button presses. e.g. button A turns on REd and turns the others off.
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Write code so that pressing A turns on the green LED only and pressing B turns on the yellow LED for 3 seconds then turns on the red LED only. 
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+                        def do_A():
+                            pin0.write_digital(0)
+                            pin1.write_digital(0)
+                            pin2.write_digital(1)
+
+                        def do_B():
+                            pin0.write_digital(0)
+                            pin1.write_digital(1)
+                            pin2.write_digital(0)
+                            sleep(1000)
+                            pin0.write_digital(1)
+                            pin1.write_digital(0)
+
+
+                        while True:
+                            if button_a.is_pressed():
+                                do_A()
+                            elif button_b.is_pressed():
+                                blink_all()
+                            sleep(500)
+
+                .. tab-item:: Q2
+
+                    Write code so that pressing A blinks red and yellow 3 times, while pressing B blinks yellow and green 3 times. 
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+                        def blink_A():
+                            for i in range(3):
+                                pin0.write_digital(1)
+                                pin1.write_digital(1)
+                                sleep(1000)
+                                pin0.write_digital(0)
+                                pin1.write_digital(0)
+                                sleep(1000)
+
+                        def blink_B():
+                            for i in range(3):
+                                pin1.write_digital(1)
+                                pin2.write_digital(1)
+                                sleep(1000)
+                                pin1.write_digital(0)
+                                pin2.write_digital(0)
+                                sleep(1000)
+
+
+                        while True:
+                            if button_a.is_pressed():
+                                blink_A()
+                            elif button_b.is_pressed():
+                                blink_B()
+                            sleep(500)
+
+                .. tab-item:: Q3
+
+                    Write code to turn on each of the LED's separately with button presses. e.g. button A turns on REd and turns the others off. 
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+                        def red_on():
+                            pin0.write_digital(1)
+                            pin1.write_digital(0)
+                            pin2.write_digital(0)
+
+                        def yellow_on():
+                            pin0.write_digital(0)
+                            pin1.write_digital(1)
+                            pin2.write_digital(0)
+
+                        def green_on():
+                            pin0.write_digital(0)
+                            pin1.write_digital(0)
+                            pin2.write_digital(1)
+
+                        while True:
+                            if button_a.is_pressed() and button_b.is_pressed():
+                                red_on()
+                            elif button_a.is_pressed():
+                                yellow_on()
+                            elif button_b.is_pressed():
+                                green_on()
+                            sleep(500)
 
 ----
 
@@ -185,5 +293,99 @@ Write analog
     #. Write code to pulse all 3 LEDs but with an analog difference of about 340, so that when the red LED is at 1023 the yellow is at (1023 - 340) and the green LED is at (1023 - 340 -340).
     #. Investigate the use of the random function for creating random light displays. See: https://www.w3schools.com/python/ref_random_randrange.asp
 
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Write code so that pressing A turns on the green LED only and pressing B turns on the yellow LED for 3 seconds then turns on the red LED only. 
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+                        def do_A():
+                            pin0.write_digital(0)
+                            pin1.write_digital(0)
+                            pin2.write_digital(1)
+
+                        def do_B():
+                            pin0.write_digital(0)
+                            pin1.write_digital(1)
+                            pin2.write_digital(0)
+                            sleep(1000)
+                            pin0.write_digital(1)
+                            pin1.write_digital(0)
 
 
+                        while True:
+                            if button_a.is_pressed():
+                                do_A()
+                            elif button_b.is_pressed():
+                                blink_all()
+                            sleep(500)
+
+                .. tab-item:: Q2
+
+                    Write code so that pressing A blinks red and yellow 3 times, while pressing B blinks yellow and green 3 times. 
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+                        def blink_A():
+                            for i in range(3):
+                                pin0.write_digital(1)
+                                pin1.write_digital(1)
+                                sleep(1000)
+                                pin0.write_digital(0)
+                                pin1.write_digital(0)
+                                sleep(1000)
+
+                        def blink_B():
+                            for i in range(3):
+                                pin1.write_digital(1)
+                                pin2.write_digital(1)
+                                sleep(1000)
+                                pin1.write_digital(0)
+                                pin2.write_digital(0)
+                                sleep(1000)
+
+
+                        while True:
+                            if button_a.is_pressed():
+                                blink_A()
+                            elif button_b.is_pressed():
+                                blink_B()
+                            sleep(500)
+
+                .. tab-item:: Q3
+
+                    Write code to turn on each of the LED's separately with button presses. e.g. button A turns on REd and turns the others off. 
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+                        def red_on():
+                            pin0.write_digital(1)
+                            pin1.write_digital(0)
+                            pin2.write_digital(0)
+
+                        def yellow_on():
+                            pin0.write_digital(0)
+                            pin1.write_digital(1)
+                            pin2.write_digital(0)
+
+                        def green_on():
+                            pin0.write_digital(0)
+                            pin1.write_digital(0)
+                            pin2.write_digital(1)
+
+                        while True:
+                            if button_a.is_pressed() and button_b.is_pressed():
+                                red_on()
+                            elif button_a.is_pressed():
+                                yellow_on()
+                            elif button_b.is_pressed():
+                                green_on()
+                            sleep(500)

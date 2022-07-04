@@ -143,7 +143,7 @@ Range function with a step size
     Returns a sequence of numbers, starting at the ``startvalue`` number, incremented by ``stepsize``, and ending before the ``stopvalue`` number. 
 
 | range(1, 6, 2) returns the numbers 1, 3, 5. It starts at 1. It goes up by 2. It stops before 6, at 5.
-| range(1, 6, 2) can be read as 'range of 2 up to but not including 6 in steps of 2'.
+| range(1, 6, 2) can be read as 'range of 1 up to but not including 6 in steps of 2'.
 
 | The code below will display the numbers 1, 3, 5.
 
