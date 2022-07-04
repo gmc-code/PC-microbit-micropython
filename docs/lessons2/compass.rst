@@ -19,7 +19,7 @@ Use ``compass.heading()`` to get an angle from True North where North is 0.
 
 ----
 
-.. admonition:: Tasks
+.. admonition:: Exercises
 
     #. Use the code above and turn the microbit till it reads a number close to 0.    
     #. Turn about 90 degrees clockwise to the East and get the reading.

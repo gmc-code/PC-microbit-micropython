@@ -468,21 +468,19 @@ tilt sideways counter
     display.show(count)
     while True:
         if accelerometer.was_gesture('left') or \
-        accelerometer.was_gesture('right'):
+                accelerometer.was_gesture('right'):
             count += 1
             display.scroll(count, delay=60)
         sleep(20)
-
 
 ----
 
 .. admonition:: Tasks
 
     #. Add code to reset the count back to 0 when the A button is pressed.
-    #. Edit the code to reset the count to a number 5 less than the current count when the B button is pressed.
-    #. Modify the code to count the total number of tilts to the left or right.
-    #. Modify the code to count the total number of tilts to the front or back.
-    #. Modify the code to count the total number of tilts to the left or right or front or back.
+    #. Further modify the code to reset the count to a number 2 less than the current count, but no lower than 0, when the B button is pressed.
+    #. Further modify the code to count the total number of tilts up or down.
+    #. Further modify the code to count the total number of tilts to the left or right or up or down.
 
     .. dropdown::
         :icon: codescan
@@ -493,33 +491,103 @@ tilt sideways counter
 
             .. tab-item:: Q1
 
-                Modify the code to display a North arrow when the microbit gesture is ``down``.
+                Add code to reset the count back to 0 when the A button is pressed.
 
                 .. code-block:: python
 
                     from microbit import *
 
+                    count = 0
+                    display.show(count)
                     while True:
-                        if accelerometer.is_gesture("down"):
-                            display.show(Image.ARROW_N)
-                        else:
-                            display.clear()
-                        sleep(100)
+                        if button_a.is_pressed():
+                            count = 0
+                            display.scroll(count, delay=60)
+                            sleep(200)
+                        if accelerometer.was_gesture('left') or \
+                                accelerometer.was_gesture('right'):
+                            count += 1
+                            display.scroll(count, delay=60)
+                        sleep(20)
 
             .. tab-item:: Q2
 
-                Modify the code to display a West arrow when the microbit gesture is ``left``.
+                Further modify the code to reset the count to a number 2 less than the current count, but no lower than 0, when the B button is pressed.
 
                 .. code-block:: python
 
                     from microbit import *
 
+                    count = 0
+                    display.show(count)
                     while True:
-                        if accelerometer.is_gesture("left"):
-                            display.show(Image.ARROW_W)
-                        else:
-                            display.clear()
-                        sleep(100)
+                        if button_a.is_pressed():
+                            count = 0
+                            display.scroll(count, delay=60)
+                            sleep(200)
+                        elif button_b.is_pressed():
+                            count = max(0, count - 2)
+                            display.scroll(count, delay=60)
+                            sleep(200)
+                        if accelerometer.was_gesture('left') or \
+                                accelerometer.was_gesture('right'):
+                            count += 1
+                            display.scroll(count, delay=60)
+                        sleep(20)
+
+            .. tab-item:: Q3
+
+                Further modify the code to count the total number of tilts to the front or back instead of left and right.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    count = 0
+                    display.show(count)
+                    while True:
+                        if button_a.is_pressed():
+                            count = 0
+                            display.scroll(count, delay=60)
+                            sleep(200)
+                        elif button_b.is_pressed():
+                            count = max(0, count - 2)
+                            display.scroll(count, delay=60)
+                            sleep(200)
+                        if accelerometer.was_gesture('up') or \
+                                accelerometer.was_gesture('down'):
+                            count += 1
+                            display.scroll(count, delay=60)
+                        sleep(20)
+
+            .. tab-item:: Q4
+
+                Further modify the code to count the total number of tilts to the left or right or front or back.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    count = 0
+                    display.show(count)
+                    while True:
+                        if button_a.is_pressed():
+                            count = 0
+                            display.scroll(count, delay=60)
+                            sleep(200)
+                        elif button_b.is_pressed():
+                            count = max(0, count - 2)
+                            display.scroll(count, delay=60)
+                            sleep(200)
+                        if (
+                            accelerometer.was_gesture("left")
+                            or accelerometer.was_gesture("right")
+                            or accelerometer.was_gesture("up")
+                            or accelerometer.was_gesture("down")
+                        ):
+                            count += 1
+                            display.scroll(count, delay=60)
+                        sleep(20)
 
 ----
 
@@ -552,44 +620,7 @@ get_gestures()
 
 ----
 
-.. admonition:: Tasks
+.. admonition:: Exercises
 
     #. Try adjusting the sleep from 2 up to 10 seconds and spinning the microbit on its edge to give the gestures in order: right, down, left, up.
     #. Try adjusting the sleep from 2 up to 10 seconds and spinning the microbit to give the gestures in order: face up, left, face down, right.
-
-    .. dropdown::
-        :icon: codescan
-        :color: primary
-        :class-container: sd-dropdown-container
-
-        .. tab-set::
-
-            .. tab-item:: Q1
-
-                Modify the code to display a North arrow when the microbit gesture is ``down``.
-
-                .. code-block:: python
-
-                    from microbit import *
-
-                    while True:
-                        if accelerometer.is_gesture("down"):
-                            display.show(Image.ARROW_N)
-                        else:
-                            display.clear()
-                        sleep(100)
-
-            .. tab-item:: Q2
-
-                Modify the code to display a West arrow when the microbit gesture is ``left``.
-
-                .. code-block:: python
-
-                    from microbit import *
-
-                    while True:
-                        if accelerometer.is_gesture("left"):
-                            display.show(Image.ARROW_W)
-                        else:
-                            display.clear()
-                        sleep(100)

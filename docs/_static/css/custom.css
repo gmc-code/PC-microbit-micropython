@@ -70,6 +70,20 @@ div.admonition-tasks p.admonition-title {
     background-color: gold!important;
 }
 
+div.admonition-exercise,
+div.admonition-exercises {
+    color: blue;
+    border: 2px solid rgb(0, 255, 0);
+    background-color: lightyellow!important;
+}
+
+div.admonition-exercise p.admonition-title,
+div.admonition-exercises p.admonition-title {
+    text-transform: capitalize;
+    color: black!important;
+    background-color: rgb(0, 255, 0)!important;
+}
+
 div.admonition-project,
 div.admonition-projects {
     color: blue;
