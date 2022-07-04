@@ -33,6 +33,11 @@ current_gesture
         gesture = accelerometer.current_gesture()
         display.scroll(gesture, delay=80)
         sleep(50)
+----
+
+.. admonition:: Exercises
+
+    #. Try getting the following gestures: ``"up"``, ``"down"``, ``"left"``, ``"right"``, ``"face up"``, ``"face down"``, ``"shake"``.
 
 ----
 
