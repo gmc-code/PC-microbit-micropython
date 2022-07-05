@@ -294,7 +294,13 @@ Write analog
 
     #. Write code to pulse all 3 LEDs together.
     #. Write code to pulse all 3 LEDs but with an analog difference of about 340, so that when the red LED is at 1023 the yellow is at (1023 - 340) and the green LED is at (1023 - 340 -340).
-    #. Investigate the use of the random function for creating random light displays. See: https://www.w3schools.com/python/ref_random_randrange.asp
+    #. Investigate the use of the random function for creating random light displays. 
+    See: https://www.w3schools.com/python/ref_random_randrange.asp
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
 
             .. tab-set::
 
