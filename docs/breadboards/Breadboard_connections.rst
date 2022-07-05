@@ -33,6 +33,17 @@ Rails
 | The holes in the blue rail (-) are connected.
 
 
+----
+
+Jumpers
+--------------------------
+
+| Male to Female jumper wires are used to connect the edge connector to the breadboard.
+| Male to Male jumper wires are used to connect holes on the breadboard.
+
+.. image:: images/jumper_wire_types.jpg
+    :scale: 30 %
+
 
 
 

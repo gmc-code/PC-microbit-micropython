@@ -17,3 +17,12 @@ Connecting the microbit to the edge connector
 
 .. image:: images/main_pins.jpg
     :scale: 50 %
+
+| Each microbit pin has 2 pins on the edge connector for jumper wires to plug onto.
+
+| Male to Female jumper wires are used to connect the edge connector to the breadboard.
+| Male to Male jumper wires are used to connect holes on the breadboard.
+
+.. image:: images/jumper_wire_types.jpg
+    :scale: 30 %
+
