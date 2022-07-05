@@ -261,7 +261,7 @@ Pixel controls
 
                         display.set_pixel(2, 3, 9)
 
-               .. tab-item:: Q2
+                .. tab-item:: Q2
 
                     Write code to turn on the pixel, 4 columns across and 2 rows down.
 
@@ -472,7 +472,7 @@ Pixel rows and columns lists
                             for y in ylist:
                                 display.set_pixel(x, y, 9)
 
-               .. tab-item:: Q3
+                .. tab-item:: Q3
 
                     Combine the two answers to produce a square shape without the corners.
 
