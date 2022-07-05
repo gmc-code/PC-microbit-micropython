@@ -292,10 +292,8 @@ Write analog
 
 .. admonition:: Tasks
 
-    #. Write code to pulse all 3 LEDs together.
+    #. Modify the code to pulse on and off all 3 LEDs together.
     #. Write code to pulse all 3 LEDs but with an analog difference of about 340, so that when the red LED is at 1023 the yellow is at (1023 - 340) and the green LED is at (1023 - 340 -340).
-    #. Investigate the use of the random function for creating random light displays. 
-    See: https://www.w3schools.com/python/ref_random_randrange.asp
 
     .. dropdown::
             :icon: codescan
@@ -306,95 +304,81 @@ Write analog
 
                 .. tab-item:: Q1
 
-                    Write code so that pressing A turns on the green LED only and pressing B turns on the yellow LED for 3 seconds then turns on the red LED only. 
+                    Modify the code to pulse on and off all 3 LEDs together.
 
                     .. code-block:: python
 
                         from microbit import *
+                        
+                        def pulse_all_on():
+                            sleeptime = 4
+                            stepsize = 30
+                            for i in range(0, 1021, stepsize):
+                                pin0.write_analog(i)
+                                pin1.write_analog(i)
+                                pin2.write_analog(i)
+                                sleep(sleeptime)
+                            pin0.write_analog(0)
 
-                        def do_A():
-                            pin0.write_digital(0)
-                            pin1.write_digital(0)
-                            pin2.write_digital(1)
 
-                        def do_B():
-                            pin0.write_digital(0)
-                            pin1.write_digital(1)
-                            pin2.write_digital(0)
-                            sleep(1000)
-                            pin0.write_digital(1)
-                            pin1.write_digital(0)
+                        def pulse_all_off():
+                            sleeptime = 4
+                            stepsize = 30
+                            for i in range(1020, -1, -stepsize):
+                                pin0.write_analog(i)
+                                pin1.write_analog(i)
+                                pin2.write_analog(i)
+                                sleep(sleeptime)
+                            pin0.write_analog(0)
 
 
                         while True:
                             if button_a.is_pressed():
-                                do_A()
+                                pulse_all_on()
                             elif button_b.is_pressed():
-                                blink_all()
+                                pulse_all_off()
                             sleep(500)
 
                 .. tab-item:: Q2
 
-                    Write code so that pressing A blinks red and yellow 3 times, while pressing B blinks yellow and green 3 times. 
+                    Write code to pulse all 3 LEDs but with an analog difference of about 340, so that when the red LED is at 1023 the yellow is at (1023 - 340) and the green LED is at (1023 - 340 -340).
 
                     .. code-block:: python
 
                         from microbit import *
+                        
+                        def pulse_all_diff_on():
+                            sleeptime = 4
+                            stepsize = 30
+                            for i in range(0, 1021, stepsize):
+                                pin0.write_analog(i)
+                                pin1.write_analog(max(i- 340))
+                                pin2.write_analog(max(i- 680))
+                                sleep(sleeptime)
+                            pin0.write_analog(0)
 
-                        def blink_A():
-                            for i in range(3):
-                                pin0.write_digital(1)
-                                pin1.write_digital(1)
-                                sleep(1000)
-                                pin0.write_digital(0)
-                                pin1.write_digital(0)
-                                sleep(1000)
 
-                        def blink_B():
-                            for i in range(3):
-                                pin1.write_digital(1)
-                                pin2.write_digital(1)
-                                sleep(1000)
-                                pin1.write_digital(0)
-                                pin2.write_digital(0)
-                                sleep(1000)
+                        def pulse_all_diff_off():
+                            sleeptime = 4
+                            stepsize = 30
+                            for i in range(1020, -1, -stepsize):
+                                pin0.write_analog(i)
+                                pin1.write_analog(max(i- 340))
+                                pin2.write_analog(max(i- 680))
+                                sleep(sleeptime)
+                            pin0.write_analog(0)
 
 
                         while True:
                             if button_a.is_pressed():
-                                blink_A()
+                                pulse_all_diff_on()
                             elif button_b.is_pressed():
-                                blink_B()
+                                pulse_all_diff_off()
                             sleep(500)
+                            
+ ----
 
-                .. tab-item:: Q3
+.. admonition:: Exercises
 
-                    Write code to turn on each of the LED's separately with button presses. e.g. button A turns on REd and turns the others off. 
-
-                    .. code-block:: python
-
-                        from microbit import *
-
-                        def red_on():
-                            pin0.write_digital(1)
-                            pin1.write_digital(0)
-                            pin2.write_digital(0)
-
-                        def yellow_on():
-                            pin0.write_digital(0)
-                            pin1.write_digital(1)
-                            pin2.write_digital(0)
-
-                        def green_on():
-                            pin0.write_digital(0)
-                            pin1.write_digital(0)
-                            pin2.write_digital(1)
-
-                        while True:
-                            if button_a.is_pressed() and button_b.is_pressed():
-                                red_on()
-                            elif button_a.is_pressed():
-                                yellow_on()
-                            elif button_b.is_pressed():
-                                green_on()
-                            sleep(500)
+    #. Investigate the use of the random function for creating random light displays. 
+    See: https://www.w3schools.com/python/ref_random_randrange.asp
