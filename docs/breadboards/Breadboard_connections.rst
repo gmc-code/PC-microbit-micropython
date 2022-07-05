@@ -38,12 +38,12 @@ Rails
 Jumpers
 --------------------------
 
-| Male to Female jumper wires are used to connect the edge connector to the breadboard.
 | Male to Male jumper wires are used to connect holes on the breadboard.
+
+.. image:: images/male_to_male_jumpers.jpg
+    :scale: 50 %
+
+| The 3 types of jumpers are shown below.
 
 .. image:: images/jumper_wire_types.jpg
     :scale: 50 %
-
-
-
-
