@@ -18,7 +18,7 @@ Model
 #.  Place the resistors first.
 #.  Place the LEDs with the long lead (leg) so that it is closest to the pin side of the circuit. In this model, the long lead is on the left side of the breadboard.
 #.  Check that the red LED is connected to pin0, yellow to pin1, and green to pin2.
-#.  #.  Connect with the jumper wires.
+#.  Connect with the jumper wires.
 
 .. image:: images/3LEDS_1_bb.png
     :scale: 50 %
@@ -116,7 +116,8 @@ Blink All
 Blink using for i in range
 ----------------------------------------
 
-| Repeated blinking can be done with a for loop. 
+| Repeated blinking can be done with a for loop.
+| The for loop below runs 3 times, with i values of 0, 1, and 2.
 
 .. code-block:: python
 
@@ -137,6 +138,7 @@ Blink using for i in range
 
 .. admonition:: Tasks
 
+    Remember that the red LED is on pin0, yellow on pin1, and green on pin2.
     #. Write code so that pressing A turns on the green LED only and pressing B turns on the yellow LED for 3 seconds then turns on the red LED only.   
     #. Write code so that pressing A blinks red and yellow 3 times, while pressing B blinks yellow and green 3 times.
     #. Write code to turn on each of the LED's separately with button presses. e.g. button A turns on REd and turns the others off.
