@@ -9,7 +9,7 @@ Connecting the microbit to the edge connector
 
 
 .. image:: images/edge_connector.jpg
-    :scale: 50 %
+    :scale: 100 %
 
 | The main pins used are numbered 0, 1, 2, and 0V.
 
