@@ -131,6 +131,7 @@ Blink using for i in range
             pin0.write_digital(0)
             sleep(1000)
 
+
     blink0()
 
 
@@ -159,10 +160,12 @@ Blink using for i in range
 
                         from microbit import *
 
+
                         def do_A():
                             pin0.write_digital(0)
                             pin1.write_digital(0)
                             pin2.write_digital(1)
+
 
                         def do_B():
                             pin0.write_digital(0)
@@ -188,6 +191,7 @@ Blink using for i in range
 
                         from microbit import *
 
+
                         def blink_A():
                             for i in range(3):
                                 pin0.write_digital(1)
@@ -196,6 +200,7 @@ Blink using for i in range
                                 pin0.write_digital(0)
                                 pin1.write_digital(0)
                                 sleep(1000)
+
 
                         def blink_B():
                             for i in range(3):
@@ -222,20 +227,24 @@ Blink using for i in range
 
                         from microbit import *
 
+
                         def red_on():
                             pin0.write_digital(1)
                             pin1.write_digital(0)
                             pin2.write_digital(0)
+
 
                         def yellow_on():
                             pin0.write_digital(0)
                             pin1.write_digital(1)
                             pin2.write_digital(0)
 
+
                         def green_on():
                             pin0.write_digital(0)
                             pin1.write_digital(0)
                             pin2.write_digital(1)
+
 
                         while True:
                             if button_a.is_pressed() and button_b.is_pressed():
@@ -266,7 +275,7 @@ Write analog
     def pulse_on():
         sleeptime = 4
         stepsize = 30
-        for i in range(0, 1021, stepsize):
+        for i in range(0, 1024, stepsize):
             pin0.write_analog(i)
             sleep(sleeptime)
         pin0.write_analog(0)
@@ -275,7 +284,7 @@ Write analog
     def pulse_off():
         sleeptime = 4
         stepsize = 30
-        for i in range(1020, -1, -stepsize):
+        for i in range(1023, -1, -stepsize):
             pin0.write_analog(i)
             sleep(sleeptime)
         pin0.write_analog(0)
@@ -310,10 +319,11 @@ Write analog
 
                         from microbit import *
                         
+
                         def pulse_all_on():
                             sleeptime = 4
                             stepsize = 30
-                            for i in range(0, 1021, stepsize):
+                            for i in range(0, 1024, stepsize):
                                 pin0.write_analog(i)
                                 pin1.write_analog(i)
                                 pin2.write_analog(i)
@@ -324,7 +334,7 @@ Write analog
                         def pulse_all_off():
                             sleeptime = 4
                             stepsize = 30
-                            for i in range(1020, -1, -stepsize):
+                            for i in range(1023, -1, -stepsize):
                                 pin0.write_analog(i)
                                 pin1.write_analog(i)
                                 pin2.write_analog(i)
@@ -347,10 +357,11 @@ Write analog
 
                         from microbit import *
                         
+
                         def pulse_all_diff_on():
                             sleeptime = 4
                             stepsize = 30
-                            for i in range(0, 1021, stepsize):
+                            for i in range(0, 1024, stepsize):
                                 pin0.write_analog(i)
                                 pin1.write_analog(max(i- 340))
                                 pin2.write_analog(max(i- 680))
@@ -361,7 +372,7 @@ Write analog
                         def pulse_all_diff_off():
                             sleeptime = 4
                             stepsize = 30
-                            for i in range(1020, -1, -stepsize):
+                            for i in range(1023, -1, -stepsize):
                                 pin0.write_analog(i)
                                 pin1.write_analog(max(i- 340))
                                 pin2.write_analog(max(i- 680))
@@ -375,10 +386,41 @@ Write analog
                             elif button_b.is_pressed():
                                 pulse_all_diff_off()
                             sleep(500)
-                            
+
  ----
 
 .. admonition:: Exercises
 
-    #. Investigate the use of the random function for creating random light displays. 
+    #. Investigate the use of the randrange function for creating random light displays. 
     See: https://www.w3schools.com/python/ref_random_randrange.asp
+    
+    
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    .. code-block:: python
+
+                        from microbit import *
+                        import random
+
+
+                        def random_colours():
+                            randval = randrange(0, 1024)
+                            randpin = randrange(0, 3)
+                            if randpin = 0:
+                                pin0.write_analog(randval)
+                            elif randpin = 1:
+                                pin1.write_analog(randval)
+                            rlif randpin = 2:
+                                pin2.write_analog(randval)
+
+                
+                        while True:
+                            random_colours()
+                            sleep(100)
