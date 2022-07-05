@@ -22,12 +22,14 @@ Model
 .. image:: images/buzzer.jpg
     :scale: 30 %
 
+----
 
 Library
 ----------------------------------------
 
 | Put ``import music`` at the top.
 
+----
 
 Notes
 ----------------------------------------
@@ -66,6 +68,35 @@ Notes
 
 ----
 
+.. admonition:: Tasks
+
+    #. Modify the code to pulse on and off all 3 LEDs together.
+    #. Write code to pulse all 3 LEDs but with an analog difference of about 340, so that when the red LED is at 1023 the yellow is at (1023 - 340) and the green LED is at (1023 - 340 -340).
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Modify the code to pulse on and off all 3 LEDs together.
+
+                    .. code-block:: python
+
+                        from microbit import *
+                
+                        while True:
+                            if button_a.is_pressed():
+                                pulse_all_on()
+                            elif button_b.is_pressed():
+                                pulse_all_off()
+                            sleep(500)
+
+----
+
 Scales
 ----------------------------------------
 
@@ -88,7 +119,7 @@ Scales
             music.play(eminor)
         sleep(1000)
 
----
+----
 
 Built in music
 ----------------------------------------

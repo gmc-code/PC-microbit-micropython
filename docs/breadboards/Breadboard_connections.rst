@@ -42,7 +42,7 @@ Jumpers
 | Male to Male jumper wires are used to connect holes on the breadboard.
 
 .. image:: images/jumper_wire_types.jpg
-    :scale: 30 %
+    :scale: 50 %
 
 
 
