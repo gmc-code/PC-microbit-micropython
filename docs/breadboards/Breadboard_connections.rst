@@ -2,6 +2,14 @@
 Breadboard connections
 ==========================
 
+.. image:: images/breadboard_landscape.png
+    :scale: 50 %
+
+| The breadboard allows electrical devices, such as resistors, LEDS, motors, buzzers and potentiometers, to be connected in circuits.
+| The microbit can be connected to the electical devices and control them or collect data from them.
+
+----
+
 Rows
 --------------------------
 
@@ -21,9 +29,9 @@ Rails
 --------------------------
 
 | Holes in the same rail are connected.
+| The holes in the red rail (+) are connected.
+| The holes in the blue rail (-) are connected.
 
-.. image:: images/breadboard_landscape.png
-    :scale: 50 %
 
 
 
