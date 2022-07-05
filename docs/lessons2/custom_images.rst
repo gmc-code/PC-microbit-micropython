@@ -130,7 +130,7 @@ Image strings: line by line
 .. admonition:: Tasks
 
     #. Write code for a large square of brightness 3 by lining up the 5 rows of the image under each other.
-    #. Write code for a small square of brightness 9 by lining up the 5 rows of the image under each other.
+    #. Write code for a small central square of brightness 9 by lining up the 5 rows of the image under each other.
     #. Write code for 2 symmetrically spaced central horizontal lines of brightness 5 by lining up the 5 rows of the image under each other. 
     #. Write code for 2 symmetrically spaced central vertical lines of brightness 5 by lining up the 5 rows of the image under each other.
 
@@ -158,7 +158,7 @@ Image strings: line by line
 
                 .. tab-item:: Q2
 
-                    Write code for a small square of brightness 9 by lining up the 5 rows of the image under each other.
+                    Write code for a small central square of brightness 9 by lining up the 5 rows of the image under each other.
 
                     .. code-block:: python
 
@@ -230,6 +230,14 @@ Pixel controls
     from microbit import *
 
     display.set_pixel(0, 0, 9)
+
+| The code below turns on the pixel in column 2, row 1 with full brightness.
+
+.. code-block:: python
+
+    from microbit import *
+
+    display.set_pixel(2, 1, 9)
 
 ----
 
