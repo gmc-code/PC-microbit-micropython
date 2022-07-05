@@ -381,8 +381,8 @@ Pixel rows and columns
 
 .. admonition:: Tasks
 
-    #. Write code to turn on the pixels in row 3, starting at row 0.
-    #. Write code to turn on the pixels in column 2, starting at column 0.
+    #. Write code to turn on the pixels in column 3.
+    #. Write code to turn on the pixels in row 2.
 
     .. dropdown::
             :icon: codescan
@@ -393,7 +393,7 @@ Pixel rows and columns
 
                 .. tab-item:: Q1
 
-                    Write code to turn on the pixels in row 3, starting at row 0.
+                    Write code to turn on the pixels in column 3.
 
                     .. code-block:: python
 
@@ -405,7 +405,7 @@ Pixel rows and columns
 
                 .. tab-item:: Q2
 
-                    Write code to turn on the pixels in column 2, starting at column 0.
+                    Write code to turn on the pixels in row 2.
 
                     .. code-block:: python
 
@@ -441,8 +441,8 @@ Pixel rows and columns lists
 
 .. admonition:: Tasks
 
-    #. Adjust the code above to turn on columns 1 to 3 and rows 0 and 4.
-    #. Adjust the code above to turn on columns 0 and 4 and rows 1 to 3.
+    #. Adjust the code above to turn on pixels that are in both columns 1 to 3 and rows 0 and 4.
+    #. Adjust the code above to turn on pixels that are in both columns 0 and 4 and rows 1 to 3.
     #. Combine the two answers to produce a square shape without the corners.
 
     .. dropdown::
@@ -454,7 +454,7 @@ Pixel rows and columns lists
 
                 .. tab-item:: Q1
 
-                    Adjust the code above to turn on columns 1 to 3 and rows 0 and 4.
+                    Adjust the code above to turn on pixels that are in both columns 1 to 3 and rows 0 and 4.
 
                     .. code-block:: python
 
@@ -468,7 +468,7 @@ Pixel rows and columns lists
 
                 .. tab-item:: Q2
 
-                    Adjust the code above to turn on columns 0 and 4 and rows 1 to 3.
+                    Adjust the code above to turn on pixels that are in both columns 0 and 4 and rows 1 to 3.
 
                     .. code-block:: python
 
