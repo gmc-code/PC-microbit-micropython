@@ -139,10 +139,10 @@ Blink using for i in range
 .. admonition:: Tasks
 
     Remember that the red LED is on pin0, yellow on pin1, and green on pin2.
-    
+
     #. Write code so that pressing A turns on the green LED only and pressing B turns on the yellow LED for 3 seconds then turns on the red LED only.   
     #. Write code so that pressing A blinks red and yellow 3 times, while pressing B blinks yellow and green 3 times.
-    #. Write code to turn on each of the LED's separately with button presses. e.g. button A turns on REd and turns the others off.
+    #. Write code to turn on each of the LED's separately with button presses. e.g. button A turns on red and turns the others off.
 
     .. dropdown::
             :icon: codescan
@@ -216,7 +216,7 @@ Blink using for i in range
 
                 .. tab-item:: Q3
 
-                    Write code to turn on each of the LED's separately with button presses. e.g. button A turns on REd and turns the others off. 
+                    Write code to turn on each of the LED's separately with button presses. e.g. button A turns on red and turns the others off. 
 
                     .. code-block:: python
 
