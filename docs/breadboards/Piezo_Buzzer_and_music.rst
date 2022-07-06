@@ -70,8 +70,7 @@ Notes
 
 .. admonition:: Tasks
 
-    #. Modify the code to pulse on and off all 3 LEDs together.
-    #. Write code to pulse all 3 LEDs but with an analog difference of about 340, so that when the red LED is at 1023 the yellow is at (1023 - 340) and the green LED is at (1023 - 340 -340).
+    #. Play a list of notes.
 
     .. dropdown::
             :icon: codescan
@@ -82,18 +81,19 @@ Notes
 
                 .. tab-item:: Q1
 
-                    Modify the code to pulse on and off all 3 LEDs together.
+                    Play a list of notes.
 
                     .. code-block:: python
-
                         from microbit import *
-                
+                        import music
+
+                        notes_list = ['c4:4', 'e', 'g', 'e', 'g']
+
+                        music.set_tempo(ticks=4, bpm=240)
+
                         while True:
-                            if button_a.is_pressed():
-                                pulse_all_on()
-                            elif button_b.is_pressed():
-                                pulse_all_off()
-                            sleep(500)
+                            music.play(notes_list)
+                            sleep(1000)
 
 ----
 
