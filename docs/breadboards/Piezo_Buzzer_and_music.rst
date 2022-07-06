@@ -2,24 +2,26 @@
 Piezo_Buzzer_and_music
 ==========================
 
+| See: https://microbit-micropython.readthedocs.io/en/v2-docs/music.html
+
 .. py:module:: music
 
 Connections
 --------------------------
 
 | The buzzer is usually connected to pin0.
+| If it is connected to pin1 or pin2 instead, the pin number must be used as a parametr in the play method.
 
 ----
 
 Model
 ----------------------------------------
 
-#.  Place the buzzer first.
-#.  Connect with the jumper wires.
+#.  Place the buzzer first. It pins directly into the breadboard. Ignore the diagram suggestion that wires are used.
+#.  Connect with the jumper wires to the edge-connector using pin0 and ground, 0V.
 
 .. image:: images/buzzer_bb.png
     :scale: 50 %
-
 
 .. image:: images/buzzer.jpg
     :scale: 30 %
@@ -29,8 +31,7 @@ Model
 Library
 ----------------------------------------
 
-| Put ``import music`` at the top.
-| See: https://microbit-micropython.readthedocs.io/en/v2-docs/music.html
+| Put ``import music`` at the top under ``from microbit import *``.
 
 ----
 
@@ -50,16 +51,37 @@ Library
 
 .. py:function::  music.stop(pin=pin0)
 
-    Stops all music playback on the built-in speaker and any pin outputting sound. An optional argument can be provided to specify a pin, eg. music.stop(pin1).
+    Stops all music playback on the built-in speaker and any pin outputting sound. 
+    
+    An optional argument can be provided to specify a pin, eg. music.stop(pin1).
 
 .. py:function::  music.reset()
-    
+
     Resets the state of the following attributes in the following way:
 
     ticks = 4
     bpm = 120
     duration = 4
     octave = 4
+
+.. py:function::  music.set_tempo(ticks=4, bpm=120)
+
+    Sets the tempo for playback.
+
+    A number of ticks, expressed as an integer, make a beat. The default is 4 ticks per beat.
+    
+    Each beat is to be played at a certain frequency, beats per minute, expressed as an integer. The default is 120 bpm.
+
+    Suggested default values allow the following useful behaviour:
+
+    music.set_tempo() - reset the tempo to default of ticks = 4, bpm = 120
+    music.set_tempo(ticks=8) - change the beat to 8 ticks
+    music.set_tempo(bpm=240) - just change the tempo to 240 beats per minute
+    The length of a beat in milliseconds is (60 sec * 1000 / bpm). For the default value of 120 bpm, that's 60000/120 or 1 beat in 500 milliseconds.
+
+.. py:function::  music.get_tempo()
+
+    Gets the current tempo as a tuple of integers: (ticks, bpm).
 
 ----
 
@@ -93,7 +115,7 @@ Notes
     from microbit import *
     import music
 
-    notes_list = ['c4:1', 'e:4', 'g:8', 'c5:2', 'e5', 'g4','f#4','bb3:8']
+    notes_list = ['c4:1', 'e:4', 'g:8', 'c:2', 'e5', 'g4','f#','eb']
 
     music.set_tempo(ticks=4, bpm=240)
     music.play(notes_list)
