@@ -2,6 +2,8 @@
 Piezo_Buzzer_and_music
 ==========================
 
+.. py:module:: music
+
 Connections
 --------------------------
 
@@ -28,6 +30,36 @@ Library
 ----------------------------------------
 
 | Put ``import music`` at the top.
+| See: https://microbit-micropython.readthedocs.io/en/v2-docs/music.html
+
+----
+
+.. py:function::  music.play(music, pin=pin0, wait=True, loop=False)
+
+    Play the music.
+
+    If music can be a string such as, 'c1:4'or a list of notes that are played one after the other to perform a melody.
+
+    The duration and octave values are reset to their defaults before the music is played.
+
+    The output pin can be used to override the default pin0. Use pin=None to prevent sounds being played.
+
+    If wait is set to True, this function is blocking, and the music will be played to the end.
+
+    If loop is set to True, the music repeats until stop is called or the blocking call is interrupted.
+
+.. py:function::  music.stop(pin=pin0)
+
+    Stops all music playback on the built-in speaker and any pin outputting sound. An optional argument can be provided to specify a pin, eg. music.stop(pin1).
+
+.. py:function::  music.reset()
+    
+    Resets the state of the following attributes in the following way:
+
+    ticks = 4
+    bpm = 120
+    duration = 4
+    octave = 4
 
 ----
 
