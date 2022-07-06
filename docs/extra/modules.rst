@@ -1,0 +1,186 @@
+====================================================
+Modules
+====================================================
+
+Module list
+----------------
+
+| To get a list of built in modules for the microbit:
+
+| Open the REPL
+| Type: help('modules')
+
+The output is:
+
+.. table:: Microbit modules
+   :widths: auto
+=============     =============     =============     ============= 
+__main__          machine           os                uerrno
+antigravity       math              radio             urandom
+audio             microbit          speech            ustruct
+builtins          micropython       this              usys
+gc                music             uarray            utime
+love              neopixel          ucollections
+=============     =============     =============     ============= 
+
+See: https://docs.micropython.org/en/latest/library/gc.html
+
+| Use the REPL and the reset button to see the output from the print funtion after flashing to the microbit.
+
+----
+
+gc
+----------------
+
+.. py:function::  gc.mem_alloc()
+
+    Return the number of bytes of heap RAM that are allocated.
+
+.. code-block:: python
+
+    from microbit import *
+    import gc
+
+    display.scroll(gc.mem_alloc())
+
+
+.. py:function::  gc.mem_alloc()
+
+    Return the number of bytes of available heap RAM, or -1 if this amount is not known.
+
+.. code-block:: python
+
+    from microbit import *
+    import gc
+
+    display.scroll(gc.mem_free())
+
+----
+
+usys
+----------------
+
+| See: https://docs.micropython.org/en/latest/library/sys.html
+| Some functions are listed below. Use ``print(help(usys))`` to get the full list.
+
+.. py:function::  usys.version_info()
+
+    Python language version that this implementation conforms to, as a tuple of ints.
+
+.. py:function::  usys.version()
+
+    Python language version that this implementation conforms to, as a string.
+
+.. py:function::  usys.platform()
+
+    The platform that MicroPython is running on. 
+
+.. py:function::  usys.implementation()
+
+    Object with information about the current Python implementation. For MicroPython, it has following attributes:
+
+    name - string “micropython”
+
+    version - tuple (major, minor, micro), e.g. (1, 15, 0)
+
+.. py:function::  usys.maxsize()
+
+    The maximum integer type value that can be saved on the current platform. It returns the number of bytes of heap RAM that are allocated.
+
+| The code below uses the REPL to print the output.
+
+.. code-block:: python
+
+    from microbit import *
+    import usys
+
+    # print(help(usys))
+    print(usys.version_info)
+    print(usys.version)
+    print(usys.platform)
+    print(usys.implementation)
+    print(usys.maxsize)
+    bits = 0
+    v = usys.maxsize
+    while v:
+        bits += 1
+        v >>= 1
+    if bits > 32:
+        print('64-bit (or more) platform')
+    else:
+        print('32-bit (or less) platform')
+
+----
+
+love
+----------------
+
+| The ``love`` module has limited practical purpose.
+
+.. py:function::  love.badaboom()
+
+    Pulse the heart image 7 times.
+
+.. code-block:: python
+
+    from microbit import *
+    import love
+
+    love.badaboom()
+
+----
+
+this
+----------------
+
+| The ``this`` module has no practical purpose.
+
+.. py:function::  this.authors()
+
+    Returns the authors of micropython for the microbit.
+
+| Use the REPL and the reset button to see the printout after flashing to the microbit.
+
+.. code-block:: python
+
+    from microbit import *
+    import this
+
+    print(this.authors())
+
+----
+
+antigravity
+----------------
+
+| The ``antigravity`` module has no practical purpose.
+| Use the REPL and press the reset button (or ctrl D in the REPL) to see the printout after flashing to the microbit.
+
+.. code-block:: python
+
+    from microbit import *
+    import antigravity
+
+----
+
+ustruct
+----------------
+
+| See: https://mpython.readthedocs.io/en/master/library/pythonStd/ustruct.html
+| See: https://www.educative.io/answers/what-is-the-python-struct-module
+| See: https://docs.micropython.org/en/latest/library/struct.html
+
+| The struct module in Python is used to convert native Python data types such as strings and numbers into a string of bytes and vice versa.
+
+Supported size/byte order prefixes: @, <, >, !.
+
+Supported format codes: b, B, h, H, i, I, l, L, q, Q, s, P, f, d (the latter 2 depending on the floating-point support).
+
+Functions:
+  * calcsize
+  * pack
+  * pack_into
+  * unpack
+  * unpack_from
+
+

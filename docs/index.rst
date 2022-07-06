@@ -152,9 +152,11 @@ Index:
 
 .. toctree::
     :maxdepth: 2
-    :caption: Tutorials
+    :caption: Extra
     :numbered:
 
-    tutorials/heart_beat_simulation.rst
+    extra/heart_beat_simulation.rst
+    extra/modules.rst
+    extra/utime_module.rst
 
 

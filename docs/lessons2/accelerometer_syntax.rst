@@ -9,6 +9,8 @@ Accelerometer syntax
 | The recognised gestures are: ``up``, ``down``, ``left``, ``right``, ``face up``, ``face down``, ``freefall``, ``3g``, ``6g``, ``8g``, ``shake``.
 | The accelerometer range is from -2g to +2g.
 
+----
+
 Gesture Functions
 -------------------
 

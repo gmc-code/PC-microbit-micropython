@@ -10,7 +10,7 @@ Connections
 --------------------------
 
 | The buzzer is usually connected to pin0.
-| If it is connected to pin1 or pin2 instead, the pin number must be used as a parametr in the play method.
+| If it is connected to pin1 or pin2 instead, the pin number must be used as a parameter in the play method.
 
 ----
 
@@ -39,15 +39,15 @@ Library
 
     Play the music.
 
-    If music can be a string such as, 'c1:4'or a list of notes that are played one after the other to perform a melody.
+    If music can be a string, such as 'c1:4', or a list of notes as strings, such as ['c', 'd', 'e']
 
     The duration and octave values are reset to their defaults before the music is played.
 
     The output pin can be used to override the default pin0. Use pin=None to prevent sounds being played.
 
-    If wait is set to True, this function is blocking, and the music will be played to the end.
+    If wait is set to True, playing is blocking, and the music will be played to the end.
 
-    If loop is set to True, the music repeats until stop is called or the blocking call is interrupted.
+    If loop is set to True, the music repeats until stop is called.
 
 .. py:function::  music.stop(pin=pin0)
 
@@ -57,7 +57,7 @@ Library
 
 .. py:function::  music.reset()
 
-    Resets the state of the following attributes in the following way:
+    Resets the state of the following attributes as listed:
 
     ticks = 4
     bpm = 120
@@ -72,16 +72,42 @@ Library
     
     Each beat is to be played at a certain frequency, beats per minute, expressed as an integer. The default is 120 bpm.
 
-    Suggested default values allow the following useful behaviour:
+| Examples of use:
+| music.set_tempo() - reset the tempo to default of ticks = 4, bpm = 120
+| music.set_tempo(ticks=8) - change the beat to 8 ticks
+| music.set_tempo(bpm=240) - just change the tempo to 240 beats per minute
 
-    music.set_tempo() - reset the tempo to default of ticks = 4, bpm = 120
-    music.set_tempo(ticks=8) - change the beat to 8 ticks
-    music.set_tempo(bpm=240) - just change the tempo to 240 beats per minute
-    The length of a beat in milliseconds is (60 sec * 1000 / bpm). For the default value of 120 bpm, that's 60000/120 or 1 beat in 500 milliseconds.
+| The length of a beat in milliseconds is (60 sec * 1000 / bpm). 
+| For the default value of 120 bpm, that's 60000/120 or 1 beat in 500 milliseconds.
 
 .. py:function::  music.get_tempo()
 
-    Gets the current tempo as a tuple of integers: (ticks, bpm).
+    Gets the current tempo as a tuple of integers: (bpm, ticks).
+
+| To display the tuple from get_tempo it can be converted to a string:
+
+.. code-block:: python
+
+    from microbit import *
+    import music
+
+    music.set_tempo(ticks=4, bpm=240)
+    tempo_data = str(music.get_tempo())
+    display.scroll(tempo_data)
+
+| Each value in the tuple can be accessed using its index as shown below:
+
+.. code-block:: python
+
+    from microbit import *
+    import music
+
+    music.set_tempo(ticks=2, bpm=120)
+    tempo_data = music.get_tempo()
+    bpm = tempo_data[0]
+    ticks = tempo_data[1]
+    display.scroll(bpm)
+    display.scroll(ticks)
 
 ----
 
