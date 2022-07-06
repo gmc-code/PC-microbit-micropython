@@ -29,6 +29,12 @@ See: https://docs.micropython.org/en/latest/library/gc.html
 
 ----
 
+https://mpython.readthedocs.io/en/master/library/pythonStd/builtins.html
+
+https://mpython.readthedocs.io/en/master/library/pythonStd/ucollections.html
+
+----
+
 gc
 ----------------
 
@@ -182,5 +188,31 @@ Functions:
   * pack_into
   * unpack
   * unpack_from
+
+----
+
+uerrno
+----------------
+
+| The ``uerrno`` module returns errors.
+| See: https://mpython.readthedocs.io/en/master/library/pythonStd/uerrno.html
+
+.. py:function::  uerrno.errorcode
+
+    Returns the error codes dictionary object.
+
+.. code-block:: python
+
+    from microbit import *
+    import uerrno
+
+    print(help(uerrno))
+    error_codes = uerrno.errorcode
+    print(error_codes)
+    print(uerrno.errorcode[uerrno.EINVAL])
+    print(uerrno.errorcode[22])
+
+errorcodes:
+{1: 'EPERM', 2: 'ENOENT', 5: 'EIO', 9: 'EBADF', 11: 'EAGAIN', 12: 'ENOMEM', 13: 'EACCES', 17: 'EEXIST', 19: 'ENODEV', 21: 'EISDIR', 22: 'EINVAL', 95: 'EOPNOTSUPP', 98: 'EADDRINUSE', 103: 'ECONNABORTED', 104: 'ECONNRESET', 105: 'ENOBUFS', 107: 'ENOTCONN', 110: 'ETIMEDOUT', 111: 'ECONNREFUSED', 113: 'EHOSTUNREACH', 114: 'EALREADY', 115: 'EINPROGRESS'}
 
 

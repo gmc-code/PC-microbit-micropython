@@ -71,7 +71,7 @@ ticks_add
         tick_max = utime.ticks_add(0, -1)
         print(tick_max)
         
-| Example:
+| Use for a dealine:
 
 .. code-block:: python
 
@@ -98,40 +98,16 @@ ticks_diff
     The argument order is the same as for subtraction operator, 
     ``ticks_diff(ticks1, ticks2)`` has the same meaning as ``ticks1 - ticks2``.
 
-    :func:`utime.ticks_diff()` is designed to accommodate various usage 
-    patterns, among them:
-
-    Polling with timeout. In this case, the order of events is known, and you
-    will deal only with positive results of :func:`utime.ticks_diff()`:
+| The code below, checks for a change in the pin2 reading for up to 2 seconds, then displays a "TIMEDOUT" message.
 
     .. code-block:: python
 
-        # Wait for GPIO pin to be asserted, but at most 500us
-        start = utime.ticks_us()
-        while pin.value() == 0:
-            if utime.ticks_diff(utime.ticks_us(), start) > 500:
-                raise TimeoutError
+        from microbit import *
+        import utime
 
-
-    Scheduling events. In this case, :func:`utime.ticks_diff()` result may be
-    negative if an event is overdue:
-
-
-    .. code-block:: python
-
-        # This code snippet is not optimized
-        now = time.ticks_ms()
-        scheduled_time = task.scheduled_time()
-        if ticks_diff(scheduled_time, now) > 0:
-            print("Too early, let's nap")
-            sleep_ms(ticks_diff(scheduled_time, now))
-            task.run()
-        elif ticks_diff(scheduled_time, now) == 0:
-            print("Right at time!")
-            task.run()
-        elif ticks_diff(scheduled_time, now) < 0:
-            print("Oops, running late, tell task to run faster!")
-            task.run(run_faster=true)
-
-
+        display.scroll(pin2.read_digital())
+        start = utime.ticks_ms()
+        while pin2.read_digital() == 0:
+            if utime.ticks_diff(utime.ticks_ms(), start) > 2000:
+                display.scroll("TIMEDOUT")
 
