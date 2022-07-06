@@ -33,6 +33,8 @@ https://mpython.readthedocs.io/en/master/library/pythonStd/builtins.html
 
 https://mpython.readthedocs.io/en/master/library/pythonStd/ucollections.html
 
+https://github.com/micropython/micropython/tree/master/docs/library
+
 ----
 
 gc

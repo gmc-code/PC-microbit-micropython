@@ -11,6 +11,9 @@ Use the ``utime`` module to get measure time intervals and create delays.
 sleep
 -------------------
 
+| The standard microbit library has its own sleep method (in millisecs).
+| ``utime.sleep`` may be convenient for micro sleeps or sleeps in seconds.
+
 .. method:: utime.sleep(seconds)
 
     Sleep for the given number of seconds. ``seconds`` is an int or float.
@@ -22,6 +25,17 @@ sleep
 .. method:: utime.sleep_us(us)
 
     Delay for given number of microseconds. ``microseconds`` is a positive int or 0.
+
+| The code below has a sleep of 2 seconds between scrolling text.
+
+    .. code-block:: python
+
+        from microbit import *
+        import utime
+
+        while True:
+            display.scroll(".")
+            utime.sleep(2)
 
 ----
 
@@ -71,7 +85,7 @@ ticks_add
         tick_max = utime.ticks_add(0, -1)
         print(tick_max)
         
-| Use for a dealine:
+| Use for a deadline:
 
 .. code-block:: python
 

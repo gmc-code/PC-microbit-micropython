@@ -158,5 +158,5 @@ Index:
     extra/heart_beat_simulation.rst
     extra/modules.rst
     extra/utime_module.rst
-
+    extra/urandom_module.rst
 
