@@ -73,11 +73,11 @@ usys
 
 .. py:function::  usys.version_info()
 
-    Python language version that this implementation conforms to, as a tuple of ints.
+    Python language version, as a tuple of ints.
 
 .. py:function::  usys.version()
 
-    Python language version that this implementation conforms to, as a string.
+    Python language version, as a string.
 
 .. py:function::  usys.platform()
 
@@ -85,7 +85,7 @@ usys
 
 .. py:function::  usys.implementation()
 
-    Object with information about the current Python implementation. For MicroPython, it has following attributes:
+    Object with information about the current MicroPython implementation with following attributes:
 
     name - string “micropython”
 

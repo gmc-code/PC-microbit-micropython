@@ -2,7 +2,9 @@
 ucollections
 ====================================================
 
-| This module preoduces 2 collections
+.. py:module:: ucollections
+
+| This module has 2 collections from the standard python collections module.
 | See: http://docs.micropython.org/en/v1.14/library/ucollections.html#module-ucollections
 
 | namedtuple is a function
@@ -48,18 +50,20 @@ ucollections.OrderedDict
     Create a dictionary type subclass which remembers and preserves the order of keys added. When ordered dict is iterated over, keys/items are returned in the order they were added.
 
 Functions:
-  clear -- <function>
-  copy -- <function>
-  fromkeys -- <classmethod>
-  get -- <function>
-  items -- <function>
-  keys -- <function>
-  pop -- <function>
-  popitem -- <function>
-  setdefault -- <function>
-  update -- <function>
-  values -- <function>
+  clear
+  copy
+  get
+  items
+  keys
+  pop
+  popitem
+  setdefault
+  update
+  values
 
+Methods:
+  fromkeys
+  
 .. code-block:: python
 
     from microbit import *

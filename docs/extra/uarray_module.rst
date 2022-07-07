@@ -2,6 +2,8 @@
 uarray
 ====================================================
 
+.. py:module:: uarray
+
 | This module generates arrays
 | See: https://docs.python.org/3.9/library/array.html#module-array
 | See: https://www.dummies.com/article/technology/programming-web-design/c/determining-types-of-numbers-in-c-199399/
