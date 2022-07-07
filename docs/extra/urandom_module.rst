@@ -5,106 +5,163 @@ urandom
 urandom
 ----------------
 
-.. py:function::  urandom()
+| The ``urandom`` module generates random numbers.
 
-    
+----
+
+Functions for integers
+----------------------
+
+.. function:: randint(a, b)
+
+    Return an integer in the range from a to b, including b.
+
+| The code below scrolls a random number from 0 to 7, including 7.
 
 .. code-block:: python
 
     from microbit import *
     import urandom
 
-    display.scroll(urandom())
+    while True:
+        display.scroll(urandom.randint(0, 7), delay=80)
+        sleep(200)
 
-  getrandbits
-  seed
-  randrange
-  randint
-  choice
-  random
-  uniform
+.. note::
+
+   Be careful with **randint**, since it doesn't follow the usual rule in python where teh stop value is not included. **(0, 7)** normally means from 0 up to **but not including** 7. Whereas, for **randint**, **(0, 7)** means from 0 up to **and including** 7.
 
 ----
 
-:mod:`random` -- generate random numbers
-========================================
+.. function:: randrange(stop)
+              randrange(start, stop)
+              randrange(start, stop, step)
 
-.. module:: random
-   :synopsis: random numbers
+    The first form returns an integer from 0 up to but not including the stop integer.
+    The second form returns an integer from the start integer up to but not including the stop integer.
+    The third form returns an integer from the start integer up to but not including the stop integer, in steps of **step**.  For instance, calling ``randrange(1, 10, 2)`` will
+    return odd numbers from 1 to 9.
 
-This module implements a pseudo-random number generator.
-
-|see_cpython_module| :mod:`python:random` .
-
-.. note::
-
-   The following notation is used for intervals:
-
-   - () are open interval brackets and do not include their endpoints.
-     For example, (0, 1) means greater than 0 and less than 1.
-     In set notation: (0, 1) = {x | 0 < x < 1}.
-
-   - [] are closed interval brackets which include all their limit points.
-     For example, [0, 1] means greater than or equal to 0 and less than
-     or equal to 1.
-     In set notation: [0, 1] = {x | 0 <= x <= 1}.
-
-.. note::
-
-   The :func:`randrange`, :func:`randint` and :func:`choice` functions are only
-   available if the ``MICROPY_PY_URANDOM_EXTRA_FUNCS`` configuration option is
-   enabled.
-
-
-Functions for integers
-----------------------
+----
 
 .. function:: getrandbits(n)
 
-    Return an integer with *n* random bits (0 <= n <= 32).
+    Return an integer with *n* urandom bits where n is from 0 to 32.
+    When n = 1, values are 0 or 1.
+    When n = 2, values are 0, 1, 2 or 3.
+    When n = 3, values are form 0 to 7.
+    The maximum value is found using (n**2 -1). eg. n**3 - 1 = 7
+    THis may be useful for specifying random numebrs based on pwoers of 2.
 
-.. function:: randint(a, b)
+| The code below scrolls a random number from 0 to 7.
 
-    Return a random integer in the range [*a*, *b*].
+.. code-block:: python
 
-.. function:: randrange(stop)
-              randrange(start, stop)
-              randrange(start, stop[, step])
+    from microbit import *
+    import urandom
 
-    The first form returns a random integer from the range [0, *stop*).
-    The second form returns a random integer from the range [*start*, *stop*).
-    The third form returns a random integer from the range [*start*, *stop*) in
-    steps of *step*.  For instance, calling ``randrange(1, 10, 2)`` will
-    return odd numbers between 1 and 9 inclusive.
+    while True:
+        display.scroll(urandom.getrandbits(3), delay=80)
+        sleep(200)
 
+----
 
 Functions for floats
 --------------------
 
 .. function:: random()
 
-    Return a random floating point number in the range [0.0, 1.0).
+    Return a random floating point number from 0.0 up to but not including 1.0 with 7 decimal places.
+
+| The code below scrolls a random float from 0.0 up to but not including 1.0.
+
+.. code-block:: python
+
+    from microbit import *
+    import urandom
+
+    while True:
+        display.scroll(urandom.random(), delay=80)
+        sleep(200)
+
+| The code below scrolls a random float from 0.0 up to but not including 1.0 rounded to 2 decimal places using the round function.
+
+.. code-block:: python
+
+    from microbit import *
+    import urandom
+
+    while True:
+        display.scroll(round(urandom.random(), 2), delay=80)
+        sleep(200)
+
+----
 
 .. function:: uniform(a, b)
 
-    Return a random floating point number N such that *a* <= N <= *b* for *a* <= *b*,
-    and *b* <= N <= *a* for *b* < *a*.
+    Return a random floating point number between a and b inclusive of both.
+    b can be lower of higher than a. The order doesn't matter.
+    urandom.uniform(1, 3) is the same as urandom.uniform(3, 1)
 
+| The code below scrolls a random float from 0 to 3, then a float form 4 to 6.
 
-Other Functions
+.. code-block:: python
+
+    from microbit import *
+    import urandom
+
+    while True:
+        display.scroll(round(urandom.uniform(1, 3), 2), delay=80)
+        sleep(200)
+        display.scroll(round(urandom.uniform(6, 4), 2), delay=80)
+        sleep(200)
+
+.. note::
+
+   Be careful with **uniform**, since it doesn't follow the usual rule in python where the stop value is not included. **(1, 3)** normally means from 1 up to **but not including** 3. Whereas, for **uniform**, **(1, 3)** means from 1 up to **and including** 3.
+
+----
+
+choice
 ---------------
-
-.. function:: seed(n=None, /)
-
-    Initialise the random number generator module with the seed *n* which should
-    be an integer.  When no argument (or ``None``) is passed in it will (if
-    supported by the port) initialise the PRNG with a true random number
-    (usually a hardware generated random number).
-
-    The ``None`` case only works if ``MICROPY_PY_URANDOM_SEED_INIT_FUNC`` is
-    enabled by the port, otherwise it raises ``ValueError``.
 
 .. function:: choice(sequence)
 
-    Chooses and returns one item at random from *sequence* (tuple, list or
+    Returns one item at random from a *sequence* (tuple, list or
     any object that supports the subscript operation).
+
+| The code below makes random choices from a string, a tuple and a list.
+
+.. code-block:: python
+
+    from microbit import *
+    import urandom
+
+    str_val = "python"
+    tuple_val = (1, 2, 3)
+    list_val = ["red", "green", "yellow", "blue"]
+    while True:
+        display.scroll(urandom.choice(str_val), delay=80)
+        sleep(200)
+        display.scroll(urandom.choice(tuple_val), delay=80)
+        sleep(200)
+        display.scroll(urandom.choice(list_val), delay=80)
+        sleep(200)
+
+----
+
+seed
+---------------
+
+.. function:: seed(n=None)
+
+    Initialise the urandom number generator module with the seed *n* which should
+    be an integer.  When no argument (or ``None``) is passed in, it will initialise the generator with a hardware generated random number.
+
+
+.. code-block:: python
+
+    from microbit import *
+    import urandom
+
+    urandom.seed()

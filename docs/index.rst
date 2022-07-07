@@ -159,4 +159,5 @@ Index:
     extra/modules.rst
     extra/utime_module.rst
     extra/urandom_module.rst
-
+    extra/uarray_module.rst
+    extra/ucollections_module.rst
