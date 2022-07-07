@@ -1,10 +1,11 @@
-====================================================
+==========================
 utime
-====================================================
+==========================
 
 .. py:module:: utime
 
-Use the ``utime`` module to get measure time intervals and create delays.
+| MicroPython contains an ``utime`` module based upon the ``time`` module in the Python standard library.
+| This module gets measure time intervals and create delays.
 
 ----
 
@@ -28,14 +29,14 @@ sleep
 
 | The code below has a sleep of 2 seconds between scrolling text.
 
-    .. code-block:: python
+.. code-block:: python
 
-        from microbit import *
-        import utime
+    from microbit import *
+    import utime
 
-        while True:
-            display.scroll(".")
-            utime.sleep(2)
+    while True:
+        display.scroll(".")
+        utime.sleep(2)
 
 ----
 
@@ -55,13 +56,13 @@ ticks
 
 | To find out wrap value use:
 
-    .. code-block:: python
+.. code-block:: python
 
-        from microbit import *
-        import utime
+    from microbit import *
+    import utime
 
-        # Find out TICKS_MAX used by this port
-        print(utime.ticks_add(0, -1))
+    # Find out TICKS_MAX used by this port
+    print(utime.ticks_add(0, -1))
 
 ----
 
@@ -114,14 +115,14 @@ ticks_diff
 
 | The code below, checks for a change in the pin2 reading for up to 2 seconds, then displays a "TIMEDOUT" message.
 
-    .. code-block:: python
+.. code-block:: python
 
-        from microbit import *
-        import utime
+    from microbit import *
+    import utime
 
-        display.scroll(pin2.read_digital())
-        start = utime.ticks_ms()
-        while pin2.read_digital() == 0:
-            if utime.ticks_diff(utime.ticks_ms(), start) > 2000:
-                display.scroll("TIMEDOUT")
+    display.scroll(pin2.read_digital())
+    start = utime.ticks_ms()
+    while pin2.read_digital() == 0:
+        if utime.ticks_diff(utime.ticks_ms(), start) > 2000:
+            display.scroll("TIMEDOUT")
 

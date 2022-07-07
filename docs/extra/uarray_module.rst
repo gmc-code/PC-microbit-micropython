@@ -1,10 +1,11 @@
-====================================================
+==========================
 uarray
-====================================================
+==========================
 
 .. py:module:: uarray
 
-| This module generates arrays
+| MicroPython contains an ``uarray`` module based upon the ``array`` module in the
+Python standard library. 
 | See: https://docs.python.org/3.9/library/array.html#module-array
 | See: https://www.dummies.com/article/technology/programming-web-design/c/determining-types-of-numbers-in-c-199399/
 

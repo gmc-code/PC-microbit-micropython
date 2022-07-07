@@ -152,7 +152,7 @@ Index:
 
 .. toctree::
     :maxdepth: 2
-    :caption: Extra
+    :caption: Extra microbit
     :numbered:
 
     extra/heart_beat_simulation.rst
@@ -161,3 +161,4 @@ Index:
     extra/urandom_module.rst
     extra/uarray_module.rst
     extra/ucollections_module.rst
+    extra/machine_module.rst

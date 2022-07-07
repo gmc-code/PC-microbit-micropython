@@ -1,13 +1,11 @@
-====================================================
+==========================
 urandom
-====================================================
+==========================
 
 .. py:module:: urandom
 
-urandom
-----------------
-
-| The ``urandom`` module generates random numbers.
+| MicroPython contains an ``urandom`` module based upon the ``random`` module in the Python standard library.
+| This module generates random numbers.
 
 ----
 

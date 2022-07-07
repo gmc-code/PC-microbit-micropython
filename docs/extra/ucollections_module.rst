@@ -1,9 +1,10 @@
-====================================================
+==========================
 ucollections
-====================================================
+==========================
 
 .. py:module:: ucollections
 
+| MicroPython contains an ``ucollections`` module based upon the ``collections`` module in the Python standard library.
 | This module has 2 collections from the standard python collections module.
 | See: http://docs.micropython.org/en/v1.14/library/ucollections.html#module-ucollections
 
