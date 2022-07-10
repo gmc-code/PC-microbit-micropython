@@ -170,9 +170,10 @@ Notes
 
             .. tab-item:: Q1
 
-                Play a list of notes.
+                Play the 5 notes: c, e, g, e, c.
 
                 .. code-block:: python
+                    
                     from microbit import *
                     import music
 
@@ -221,9 +222,10 @@ Scales
 
             .. tab-item:: Q1
 
-                Play a list of notes.
+                Play the 7 notes of D major
 
                 .. code-block:: python
+
                     from microbit import *
                     import music
 
