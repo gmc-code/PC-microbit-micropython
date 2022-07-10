@@ -178,8 +178,6 @@ Notes
 
                         notes_list = ['c4:4', 'e', 'g', 'e', 'c']
 
-                        music.set_tempo(ticks=4, bpm=240)
-
                         while True:
                             music.play(notes_list)
                             sleep(1000)
@@ -214,7 +212,7 @@ Built in music
 ----------------------------------------
 
 | There are built in melodies that can be found by typing ``music.``
-| Melodies can be played using ``music.play(melody).
+| Melodies can be played using ``music.play(melody)``.
 
 .. code-block:: python
 
@@ -232,7 +230,7 @@ Built in music
     from microbit import *
     import music
 
-    melodies_list = [music.PYTHON, music.BADDY, music.CHASE]
+    melodies_list = [music.DADADADUM, music.POWER_DOWN]
     for melody in melodies_list:
         music.play(melody)
 
