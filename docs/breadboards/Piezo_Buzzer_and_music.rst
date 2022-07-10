@@ -35,10 +35,33 @@ Library
 
 ----
 
+V2 speaker
+---------------------
+
+| By default sound output will be via the edge connector on pin0 and the built-in speaker V2. 
+| The V2 built in speaker can be turned off or on without affecting playing via pin0.
+
+
+.. py:function::  speaker.off()
+
+    Use off() to turn off the speaker. This does not disable sound output to an edge connector pin.
+
+.. py:function::  speaker.on()
+
+    Use on() to turn on the speaker.
+
+.. admonition:: Note
+
+    | The docs suggest that there is a test for the speaker status via ``speaker.is_on()``.
+    | However, ``print(help(speaker))`` does not list it as being available yet (as of July 2022).
+    | See: https://microbit-micropython.readthedocs.io/en/v2-docs/microbit_micropython_api.html
+
+----
+
 .. py:function::  music.play(music, pin=pin0, wait=True, loop=False)
 
     Play the music.
-
+    
     If music can be a string, such as 'c1:4', or a list of notes as strings, such as ['c', 'd', 'e']
 
     The duration and octave values are reset to their defaults before the music is played.
@@ -128,7 +151,8 @@ Notes
 | If the octave is left out it defaults to 4 (containing middle C).
 | If the duration is left out it defaults to 4 (a crotchet).
 | For example, ``a2:4`` refers to the note “A” in octave 2 that lasts for four ticks (a tick is an arbitrary length of time defined by a tempo setting function). If the note name R is used then it is treated as a rest (silence).
-| Accidentals (flats and sharps) are denoted by the b (flat - a lower case b) and # (sharp - a hash symbol). For example, ``Ab`` is A-flat and ``C#`` is C-sharp.
+| Accidentals (flats and sharps) are denoted by the b (flat - a lower case b) and # (sharp - a hash symbol).
+| For example, ``Ab`` is A-flat and ``C#`` is C-sharp.
 | The octave and duration parameters are states that carry over to subsequent notes until re-specified. 
 | The tempo can be set using ``music.set_tempo(ticks=4, bpm=120)``
 
@@ -375,6 +399,7 @@ All Built in melodies
 .. admonition:: Tasks
 
     #. Play any 3 melodies using a list.
+    #. Use the choice function to randomly pick melodies from a melody list. See: https://www.w3schools.com/python/ref_random_choice.asp
 
     .. dropdown::
         :icon: codescan
@@ -396,5 +421,49 @@ All Built in melodies
                     for melody in melodies_list:
                         music.play(melody)
 
+            .. tab-item:: Q2
 
+                Use the choice function to randomly pick melodies from a melody list. See: https://www.w3schools.com/python/ref_random_choice.asp
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import music
+
+                    melodies_list = [music.POWER_UP, music.DADADADUM, music.POWER_DOWN]
+
+                    while True:
+                        music.play(random.choice(melodies_list))
+                        sleep(1000)
+
+----
+
+Sound effects using pitch
+----------------------------------------
+
+.. py:function::  music.pitch(frequency, duration=-1, pin=pin0, wait=True)
+
+    Plays a pitch at the integer frequency given for the duration specified in milliseconds. For example, if the frequency is set to 440 and the duration to 1000 then a standard concert A is played for one second.
+
+    Only one pitch can be played on one pin at any one time.
+
+    An optional argument to specify the output pin can be used to override the default of microbit.pin0. pin=None causes no sound to play.
+
+    If wait is set to True, this function is blocking.
+
+    If duration is negative the pitch is played continuously until either the blocking call is interrupted or, in the case of a background call, a new frequency is set or stop is called.
+
+
+The code below mimcs a siren with pitch increasing then decreasing.
+
+.. code-block:: python
+    
+    from microbit import *
+    import music
+
+
+    for freq in range(880, 1760, 16):
+        music.pitch(freq, 6)
+    for freq in range(1760, 880, -16):
+        music.pitch(freq, 1)
 

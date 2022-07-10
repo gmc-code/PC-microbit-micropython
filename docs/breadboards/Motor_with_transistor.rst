@@ -330,7 +330,7 @@ Write analog
 
                         def pulse_on(sleeptime=500, stepsize=200):
                             for i in range(200, 1023, stepsize):
-                                # pin0.write_analog(i)
+                                pin0.write_analog(i)
                                 display.show(motorspeed_display(i))
                                 sleep(sleeptime)
                             pin0.write_analog(1023)
@@ -339,7 +339,7 @@ Write analog
 
                         def pulse_off(sleeptime=500, stepsize=200):
                             for i in range(1023, 200, -stepsize):
-                                # pin0.write_analog(i)
+                                pin0.write_analog(i)
                                 display.show(motorspeed_display(i))
                                 sleep(sleeptime)
                             pin0.write_analog(0)
