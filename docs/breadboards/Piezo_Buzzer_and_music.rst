@@ -160,6 +160,8 @@ Notes
 .. admonition:: Tasks
 
     #. Play the 5 notes: c, e, g, e, c.
+    #. Play the 5 notes: c, e, g, e, c with a tempo of 120, 180 and 240bpm. 
+    #. Design a function that takes a tempo list of 120, 240, 360 , 480 and 600 bpm as one parameter and a sleep_time with default value 1000. Use a repeat loop to set teh tempo and play the notes_list.
 
     .. dropdown::
         :icon: codescan
@@ -173,7 +175,7 @@ Notes
                 Play the 5 notes: c, e, g, e, c.
 
                 .. code-block:: python
-                    
+
                     from microbit import *
                     import music
 
@@ -182,6 +184,49 @@ Notes
                     while True:
                         music.play(notes_list)
                         sleep(1000)
+
+            .. tab-item:: Q2
+
+                Play the 5 notes: c, e, g, e, c with a tempo of 120, 180 and 240bpm. 
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import music
+
+                    notes_list = ['c4:4', 'e', 'g', 'e', 'c']
+
+                    while True:
+                        music.set_tempo(bpm=120) 
+                        music.play(notes_list)
+                        sleep(1000)
+                        music.set_tempo(bpm=180) 
+                        music.play(notes_list)
+                        sleep(1000)
+                        music.set_tempo(bpm=240) 
+                        music.play(notes_list)
+                        sleep(1000)
+
+            .. tab-item:: Q3
+
+                Design a function that takes a tempo list of 120, 240, 360, 480 and 600 bpm as one parameter and a sleep_time with default value 1000. Use a repeat loop to set the tempo and play the notes_list.
+ 
+                .. code-block:: python
+
+                    from microbit import *
+                    import music
+
+                    notes_list = ['c4:4', 'e', 'g', 'e', 'c']
+                    tempo_list = [120, 240, 360, 480, 600]
+
+                    def tempo_play(tempo_list, sleep_time=1000):
+                        for tempo in tempo_list:
+                            music.set_tempo(bpm=tempo)
+                            music.play(notes_list)
+                            sleep(sleep_time)
+                        
+                    while True:
+                        tempo_play(tempo_list, sleep_time=1000)
 
 ----
 
@@ -197,8 +242,8 @@ Scales
     from microbit import *
     import music
 
-    cmajor = ['c', 'd', 'e', 'f', 'g', 'a', 'b']
-    eminor = ['e', 'f#', 'g', 'a', 'b', 'c', 'd']
+    cmajor = ['c', 'd', 'e', 'f', 'g', 'a', 'b', 'c']
+    eminor = ['e', 'f#', 'g', 'a', 'b', 'c', 'd', 'e']
 
     while True:
         if button_a.is_pressed():
@@ -211,7 +256,9 @@ Scales
 
 .. admonition:: Tasks
 
-    #. Play the 7 notes of D major.
+    #. Play the 8 notes of D major. See: https://www.pianoscales.org/major.html
+    #. Play the 8 notes of F minor. See: https://www.pianoscales.org/minor.html
+    #. Play the D major scale when the A button is pressed and the F minor scale when the B button is pressed.
 
     .. dropdown::
         :icon: codescan
@@ -222,17 +269,53 @@ Scales
 
             .. tab-item:: Q1
 
-                Play the 7 notes of D major
+                Play the 8 notes of D major.
 
                 .. code-block:: python
 
                     from microbit import *
                     import music
 
-                    notes_list = ['c4:4', 'e', 'g', 'e', 'c']
+                    dmajor = ["D", "E", "F#", "G", "A", "B", "C#", "D"]
 
                     while True:
-                        music.play(notes_list)
+                        music.play(dmajor)
+                        sleep(1000)
+
+
+            .. tab-item:: Q2
+
+                Play the 8 notes of F minor.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import music
+
+                    fminor = ["F", "G", "Ab", "Bb", "C", "Db", "Eb", "F"]
+
+                    while True:
+                        music.play(fminor)
+                        sleep(1000)
+
+
+            .. tab-item:: Q3
+
+                Play the D major scale when the A button is pressed and the F minor scale when the B button is pressed.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import music
+
+                    dmajor = ["D", "E", "F#", "G", "A", "B", "C#", "D"]
+                    fminor = ["F", "G", "Ab", "Bb", "C", "Db", "Eb", "F"]
+
+                    while True:
+                        if button_a.is_pressed():
+                            music.play(dmajor)
+                        elif button_b.is_pressed():
+                            music.play(fminor)
                         sleep(1000)
 
 ----
@@ -248,7 +331,7 @@ Built in music
     from microbit import *
     import music
 
-    music.play(music.PYTHON)
+    music.play(music.POWER_UP)
 
 
 | The code below uses a for loop to loop through each melody in the ``melodies_list`` and play it.
@@ -286,5 +369,32 @@ All Built in melodies
         for tune in built_in_tunes:
             music.play(tune)
             sleep(1000)
+
+----
+
+.. admonition:: Tasks
+
+    #. Play any 3 melodies using a list.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Play any 3 melodies using a list.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import music
+
+                    melodies_list = [music.POWER_UP, music.DADADADUM, music.POWER_DOWN]
+                    for melody in melodies_list:
+                        music.play(melody)
+
 
 
