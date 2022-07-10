@@ -105,7 +105,7 @@ Library
     display.scroll(bpm)
     display.scroll(ticks)
 
-| For advanced users, tuple unpacking can be used instead of indices.
+| For advanced users, tuple unpacking can be used instead of indices: ``bpm, ticks = music.get_tempo()``.
 | See: https://www.w3schools.com/python/python_tuples_unpack.asp
 
 .. code-block:: python
@@ -205,6 +205,33 @@ Scales
         elif button_b.is_pressed():
             music.play(eminor)
         sleep(1000)
+
+----
+
+.. admonition:: Tasks
+
+    #. Play the 7 notes of D major.
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Play a list of notes.
+
+                    .. code-block:: python
+                        from microbit import *
+                        import music
+
+                        notes_list = ['c4:4', 'e', 'g', 'e', 'c']
+
+                        while True:
+                            music.play(notes_list)
+                            sleep(1000)
 
 ----
 
