@@ -162,25 +162,25 @@ Notes
     #. Play the 5 notes: c, e, g, e, c.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Play a list of notes.
+                Play a list of notes.
 
-                    .. code-block:: python
-                        from microbit import *
-                        import music
+                .. code-block:: python
+                    from microbit import *
+                    import music
 
-                        notes_list = ['c4:4', 'e', 'g', 'e', 'c']
+                    notes_list = ['c4:4', 'e', 'g', 'e', 'c']
 
-                        while True:
-                            music.play(notes_list)
-                            sleep(1000)
+                    while True:
+                        music.play(notes_list)
+                        sleep(1000)
 
 ----
 
@@ -213,25 +213,25 @@ Scales
     #. Play the 7 notes of D major.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Play a list of notes.
+                Play a list of notes.
 
-                    .. code-block:: python
-                        from microbit import *
-                        import music
+                .. code-block:: python
+                    from microbit import *
+                    import music
 
-                        notes_list = ['c4:4', 'e', 'g', 'e', 'c']
+                    notes_list = ['c4:4', 'e', 'g', 'e', 'c']
 
-                        while True:
-                            music.play(notes_list)
-                            sleep(1000)
+                    while True:
+                        music.play(notes_list)
+                        sleep(1000)
 
 ----
 
