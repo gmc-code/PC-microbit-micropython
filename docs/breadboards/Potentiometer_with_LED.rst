@@ -42,7 +42,6 @@ Read and Write analog
 
     while True:
         potval = pin2.read_analog()
-        display.scroll(potval, delay=80)
         pin0.write_analog(potval)
         sleep(40)
 
@@ -50,8 +49,44 @@ Read and Write analog
 
 .. admonition:: Tasks
 
-    #. Connect a second LED with its own resistor via pin1. Control it via the potentiometer.
+    #. Connect a second LED with its own resistor via pin1. Control it via the potentiometer as well.
+    #. With 2 LEDs connected, adjust the code so that they have opposite brightness. e.g when the potentiometer value is 1023, one LED is powered by write_analog(1023) and the other LED is powered by write_analog(0).
+    
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Connect a second LED with its own resistor via pin1. Control it via the potentiometer as well.
+
+                    .. code-block:: python
+                        
+                        from microbit import *
 
 
+                        while True:
+                            potval = pin2.read_analog()
+                            pin0.write_analog(potval)
+                            pin1.write_analog(potval)
+                            sleep(40)
+
+                .. tab-item:: Q2
+
+                    With 2 LEDs connected, adjust the code so that they have opposite brightness. e.g when the potentiometer value is 1023, one LED is powered by write_analog(1023) and the other LED is powered by write_analog(0).
+    
+
+                    .. code-block:: python
+                        
+                        from microbit import *
+
+                        while True:
+                            potval = pin2.read_analog()
+                            pin0.write_analog(potval)
+                            pin1.write_analog(1023 - potval)
+                            sleep(40)
 
 

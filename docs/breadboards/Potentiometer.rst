@@ -35,10 +35,34 @@ Read analog
         display.scroll(potval, delay=80)
         sleep(20)
 
+----
+
+.. admonition:: Tasks
+
+    #. Modify the code to use a function, ``display_potentiometer_value``, that reads the potentiometer and scrolls its value. Include a default parameter for the pin.
+    
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Modify the code to use a function, ``display_potentiometer_value``, that reads the potentiometer and scrolls its value. Include a default parameter for the pin.
+
+                    .. code-block:: python
+                        
+                        from microbit import *
 
 
+                        def display_potentiometer_value(pin=pin2):
+                            potval = pin.read_analog()
+                            display.scroll(potval, delay=80)
 
 
-
-
+                        while True:
+                            display_potentiometer_value()
+                            sleep(20)
 
