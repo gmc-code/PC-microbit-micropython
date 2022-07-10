@@ -274,8 +274,7 @@ Write analog
 .. admonition:: Tasks
 
     #. Modify the pulse_on and pulse_off functions to use the sleeptime and stepsize variables as parameters with the default values in the example code above.
-    #. Modify the pulse_on and pulse_off functions further to show the motor speed as a value from 0 to 9.
-    Hint: write a new function, ``motorspeed_display``, that uses the int function to round down the value obtained from dividing the motor speed by 100. Then use the min function to make sure the highest possible value returned is 9.
+    #. Modify the pulse_on and pulse_off functions further to show the motor speed as a value from 0 to 9. Hint: write a new function, ``motorspeed_display``, that uses the int function to round down the value obtained from dividing the motor speed by 100. Then use the min function to make sure the highest possible value returned is 9.
     
     .. dropdown::
             :icon: codescan

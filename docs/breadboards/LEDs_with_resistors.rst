@@ -434,10 +434,12 @@ Write analog
 
                         pinlist = [pin0, pin1, pin2]
 
+
                         def random_pin_brightness():
                             randval = randrange(0, 1024)
                             randpin = random.choice(pinlist)
                             randpin.write_analog(randval)
+
 
                         while True:
                             random_pin_brightness()
@@ -452,10 +454,12 @@ Write analog
 
                         pinlist = [pin0, pin1, pin2]
 
+
                         def weighted_pin_brightness():
                             randval = randrange(0, 1024)
                             randpin = random.choices(pinlist, weights = [3, 1, 3])
                             randpin.write_analog(randval)
+
 
                         while True:
                             weighted_pin_brightness()
