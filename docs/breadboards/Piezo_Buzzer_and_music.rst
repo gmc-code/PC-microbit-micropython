@@ -58,11 +58,7 @@ Library
 .. py:function::  music.reset()
 
     Resets the state of the following attributes as listed:
-
-    ticks = 4
-    bpm = 120
-    duration = 4
-    octave = 4
+    ticks = 4; bpm = 120; duration = 4; octave = 4
 
 .. py:function::  music.set_tempo(ticks=4, bpm=120)
 
@@ -109,6 +105,19 @@ Library
     display.scroll(bpm)
     display.scroll(ticks)
 
+| For advanced users, tuple unpacking can be used instead of indices.
+| See: https://www.w3schools.com/python/python_tuples_unpack.asp
+
+.. code-block:: python
+
+    from microbit import *
+    import music
+
+    music.set_tempo(ticks=2, bpm=120)
+    bpm, ticks = music.get_tempo()
+    display.scroll(bpm)
+    display.scroll(ticks)
+
 ----
 
 Notes
@@ -150,7 +159,7 @@ Notes
 
 .. admonition:: Tasks
 
-    #. Play a list of notes.
+    #. Play the 5 notes: c, e, g, e, c.
 
     .. dropdown::
             :icon: codescan
@@ -167,7 +176,7 @@ Notes
                         from microbit import *
                         import music
 
-                        notes_list = ['c4:4', 'e', 'g', 'e', 'g']
+                        notes_list = ['c4:4', 'e', 'g', 'e', 'c']
 
                         music.set_tempo(ticks=4, bpm=240)
 
