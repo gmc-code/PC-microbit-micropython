@@ -435,3 +435,59 @@ If - elif - elif - else
                             display.show(Image.SNAKE)
                         sleep(100)
 
+----
+
+Changing values with A and B buttons
+----------------------------------------
+
+| Use the A button to increase a variable.
+| Use the B button to decrease a variable.
+| In the code below, the delay_time variable is increased by 10 by the A button and decreased by 10 by hte B button.
+
+.. code-block:: python
+
+    from microbit import *
+
+    delay_time = 80
+
+    while True:
+        if button_a.is_pressed():
+            delay_time += 10
+        elif button_b.is_pressed():
+            delay_time -= 10
+        else:
+            sleep(100)
+        display.scroll("ABC", delay=delay_time)    
+
+
+----
+
+.. admonition:: Tasks
+
+    #. Edit the code to adjust the scroll delay in steps of 25.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Edit the code to adjust the scroll delay in steps of 25.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    delay_time = 80
+
+                    while True:
+                        if button_a.is_pressed():
+                            delay_time += 25
+                        elif button_b.is_pressed():
+                            delay_time -= 25
+                        else:
+                            sleep(100)
+                        display.scroll("ABC", delay=delay_time) 
