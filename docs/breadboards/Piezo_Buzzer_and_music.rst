@@ -443,27 +443,180 @@ Sound effects using pitch
 
 .. py:function::  music.pitch(frequency, duration=-1, pin=pin0, wait=True)
 
-    Plays a pitch at the integer frequency given for the duration specified in milliseconds. For example, if the frequency is set to 440 and the duration to 1000 then a standard concert A is played for one second.
+    Plays a pitch at the integer frequency given for the duration specified in milliseconds.
 
     Only one pitch can be played on one pin at any one time.
 
-    An optional argument to specify the output pin can be used to override the default of microbit.pin0. pin=None causes no sound to play.
+    If duration is negative the pitch is played continuously until either the blocking call is interrupted or, in the case of a background call, a new frequency is set or stop is called.
+
+    An optional argument to specify the output pin can be used to override the default of pin0. pin=None causes no sound to play.
 
     If wait is set to True, this function is blocking.
 
-    If duration is negative the pitch is played continuously until either the blocking call is interrupted or, in the case of a background call, a new frequency is set or stop is called.
-
-
-The code below mimcs a siren with pitch increasing then decreasing.
+   
+| The code below inreases the picth in steps of 16 with playing duration of 20 ms.
 
 .. code-block:: python
     
     from microbit import *
     import music
 
-
     for freq in range(880, 1760, 16):
-        music.pitch(freq, 6)
-    for freq in range(1760, 880, -16):
-        music.pitch(freq, 1)
+        music.pitch(freq, duration=20)
+
+----
+
+.. admonition:: Tasks
+
+    #. Modify the code to increase the pitch in steps of 32 with a duration of 40.
+    #. Modify the code to decrease the pitch instead.
+    #. Modify the code to increase then decrease the pitch.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Modify the code to increase the pitch in steps of 32 with a duration of 40.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import music
+
+                    for freq in range(880, 1760, 32):
+                        music.pitch(freq, duration=40)
+
+            .. tab-item:: Q2
+
+                Modify the code to decrease the pitch instead.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import music
+
+                    for freq in range(1760, 880, -16):
+                        music.pitch(freq, duration=20)
+
+            .. tab-item:: Q3
+
+                Modify the code to increase then decrease the pitch.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import music
+
+                    for freq in range(880, 1760, 16):
+                        music.pitch(freq, duration=20)
+                    for freq in range(1760, 880, -16):
+                        music.pitch(freq, duration=20)
+
+----
+
+zip 2 lists
+------------------
+
+| The zip function can combine multiple lists so that they can be iterated over together.
+| See: https://www.w3schools.com/python/ref_func_zip.asp
+| See: https://realpython.com/python-zip-function/#traversing-lists-in-parallel
+
+
+| The code below uses the zip function to combine 2 lists so that they are like a list of tuples.
+| The zip object, ``zip(list1, list2)``,  is like a list of tuples.
+| Using ``list(zip(list1, list2))``, the list of tuples results: ``[(1, 'a'), (2, 'b'), (3, 'c'), (4, 'd')]``
+| Each tuple has an element from each of the initial lists.
+| A list of tuples can be iterated over using the syntax: ``for num, letter in tuple_list:``
+
+.. code-block:: python
+
+    from microbit import *
+
+    list1 = [1, 2, 3, 4]
+    list2 = ['a', 'b', 'c', 'd']
+    for num, letter in zip(list1, list2):
+        display.scroll(num, delay=80)
+        display.scroll(letter, delay=80)
+
+| In the code below, a pitch frequency and an image is combined into a tuple.
+| This allows a different pitch to be played while each image is displayed.
+| ``freqs = range(1760, 880, -128)`` produces a list like object containing 7 frequencies.
+
+.. code-block:: python
+
+    from microbit import *
+    import music
+
+    freqs = range(1760, 880, -128)
+    animal_images = [
+        Image.RABBIT,
+        Image.COW,
+        Image.DUCK,
+        Image.TORTOISE,
+        Image.BUTTERFLY,
+        Image.GIRAFFE,
+        Image.SNAKE,
+    ]
+    while True:
+        for freq, img in zip(freqs, animal_images):
+            music.pitch(freq, duration=250)
+            display.show(img, delay=250)
+
+----
+
+Note frequencies
+------------------
+
+| The table below has the frequencies for notes from A to A.
+
+Note    Frequency
+======= =========                
+A	    440
+B flat	466
+B	    494
+C	    523
+C sharp	554
+D	    587
+D sharp	622
+E	    659
+F	    698
+F sharp	740
+G	    784
+A flat	831
+A	    880
+======= ========= 
+
+----
+
+| The code below zips the list of images and the list of frequencies in the A minor scale.
+| ``for freq, img in zip(Am_freqs, animal_images)`` interates over the zipped object, placing each frequency and each Image into the ``freq`` and ``img`` variables for use. 
+
+.. code-block:: python
+
+    from microbit import *
+    import music
+
+    animal_images = [
+        Image.HAPPY,
+        Image.SMILE,
+        Image.SAD,
+        Image.CONFUSED,
+        Image.ANGRY,
+        Image.ASLEEP,
+        Image.SURPRISED,
+        Image.SILLY,
+    ]
+    Am_freqs = [440, 494, 523, 587, 659, 698, 784, 880]
+    timing = 400
+    while True:
+        for freq, img in zip(Am_freqs, animal_images):
+            display.show(img, delay=timing)
+            music.pitch(freq, duration=timing)
+        if button_a.is_pressed():
+            break
 
