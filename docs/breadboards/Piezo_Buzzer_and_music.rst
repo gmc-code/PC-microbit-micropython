@@ -40,7 +40,7 @@ Library
 
 ----
 
-V2 volume
+**V2** volume
 ---------------------
 
 .. py:function:: set_volume(volume)
@@ -71,12 +71,11 @@ V2 volume
 
 ----
 
-V2 speaker
+**V2** speaker
 ---------------------
 
-| By default sound output will be via the edge connector on pin0 and the built-in speaker V2. 
-| The V2 built in speaker can be turned off or on without affecting playing via pin0.
-
+| By default sound output will be via the edge connector on pin0 and the **V2** built-in speaker. 
+| The **V2** built in speaker can be turned off or on without affecting playing via pin0.
 
 .. py:function::  speaker.off()
 
@@ -91,6 +90,9 @@ V2 speaker
     | The docs suggest that there is a test for the speaker status via ``speaker.is_on()``.
     | However, ``print(help(speaker))`` does not list it as being available yet (as of July 2022).
     | See: https://microbit-micropython.readthedocs.io/en/v2-docs/microbit_micropython_api.html
+
+| For use of the buzzer on the breadboard, set the speaker to off so that the in-built speaker does not also play sounds.
+
 
 ----
 
@@ -206,6 +208,7 @@ Notes
     from microbit import *
     import music
 
+    speaker.off()
     note = 'c4:8'
     music.play(note)
 
@@ -217,6 +220,7 @@ Notes
     from microbit import *
     import music
 
+    speaker.off()
     notes_list = ['c4:1', 'e:4', 'g:8', 'c:2', 'e5', 'g4','f#','eb']
 
     music.set_tempo(ticks=4, bpm=240)
@@ -246,6 +250,7 @@ Notes
                     from microbit import *
                     import music
 
+                    speaker.off()
                     notes_list = ['c4:4', 'e', 'g', 'e', 'c']
 
                     while True:
@@ -261,6 +266,7 @@ Notes
                     from microbit import *
                     import music
 
+                    speaker.off()
                     notes_list = ['c4:4', 'e', 'g', 'e', 'c']
 
                     while True:
@@ -283,6 +289,7 @@ Notes
                     from microbit import *
                     import music
 
+                    speaker.off()
                     notes_list = ['c4:4', 'e', 'g', 'e', 'c']
                     tempo_list = [120, 240, 360, 480, 600]
 
@@ -309,6 +316,7 @@ Scales
     from microbit import *
     import music
 
+    speaker.off()
     cmajor = ['c', 'd', 'e', 'f', 'g', 'a', 'b', 'c']
     eminor = ['e', 'f#', 'g', 'a', 'b', 'c', 'd', 'e']
 
@@ -344,6 +352,7 @@ Scales
                     from microbit import *
                     import music
 
+                    speaker.off()
                     dmajor = ["D", "E", "F#", "G", "A", "B", "C#", "D"]
 
                     while True:
@@ -360,6 +369,7 @@ Scales
                     from microbit import *
                     import music
 
+                    speaker.off()
                     fminor = ["F", "G", "Ab", "Bb", "C", "Db", "Eb", "F"]
 
                     while True:
@@ -376,6 +386,7 @@ Scales
                     from microbit import *
                     import music
 
+                    speaker.off()
                     dmajor = ["D", "E", "F#", "G", "A", "B", "C#", "D"]
                     fminor = ["F", "G", "Ab", "Bb", "C", "Db", "Eb", "F"]
 
@@ -399,6 +410,7 @@ Built in music
     from microbit import *
     import music
 
+    speaker.off()
     music.play(music.POWER_UP)
 
 
@@ -410,6 +422,7 @@ Built in music
     from microbit import *
     import music
 
+    speaker.off()
     melodies_list = [music.DADADADUM, music.POWER_DOWN]
     for melody in melodies_list:
         music.play(melody)
@@ -428,6 +441,7 @@ All Built in melodies
     from microbit import *
     import music
 
+    speaker.off()
     built_in_tunes = [music.DADADADUM, music.ENTERTAINER, music.PRELUDE,
                       music.ODE, music.NYAN, music.RINGTONE, music.FUNK, music.BLUES,
                       music.BIRTHDAY, music.WEDDING, music.FUNERAL, music.PUNCHLINE,
@@ -467,6 +481,7 @@ All Built in melodies
                     from microbit import *
                     import music
 
+                    speaker.off()
                     melodies_list = [music.POWER_UP, music.DADADADUM, music.POWER_DOWN]
                     for melody in melodies_list:
                         music.play(melody)
@@ -480,6 +495,7 @@ All Built in melodies
                     from microbit import *
                     import music
 
+                    speaker.off()
                     melodies_list = [music.POWER_UP, music.DADADADUM, music.POWER_DOWN]
 
                     while True:
@@ -511,6 +527,7 @@ Sound effects using pitch
     from microbit import *
     import music
 
+    speaker.off()
     for freq in range(880, 1760, 16):
         music.pitch(freq, duration=20)
 
@@ -538,6 +555,7 @@ Sound effects using pitch
                     from microbit import *
                     import music
 
+                    speaker.off()
                     for freq in range(880, 1760, 32):
                         music.pitch(freq, duration=40)
 
@@ -550,6 +568,7 @@ Sound effects using pitch
                     from microbit import *
                     import music
 
+                    speaker.off()
                     for freq in range(1760, 880, -16):
                         music.pitch(freq, duration=20)
 
@@ -562,6 +581,7 @@ Sound effects using pitch
                     from microbit import *
                     import music
 
+                    speaker.off()
                     for freq in range(880, 1760, 16):
                         music.pitch(freq, duration=20)
                     for freq in range(1760, 880, -16):
@@ -616,6 +636,7 @@ A	    1760
     from microbit import *
     import music
 
+    speaker.off()
     Am_freqs = [440, 494, 523, 587, 659, 698, 784, 880]
     timing = 400
     while True:
@@ -647,6 +668,7 @@ A	    1760
                     from microbit import *
                     import music
 
+                    speaker.off()
                     Em_freqs = [659, 740, 784, 880, 988, 1046, 1174, 1318]
                     timing = 400
                     while True:
@@ -664,6 +686,7 @@ A	    1760
                     from microbit import *
                     import music
 
+                    speaker.off()
                     D_freqs = [587, 659, 740, 784, 880, 988, 1108, 1174]
                     timing = 400
                     while True:

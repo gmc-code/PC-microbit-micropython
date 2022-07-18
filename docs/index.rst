@@ -113,7 +113,8 @@ Index:
     :numbered:
 
     radio/radio.rst
-    lessons/Organising_with_selection_and_definitions.rst
+    lessons2/Integrating_using_zip.rst
+    lessons2/Organising_with_selection_and_definitions.rst
 
 
 .. toctree::
@@ -129,14 +130,6 @@ Index:
     breadboards/Potentiometer.rst
     breadboards/Potentiometer_with_LED.rst
     breadboards/Combined_models.rst
-
-
-.. toctree::
-    :maxdepth: 2
-    :caption: BreadBoards2
-    :numbered:
-
-    breadboards/Integrating_using_zip.rst
 
 
 .. toctree::

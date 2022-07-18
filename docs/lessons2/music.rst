@@ -20,7 +20,7 @@ Library
 
 ----
 
-V2 volume
+**V2** volume
 ---------------------
 
 .. py:function:: set_volume(volume)
@@ -51,12 +51,12 @@ V2 volume
 
 ----
 
-V2 speaker
+**V2** speaker
 ---------------------
 
-| By default sound output will be via the edge connector on pin0 and the built-in speaker V2. 
-| The V2 built-in speaker can be turned off or on without affecting playing via pin0.
-
+| By default sound output will be via the edge connector on pin0 and the **V2** built-in speaker. 
+| The **V2** built-in speaker can be turned off or on without affecting playing via pin0.
+| When flashing a new script to the microbit, the **V2** built-in speaker will be on, unless the code sets it to off.
 
 .. py:function::  speaker.off()
 

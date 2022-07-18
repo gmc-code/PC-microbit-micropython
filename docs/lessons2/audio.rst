@@ -3,7 +3,9 @@ Audio
 ==========================
 
 | See: https://microbit-micropython.readthedocs.io/en/v2-docs/audio.html
-| for control of the speakere and voluem in V2 see: 
+| For control of the speaker and volume in V2 see: 
+| https://pc-microbit-micropython.readthedocs.io/en/latest/lessons2/music.html#v2-volume
+
 ----
 
 Library
@@ -13,7 +15,7 @@ Library
 
 | This module allows you play sounds with the microbit.
 | Put ``import audio`` at the top under ``from microbit import *``.
-| By default, sound output will be via the edge connector on pin 0 and the built-in speaker, **V2**.
+| By default, sound output will be via the edge connector on pin 0 and the built-in speaker in V2.
 
 ----
 
@@ -41,8 +43,8 @@ main controls
 
 ----
 
-Built-in sounds **V2**
-----------------------
+**V2** Built-in sounds 
+------------------------
 
 The built-in sounds can be called using ``audio.play(Sound.NAME)``.
 
@@ -73,7 +75,7 @@ The built-in sounds can be called using ``audio.play(Sound.NAME)``.
     from microbit import *
     import audio
 
-    sound_list = [Sound.GIGGLE, Sound.MYSTERIOUS]
+    sound_list = [Sound.GIGGLE, Sound.TWINKLE]
     for sound in sound_list:
         audio.play(sound)
 
@@ -82,7 +84,9 @@ The built-in sounds can be called using ``audio.play(Sound.NAME)``.
 All Built in sounds
 ----------------------------------------
 
-| This code plays all the sounds.
+| The code below plays all the built in sounds.
+| The A button can be pressed to exit the for loop then the while loop using ``break``.
+| Pressing the reset button on the back of the microbit will restart the code.
 
 .. code-block:: python
 
@@ -108,12 +112,13 @@ All Built in sounds
                 break
         if button_a.is_pressed():
             break
+
 ----
 
 .. admonition:: Tasks
 
-    #. Play any 3 melodies using a list.
-    #. Use the choice function to randomly pick melodies from a melody list. See: https://www.w3schools.com/python/ref_random_choice.asp
+    #. Play any 3 built in sounds using a list, separating them with a 1 second pause.
+    #. Use the choice function to randomly pick a built in sound from a sound list. See: https://www.w3schools.com/python/ref_random_choice.asp. Use button pressing to break out of the while loop to stop playing sounds.
 
     .. dropdown::
         :icon: codescan
@@ -124,31 +129,35 @@ All Built in sounds
 
             .. tab-item:: Q1
 
-                Play any 3 melodies using a list.
+                Play any 3 built in sounds using a list, separating them with a 1 second pause.
 
                 .. code-block:: python
 
                     from microbit import *
-                    import music
+                    import audio
 
-                    melodies_list = [music.POWER_UP, music.DADADADUM, music.POWER_DOWN]
-                    for melody in melodies_list:
-                        music.play(melody)
+                    sound_list = [Sound.SAD, Sound.HAPPY, Sound.YAWN,]
+                    for sound in sound_list:
+                        audio.play(sound)
+                        sleep(1000)
 
             .. tab-item:: Q2
 
-                Use the choice function to randomly pick melodies from a melody list. See: https://www.w3schools.com/python/ref_random_choice.asp
+                Use the choice function to randomly pick a built in sound from a sound list. See: https://www.w3schools.com/python/ref_random_choice.asp. Use button pressing to break out of the while loop to stop playing sounds.
 
                 .. code-block:: python
 
                     from microbit import *
-                    import music
+                    import audio
+                    from random import choice as rand_choice
 
-                    melodies_list = [music.POWER_UP, music.DADADADUM, music.POWER_DOWN]
+                    sound_list = [Sound.SAD, Sound.HAPPY, Sound.YAWN]
 
                     while True:
-                        music.play(random.choice(melodies_list))
+                        audio.play(rand_choice(sound_list))
                         sleep(1000)
+                        if button_a.is_pressed():
+                            break
 
 ----
 
