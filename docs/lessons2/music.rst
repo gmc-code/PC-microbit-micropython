@@ -514,6 +514,7 @@ Note frequencies
 | The table below has the frequencies for notes from A to A over 2 octaves.
 | The frequency of any note is doubled when going up one octave.
 
+======= =========
 Note    Frequency
 ======= =========                
 A	    440
