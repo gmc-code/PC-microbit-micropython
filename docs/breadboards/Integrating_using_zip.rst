@@ -91,6 +91,13 @@ zip 2 lists
 
 ----
 
+.. admonition:: Exercises
+
+    #. Make a list of 8 arrows and a list of 8 frequencies to play. Write code to show each image as each frequency is played.
+    #. Make a list of 12 clock hands and a list of 12 frequencies to play. Write code to show each image as each frequency is played.
+
+----
+
 zip 3 lists
 ------------------
 
@@ -128,3 +135,9 @@ zip 3 lists
             pinx.write_digital(0)
         if button_a.is_pressed():
             break
+
+----
+
+.. admonition:: Exercises
+
+    #. Make a list of images, a list of pitches, and a list of LEDS and iterate over them by using hte zip function.
