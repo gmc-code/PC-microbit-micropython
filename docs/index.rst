@@ -103,6 +103,8 @@ Index:
     lessons2/gestures.rst
     lessons2/movement.rst
     lessons2/custom_images.rst
+    lessons2/music.rst
+    lessons2/sounds.rst
 
 
 .. toctree::
@@ -127,6 +129,12 @@ Index:
     breadboards/Potentiometer_with_LED.rst
     breadboards/Combined_models.rst
 
+.. toctree::
+    :maxdepth: 2
+    :caption: BreadBoards2
+    :numbered:
+
+    breadboards/Integrating_using_zip.rst
 
 .. toctree::
     :maxdepth: 2

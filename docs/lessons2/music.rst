@@ -1,30 +1,10 @@
 ==========================
-Piezo_Buzzer_and_music
+Music
 ==========================
 
 | See: https://microbit-micropython.readthedocs.io/en/v2-docs/music.html
 
 .. py:module:: music
-
-Connections
---------------------------
-
-| The buzzer is usually connected to pin0.
-| If it is connected to pin1 or pin2 instead, the pin number must be used as a parameter in the play method.
-
-----
-
-Model
-----------------------------------------
-
-#.  Place the buzzer first. It pins directly into the breadboard. Ignore the diagram suggestion that wires are used.
-#.  Connect with the jumper wires to the edge-connector using pin0 and ground, 0V.
-
-.. image:: images/buzzer_bb.png
-    :scale: 50 %
-
-.. image:: images/buzzer.jpg
-    :scale: 30 %
 
 ----
 
@@ -39,7 +19,7 @@ V2 speaker
 ---------------------
 
 | By default sound output will be via the edge connector on pin0 and the built-in speaker V2. 
-| The V2 built in speaker can be turned off or on without affecting playing via pin0.
+| The V2 built-in speaker can be turned off or on without affecting playing via pin0.
 
 
 .. py:function::  speaker.off()
@@ -381,6 +361,7 @@ All Built in melodies
 ----------------------------------------
 
 | This code plays all the melodies.
+| The A button can be used to stop all sounds by first breaking out of the ``for`` loop, then the ``while True`` loop.
 
 .. code-block:: python
 
@@ -398,7 +379,10 @@ All Built in melodies
         for tune in built_in_tunes:
             music.play(tune)
             sleep(1000)
-
+            if button_a.is_pressed():
+                break
+        if button_a.is_pressed():
+            break
 ----
 
 .. admonition:: Tasks
