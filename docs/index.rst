@@ -87,8 +87,8 @@ Index:
     :caption: Lessons_1_Practice_Answers
     :numbered:
 
-    ..lessons/Practice_tasks_1_Answers.rst
-    ..lessons/Practice_tasks_2_Answers.rst
+    lessons/Practice_tasks_1_Answers.rst
+    lessons/Practice_tasks_2_Answers.rst
 
 
 .. toctree::
@@ -167,9 +167,9 @@ Index:
     extra/modules.rst
     extra/builtins_module.rst
     
-    extra/utime_module.rst
-    extra/urandom_module.rst
-    extra/uarray_module.rst
-    extra/ucollections_module.rst
-    extra/machine_module.rst
-    extra/os_module.rst
+    ..extra/utime_module.rst
+    ..extra/urandom_module.rst
+    ..extra/uarray_module.rst
+    ..extra/ucollections_module.rst
+    ..extra/machine_module.rst
+    ..extra/os_module.rst
