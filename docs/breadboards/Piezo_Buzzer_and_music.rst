@@ -40,6 +40,37 @@ Library
 
 ----
 
+V2 volume
+---------------------
+
+.. py:function:: set_volume(volume)
+
+    Configure the output volume of the microbit speaker and pins.
+    
+    :param volume: An integer between 0 and 255 to set the volume.
+
+| The code below increases the volume and plays a C note in octave 4 for 2 ticks at each volume.
+| The A button can be pressed to exit the for loop then the while loop using ``break``.
+| Pressing the reset button on the back of the microbit will restart the code.
+
+.. code-block:: python
+
+    from microbit import *
+    import music
+
+
+    note = "c4:2"
+    while True:
+        for v in range(0, 255, 25):
+            set_volume(v)
+            music.play(note)
+            if button_a.is_pressed():
+                break
+        if button_a.is_pressed():
+            break
+
+----
+
 V2 speaker
 ---------------------
 

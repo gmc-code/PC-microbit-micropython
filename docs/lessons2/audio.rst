@@ -3,7 +3,7 @@ Audio
 ==========================
 
 | See: https://microbit-micropython.readthedocs.io/en/v2-docs/audio.html
-
+| for control of the speakere and voluem in V2 see: 
 ----
 
 Library
