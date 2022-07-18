@@ -519,60 +519,11 @@ Sound effects using pitch
 
 ----
 
-zip 2 lists
-------------------
-
-| The zip function can combine multiple lists so that they can be iterated over together.
-| See: https://www.w3schools.com/python/ref_func_zip.asp
-| See: https://realpython.com/python-zip-function/#traversing-lists-in-parallel
-
-
-| The code below uses the zip function to combine 2 lists so that they are like a list of tuples.
-| The zip object, ``zip(list1, list2)``,  is like a list of tuples.
-| Using ``list(zip(list1, list2))``, the list of tuples results: ``[(1, 'a'), (2, 'b'), (3, 'c'), (4, 'd')]``
-| Each tuple has an element from each of the initial lists.
-| A list of tuples can be iterated over using the syntax: ``for num, letter in tuple_list:``
-
-.. code-block:: python
-
-    from microbit import *
-
-    list1 = [1, 2, 3, 4]
-    list2 = ['a', 'b', 'c', 'd']
-    for num, letter in zip(list1, list2):
-        display.scroll(num, delay=80)
-        display.scroll(letter, delay=80)
-
-| In the code below, a pitch frequency and an image is combined into a tuple.
-| This allows a different pitch to be played while each image is displayed.
-| ``freqs = range(1760, 880, -128)`` produces a list like object containing 7 frequencies.
-
-.. code-block:: python
-
-    from microbit import *
-    import music
-
-    freqs = range(1760, 880, -128)
-    animal_images = [
-        Image.RABBIT,
-        Image.COW,
-        Image.DUCK,
-        Image.TORTOISE,
-        Image.BUTTERFLY,
-        Image.GIRAFFE,
-        Image.SNAKE,
-    ]
-    while True:
-        for freq, img in zip(freqs, animal_images):
-            music.pitch(freq, duration=250)
-            display.show(img, delay=250)
-
-----
-
 Note frequencies
 ------------------
 
-| The table below has the frequencies for notes from A to A.
+| The table below has the frequencies for notes from A to A over 2 octaves.
+| The frequency of any note is doubled when going up one octave.
 
 Note    Frequency
 ======= =========                
@@ -589,34 +540,83 @@ F sharp	740
 G	    784
 A flat	831
 A	    880
+B flat	932
+B	    988
+C	    1046
+C sharp	1108
+D	    1174
+D sharp	1244
+E	    1318
+F	    1396
+F sharp	1480
+G	    1568
+A flat	1662
+A	    1760
 ======= ========= 
 
 ----
 
-| The code below zips the list of images and the list of frequencies in the A minor scale.
-| ``for freq, img in zip(Am_freqs, animal_images)`` interates over the zipped object, placing each frequency and each Image into the ``freq`` and ``img`` variables for use. 
+| The code uses a for loop to play each frequency.
+| The A button can be pressed to exit the while loop using ``break``.
+| Pressing the reset button on the back of the microbit will restart the code.
 
 .. code-block:: python
 
     from microbit import *
     import music
 
-    animal_images = [
-        Image.HAPPY,
-        Image.SMILE,
-        Image.SAD,
-        Image.CONFUSED,
-        Image.ANGRY,
-        Image.ASLEEP,
-        Image.SURPRISED,
-        Image.SILLY,
-    ]
     Am_freqs = [440, 494, 523, 587, 659, 698, 784, 880]
     timing = 400
     while True:
-        for freq, img in zip(Am_freqs, animal_images):
-            display.show(img, delay=timing)
+        for freq in Am_freqs:
             music.pitch(freq, duration=timing)
         if button_a.is_pressed():
             break
 
+----
+
+.. admonition:: Tasks
+
+    #. Modify the code to play the pitches of the E minor scale. See: https://www.piano-keyboard-guide.com/e-minor-scale.html.
+    #. Modify the code to play the pitches of the D major scale. See: http://www.piano-keyboard-guide.com/d-major-scale.html.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Modify the code to play the pitches of the E minor scale. See: https://www.piano-keyboard-guide.com/e-minor-scale.html.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import music
+
+                    Em_freqs = [659, 740, 784, 880, 988, 1046, 1174, 1318]
+                    timing = 400
+                    while True:
+                        for freq in Em_freqs:
+                            music.pitch(freq, duration=timing)
+                        if button_a.is_pressed():
+                            break
+
+            .. tab-item:: Q2
+
+                Modify the code to play the pitches of the D major scale. See: http://www.piano-keyboard-guide.com/d-major-scale.html.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import music
+
+                    D_freqs = [587, 659, 740, 784, 880, 988, 1108, 1174]
+                    timing = 400
+                    while True:
+                        for freq in D_freqs:
+                            music.pitch(freq, duration=timing)
+                        if button_a.is_pressed():
+                            break
