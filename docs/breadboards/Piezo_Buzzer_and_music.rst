@@ -86,7 +86,7 @@ V2 speaker
 .. py:function::  music.reset()
 
     Resets the state of the following attributes as listed:
-    
+
     ticks = 4; bpm = 120; duration = 4; octave = 4
 
 .. py:function::  music.set_tempo(ticks=4, bpm=120)
@@ -536,6 +536,7 @@ Note frequencies
 | The table below has the frequencies for notes from A to A over 2 octaves.
 | The frequency of any note is doubled when going up one octave.
 
+======= =========  
 Note    Frequency
 ======= =========                
 A	    440
