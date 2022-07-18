@@ -1,6 +1,6 @@
-==========================
-Integrating_using_zip
-==========================
+=============================
+Combined iteration using zip
+=============================
 
 | The zip function can combine multiple lists so that they can be iterated over together.
 | See: https://www.w3schools.com/python/ref_func_zip.asp

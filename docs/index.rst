@@ -113,7 +113,7 @@ Index:
     :numbered:
 
     radio/radio.rst
-    lessons2/Integrating_using_zip.rst
+    lessons2/combined_iteration_using_zip..rst
     lessons2/Organising_with_selection_and_definitions.rst
 
 
