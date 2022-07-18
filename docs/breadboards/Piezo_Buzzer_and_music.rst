@@ -33,6 +33,11 @@ Library
 
 | Put ``import music`` at the top under ``from microbit import *``.
 
+.. code-block:: python
+
+    from microbit import *
+    import music
+
 ----
 
 V2 speaker
@@ -81,6 +86,7 @@ V2 speaker
 .. py:function::  music.reset()
 
     Resets the state of the following attributes as listed:
+    
     ticks = 4; bpm = 120; duration = 4; octave = 4
 
 .. py:function::  music.set_tempo(ticks=4, bpm=120)
