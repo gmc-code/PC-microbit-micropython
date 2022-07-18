@@ -139,7 +139,8 @@ V2 speaker
 Tuple unpacking for advanced users
 -------------------------------------
 
-| For advanced users, tuple unpacking can be used instead of indices: ``bpm, ticks = music.get_tempo()``.
+| For advanced users, tuple unpacking can be used instead of indices:
+| ``bpm, ticks = music.get_tempo()``
 | See: https://www.w3schools.com/python/python_tuples_unpack.asp
 
 .. code-block:: python
