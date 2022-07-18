@@ -17,6 +17,11 @@ Library
 | Put ``import audio`` at the top under ``from microbit import *``.
 | By default, sound output will be via the edge connector on pin 0 and the built-in speaker in V2.
 
+.. code-block:: python
+
+    from microbit import *
+    import audio
+
 ----
 
 main controls
