@@ -287,6 +287,7 @@ Scales
             music.play(eminor)
         sleep(1000)
 
+
 ----
 
 .. admonition:: Tasks
@@ -387,6 +388,8 @@ All Built in melodies
 ----------------------------------------
 
 | This code plays all the melodies.
+| The A button can be pressed to exit the for loop then the while loop using ``break``.
+| Pressing the reset button on the back of the microbit will restart the code.
 
 .. code-block:: python
 
@@ -404,6 +407,10 @@ All Built in melodies
         for tune in built_in_tunes:
             music.play(tune)
             sleep(1000)
+            if button_a.is_pressed():
+                break
+        if button_a.is_pressed():
+            break
 
 ----
 
