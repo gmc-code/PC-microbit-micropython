@@ -76,3 +76,28 @@ Practice tasks 2 Answers
         else:
             display.clear()
 
+----
+
+5.  Write code to scroll **99 100 101 0 1 2** in three different ways: using a string, using a list and using 2 range functions.
+
+
+.. code-block:: python
+
+    from microbit import *
+
+    num_string = "98 99 100 0 1 2"
+    nums = [98, 99, 100, 0, 1, 2]
+
+    while True:
+        # using string
+        display.scroll(num_string, delay=60)
+        # using a list
+        for num in nums:
+            display.scroll(num, delay=60)
+        sleep(1000)
+        # using range
+        for num in range(98, 101):
+            display.scroll(num, delay=60)
+        for num in range(0, 3):
+            display.scroll(num, delay=60)
+        sleep(1000)
