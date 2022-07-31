@@ -2,25 +2,12 @@
 Radio
 ====================================================
 
-
 Introduction
 ----------------
 
 .. py:module:: radio
 
 The ``radio`` module allows devices to work together via wireless networks.
-
-The radio module works like this:
-
-* Broadcast messages up to 251 bytes.
-* Messages received are read from a queue of configurable size (the larger the queue the more RAM is used). If the queue is full, new messages are ignored. Reading a message removes it from the queue.
-* Messages are broadcast and received on a preselected channel (numbered 0-83).
-* Broadcasts are at a certain level of power - more power means more range.
-* Messages are filtered by address (like a house number) and group (like a named recipient at the specified address).
-* The rate of throughput can be one of three pre-determined settings.
-* Send and receive bytes to work with arbitrary data.
-* Use `receive_full` to obtain full details about an incoming message: the data, receiving signal strength, and a microsecond timestamp when the message arrived.
-* It's easy to send and receive messages as strings.
 
 ---
 
@@ -33,12 +20,109 @@ Radio Module
 
 .. code-block:: python
 
-    import microbit
+    from microbit import *
+    import radio
+
+
+----
+
+.. note::
+
+    The send or receive methods require the radio to be turned on.
+    
+----
+
+.. py:function:: send_bytes(message)
+
+    Sends a message containing bytes.
+
+.. code-block:: python
+
+    from microbit import *
     import radio
 
 ----
 
-We assume you have done this for the examples below.
+.. py:function:: receive_bytes()
+
+    Receive the next incoming message on the message queue. Returns ``None`` if
+    there are no pending messages. Messages are returned as bytes.
+
+.. code-block:: python
+
+    from microbit import *
+    import radio
+
+----
+
+.. py:function:: receive_bytes_into(buffer)
+
+    Receive the next incoming message on the message queue. Copies the message
+    into ``buffer``, trimming the end of the message if necessary.
+    Returns ``None`` if there are no pending messages, otherwise it returns the length
+    of the message (which might be more than the length of the buffer).
+
+.. code-block:: python
+
+    from microbit import *
+    import radio
+
+----
+
+.. py:function:: send(message)
+
+    Sends a message string. This is the equivalent of
+    ``send_bytes(bytes(message, 'utf8'))`` but with ``b'\x01\x00\x01'``
+    prepended to the front (to make it compatible with other platforms that
+    target the micro:bit).
+
+.. code-block:: python
+
+    from microbit import *
+    import radio
+
+----
+
+.. py:function:: receive()
+
+    Works in exactly the same way as ``receive_bytes`` but returns
+    whatever was sent.
+
+    Currently, it's equivalent to ``str(receive_bytes(), 'utf8')`` but with a
+    check that the the first three bytes are ``b'\x01\x00\x01'`` (to make it
+    compatible with other platforms that may target the micro:bit). It strips
+    the prepended bytes before converting to a string.
+
+    A ``ValueError`` exception is raised if conversion to string fails.
+
+.. code-block:: python
+
+    from microbit import *
+    import radio
+
+----
+
+.. py:function:: receive_full()
+
+    Returns a tuple containing three values representing the next incoming
+    message on the message queue. If there are no pending messages then
+    ``None`` is returned.
+
+    The three values in the tuple represent:
+
+    * the next incoming message on the message queue as bytes.
+    * the RSSI (signal strength): a value between 0 (strongest) and -255 (weakest) as measured in dBm.
+    * a microsecond timestamp: the value returned by ``time.ticks_us()`` when the message was received.
+
+
+.. code-block:: python
+
+    from microbit import *
+    import radio
+
+    details = radio.receive_full()
+    if details:
+        msg, rssi, timestamp = details
 
 ----
 
@@ -47,11 +131,15 @@ Constants
 
 .. py:attribute:: RATE_1MBIT
 
-    Constant used to indicate a throughput of 1 Mbit a second.
+    Constant to indicate a throughput of 1 Mbit a second.
+
+    Used by the config function, with a default is 1MBIT. 
 
 .. py:attribute:: RATE_2MBIT
 
     Constant used to indicate a throughput of 2 Mbit a second.
+
+    Used by the config function, with a default is 1MBIT. 
 
 ----
 
@@ -60,8 +148,7 @@ Functions
 
 .. py:function:: on()
 
-    Turns the radio on. This needs to be explicitly called since the radio
-    draws power and takes up memory that you may otherwise need.
+    Turns the radio on.
 
 .. py:function:: off()
 
@@ -73,8 +160,8 @@ Functions
     available settings and their sensible default values are listed below.
 
     The ``length`` (default=32) defines the maximum length, in bytes, of a
-    message sent via the radio. It can be up to 251 bytes long (254 - 3 bytes
-    for S0, LENGTH and S1 preamble).
+    message sent via the radio. 1 character = 1 byte. It can be up to 251 bytes long (254 - 3 bytes
+    for S0, LENGTH and S1 preamble). 
 
     The ``queue`` (default=3) specifies the number of messages that can be
     stored on the incoming message queue. If there are no spaces left on the
@@ -90,7 +177,7 @@ Functions
     indicate the strength of signal used when broadcasting a message. The
     higher the value the stronger the signal, but the more power is consumed
     by the device. The numbering translates to positions in the following list
-    of dBm (decibel milliwatt) values: -30, -20, -16, -12, -8, -4, 0, 4.
+    of dBm (decibel milliwatt) values: [-30, -20, -16, -12, -8, -4, 0, 4].
 
     The ``address`` (default=0x75626974) is an arbitrary name, expressed as a
     32-bit address, that's used to filter incoming packets at the hardware
@@ -117,66 +204,6 @@ Functions
 
 .. py:function:: reset()
 
-    Reset the settings to their default values (as listed in the documentation
-    for the ``config`` function above).
+    Reset the settings to their default values for the ``config`` function.
 
-.. note::
-
-    None of the following send or receive methods will work until the radio is
-    turned on.
-
-.. py:function:: send_bytes(message)
-
-    Sends a message containing bytes.
-
-.. py:function:: receive_bytes()
-
-    Receive the next incoming message on the message queue. Returns ``None`` if
-    there are no pending messages. Messages are returned as bytes.
-
-.. py:function:: receive_bytes_into(buffer)
-
-    Receive the next incoming message on the message queue. Copies the message
-    into ``buffer``, trimming the end of the message if necessary.
-    Returns ``None`` if there are no pending messages, otherwise it returns the length
-    of the message (which might be more than the length of the buffer).
-
-.. py:function:: send(message)
-
-    Sends a message string. This is the equivalent of
-    ``send_bytes(bytes(message, 'utf8'))`` but with ``b'\x01\x00\x01'``
-    prepended to the front (to make it compatible with other platforms that
-    target the micro:bit).
-
-.. py:function:: receive()
-
-    Works in exactly the same way as ``receive_bytes`` but returns
-    whatever was sent.
-
-    Currently, it's equivalent to ``str(receive_bytes(), 'utf8')`` but with a
-    check that the the first three bytes are ``b'\x01\x00\x01'`` (to make it
-    compatible with other platforms that may target the micro:bit). It strips
-    the prepended bytes before converting to a string.
-
-    A ``ValueError`` exception is raised if conversion to string fails.
-
-.. py:function:: receive_full()
-
-    Returns a tuple containing three values representing the next incoming
-    message on the message queue. If there are no pending messages then
-    ``None`` is returned.
-
-    The three values in the tuple represent:
-
-    * the next incoming message on the message queue as bytes.
-    * the RSSI (signal strength): a value between 0 (strongest) and -255 (weakest) as measured in dBm.
-    * a microsecond timestamp: the value returned by ``time.ticks_us()`` when the message was received.
-
-    For example::
-
-        details = radio.receive_full()
-        if details:
-            msg, rssi, timestamp = details
-
-    This function is useful for providing information needed for triangulation
-    and/or triliteration with other micro:bit devices.
+----

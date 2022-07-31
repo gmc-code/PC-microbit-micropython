@@ -9,9 +9,10 @@ Radio
 
     # A micro:bit Firefly.
     # By Nicholas H.Tollervey. Released to the public domain.
+    from microbit import *
     import radio
     import random
-    from microbit import display, Image, button_a, sleep
+    
 
     # Create the "flash" animation frames. Can you work out how it's done?
     flash = [Image().invert()*(i/9) for i in range(9, -1, -1)]
@@ -37,7 +38,7 @@ Radio Module
 
 .. code-block:: python
 
-    import microbit
+    from microbit import *
     import radio
 
 ----
@@ -195,9 +196,10 @@ Examples
 
     # A micro:bit Firefly.
     # By Nicholas H.Tollervey. Released to the public domain.
+    from microbit import *
     import radio
     import random
-    from microbit import display, Image, button_a, sleep
+    
 
     # Create the "flash" animation frames. Can you work out how it's done?
     flash = [Image().invert()*(i/9) for i in range(9, -1, -1)]
