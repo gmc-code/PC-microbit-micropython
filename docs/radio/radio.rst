@@ -19,7 +19,7 @@ The radio module works like this:
 * The rate of throughput can be one of three pre-determined settings.
 * Send and receive bytes to work with arbitrary data.
 * Use `receive_full` to obtain full details about an incoming message: the data, receiving signal strength, and a microsecond timestamp when the message arrived.
-* It's easy to send and receive messages as strings.
+
 
 ---
 
@@ -34,10 +34,6 @@ Radio Module
 
     import microbit
     import radio
-
-----
-
-We assume you have done this for the examples below.
 
 ----
 

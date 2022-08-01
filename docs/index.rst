@@ -112,7 +112,9 @@ Index:
     :caption: Lessons_3
     :numbered:
 
-    radio/radio.rst
+    ..radio/radio.rst
+    radio/radio_messages.rst
+    radio/radio_syntax.rst
     lessons2/combined_iteration_using_zip..rst
     lessons2/Organising_with_selection_and_definitions.rst
 
