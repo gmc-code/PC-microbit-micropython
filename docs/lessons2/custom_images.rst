@@ -33,6 +33,13 @@ Image strings
 
 ----
 
+.. sidebar::
+
+    .. image:: images/vertical_gradient.png
+        :scale: 50 %
+        :align: center
+
+
 | The code below shows a vertical brightness gradient of dull to bright from the top to the bottom.
 
 .. code-block:: python
@@ -41,6 +48,13 @@ Image strings
 
     display.show(Image('11111:33333:55555:77777:99999'))
     
+.. sidebar::
+
+    .. image:: images/topleft_botright_gradient.png
+        :scale: 50 %
+        :align: center
+
+
 | The code below shows a diagonal brightness gradient (dull to bright) from the top left to the bottom right.
 
 .. code-block:: python
@@ -612,3 +626,23 @@ Boat sinking animation
                             display.show(sinking_boats, delay=500)
                             display.show(rising_boats, delay=500)
 
+----
+
+Boat sinking animation
+-----------------------------
+
+| Several custom images can be stored in variables. e.g. boat1, boat2, boat3, boat4, boat5, boat6.
+|
+.. code-block:: python
+
+    from microbit import *
+    
+
+    # Create the "flash" animation frames. Can you work out how it's done?
+    flash = [Image().invert()*(i/9) for i in range(9, -1, -1)]
+
+    while True:
+        if button_a.was_pressed():
+            display.show(flash, delay=100, wait=False)
+        if button_b.was_pressed():
+            display.show(flash, delay=300, wait=False)
