@@ -371,7 +371,13 @@ Pixel rows and columns
 
 | For loops can be used to turn on all the pixels in a row or colum.
 
-| The code below sets the brightness to 2 for the first column, column 0.
+.. sidebar::
+
+    .. image:: images/col0.png
+        :scale: 50 %
+        :align: center
+
+| The code below sets the brightness to 9 for the first column, column 0.
 
 .. code-block:: python
 
@@ -379,9 +385,15 @@ Pixel rows and columns
 
     x = 0
     for y in range(0, 5):
-        display.set_pixel(x, y, 2)
+        display.set_pixel(x, y, 9)
 
-| The code below sets the brightness to 6 for the first row, row 0.
+.. sidebar::
+
+    .. image:: images/row0.png
+        :scale: 50 %
+        :align: center
+
+| The code below sets the brightness to 9 for the first row, row 0.
 
 .. code-block:: python
 
@@ -389,7 +401,7 @@ Pixel rows and columns
 
     y = 0
     for x in range(0, 5):
-        display.set_pixel(x, y, 6)
+        display.set_pixel(x, y, 9)
 
 ----
 
