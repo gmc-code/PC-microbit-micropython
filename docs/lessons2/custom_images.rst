@@ -47,7 +47,9 @@ Image strings
     from microbit import *
 
     display.show(Image('11111:33333:55555:77777:99999'))
-    
+
+----
+
 .. sidebar::
 
     .. image:: images/topleft_botright_gradient.png
@@ -386,6 +388,8 @@ Pixel rows and columns
     x = 0
     for y in range(0, 5):
         display.set_pixel(x, y, 9)
+
+----
 
 .. sidebar::
 
