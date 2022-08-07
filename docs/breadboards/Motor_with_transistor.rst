@@ -9,6 +9,8 @@ Connections
 | The motor requires a 2.2 k ohm resistor with the transistor to power it properly using code.
 | The 2.2 k ohm resistor has Red, Red, Red, Gold coloured bands.
 
+.. image:: images/2.2kohm.png
+    :scale: 50 %
 ----
 
 Model

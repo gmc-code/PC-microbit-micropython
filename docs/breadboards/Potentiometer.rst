@@ -3,7 +3,7 @@ Potentiometer
 ==========================
 
 | The potentiometer is a variable resistor.
-| Turn it one way to reduce the resistance. Turn it the otehr way to increase it.
+| Turn it one way to reduce the resistance. Turn it the other way to increase it.
 
 Model
 ----------------------------------------

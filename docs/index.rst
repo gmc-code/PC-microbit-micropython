@@ -121,6 +121,7 @@ Index:
     lessons2/music.rst
     lessons2/audio.rst
 
+..lessons2/custom_images_advanced.rst
 
 .. toctree::
     :maxdepth: 2
