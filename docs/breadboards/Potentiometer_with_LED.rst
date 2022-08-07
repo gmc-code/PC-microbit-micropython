@@ -5,7 +5,7 @@ Potentiometer_with_LED
 Connections
 --------------------------
 
-| The LEDs must be placed in line with a 47 ohm resistor.
+| The LED must be placed in line with a 47 ohm resistor.
 | The 47 ohm resistor has Yellow, Violet, Black, Gold coloured bands.
 
 .. image:: images/47ohm.png
