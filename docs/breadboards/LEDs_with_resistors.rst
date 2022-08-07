@@ -10,6 +10,9 @@ Connections
 | LEDS are normally connected to pin0, pin1, or pin2.
 | All LEDS are also connected to the 0V pins.
 
+.. image:: images/47ohm.png
+    :scale: 50 %
+
 ----
 
 Model

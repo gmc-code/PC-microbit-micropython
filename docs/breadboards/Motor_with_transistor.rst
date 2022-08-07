@@ -11,6 +11,7 @@ Connections
 
 .. image:: images/2.2kohm.png
     :scale: 50 %
+    
 ----
 
 Model
