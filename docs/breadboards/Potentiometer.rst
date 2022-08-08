@@ -167,12 +167,12 @@ Visual display of potentiometer level
                     display.set_pixel(x, y, 9)
 
 
-    def display_potentiometer_value(pin=pin2):
+    def display_potentiometer_level(pin=pin2):
         potval = pin.read_analog()
         display_level(potval)
 
 
     while True:
-        display_potentiometer_value()
+        display_potentiometer_level()
         sleep(20)
 
