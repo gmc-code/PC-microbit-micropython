@@ -5,6 +5,8 @@ Potentiometer
 | The potentiometer is a variable resistor.
 | Turn it one way to reduce the resistance. Turn it the other way to increase it.
 
+----
+
 Model
 ----------------------------------------
 
@@ -69,50 +71,59 @@ Read analog
 ----
 
 
-Visual display of potentiometer level
+Power meter simulation
 ----------------------------------------
+
+.. sidebar::
+
+    .. image:: images/potentiometer_level.png
+        :scale: 50 %
+        :align: center
 
 | The code below takes an analog value from the potentiometer and displays it on the microbit LEDs.
 | See the custom images lesson for more on ``display.set_pixel``.
-| Firstly, all pixels are set to 0 via ``display.set_pixel(x, y, 0)``.
 | The maximum potentiometer reading is 1023, so this can be treated as 1000 for simplicity.
 | This gives 5 levels in steps of 200.
-| Each row step of 200 can be divided into 10 steps fo brightness from 0 to 9.
+| Each row step of 200 can be divided into 10 steps of brightness from 0 to 9.
+| 3 variables are used for each section of the display: **yclearlist** for the blank rows, **ylist** for the full brightness rows and **yval** for the row in between that is of partial brightness.
+| **yclearlist** has the rows which are at brightness of 0.
 | **ylist** has the rows which are at brightness of 9.
 | **yval** is the row with variable brightness.
+| Each of these variables is first checked to see if it is ``None`` before setting the pixels it controls.
 
 
 .. code-block:: python
      
     def display_level(level):
         xlist = [0, 1, 2, 3, 4]
-  
-      # clear:
-        ylist = [0, 1, 2, 3, 4]
-        for x in xlist:
-            for y in ylist:
-                display.set_pixel(x, y, 0)
 
+    
         # display
         val = int((level % 200) * 9 / 200)
         if level < 200:
             yval = 4
             ylist = None
+            yclearlist = [0, 1, 2, 3]
         elif level < 400:
             yval = 3
             ylist = [4]
+            yclearlist = [0, 1, 2]
         elif level < 600:
             yval = 2
             ylist = [3, 4]
-        elif  < 800:
+            yclearlist = [0, 1]
+        elif level < 800:
             yval = 1
             ylist = [2, 3, 4]
+            yclearlist = [0]
         elif level < 1000:
             yval = 0
             ylist = [1, 2, 3, 4]
+            yclearlist = None
         else:
             yval = None
             ylist = [0, 1, 2, 3, 4]
+            yclearlist = None
 
         for x in xlist:
             if yval is not None:
@@ -120,7 +131,9 @@ Visual display of potentiometer level
             if ylist is not None:
                 for y in ylist:
                     display.set_pixel(x, y, 9)
-
+            if yclearlist is not None:
+                for y in yclearlist:
+                    display.set_pixel(x, y, 0)
 
 | Try the full code.
 
@@ -131,33 +144,34 @@ Visual display of potentiometer level
 
     def display_level(level):
         xlist = [0, 1, 2, 3, 4]
-  
-      # clear:
-        ylist = [0, 1, 2, 3, 4]
-        for x in xlist:
-            for y in ylist:
-                display.set_pixel(x, y, 0)
 
+    
         # display
         val = int((level % 200) * 9 / 200)
         if level < 200:
             yval = 4
             ylist = None
+            yclearlist = [0, 1, 2, 3]
         elif level < 400:
             yval = 3
             ylist = [4]
+            yclearlist = [0, 1, 2]
         elif level < 600:
             yval = 2
             ylist = [3, 4]
-        elif  < 800:
+            yclearlist = [0, 1]
+        elif level < 800:
             yval = 1
             ylist = [2, 3, 4]
+            yclearlist = [0]
         elif level < 1000:
             yval = 0
             ylist = [1, 2, 3, 4]
+            yclearlist = None
         else:
             yval = None
             ylist = [0, 1, 2, 3, 4]
+            yclearlist = None
 
         for x in xlist:
             if yval is not None:
@@ -165,6 +179,9 @@ Visual display of potentiometer level
             if ylist is not None:
                 for y in ylist:
                     display.set_pixel(x, y, 9)
+            if yclearlist is not None:
+                for y in yclearlist:
+                    display.set_pixel(x, y, 0)
 
 
     def display_potentiometer_level(pin=pin2):
@@ -175,4 +192,3 @@ Visual display of potentiometer level
     while True:
         display_potentiometer_level()
         sleep(20)
-
