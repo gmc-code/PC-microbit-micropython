@@ -96,8 +96,8 @@ Tasks
 Scaffold for Tasks
 --------------------------
 
-See : https://pc-python.readthedocs.io/en/latest/python/functions.html
-See: https://pc-microbit-micropython.readthedocs.io/en/latest/breadboards/Organising_with_selection_and_definitions.html
+| See : https://pc-python.readthedocs.io/en/latest/python/functions.html
+| See: https://pc-microbit-micropython.readthedocs.io/en/latest/breadboards/Organising_with_selection_and_definitions.html
 
 | Break the code up into separate blocks using definitions.
 | For each different type of action to do on the microbit have a separate definition.

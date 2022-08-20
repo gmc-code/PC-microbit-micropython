@@ -52,6 +52,7 @@ Index:
     breadboards/Potentiometer_with_LED.rst
     breadboards/Motor_with_transistor.rst
     breadboards/Combined_models.rst
+    breadboards/Organising_with_selection_and_definitions.rst
 
 
 .. toctree::
@@ -131,8 +132,7 @@ Index:
     ..radio/radio.rst
     radio/radio_messages.rst
     radio/radio_syntax.rst
-    lessons2/combined_iteration_using_zip..rst
-    lessons2/Organising_with_selection_and_definitions.rst
+    lessons2/combined_iteration_using_zip.rst
 
 
 .. toctree::
