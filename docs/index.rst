@@ -41,6 +41,16 @@ Index:
 
 .. toctree::
     :maxdepth: 2
+    :caption: BreadBoards breadboard_projects
+    :numbered:
+
+    breadboard_projects/Combined_models.rst
+    breadboard_projects/Organising_with_selection_and_definitions.rst
+    breadboard_projects/Combined_iteration_using_zip.rst
+ 
+ 
+.. toctree::
+    :maxdepth: 2
     :caption: BreadBoards
     :numbered:
 
@@ -51,8 +61,6 @@ Index:
     breadboards/Potentiometer.rst
     breadboards/Potentiometer_with_LED.rst
     breadboards/Motor_with_transistor.rst
-    breadboards/Combined_models.rst
-    breadboards/Organising_with_selection_and_definitions.rst
 
 
 .. toctree::
@@ -129,7 +137,6 @@ Index:
     :caption: Lessons_3
     :numbered:
 
-    lessons3/combined_iteration_using_zip.rst
     lessons3/radio.rst
     lessons3/radio_messages.rst
     lessons3/radio_syntax.rst

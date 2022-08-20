@@ -140,4 +140,4 @@ zip 3 lists
 
 .. admonition:: Exercises
 
-    #. Make a list of images, a list of pitches, and a list of LEDS and iterate over them by using hte zip function.
+    #. Make a list of images, a list of pitches, and a list of LEDS and iterate over them by using the zip function.
