@@ -129,10 +129,11 @@ Index:
     :caption: Lessons_3
     :numbered:
 
-    ..radio/radio.rst
-    radio/radio_messages.rst
-    radio/radio_syntax.rst
-    lessons2/combined_iteration_using_zip.rst
+    lessons3/combined_iteration_using_zip.rst
+    lessons3/radio.rst
+    lessons3/radio_messages.rst
+    lessons3/radio_syntax.rst
+    
 
 
 .. toctree::
