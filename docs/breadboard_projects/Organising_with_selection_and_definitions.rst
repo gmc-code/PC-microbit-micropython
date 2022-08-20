@@ -89,6 +89,34 @@ Organising blocks into definitions
 
 .. admonition:: Tasks
 
-    1.  Reorganise the code in the answer to task 3 in the practice tasks 2 to follow the structure of the examples above.
-    2.  Reorganise the code in the answer to task 4 in the practice tasks 2 to follow the structure of the examples above.
+    1.  Reorganise the code below to follow the structure of the examples above.
 
+        .. code-block:: python
+            
+            from microbit import *
+
+            while True:
+                if button_a.is_pressed():
+                    for char in 'go team':
+                        display.scroll(char, delay=80)
+                elif button_b.is_pressed():
+                    for sport in ['swimming', 'rowing', 'canoeing']:
+                        display.scroll(sport, delay=80)
+                else:
+                    display.clear()
+
+    2.  Reorganise the code below to follow the structure of the examples above.
+
+        .. code-block:: python
+            
+            from microbit import *
+
+            while True:
+                if button_a.is_pressed():
+                    for num in range(1, 10, 2):
+                        display.scroll(num, delay=80)
+                elif button_b.is_pressed():
+                    for num in range(8, -1, -2):
+                        display.scroll(num, delay=80)
+                else:
+                    display.clear()
