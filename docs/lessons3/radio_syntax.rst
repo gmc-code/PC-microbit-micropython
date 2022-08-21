@@ -1,5 +1,5 @@
 ====================================================
-Radio
+Radio syntax
 ====================================================
 
 Introduction
@@ -23,128 +23,14 @@ Radio Module
     from microbit import *
     import radio
 
-
 ----
+
+Radio On and Off
+-----------------
 
 .. note::
 
     The send or receive methods require the radio to be turned on.
-    
-----
-
-.. py:function:: send_bytes(message)
-
-    Sends a message containing bytes.
-
-.. code-block:: python
-
-    from microbit import *
-    import radio
-
-----
-
-.. py:function:: receive_bytes()
-
-    Receive the next incoming message on the message queue. Returns ``None`` if
-    there are no pending messages. Messages are returned as bytes.
-
-.. code-block:: python
-
-    from microbit import *
-    import radio
-
-----
-
-.. py:function:: receive_bytes_into(buffer)
-
-    Receive the next incoming message on the message queue. Copies the message
-    into ``buffer``, trimming the end of the message if necessary.
-    Returns ``None`` if there are no pending messages, otherwise it returns the length
-    of the message (which might be more than the length of the buffer).
-
-.. code-block:: python
-
-    from microbit import *
-    import radio
-
-----
-
-.. py:function:: send(message)
-
-    Sends a message string. This is the equivalent of
-    ``send_bytes(bytes(message, 'utf8'))`` but with ``b'\x01\x00\x01'``
-    prepended to the front (to make it compatible with other platforms that
-    target the micro:bit).
-
-.. code-block:: python
-
-    from microbit import *
-    import radio
-
-----
-
-.. py:function:: receive()
-
-    Works in exactly the same way as ``receive_bytes`` but returns
-    whatever was sent.
-
-    Currently, it's equivalent to ``str(receive_bytes(), 'utf8')`` but with a
-    check that the the first three bytes are ``b'\x01\x00\x01'`` (to make it
-    compatible with other platforms that may target the micro:bit). It strips
-    the prepended bytes before converting to a string.
-
-    A ``ValueError`` exception is raised if conversion to string fails.
-
-.. code-block:: python
-
-    from microbit import *
-    import radio
-
-----
-
-.. py:function:: receive_full()
-
-    Returns a tuple containing three values representing the next incoming
-    message on the message queue. If there are no pending messages then
-    ``None`` is returned.
-
-    The three values in the tuple represent:
-
-    * the next incoming message on the message queue as bytes.
-    * the RSSI (signal strength): a value between 0 (strongest) and -255 (weakest) as measured in dBm.
-    * a microsecond timestamp: the value returned by ``time.ticks_us()`` when the message was received.
-
-
-.. code-block:: python
-
-    from microbit import *
-    import radio
-
-    details = radio.receive_full()
-    if details:
-        msg, rssi, timestamp = details
-
-----
-
-Constants
------------------------
-
-.. py:attribute:: RATE_1MBIT
-
-    Constant to indicate a throughput of 1 Mbit a second.
-
-    Used by the config function, with a default is 1MBIT. 
-
-.. py:attribute:: RATE_2MBIT
-
-    Constant used to indicate a throughput of 2 Mbit a second.
-
-    Used by the config function, with a default is 1MBIT. 
-
-----
-
-Functions
------------------------
 
 .. py:function:: on()
 
@@ -154,7 +40,20 @@ Functions
 
     Turns off the radio, thus saving power and memory.
 
-.. py:function:: config(**kwargs)
+.. code-block:: python
+
+    from microbit import *
+    import radio
+
+    radio.on()
+ 
+----
+
+Radio settings
+-----------------------
+
+
+.. py:function:: config(length=32, queue=3, channel=7, power=6, address=0x75626974, group=0, data_rate=radio.RATE_1MBIT)
 
     Configures various keyword based settings relating to the radio. The
     available settings and their sensible default values are listed below.
@@ -202,8 +101,109 @@ Functions
 
     If ``config`` is not called then the defaults described above are assumed.
 
+----
+
 .. py:function:: reset()
 
     Reset the settings to their default values for the ``config`` function.
 
 ----
+
+.. py:function:: send(message)
+
+    Sends a message string. This is the equivalent of
+    ``send_bytes(bytes(message, 'utf8'))`` but with ``b'\x01\x00\x01'``
+    prepended to the front (to make it compatible with other platforms that
+    target the micro:bit).
+
+.. code-block:: python
+
+    from microbit import *
+    import radio
+
+----
+
+.. py:function:: receive()
+
+    Works in exactly the same way as ``receive_bytes`` but returns
+    whatever was sent.
+
+    Currently, it's equivalent to ``str(receive_bytes(), 'utf8')`` but with a
+    check that the the first three bytes are ``b'\x01\x00\x01'`` (to make it
+    compatible with other platforms that may target the micro:bit). It strips
+    the prepended bytes before converting to a string.
+
+    A ``ValueError`` exception is raised if conversion to string fails.
+
+.. code-block:: python
+
+    from microbit import *
+    import radio
+
+----
+
+.. py:function:: send_bytes(message)
+
+    Sends a message containing bytes.
+
+.. code-block:: python
+
+    from microbit import *
+    import radio
+
+----
+
+.. py:function:: receive_bytes()
+
+    Receive the next incoming message on the message queue. Returns ``None`` if
+    there are no pending messages. Messages are returned as bytes.
+
+.. code-block:: python
+
+    from microbit import *
+    import radio
+
+----
+
+.. py:function:: receive_bytes_into(buffer)
+
+    Receive the next incoming message on the message queue. Copies the message
+    into ``buffer``, trimming the end of the message if necessary.
+    Returns ``None`` if there are no pending messages, otherwise it returns the length
+    of the message (which might be more than the length of the buffer).
+
+.. code-block:: python
+
+    from microbit import *
+    import radio
+
+
+----
+
+.. py:function:: receive_full()
+
+    Returns a tuple containing three values representing the next incoming
+    message on the message queue. If there are no pending messages then
+    ``None`` is returned.
+
+    The three values in the tuple represent:
+
+    * the next incoming message on the message queue as bytes.
+    * the RSSI (signal strength): a value between 0 (strongest) and -255 (weakest) as measured in dBm.
+    * a microsecond timestamp: the value returned by ``time.ticks_us()`` when the message was received.
+    
+    This function is useful for providing information needed for triangulation
+    and/or triliteration with other micro:bit devices.
+
+.. code-block:: python
+
+    from microbit import *
+    import radio
+
+    details = radio.receive_full()
+    if details:
+        msg, rssi, timestamp = details
+
+
+
+

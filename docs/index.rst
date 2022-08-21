@@ -138,9 +138,9 @@ Index:
     :caption: Lessons_3
     :numbered:
 
-    lessons3/radio.rst
-    lessons3/radio_messages.rst
     lessons3/radio_syntax.rst
+    lessons3/radio_examples.rst
+
     
 
 
