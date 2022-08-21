@@ -21,7 +21,7 @@ The radio module works like this:
 * Use `receive_full` to obtain full details about an incoming message: the data, receiving signal strength, and a microsecond timestamp when the message arrived.
 
 
----
+----
 
 Radio Module
 --------------

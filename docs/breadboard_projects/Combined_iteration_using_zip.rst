@@ -57,6 +57,7 @@ zip 2 lists
             music.pitch(freq, duration=250)
             display.show(img, delay=250)
         if button_a.is_pressed():
+            display.clear()
             break
 ----
 
@@ -87,6 +88,7 @@ zip 2 lists
             display.show(img, delay=timing)
             music.pitch(freq, duration=timing)
         if button_a.is_pressed():
+            display.clear()
             break
 
 ----
@@ -134,6 +136,7 @@ zip 3 lists
             sleep(timing)
             pinx.write_digital(0)
         if button_a.is_pressed():
+            display.clear()
             break
 
 ----
