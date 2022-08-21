@@ -2,17 +2,12 @@
 Radio syntax
 ====================================================
 
-Introduction
-----------------
+Radio Module
+--------------
 
 .. py:module:: radio
 
 The ``radio`` module allows devices to work together via wireless networks.
-
----
-
-Radio Module
---------------
 
 .. py:attribute:: import radio
     
@@ -28,9 +23,7 @@ Radio Module
 Radio On and Off
 -----------------
 
-.. note::
-
-    The send or receive methods require the radio to be turned on.
+| To send or receive messages, the radio needs to be turned on.
 
 .. py:function:: on()
 
@@ -52,11 +45,11 @@ Radio On and Off
 Radio settings
 -----------------------
 
+| If ``config`` is not called then the defaults are used.
 
 .. py:function:: config(length=32, queue=3, channel=7, power=6, address=0x75626974, group=0, data_rate=radio.RATE_1MBIT)
 
-    Configures various keyword based settings relating to the radio. The
-    available settings and their sensible default values are listed below.
+    Configures various keyword based settings relating to the radio.
 
     The ``length`` (default=32) defines the maximum length, in bytes, of a
     message sent via the radio. 1 character = 1 byte. It can be up to 251 bytes long (254 - 3 bytes
@@ -99,7 +92,7 @@ Radio settings
         all devices. To access this hidden feature for compatibility with V1
         pass ``2`` to the ``data_rate`` argument.
 
-    If ``config`` is not called then the defaults described above are assumed.
+
 
 .. py:function:: reset()
 
@@ -112,7 +105,7 @@ Radio settings
     import radio
 
     radio.on()
-    radio.config(group=9)
+    radio.config(group=9, length=251)
 
 ----
 
@@ -128,12 +121,15 @@ Radio settings
     from microbit import *
     import radio
 
+    radio.on()
+    radio.config(group=9, length=251)
+    radio.send('hello')
+
 ----
 
 .. py:function:: receive()
 
-    Works in exactly the same way as ``receive_bytes`` but returns
-    whatever was sent.
+    Works in exactly the same way as ``receive_bytes`` but returns  whatever was sent.
 
     Currently, it's equivalent to ``str(receive_bytes(), 'utf8')`` but with a
     check that the the first three bytes are ``b'\x01\x00\x01'`` (to make it
@@ -146,6 +142,15 @@ Radio settings
 
     from microbit import *
     import radio
+
+    radio.on()
+    radio.config(group=9, length=251)
+    radio.send('hello')
+
+    while True:
+        message = radio.receive()
+        if message:
+            display.scroll(message)
 
 ----
 
