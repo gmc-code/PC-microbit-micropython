@@ -46,7 +46,7 @@ Radio On and Off
     import radio
 
     radio.on()
- 
+
 ----
 
 Radio settings
@@ -101,11 +101,18 @@ Radio settings
 
     If ``config`` is not called then the defaults described above are assumed.
 
-----
-
 .. py:function:: reset()
 
     Reset the settings to their default values for the ``config`` function.
+
+
+.. code-block:: python
+
+    from microbit import *
+    import radio
+
+    radio.on()
+    radio.config(group=9)
 
 ----
 
