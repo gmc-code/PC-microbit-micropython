@@ -3,16 +3,37 @@ Potentiometer Class
 ==========================
 
 | Create a class for the Potentiometer that makes it easy to:
-    - get its analog reading, 
+    - get the potentiometer analog reading, 
     - keep track of the last reading, 
-    - be able to tell if it has changed 
-    - and to convert the reading to a particular range like 0 to 10.
+    - be able to tell if the potentiometer analog reading has changed 
+    - and to convert the reading to a particular range, such as, from 0 to 10.
+  
+----
 
-| The code below first checks to see if the value of the potentiometer has changed, and then if it has, displays the value as a scaled value in the range 0 to 10 via ``display.show(pot.get_range(10))``.
-| ``pot = Potentiometer()`` will use the default pin: pin0. 
+.. py:module:: Potentiometer
+
+Potentiometer Syntax
+----------------------------------------
+
+.. py:function:: get_val()
+
+    | Returns the potentiometer value from **0 to 1023**.
+
+.. py:function:: was_changed()
+
+    | Returns **True** if the potentiometer value changed, otherwise, **False**.
+
+.. py:function:: get_scaled_val(scale=10)
+
+    | Returns the potentiometer value scaled from **0 to scale** using a default scale of 10.
+
+----
+
+| The code below, first checks to see if the value of the potentiometer has changed, and then if it has, displays the value as a scaled value in the range 0 to 10 via ``display.show(pot.get_range(10))``.
+| ``pot = Potentiometer()`` uses the default pin: pin0. 
 | The pin is kept track of via the **self.io_pin** variable.
 | To use **pin1** instead, use ``pot = Potentiometer(pin1)`` instead of ``pot = Potentiometer()``
-| The line ``self.last_val = -1`` sets **last_val** to be a value it cannot be so that the first reading will be recognised as a change.
+| The line ``self.last_val = -1`` sets **last_val** to be a value it cannot be, -1, so that the first reading will be recognised as a change.
 
 .. code-block:: python
 
@@ -35,16 +56,16 @@ Potentiometer Class
             else:
                 return False
 
-        def get_range(self, rng):
+        def get_scaled_val(self, scale=10):
             analog_read = self.get_val()
-            scaled_read = rng * (analog_read / 1023)
+            scaled_read = scale * (analog_read / 1023)
             return int(scaled_read)
 
 
     pot = Potentiometer()
     while True:
         if pot.was_changed():
-            display.show(pot.get_range(10))
+            display.show(pot.get_scaled_val(10))
 
 ----
  
