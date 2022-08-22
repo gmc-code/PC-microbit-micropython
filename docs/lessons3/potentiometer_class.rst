@@ -166,7 +166,7 @@ Potentiometer Syntax
                             img_num = pot.get_range(images_rng)
                             display.show(face_images[img_num])
 
-           .. tab-item:: Q2
+            .. tab-item:: Q2
 
                 Modify the code to use a potentiometer to set the image to display.
 
