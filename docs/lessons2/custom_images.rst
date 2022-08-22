@@ -2,6 +2,8 @@
 Custom images
 ====================================================
 
+.. py:module:: display
+
 Image strings
 ----------------
 
