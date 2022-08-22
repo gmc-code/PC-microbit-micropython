@@ -41,7 +41,7 @@ Index:
 
 .. toctree::
     :maxdepth: 2
-    :caption: BreadBoard projects
+    :caption: BreadBoard_projects
     :numbered:
 
     breadboard_projects/Combined_models.rst
@@ -138,6 +138,7 @@ Index:
     :numbered:
 
     lessons3/custom_images_advanced.rst
+    lessons3/classes_for_the_microbit.rst
     lessons3/pixel_class.rst
     lessons3/potentiometer_class.rst
     lessons3/radio_syntax.rst
