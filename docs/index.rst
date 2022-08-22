@@ -41,7 +41,7 @@ Index:
 
 .. toctree::
     :maxdepth: 2
-    :caption: BreadBoards breadboard_projects
+    :caption: BreadBoard projects
     :numbered:
 
     breadboard_projects/Combined_models.rst
@@ -121,27 +121,27 @@ Index:
     :caption: Lessons_2
     :numbered:
 
+    lessons2/custom_images.rst
+    lessons2/music.rst
+    lessons2/audio.rst
     lessons2/compass_syntax.rst
     lessons2/compass.rst
     lessons2/thermometer.rst
     lessons2/accelerometer_syntax.rst
     lessons2/gestures.rst
     lessons2/movement.rst
-    lessons2/custom_images.rst
-    lessons2/music.rst
-    lessons2/audio.rst
 
-..lessons2/custom_images_advanced.rst
 
 .. toctree::
     :maxdepth: 2
     :caption: Lessons_3
     :numbered:
 
+    lessons3/custom_images_advanced.rst
+    lessons3/pixel_class.rst
+    lessons3/potentiometer_class.rst
     lessons3/radio_syntax.rst
     lessons3/radio_examples.rst
-
-    
 
 
 .. toctree::
