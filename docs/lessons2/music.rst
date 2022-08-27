@@ -26,7 +26,7 @@ Library
 .. py:function:: set_volume(volume)
 
     | Configure the output volume of the microbit speaker and pins.
-    | :param volume: An integer between 0 and 255 to set the volume.
+    :param volume: An integer between 0 and 255 to set the volume.
 
 | The code below increases the volume and plays a C note in octave 4 for 2 ticks at each volume.
 | The A button can be pressed to exit the for loop then the while loop using ``break``.
@@ -466,7 +466,7 @@ Sound effects using pitch
     | If wait is set to True, this function is blocking.
 
    
-| The code below inreases the picth in steps of 16 with playing duration of 20 ms.
+| The code below inreases the pitch in steps of 16 with playing duration of 20 ms.
 
 .. code-block:: python
     
