@@ -87,7 +87,7 @@ Organising blocks into definitions
 | Side by side comparison:
 
 .. image:: images/def_reorganised.png
-    :scale: 70 %
+    :scale: 80 %
     :align: center
 
 ----
@@ -125,3 +125,76 @@ Organising blocks into definitions
                         display.scroll(num, delay=80)
                 else:
                     display.clear()
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Reorganise the code below to follow the structure of the examples above.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+
+                    def doA():
+                        for char in 'go team':
+                            display.scroll(char, delay=80)
+
+
+                    def doB():
+                        for sport in ['swimming', 'rowing', 'canoeing']:
+                                display.scroll(sport, delay=80)
+
+
+                    def doC():
+                        display.clear()
+                        
+
+                    while True:
+                        if button_a.is_pressed():
+                            doA()
+                        elif button_b.is_pressed():
+                            doB()
+                        else:
+                            doC()
+
+            .. tab-item:: Q2
+
+                Reorganise the code below to follow the structure of the examples above.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+
+                    def doA():
+                        for num in range(1, 10, 2):
+                            display.scroll(num, delay=80)
+
+
+                    def doB():
+                        for num in range(8, -1, -2):
+                            display.scroll(num, delay=80)
+
+
+                    def doC():
+                        display.clear()
+                        
+
+                    while True:
+                        if button_a.is_pressed():
+                            doA()
+                        elif button_b.is_pressed():
+                            doB()
+                        else:
+                            doC()
+
+
+
+
