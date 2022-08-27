@@ -59,6 +59,7 @@ zip 2 lists
         if button_a.is_pressed():
             display.clear()
             break
+
 ----
 
 | The code below zips the list of images and the list of frequencies in the A minor scale.
@@ -98,6 +99,29 @@ zip 2 lists
     #. Make a list of 8 arrows and a list of 8 frequencies to play. Write code to show each image as each frequency is played.
     #. Make a list of 12 clock hands and a list of 12 frequencies to play. Write code to show each image as each frequency is played.
 
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Make a list of 8 arrows and a list of 8 frequencies to play. Write code to show each image as each frequency is played.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+            .. tab-item:: Q2
+
+                Make a list of 12 clock hands and a list of 12 frequencies to play. Write code to show each image as each frequency is played.
+
+                .. code-block:: python
+
+                    from microbit import *
+
 ----
 
 zip 3 lists
@@ -108,7 +132,7 @@ zip 3 lists
 | The code below zips the list of images, the list of frequencies in the A minor scale as well as a list of pins to use.
 | ``for freq, img, pinx in zip(freqs, animal_images, pins)`` interates over the zipped object, placing each frequency, each Image, and each pin into the ``freq``, ``img`` and ``pins`` variables for use. 
 | This allows a sound, an image and an LED to be used in the same for loop.
-| The A button can be pressed to exit the while loop using ``break`` so that the sounds can be easily stopped.
+| The A button can be pressed to exit the while loop using ``break`` so that the actions can be easily stopped.
 | Pressing the reset button on the back of the microbit will restart the code.
 
 .. code-block:: python
@@ -116,7 +140,7 @@ zip 3 lists
     from microbit import *
     import music
 
-    freqs = [440, 494, 523, 587, 659, 698, 784, 880]
+    freqs = [440, 494, 523, 587, 659, 698, 784]
     animal_images = [
         Image.RABBIT,
         Image.COW,
@@ -144,3 +168,26 @@ zip 3 lists
 .. admonition:: Exercises
 
     #. Make a list of images, a list of pitches, and a list of LEDS and iterate over them by using the zip function.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Make a list of 8 arrows and a list of 8 frequencies to play. Write code to show each image as each frequency is played.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+            .. tab-item:: Q2
+
+                Make a list of 12 clock hands and a list of 12 frequencies to play. Write code to show each image as each frequency is played.
+
+                .. code-block:: python
+
+                    from microbit import *
