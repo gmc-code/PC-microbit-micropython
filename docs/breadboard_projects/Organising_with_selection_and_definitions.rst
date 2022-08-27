@@ -84,6 +84,11 @@ Organising blocks into definitions
             doC()
         sleep(1000)
 
+| Side by side comparison:
+
+.. image:: images/def_reorganised.png
+    :scale: 40 %
+    :align: center
 
 ----
 
