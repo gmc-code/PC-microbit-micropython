@@ -25,9 +25,8 @@ Library
 
 .. py:function:: set_volume(volume)
 
-    Configure the output volume of the microbit speaker and pins.
-    
-    :param volume: An integer between 0 and 255 to set the volume.
+    | Configure the output volume of the microbit speaker and pins.
+    | :param volume: An integer between 0 and 255 to set the volume.
 
 | The code below increases the volume and plays a C note in octave 4 for 2 ticks at each volume.
 | The A button can be pressed to exit the for loop then the while loop using ``break``.
@@ -85,21 +84,19 @@ Library
 
 .. py:function::  music.stop(pin=pin0)
 
-    Stops all music playback on the built-in speaker and any pin outputting sound. 
-    An optional argument can be provided to specify a pin, eg. music.stop(pin=pin1).
+    | Stops all music playback on the built-in speaker and any pin outputting sound. 
+    | An optional argument can be provided to specify a pin, eg. music.stop(pin=pin1).
 
 .. py:function::  music.reset()
 
-    Resets the state of the following attributes as listed:
-    ticks = 4; bpm = 120; duration = 4; octave = 4
+    | Resets the state of the following attributes as listed:
+    | ticks = 4; bpm = 120; duration = 4; octave = 4
 
 .. py:function::  music.set_tempo(ticks=4, bpm=120)
 
-    Sets the tempo for playback.
-
-    A number of ticks, expressed as an integer, make a beat. The default is 4 ticks per beat.
-    
-    Each beat is to be played at a certain frequency, beats per minute, expressed as an integer. The default is 120 bpm.
+    | Sets the tempo for playback.
+    | A number of ticks, expressed as an integer, make a beat. The default is 4 ticks per beat.
+    | Each beat is to be played at a certain frequency, beats per minute, expressed as an integer. The default is 120 bpm.
 
 | Examples of use:
 | music.set_tempo() - reset the tempo to default of ticks = 4, bpm = 120
