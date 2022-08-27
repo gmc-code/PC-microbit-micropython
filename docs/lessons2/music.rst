@@ -459,15 +459,11 @@ Sound effects using pitch
 
 .. py:function::  music.pitch(frequency, duration=-1, pin=pin0, wait=True)
 
-    Plays a pitch at the integer frequency given for the duration specified in milliseconds.
-
-    Only one pitch can be played on one pin at any one time.
-
-    If duration is negative the pitch is played continuously until either the blocking call is interrupted or, in the case of a background call, a new frequency is set or stop is called.
-
-    An optional argument to specify the output pin can be used to override the default of pin0. pin=None causes no sound to play.
-
-    If wait is set to True, this function is blocking.
+    | Plays a pitch at the integer frequency given for the duration specified in milliseconds.
+    | Only one pitch can be played on one pin at any one time.
+    | If duration is negative the pitch is played continuously until either the blocking call is interrupted or, in the case of a background call, a new frequency is set or stop is called.
+    | An optional argument to specify the output pin can be used to override the default of pin0. pin=None causes no sound to play.
+    | If wait is set to True, this function is blocking.
 
    
 | The code below inreases the picth in steps of 16 with playing duration of 20 ms.

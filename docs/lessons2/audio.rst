@@ -29,13 +29,12 @@ main controls
 
 .. py:function:: play(source, wait=True, pin=pin0)
 
-    Play the source of the sound.
-
-    :param source: ``Sound``: a built-in sound that is passed to ``audio.play()``.
+    | Play the source of the sound.
+    | :param source: ``Sound``: a built-in sound that is passed to ``audio.play()``.
       ``AudioFrame``: An iterable described below.
-    :param wait: If ``wait`` is ``True``, this function will block until the
+    | :param wait: If ``wait`` is ``True``, this function will block until the
         source has been completely played.
-    :param pin: An optional argument to specify the output pin with default of ``pin0``. Use ``pin=None`` to make no sound.
+    | :param pin: An optional argument to specify the output pin with default of ``pin0``. Use ``pin=None`` to make no sound.
 
 
 .. py:function:: is_playing()
