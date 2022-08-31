@@ -183,8 +183,8 @@ Send on tilting
                 display.scroll("F")
                 radio.send("F")
             else:
-                display.scroll("-")
-                radio.send("-")
+                display.scroll("X")
+                radio.send("X")
         elif button_b.was_pressed():
             x_reading = accelerometer.get_x()
             if x_reading > 200:
