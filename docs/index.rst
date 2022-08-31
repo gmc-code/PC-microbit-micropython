@@ -41,31 +41,6 @@ Index:
 
 .. toctree::
     :maxdepth: 2
-    :caption: BreadBoard_projects
-    :numbered:
-
-    breadboard_projects/Combined_models.rst
-    breadboard_projects/Models_using_definitions.rst
-    breadboard_projects/Organising_with_selection_and_definitions.rst
-    breadboard_projects/Combined_iteration_using_zip.rst
- 
- 
-.. toctree::
-    :maxdepth: 2
-    :caption: BreadBoards
-    :numbered:
-
-    breadboards/Breadboard_connections.rst
-    breadboards/Edge_Connector.rst
-    breadboards/Piezo_Buzzer_and_music.rst
-    breadboards/LEDs_with_resistors.rst
-    breadboards/Potentiometer.rst
-    breadboards/Potentiometer_with_LED.rst
-    breadboards/Motor_with_transistor.rst
-
-
-.. toctree::
-    :maxdepth: 2
     :caption: Lessons_1
     :numbered:
 
@@ -115,6 +90,31 @@ Index:
     lessons/Practice_tasks_1_Answers.rst
     lessons/Practice_tasks_2_Answers.rst
 
+ 
+.. toctree::
+    :maxdepth: 2
+    :caption: BreadBoards
+    :numbered:
+
+    breadboards/Breadboard_connections.rst
+    breadboards/Edge_Connector.rst
+    breadboards/Piezo_Buzzer_and_music.rst
+    breadboards/LEDs_with_resistors.rst
+    breadboards/Potentiometer.rst
+    breadboards/Potentiometer_with_LED.rst
+    breadboards/Motor_with_transistor.rst
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: BreadBoard_projects
+    :numbered:
+
+    breadboard_projects/Combined_models.rst
+    breadboard_projects/Models_using_definitions.rst
+    breadboard_projects/Organising_with_selection_and_definitions.rst
+    breadboard_projects/Combined_iteration_using_zip.rst
+ 
 
 .. toctree::
     :maxdepth: 2
