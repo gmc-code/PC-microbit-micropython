@@ -143,6 +143,7 @@ Index:
     lessons3/potentiometer_class.rst
     lessons3/radio_syntax.rst
     lessons3/radio_examples.rst
+    lessons3/radio_advanced.rst
 
 
 .. toctree::

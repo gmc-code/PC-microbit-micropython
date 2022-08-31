@@ -7,7 +7,8 @@ Radio Module
 
 .. py:module:: radio
 
-The ``radio`` module allows devices to work together via wireless networks.
+| The ``radio`` module allows microbits to send messages to each other via wireless networks.
+| Firstly, import the ``radio`` module.
 
 .. py:attribute:: import radio
     
@@ -98,6 +99,11 @@ Radio settings
 
     Reset the settings to their default values for the ``config`` function.
 
+
+----
+
+| Those working together should set the group to an integer from 0 to 255 so that only their microbits share messages.
+| Set the length to the maximum value if sending long messages. Lengths greater that the deaful may be required if send image strings.
 
 .. code-block:: python
 
