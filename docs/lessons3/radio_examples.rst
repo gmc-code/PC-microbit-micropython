@@ -157,9 +157,10 @@ Send on tilting
 -----------------
 
 | Set up the group in pairs with a value 0-255.
-| Use ``button_a.was_pressed()`` to send a message, **"A"**.
+| Use ``button_a.was_pressed()`` to send a message, based on titling forward  or back.
+| Use ``button_b.was_pressed()`` to send a message, based on titling left or right.
+| Scroll message on sender microbit so message being sent is obvious.
 | Scroll any received messages.
-| ``if incoming_message is not None:`` relies on ``radio.receive()`` returning **None** when there is no message received. 
 
 
 .. code-block:: python
@@ -173,10 +174,30 @@ Send on tilting
     radio.on()
 
     while True:
-        # send
         if button_a.was_pressed():
-            radio.send("A")
-        # receive
+            y_reading = accelerometer.get_y()
+            if y_reading > 200:
+                display.scroll("B")
+                radio.send("B")
+            elif y_reading < -200:
+                display.scroll("F")
+                radio.send("F")
+            else:
+                display.scroll("-")
+                radio.send("-")
+        elif button_b.was_pressed():
+            x_reading = accelerometer.get_x()
+            if x_reading > 200:
+                display.scroll("R")
+                radio.send("R")
+            elif x_reading < -200:
+                display.scroll("L")
+                radio.send("L")
+            else:
+                display.scroll("-")
+                radio.send("-")
+
         incoming_message = radio.receive()
         if incoming_message is not None:
             display.scroll(incoming_message)
+

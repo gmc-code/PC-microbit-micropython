@@ -103,7 +103,7 @@ Radio settings
 ----
 
 | Those working together should set the group to an integer from 0 to 255 so that only their microbits share messages.
-| Set the length to the maximum value if sending long messages. Lengths greater that the deaful may be required if send image strings.
+| Set the length to the maximum value if sending long messages. Lengths greater that the default may be required if sending image strings.
 
 .. code-block:: python
 
@@ -138,11 +138,11 @@ Radio settings
     Works in exactly the same way as ``receive_bytes`` but returns  whatever was sent.
 
     Currently, it's equivalent to ``str(receive_bytes(), 'utf8')`` but with a
-    check that the the first three bytes are ``b'\x01\x00\x01'`` (to make it
+    check that the first three bytes are ``b'\x01\x00\x01'`` (to make it
     compatible with other platforms that may target the micro:bit). It strips
     the prepended bytes before converting to a string.
 
-    A ``ValueError`` exception is raised if conversion to string fails.
+    A ``ValueError`` exception is raised if conversion to a string fails.
 
 .. code-block:: python
 
@@ -164,10 +164,6 @@ Radio settings
 
     Sends a message containing bytes.
 
-.. code-block:: python
-
-    from microbit import *
-    import radio
 
 ----
 
@@ -175,11 +171,6 @@ Radio settings
 
     Receive the next incoming message on the message queue. Returns ``None`` if
     there are no pending messages. Messages are returned as bytes.
-
-.. code-block:: python
-
-    from microbit import *
-    import radio
 
 ----
 
@@ -189,11 +180,6 @@ Radio settings
     into ``buffer``, trimming the end of the message if necessary.
     Returns ``None`` if there are no pending messages, otherwise it returns the length
     of the message (which might be more than the length of the buffer).
-
-.. code-block:: python
-
-    from microbit import *
-    import radio
 
 
 ----
