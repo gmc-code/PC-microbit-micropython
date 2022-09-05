@@ -76,7 +76,7 @@ To scroll the float, ``3.14``, across the display, use ``display.scroll(3.14)``:
                     from microbit import *
 
                     while True:
-                        display.show("Gerard")
+                        display.scroll("Gerard")
 
             .. tab-item:: Q2
 
@@ -87,7 +87,7 @@ To scroll the float, ``3.14``, across the display, use ``display.scroll(3.14)``:
                     from microbit import *
 
                     while True:
-                        display.show(35)
+                        display.scroll(12)
 
 
             .. tab-item:: Q3
@@ -99,7 +99,7 @@ To scroll the float, ``3.14``, across the display, use ``display.scroll(3.14)``:
                     from microbit import *
 
                     while True:
-                        display.show(18)
+                        display.scroll(18)
 
 
             .. tab-item:: Q4
@@ -111,7 +111,7 @@ To scroll the float, ``3.14``, across the display, use ``display.scroll(3.14)``:
                     from microbit import *
 
                     while True:
-                        display.show(0.5)
+                        display.scroll(0.5)
 
 ----
 
@@ -179,7 +179,7 @@ To scroll a date as text, "Dec 25", across the display quickly, use a short dela
                     from microbit import *
 
                     while True:
-                        display.show("5 in family", delay=100)
+                        display.scroll("5 in family", delay=100)
 
             .. tab-item:: Q2
 
@@ -190,7 +190,7 @@ To scroll a date as text, "Dec 25", across the display quickly, use a short dela
                     from microbit import *
 
                     while True:
-                        display.show("12 rooms", delay=100)
+                        display.scroll("12 rooms", delay=100)
 
             .. tab-item:: Q3
 
@@ -201,7 +201,7 @@ To scroll a date as text, "Dec 25", across the display quickly, use a short dela
                     from microbit import *
 
                     while True:
-                        display.show("Born 1987", delay=100)
+                        display.scroll("Born 1987", delay=100)
 
 ----
 
