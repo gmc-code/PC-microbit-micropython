@@ -423,12 +423,12 @@ Display.show using variables
             ave = 24.6
 
             while True:
-                display.scroll('player=', 200)
-                display.scroll(player, 300)
-                display.scroll('Points=', 200)
-                display.scroll(points, 400)
-                display.scroll('Ave=', 200)
-                display.scroll(ave, 500)
+                display.show('player=', 200)
+                display.show(player, 300)
+                display.show('Points=', 200)
+                display.show(points, 400)
+                display.show('Ave=', 200)
+                display.show(ave, 500)
 
 ----
 
