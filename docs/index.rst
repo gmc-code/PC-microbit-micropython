@@ -121,7 +121,6 @@ Index:
     :caption: Lessons_2
     :numbered:
 
-    lessons2/custom_images.rst
     lessons2/music.rst
     lessons2/audio.rst
     lessons2/compass_syntax.rst
@@ -131,19 +130,37 @@ Index:
     lessons2/gestures.rst
     lessons2/movement.rst
 
+ 
 
 .. toctree::
     :maxdepth: 2
-    :caption: Lessons_3
+    :caption: Images
     :numbered:
 
-    lessons3/custom_images_advanced.rst
-    lessons3/classes_for_the_microbit.rst
-    lessons3/pixel_class.rst
-    lessons3/potentiometer_class.rst
-    lessons3/radio_syntax.rst
-    lessons3/radio_examples.rst
-    lessons3/radio_advanced.rst
+    lessons/Built_in_images.rst
+    images/custom_images.rst
+    images/custom_images_advanced.rst
+    classes/pixel_class.rst
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Classes
+    :numbered:
+
+    classes/classes_for_the_microbit.rst
+    classes/pixel_class.rst
+    classes/potentiometer_class.rst
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Radio
+    :numbered:
+
+    radio/radio_syntax.rst
+    radio/radio_examples.rst
+    radio/radio_advanced.rst
 
 
 .. toctree::

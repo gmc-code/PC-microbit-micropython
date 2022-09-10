@@ -59,9 +59,9 @@ Image of a single string character
     while True:
         if button_a.is_pressed() and button_b.is_pressed():
             display.show(my_image_overlap)
-        elif button_a.was_pressed():
+        elif button_a.is_pressed():
             display.show(my_image_letter)
-        elif button_b.was_pressed():
+        elif button_b.is_pressed():
             display.show(my_image_letter2)
         sleep(800)
 
@@ -76,8 +76,8 @@ Image of a single string character
     flash = [Image().invert()*(i/9) for i in range(9, -1, -1)]
 
     while True:
-        if button_a.was_pressed():
+        if button_a.is_pressed():
             display.show(flash, delay=100, wait=False)
-        if button_b.was_pressed():
+        elif button_b.is_pressed():
             display.show(flash, delay=300, wait=False)
 
