@@ -137,10 +137,10 @@ Index:
     :caption: Images
     :numbered:
 
-    lessons/Built_in_images.rst
+    images/Built_in_images.rst
     images/custom_images.rst
     images/custom_images_advanced.rst
-    classes/pixel_class.rst
+    images/pixel_class.rst
 
 
 .. toctree::
