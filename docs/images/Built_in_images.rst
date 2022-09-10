@@ -15,7 +15,7 @@ Built in images
     | Variables and functions should only use lower case letetrs.
     | Classes should use CapWords like ``TeamPlayers``.
     | Constants shoud be in ALLCAPS, like ``PIN``.
-    | This suggests that ``Image`` is a class, and ``HEART`` is a constant within the ``Image`` class.
+    | The use of ``Image`` with a capital is typical of a class, and ``HEART`` is a constant within the ``Image`` class.
 
 ----
 
