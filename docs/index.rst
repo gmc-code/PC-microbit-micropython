@@ -149,8 +149,8 @@ Index:
     :numbered:
 
     classes/classes_for_the_microbit.rst
-    classes/pixel_class.rst
     classes/potentiometer_class.rst
+    classes/pixel_class.rst
 
 
 .. toctree::
