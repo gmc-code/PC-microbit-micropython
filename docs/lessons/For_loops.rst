@@ -137,6 +137,68 @@ For loops with lists
 
 ----
 
+For loops with mixed lists
+----------------------------------------
+
+| Mixed lists can be used with **display.show**.
+| Strings, integers and floats, and Images can all be displayed with **display.show**.
+
+.. code-block:: python
+
+    from microbit import *
+
+    mixed_list = ['I', Image.HEART, 3.14]
+    while True:
+        for element in mixed_list:
+            display.show(element, delay=200)
+            sleep(1000)
+
+
+----
+
+.. admonition:: Tasks
+
+    #. Create a mixed list to display the message to be asleep at 10 o'clock.
+    #. Create a mixed list to display you're 3 favourite animals in number order.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Create a mixed list to display the message to be asleep at 10 o'clock.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    mixed_list = [Image.ASLEEP, '@', Image.CLOCK10]
+                    while True:
+                        for element in mixed_list:
+                            display.show(element, delay=200)
+                            sleep(1000)
+
+            .. tab-item:: Q2
+
+                Create a mixed list to display you're 3 favourite animals in number order.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    mixed_list = ["#1", Image.RABBIT, "#2", Image.DUCK, "#3", Image.TORTOISE]
+                    while True:
+                        for element in mixed_list:
+                            display.show(element, delay=200)
+                            sleep(700)
+                        sleep(1000)
+
+----
+
 Nested For loops
 ----------------------------------------
 
