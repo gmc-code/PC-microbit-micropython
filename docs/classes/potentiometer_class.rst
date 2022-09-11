@@ -73,43 +73,47 @@ Potentiometer Syntax
 
     #. Modify the code to use a potentiometer to set the image to display.
 
-        from microbit import *
+        .. code-block:: python
+            
+            from microbit import *
 
-        images = [
-            Image.ARROW_N,
-            Image.ARROW_NE,
-            Image.ARROW_E,
-            Image.ARROW_SE,
-            Image.ARROW_S,
-            Image.ARROW_SW,
-            Image.ARROW_W,
-            Image.ARROW_NW,
-        ]
+            images = [
+                Image.ARROW_N,
+                Image.ARROW_NE,
+                Image.ARROW_E,
+                Image.ARROW_SE,
+                Image.ARROW_S,
+                Image.ARROW_SW,
+                Image.ARROW_W,
+                Image.ARROW_NW,
+            ]
 
-        img_num = 0
-        while True:
-            display.show(images[img_num])
+            img_num = 0
+            while True:
+                display.show(images[img_num])
             
     #. Modify the code to use a potentiometer to set the image to display.
 
-        from microbit import *
+        .. code-block:: python
+            
+            from microbit import *
 
-        images = [
-            Image.HAPPY,
-            Image.SMILE,
-            Image.SAD,
-            Image.CONFUSED,
-            Image.ANGRY,
-            Image.ASLEEP,
-            Image.SURPRISED,
-            Image.SILLY,
-            Image.FABULOUS,
-            Image.MEH,
-        ]
+            images = [
+                Image.HAPPY,
+                Image.SMILE,
+                Image.SAD,
+                Image.CONFUSED,
+                Image.ANGRY,
+                Image.ASLEEP,
+                Image.SURPRISED,
+                Image.SILLY,
+                Image.FABULOUS,
+                Image.MEH,
+            ]
 
-        img_num = 0
-        while True:
-            display.show(images[img_num])
+            img_num = 0
+            while True:
+                display.show(images[img_num])
 
     .. dropdown::
         :icon: codescan
