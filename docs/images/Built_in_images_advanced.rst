@@ -33,7 +33,7 @@ Reverse direction of list using list slicing
 
 ----
 
-Reverse direction of list using the reverse method or the reversed function
+Reverse direction of list using the reverse method
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | The basic syntax to reverse a list **in place** is:
@@ -56,6 +56,9 @@ Reverse direction of list using the reverse method or the reversed function
 
 ----
 
+Reverse direction of list using the reversed function
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
 | The basic syntax to reverse a list using the **reversed** **function** is:
 
 .. py:function:: reversed(sequence)
@@ -63,6 +66,17 @@ Reverse direction of list using the reverse method or the reversed function
     | sequence is the list to reverse.
 
 | A list, **clock_list**, can be reversed using the reversed function: ``reversed(clock_list)``.
+| The python object obtained from the reversed function can used directly by **display.show**. 
+
+.. code-block:: python
+
+    from microbit import *
+
+    clock_list = list(Image.ALL_CLOCKS)
+    clock_list_anticlockwise = reversed(clock_list)
+    while True:
+        display.show(clock_list_anticlockwise, delay=200)
+
 | The python object obtained from the reversed function can be converted to a list for reuse by using ``list(reversed(clock_list))`` and placing the result in the variable **clock_list_anticlockwise**. 
 
 .. code-block:: python
@@ -299,7 +313,9 @@ Randomize image list
     #. Create a list of the 4 main compass direction arrow images, then randomly sort them and display them.
     #. Create a list of the 4 secondary compass direction arrow images, then randomly sort them and display them.
     #. Create a list of the clock images for 12, 3, 6 and 9 o'clock then randomly sort them and display them.
-    
+    #. Create a list of the 4 main compass direction arrow images, then randomly sort them and display them then display them in reverse order using the **reverse** **method**.
+    #. Create a list of the 4 secondary compass direction arrow images, then randomly sort them and display them then display them in reverse order using the **reversed** **function**.
+
     .. dropdown::
             :icon: codescan
             :color: primary
@@ -347,7 +363,7 @@ Randomize image list
                             display.show(newlist, delay=500)
                             sleep(1000)
 
-               .. tab-item:: Q3
+                .. tab-item:: Q3
 
                     Create a list of the clock images for 12, 3, 6 and 9 o'clock then randomly sort them and display them.
 
@@ -367,8 +383,54 @@ Randomize image list
                             display.show(newlist, delay=500)
                             sleep(1000)
 
+                .. tab-item:: Q4
+
+                    Create a list of the 4 main compass direction arrow images, then randomly sort them and display them then display them in reverse order using the **reverse** **method**.
+    
+                    .. code-block:: python
+
+                        from microbit import *
+                        import random
 
 
+                        def randomkey(element):
+                            return random.random()
 
+
+                        origlist = [Image.ARROW_N, Image.ARROW_E, Image.ARROW_S, Image.ARROW_W]
+                        while True:
+                            newlist = sorted(origlist, key=randomkey)
+                            display.show(newlist, delay=500)
+                            display.clear()
+                            sleep(500)
+                            newlist.reverse()
+                            display.show(newlist, delay=500)
+                            display.clear()
+                            sleep(1000)
+
+                .. tab-item:: Q5
+
+                    Create a list of the 4 secondary compass direction arrow images, then randomly sort them and display them then display them in reverse order using the **reversed** **function**.
+
+                    .. code-block:: python
+
+                        from microbit import *
+                        import random
+
+
+                        def randomkey(element):
+                            return random.random()
+
+
+                        origlist = [Image.ARROW_NE, Image.ARROW_SE, Image.ARROW_SW, Image.ARROW_NW]
+                        while True:
+                            newlist = sorted(origlist, key=randomkey)
+                            display.show(newlist, delay=500)
+                            display.clear()
+                            sleep(500)
+                            rev_list = reversed(newlist)
+                            display.show(rev_list, delay=500)
+                            display.clear()
+                            sleep(1000)
 
 
