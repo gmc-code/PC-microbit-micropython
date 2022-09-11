@@ -96,6 +96,7 @@ Pulse design
     :scale: 20 %
     :align: center
 
+|  
 
 .. admonition:: Tasks
 
@@ -103,7 +104,7 @@ Pulse design
 
 ----
 
-| The code has 7 heart beat images which are combined in a list called ``heart_beat``.
+| The code has 7 heart beat images which are combined in a list called **heart_beat**.
 | When pin0 is touched, the sequence of images is show with 100ms between images. 
 
 .. code-block:: python
