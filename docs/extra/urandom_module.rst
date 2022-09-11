@@ -49,7 +49,7 @@ Functions for integers
     Return an integer with *n* urandom bits where n is from 0 to 32.
     When n = 1, values are 0 or 1.
     When n = 2, values are 0, 1, 2 or 3.
-    When n = 3, values are form 0 to 7.
+    When n = 3, values are from 0 to 7.
     The maximum value is found using (n**2 -1). eg. n**3 - 1 = 7
     THis may be useful for specifying random numebrs based on pwoers of 2.
 
@@ -103,7 +103,7 @@ Functions for floats
     b can be lower of higher than a. The order doesn't matter.
     urandom.uniform(1, 3) is the same as urandom.uniform(3, 1)
 
-| The code below scrolls a random float from 0 to 3, then a float form 4 to 6.
+| The code below scrolls a random float from 0 to 3, then a float from 4 to 6.
 
 .. code-block:: python
 
