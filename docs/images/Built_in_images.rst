@@ -4,18 +4,18 @@ Built-in images
 
 | The microbit library contains over 60 built in images that have specific names.
 | e.g ``Image.HEART``
-| The ``Image`` object must have a capital ``I``.
-| The built in image name must be in capitals. e.g ``HEART`` not ``heart``.
-| No quotation marks are used. e.g ``Image.HEART`` not ``'Image.HEART'``.
+| The **Image** object must have a capital **I**.
+| The built in image name must be in capitals. e.g **HEART** not **heart**.
+| No quotation marks are used. e.g ``Image.HEART`` not ``**'Image.HEART'**``.
 | The same syntax that was used to show text can be used for images.
 | In Mu editor, when typing ``Image.``, as soon as the stop is typed, a drop list of images will be displayed to allow selection of an image.
 
 .. admonition:: Tip
 
     | Variables and functions should only use lower case letetrs.
-    | Classes should use CapWords like ``TeamPlayers``.
-    | Constants shoud be in ALLCAPS, like ``PIN``.
-    | The use of ``Image`` with a capital is typical of a class, and ``HEART`` is a constant within the ``Image`` class.
+    | Classes should use CapWords like **TeamPlayers**.
+    | Constants shoud be in ALLCAPS, like **PIN**.
+    | The use of **Image** with a capital is typical of a class, and **HEART** is a constant within the **Image** class.
 
 ----
 
