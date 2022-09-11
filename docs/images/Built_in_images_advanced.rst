@@ -8,10 +8,10 @@ Advanced use of Built-in Image lists
 | Image.ALL_CLOCKS and Image.ALL_ARROWS are python objects that can be converted to lists of Image objects.
 | Once converted to a list of Images, the list can be reversed to so that the images can be displayed in an anticlockwise direction instead of clockwise.
 
-| ``list(Image.ALL_CLOCKS)`` can convert ``Image.ALL_CLOCKS`` to the list: 
+| ``list(Image.ALL_CLOCKS)`` can convert **Image.ALL_CLOCKS** to the list: 
 | [Image.CLOCK12, Image.CLOCK1, Image.CLOCK2, Image.CLOCK3, Image.CLOCK4, Image.CLOCK5, Image.CLOCK6, Image.CLOCK7, Image.CLOCK8, Image.CLOCK9, Image.CLOCK10, Image.CLOCK11]
 
-| ``list(Image.ALL_ARROWS)`` can convert ``Image.ALL_ARROWS`` to the list:
+| ``list(Image.ALL_ARROWS)`` can convert **Image.ALL_ARROWS** to the list:
 | [Image.ARROW_N, Image.ARROW_NE, Image.ARROW_E, Image.ARROW_SE, Image.ARROW_S, Image.ARROW_SW, Image.ARROW_W, Image.ARROW_NW]
 
 ----
@@ -33,11 +33,37 @@ Reverse direction of list using list slicing
 
 ----
 
-Reverse direction of list using the reversed function
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Reverse direction of list using the reverse method or the reversed function
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| A list, ``clock_list``, can be reversed using the reversed function: ``reversed(clock_list)``.
-| The python object obtained from the reversed function can be converted to a list for reuse by using ``list(reversed(clock_list))`` and placing the result in the variable ``clock_list_anticlockwise``. 
+| The basic syntax to reverse a list **in place** is:
+
+.. py:function:: list.reverse()
+
+    | No parameters are involved.
+
+| A list, **clock_list**, can be reversed using the **reverse** **method**: ``clock_list.reverse()``.
+| The original list has its elements reversed. 
+
+.. code-block:: python
+
+    from microbit import *
+
+    clock_list = list(Image.ALL_CLOCKS)
+    clock_list.reverse()
+    while True:
+        display.show(clock_list, delay=200)
+
+----
+
+| The basic syntax to reverse a list using the **reversed** **function** is:
+
+.. py:function:: reversed(sequence)
+
+    | sequence is the list to reverse.
+
+| A list, **clock_list**, can be reversed using the reversed function: ``reversed(clock_list)``.
+| The python object obtained from the reversed function can be converted to a list for reuse by using ``list(reversed(clock_list))`` and placing the result in the variable **clock_list_anticlockwise**. 
 
 .. code-block:: python
 
@@ -56,8 +82,9 @@ Reverse direction of list using the reversed function
 
 .. admonition:: Tasks
 
-    #. Write code that uses list slicing to display all the arrow images clockwise then anticlockwise.
-    #. Write code that uses the reversed function to display all the clock images clockwise then anticlockwise.
+    #. Write code that uses list **slicing** to display all the arrow images clockwise then anticlockwise.
+    #. Write code that uses the **reverse** method to display all the clock images clockwise then anticlockwise.
+    #. Write code that uses the **reversed** function to display all the clock images clockwise then anticlockwise.
 
     .. dropdown::
         :icon: codescan
@@ -68,7 +95,7 @@ Reverse direction of list using the reversed function
 
             .. tab-item:: Q1
 
-                Write code that uses list slicing to display all the arrow images clockwise then anticlockwise.
+                Write code that uses list **slicing** to display all the arrow images clockwise then anticlockwise.
 
                 .. code-block:: python
 
@@ -82,7 +109,22 @@ Reverse direction of list using the reversed function
                         
             .. tab-item:: Q2
 
-                Write code that uses the reversed function to display all the clock images clockwise then anticlockwise.
+                Write code that uses the **reverse** method to display all the clock images clockwise then anticlockwise.
+
+                .. code-block::
+
+                    from microbit import *
+
+                    clock_list = list(Image.ALL_CLOCKS)
+                    clock_list_anticlockwise = list(Image.ALL_CLOCKS)
+                    clock_list_anticlockwise.reverse()
+                    while True:
+                        display.show(clock_list, delay=200)
+                        display.show(clock_list_anticlockwise, delay=200)
+                       
+            .. tab-item:: Q3
+
+                Write code that uses the **reversed** function to display all the clock images clockwise then anticlockwise.
 
                 .. code-block::
 
@@ -93,7 +135,6 @@ Reverse direction of list using the reversed function
                     while True:
                         display.show(clock_list, delay=200)
                         display.show(clock_list_anticlockwise, delay=200)
-
 
 ----
 
@@ -107,9 +148,9 @@ Randomize list
 
 .. py:function:: sorted(iterable, key=key, reverse=reverse)
 
-    iterable	Required. The sequence to sort, list, dictionary, tuple etc.
-    key	Optional. A Function to execute to decide the order. Default is None
-    reverse	Optional. A Boolean. False will sort ascending, True will sort descending. Default is False
+    | iterable Required. The sequence to sort, list, dictionary, tuple etc.
+    | key Optional. A Function to execute to decide the order. Default is None
+    | reverse Optional. A Boolean. False will sort ascending, True will sort descending. Default is False
 
 
 | The key function will use a function that generates a random float.
@@ -153,7 +194,6 @@ Randomize list
     #. Modify the oldlist to be the list of letters "a", "e", "t". Bonus: What do the 6 possible words mean?
     #. A string can be turned to a list using the list function. Modify the oldlist to be list("ate").
     #. Modify the oldlist to be the list of characters from list("ab12")
-
 
     .. dropdown::
             :icon: codescan
