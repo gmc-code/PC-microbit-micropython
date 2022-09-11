@@ -460,8 +460,8 @@ Multiplying and dividing Image pixels
 
 ----
 
-List comprehension
------------------------------------------
+List comprehension for a series of images of changing brightness
+-----------------------------------------------------------------------
 
 .. py:function:: image_list = [Image().invert()*(i/9) for i in range(9, -1, -1)]
 
@@ -529,6 +529,80 @@ List comprehension
                             elif button_b.is_pressed():
                                 display.show(sad_0to9_list, delay=300, wait=False)
 
+----
+
+bytearray
+-----------------------------------------
+
+.. py:function:: Image(width=None, height=None, buffer=None)
+
+    | Creates an image with width columns and height rows. 
+    | Optionally buffer can be a list of integers passed passed to bytearray(integer_list)
+
+| The code below creates a brightness gradient.
+
+.. code-block:: python
+
+    from microbit import *
+
+    newimg = Image(5, 5, bytearray([1,1,1,1,1,3,3,3,3,3,5,5,5,5,5,7,7,7,7,7,9,9,9,9,9]))
+    display.show(newimg)
+
+----
+
+| The code below creates a 5 by 5 images with random brightness.
+
+.. code-block:: python
+
+    from microbit import *
+    from random import randint
+
+
+    def full_screen_fill_bytes(minbrightness=1, maxbrightness=9):
+        screen_bytes = []
+        for y in range(0, 5):
+            for x in range(0, 5):
+                brightness = randint(minbrightness, maxbrightness)
+                screen_bytes.append(brightness)
+        return screen_bytes
+
+
+    while True:
+        screen_bytes = full_screen_fill_bytes(0, 9)
+        newimg = Image(5, 5, bytearray(screen_bytes))
+        display.show(newimg)
+        sleep(1000)
+
+| The code below creates changing displays of random pixels. It checks to see when the display has been filled with 25 pixels and displays the number of attempts of creating random pixels.
+
+.. code-block:: python
+
+    from microbit import *
+    from random import randint
+
+    def full_screen_check():
+        for y in range(0, 5):
+            for x in range(0, 5):
+                if display.get_pixel(x, y) == 0:
+                    return False
+        return True
+
+    def fill_screen_with_counter():
+        counter = 0
+        while True:
+            counter += 1
+            x = randint(0, 4)
+            y = randint(0, 4)
+            brightness = randint(5,9)
+            display.set_pixel(x, y, brightness)
+            if full_screen_check():
+                display.scroll(counter)
+                return counter
+            sleep(30)
+
+    while True:
+        fill_screen_with_counter()
+        sleep(1000)
 
 
 
