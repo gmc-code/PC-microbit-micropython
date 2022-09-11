@@ -13,7 +13,7 @@ Pin touching
 
     Return True if the pin is being touched with a finger, otherwise return False. It is best to touch the ground pin with the other hand.
 
-| The code below is for testing pin0 touching. When touched, a ``0`` will be shown.
+| The code below is for testing pin0 touching. When touched, a **0** will be shown.
 
 .. code-block:: python
 
@@ -31,8 +31,8 @@ Pin touching
 
 .. admonition:: Tasks
 
-    #. Add an elif branch to test for pin1 touching and display a ``1`` when it is.
-    #. Add another elif branch to test for pin2 touching and display a ``2`` when it is.
+    #. Add an elif branch to test for pin1 touching and display a **1** when it is.
+    #. Add another elif branch to test for pin2 touching and display a **2** when it is.
 
     .. dropdown::
         :icon: codescan
@@ -43,7 +43,7 @@ Pin touching
 
             .. tab-item:: Q1
 
-                Add an elif branch to test for pin1 touching and display a ``1`` when it is.
+                Add an elif branch to test for pin1 touching and display a **1** when it is.
 
                 .. code-block:: python
 
@@ -62,7 +62,7 @@ Pin touching
 
             .. tab-item:: Q2
 
-                Write code that uses list **slicing** to display all the arrow images clockwise then anticlockwise.
+                Add another elif branch to test for pin2 touching and display a **2** when it is.
 
                 .. code-block:: python
 
