@@ -96,6 +96,7 @@ Pulse design
     :scale: 20 %
     :align: center
 
+
 .. admonition:: Tasks
 
     #. Plan the design of 7 images to simulate the above heart beat being scrolled from right to left starting with the left edge of the pulse and ending with a flat line.
