@@ -188,6 +188,7 @@ Adding Image pixels
 
     | Create a new image by adding the brightness values from the two images for each pixel.
 
+| The code below adds the images made from an "m" and a "w".
 
 .. code-block:: python
 
@@ -205,6 +206,24 @@ Adding Image pixels
         else:
             display.show(img_mw)
         sleep(500)
+
+| The code below adds the SAD image and the HAPPY iamge.
+
+.. code-block:: python
+
+    from microbit import *
+
+
+    img1 = Image.SAD
+    img2 = Image.HAPPY
+    while True:
+        display.show(img1)
+        sleep(500)
+        display.show(img2)
+        sleep(500)
+        display.show(img1 + img2)
+        sleep(500)
+
 
 ----
 
