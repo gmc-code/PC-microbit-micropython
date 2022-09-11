@@ -3,7 +3,7 @@ Pixel Classes
 ==========================
 
 Pixel animation using classes
---------------------------------
+-------------------------------
 
 | The Class ``LED`` is used to create several LED objects used in the animation.
 | e.g **led02 = LED(0, 2)** creates a pixel at x = 0 and y = 2. 
