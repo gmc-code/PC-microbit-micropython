@@ -22,6 +22,7 @@ Pin touching
     while True:
         if pin0.is_touched():
             display.show(0)
+            sleep(500)
         else:
             display.clear()
         sleep(100)
@@ -32,6 +33,55 @@ Pin touching
 
     #. Add an elif branch to test for pin1 touching and display a ``1`` when it is.
     #. Add another elif branch to test for pin2 touching and display a ``2`` when it is.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Add an elif branch to test for pin1 touching and display a ``1`` when it is.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        if pin0.is_touched():
+                            display.show(0)
+                            sleep(500)
+                        elif pin1.is_touched():
+                            display.show(1)
+                            sleep(500)
+                        else:
+                            display.clear()
+                        sleep(100)
+
+            .. tab-item:: Q2
+
+                Write code that uses list **slicing** to display all the arrow images clockwise then anticlockwise.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        if pin0.is_touched():
+                            display.show(0)
+                            sleep(500)
+                        elif pin1.is_touched():
+                            display.show(1)
+                            sleep(500)
+                        elif pin2.is_touched():
+                            display.show(2)
+                            sleep(500)
+                        else:
+                            display.clear()
+                        sleep(100)
+
 
 ----
 
@@ -82,12 +132,41 @@ Pulse design
 | Use the formula to calculate the delay: delay = 60000/(HR * 7)
 | For a heart rate of 65 bpm (beats per minute), the delay is 132.
 
+| Use google metronome https://g.co/kgs/Rjdr6e.
+| Use https://www.musicca.com/metronome as an alternative metronome.
+
 .. admonition:: Tasks
 
     #. Set the google metronome https://g.co/kgs/Rjdr6e  to 65 and see if a delay of 132 keeps in time with the metronome.
     #. Set the google metronome https://g.co/kgs/Rjdr6e  to 100. Use the formula to calculate the delay required for a HR of 100 bpm. See if this keeps in time with the metronome.
 
-| Use https://www.musicca.com/metronome as an alternative metronome.
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Set the google metronome https://g.co/kgs/Rjdr6e  to 65 and see if a delay of 132 keeps in time with the metronome.
+
+                Use:
+
+                .. code-block:: python
+
+                    display.show(heart_beat, delay=100, wait=True)
+
+            .. tab-item:: Q2
+
+                Set the google metronome https://g.co/kgs/Rjdr6e  to 100. Use the formula to calculate the delay required for a HR of 100 bpm. See if this keeps in time with the metronome.
+
+                Use:
+
+                .. code-block:: python
+
+                    display.show(heart_beat, delay=85, wait=True)
+
 
 ----
 
@@ -139,3 +218,17 @@ Using a function to calculate the delay for a Heart rate
     #. Add an elif branch to test for pin1 touching and use a heart rate for pin1 of 100 bpm.
     #. Add another elif branch to test for pin2 touching and use a heart rate for pin2 of 150 bpm.
 
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Add an elif branch to test for pin1 touching and display a ``1`` when it is.
+
+                .. code-block:: python
+
+                    from microbit import *

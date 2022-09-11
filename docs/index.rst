@@ -140,6 +140,7 @@ Index:
     images/Built_in_images_advanced.rst
     images/custom_images.rst
     images/custom_images_advanced.rst
+    images/heart_beat_simulation.rst
     images/pixel_class.rst
 
 
@@ -182,7 +183,6 @@ Index:
     :caption: Extra microbit
     :numbered:
 
-    extra/heart_beat_simulation.rst
     extra/modules.rst
     extra/builtins_module.rst
     
