@@ -163,7 +163,7 @@ For loops with mixed lists
 .. admonition:: Tasks
 
     #. Create a mixed list to display the message to be asleep at 10 o'clock.
-    #. Create a mixed list to display you're 3 favourite animals in number order.
+    #. Create a mixed list to display you're 3 favourite animals with their number order.
 
     .. dropdown::
         :icon: codescan
