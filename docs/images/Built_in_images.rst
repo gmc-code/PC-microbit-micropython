@@ -22,11 +22,11 @@ Built-in images
 Display.show a built in Image
 ----------------------------------------
 
-.. py:function:: show(image)
+.. py:function:: display.show(image)
 
-    | Display an image.
+    | Display an image, where image is a built in image such as **Image.Heart**.
 
-| The code below displays a heart.
+| The code below displays a the built-in heart image.
 
 .. code-block:: python
 
@@ -90,7 +90,7 @@ Display.show a list of images
 
 | A list of images can be displayed in sequence.
 
-.. py:function:: show(imagelist, delay=400)
+.. py:function:: display.show(imagelist, delay=400)
 
     | Display images from a list in sequence.
     | Each image in a list of images is shown with ``delay`` milliseconds between them.
