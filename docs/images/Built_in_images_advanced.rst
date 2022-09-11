@@ -160,7 +160,7 @@ Randomize list
 .. py:function:: random.random()
 
 | The key function, **randomkey**,  returns a random floating number between 0 and 1.
-| A parameter is required, since the sorted function will pass in the object from a list that is being sorted.
+| A parameter is required, since the sorted function will pass in the object from a list that is being sorted. The parameter used below is **element**. Note that it is not used in the function code itself.
 
 .. code-block:: python
     
