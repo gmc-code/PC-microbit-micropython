@@ -136,7 +136,7 @@ Pixel animation using classes
 
             .. tab-item:: Q3
 
-                Modify the code to use a **brightness** of 1, 3, 5, 7, 9 for each led from left to right. DO this by incrementing a counter called **brightness_val**. 
+                Modify the code to use a **brightness** of 1, 3, 5, 7, 9 for each led from left to right. Do this by incrementing a counter called **brightness_val**. 
 
                 .. code-block:: python
 

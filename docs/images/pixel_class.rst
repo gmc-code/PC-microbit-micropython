@@ -1,9 +1,9 @@
 ==========================
-Pixel Classes
+Pixel Class
 ==========================
 
 Pixel animation using classes
---------------------------------
+-------------------------------
 
 | The Class ``LED`` is used to create several LED objects used in the animation.
 | e.g **led02 = LED(0, 2)** creates a pixel at x = 0 and y = 2. 
@@ -16,7 +16,6 @@ Pixel animation using classes
 .. code-block:: python
 
     from microbit import *
-    import random
 
 
     class LED():
@@ -49,8 +48,10 @@ Pixel animation using classes
 
 .. admonition:: Tasks
 
-    #. Modify the code to use the **brightness** parameter with a brightness of 6.   
-    #. 
+    #. Modify the code to use a default **brightness** of 6.    
+    #. Modify the code to use a **brightness** of 3 when the led is turned on in the **for-loop**. 
+    #. Modify the code to use a **brightness** of 1, 3, 5, 7, 9 for each led from left to right. DO this by incrementing a counter called **brightness_val**.   
+    #. Modify the code to use ``brightness_val_list = [9, 7, 5, 3, 1]`` to store the led brightnesses for the 5 leds from left to right. Use the zip function to zip the led lsit and the brightness lsit. Then loop though the zipped list to display the leds with decreasing brightness.   
 
     .. dropdown::
         :icon: codescan
@@ -61,9 +62,156 @@ Pixel animation using classes
 
             .. tab-item:: Q1
 
-                Modify the code to use a **brightness** parameter in the init function and replace the **2** in the **show** method with the parameter variable. Create **mypix** with a brightness of 6.
+                Modify the code to use a default **brightness** of 6.  
 
                 .. code-block:: python
+
+                    from microbit import *
+
+
+                    class LED():
+                        def __init__(self, x=2, y=2):
+                            self.x = x
+                            self.y = y
+                        
+                        def on(self, brightness=6):
+                            display.set_pixel(self.x, self.y, brightness)
+
+                        def off(self):
+                            display.set_pixel(self.x, self.y, 0)
+
+
+                    led02 = LED(0, 2)
+                    led12 = LED(1, 2)
+                    led22 = LED(2, 2)
+                    led32 = LED(3, 2)
+                    led42 = LED(4, 2)
+
+                    led_list = [led02, led12, led22, led32, led42]
+
+                    while True:
+                        for ledxy in led_list:
+                            ledxy.on()
+                            sleep(100)
+                        for ledxy in led_list:
+                            ledxy.off()
+                            sleep(100)
+
+            .. tab-item:: Q2
+
+                Modify the code to use a **brightness** of 3 when the led is turned on in the **for-loop**. 
+
+                .. code-block:: python
+
+                    from microbit import *
+
+
+                    class LED():
+                        def __init__(self, x=2, y=2):
+                            self.x = x
+                            self.y = y
+                        
+                        def on(self, brightness=6):
+                            display.set_pixel(self.x, self.y, brightness)
+
+                        def off(self):
+                            display.set_pixel(self.x, self.y, 0)
+
+
+                    led02 = LED(0, 2)
+                    led12 = LED(1, 2)
+                    led22 = LED(2, 2)
+                    led32 = LED(3, 2)
+                    led42 = LED(4, 2)
+
+                    led_list = [led02, led12, led22, led32, led42]
+
+                    while True:
+                        for ledxy in led_list:
+                            ledxy.on(brightness=3)
+                            sleep(100)
+                        for ledxy in led_list:
+                            ledxy.off()
+                            sleep(100)
+
+            .. tab-item:: Q3
+
+                Modify the code to use a **brightness** of 1, 3, 5, 7, 9 for each led from left to right. Do this by incrementing a counter called **brightness_val**. 
+
+                .. code-block:: python
+
+                    from microbit import *
+
+
+                    class LED():
+                        def __init__(self, x=2, y=2):
+                            self.x = x
+                            self.y = y
+                        
+                        def on(self, brightness=6):
+                            display.set_pixel(self.x, self.y, brightness)
+
+                        def off(self):
+                            display.set_pixel(self.x, self.y, 0)
+
+
+                    led02 = LED(0, 2)
+                    led12 = LED(1, 2)
+                    led22 = LED(2, 2)
+                    led32 = LED(3, 2)
+                    led42 = LED(4, 2)
+
+                    led_list = [led02, led12, led22, led32, led42]
+
+                    while True:
+                        brightness_val = 1
+                        for ledxy in led_list:
+                            ledxy.on(brightness=brightness_val)
+                            brightness_val += 2
+                            sleep(100)
+                        for ledxy in led_list:
+                            ledxy.off()
+                            sleep(100)
+
+            .. tab-item:: Q4
+
+                Modify the code to use ``brightness_val_list = [9, 7, 5, 3, 1]`` to store the led brightnesses for the 5 leds from left to right. Use the zip function to zip the led lsit and the brightness lsit. Then loop though the zipped list to display the leds with decreasing brightness. 
+
+                .. code-block:: python
+
+                    from microbit import *
+
+
+                    class LED:
+                        def __init__(self, x=2, y=2):
+                            self.x = x
+                            self.y = y
+
+                        def on(self, brightness=9):
+                            display.set_pixel(self.x, self.y, brightness)
+
+                        def off(self):
+                            display.set_pixel(self.x, self.y, 0)
+
+
+                    led02 = LED(0, 2)
+                    led12 = LED(1, 2)
+                    led22 = LED(2, 2)
+                    led32 = LED(3, 2)
+                    led42 = LED(4, 2)
+
+                    led_list = [led02, led12, led22, led32, led42]
+                    brightness_val_list = [9, 7, 5, 3, 1]
+                    leds_brightness_list = zip(led_list, brightness_val_list)
+
+                    while True:
+                        for ledxy, brightness_val in leds_brightness_list:
+                            ledxy.on(brightness=brightness_val)
+                            sleep(100)
+                        for ledxy in led_list:
+                            ledxy.off()
+                            sleep(100)
+
 
 ----
 
