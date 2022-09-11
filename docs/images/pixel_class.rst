@@ -8,7 +8,7 @@ Pixel animation using classes
 | The Class ``LED`` is used to create several LED objects used in the animation.
 | e.g **led02 = LED(0, 2)** creates a pixel at x = 0 and y = 2. 
 | The **on** method controls the microbit LED brightness. 
-| e.g. **led02.on()** set the pixel at x = 0 and y = 2 to teh default brightnes of 9.
+| e.g. **led02.on()** set the pixel at x = 0 and y = 2 to the default brightnes of 9.
 | The **off** method sets the pixel to 0 brightness. 
 
 | A list of LED objects can be used in an animation: led_list = [led02, led12, led22, led32, led42]

@@ -197,7 +197,7 @@ Notes
 
     #. Play the 5 notes: c, e, g, e, c.
     #. Play the 5 notes: c, e, g, e, c with a tempo of 120, 180 and 240bpm. 
-    #. Design a function that takes a tempo list of 120, 240, 360 , 480 and 600 bpm as one parameter and a sleep_time with default value 1000. Use a repeat loop to set teh tempo and play the notes_list.
+    #. Design a function that takes a tempo list of 120, 240, 360 , 480 and 600 bpm as one parameter and a sleep_time with default value 1000. Use a repeat loop to set the tempo and play the notes_list.
 
     .. dropdown::
         :icon: codescan

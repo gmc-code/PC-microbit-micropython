@@ -29,7 +29,7 @@ Functions for integers
 
 .. note::
 
-   Be careful with **randint**, since it doesn't follow the usual rule in python where teh stop value is not included. **(0, 7)** normally means from 0 up to **but not including** 7. Whereas, for **randint**, **(0, 7)** means from 0 up to **and including** 7.
+   Be careful with **randint**, since it doesn't follow the usual rule in python where the stop value is not included. **(0, 7)** normally means from 0 up to **but not including** 7. Whereas, for **randint**, **(0, 7)** means from 0 up to **and including** 7.
 
 ----
 

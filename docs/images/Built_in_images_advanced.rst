@@ -101,7 +101,7 @@ Randomize list
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | A list can be randomly sorted using random.shuffle in python 3.10.
-| This is not available in Mu editor in 2022, so teh sorted function with a sort key can be used instead.
+| This is not available in Mu editor in 2022, so the sorted function with a sort key can be used instead.
 
 | The basic syntax is:
 
