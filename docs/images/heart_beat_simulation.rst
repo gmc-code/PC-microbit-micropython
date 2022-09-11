@@ -99,7 +99,7 @@ Pulse design
 
 .. admonition:: Tasks
 
-    #. Plan the design of 7 images to simulate the above heart beat being scrolled from right to left starting with the left edge of the pulse and ending with a flat line.
+    #. Plan the design of 7 images to simulate the above heart beat being scrolled from right to left starting with the left edge of the pulse and ending with a flat line. Attempt to complete the code for the 7 images before reading on.
 
 ----
 
