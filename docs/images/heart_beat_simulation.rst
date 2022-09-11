@@ -157,7 +157,7 @@ Pulse design
 
                 .. code-block:: python
 
-                    display.show(heart_beat, delay=100, wait=True)
+                    display.show(heart_beat, delay=132, wait=True)
 
             .. tab-item:: Q2
 
