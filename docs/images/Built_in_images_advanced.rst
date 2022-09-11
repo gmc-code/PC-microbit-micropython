@@ -6,6 +6,16 @@ Advanced use of Built-in Image lists
 ----------------------------------------
 
 | Image.ALL_CLOCKS and Image.ALL_ARROWS are python objects that can be converted to lists of Image objects.
+| Image.ALL_CLOCKS and Image.ALL_ARROWS are of type tuple.
+| This can be discovered using by flashing the code below, activating the **REPL**, then using **Control-D** to soft-reset the microbit so it prints the **type**.
+
+.. code-block:: python
+
+    from microbit import *
+
+    clock_list = Image.ALL_CLOCKS
+    print(type(clock_list))
+
 | Once converted to a list of Images, the list can be reversed to so that the images can be displayed in an anticlockwise direction instead of clockwise.
 
 | ``list(Image.ALL_CLOCKS)`` can convert **Image.ALL_CLOCKS** to the list: 
@@ -21,6 +31,7 @@ Reverse direction of list using list slicing
 
 | A list, ``arrow_list``, can be reversed using the slicing technique: ``arrow_list[::-1]``.
 | ``arrow_list_anticlockwise = arrow_list[::-1]`` reverses the list and places it in a the variable ``arrow_list_anticlockwise``.
+| Note that reversing a tuple by slicing in Mu editor is not supported as of 2022. Thus, conversion to a list is needed.
 
 .. code-block:: python
 
@@ -43,7 +54,8 @@ Reverse direction of list using the reverse method
     | No parameters are involved.
 
 | A list, **clock_list**, can be reversed using the **reverse** **method**: ``clock_list.reverse()``.
-| The original list has its elements reversed. 
+| The original list has its elements reversed.
+| Note that is it necessary to create the list from Image.ALL_CLOCKS, since the reverse method doesn't work directly on Image.ALL_CLOCKS.  
 
 .. code-block:: python
 
@@ -67,6 +79,7 @@ Reverse direction of list using the reversed function
 
 | A list, **clock_list**, can be reversed using the reversed function: ``reversed(clock_list)``.
 | The python object obtained from the reversed function can used directly by **display.show**. 
+| Note that is it not necessary to create the list from Image.ALL_CLOCKS, since the reversed fucntion can work directly on Image.ALL_CLOCKS.  
 
 .. code-block:: python
 
