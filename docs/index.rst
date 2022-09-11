@@ -131,13 +131,13 @@ Index:
     lessons2/movement.rst
 
  
-
 .. toctree::
     :maxdepth: 2
     :caption: Images
     :numbered:
 
     images/Built_in_images.rst
+    images/Built_in_images_advanced.rst
     images/custom_images.rst
     images/custom_images_advanced.rst
     images/pixel_class.rst
