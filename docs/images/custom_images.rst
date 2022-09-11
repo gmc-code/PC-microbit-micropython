@@ -589,7 +589,7 @@ Boat sinking animation
 
 .. admonition:: Tasks
 
-    #. Write a list variable, ``rising_boats``, that lists the boats in reverse order and animates a rising boat. Rather than manually listing the order, use ``list(reversed(**imageslist**))``.  (See the built-in images lesson for an explanation.)
+    #. Write a list variable, ``rising_boats``, that lists the boats in reverse order and animates a rising boat. Rather than manually listing the order, use ``list(reversed(sinking_boats))``.
     #. Combine the 2 animations to show a boat sinking and rising over and over again.
 
 
@@ -602,7 +602,7 @@ Boat sinking animation
 
                 .. tab-item:: Q1
 
-                    Write a list variable, ``rising_boats``, that lists the boats in reverse order and animates a rising boat. Rather than manually listing the order, use ``list(reversed(**imageslist**))``. 
+                    Write a list variable, ``rising_boats``, that lists the boats in reverse order and animates a rising boat. Rather than manually listing the order, use ``list(reversed(sinking_boats))``. 
 
                     .. code-block:: python
 
