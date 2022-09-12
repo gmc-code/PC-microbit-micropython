@@ -10,6 +10,8 @@ Buttons and selection
 Button is pressed
 ----------------------------------------
 
+| The ``.is_pressed`` method is used to detect button pressing at the moment the code tgets to that point.
+
 .. py:function:: button_a.is_pressed()
 
     | returns ``True`` if the A button is being pressed or ``False`` if not.
@@ -18,12 +20,31 @@ Button is pressed
 
     | returns ``True`` if the B button is being pressed or ``False`` if not.
 
-Button pressing can be tested and used as conditions in ``if`` and ``elif`` statements.
+
+----
+
+Button was pressed
+----------------------------------------
+
+| The ``.was_pressed`` method is used to detect button pressing since the last check or since the device started.
+| The ``.was_pressed`` method will clear the press state so that the button must be pressed again before this method will return True again. 
+
+.. py:function:: button_a.was_pressed()
+
+    | returns ``True`` if the A button was pressed since the last check, or ``False`` if not.
+
+.. py:function:: button_b.was_pressed()
+
+    | returns ``True`` if the B button was pressed since the last check, or ``False`` if not.
+
+| The code examples below tend to use is_pressed rather than was_pressed.
 
 ----
 
 Selection
 ----------------------------------------
+
+| Button pressing can be tested and used as conditions in ``if`` and ``elif`` statements.
 
 | ``if``, ``elif`` and ``else`` provide choices or branches in the code.
 | They all are used in lines of code which end with a colon, ``:``.
