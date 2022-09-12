@@ -46,7 +46,8 @@ Invert
 | When inverted, a pixel of brightness 0 becomes 9, 1 becomes 8, 2 becomes 7,....8 becomes 1, 9 becomes 0.   
 
 | An image may be stored in a variable then inverted.
-| In the code below, the inverted image, **img1_inverted**, is: 
+| In the code below, the image is inverted, and so:
+| **Image('11111:33333:55555:77777:99999') ** is inverted to:
 | **Image('88888:66666:44444:22222:00000:')**
 
 .. code-block:: python
@@ -56,13 +57,19 @@ Invert
     img1 = Image('11111:33333:55555:77777:99999')
     img1_inverted = img1.invert()
 
+.. sidebar::
+
+    .. image:: images/happy_inverted.png
+        :scale: 50 %
+        :align: center
+
 | A built-in image can be stored in a variable, then inverted.
 
 .. code-block:: python
 
     from microbit import *
     
-    img1 = Image.HEART
+    img1 = Image.HAPPY
     img1_inverted = img1.invert()
 
 ----
