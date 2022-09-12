@@ -47,7 +47,7 @@ Invert
 
 | An image may be stored in a variable then inverted.
 | In the code below, the image is inverted, and so:
-| **Image('11111:33333:55555:77777:99999') ** is inverted to:
+| **Image('11111:33333:55555:77777:99999')** is inverted to:
 | **Image('88888:66666:44444:22222:00000:')**
 
 .. code-block:: python
@@ -147,7 +147,7 @@ Image of a single string character
 
     | Returns an image object that represents the character. The characters must be in quotes.
 
-| **img_m = Image("m")** stores the image in a variable which is then shown via: **display.show(img_m)**
+| ``img_m = Image("m")`` stores the image in a variable which is then shown via: ``display.show(img_m)``
 
 .. code-block:: python
 
