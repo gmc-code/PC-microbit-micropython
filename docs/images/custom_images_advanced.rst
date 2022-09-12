@@ -792,7 +792,7 @@ bytearray
 ----
 
 get_pixel and set_pixel
------------------------------
+---------------------------
 
 
 | The code below creates changing displays of random pixels. It checks to see when the display has been filled with 25 pixels and displays the number of attempts of creating random pixels.
