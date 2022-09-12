@@ -57,6 +57,7 @@ Invert
     img1 = Image('11111:33333:55555:77777:99999')
     img1_inverted = img1.invert()
 
+
 .. sidebar::
 
     .. image:: images/happy_inverted.png
@@ -64,6 +65,7 @@ Invert
         :align: center
 
 | A built-in image can be stored in a variable, then inverted.
+| The inverted HAPPY face is shown.
 
 .. code-block:: python
 
@@ -71,6 +73,7 @@ Invert
     
     img1 = Image.HAPPY
     img1_inverted = img1.invert()
+    display.show(img1_inverted)
 
 ----
 
@@ -154,13 +157,10 @@ Image of a single string character
     from microbit import *
 
     img_m = Image("m")
-    img_w = Image("w")
 
     while True:
         if button_a.is_pressed():
             display.show(img_m)
-        elif button_b.is_pressed():
-            display.show(img_w)
         sleep(200)
 
 ----
@@ -168,7 +168,7 @@ Image of a single string character
 
 .. admonition:: Tasks
 
-    #. Modify the code to create images of 3 and 5.
+    #. Modify the code to create an images of 3.
     #. Modify the code to create images of "m" and an inverted "m".
 
     .. dropdown::
@@ -187,13 +187,10 @@ Image of a single string character
                         from microbit import *
 
                         img_3 = Image("3")
-                        img_5 = Image("5")
 
                         while True:
                             if button_a.is_pressed():
                                 display.show(img_3)
-                            elif button_b.is_pressed():
-                                display.show(img_5)
                             sleep(200)
 
                 .. tab-item:: Q2
@@ -241,6 +238,14 @@ Adding Image pixels
         else:
             display.show(img_mw)
         sleep(500)
+
+
+.. sidebar::
+
+    .. image:: images/SAD + HAPPY.png
+        :scale: 50 %
+        :align: center
+
 
 | The code below adds the SAD image and the HAPPY image.
 
