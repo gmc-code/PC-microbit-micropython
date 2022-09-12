@@ -37,8 +37,8 @@ Button was pressed
 
     | returns ``True`` if the B button was pressed since the last check, or ``False`` if not.
 
-| The code examples below use is_pressed rather than was_pressed since is_pressed works better when the button is **held down.**
-| was_pressed requires separate pressing for it to return True.
+| The code examples below use **is_pressed** rather than was_pressed since **is_pressed** works better when the button is **held down.**
+| IN contrast, **was_pressed** requires **separate pressing** for it to return True.
 
 ----
 
