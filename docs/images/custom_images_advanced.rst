@@ -513,7 +513,7 @@ List comprehension for a series of images of changing brightness
                             elif button_b.is_pressed():
                                 display.show(sad_9to0_list, delay=300, wait=False)
 
-              .. tab-item:: Q2
+                .. tab-item:: Q2
 
                     Modify the code to create a series of images of a sad face with brightness of 1, 3, 5, 7, 9 using list comprehension.
 
