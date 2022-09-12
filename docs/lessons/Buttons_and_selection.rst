@@ -481,7 +481,8 @@ Changing values with A and B buttons
             sleep(100)
         display.scroll("ABC", delay=delay_time)    
 
-| The variable, ``delay_time``, can be restricted to a set range of values using hte min and max functions.
+| The code above fails when the delay_time goes below 0.
+| The variable, ``delay_time``, can be restricted to a set range of values using the min and max functions.
 | ``delay_time = min(400, delay_time + 10)`` prevents the ``delay_time`` from going above 400.
 | ``delay_time = max(50, delay_time - 10)`` prevents the ``delay_time`` from going below 50.
 
