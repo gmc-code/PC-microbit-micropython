@@ -326,8 +326,8 @@ Randomize image list
     #. Create a list of the 4 main compass direction arrow images, then randomly sort them and display them.
     #. Create a list of the 4 secondary compass direction arrow images, then randomly sort them and display them.
     #. Create a list of the clock images for 12, 3, 6 and 9 o'clock then randomly sort them and display them.
-    #. Create a list of the 4 main compass direction arrow images, then randomly sort them and display them then display them in reverse order using the **reverse** **method**.
-    #. Create a list of the 4 secondary compass direction arrow images, then randomly sort them and display them then display them in reverse order using the **reversed** **function**.
+    #. Create a list of the 4 main compass direction arrow images, then randomly sort them and display them, then display them in reverse order using the **reverse** **method**.
+    #. Create a list of the 4 secondary compass direction arrow images, then randomly sort them and display them, then display them in reverse order using the **reversed** **function**.
 
     .. dropdown::
             :icon: codescan
