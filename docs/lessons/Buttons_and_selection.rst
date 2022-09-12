@@ -10,7 +10,7 @@ Buttons and selection
 Button is pressed
 ----------------------------------------
 
-| The ``.is_pressed`` method is used to detect button pressing at the moment the code tgets to that point.
+| The ``.is_pressed`` method is used to detect button pressing at the moment the running code gets to that point.
 
 .. py:function:: button_a.is_pressed()
 
