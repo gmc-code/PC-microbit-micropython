@@ -29,14 +29,41 @@ Invert
 .. py:function:: Image().invert()
 
     | Return a new image by inverting the brightness of the pixels in the source image.
-    | **Image().invert()** is equivalent to:
-    | Image(
+
+
+| **Image().invert()** is equivalent to:
+
+.. code-block:: python
+
+    Image(
         '99999:'
         '99999:'
         '99999:'
         '99999:'
         '99999:'
-      )
+        )
+
+| When inverted, a pixel of brightness 0 becomes 9, 1 becomes 8, 2 becomes 7,....8 becomes 1, 9 becomes 0.   
+
+| An image may be stored in a variable then inverted.
+| In the code below, the inverted image, **img1_inverted**, is: 
+| **Image('88888:66666:44444:22222:00000:')**
+
+.. code-block:: python
+
+    from microbit import *
+    
+    img1 = Image('11111:33333:55555:77777:99999')
+    img1_inverted = img1.invert()
+
+| A built-in image can be stored in a variable, then inverted.
+
+.. code-block:: python
+
+    from microbit import *
+    
+    img1 = Image.HEART
+    img1_inverted = img1.invert()
 
 ----
 
@@ -111,8 +138,9 @@ Image of a single string character
 
 .. py:function:: Image(character)
 
-    | Returns an image object that represents the character.
+    | Returns an image object that represents the character. The characters must be in quotes.
 
+| **img_m = Image("m")** stores the image in a variable which is then shown via: **display.show(img_m)**
 
 .. code-block:: python
 
