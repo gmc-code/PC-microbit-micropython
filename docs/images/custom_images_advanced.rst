@@ -134,7 +134,7 @@ Image of a single string character
 .. admonition:: Tasks
 
     #. Modify the code to create images of 3 and 5.
-    #. Modify the code to create images of "m" and an imverted "m".
+    #. Modify the code to create images of "m" and an inverted "m".
 
     .. dropdown::
             :icon: codescan
@@ -163,7 +163,7 @@ Image of a single string character
 
                 .. tab-item:: Q2
                     
-                    Modify the code to create images of "m" and an imverted "m".
+                    Modify the code to create images of "m" and an inverted "m".
 
                     .. code-block:: python
 
@@ -207,7 +207,7 @@ Adding Image pixels
             display.show(img_mw)
         sleep(500)
 
-| The code below adds the SAD image and the HAPPY iamge.
+| The code below adds the SAD image and the HAPPY image.
 
 .. code-block:: python
 
@@ -231,7 +231,7 @@ Adding Image pixels
 .. admonition:: Tasks
 
     #. Modify the code to create the addition of the images from 3 and 5.
-    #. Modify the code to create the addition of the images "m" and an imverted "m".
+    #. Modify the code to create the addition of the images "m" and an inverted "m".
 
     .. dropdown::
             :icon: codescan
@@ -263,7 +263,7 @@ Adding Image pixels
 
                 .. tab-item:: Q2
 
-                    Modify the code to create the addition of the images "m" and an imverted "m".
+                    Modify the code to create the addition of the images "m" and an inverted "m".
 
                     .. code-block:: python
 
