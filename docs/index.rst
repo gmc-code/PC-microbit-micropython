@@ -153,6 +153,7 @@ Index:
     classes/classes_for_the_microbit.rst
     classes/potentiometer_class.rst
     classes/pixel_class.rst
+    classes/screen_class.rst
 
 
 .. toctree::
