@@ -242,7 +242,7 @@ Adding Image pixels
 
 .. sidebar::
 
-    .. image:: images/SAD + HAPPY.png
+    .. image:: images/SADHAPPY.png
         :scale: 50 %
         :align: center
 
@@ -355,7 +355,8 @@ Subtracting Image pixels
 .. admonition:: Tasks
 
     #. Modify the code to create a new image by subtracting the image "m" from an inverted blank image.
-    #. Modify the code to create a new image by subtracting the image "m" at brightness 6 from an image "m" at brightness 9.
+    #. Modify the code to create a new image by subtracting the image HAPPY from the image SAD.
+
 
     .. dropdown::
             :icon: codescan
@@ -388,24 +389,21 @@ Subtracting Image pixels
 
                 .. tab-item:: Q2
 
-                    Modify the code to create a new image by subtracting the image "m" at brightness 6 from an image "m" at brightness 9.
+                    Modify the code to create a new image by subtracting the image HAPPY from the image SAD.
 
                     .. code-block:: python
 
                         from microbit import *
 
 
-                        img_m9 = Image("m")
-                        img_m6 = Image("m") * 1/9 * 6
-                        img_m9_sub_m6 = img_m9 - img_m6
-
+                        img1 = Image.SAD
+                        img2 = Image.HAPPY
                         while True:
-                            if button_a.is_pressed():
-                                display.show(img_m9)
-                            elif button_b.is_pressed():
-                                display.show(img_m6)
-                            else:
-                                display.show(img_m9_sub_m6)
+                            display.show(img1)
+                            sleep(500)
+                            display.show(img2)
+                            sleep(500)
+                            display.show(img1 - img2)
                             sleep(500)
 
 
@@ -417,6 +415,12 @@ Multiplying and dividing Image pixels
 .. py:function:: image * n
 
     | Create a new image by multiplying the brightness of each pixel by n.
+    | Make sure the resulting Image object has integer values.
+
+.. py:function:: image / n
+
+    | Create a new image by dividing the brightness of each pixel by n.
+    | Make sure the resulting Image object has integer values.
 
 | In the code below, image **img_m9** have pixels of brightness 9.
 | An image with brightness 1 is first created from that, then other brightnesses can be easily set.
@@ -500,8 +504,8 @@ Multiplying and dividing Image pixels
 
 ----
 
-List comprehension for a series of images of changing brightness
------------------------------------------------------------------------
+List comprehension for a series of images
+--------------------------------------------
 
 .. py:function:: image_list = [Image().invert()*(i/9) for i in range(9, -1, -1)]
 

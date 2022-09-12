@@ -142,6 +142,7 @@ Index:
     images/custom_images_advanced.rst
     images/heart_beat_simulation.rst
     images/pixel_class.rst
+    images/screen_class.rst
 
 
 .. toctree::
