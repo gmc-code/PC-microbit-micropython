@@ -78,8 +78,11 @@ Reverse direction of list using the reversed function
     | sequence is the list to reverse.
 
 | A list, **clock_list**, can be reversed using the reversed function: ``reversed(clock_list)``.
-| The python object obtained from the reversed function can used directly by **display.show**. 
-| Note that is it not necessary to create the list from Image.ALL_CLOCKS, since the reversed fucntion can work directly on Image.ALL_CLOCKS.  
+| The python object obtained from the reversed function can be used directly by **display.show**.
+| THe reversed object is a generator that can only be iterated through once.
+| Note that is it not necessary to create the list from Image.ALL_CLOCKS, since the reversed function can work directly on Image.ALL_CLOCKS.
+
+| The code below only displays the clock hands once despite being in a while loop since the generator that is pointed to by the variable, clock_list_anticlockwise, is actually used up the first time through the loop.
 
 .. code-block:: python
 
@@ -299,7 +302,7 @@ Randomize image list
 
 | Use the sorted function to randomly sort **list(Image.ALL_ARROWS)**.
 | Use the same **randomkey** function from above as the sort key.
-| Display hte randomly sorted image list with a delay of half a second.
+| Display the randomly sorted image list with a delay of half a second.
 
 
 .. code-block:: python
@@ -447,3 +450,27 @@ Randomize image list
                             sleep(1000)
 
 
+----
+
+Interupting an image list
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+| There are several approaches to interupting the display of a built in collection of images.
+
+| The appraoch below uses ``wait=False``. This causes **display.show** to run in the background. The rest of the code in the **while block** runs without waiting for the **display.show** to complete.
+| A **for loop** with timing to match the timing of the clocks is used to allow button pressing to interupt the clocks animation.
+| Since the clocks has a delay of 100, with 12 images, the for loop must be set to run for a simialr time so that clocks have enough time to complete. Using a range of 12 with a sleep of 100 will do this.
+| If a button is pressed, it stops the 
+
+.. code-block:: python
+
+    from microbit import *
+
+    while True:
+        display.show(Image.ALL_CLOCKS, delay=100, wait=False)
+        for i in range(12):
+            if button_a.is_pressed():
+                display.show("A")
+            elif button_b.is_pressed():
+                display.show("B")
+            sleep(100)
