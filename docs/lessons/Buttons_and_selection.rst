@@ -506,7 +506,7 @@ Changing values with A and B buttons
 .. admonition:: Tasks
 
     #. Edit the code to adjust the scroll delay in steps of 25.
-    #. Write code to alter a ``guess_number`` variable in steps of 1 by the buttons. Use both buttons to set the number and scroll it. Start the number at 5 and limit it to a minimum of 1 and a maximum of 9.
+    #. Write code to alter a ``guess_number`` variable in steps of 1 by the buttons. Use both buttons to set the number and show it. Start the number at 5 and limit it to a minimum of 1 and a maximum of 9.
 
     .. dropdown::
         :icon: codescan
@@ -546,7 +546,7 @@ Changing values with A and B buttons
                     guess_number = 5
                     while True:
                         if button_a.is_pressed() and button_b.is_pressed():
-                            display.scroll(guess_number, delay=80)
+                            display.show(guess_number, delay=80)
                             # now start again
                             guess_number = 5
                         if button_a.is_pressed():
@@ -555,4 +555,5 @@ Changing values with A and B buttons
                             guess_number = max(1, guess_number - 1)
                         else:
                             sleep(100)
-                        display.scroll(guess_number, delay=80) 
+                        display.show(guess_number, delay=80)
+                        sleep(200)
