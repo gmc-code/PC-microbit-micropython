@@ -492,3 +492,44 @@ Interrupting an image list
             elif button_b.is_pressed():
                 display.show("B")
             sleep(400)
+
+
+.. admonition:: Tasks
+
+    #. Modify the code to amke better use of A or B button pressing.
+
+
+----
+
+Enumerate to show the clock time
+----------------------------------
+
+
+| The code below uses enumerate to create an object made up of tuples consisting of the count number (set to start at 0 using the optional start number; even though the default is 0 when the start parameter is left out).
+| The enumerate object is used up when iterated through, so it must either be placed in the **while True** loop to be recreated each time or converted to a list to be reused.
+| Pressing the A button shows the time as a number
+
+.. code-block:: python
+
+    from microbit import *
+
+
+    all_img = list(enumerate(Image.ALL_CLOCKS, start=0))
+
+    while True:
+        all_img = all_img
+        for count, img in all_img:
+            display.show(img)
+            if button_a.is_pressed():
+                sleep(1000)
+                display.scroll(count, delay = 60)
+                sleep(1000)
+            elif button_b.is_pressed():
+                sleep(30)
+            else:
+                sleep(1000)
+
+.. admonition:: Tasks
+
+    #. Modify the code to display 12 instead of 0 when the clock is in the 12 0'clock position.
+
