@@ -475,5 +475,20 @@ Interrupting an image list
                 display.show("B")
             sleep(100)
 
+| The approach below converts ALL_CLOCKS to a list that can be iterated over in a for loop.
+| After displaying a clock image, the A and B buttons are checked.
 
-    
+.. code-block:: python
+
+    from microbit import *
+
+    img_list = list(Image.ALL_CLOCKS)
+    while True:
+        for img in img_list:
+            display.show(img)
+            sleep(200)
+            if button_a.is_pressed():
+                display.show("A")
+            elif button_b.is_pressed():
+                display.show("B")
+            sleep(400)
