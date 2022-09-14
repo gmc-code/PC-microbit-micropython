@@ -64,7 +64,8 @@ Invert
         :scale: 50 %
         :align: center
 
-
+    ----------------
+    
     .. image:: images/happy_inverted.png
         :scale: 50 %
         :align: center
@@ -251,12 +252,14 @@ Adding Image pixels
         :scale: 50 %
         :align: center
 
+    ----------------
 
     .. image:: images/HAPPY.png
         :scale: 50 %
         :align: center
-       
-        
+
+    ----------------
+
     .. image:: images/SAD_HAPPY.png
         :scale: 50 %
         :align: center
