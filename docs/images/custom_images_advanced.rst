@@ -252,17 +252,11 @@ Adding Image pixels
 
     .. image:: images/SAD.png
         :scale: 50 %
-        :align: left
+        :align: center
 
     .. image:: images/HAPPY.png
         :scale: 50 %
         :align: right
-
-.. sidebar::
-
-    .. image:: images/SAD_HAPPY.png
-        :scale: 50 %
-        :align: center
 
 
 | The code below adds the SAD image and the HAPPY image.
@@ -282,7 +276,12 @@ Adding Image pixels
         display.show(img1 + img2)
         sleep(500)
 
+.. sidebar::
 
+    .. image:: images/SAD_HAPPY.png
+        :scale: 50 %
+        :align: right
+        
 ----
 
 
