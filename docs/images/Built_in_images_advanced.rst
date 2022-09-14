@@ -504,6 +504,7 @@ Interrupting an image list
 Enumerate to show the clock time
 ----------------------------------
 
+See: https://realpython.com/python-enumerate/
 
 | The code below uses enumerate to create an object made up of tuples consisting of the count number (set to start at 0 using the optional start number; even though the default is 0 when the start parameter is left out).
 | The enumerate object is used up when iterated through, so it must either be placed in the **while True** loop to be recreated each time or converted to a list to be reused.
