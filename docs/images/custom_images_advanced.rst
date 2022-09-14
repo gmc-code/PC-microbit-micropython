@@ -60,6 +60,10 @@ Invert
 
 .. sidebar::
 
+    .. image:: images/HAPPY.png
+        :scale: 50 %
+        :align: center
+        
     .. image:: images/happy_inverted.png
         :scale: 50 %
         :align: center
