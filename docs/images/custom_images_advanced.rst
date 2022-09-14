@@ -258,6 +258,8 @@ Adding Image pixels
         :scale: 50 %
         :align: right
 
+.. sidebar::
+
     .. image:: images/SAD_HAPPY.png
         :scale: 50 %
         :align: center
