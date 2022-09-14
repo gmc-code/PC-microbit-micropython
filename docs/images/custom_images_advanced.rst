@@ -252,11 +252,11 @@ Adding Image pixels
 
     .. image:: images/HAPPY.png
         :scale: 50 %
-        :align: center
+        :align: right
 
     .. image:: images/SAD_HAPPY.png
         :scale: 50 %
-        :align: right
+        :align: center
 
 
 | The code below adds the SAD image and the HAPPY image.
