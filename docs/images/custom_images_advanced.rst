@@ -525,9 +525,11 @@ Multiplying and dividing Image pixels
 List comprehension for a series of images
 --------------------------------------------
 
+See: https://www.w3schools.com/python/python_lists_comprehension.asp
+
 .. py:function:: image_list = [Image().invert()*(i/9) for i in range(9, -1, -1)]
 
-    | Create a 5 by 5 grid with brightness decreasing from 9 to 0 in steps of 1.
+    | Create a series of 5 by 5 images with brightness decreasing from 9 to 0 in steps of 1.
 
 ----
 
