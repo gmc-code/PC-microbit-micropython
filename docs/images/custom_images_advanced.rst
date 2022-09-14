@@ -60,10 +60,14 @@ Invert
 
 .. sidebar::
 
+    HAPPY
+
     .. image:: images/HAPPY.png
         :scale: 50 %
         :align: center
-
+    
+    inverted
+    
     .. image:: images/happy_inverted.png
         :scale: 50 %
         :align: right
@@ -246,13 +250,19 @@ Adding Image pixels
 
 .. sidebar::
 
+    SAD
+
     .. image:: images/SAD.png
         :scale: 50 %
         :align: left
 
+    HAPPY
+
     .. image:: images/HAPPY.png
         :scale: 50 %
         :align: right
+
+    SAD_HAPPY
 
     .. image:: images/SAD_HAPPY.png
         :scale: 50 %
