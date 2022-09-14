@@ -261,6 +261,12 @@ Adding Image pixels
 
 | The code below adds the SAD image and the HAPPY image.
 
+.. sidebar::
+
+    .. image:: images/SAD_HAPPY.png
+        :scale: 50 %
+        :align: right
+
 .. code-block:: python
 
     from microbit import *
@@ -276,12 +282,8 @@ Adding Image pixels
         display.show(img1 + img2)
         sleep(500)
 
-.. sidebar::
 
-    .. image:: images/SAD_HAPPY.png
-        :scale: 50 %
-        :align: right
-        
+
 ----
 
 
