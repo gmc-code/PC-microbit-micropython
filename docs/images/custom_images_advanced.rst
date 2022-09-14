@@ -64,13 +64,13 @@ Invert
 
     .. image:: images/HAPPY.png
         :scale: 50 %
-        :align: center
+        :align: top
     
     inverted
-    
+
     .. image:: images/happy_inverted.png
         :scale: 50 %
-        :align: right
+        :align: bottom
 
 | A built-in image can be stored in a variable, then inverted.
 | The inverted HAPPY face is shown.
@@ -250,23 +250,17 @@ Adding Image pixels
 
 .. sidebar::
 
-    SAD
-
     .. image:: images/SAD.png
         :scale: 50 %
-        :align: left
-
-    HAPPY
+        :align: top
 
     .. image:: images/HAPPY.png
         :scale: 50 %
-        :align: right
-
-    SAD_HAPPY
+        :align: middle
 
     .. image:: images/SAD_HAPPY.png
         :scale: 50 %
-        :align: center
+        :align: bottom
 
 
 | The code below adds the SAD image and the HAPPY image.
