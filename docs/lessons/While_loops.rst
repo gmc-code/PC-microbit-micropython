@@ -26,7 +26,7 @@ Events as conditions
 
     while True:
         while button_a.is_pressed():
-            display.show(['I',Image.HEART,'U'], delay=400)
+            display.show(['I', Image.HEART, 'U'], delay=400)
             sleep(300)
         display.show(Image.ALL_CLOCKS, delay=50)
 
