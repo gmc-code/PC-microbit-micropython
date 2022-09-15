@@ -122,6 +122,7 @@ Index:
     :numbered:
 
     lessons2/music.rst
+    lessons2/music_advanced.rst
     lessons2/audio.rst
     lessons2/compass_syntax.rst
     lessons2/compass.rst

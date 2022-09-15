@@ -444,6 +444,7 @@ All Built in melodies
                 .. code-block:: python
 
                     from microbit import *
+                    import random
                     import music
 
                     melodies_list = [music.POWER_UP, music.DADADADUM, music.POWER_DOWN]
