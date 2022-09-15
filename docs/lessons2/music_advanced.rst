@@ -1,5 +1,5 @@
 ==========================
-Music
+Music advanced
 ==========================
 
 | See: https://microbit-micropython.readthedocs.io/en/v2-docs/music.html
@@ -11,17 +11,18 @@ Music
 Random notes Task
 ----------------------------------------
 
-| Design code to play random notes, using each feature of a note:
+| Design code to generate random notes, using separate lists of possibilities for each feature of a note:
 * **note name**
 * **octave**
 * **length**
-| Make each part of the note a string.
+| Make sure the octave is a string. e.g **octave 4** can be converted to **"4"** using **str(4)**.
+| Make sure the note length is a string. e.g **2** can be converted to **"2"** using **str(2)**.
 | Build the full note specification by concatenating each part.
 | i.e. **note name** + **octave** + **":"** + **length**
-| e.g. c4:2
+| e.g. **c4:2**
 
 | Create a list of notes, a list of octaves and a list of durations that are to be used.
-| Create a defintion that takes as parameters the list of notes, the list of octaves and the list of durations, then randomly chooses one from each and joins them together and returns a full note.
+| Create a defintion that takes as parameters the list of notes, the list of octaves and the list of durations, then randomly chooses one from each, joins them together and returns a full note.
 
 | Play randomly generated notes.
 
@@ -32,7 +33,7 @@ Random notes Task
 
         .. tab-set::
 
-            .. tab-item:: Q1
+            .. tab-item:: play random notes
                 
                 .. code-block:: python
 
@@ -135,4 +136,76 @@ Random notes Task
                         random_notes = get_random_notes(10)
                         music.play(random_notes)
                         sleep(2000)
+
+----
+
+Scales generator
+----------------------------------------
+
+See: https://piano-music-theory.com/2016/05/31/major-scales/
+See; https://appliedguitartheory.com/lessons/how-to-determine-the-key-of-a-song/
+
+| Design code to generate the notes in a major scale, given the key and the octave. 
+| Create a list of keys that use sharps and a list of keys that use flats.
+
+
+ .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Scales generator
+                
+                .. code-block:: python
+
+                    from microbit import *
+                    import random
+                    import music
+
+
+                    major_steps = [2, 2, 1, 2, 2, 2, 1]
+                    minor_steps = [2, 1, 2, 2, 1, 2, 2]
+
+
+                    def get_2oct(octave, notes):
+                        notes_oct1 = [i + str(octave) for i in notes]
+                        notes_oct2 = [i + str(octave + 1) for i in notes]
+                        notes_2oct = notes_oct1 + notes_oct2
+                        return notes_2oct
+
+
+                    def get_key_notes(key_note):
+                        sharp_keys = ["c", "g", "d", "a", "e", "b", "f#", "c#"]
+                        # flat_keys = ["c", "f", "bb", "eb", "ab", "db", "gb", "cb"]
+                        sharp_key_notes = ["c", "c#", "d", "d#", "e", "f", "f#", "g", "g#", "a", "a#", "b"]
+                        flat_key_notes = ["c", "db", "d", "eb", "e", "f", "gb", "g", "ab", "a", "bb", "b"]
+                        if key_note in sharp_keys:
+                            return sharp_key_notes
+                        else:
+                            return flat_key_notes
+
+
+                    def get_scale(key_note, octave, scale_steps):
+                        notes = get_key_notes(key_note)
+                        notes2oct = get_2oct(octave, notes)
+                        note_index = notes2oct.index(key_note + str(octave))
+                        scale = [notes2oct[note_index]]
+                        for i in scale_steps:
+                            note_index += i
+                            scale.append(notes2oct[note_index])
+                        return scale
+
+
+                    while True:
+                        scale_notes = get_scale("c", 4, major_steps)
+                        print(scale_notes)
+                        music.play(scale_notes)
+                        sleep(1000)
+                        scale_notes = get_scale("e", 4, minor_steps)
+                        print(scale_notes)
+                        music.play(scale_notes)
+                        sleep(1000)
+
 

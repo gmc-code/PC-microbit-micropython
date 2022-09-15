@@ -162,9 +162,9 @@ Notes
 | Notes are the letters a to g. Lower case or upper case are the same.
 | If the octave is left out it defaults to 4 (containing middle C).
 | If the duration is left out it defaults to 4 (a crotchet).
-| For example, ``a2:4`` refers to the note “A” in octave 2 that lasts for four ticks (a tick is an arbitrary length of time defined by a tempo setting function). If the note name R is used then it is treated as a rest (silence).
+| For example, **a2:4** refers to the note “A” in octave 2 that lasts for four ticks (a tick is an arbitrary length of time defined by a tempo setting function). If the note name **R** is used then it is treated as a rest (silence).
 | Accidentals (flats and sharps) are denoted by the b (flat - a lower case b) and # (sharp - a hash symbol).
-| For example, ``Ab`` is A-flat and ``C#`` is C-sharp.
+| For example, **Ab** is A-flat and **C#** is C-sharp.
 | The octave and duration parameters are states that carry over to subsequent notes until re-specified. 
 | The tempo can be set using ``music.set_tempo(ticks=4, bpm=120)``
 
