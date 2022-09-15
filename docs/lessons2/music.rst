@@ -197,7 +197,7 @@ Notes
 
     #. Play the 5 notes: c, e, g, e, c.
     #. Play the 5 notes: c, e, g, e, c with a tempo of 120, 180 and 240bpm. 
-    #. Design a function that takes a tempo list of 120, 240, 360 , 480 and 600 bpm as one parameter and a sleep_time with default value 1000. Use a repeat loop to set the tempo and play the notes_list.
+    #. Design a function that takes the 5 notes: c, e, g, e, c, as one parameter; takes a tempo list of 120, 240, 360 , 480 and 600 bpm as a second parameter and a third parameter: sleep_time with default value 1000. Use a repeat loop to set the tempo and play the notes_list.
 
     .. dropdown::
         :icon: codescan
@@ -245,7 +245,7 @@ Notes
 
             .. tab-item:: Q3
 
-                Design a function that takes a tempo list of 120, 240, 360, 480 and 600 bpm as one parameter and a sleep_time with default value 1000. Use a repeat loop to set the tempo and play the notes_list.
+                Design a function that takes the 5 notes: c, e, g, e, c, as one parameter; takes a tempo list of 120, 240, 360 , 480 and 600 bpm as a second parameter and a third parameter: sleep_time with default value 1000. Use a repeat loop to set the tempo and play the notes_list.
  
                 .. code-block:: python
 
@@ -255,14 +255,14 @@ Notes
                     notes_list = ['c4:4', 'e', 'g', 'e', 'c']
                     tempo_list = [120, 240, 360, 480, 600]
 
-                    def tempo_play(tempo_list, sleep_time=1000):
+                    def tempo_play(notes_list, tempo_list, sleep_time=1000):
                         for tempo in tempo_list:
                             music.set_tempo(bpm=tempo)
                             music.play(notes_list)
                             sleep(sleep_time)
                         
                     while True:
-                        tempo_play(tempo_list, sleep_time=1000)
+                        tempo_play(notes_list, tempo_list, sleep_time=1000)
 
 ----
 
