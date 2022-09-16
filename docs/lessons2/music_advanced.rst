@@ -166,13 +166,14 @@ Scales generator
 ----------------------------------------
 
 See: https://piano-music-theory.com/2016/05/31/major-scales/
-See; https://appliedguitartheory.com/lessons/how-to-determine-the-key-of-a-song/
+See: https://appliedguitartheory.com/lessons/how-to-determine-the-key-of-a-song/
+See: https://en.wikipedia.org/wiki/Key_signature#Scales_with_sharp_key_signatures
 
 | Design code to generate the notes in a major scale, given the key and the octave. 
-| Research the intervals for major and natural minor scales adn place them in lists, **major_steps** and **minor_steps**.
+| Research the intervals for major and natural minor scales and place them in lists, **major_steps** and **minor_steps**. Define a function, **get_scale_steps(key_type)**, that returns the scale intervals for a Major or minor keys based on passing "M" for major and "m" for minor.
 | Define a function, **get_2oct**,  to return 2 octaves of notes, starting at **c**,  given the start octave and the notes. Use list comprehension to take each not and add the octave to it as a string. e.g "c" and 4 are joined to become "c4".
 | Define a function, **get_key_notes**,  to return the notes in a key given the key. Research the keys that have sharps in them (see: circle of fifths) and make a list of them, **sharp_keys**. Check to see if the key is in that list and return a list of all possible notes, starting at c, that include sharps, **["c", "c#", ...]**, or return the list of notes that includes flats, **["c", "db", ...]**.
-| Define a function, **get_scale(key_note, octave, scale_steps)**, that the list of notes that include sharps or flats based on the key_note. Then build 2 octaves of notes based on those notes and the octave. Use the index method to get the index of the key_note in that 2 octave list. Then interate through the scale_steps, adding the scale step interval to the index and append that note to the scale. Return the one octave scale.
+| Define a function, **get_scale(key_note, key_type, octave)**, that returns the list of notes that include sharps or flats based on the key_note and key_type. Then build 2 octaves of notes based on those notes and the octave. Use the index method to get the index of the key_note in that 2 octave list. Then iterate through the scale_steps, adding the scale step interval to the index and append that note to the scale. Return the one octave scale.
 | Test the definitions by playing some scales that include a scale with a sharp, and a scale with a flat, as well as both major and minor scales.
 
 | Scaffold for the task:
@@ -182,32 +183,42 @@ See; https://appliedguitartheory.com/lessons/how-to-determine-the-key-of-a-song/
     from microbit import *
     import music
 
-
-    major_steps = [2, ......, 1]
-    minor_steps = [2, ......, 2]
-
+    def get_scale_steps(key_type):
+        major_steps = [2, ......, 1]
+        minor_steps = [2, ......, 2]
+        if key_type == "M":
+            return major_steps
+        else:
+            return ......
 
     def get_2oct(octave, notes):
         notes_oct1 = [i + str(octave) for i in notes]
-        notes_oct2 = [i + str(octave + 1) for i in notes]
+        notes_oct2 = [..... + str(octave + ....) for .... in ........]
         notes_2oct = notes_oct1 + notes_oct2
         return notes_2oct
 
 
-    def get_key_notes(key_note):
-        sharp_keys = ["c", "g", "d", "a", "e", "b", "f#", "c#"]
-        # flat_keys = ["c", "f", "bb", "eb", "ab", "db", "gb", "cb"]
+    def get_key_notes(key_note, key_type):
+        major_sharp_keys = ["c", "g", "d", "a", "e", "b", "f#", "c#"]
+        # major_flat_keys = ["c", "f", "bb", "eb", "ab", "db", "gb", "cb"]
+        minor_sharp_keys = ["a", "e", "b", "f#", "c#", "g#", "d#", "a#"]
+        # minor_flat_keys = ["a", "d", "g", "c", "f", "bb", "eb", "ab"]
+        if key_type == "M":
+            sharp_keys = ......
+        else:
+            sharp_keys = .....
         sharp_key_notes = ["c", "c#", "d", "d#", "e", "f", "f#", "g", "g#", "a", "a#", "b"]
         flat_key_notes = ["c", "db", "d", "eb", "e", "f", "gb", "g", "ab", "a", "bb", "b"]
-        if key_note in sharp_keys:
-            return ...............
+        if key_note in ......:
+            return sharp_key_notes
         else:
-            return ...............
+            return flat_key_notes
 
 
-    def get_scale(key_note, octave, scale_steps):
+    def get_scale(key_note, key_type, octave):
+        scale_steps = get_scale_steps(......)
         notes = get_key_notes(......)
-        notes2oct = get_2oct(....., no.....tes)
+        notes2oct = get_2oct(....., ........)
         note_index = notes2oct.index(..... + str(.....))
         scale = [notes2oct[.........]]
         for i in scale_steps:
@@ -217,22 +228,24 @@ See; https://appliedguitartheory.com/lessons/how-to-determine-the-key-of-a-song/
 
 
     while True:
-        scale_notes = get_scale("g", 4, major_steps)
-        # print(scale_notes)
-        music.play(........)
-        sleep(1000)
-        scale_notes = get_scale("e", 4, minor_steps)
-        # print(scale_notes)
-        music.play(........)
-        sleep(1000)
-        scale_notes = get_scale("f", 4, major_steps)
-        # print(scale_notes)
-        music.play(........)
-        sleep(1000)
-        scale_notes = get_scale("d", 4, minor_steps)
-        # print(scale_notes)
-        music.play(........)
-        sleep(1000)
+        if button_a.is_pressed():
+            scale_notes = get_scale("g", "M", 4)
+            # print(scale_notes)
+            music.play(scale_notes)
+            sleep(1000)
+            scale_notes = get_scale("e", "m", 4)
+            # print(scale_notes)
+            music.play(scale_notes)
+            sleep(1000)
+        elif button_b.is_pressed():
+            scale_notes = get_scale("f", "M", 4)
+            # print(scale_notes)
+            music.play(scale_notes)
+            sleep(1000)
+            scale_notes = get_scale("d", "m", 4)
+            # print(scale_notes)
+            music.play(scale_notes)
+            sleep(1000)
 
 
 
@@ -251,9 +264,13 @@ See; https://appliedguitartheory.com/lessons/how-to-determine-the-key-of-a-song/
                     import music
 
 
-                    major_steps = [2, 2, 1, 2, 2, 2, 1]
-                    minor_steps = [2, 1, 2, 2, 1, 2, 2]
-
+                    def get_scale_steps(key_type):
+                        major_steps = [2, 2, 1, 2, 2, 2, 1]
+                        minor_steps = [2, 1, 2, 2, 1, 2, 2]
+                        if key_type == "M":
+                            return major_steps
+                        else:
+                            return minor_steps
 
                     def get_2oct(octave, notes):
                         notes_oct1 = [i + str(octave) for i in notes]
@@ -262,9 +279,15 @@ See; https://appliedguitartheory.com/lessons/how-to-determine-the-key-of-a-song/
                         return notes_2oct
 
 
-                    def get_key_notes(key_note):
-                        sharp_keys = ["c", "g", "d", "a", "e", "b", "f#", "c#"]
-                        # flat_keys = ["c", "f", "bb", "eb", "ab", "db", "gb", "cb"]
+                    def get_key_notes(key_note, key_type):
+                        major_sharp_keys = ["c", "g", "d", "a", "e", "b", "f#", "c#"]
+                        # major_flat_keys = ["c", "f", "bb", "eb", "ab", "db", "gb", "cb"]
+                        minor_sharp_keys = ["a", "e", "b", "f#", "c#", "g#", "d#", "a#"]
+                        # minor_flat_keys = ["a", "d", "g", "c", "f", "bb", "eb", "ab"]
+                        if key_type == "M":
+                            sharp_keys = major_sharp_keys
+                        else:
+                            sharp_keys = minor_sharp_keys
                         sharp_key_notes = ["c", "c#", "d", "d#", "e", "f", "f#", "g", "g#", "a", "a#", "b"]
                         flat_key_notes = ["c", "db", "d", "eb", "e", "f", "gb", "g", "ab", "a", "bb", "b"]
                         if key_note in sharp_keys:
@@ -273,8 +296,9 @@ See; https://appliedguitartheory.com/lessons/how-to-determine-the-key-of-a-song/
                             return flat_key_notes
 
 
-                    def get_scale(key_note, octave, scale_steps):
-                        notes = get_key_notes(key_note)
+                    def get_scale(key_note, key_type, octave):
+                        scale_steps = get_scale_steps(key_type)
+                        notes = get_key_notes(key_note, key_type)
                         notes2oct = get_2oct(octave, notes)
                         note_index = notes2oct.index(key_note + str(octave))
                         scale = [notes2oct[note_index]]
@@ -285,21 +309,23 @@ See; https://appliedguitartheory.com/lessons/how-to-determine-the-key-of-a-song/
 
 
                     while True:
-                        scale_notes = get_scale("g", 4, major_steps)
-                        # print(scale_notes)
-                        music.play(scale_notes)
-                        sleep(1000)
-                        scale_notes = get_scale("e", 4, minor_steps)
-                        # print(scale_notes)
-                        music.play(scale_notes)
-                        sleep(1000)
-                        scale_notes = get_scale("f", 4, major_steps)
-                        # print(scale_notes)
-                        music.play(scale_notes)
-                        sleep(1000)
-                        scale_notes = get_scale("d", 4, minor_steps)
-                        # print(scale_notes)
-                        music.play(scale_notes)
-                        sleep(1000)
+                        if button_a.is_pressed():
+                            scale_notes = get_scale("g", "M", 4)
+                            # print(scale_notes)
+                            music.play(scale_notes)
+                            sleep(1000)
+                            scale_notes = get_scale("e", "m", 4)
+                            # print(scale_notes)
+                            music.play(scale_notes)
+                            sleep(1000)
+                        elif button_b.is_pressed():
+                            scale_notes = get_scale("f", "M", 4)
+                            # print(scale_notes)
+                            music.play(scale_notes)
+                            sleep(1000)
+                            scale_notes = get_scale("d", "m", 4)
+                            # print(scale_notes)
+                            music.play(scale_notes)
+                            sleep(1000)
 
 
