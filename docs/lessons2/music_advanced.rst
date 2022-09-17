@@ -11,6 +11,8 @@ Music_advanced
 Random notes Task
 ----------------------------------------
 
+See: https://random-music-generators.herokuapp.com/melody
+
 | Design code to generate random notes, using separate lists of possibilities for each feature of a note:
 * **note name**
 * **octave**
@@ -183,6 +185,7 @@ See: https://en.wikipedia.org/wiki/Key_signature#Scales_with_sharp_key_signature
     from microbit import *
     import music
 
+
     def get_scale_steps(key_type):
         major_steps = [2, ......, 1]
         minor_steps = [2, ......, 2]
@@ -190,6 +193,7 @@ See: https://en.wikipedia.org/wiki/Key_signature#Scales_with_sharp_key_signature
             return major_steps
         else:
             return ......
+
 
     def get_2oct(octave, notes):
         notes_oct1 = [i + str(octave) for i in notes]
@@ -271,6 +275,7 @@ See: https://en.wikipedia.org/wiki/Key_signature#Scales_with_sharp_key_signature
                     else:
                         return minor_steps
 
+
                 def get_2oct(octave, notes):
                     notes_oct1 = [i + str(octave) for i in notes]
                     notes_oct2 = [i + str(octave + 1) for i in notes]
@@ -329,8 +334,84 @@ See: https://en.wikipedia.org/wiki/Key_signature#Scales_with_sharp_key_signature
 
 .. admonition:: Tasks
 
-    #. Create a function to return a random list of notes, given the key and the number of notes, then play the list.
+    #. Create a function, **get_random_notes(notes, note_count=5)**,  to return a random list of notes, given the notes and the number of notes, with default 5. Use list comprehension to generate the list. Play 5 random notes from the **g major** and 5 from the **a minor** scales on button pressing.
 
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Scales generator
+                
+                .. code-block:: python
+
+                    from microbit import *
+                    import music
+                    import random
+
+
+                    def get_scale_steps(key_type):
+                        major_steps = [2, 2, 1, 2, 2, 2, 1]
+                        minor_steps = [2, 1, 2, 2, 1, 2, 2]
+                        if key_type == "M":
+                            return major_steps
+                        else:
+                            return minor_steps
+
+
+                    def get_2oct(octave, notes):
+                        notes_oct1 = [i + str(octave) for i in notes]
+                        notes_oct2 = [i + str(octave + 1) for i in notes]
+                        notes_2oct = notes_oct1 + notes_oct2
+                        return notes_2oct
+
+
+                    def get_key_notes(key_note, key_type):
+                        major_sharp_keys = ["c", "g", "d", "a", "e", "b", "f#", "c#"]
+                        # major_flat_keys = ["c", "f", "bb", "eb", "ab", "db", "gb", "cb"]
+                        minor_sharp_keys = ["a", "e", "b", "f#", "c#", "g#", "d#", "a#"]
+                        # minor_flat_keys = ["a", "d", "g", "c", "f", "bb", "eb", "ab"]
+                        if key_type == "M":
+                            sharp_keys = major_sharp_keys
+                        else:
+                            sharp_keys = minor_sharp_keys
+                        sharp_key_notes = ["c", "c#", "d", "d#", "e", "f", "f#", "g", "g#", "a", "a#", "b"]
+                        flat_key_notes = ["c", "db", "d", "eb", "e", "f", "gb", "g", "ab", "a", "bb", "b"]
+                        if key_note in sharp_keys:
+                            return sharp_key_notes
+                        else:
+                            return flat_key_notes
+
+
+                    def get_scale(key_note, key_type, octave):
+                        scale_steps = get_scale_steps(key_type)
+                        notes = get_key_notes(key_note, key_type)
+                        notes2oct = get_2oct(octave, notes)
+                        note_index = notes2oct.index(key_note + str(octave))
+                        scale = [notes2oct[note_index]]
+                        for i in scale_steps:
+                            note_index += i
+                            scale.append(notes2oct[note_index])
+                        return scale
+
+
+                    def get_random_notes(notes, note_count=5):
+                        random_notes = [random.choice(notes) for i in range(note_count)]
+                        return random_notes
+
+                    while True:
+                        if button_a.is_pressed():
+                            random_notes = get_random_notes(get_scale("g", "M", 4), 5)
+                            print(random_notes)
+                            music.play(random_notes)
+                            sleep(1000)
+                        elif button_b.is_pressed():
+                            random_notes = get_random_notes(get_scale("a", "m", 4), 5)
+                            print(random_notes)
+                            music.play(random_notes)
+                            sleep(1000)
 
 .. admonition:: Tasks
 
