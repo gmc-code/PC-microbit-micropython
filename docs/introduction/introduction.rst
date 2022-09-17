@@ -21,9 +21,7 @@ Home pages:
 ---------------------
 
 | **here:** https://pc-microbit-micropython.readthedocs.io/en/latest/index.html
-| 
 | **bots:** https://pc-microbit-extension.readthedocs.io/en/latest/index.html
-| 
 | **python:** https://pc-python.readthedocs.io/en/latest/index.html
 
 ----
