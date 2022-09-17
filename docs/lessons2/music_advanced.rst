@@ -13,10 +13,7 @@ Random notes Task
 
 See: https://random-music-generators.herokuapp.com/melody
 
-| Design code to generate random notes, using separate lists of possibilities for each feature of a note:
-* **note name**
-* **octave**
-* **length**
+| Design code to generate random notes, using separate lists of possibilities for each feature of a note:  **note name**, **octave**, **length**.
 | Make sure the octave is a string. e.g **octave 4** can be converted to **"4"** using **str(4)**.
 | Make sure the note length is a string. e.g **2** can be converted to **"2"** using **str(2)**.
 | Build the full note specification by concatenating each part.
@@ -24,63 +21,65 @@ See: https://random-music-generators.herokuapp.com/melody
 | e.g. **c4:2**
 | Create a list of notes, a list of octaves and a list of durations that are to be used.
 | Create a defintion that takes as parameters the list of notes, the list of octaves and the list of durations, then randomly chooses one from each, joins them together and returns a full note.
-| Then, play therandomly generated notes.
+| Then, play the randomly generated notes.
 
-| Scaffold for the task:
+.. admonition:: Tasks
 
-.. code-block:: python
+    #. Scaffold for the task:
 
-    from microbit import *
-    import random
-    import music
+        .. code-block:: python
 
-    notes = ['c', 'd', 'e', 'f', 'g', 'a', 'b']
-    octaves = [3, 4, 5]
-    durations = [1, 2, 4, 8]
+            from microbit import *
+            import random
+            import music
 
-    def get_random_note(notes, octaves, durations):
-        note = random.choice(......)
-        # convert numbers to strings so they ccan be joined
-        octave = str(random.choice(.......))
-        duration = str(random.choice(.......))
-        full_note = ..... + ...... + ":" + ......
-        return .......
+            notes = ['c', 'd', 'e', 'f', 'g', 'a', 'b']
+            octaves = [3, 4, 5]
+            durations = [1, 2, 4, 8]
 
-    while True:
-        random_note = get_random_note(..... )
-        music.play(.....)
+            def get_random_note(notes, octaves, durations):
+                note = random.choice(......)
+                # convert numbers to strings so they ccan be joined
+                octave = str(random.choice(.......))
+                duration = str(random.choice(.......))
+                full_note = ..... + ...... + ":" + ......
+                return .......
+
+            while True:
+                random_note = get_random_note(..... )
+                music.play(.....)
 
 
-.. dropdown::
-        :icon: codescan
-        :color: primary
-        :class-container: sd-dropdown-container
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
 
-        .. tab-set::
+            .. tab-set::
 
-            .. tab-item:: play random notes
-                
-                .. code-block:: python
+                .. tab-item:: play random notes
+                    
+                    .. code-block:: python
 
-                    from microbit import *
-                    import random
-                    import music
+                        from microbit import *
+                        import random
+                        import music
 
-                    notes = ['c', 'd', 'e', 'f', 'g', 'a', 'b']
-                    octaves = [3, 4, 5]
-                    durations = [1, 2, 4, 8]
+                        notes = ['c', 'd', 'e', 'f', 'g', 'a', 'b']
+                        octaves = [3, 4, 5]
+                        durations = [1, 2, 4, 8]
 
-                    def get_random_note(notes, octaves, durations):
-                        note = random.choice(notes)
-                        # convert numbers to strings so they ccan be joined
-                        octave = str(random.choice(octaves))
-                        duration = str(random.choice(durations))
-                        full_note = note + octave + ":" + duration
-                        return full_note
+                        def get_random_note(notes, octaves, durations):
+                            note = random.choice(notes)
+                            # convert numbers to strings so they ccan be joined
+                            octave = str(random.choice(octaves))
+                            duration = str(random.choice(durations))
+                            full_note = note + octave + ":" + duration
+                            return full_note
 
-                    while True:
-                        random_note = get_random_note(notes, octaves, durations)
-                        music.play(random_note)
+                        while True:
+                            random_note = get_random_note(notes, octaves, durations)
+                            music.play(random_note)
 
 ----
 
