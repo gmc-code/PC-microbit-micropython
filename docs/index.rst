@@ -169,20 +169,6 @@ Index:
 
 .. toctree::
     :maxdepth: 2
-    :caption: Python basics
-    :numbered:
-
-    python_basics/operators.rst
-    python_basics/data_types.rst
-    python_basics/variables.rst
-    python_basics/selection.rst
-    python_basics/iteration.rst
-    python_basics/functions.rst
-    python_basics/variables_scope.rst
-
-
-.. toctree::
-    :maxdepth: 2
     :caption: Extra microbit
     :numbered:
 

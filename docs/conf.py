@@ -5,7 +5,7 @@
 
 import sphinx_rtd_theme
 project = 'PC-Microbit-Micropython'
-copyright = '2021-2, GMC'
+copyright = '2021-23, GMC'
 author = 'GMC'
 
 

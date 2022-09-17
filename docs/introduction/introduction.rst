@@ -20,9 +20,11 @@ PC-Microbit-Micropython documentation
 Home pages:
 ---------------------
 
-| https://pc-microbit-micropython.readthedocs.io/en/latest/index.html
-| https://pc-microbit-extension.readthedocs.io/en/latest/index.html
-| https://pc-python.readthedocs.io/en/latest/index.html
+| **here:** https://pc-microbit-micropython.readthedocs.io/en/latest/index.html
+| 
+| **bots:** https://pc-microbit-extension.readthedocs.io/en/latest/index.html
+| 
+| **python:** https://pc-python.readthedocs.io/en/latest/index.html
 
 ----
 
@@ -30,6 +32,7 @@ Key microbit references:
 --------------------------
 
 | **microbit**:
+| latest:  https://microbit-micropython.readthedocs.io/en/latest/index.html
 | v2 from 2022: https://microbit-micropython.readthedocs.io/en/v2-docs/index.html
 | v1 in 2021: https://microbit-micropython.readthedocs.io/en/v1.0.1/index.html
 | Features: https://microbit.org/get-started/user-guide/features-in-depth/
@@ -40,18 +43,13 @@ Key microbit references:
 Microbit software using micropython:
 ------------------------------------------
 
-Comparison of microbit programming options:
-
-The **Mu** editor for laptops, https://codewith.mu/en/tutorials/1.1/microbit, is the first choice for coding on the microbit.
-
-The standard online **micropython** editor: https://python.microbit.org/v/2 is an online editor consistent with Mu editor.
-
-The beta version is at: https://python.microbit.org/v/beta
-
-**Thonny** for laptops, can be downloaded from https://thonny.org/.
+| Comparison of microbit programming options:
+| The **Mu** editor for laptops, https://codewith.mu/en/tutorials/1.1/microbit, is the first choice for coding on the microbit.
+| The standard online **micropython** editor: https://python.microbit.org/v/2 is an online editor consistent with Mu editor.
+| The beta version is at: https://python.microbit.org/v/beta
+| **Thonny** for laptops, can be downloaded from https://thonny.org/.
 See: https://core-electronics.com.au/tutorials/how-to-program-a-microbit-using-thonny.html for setting up the microbit to use Thonny.
-
-**Edublocks**, https://app.edublocks.org/#MicroBit, is an online editor with both blocky code and micropython consistent with Mu editor, and can display the block code and micropython code side by side.
+| **Edublocks**, https://app.edublocks.org/#MicroBit, is an online editor with both blocky code and micropython consistent with Mu editor, and can display the block code and micropython code side by side.
 
 ----
 
@@ -72,7 +70,7 @@ The Makecode website https://makecode.microbit.org/ allows blocky code use, but 
 Out of Box hex file v2
 --------------------------
 
-See: https://microbit.org/get-started/user-guide/out-of-box-experience/
+The hex file that is on new microbits can be found at: https://microbit.org/get-started/user-guide/out-of-box-experience/
 
 ----
 
@@ -83,19 +81,16 @@ See: https://microbit.org/get-started/user-guide/firmware/
 
 ----
 
-Sleep, Poer off, wake
+Sleep, Power off, wake
 -----------------------
 
 See: https://support.microbit.org/support/solutions/articles/19000120358-how-do-i-power-off-or-put-the-micro-bit-to-sleep-
 
 ----
 
-References:
+Useful sites:
 ------------------
 
-* https://microbit-micropython.readthedocs.io/en/v2-docs/index.html
-* https://microbit-micropython.readthedocs.io/en/latest/index.html
-* https://microbit-challenges.readthedocs.io/en/latest/index.html
 * http://multiwingspan.co.uk/micro.php (no access from school)
 * https://microbit.pinout.xyz/pin-3v-power.html
 
@@ -116,5 +111,6 @@ For an introduction to python see:
 * https://www.programiz.com/python-programming
 * https://www.pythontutorial.net/
 * https://docs.python.org/3.9/tutorial/introduction.html
+* https://docs.python.org/3.10/tutorial/index.html
 
 
