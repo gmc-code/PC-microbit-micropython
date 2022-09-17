@@ -14,6 +14,7 @@ Random notes Task
 See: https://random-music-generators.herokuapp.com/melody
 
 | Design code to generate random notes, using separate lists of possibilities for each feature of a note:  **note name**, **octave**, **length**.
+| Use **random.choice(list_name)** to choose a random element from a list.
 | Make sure the octave is a string. e.g **octave 4** can be converted to **"4"** using **str(4)**.
 | Make sure the note length is a string. e.g **2** can be converted to **"2"** using **str(2)**.
 | Build the full note specification by concatenating each part.
@@ -25,7 +26,7 @@ See: https://random-music-generators.herokuapp.com/melody
 
 .. admonition:: Tasks
 
-    #. Scaffold for the task:
+    #. Random notes Scaffold:
 
         .. code-block:: python
 
@@ -46,7 +47,7 @@ See: https://random-music-generators.herokuapp.com/melody
                 return .......
 
             while True:
-                random_note = get_random_note(..... )
+                random_note = get_random_note(....., ......, ...... )
                 music.play(.....)
 
 
@@ -86,7 +87,8 @@ See: https://random-music-generators.herokuapp.com/melody
 .. admonition:: Tasks
 
     #. Include a note modification parameter to sharpen, flatten or leave the note unchanged.
-    #. Create a function to return a random list of notes, given the number of notes, then play the list.
+    #. Create a function, **get_random_notes**, to return a random list of notes, given the number of notes. Use a for loop to add the random notes to a list within the function. Play the notes when a button is pressed.
+    #. Rewrite the function, **get_random_notes**, to use list comprehension.
 
     .. dropdown::
         :icon: codescan
@@ -128,7 +130,7 @@ See: https://random-music-generators.herokuapp.com/melody
 
             .. tab-item:: Q2
 
-                Create a function to return a random list of notes, given the number of notes, then play the list.
+                Create a function, **get_random_notes**, to return a random list of notes, given the number of notes. Use a for loop to add the random notes to a list within the function. Play the notes when a button is pressed.
 
                 .. code-block:: python
 
@@ -150,16 +152,51 @@ See: https://random-music-generators.herokuapp.com/melody
 
 
                     def get_random_notes(note_count):
-                        tune = []
+                        random_notes = []
                         for i in range(note_count):
-                            tune.append(get_random_note(notes, octaves, durations))
-                        return tune
+                            random_notes.append(get_random_note(notes, octaves, durations))
+                        return random_notes
+
+
+                    while True:
+                        if button_a.is_pressed():
+
+                        random_notes = get_random_notes(10)
+                        music.play(random_notes)
+                        sleep(2000)
+
+            .. tab-item:: Q3
+
+                Rewrite the function, **get_random_notes**, to use list comprehension.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import random
+                    import music
+
+                    notes = ["c", "d", "e", "f", "g", "a", "b"]
+                    octaves = [3, 4, 4, 4, 4, 5]
+                    durations = [2, 3, 4, 2, 3, 4, 2, 3, 4, 8]
+
+
+                    def get_random_note(notes, octaves, durations):
+                        note = random.choice(notes)
+                        octave = str(random.choice(octaves))
+                        duration = str(random.choice(durations))
+                        full_note = note + octave + ":" + duration
+                        return full_note
+
+
+                    def get_random_notes(note_count):
+                        return [get_random_note(notes, octaves, durations) for i in range(note_count)] 
 
 
                     while True:
                         random_notes = get_random_notes(10)
                         music.play(random_notes)
                         sleep(2000)
+
 
 ----
 
