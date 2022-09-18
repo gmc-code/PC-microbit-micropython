@@ -119,6 +119,7 @@ Index:
     images/Built_in_images_advanced.rst
     images/custom_images.rst
     images/custom_images_advanced.rst
+    images/flame_simulation.rst
     images/heart_beat_simulation.rst
     images/pixel_class.rst
     images/screen_class.rst
