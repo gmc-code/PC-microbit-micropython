@@ -176,7 +176,7 @@ Randomize list
 
 | The basic syntax is:
 
-.. py:function:: sorted(iterable, key=key, reverse=reverse)
+.. py:function:: sorted(iterable, key=None, reverse=False)
 
     | iterable Required. The sequence to sort, list, dictionary, tuple etc.
     | key Optional. A Function to execute to decide the order. Default is None
@@ -190,14 +190,14 @@ Randomize list
 .. py:function:: random.random()
 
 | The key function, **randomkey**,  returns a random floating number between 0 and 1.
-| A parameter is required, since the sorted function will pass in the object from a list that is being sorted. The parameter used below is **element**. Note that it is not used in the function code itself.
+| A parameter is required, since the sorted function will pass in the object from a list that is being sorted. The parameter used below is **element**. It is needed to work. Note that it is not used in the function code itself.
 
 .. code-block:: python
     
     def randomkey(element):
         return random.random()
 
-| Code to sort a list of numbers randomly then scroll them is below.
+| Code to sort a list of numbers randomly, then scroll them is below.
 
 .. code-block:: python
 
@@ -209,9 +209,9 @@ Randomize list
         return random.random()
 
 
-    oldlist = [1, 2, 3, 4]
+    origlist = [1, 2, 3, 4]
     while True:
-        newlist = sorted(oldlist, key=randomkey)
+        newlist = sorted(origlist, key=randomkey)
         for element in newlist:
             display.scroll(element, delay=60)
         sleep(1000)
@@ -221,9 +221,9 @@ Randomize list
 
 .. admonition:: Tasks
 
-    #. Modify the oldlist to be the list of letters "a", "e", "t". Bonus: What do the 6 possible words mean?
-    #. A string can be turned to a list using the list function. Modify the oldlist to be list("ate").
-    #. Modify the oldlist to be the list of characters from list("ab12")
+    #. Modify the origlist to be the list of letters "a", "e", "t". Bonus: What do the 6 possible words mean?
+    #. A string can be turned to a list using the list function. Modify the origlist to be list("ate").
+    #. Modify the origlist to be the list of characters from list("ab12")
 
     .. dropdown::
             :icon: codescan
@@ -234,7 +234,7 @@ Randomize list
 
                 .. tab-item:: Q1
 
-                    Modify the oldlist to be the list of letters "a", "e", "t".
+                    Modify the origlist to be the list of letters "a", "e", "t".
 
                     .. code-block:: python
                         
@@ -255,7 +255,7 @@ Randomize list
 
                 .. tab-item:: Q2
 
-                    A string can be turned to a list using the list function. Modify the oldlist to be list("ate").
+                    A string can be turned to a list using the list function. Modify the origlist to be list("ate").
 
                     .. code-block:: python
                         
@@ -276,7 +276,7 @@ Randomize list
 
                 .. tab-item:: Q3
 
-                    Modify the oldlist to be the list of characters from list("ab12")
+                    Modify the origlist to be the list of characters from list("ab12")
 
                     .. code-block:: python
                         
@@ -496,7 +496,7 @@ Interrupting an image list
 
 .. admonition:: Tasks
 
-    #. Modify the code to amke better use of A or B button pressing.
+    #. Modify the code to make better use of A or B button pressing.
 
 
 ----
@@ -514,11 +514,9 @@ See: https://realpython.com/python-enumerate/
 
     from microbit import *
 
-
     all_img = list(enumerate(Image.ALL_CLOCKS, start=0))
-
+    
     while True:
-        all_img = all_img
         for count, img in all_img:
             display.show(img)
             if button_a.is_pressed():
@@ -529,6 +527,15 @@ See: https://realpython.com/python-enumerate/
                 sleep(30)
             else:
                 sleep(1000)
+
+
+| Here is the list, **all_img**:
+
+.. code-block:: python
+    
+    [(0, Image('00900:00900:00900:00000:00000:')), (1, Image('00090:00090:00900:00000:00000:')), (2, Image('00000:00099:00900:00000:00000:')), (3, Image('00000:00000:00999:00000:00000:')), (4, Image('00000:00000:00900:00099:00000:')), (5, Image('00000:00000:00900:00090:00090:')), (6, Image('00000:00000:00900:00900:00900:')), (7, Image('00000:00000:00900:09000:09000:')), (8, Image('00000:00000:00900:99000:00000:')), (9, Image('00000:00000:99900:00000:00000:')), (10, Image('00000:99000:00900:00000:00000:')), (11, Image('09000:09000:00900:00000:00000:'))]
+
+----
 
 .. admonition:: Tasks
 
