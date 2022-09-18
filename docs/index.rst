@@ -1,35 +1,13 @@
-.. PC-Microbit-Micropython documentation master file.
+.. PC-Microbit documentation master file.
 
 ====================================================
-PC-Microbit-Micropython documentation
+PC-Microbit
 ====================================================
 
-.. admonition:: Tip
-    
-    If you are using a trackpad, navigate to various sections and pages by clicking on the same heading in the left sidebar twice, then use the arrow keys to move up and down.
 
-----
 
-Home pages:
----------------------
-
-| https://pc-microbit-micropython.readthedocs.io/en/latest/index.html
-| https://pc-microbit-extension.readthedocs.io/en/latest/index.html
-| https://pc-python.readthedocs.io/en/latest/index.html
-
-----
-
-Key references:
----------------------
-
-| python: https://www.w3schools.com/python/
-| microbit: https://microbit-micropython.readthedocs.io/en/v2-docs/index.html
-
-----
-
-====================================================
 Index:
-====================================================
+========
 
 .. toctree::
     :maxdepth: 2

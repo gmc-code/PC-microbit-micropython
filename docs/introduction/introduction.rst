@@ -2,7 +2,7 @@
 Introduction
 ====================================================
 
-PC-Microbit-Micropython documentation
+PC-Microbit
 ----------------------------------------
 
 .. admonition:: Tip
