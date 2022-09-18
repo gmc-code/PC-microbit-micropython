@@ -614,7 +614,7 @@ bytearray
 
 | The tasks below require the creation of definitions to produce the list of values for the bytearray function. 
 | The pixels brightness must be between 0 and 9, inclusive, and must be integers.
-| Example ode to limit the values and round to an integer is below.
+| Example code to limit the values and round to an integer is below.
 | **x_val1** is the initial x value.
 | **x** is the x position of a pixel (from 0 to 4)
 | **xstep** is the step size for a gradient.
@@ -849,45 +849,5 @@ bytearray
         newimg = Image(5, 5, bytearray(screen_bytes))
         display.show(newimg)
         sleep(1000)
-
-
-----
-
-get_pixel and set_pixel
----------------------------
-
-
-| The code below creates changing displays of random pixels. It checks to see when the display has been filled with 25 pixels and displays the number of attempts of creating random pixels.
-
-.. code-block:: python
-
-    from microbit import *
-    from random import randint
-
-    def full_screen_check():
-        for y in range(0, 5):
-            for x in range(0, 5):
-                if display.get_pixel(x, y) == 0:
-                    return False
-        return True
-
-    def fill_screen_with_counter():
-        counter = 0
-        while True:
-            counter += 1
-            x = randint(0, 4)
-            y = randint(0, 4)
-            brightness = randint(5,9)
-            display.set_pixel(x, y, brightness)
-            if full_screen_check():
-                display.scroll(counter)
-                return counter
-            sleep(30)
-
-    while True:
-        fill_screen_with_counter()
-        sleep(1000)
-
-
 
 
