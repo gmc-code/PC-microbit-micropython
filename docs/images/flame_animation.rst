@@ -3,8 +3,9 @@ Custom images advanced
 ====================================================
 
 
+The Flame simulation 1
+--------------------------
 
------------------------------
 .. code-block:: python
     from microbit import *
     import random
@@ -54,8 +55,8 @@ Custom images advanced
 
 ----
 
-| The Flame simulation:
-
+The Flame simulation
+-------------------------
 
 .. code-block:: python
 
