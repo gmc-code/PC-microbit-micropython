@@ -5,10 +5,6 @@ Introduction
 PC-Microbit
 ----------------------------------------
 
-.. admonition:: Tip
-    
-    If you are using a trackpad, navigate to various sections and pages by clicking on the same heading in the left sidebar twice, then use the arrow keys to move up and down.
-
 | These docs will help you code your microbit using micropython.
 | Micropython is a version of python for running on small devices like the microbit.
 
@@ -113,10 +109,17 @@ Python references:
 
 For an introduction to python see:
 
-* https://www.w3schools.com/python/default.asp
-* https://www.programiz.com/python-programming
-* https://www.pythontutorial.net/
 * https://docs.python.org/3.9/tutorial/introduction.html
 * https://docs.python.org/3.10/tutorial/index.html
+* https://www.w3schools.com/python/default.asp
+* https://www.programiz.com/python-programming
+* https://www.geeksforgeeks.org/python-programming-language/?ref=shm
+* https://www.pythontutorial.net/
+* https://www.tutorialsteacher.com/python
+* https://realpython.com/tutorials/python/
 
+----
 
+.. admonition:: Tip
+    
+    If you are using a trackpad, navigate to various sections and pages by clicking on the same heading in the left sidebar twice, then use the arrow keys to move up and down.
