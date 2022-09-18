@@ -4,7 +4,7 @@
 # -- Project information -----------------------------------------------------
 
 import sphinx_rtd_theme
-project = 'PC-Microbit-Micropython'
+project = 'PC-Microbit'
 copyright = '2021-23, GMC'
 author = 'GMC'
 
