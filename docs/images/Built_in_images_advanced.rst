@@ -79,7 +79,7 @@ Reverse direction of list using the reversed function
 
 | A list, **clock_list**, can be reversed using the reversed function: ``reversed(clock_list)``.
 | The python object obtained from the reversed function can be used directly by **display.show**.
-| THe reversed object is a generator that can only be iterated through once.
+| The reversed object is a generator that can only be iterated through once.
 | Note that is it not necessary to create the list from Image.ALL_CLOCKS, since the reversed function can work directly on Image.ALL_CLOCKS.
 
 | The code below only displays the clock hands once despite being in a while loop since the generator that is pointed to by the variable, clock_list_anticlockwise, is actually used up the first time through the loop.
