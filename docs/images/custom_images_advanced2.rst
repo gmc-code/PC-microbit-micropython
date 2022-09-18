@@ -16,7 +16,7 @@ Custom images advanced2
                       "09090:"
                       "90009")
 
-    will create a 5×5 image of an X. The end of a line is indicated by a colon.
+    will create a 5x5 image of an X. The end of a line is indicated by a colon.
     It's also possible to use a newline (\n) to indicate the end of a line
     like this::
 
