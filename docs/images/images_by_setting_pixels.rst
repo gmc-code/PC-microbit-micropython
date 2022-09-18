@@ -6,7 +6,7 @@ Images by setting pixels
 
 ----
 
-Pixel controls
+Set pixel
 ---------------------
 
 .. image:: images/microbit_numbering.png
@@ -321,14 +321,39 @@ Pixel rows and columns lists
 get_pixel and set_pixel
 ---------------------------
 
-| The code below creates changing displays of random pixels. It checks to see when the display has been filled with 25 pixels and displays the number of attempts of creating random pixels.
+.. py:method:: get_pixel(x, y)
+
+    Return the brightness of pixel at column ``x`` and row ``y`` as an
+    integer between 0 and 9.
+
+| ``display.get_pixel(x, y) == 0`` can be used to check if a pixel is on or off.
+
+| The definition below checks each pixel to set if it is off and returns True if all are on.
+| If any pixels are off, it returns False immediately htat a pixel if found to be off.
+
+.. code-block:: python
+
+    from microbit import *
+    
+    def full_screen_on_check():
+        for y in range(0, 5):
+            for x in range(0, 5):
+                if display.get_pixel(x, y) == 0:
+                    return False
+        return True
+
+
+| The code below creates changing displays of random pixels. 
+| **full_screen_on_check()** checks to see when the display has been filled with 25 pixels.
+| **fill_screen_with_counter** turns on random pixels with brightness between 5 and 9. It checks to see if the screen is filled, and returns the number of random pixels used in the process.
+| The number of random pixels used to fill the screen is then scrolled.
 
 .. code-block:: python
 
     from microbit import *
     from random import randint
 
-    def full_screen_check():
+    def full_screen_on_check():
         for y in range(0, 5):
             for x in range(0, 5):
                 if display.get_pixel(x, y) == 0:
@@ -341,16 +366,71 @@ get_pixel and set_pixel
             counter += 1
             x = randint(0, 4)
             y = randint(0, 4)
-            brightness = randint(5,9)
+            brightness = randint(5, 9)
             display.set_pixel(x, y, brightness)
-            if full_screen_check():
-                display.scroll(counter)
+            if full_screen_on_check():
                 return counter
             sleep(30)
 
     while True:
-        fill_screen_with_counter()
+        new_fill_count = fill_screen_with_counter()
+        display.scroll(new_fill_count)
         sleep(1000)
 
 
+.. admonition:: Tasks
 
+    #. Add code to display the min and max counts obtained in the code above.
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Add code to display the min and max counts obtained in the code above.
+
+                    .. code-block:: python
+
+                        from microbit import *
+                        from random import randint
+
+                        def full_screen_check():
+                            for y in range(0, 5):
+                                for x in range(0, 5):
+                                    if display.get_pixel(x, y) == 0:
+                                        return False
+                            return True
+
+                        def fill_screen_with_counter():
+                            counter = 0
+                            while True:
+                                counter += 1
+                                x = randint(0, 4)
+                                y = randint(0, 4)
+                                brightness = randint(5,9)
+                                display.set_pixel(x, y, brightness)
+                                if full_screen_check():
+                                    return counter
+                                sleep(30)
+
+                        min_fill_count = None
+                        max_fill_count = None
+
+                        while True:
+                            new_fill_count = fill_screen_with_counter()
+                            display.scroll(new_fill_count, delay=60)
+                            if min_fill_count is not None:
+                                min_fill_count = min(min_fill_count, new_fill_count)
+                            else:
+                                min_fill_count = new_fill_count
+                            if max_fill_count is not None:
+                                max_fill_count = max(max_fill_count, new_fill_count)
+                            else:
+                                max_fill_count = new_fill_count
+                            display.scroll(min_fill_count, delay=60)
+                            display.scroll(max_fill_count, delay=60)
+                            sleep(1000)
