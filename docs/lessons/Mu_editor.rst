@@ -65,7 +65,7 @@ Fixing indenting quickly
 
 
 .. image:: images/multi_line_indent_moving.gif
-    :scale: 50 %
+    :scale: 80 %
     :align: center
 
 ----
