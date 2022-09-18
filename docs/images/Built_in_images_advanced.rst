@@ -553,5 +553,5 @@ See: https://realpython.com/python-enumerate/
 
 .. admonition:: Tasks
 
-    #. Modify the code to display 12 instead of 0 when the clock is in the 12 0'clock position.
+    #. Modify the code to display 12 instead of 0 when the clock is in the 12 O'clock position.
 
