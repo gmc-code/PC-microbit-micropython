@@ -162,10 +162,10 @@ Random pixel and random brightness
 
 .. py:function:: randint(a, b)
 
-    Return a random integer ``N`` such that ``a <= N <= b``. 
+    Return a random integer from and including a to b. 
 
 
-| The code below dispays a random pixel of random brightness every 500ms, then clears the display before showing the next one.
+| The code below displays a random pixel of random brightness every 500ms, then clears the display before showing the next one.
 
 .. code-block:: python
 
