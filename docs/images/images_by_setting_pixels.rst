@@ -23,7 +23,7 @@ Set pixel
 
 .. py:function:: display.set_pixel(x, y, value)
 
-    Set the brightness of the LED at column x and row y to value, which has to be an integer between 0 and 9.
+    Set the brightness of the LED at column x and row y to value, which has to be an integer between 0 and 9, where 0 is off and 9 is full brightness.
 
 | The code below turns on the pixel in the top left with full brightness.
 
@@ -151,6 +151,113 @@ Set pixel
                         display.set_pixel(2, 0, 5)
                         display.set_pixel(3, 0, 7)
                         display.set_pixel(4, 0, 9)
+
+----
+
+Random pixel and random brightness
+-----------------------------------
+
+| The following random functions can be used to create random pixels of random brightness.
+
+
+.. py:function:: randint(a, b)
+
+    Return a random integer ``N`` such that ``a <= N <= b``. 
+
+
+| The code below dispays a random pixel of random brightness every 500ms, then clears the display before showing the next one.
+
+.. code-block:: python
+
+    from microbit import *
+    import random
+
+    while True:
+        random_brightness = random.randint(1, 9)
+        random_x = random.randint(0, 4)
+        random_y = random.randint(0, 4)
+        display.set_pixel(random_x, random_y, random_brightness)
+        sleep(500)
+        display.clear()
+
+----
+
+.. py:function:: randrange(stop)
+
+    Return a randomly selected integer between zero and up to (but not
+    including) ``stop``.
+
+| The code below uses randrange for the x and y values.
+
+.. code-block:: python
+
+    from microbit import *
+    import random
+
+    while True:
+        random_brightness = random.randint(1, 9)
+        random_x = random.randrange(5)
+        random_y = random.randrange(5)
+        display.set_pixel(random_x, random_y, random_brightness)
+        sleep(500)
+        display.clear()
+
+----
+
+.. py:function:: randrange(start, stop)
+
+    Return a randomly selected integer from ``range(start, stop)``.
+
+| The code below uses randrange to restrict the x and y values to the inner square of 9 pixels.
+
+.. code-block:: python
+
+    from microbit import *
+    import random
+
+    while True:
+        random_brightness = random.randint(1, 9)
+        random_x = random.randrange(1, 4)
+        random_y = random.randrange(1, 4)
+        display.set_pixel(random_x, random_y, random_brightness)
+        sleep(500)
+        display.clear()
+
+----
+
+.. py:function:: randrange(start, stop, step)
+
+    Return a randomly selected element from ``range(start, stop, step)``.
+
+| The code below uses randrange to restrict the x and y values to rows and columns 0, 2, 4.
+| The display is not cleared so that all the pixels that are set are shown.
+
+.. code-block:: python
+
+    from microbit import *
+    import random
+
+    while True:
+        random_brightness = random.randint(1, 9)
+        random_x = random.randrange(0, 5, 2)
+        random_y = random.randrange(0, 5, 2)
+        display.set_pixel(random_x, random_y, random_brightness)
+        sleep(50)
+
+----
+
+.. py:function:: choice(seq)
+
+    Return a random element from the non-empty sequence ``seq``.
+
+
+| The code below turns on the pixel in the top left with full brightness.
+
+.. code-block:: python
+
+    from microbit import *
+
+    display.set_pixel(0, 0, 9)
 
 ----
 
