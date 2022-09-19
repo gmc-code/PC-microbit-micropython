@@ -272,6 +272,7 @@ Boat sinking animation
     sinking_boats = [boat1, boat2, boat3, boat4, boat5, boat6]
     while True:
         display.show(sinking_boats, delay=500)
+        sleep(500)
 
 ----
 
@@ -308,6 +309,7 @@ Boat sinking animation
 
                         while True:
                             display.show(rising_boats, delay=500)
+                            sleep(500)
 
 
                 .. tab-item:: Q2
@@ -330,5 +332,7 @@ Boat sinking animation
 
                         while True:
                             display.show(sinking_boats, delay=500)
+                            sleep(500)
                             display.show(rising_boats, delay=500)
+                            sleep(500)
 
