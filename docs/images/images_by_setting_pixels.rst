@@ -10,12 +10,12 @@ Set pixel
 ---------------------
 
 .. image:: images/microbit_numbering.png
-    :scale: 100 %
-    :align: center
+    :scale: 60 %
+    :align: left
 
 .. image:: images/microbit-led-coords.png
-    :scale: 60 %
-    :align: center
+    :scale: 40 %
+    :align: right
 
 | Each pixel on the 5 by 5 grid can be controlled individually.
 | The column numbers are 0 to 4 from left to right.
@@ -179,6 +179,26 @@ Random pixel and random brightness
         display.set_pixel(random_x, random_y, random_brightness)
         sleep(500)
         display.clear()
+
+| The code uses the function, **rand_pix()**, to return a tuple of parameters for the **set_pixel** method.
+| Tuple unpacking is used to unpack the tuple, **rand_pix()**, for the **set_pixel** method.
+
+.. code-block:: python
+
+    from microbit import *
+    import random
+
+    def rand_pix():
+        random_brightness = random.randint(1, 9)
+        random_x = random.randint(0, 4)
+        random_y = random.randint(0, 4)
+        return (random_x, random_y, random_brightness)
+
+    while True:
+        display.set_pixel(*rand_pix())
+        sleep(500)
+        display.clear()
+
 
 ----
 
