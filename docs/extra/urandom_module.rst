@@ -12,7 +12,7 @@ urandom
 Functions for integers
 ----------------------
 
-.. function:: randint(a, b)
+.. function:: urandom.randint(a, b)
 
     Return an integer in the range from a to b, including b.
 
@@ -33,7 +33,7 @@ Functions for integers
 
 ----
 
-.. function:: randrange(stop)
+.. function:: urandom.randrange(stop)
               randrange(start, stop)
               randrange(start, stop, step)
 
@@ -44,14 +44,14 @@ Functions for integers
 
 ----
 
-.. function:: getrandbits(n)
+.. function:: urandom.getrandbits(n)
 
     Return an integer with *n* urandom bits where n is from 0 to 32.
     When n = 1, values are 0 or 1.
     When n = 2, values are 0, 1, 2 or 3.
     When n = 3, values are from 0 to 7.
     The maximum value is found using (n**2 -1). eg. n**3 - 1 = 7
-    THis may be useful for specifying random numebrs based on pwoers of 2.
+    This may be useful for specifying random numebrs based on powers of 2.
 
 | The code below scrolls a random number from 0 to 7.
 
@@ -69,7 +69,7 @@ Functions for integers
 Functions for floats
 --------------------
 
-.. function:: random()
+.. function:: urandom.random()
 
     Return a random floating point number from 0.0 up to but not including 1.0 with 7 decimal places.
 
@@ -97,7 +97,7 @@ Functions for floats
 
 ----
 
-.. function:: uniform(a, b)
+.. function:: urandom.uniform(a, b)
 
     Return a random floating point number between a and b inclusive of both.
     b can be lower of higher than a. The order doesn't matter.
@@ -125,7 +125,7 @@ Functions for floats
 choice
 ---------------
 
-.. function:: choice(sequence)
+.. function:: urandom.choice(sequence)
 
     Returns one item at random from a *sequence* (tuple, list or
     any object that supports the subscript operation).
@@ -153,7 +153,7 @@ choice
 seed
 ---------------
 
-.. function:: seed(n=None)
+.. function:: urandom.seed(n=None)
 
     Initialise the urandom number generator module with the seed *n* which should
     be an integer.  When no argument (or ``None``) is passed in, it will initialise the generator with a hardware generated random number.

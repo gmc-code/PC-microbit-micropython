@@ -169,7 +169,7 @@ Reverse direction of list using the reversed function
 ----
 
 Randomize list
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~
 
 | A list can be randomly sorted using random.shuffle in python 3.10.
 | This is not available in Mu editor in 2022, so the sorted function with a sort key can be used instead.
@@ -184,12 +184,12 @@ Randomize list
 
 
 | The key function will use a function that generates a random float.
-| The **random.random()** method returns a random floating number between 0 and 1.
-| The basic syntax is:
 
 .. py:function:: random.random()
 
-| The key function, **randomkey**,  returns a random floating number between 0 and 1.
+    Returns a random floating number between 0 and 1.
+
+| The key function below, **randomkey**,  returns a random floating number between 0 and 1.
 | A parameter is required, since the sorted function will pass in the object from a list that is being sorted. The parameter used below is **element**. It is needed to work. Note that it is not used in the function code itself.
 
 .. code-block:: python
@@ -298,7 +298,7 @@ Randomize list
 ----
 
 Randomize image list
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~
 
 | Use the sorted function to randomly sort **list(Image.ALL_ARROWS)**.
 | Use the same **randomkey** function from above as the sort key.
@@ -453,7 +453,7 @@ Randomize image list
 ----
 
 Interrupting an image list
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | There are several approaches to interrupting the display of a built in collection of images.
 
@@ -503,6 +503,15 @@ Interrupting an image list
 
 Enumerate to show the clock time
 ----------------------------------
+
+| The enumerate() function takes a collection (e.g. a list or tuple) and returns it as an enumerate object with a counter as the key.
+| The basic syntax is:
+
+.. py:function:: enumerate(iterable, start)
+
+    | iterable An iterable object such as a list or tuple
+    | start A number defining the start number of the enumerate object. Default 0.
+
 
 See: https://realpython.com/python-enumerate/
 

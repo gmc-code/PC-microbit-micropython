@@ -159,8 +159,12 @@ Random pixel and random brightness
 
 | The following random functions can be used to create random pixels of random brightness.
 
+----
 
-.. py:function:: randint(a, b)
+Random pixel randint
+-----------------------------------
+
+.. py:function:: random.randint(a, b)
 
     Return a random integer from a to b and including both. 
 
@@ -199,12 +203,14 @@ Random pixel and random brightness
         sleep(500)
         display.clear()
 
-
 ----
 
-.. py:function:: randrange(stop)
+Random pixel randrange(stop)
+-----------------------------------
 
-    Return a randomly selected integer between zero and up to (but not
+.. py:function:: random.randrange(stop)
+
+    Return a randomly selected integer from ``range(stop)``, from zero and up to (but not
     including) ``stop``.
 
 | The code below uses randrange for the x and y values.
@@ -257,7 +263,10 @@ Random pixel and random brightness
 
 ----
 
-.. py:function:: randrange(start, stop)
+Random pixel randrange(start, stop)
+--------------------------------------
+
+.. py:function:: random.randrange(start, stop)
 
     Return a randomly selected integer from ``range(start, stop)``.
 
@@ -278,7 +287,10 @@ Random pixel and random brightness
 
 ----
 
-.. py:function:: randrange(start, stop, step)
+Random pixel randrange(start, stop, step)
+------------------------------------------
+
+.. py:function:: random.randrange(start, stop, step)
 
     Return a randomly selected element from ``range(start, stop, step)``.
 
@@ -299,18 +311,30 @@ Random pixel and random brightness
 
 ----
 
-.. py:function:: choice(seq)
+Random pixel random.choice
+---------------------------------
 
-    Return a random element from the non-empty sequence ``seq``.
+.. py:function:: random.choice(seq)
+
+    Return a random element from the non-empty sequence ``seq`` such as a list or tuple.
 
 
-| The code below turns on the pixel in the top left with full brightness.
+| The code below uses **random.choice** to choose the x and y values from 1 to 3.
+| The brightness is chosen from values, 1, 5, and 9.
+| The display is not cleared so that all the pixels that are set are shown.
 
 .. code-block:: python
 
     from microbit import *
+    import random
 
-    display.set_pixel(0, 0, 9)
+    while True:
+        random_brightness = random.choice((1, 5, 9))
+        random_x = random.choice((1, 2, 3))
+        random_y = random.choice((1, 2, 3))
+        display.set_pixel(random_x, random_y, random_brightness)
+        sleep(50)
+
 
 ----
 
