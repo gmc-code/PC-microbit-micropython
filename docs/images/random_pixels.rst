@@ -224,51 +224,30 @@ Random pixel random.choice
 
 ----
 
-Pixel rows and columns
-------------------------
+Random Pixel rows and columns
+--------------------------------
 
-| For loops can be used to turn on all the pixels in a row or colum.
-
-.. sidebar::
-
-    .. image:: images/col0.png
-        :scale: 50 %
-        :align: center
-
-| The code below sets the brightness to 9 for the first column, column 0.
+| The code below sets the brightness to 9 for a pixel in each row, with the column being random for each pixel.
 
 .. code-block:: python
 
     from microbit import *
+    import random
 
-    x = 0
-    for y in range(0, 5):
-        display.set_pixel(x, y, 9)
+    def rand_x():
+        return random.randint(0, 4)
 
-----
-
-.. sidebar::
-
-    .. image:: images/row0.png
-        :scale: 50 %
-        :align: center
-
-| The code below sets the brightness to 9 for the first row, row 0.
-
-.. code-block:: python
-
-    from microbit import *
-
-    y = 0
-    for x in range(0, 5):
-        display.set_pixel(x, y, 9)
+    while True:
+        for y in range(0, 5):
+            display.set_pixel(rand_x(), y, 9)
+        sleep(200)
+        display.clear() 
 
 ----
 
 .. admonition:: Tasks
 
-    #. Write code to turn on the pixels in column 3.
-    #. Write code to turn on the pixels in row 2.
+    #. Write code to set the brightness to 9 for a pixel in each column, with the row being random for each pixel.
 
     .. dropdown::
             :icon: codescan
@@ -279,27 +258,96 @@ Pixel rows and columns
 
                 .. tab-item:: Q1
 
-                    Write code to turn on the pixels in column 3.
+                    Write code to set the brightness to 9 for a pixel in each column, with the row being random for each pixel.
+                    
+                    .. code-block:: python
+
+                        from microbit import *
+                        import random
+
+                        def rand_y():
+                            return random.randint(0, 4)
+
+                        while True:
+                            for x in range(0, 5):
+                                display.set_pixel(x, rand_y(), 9)
+                            sleep(200)
+                            display.clear() 
+
+----
+
+Random Pixels
+--------------------------------
+
+| The code below sets the brightness to 9 for 3 pixels in random rows and random columns.
+| Note the use of the underscore, _, as a throw away variable, in **for _ in range(0, 3)**.
+| A single underscore is used in place of a variable whose value is not going to be used furtherin a  loop.
+
+.. code-block:: python
+
+    from microbit import *
+    import random
+
+    def rand_val():
+        return random.randint(0, 4)
+
+    while True:
+        for _ in range(3):
+            display.set_pixel(rand_val(), rand_val(), 9)
+        sleep(200)
+        display.clear()
+
+----
+
+.. admonition:: Tasks
+
+    #. Modify the code above to produce 10 random pixels at a time.
+    #. Change the brightness to 5, and explore how many random pixels are needed so that only 1 to 3 pixels are left off. 
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Modify the code above to produce 10 random pixels at a time.
 
                     .. code-block:: python
 
                         from microbit import *
+                        import random
 
-                        x = 3
-                        for y in range(0, 5):
-                            display.set_pixel(x, y, 9)
+                        def rand_val():
+                            return random.randint(0, 4)
+
+                        while True:
+                            for _ in range(10):
+                                display.set_pixel(rand_val(), rand_val(), 9)
+                            sleep(200)
+                            display.clear()
 
                 .. tab-item:: Q2
 
-                    Write code to turn on the pixels in row 2.
+                    Change the brightness to 5, and explore how many random pixels are needed so that only 1 to 3 pixels are left off. 
+
+                    About 60 to 75 are needed since the same pixel may be generated more than once.
 
                     .. code-block:: python
 
                         from microbit import *
+                        import random
 
-                        y = 2
-                        for x in range(0, 5):
-                            display.set_pixel(x, y, 9)
+                        def rand_val():
+                            return random.randint(0, 4)
+
+                        while True:
+                            for _ in range(75):
+                                display.set_pixel(rand_val(), rand_val(), 9)
+                            sleep(200)
+                            display.clear()
 
 ----
 

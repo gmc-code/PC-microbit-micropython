@@ -43,8 +43,8 @@ Some of these pages have python syntax beyond the beginner level.
 | :ref:`Tuple unpacking in mutliple assignment`
 
 
-| 
-| :ref:``
+| throw away variable in ofr loop: for _ in range(0, 3)
+| :ref:`Random Pixels`
 
 
 | 
