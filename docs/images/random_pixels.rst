@@ -71,8 +71,8 @@ Tuple unpacking using an asterisk in a function call
 | Unpacking a tuple means splitting the tuple's elements into individual variables. 
 | From the code above, the three lines of code that generate the random values can be moved into a function that returns the three random values in a tuple.
 | The code below, uses the function, **rand_pix()**, to return a tuple of arguments for the **set_pixel** method.
-| Tuple unpacking is used to unpack the tuple, **rand_pix()**, for the **set_pixel** method.
-| The returned tuple, **(random_x, random_y, random_brightness)**, is unpacked by **\*rand_pix()**, so that random_x, random_y, random_brightness are used as arguments.
+| Tuple unpacking is used to unpack the tuple returned by the function, **rand_pix()**, for the **set_pixel** method.
+| The returned tuple, **(random_x, random_y, random_brightness)**, is unpacked by **\*rand_pix()**, so that **random_x, random_y, random_brightness** are used as arguments.
 | An asterisk * is used for unpacking positional arguments during the function call.
 
 .. code-block:: python
@@ -120,7 +120,7 @@ Tuple unpacking using an asterisk in a function call
                         return (random_x, random_y, random_brightness)
 
                     while True:
-                        display.set_pixel(\*rand_pix())
+                        display.set_pixel(*rand_pix())
                         sleep(500)
                         display.clear()
 
