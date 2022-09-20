@@ -36,7 +36,7 @@ Random pixel randint
 
 .. admonition:: Tasks
 
-    #. Write a list 
+    #. Modify the code to restrict the brightness to 1 to 5, and the pixels to the central 9 pixels.
 
     .. dropdown::
             :icon: codescan
@@ -47,11 +47,21 @@ Random pixel randint
 
                 .. tab-item:: Q1
 
-                    Write a list 
+                    Modify the code to restrict the brightness to 1 to 5, and the pixels to the central 9 pixels.
 
                     .. code-block:: python
 
                         from microbit import *
+                        import random
+
+
+                        while True:
+                            random_brightness = random.randint(1, 5)
+                            random_x = random.randint(1, 3)
+                            random_y = random.randint(1, 3)
+                            display.set_pixel(random_x, random_y, random_brightness)
+                            sleep(500)
+                            display.clear()
 
 ----
 
@@ -100,6 +110,18 @@ Tuple unpacking using an asterisk in a function call
                     .. code-block:: python
 
                         from microbit import *
+                        import random
+
+                        def rand_pix():
+                            random_brightness = random.randint(1, 5)
+                            random_x = random.randint(1, 3)
+                            random_y = random.randint(1, 3)
+                            return (random_x, random_y, random_brightness)
+
+                        while True:
+                            display.set_pixel(\*rand_pix())
+                            sleep(500)
+                            display.clear()
 
 ----
 
@@ -204,7 +226,7 @@ Random pixel randrange(stop)
                             return (random_x, random_y, random_brightness)
 
                         while True:
-                            display.set_pixel(*rand_pix())
+                            display.set_pixel(\*rand_pix())
                             sleep(500)
                             display.clear()
 
@@ -345,7 +367,7 @@ Random pixel random.choice
                     .. code-block:: python
 
                         from microbit import *
-                        
+
 ----
 
 Random Pixel rows and columns
@@ -602,7 +624,7 @@ get_pixel and set_pixel
 
     #. Add code to display the min and max counts obtained in the code above.
     #. Improve the code in answer to task 1, by creating definitions to update the min and max counts, and to display the counts on button pressing. The main loop should look like this:
-    #. Improve the code in answer to task 2, by adding a set to keep track of displayed pixels in the function, **fill_screen_with_counter()**. Number the pixels 0 to 4 in teh top row, 5 to 9 in the next row. etc. CHeck to see if the length of the set is 25 to tell that the screen is full.
+    #. Improve the code in answer to task 2, by adding a set to keep track of displayed pixels in the function, **fill_screen_with_counter()**. Number the pixels 0 to 4 in the top row, 5 to 9 in the next row. etc. CHeck to see if the length of the set is 25 to tell that the screen is full.
 
         .. code-block:: python
 
@@ -732,7 +754,7 @@ get_pixel and set_pixel
 
                 .. tab-item:: Q3
 
-                    Improve the code in answer to task 2, by adding a set to keep track of displayed pixels in the function, **fill_screen_with_counter()**. Number the pixels 0 to 4 in teh top row, 5 to 9 in the next row. etc. CHeck to see if the length of the set is 25 to tell that the screen is full.
+                    Improve the code in answer to task 2, by adding a set to keep track of displayed pixels in the function, **fill_screen_with_counter()**. Number the pixels 0 to 4 in the top row, 5 to 9 in the next row. etc. CHeck to see if the length of the set is 25 to tell that the screen is full.
 
                     .. code-block:: python
 
