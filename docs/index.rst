@@ -15,6 +15,7 @@ Index:
     :numbered:
 
     introduction/introduction.rst
+    introduction/advanced_python.rst
 
 
 .. toctree::

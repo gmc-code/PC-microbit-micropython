@@ -162,8 +162,7 @@ Random pixel and random brightness
 
 .. py:function:: randint(a, b)
 
-    Return a random integer from and including a to b. 
-
+    Return a random integer from a to b and including both. 
 
 | The code below displays a random pixel of random brightness every 500ms, then clears the display before showing the next one.
 
@@ -180,8 +179,9 @@ Random pixel and random brightness
         sleep(500)
         display.clear()
 
-| The code uses the function, **rand_pix()**, to return a tuple of parameters for the **set_pixel** method.
+| The code below, uses the function, **rand_pix()**, to return a tuple of arguments for the **set_pixel** method.
 | Tuple unpacking is used to unpack the tuple, **rand_pix()**, for the **set_pixel** method.
+| The returned tuple, **(random_x, random_y, random_brightness)**, is unpacked by /*rand_pix(), so that random_x, random_y, random_brightness are used as arguments.
 
 .. code-block:: python
 
@@ -208,6 +208,7 @@ Random pixel and random brightness
     including) ``stop``.
 
 | The code below uses randrange for the x and y values.
+| **random.randrange(5)** returns values from 0 to 4.
 
 .. code-block:: python
 
@@ -221,6 +222,38 @@ Random pixel and random brightness
         display.set_pixel(random_x, random_y, random_brightness)
         sleep(500)
         display.clear()
+
+.. admonition:: Tasks
+
+    #. Write athe code above to use a function, **rand_pix()**, to return a tuple of arguments for the **set_pixel** method.
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Use the function, **rand_pix()**, to return a tuple of arguments for the **set_pixel** method.
+
+                    .. code-block:: python
+
+                        from microbit import *
+                        import random
+
+                        def rand_pix():
+                            random_brightness = random.randint(1, 9)
+                            random_x = random.randrange(5)
+                            random_y = random.randrange(5)
+                            return (random_x, random_y, random_brightness)
+
+                        while True:
+                            display.set_pixel(*rand_pix())
+                            sleep(500)
+                            display.clear()
+
 
 ----
 

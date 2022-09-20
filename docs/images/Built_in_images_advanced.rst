@@ -45,7 +45,7 @@ Reverse direction of list using list slicing
 ----
 
 Reverse direction of list using the reverse method
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | The basic syntax to reverse a list **in place** is:
 
@@ -69,7 +69,7 @@ Reverse direction of list using the reverse method
 ----
 
 Reverse direction of list using the reversed function
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | The basic syntax to reverse a list using the **reversed** **function** is:
 
