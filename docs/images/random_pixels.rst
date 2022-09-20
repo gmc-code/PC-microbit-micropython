@@ -462,7 +462,7 @@ get_pixel and set_pixel
             counter += 1
             x = randint(0, 4)
             y = randint(0, 4)
-            brightness = randint(5, 9)
+            brightness = randint(1, 4)
             display.set_pixel(x, y, brightness)
             if full_screen_on_check():
                 return counter
@@ -477,7 +477,8 @@ get_pixel and set_pixel
 .. admonition:: Tasks
 
     #. Add code to display the min and max counts obtained in the code above.
-    #. Improve the code in answer to task 1, by creating definitions to update the min and max counts, and to display teh counts on button pressing. The main loop should look like this:
+    #. Improve the code in answer to task 1, by creating definitions to update the min and max counts, and to display the counts on button pressing. The main loop should look like this:
+    #. Improve the code in answer to task 2, by adding a set to keep track of displayed pixels in the function, **fill_screen_with_counter()**. Number the pixels 0 to 4 in teh top row, 5 to 9 in the next row. etc. CHeck to see if the length of the set is 25 to tell that the screen is full.
 
         .. code-block:: python
 
@@ -519,7 +520,7 @@ get_pixel and set_pixel
                                 counter += 1
                                 x = randint(0, 4)
                                 y = randint(0, 4)
-                                brightness = randint(5,9)
+                                brightness = randint(1, 4)
                                 display.set_pixel(x, y, brightness)
                                 if full_screen_check():
                                     return counter
@@ -547,7 +548,7 @@ get_pixel and set_pixel
 
                 .. tab-item:: Q2
 
-                    Add code to display the min and max counts obtained in the code above.
+                    Improve the code in answer to task 1, by creating definitions to update the min and max counts, and to display the counts on button pressing.
 
                     .. code-block:: python
 
@@ -569,7 +570,7 @@ get_pixel and set_pixel
                                 counter += 1
                                 x = randint(0, 4)
                                 y = randint(0, 4)
-                                brightness = randint(5, 9)
+                                brightness = randint(1, 4)
                                 display.set_pixel(x, y, brightness)
                                 if full_screen_check():
                                     return counter
@@ -606,3 +607,73 @@ get_pixel and set_pixel
                             display_counts(counts, new_fill_count)
                             sleep(1000)
                             display.clear()
+
+            .. tab-set::
+
+                .. tab-item:: Q3
+
+                    Improve the code in answer to task 2, by adding a set to keep track of displayed pixels in the function, **fill_screen_with_counter()**. Number the pixels 0 to 4 in teh top row, 5 to 9 in the next row. etc. CHeck to see if the length of the set is 25 to tell that the screen is full.
+
+                    .. code-block:: python
+
+                        from microbit import *
+                        from random import randint
+                        import utime
+
+
+                        def full_screen_check():
+                            for y in range(0, 5):
+                                for x in range(0, 5):
+                                    if display.get_pixel(x, y) == 0:
+                                        return False
+                            return True
+
+
+                        def fill_screen_with_counter():
+                            counter = 0
+                            screenset = set()
+                            while True:
+                                counter += 1
+                                x = randint(0, 4)
+                                y = randint(0, 4)
+                                brightness = randint(1, 4)
+                                display.set_pixel(x, y, brightness)
+                                screenset.add(x + y*5)
+                                if len(screenset) == 25:
+                                    return counter
+                                sleep(1)
+
+
+                        def update_counts(counts, count):
+                            min_fill_count = counts[0]
+                            if min_fill_count is not None:
+                                min_fill_count = min(min_fill_count, count)
+                            else:
+                                min_fill_count = count
+                            max_fill_count = counts[1]
+                            if max_fill_count is not None:
+                                max_fill_count = max(max_fill_count, count)
+                            else:
+                                max_fill_count = count
+                            return (min_fill_count, max_fill_count)
+
+
+                        def display_counts(counts, new_fill_count):
+                            if button_a.was_pressed():
+                                display.scroll(new_fill_count, delay=60)
+                            if button_b.was_pressed():
+                                display.scroll(counts[0], delay=60)
+                                display.scroll(counts[1], delay=60)
+
+
+                        counts = [None, None]
+
+                        while True:
+                            new_fill_count = fill_screen_with_counter()
+                            counts = update_counts(counts, new_fill_count)
+                            display_counts(counts, new_fill_count)
+                            sleep(1)
+                            display.clear()
+
+
+
