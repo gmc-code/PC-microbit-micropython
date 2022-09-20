@@ -351,34 +351,37 @@ Random Pixels
 
 ----
 
-Pixel rows and columns lists
-------------------------------
+Random Pixels choice Pixel rows and columns lists
+----------------------------------------------------
 
-| For loops can be used to turn on pixels based on values in lists.
-| Each row will have the same patern of pixels.
-| Each column will have the same patern of pixels.
-| A variable, ``xlist``, can store the columns numbers.
-| A variable, ``ylist``, can store the row numbers.
-| The code below produces an image of a six on a die.
+| Lists can be used to restrict the possible x or y values.
+| The function, **rand_val(vals)**, chooses one random value from the list passed to it.
+| In the code below, there are a total of 9 pixels that can be used. 2 random pixels are shown at a time.
 
 .. code-block:: python
 
     from microbit import *
+    import random
 
-    xlist = [0, 4]
-    ylist = [0, 2, 4]
-    for x in xlist:
-        for y in ylist:
-            display.set_pixel(x, y, 9)
+    xvals = [0, 2, 4]
+    yvals = [0, 2, 4]
+
+    def rand_val(vals):
+        return random.choice(vals)
+
+    while True:
+        for _ in range(2):
+            display.set_pixel(rand_val(xvals), rand_val(yvals), 5)
+        sleep(200)
+        display.clear()
+
 
 ----
 
 .. admonition:: Tasks
 
-    #. Adjust the code above to turn on pixels that are in both columns 1 to 3 and rows 0 and 4.
-    #. Adjust the code above to turn on pixels that are in both columns 0 and 4 and rows 1 to 3.
-    #. Combine the two answers to produce a square shape without the corners.
-
+    #. Adjust the code to restrict the possible x and y values to the cnetral 3 x 3 square, while showing 3 random pixels at a time.
+    
     .. dropdown::
             :icon: codescan
             :color: primary
@@ -388,51 +391,24 @@ Pixel rows and columns lists
 
                 .. tab-item:: Q1
 
-                    Adjust the code above to turn on pixels that are in both columns 1 to 3 and rows 0 and 4.
+                    Adjust the code to restrict the possible x and y values to the cnetral 3 x 3 square, while showing 3 random pixels at a time.
 
                     .. code-block:: python
 
                         from microbit import *
+                        import random
 
-                        xlist = [1, 2, 3]
-                        ylist = [0, 4]
-                        for x in xlist:
-                            for y in ylist:
-                                display.set_pixel(x, y, 9)
+                        xvals = [1, 2 ,3]
+                        yvals = [1, 2 ,3]
 
-                .. tab-item:: Q2
+                        def rand_val(vals):
+                            return random.choice(vals)
 
-                    Adjust the code above to turn on pixels that are in both columns 0 and 4 and rows 1 to 3.
-
-                    .. code-block:: python
-
-                        from microbit import *
-
-                        xlist = [0, 4]
-                        ylist = [1, 2, 3]
-                        for x in xlist:
-                            for y in ylist:
-                                display.set_pixel(x, y, 9)
-
-                .. tab-item:: Q3
-
-                    Combine the two answers to produce a square shape without the corners.
-
-                    .. code-block:: python
-
-                        from microbit import *
-
-                        xlist = [1, 2, 3]
-                        ylist = [0, 4]
-                        for x in xlist:
-                            for y in ylist:
-                                display.set_pixel(x, y, 9)
-                                
-                        xlist = [0, 4]
-                        ylist = [1, 2, 3]
-                        for x in xlist:
-                            for y in ylist:
-                                display.set_pixel(x, y, 9)
+                        while True:
+                            for _ in range(3):
+                                display.set_pixel(rand_val(xvals), rand_val(yvals), 5)
+                            sleep(200)
+                            display.clear()
 
 ----
 
