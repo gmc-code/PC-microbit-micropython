@@ -26,7 +26,7 @@ Set pixel
     Set the brightness of the LED at column x and row y to value, which has to be an integer between 0 and 9, where 0 is off and 9 is full brightness.
 
 | The code below turns on the pixel in the top left with full brightness.
-   
+
 .. image:: images/pixel00.png
     :scale: 60 %
     :align: right
@@ -38,8 +38,6 @@ Set pixel
     display.set_pixel(0, 0, 9)
 
 | The code below turns on the pixel in column 2, row 1 with full brightness.
-
-.. sidebar::
 
 .. image:: images/pixel21.png
     :scale: 60 %
@@ -169,13 +167,11 @@ Pixel rows and columns
 
 | For loops can be used to turn on all the pixels in a row or colum.
 
-.. sidebar::
-
-    .. image:: images/col0.png
-        :scale: 50 %
-        :align: center
-
 | The code below sets the brightness to 9 for the first column, column 0.
+
+.. image:: images/col0.png
+    :scale: 60 %
+    :align: right
 
 .. code-block:: python
 
@@ -187,13 +183,11 @@ Pixel rows and columns
 
 ----
 
-.. sidebar::
-
-    .. image:: images/row0.png
-        :scale: 50 %
-        :align: center
-
 | The code below sets the brightness to 9 for the first row, row 0.
+
+.. image:: images/row0.png
+    :scale: 60 %
+    :align: right
 
 .. code-block:: python
 
@@ -252,6 +246,10 @@ Pixel rows and columns lists
 | A variable, ``xlist``, can store the columns numbers.
 | A variable, ``ylist``, can store the row numbers.
 | The code below produces an image of a six on a die.
+
+.. image:: images/dice6.png
+    :scale: 60 %
+    :align: right
 
 .. code-block:: python
 
