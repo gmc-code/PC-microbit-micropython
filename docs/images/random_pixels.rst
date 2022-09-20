@@ -39,29 +39,29 @@ Random pixel randint
     #. Modify the code to restrict the brightness to 1 to 5, and the pixels to the central 9 pixels.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Modify the code to restrict the brightness to 1 to 5, and the pixels to the central 9 pixels.
+                Modify the code to restrict the brightness to 1 to 5, and the pixels to the central 9 pixels.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
-                        import random
+                    from microbit import *
+                    import random
 
 
-                        while True:
-                            random_brightness = random.randint(1, 5)
-                            random_x = random.randint(1, 3)
-                            random_y = random.randint(1, 3)
-                            display.set_pixel(random_x, random_y, random_brightness)
-                            sleep(500)
-                            display.clear()
+                    while True:
+                        random_brightness = random.randint(1, 5)
+                        random_x = random.randint(1, 3)
+                        random_y = random.randint(1, 3)
+                        display.set_pixel(random_x, random_y, random_brightness)
+                        sleep(500)
+                        display.clear()
 
 ----
 
@@ -90,6 +90,7 @@ Tuple unpacking using an asterisk in a function call
         display.set_pixel(*rand_pix())
         sleep(500)
         display.clear()
+
 ----
 
 .. admonition:: Tasks
@@ -97,31 +98,31 @@ Tuple unpacking using an asterisk in a function call
     #. Modify the function, **rand_pix()**, to restrict the brightness to 4 to 7, and the pixels to the bottom 2 rows.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Modify the function, **rand_pix()**, to restrict the brightness to 4 to 7, and the pixels to the bottom 2 rows.
+                Modify the function, **rand_pix()**, to restrict the brightness to 4 to 7, and the pixels to the bottom 2 rows.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
-                        import random
+                    from microbit import *
+                    import random
 
-                        def rand_pix():
-                            random_brightness = random.randint(4, 7)
-                            random_x = random.randint(0, 4)
-                            random_y = random.randint(3, 4)
-                            return (random_x, random_y, random_brightness)
+                    def rand_pix():
+                        random_brightness = random.randint(4, 7)
+                        random_x = random.randint(0, 4)
+                        random_y = random.randint(3, 4)
+                        return (random_x, random_y, random_brightness)
 
-                        while True:
-                            display.set_pixel(\*rand_pix())
-                            sleep(500)
-                            display.clear()
+                    while True:
+                        display.set_pixel(\*rand_pix())
+                        sleep(500)
+                        display.clear()
 
 ----
 
@@ -159,33 +160,33 @@ Tuple unpacking in mutliple assignment
     #. Modify the function, **rand_pix()**, to restrict the brightness to 3 to 6, and the pixels to the top 2 rows.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Modify the function, **rand_pix()**, to restrict the brightness to 3 to 6, and the pixels to the top 2 rows.
+                Modify the function, **rand_pix()**, to restrict the brightness to 3 to 6, and the pixels to the top 2 rows.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
-                        from microbit import *
-                        import random
+                    from microbit import *
+                    from microbit import *
+                    import random
 
-                        def rand_pix():
-                            random_brightness = random.randint(3, 6)
-                            random_x = random.randint(0, 4)
-                            random_y = random.randint(0, 1)
-                            return (random_x, random_y, random_brightness)
+                    def rand_pix():
+                        random_brightness = random.randint(3, 6)
+                        random_x = random.randint(0, 4)
+                        random_y = random.randint(0, 1)
+                        return (random_x, random_y, random_brightness)
 
-                        while True:
-                            random_x, random_y, random_brightness = rand_pix()
-                            display.set_pixel(random_x, random_y, random_brightness)
-                            sleep(500)
-                            display.clear()
+                    while True:
+                        random_x, random_y, random_brightness = rand_pix()
+                        display.set_pixel(random_x, random_y, random_brightness)
+                        sleep(500)
+                        display.clear()
 
 ----
 
