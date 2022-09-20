@@ -18,18 +18,14 @@ Some of these pages have python syntax beyond the beginner level.
 | enumerate(iterable, start)
 | :ref:`Enumerate to show the clock time`
 
-
 | random.random()
 | :ref:`Randomize list`
-
 
 | random.randint(a, b)
 | :ref:`Random pixel randint`
 
-
 | random.randrange(stop)
 | :ref:`Random pixel randrange(stop)`
-
 
 | random.randrange(start, stop)
 | :ref:`Random pixel randrange(start, stop)`
@@ -37,15 +33,14 @@ Some of these pages have python syntax beyond the beginner level.
 | random.randrange(start, stop, step)
 | :ref:`Random pixel randrange(start, stop, step)`
 
-
 | random.choice(seq)
 | :ref:`Random pixel random.choice`
 
-| 
-| :ref:``
+| \*(a, b, c) to give a, b, c
+| :ref:`Tuple unpacking using an asterisk in a function call`
 
-| 
-| :ref:``
+| a, b, c = (a, b, c)
+| :ref:`Tuple unpacking in mutliple assignment`
 
 
 | 

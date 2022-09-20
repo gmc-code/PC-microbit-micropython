@@ -183,9 +183,17 @@ Random pixel randint
         sleep(500)
         display.clear()
 
+----
+
+Tuple unpacking using an asterisk in a function call
+-------------------------------------------------------
+
+| Unpacking a tuple means splitting the tuple's elements into individual variables. 
+| From the code above, the three lines of code that generate the random values can be moved into a function that returns the three random values in a tuple.
 | The code below, uses the function, **rand_pix()**, to return a tuple of arguments for the **set_pixel** method.
 | Tuple unpacking is used to unpack the tuple, **rand_pix()**, for the **set_pixel** method.
-| The returned tuple, **(random_x, random_y, random_brightness)**, is unpacked by /*rand_pix(), so that random_x, random_y, random_brightness are used as arguments.
+| The returned tuple, **(random_x, random_y, random_brightness)**, is unpacked by \*rand_pix(), so that random_x, random_y, random_brightness are used as arguments.
+| An asterisk * is used for unpacking positional arguments during the function call.
 
 .. code-block:: python
 
@@ -200,6 +208,35 @@ Random pixel randint
 
     while True:
         display.set_pixel(*rand_pix())
+        sleep(500)
+        display.clear()
+
+----
+
+Tuple unpacking in mutliple assignment
+-----------------------------------------
+
+| Unpacking a tuple means splitting the tuple's elements into individual variables. 
+| The code below, uses the function, **rand_pix()**, to return a tuple of values.
+| Tuple unpacking is used to unpack the tuple into 3 variables: 
+| **random_x, random_y, random_brightness = rand_pix()**.
+| These varaibles can then be passed into the set_pixel method: 
+| **display.set_pixel(random_x, random_y, random_brightness)**.
+
+.. code-block:: python
+
+    from microbit import *
+    import random
+
+    def rand_pix():
+        random_brightness = random.randint(1, 9)
+        random_x = random.randint(0, 4)
+        random_y = random.randint(0, 4)
+        return (random_x, random_y, random_brightness)
+
+    while True:
+        random_x, random_y, random_brightness = rand_pix()
+        display.set_pixel(random_x, random_y, random_brightness)
         sleep(500)
         display.clear()
 

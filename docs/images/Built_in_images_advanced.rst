@@ -44,12 +44,12 @@ Reverse direction of list using list slicing
 
 ----
 
-Reverse direction of list using the reverse method
+Reverse direction of a list using the reverse method
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 | The basic syntax to reverse a list **in place** is:
 
-.. py:function:: list.reverse()
+.. py:function:: alist.reverse()
 
     | No parameters are involved.
 
