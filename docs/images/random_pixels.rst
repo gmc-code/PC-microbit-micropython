@@ -94,7 +94,7 @@ Tuple unpacking using an asterisk in a function call
 
 .. admonition:: Tasks
 
-    #. Write a list 
+    #. Modify the function, **rand_pix()**, to restrict the brightness to 4 to 7, and the pixels to the bottom 2 rows.
 
     .. dropdown::
             :icon: codescan
@@ -105,7 +105,7 @@ Tuple unpacking using an asterisk in a function call
 
                 .. tab-item:: Q1
 
-                    Write a list 
+                    Modify the function, **rand_pix()**, to restrict the brightness to 4 to 7, and the pixels to the bottom 2 rows.
 
                     .. code-block:: python
 
@@ -113,9 +113,9 @@ Tuple unpacking using an asterisk in a function call
                         import random
 
                         def rand_pix():
-                            random_brightness = random.randint(1, 5)
-                            random_x = random.randint(1, 3)
-                            random_y = random.randint(1, 3)
+                            random_brightness = random.randint(4, 7)
+                            random_x = random.randint(0, 4)
+                            random_y = random.randint(3, 4)
                             return (random_x, random_y, random_brightness)
 
                         while True:
@@ -156,7 +156,7 @@ Tuple unpacking in mutliple assignment
 
 .. admonition:: Tasks
 
-    #. Write a list 
+    #. Modify the function, **rand_pix()**, to restrict the brightness to 3 to 6, and the pixels to the top 2 rows.
 
     .. dropdown::
             :icon: codescan
@@ -167,11 +167,25 @@ Tuple unpacking in mutliple assignment
 
                 .. tab-item:: Q1
 
-                    Write a list 
+                    Modify the function, **rand_pix()**, to restrict the brightness to 3 to 6, and the pixels to the top 2 rows.
 
                     .. code-block:: python
 
                         from microbit import *
+                        from microbit import *
+                        import random
+
+                        def rand_pix():
+                            random_brightness = random.randint(3, 6)
+                            random_x = random.randint(0, 4)
+                            random_y = random.randint(0, 1)
+                            return (random_x, random_y, random_brightness)
+
+                        while True:
+                            random_x, random_y, random_brightness = rand_pix()
+                            display.set_pixel(random_x, random_y, random_brightness)
+                            sleep(500)
+                            display.clear()
 
 ----
 
@@ -259,7 +273,7 @@ Random pixel randrange(start, stop)
 
 .. admonition:: Tasks
 
-    #. Write a list 
+    #. Modify the function, **rand_pix()**, to restrict the brightness to 1 to 3, and the pixels to the left 3 columns.
 
     .. dropdown::
             :icon: codescan
@@ -270,11 +284,21 @@ Random pixel randrange(start, stop)
 
                 .. tab-item:: Q1
 
-                    Write a list 
+                     #. Modify the function, **rand_pix()**, to restrict the brightness to 1 to 3, and the pixels to the left 3 columns.
 
                     .. code-block:: python
 
                         from microbit import *
+
+                        import random
+
+                        while True:
+                            random_brightness = random.randint(1, 9)
+                            random_x = random.randrange(0, 3)
+                            random_y = random.randrange(0, 5)
+                            display.set_pixel(random_x, random_y, random_brightness)
+                            sleep(500)
+                            display.clear()
 
 ----
 
