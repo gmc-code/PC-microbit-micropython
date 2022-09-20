@@ -26,6 +26,10 @@ Set pixel
     Set the brightness of the LED at column x and row y to value, which has to be an integer between 0 and 9, where 0 is off and 9 is full brightness.
 
 | The code below turns on the pixel in the top left with full brightness.
+   
+.. image:: images/pixel00.png
+    :scale: 60 %
+    :align: right
 
 .. code-block:: python
 
@@ -34,6 +38,12 @@ Set pixel
     display.set_pixel(0, 0, 9)
 
 | The code below turns on the pixel in column 2, row 1 with full brightness.
+
+.. sidebar::
+
+.. image:: images/pixel21.png
+    :scale: 60 %
+    :align: right
 
 .. code-block:: python
 
