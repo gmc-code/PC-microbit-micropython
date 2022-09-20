@@ -72,7 +72,7 @@ Tuple unpacking using an asterisk in a function call
 | From the code above, the three lines of code that generate the random values can be moved into a function that returns the three random values in a tuple.
 | The code below, uses the function, **rand_pix()**, to return a tuple of arguments for the **set_pixel** method.
 | Tuple unpacking is used to unpack the tuple, **rand_pix()**, for the **set_pixel** method.
-| The returned tuple, **(random_x, random_y, random_brightness)**, is unpacked by \*rand_pix(), so that random_x, random_y, random_brightness are used as arguments.
+| The returned tuple, **(random_x, random_y, random_brightness)**, is unpacked by **\*rand_pix()**, so that random_x, random_y, random_brightness are used as arguments.
 | An asterisk * is used for unpacking positional arguments during the function call.
 
 .. code-block:: python
@@ -206,17 +206,23 @@ Random pixel randrange(stop)
     from microbit import *
     import random
 
-    while True:
+    def rand_pix():
         random_brightness = random.randint(1, 9)
         random_x = random.randrange(5)
         random_y = random.randrange(5)
+        return (random_x, random_y, random_brightness)
+
+    while True:
+        random_x, random_y, random_brightness = rand_pix()
         display.set_pixel(random_x, random_y, random_brightness)
         sleep(500)
         display.clear()
 
+----
+
 .. admonition:: Tasks
 
-    #. Modify the code above to use a function, **rand_pix()**, to return a tuple of arguments for the **set_pixel** method.
+    #. Modify the function, **rand_pix()**, to restrict the brightness to 3 to 6, and the pixels to the left 3 columns.
 
     .. dropdown::
             :icon: codescan
@@ -227,7 +233,7 @@ Random pixel randrange(stop)
 
                 .. tab-item:: Q1
 
-                    Use the function, **rand_pix()**, to return a tuple of arguments for the **set_pixel** method.
+                    Modify the function, **rand_pix()**, to restrict the brightness to 3 to 6, and the pixels to the left 3 columns.
 
                     .. code-block:: python
 
@@ -235,13 +241,13 @@ Random pixel randrange(stop)
                         import random
 
                         def rand_pix():
-                            random_brightness = random.randint(1, 9)
+                            random_brightness = random.randint(3, 6)
                             random_x = random.randrange(5)
-                            random_y = random.randrange(5)
+                            random_y = random.randrange(3)
                             return (random_x, random_y, random_brightness)
 
                         while True:
-                            display.set_pixel(\*rand_pix())
+                            display.set_pixel(*rand_pix())
                             sleep(500)
                             display.clear()
 
@@ -262,10 +268,14 @@ Random pixel randrange(start, stop)
     from microbit import *
     import random
 
-    while True:
+    def rand_pix():
         random_brightness = random.randint(1, 9)
         random_x = random.randrange(1, 4)
         random_y = random.randrange(1, 4)
+        return (random_x, random_y, random_brightness)
+
+    while True:
+        random_x, random_y, random_brightness = rand_pix()
         display.set_pixel(random_x, random_y, random_brightness)
         sleep(500)
         display.clear()
@@ -274,7 +284,7 @@ Random pixel randrange(start, stop)
 
 .. admonition:: Tasks
 
-    #. Modify the function, **rand_pix()**, to restrict the brightness to 1 to 3, and the pixels to the left 3 columns.
+    #. Modify the function, **rand_pix()**, to restrict the brightness to 1 to 3, and the pixels to the right 3 columns.
 
     .. dropdown::
             :icon: codescan
@@ -285,22 +295,23 @@ Random pixel randrange(start, stop)
 
                 .. tab-item:: Q1
 
-                     #. Modify the function, **rand_pix()**, to restrict the brightness to 1 to 3, and the pixels to the left 3 columns.
+                     #. Modify the function, **rand_pix()**, to restrict the brightness to 1 to 3, and the pixels to the right 3 columns in the bottom 4 rows.
 
                     .. code-block:: python
 
                         from microbit import *
-
                         import random
 
+                        def rand_pix():
+                            random_brightness = random.randint(1, 3)
+                            random_x = random.randrange(2, 5)
+                            random_y = random.randrange(1, 5)
+                            return (random_x, random_y, random_brightness)
+
                         while True:
-                            random_brightness = random.randint(1, 9)
-                            random_x = random.randrange(0, 3)
-                            random_y = random.randrange(0, 5)
-                            display.set_pixel(random_x, random_y, random_brightness)
+                            display.set_pixel(*rand_pix())
                             sleep(500)
                             display.clear()
-
 ----
 
 Random pixel randrange(start, stop, step)
@@ -318,13 +329,17 @@ Random pixel randrange(start, stop, step)
     from microbit import *
     import random
 
-    while True:
+    def rand_pix():
         random_brightness = random.randint(1, 9)
         random_x = random.randrange(0, 5, 2)
         random_y = random.randrange(0, 5, 2)
-        display.set_pixel(random_x, random_y, random_brightness)
-        sleep(50)
+        return (random_x, random_y, random_brightness)
 
+    while True:
+        random_x, random_y, random_brightness = rand_pix()
+        display.set_pixel(random_x, random_y, random_brightness)
+        sleep(500)
+        display.clear()
 ----
 
 .. admonition:: Tasks
