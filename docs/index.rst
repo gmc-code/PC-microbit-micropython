@@ -119,7 +119,8 @@ Index:
     images/Built_in_images.rst
     images/Built_in_images_advanced.rst
     images/image_strings.rst
-    images/images_by_setting_pixels.rst
+    images/setting_pixels.rst
+    images/random_pixels.rst
     images/custom_images_advanced.rst
     images/custom_images_advanced2.rst
     images/flame_simulation.rst
