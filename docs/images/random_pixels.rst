@@ -34,6 +34,27 @@ Random pixel randint
 
 ----
 
+.. admonition:: Tasks
+
+    #. Write a list 
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Write a list 
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+----
+
 Tuple unpacking using an asterisk in a function call
 -------------------------------------------------------
 
@@ -59,6 +80,26 @@ Tuple unpacking using an asterisk in a function call
         display.set_pixel(*rand_pix())
         sleep(500)
         display.clear()
+----
+
+.. admonition:: Tasks
+
+    #. Write a list 
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Write a list 
+
+                    .. code-block:: python
+
+                        from microbit import *
 
 ----
 
@@ -91,6 +132,27 @@ Tuple unpacking in mutliple assignment
 
 ----
 
+.. admonition:: Tasks
+
+    #. Write a list 
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Write a list 
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+----
+
 Random pixel randrange(stop)
 -----------------------------------
 
@@ -117,7 +179,7 @@ Random pixel randrange(stop)
 
 .. admonition:: Tasks
 
-    #. Write athe code above to use a function, **rand_pix()**, to return a tuple of arguments for the **set_pixel** method.
+    #. Modify the code above to use a function, **rand_pix()**, to return a tuple of arguments for the **set_pixel** method.
 
     .. dropdown::
             :icon: codescan
@@ -173,6 +235,27 @@ Random pixel randrange(start, stop)
 
 ----
 
+.. admonition:: Tasks
+
+    #. Write a list 
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Write a list 
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+----
+
 Random pixel randrange(start, stop, step)
 ------------------------------------------
 
@@ -194,6 +277,27 @@ Random pixel randrange(start, stop, step)
         random_y = random.randrange(0, 5, 2)
         display.set_pixel(random_x, random_y, random_brightness)
         sleep(50)
+
+----
+
+.. admonition:: Tasks
+
+    #. Write a list 
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Write a list 
+
+                    .. code-block:: python
+
+                        from microbit import *
 
 ----
 
@@ -221,7 +325,27 @@ Random pixel random.choice
         display.set_pixel(random_x, random_y, random_brightness)
         sleep(50)
 
+----
 
+.. admonition:: Tasks
+
+    #. Write a list 
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Write a list 
+
+                    .. code-block:: python
+
+                        from microbit import *
+                        
 ----
 
 Random Pixel rows and columns
@@ -544,8 +668,6 @@ get_pixel and set_pixel
                             display.scroll(max_fill_count, delay=60)
                             sleep(1000)
 
-            .. tab-set::
-
                 .. tab-item:: Q2
 
                     Improve the code in answer to task 1, by creating definitions to update the min and max counts, and to display the counts on button pressing.
@@ -607,8 +729,6 @@ get_pixel and set_pixel
                             display_counts(counts, new_fill_count)
                             sleep(1000)
                             display.clear()
-
-            .. tab-set::
 
                 .. tab-item:: Q3
 
