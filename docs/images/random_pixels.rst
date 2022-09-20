@@ -415,15 +415,16 @@ Random Pixels choice Pixel rows and columns lists
 get_pixel and set_pixel
 ---------------------------
 
+| ``display.get_pixel(x, y) == 0`` can be used to check if a pixel is on or off.
+
 .. py:method:: get_pixel(x, y)
 
     Return the brightness of pixel at column ``x`` and row ``y`` as an
     integer between 0 and 9.
 
-| ``display.get_pixel(x, y) == 0`` can be used to check if a pixel is on or off.
 
-| The definition below checks each pixel to set if it is off and returns True if all are on.
-| If any pixels are off, it returns False immediately htat a pixel if found to be off.
+| The definition below checks each pixel to see if it is off and returns **True** if all are on.
+| As soon as it finds a pixel that is off, it returns **False**.
 
 .. code-block:: python
 
@@ -437,7 +438,8 @@ get_pixel and set_pixel
         return True
 
 
-| The code below creates changing displays of random pixels. 
+| The code below creates changing displays of random pixels.
+| Start by just importing the **randint** function from the random module. 
 | **full_screen_on_check()** checks to see when the display has been filled with 25 pixels.
 | **fill_screen_with_counter** turns on random pixels with brightness between 5 and 9. It checks to see if the screen is filled, and returns the number of random pixels used in the process.
 | The number of random pixels used to fill the screen is then scrolled.
@@ -475,6 +477,18 @@ get_pixel and set_pixel
 .. admonition:: Tasks
 
     #. Add code to display the min and max counts obtained in the code above.
+    #. Improve the code in answer to task 1, by creating definitions to update the min and max counts, and to display teh counts on button pressing. The main loop should look like this:
+
+        .. code-block:: python
+
+            counts = [None, None]
+
+            while True:
+                new_fill_count = fill_screen_with_counter()
+                counts = update_counts(counts, new_fill_count)
+                display_counts(counts, new_fill_count)
+                sleep(1000)
+                display.clear()
 
     .. dropdown::
             :icon: codescan
@@ -528,3 +542,67 @@ get_pixel and set_pixel
                             display.scroll(min_fill_count, delay=60)
                             display.scroll(max_fill_count, delay=60)
                             sleep(1000)
+
+            .. tab-set::
+
+                .. tab-item:: Q2
+
+                    Add code to display the min and max counts obtained in the code above.
+
+                    .. code-block:: python
+
+                        from microbit import *
+                        from random import randint
+
+
+                        def full_screen_check():
+                            for y in range(0, 5):
+                                for x in range(0, 5):
+                                    if display.get_pixel(x, y) == 0:
+                                        return False
+                            return True
+
+
+                        def fill_screen_with_counter():
+                            counter = 0
+                            while True:
+                                counter += 1
+                                x = randint(0, 4)
+                                y = randint(0, 4)
+                                brightness = randint(5, 9)
+                                display.set_pixel(x, y, brightness)
+                                if full_screen_check():
+                                    return counter
+                                sleep(10)
+
+
+                        def update_counts(counts, count):
+                            min_fill_count = counts[0]
+                            if min_fill_count is not None:
+                                min_fill_count = min(min_fill_count, count)
+                            else:
+                                min_fill_count = count
+                            max_fill_count = counts[1]
+                            if max_fill_count is not None:
+                                max_fill_count = max(max_fill_count, count)
+                            else:
+                                max_fill_count = count
+                            return (min_fill_count, max_fill_count)
+
+
+                        def display_counts(counts, new_fill_count):
+                            if button_a.was_pressed():
+                                display.scroll(new_fill_count, delay=60)
+                            if button_b.was_pressed():
+                                display.scroll(counts[0], delay=60)
+                                display.scroll(counts[1], delay=60)
+
+
+                        counts = [None, None]
+
+                        while True:
+                            new_fill_count = fill_screen_with_counter()
+                            counts = update_counts(counts, new_fill_count)
+                            display_counts(counts, new_fill_count)
+                            sleep(1000)
+                            display.clear()
