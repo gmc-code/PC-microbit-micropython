@@ -384,7 +384,7 @@ Random pixel random.choice
     Return a random element from the non-empty sequence ``seq`` such as a list or tuple.
 
 
-| The code below uses **random.choice** to choose the x and y values from 1 to 3.
+| The code below uses **random.choice** to choose the x and y values from 1, 2 and 3.
 | The brightness is chosen from values, 1, 5, and 9.
 | The display is not cleared so that all the pixels that are set are shown.
 
@@ -404,7 +404,7 @@ Random pixel random.choice
 
 .. admonition:: Tasks
 
-    #. Write a list 
+    #. Modify the code above to use a fucntion, **rand_pix()**, to restrict the brightness to 1, 3 or 5, and the pixels to columns 0, 3, and 4 and the rows to 1 and 3.
 
     .. dropdown::
             :icon: codescan
@@ -415,11 +415,23 @@ Random pixel random.choice
 
                 .. tab-item:: Q1
 
-                    Write a list 
+                     #. Modify the code above to use a fucntion, **rand_pix()**, to restrict the brightness to 1, 3 or 5, and the pixels to columns 0, 3, and 4 and the rows to 1 and 3.
 
                     .. code-block:: python
 
                         from microbit import *
+                        import random
+                        
+                        def rand_pix():
+                            random_brightness = random.choice((1, 3, 5))
+                            random_x = random.choice((0, 3, 4))
+                            random_y = random.choice((1, 3))
+                            return (random_x, random_y, random_brightness)
+
+                        while True:
+                            random_x, random_y, random_brightness = rand_pix()
+                            display.set_pixel(random_x, random_y, random_brightness)
+                            sleep(50)
 
 ----
 
