@@ -43,12 +43,12 @@ Some of these pages have python syntax beyond the beginner level.
 | :ref:`Tuple unpacking in multiple assignment`
 
 
-| throw away variable in a for loop: for _ in range(0, 3)
+| throw away variable in a for loop: for _ in range(start, stop)
 | :ref:`Random Pixels`
 
 
-| 
-| :ref:``
+| newlist = [expression for item in iterable if condition == True]
+| :ref:`List comprehension for a series of images`
 
 
 | 

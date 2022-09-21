@@ -442,15 +442,17 @@ Multiplying and dividing Image pixels
 .. py:function:: image * n
 
     | Create a new image by multiplying the brightness of each pixel by n.
-    | Make sure the resulting Image object has integer values.
+    | It makes sure the resulting Image object has integer values.
+    | Values for each pixel cannot go over 9.
 
 .. py:function:: image / n
 
     | Create a new image by dividing the brightness of each pixel by n.
-    | Make sure the resulting Image object has integer values.
+    | It makes sure the resulting Image object has integer values.
+    | Values for each pixel are rounded; 0.4 down to 0, 0.5 up to 1.
 
-| In the code below, image **img_m9** have pixels of brightness 9.
-| An image with brightness 1 is first created from that, then other brightnesses can be easily set.
+| In the code below, image **img_m9** has pixels of brightness 9.
+| An image, **img_m1**, with brightness 1, is first created from that, then other brightnesses can be easily obtained by multiplication.
 
 .. code-block:: python
 
@@ -518,7 +520,7 @@ Multiplying and dividing Image pixels
                         img_w9 = Image("w")
                         img_w1 = img_w9  / 9 
                         img_w3 = img_w1 * 3
-                        img_comp = img_m6 + img_w3
+                        img_m6_w3 = img_m6 + img_w3
 
                         while True:
                             if button_a.is_pressed():
@@ -526,7 +528,7 @@ Multiplying and dividing Image pixels
                             elif button_b.is_pressed():
                                 display.show(img_w3)
                             else:
-                                display.show(img_comp)
+                                display.show(img_m6_w3)
                             sleep(500)
 
 ----
@@ -536,7 +538,7 @@ List comprehension for a series of images
 
 See: https://www.w3schools.com/python/python_lists_comprehension.asp
 
-.. py:function:: image_list = [Image().invert()*(i/9) for i in range(9, -1, -1)]
+.. py:function:: newlist = [expression for item in iterable if condition == True]
 
     | Create a series of 5 by 5 images with brightness decreasing from 9 to 0 in steps of 1.
 
