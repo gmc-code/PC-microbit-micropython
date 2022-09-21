@@ -565,7 +565,7 @@ Random Pixels choice Pixel rows and columns lists
 
 .. admonition:: Tasks
 
-    #. Adjust the code to restrict the possible x and y values to the cnetral 3 x 3 square, while showing 3 random pixels at a time.
+    #. Adjust the code to restrict the possible x and y values to the central 3 x 3 square, while showing 3 random pixels at a time.
     
     .. dropdown::
             :icon: codescan
@@ -576,7 +576,7 @@ Random Pixels choice Pixel rows and columns lists
 
                 .. tab-item:: Q1
 
-                    Adjust the code to restrict the possible x and y values to the cnetral 3 x 3 square, while showing 3 random pixels at a time.
+                    Adjust the code to restrict the possible x and y values to the central 3 x 3 square, while showing 3 random pixels at a time.
 
                     .. code-block:: python
 
