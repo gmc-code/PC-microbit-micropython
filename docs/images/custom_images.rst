@@ -4,7 +4,7 @@ Custom images
 
 .. py:module:: display
 
-Image strings
+Show image
 ----------------
 
 | The basic syntax for showing an image is:
@@ -13,9 +13,23 @@ Image strings
 
     | Display an image.
 
+----
+
+Image strings
+----------------
+
+| The basic syntax for creating an image from a string of 25 brightness values is:
+
+.. py:function:: Image(string)
+
+    | Create an image. 
+    | string is a string of 25 brightness values with every 5 separated by a colon.
+    | e.g. '01234:56789:09090:98765:43210'
+
 
 | The image can be a string made up of a 25 integers where each integer is the brightness from 0 to 9, where 0 if off and 9 is full brightness.
-| The 25 values are broken up into 5 lines of 5 with a colon between them.
+| The 25 values are broken up into groups of 5 with a colon between them.
+| Each group of 5 represents the brightness for a row on the microbit.
 | e.g. ``Image('01234:56789:09090:98765:43210')``
 
 .. sidebar::
@@ -123,6 +137,90 @@ Image strings
 
                         display.show(Image('56789:45678:34567:23456:12345'))
                     
+
+----
+
+Image strings: Multiplication of a line
+----------------------------------------
+
+| Strings can be replicated using multiplication.
+
+.. py:function:: string * integer
+   
+   | returns string + string + string .... integer times.
+
+| e.g "Ha" * 3 returns "HaHaHa"
+
+| The syntax for creating an Image by replicating a string representing one row is:
+
+.. py:function:: Image(line_string * 5)
+
+    | line_string has the first 5 pixel brightness values. e.g. "00000:"
+    | e.g. Image("00000:" * 5) create an image with all pixels off.
+
+
+| The code below creates a horizontal gradient by repeating a string of 5 brightness values, 5 times.
+
+.. code-block:: python
+
+    from microbit import *
+
+    img = Image("13579:" * 5)
+    display.show(img)
+
+
+----
+
+.. admonition:: Tasks
+
+    #. Modify the code above to go from dim on the left edge to bright in the middle to dim on the right edge.
+    #. Modify the code above to go from bright on the left edge to dim on the right edge.
+    #. Write code to cycle between bright on the left edge to bight on the right edge.
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Modify the code above to go from dim on teh left edge to bright in the middle to dim on the right edge.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+                        img = Image("15951:" * 5)
+                        display.show(img)
+
+                .. tab-item:: Q2
+
+                    Modify the code above to go from bright on the left edge to dim on the right edge.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+                        img = Image("97531:" * 5)
+                        display.show(img)
+
+                .. tab-item:: Q3
+
+                    Write code to cycle between bright on the left edge to bight on the right edge.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+                        while True:
+                            img1 = Image("97531:" * 5)
+                            display.show(img1)
+                            sleep(300)
+                            img2 = Image("13579:" * 5)
+                            display.show(img2)
+                            sleep(300)
 
 ----
 

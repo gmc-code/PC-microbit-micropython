@@ -44,9 +44,6 @@ The image pages and the classes pages have more advanced syntax.
 | throw away variable in a for loop: for _ in range(start, stop)
 | :ref:`Random Pixels`
 
-| newlist = [expression for item in iterable if condition == True]
-| :ref:`List comprehension for a series of images`
-
 | a_set = set()
 | :ref:`get_pixel and set_pixel`
 
@@ -55,6 +52,12 @@ The image pages and the classes pages have more advanced syntax.
 
 | len(a_set)
 | :ref:`get_pixel and set_pixel`
+
+| newlist = [expression for item in iterable]
+| :ref:`List comprehension for a series of images`
+
+| string * integer
+| :ref:`Image strings: Multiplication of a line`
 
 | 
 | :ref:` `

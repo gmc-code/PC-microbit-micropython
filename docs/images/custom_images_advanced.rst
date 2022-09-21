@@ -147,12 +147,12 @@ Invert
                         from microbit import *
 
 
-                        img1 = Image.SAD
-                        img1_inverted = img1.invert()
+                        img_sad = Image.SAD
+                        img_sad_inverted = img_sad.invert()
                         while True:
-                            display.show(img1)
+                            display.show(img_sad)
                             sleep(500)
-                            display.show(img1_inverted)
+                            display.show(img_sad_inverted)
                             sleep(500)
 
 ----
