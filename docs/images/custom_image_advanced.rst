@@ -533,79 +533,6 @@ Multiplying and dividing Image pixels
 
 ----
 
-List comprehension for a series of images
---------------------------------------------
-
-See: https://www.w3schools.com/python/python_lists_comprehension.asp
-
-.. py:function:: newlist = [expression for item in iterable]
-                 newlist = [expression for item in iterable if condition == True]
-
-    | Create a list of expressions that take each item in an iterable, such as a list, tuple or string.
-
-----
-
-| The code below creates a simple square brightness animation from 9 to 0 at different speeds set by the delay value.
-
-.. code-block:: python
-
-    from microbit import *
-    
-    square_9to0_list = [Image().invert()*(i/9) for i in range(9, -1, -1)]
-
-    while True:
-        if button_a.is_pressed():
-            display.show(square_9to0_list, delay=100, wait=False)
-        elif button_b.is_pressed():
-            display.show(square_9to0_list, delay=300, wait=False)
-
-----
-
-.. admonition:: Tasks
-
-    #. Modify the code to create a series of images of a sad face with brightness of 9, 7, 5, 3, 1 using list comprehension.
-    #. Modify the code to create a series of images of a sad face with brightness of 1, 3, 5, 7, 9 using list comprehension.
-    
-    .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
-
-            .. tab-set::
-
-                .. tab-item:: Q1
-
-                    Modify the code to create a series of images of a sad face with brightness of 9, 7, 5, 3, 1 using list comprehension.
-
-                    .. code-block:: python
-
-                        from microbit import *
-
-                        sad_9to0_list = [Image.SAD * (i/9) for i in range(9, -1, -2)]
-
-                        while True:
-                            if button_a.is_pressed():
-                                display.show(sad_9to0_list, delay=100, wait=False)
-                            elif button_b.is_pressed():
-                                display.show(sad_9to0_list, delay=300, wait=False)
-
-                .. tab-item:: Q2
-
-                    Modify the code to create a series of images of a sad face with brightness of 1, 3, 5, 7, 9 using list comprehension.
-
-                    .. code-block:: python
-
-                        from microbit import *
-
-                        sad_0to9_list = [Image.SAD * (i/9) for i in range(0, 10, 2)]
-
-                        while True:
-                            if button_a.is_pressed():
-                                display.show(sad_0to9_list, delay=100, wait=False)
-                            elif button_b.is_pressed():
-                                display.show(sad_0to9_list, delay=300, wait=False)
-
-----
 
 bytearray
 -----------------------------------------
@@ -864,4 +791,89 @@ bytearray
         display.show(newimg)
         sleep(1000)
 
+----
+
+List comprehension for bytearray images
+--------------------------------------------
+
+See: https://www.w3schools.com/python/python_lists_comprehension.asp
+
+.. py:function:: newlist = [expression for item in iterable]
+                 newlist = [expression for item in iterable if condition == True]
+
+    | Create a list of expressions that take each item in an iterable, such as a list, tuple or string.
+
+----
+
+List comprehension for a series of images
+--------------------------------------------
+
+See: https://www.w3schools.com/python/python_lists_comprehension.asp
+
+.. py:function:: newlist = [expression for item in iterable]
+                 newlist = [expression for item in iterable if condition == True]
+
+    | Create a list of expressions that take each item in an iterable, such as a list, tuple or string.
+
+----
+
+| The code below creates a simple square brightness animation from 9 to 0 at different speeds set by the delay value.
+
+.. code-block:: python
+
+    from microbit import *
+    
+    square_9to0_list = [Image().invert()*(i/9) for i in range(9, -1, -1)]
+
+    while True:
+        if button_a.is_pressed():
+            display.show(square_9to0_list, delay=100, wait=False)
+        elif button_b.is_pressed():
+            display.show(square_9to0_list, delay=300, wait=False)
+
+----
+
+.. admonition:: Tasks
+
+    #. Modify the code to create a series of images of a sad face with brightness of 9, 7, 5, 3, 1 using list comprehension.
+    #. Modify the code to create a series of images of a sad face with brightness of 1, 3, 5, 7, 9 using list comprehension.
+    
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Modify the code to create a series of images of a sad face with brightness of 9, 7, 5, 3, 1 using list comprehension.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+                        sad_9to0_list = [Image.SAD * (i/9) for i in range(9, -1, -2)]
+
+                        while True:
+                            if button_a.is_pressed():
+                                display.show(sad_9to0_list, delay=100, wait=False)
+                            elif button_b.is_pressed():
+                                display.show(sad_9to0_list, delay=300, wait=False)
+
+                .. tab-item:: Q2
+
+                    Modify the code to create a series of images of a sad face with brightness of 1, 3, 5, 7, 9 using list comprehension.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+                        sad_0to9_list = [Image.SAD * (i/9) for i in range(0, 10, 2)]
+
+                        while True:
+                            if button_a.is_pressed():
+                                display.show(sad_0to9_list, delay=100, wait=False)
+                            elif button_b.is_pressed():
+                                display.show(sad_0to9_list, delay=300, wait=False)
 
