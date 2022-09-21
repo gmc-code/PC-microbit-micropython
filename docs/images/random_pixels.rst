@@ -241,8 +241,8 @@ Random pixel randrange(stop)
 
                         def rand_pix():
                             random_brightness = random.randint(3, 6)
-                            random_x = random.randrange(5)
-                            random_y = random.randrange(3)
+                            random_x = random.randrange(3)
+                            random_y = random.randrange(5)
                             return (random_x, random_y, random_brightness)
 
                         while True:
@@ -258,7 +258,8 @@ Random pixel randrange(start, stop)
 
 .. py:function:: random.randrange(start, stop)
 
-    Return a randomly selected integer from ``range(start, stop)``.
+    Return a randomly selected integer from ``range(start, stop)``, from ``start`` and up to (but not
+    including) ``stop``.
 
 | The code below uses randrange to restrict the x and y values to the inner square of 9 pixels.
 
@@ -318,7 +319,8 @@ Random pixel randrange(start, stop, step)
 
 .. py:function:: random.randrange(start, stop, step)
 
-    Return a randomly selected element from ``range(start, stop, step)``.
+    Return a randomly selected element from ``range(start, stop, step)``, from ``start`` and up to (but not
+    including) ``stop`` in steps of ``step``.
 
 | The code below uses randrange to restrict the x and y values to rows and columns 0, 2, 4.
 | The display is not cleared so that all the pixels that are set are shown.
@@ -487,7 +489,7 @@ Random Pixels
 .. admonition:: Tasks
 
     #. Modify the code above to produce 10 random pixels at a time.
-    #. Change the brightness to 5, and explore how many random pixels are needed so that only 1 to 3 pixels are left off. 
+    #. Change the brightness to 5, and explore how many random pixels are needed so that only 1 to 3 pixels are left turned off. 
 
     .. dropdown::
             :icon: codescan
@@ -516,7 +518,7 @@ Random Pixels
 
                 .. tab-item:: Q2
 
-                    Change the brightness to 5, and explore how many random pixels are needed so that only 1 to 3 pixels are left off. 
+                    Change the brightness to 5, and explore how many random pixels are needed so that only 1 to 3 pixels are left turned off. 
 
                     About 60 to 75 are needed since the same pixel may be generated more than once.
 
