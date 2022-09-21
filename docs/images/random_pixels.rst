@@ -312,6 +312,7 @@ Random pixel randrange(start, stop)
                             display.set_pixel(*rand_pix())
                             sleep(500)
                             display.clear()
+
 ----
 
 Random pixel randrange(start, stop, step)
@@ -345,7 +346,7 @@ Random pixel randrange(start, stop, step)
 
 .. admonition:: Tasks
 
-    #. Write a list 
+    #. Modify the function, **rand_pix()**, to restrict the brightness to 1 to 3, and the pixels to columns 1 and 3 and the rows to 1 and 3.
 
     .. dropdown::
             :icon: codescan
@@ -356,11 +357,22 @@ Random pixel randrange(start, stop, step)
 
                 .. tab-item:: Q1
 
-                    Write a list 
-
+                     #. Modify the function, **rand_pix()**, to restrict the brightness to 1 to 3, and the pixels to columns 1 and 3 and the rows to 1 and 3.
                     .. code-block:: python
 
                         from microbit import *
+                        import random
+
+                        def rand_pix():
+                            random_brightness = random.randint(1, 3)
+                            random_x = random.randrange(1, 4, 2)
+                            random_y = random.randrange(1, 4, 2)
+                            return (random_x, random_y, random_brightness)
+
+                        while True:
+                            display.set_pixel(*rand_pix())
+                            sleep(500)
+                            display.clear()
 
 ----
 
