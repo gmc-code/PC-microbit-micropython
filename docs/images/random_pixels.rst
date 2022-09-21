@@ -15,7 +15,7 @@ Random pixel randint
 
 .. py:function:: random.randint(a, b)
 
-    Return a random integer from a to b and including both. 
+    Return a random integer from a to b, including both. 
 
 | The code below displays a random pixel of random brightness every 500ms, then clears the display before showing the next one.
 
@@ -126,14 +126,13 @@ Tuple unpacking using an asterisk in a function call
 
 ----
 
-Tuple unpacking in mutliple assignment
+Tuple unpacking in multiple assignment
 -----------------------------------------
 
-| Unpacking a tuple means splitting the tuple's elements into individual variables. 
-| The code below, uses the function, **rand_pix()**, to return a tuple of values.
-| Tuple unpacking is used to unpack the tuple into 3 variables: 
+| Instead of unpacking the returned tuple in the function call, multiple assignment is used in tuple unpacking.
+| Tuple unpacking is used to unpack the returned tuple into 3 variables: 
 | **random_x, random_y, random_brightness = rand_pix()**.
-| These varaibles can then be passed into the set_pixel method: 
+| These variables can then be passed into the set_pixel method: 
 | **display.set_pixel(random_x, random_y, random_brightness)**.
 
 .. code-block:: python
