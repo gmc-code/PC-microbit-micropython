@@ -153,8 +153,9 @@ Image strings: Multiplication of a line
 
 .. py:function:: Image(line_string * 5)
 
-    | line_string has the first 5 pixel brightness values. e.g. "00000:"
+    | line_string is the first 5 pixel brightness values. e.g. "00000:"
     | e.g. Image("00000:" * 5) create an image with all pixels off.
+    | e.g. Image("99999:" * 5) create an image with all pixels at full brightness.
 
 
 | The code below creates a horizontal gradient by repeating a string of 5 brightness values, 5 times.
