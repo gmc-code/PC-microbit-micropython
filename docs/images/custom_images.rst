@@ -2,8 +2,6 @@
 Custom images
 ====================================================
 
-.. py:module:: display
-
 Show image
 ----------------
 
@@ -147,7 +145,7 @@ Image strings: Multiplication of a line
 
 .. py:function:: string * integer
    
-   | returns string + string + string .... integer times.
+   | Returns string + string + string .... integer times.
 
 | e.g "Ha" * 3 returns "HaHaHa"
 
