@@ -47,14 +47,10 @@ Invert
 
 .. sidebar::
 
-    vertical_gradient
-
     .. image:: images/vertical_gradient.png
         :scale: 50 %
         :align: left
     
-    vertical_gradient_inverted
-
     .. image:: images/vertical_gradient_inverted.png
         :scale: 50 %
         :align: right
@@ -298,9 +294,7 @@ Adding Image pixels
         sleep(500)
 
 
-
 ----
-
 
 .. admonition:: Tasks
 
@@ -344,16 +338,16 @@ Adding Image pixels
                         from microbit import *
 
                         img_m = Image("m")
-                        img_invm = img_m.invert()
-                        img_m_invm = img_m + img_invm
+                        img_m_inv = img_m.invert()
+                        img_mminv = img_m + img_m_inv
 
                         while True:
                             if button_a.is_pressed():
                                 display.show(img_m)
                             elif button_b.is_pressed():
-                                display.show(img_invm)
+                                display.show(img_m_inv)
                             else:
-                                display.show(img_m_invm)
+                                display.show(img_mminv)
                             sleep(500)
 
 ----
