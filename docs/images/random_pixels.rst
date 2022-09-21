@@ -284,7 +284,7 @@ Random pixel randrange(start, stop)
 
 .. admonition:: Tasks
 
-    #. Modify the function, **rand_pix()**, to restrict the brightness to 1 to 3, and the pixels to the right 3 columns.
+    #. Modify the function, **rand_pix()**, to restrict the brightness to 1 to 3, and the pixels to the right 3 columns in the bottom 4 rows.
 
     .. dropdown::
             :icon: codescan
