@@ -689,7 +689,7 @@ get_pixel and set_pixel
 
     #. Add code to display the min and max counts obtained in the code above.
     #. Improve the code in answer to task 1, by creating definitions to update the min and max counts, and to display the counts on button pressing. The main loop should look like this:
-    #. Improve the code in answer to task 2, by adding a set to keep track of displayed pixels in the function, **fill_screen_with_counter()**. Number the pixels 0 to 4 in the top row, 5 to 9 in the next row. etc. CHeck to see if the length of the set is 25 to tell that the screen is full.
+    #. Improve the code in answer to task 2, by adding a set to keep track of displayed pixels in the function, **fill_screen_with_counter()**. Number the pixels 0 to 4 in the top row, 5 to 9 in the next row. etc. Check to see if the length of the set is 25 to tell that the screen is full.
 
         .. code-block:: python
 
@@ -819,7 +819,7 @@ get_pixel and set_pixel
 
                 .. tab-item:: Q3
 
-                    Improve the code in answer to task 2, by adding a set to keep track of displayed pixels in the function, **fill_screen_with_counter()**. Number the pixels 0 to 4 in the top row, 5 to 9 in the next row. etc. CHeck to see if the length of the set is 25 to tell that the screen is full.
+                    Improve the code in answer to task 2, by adding a set to keep track of displayed pixels in the function, **fill_screen_with_counter()**. Number the pixels 0 to 4 in the top row, 5 to 9 in the next row. etc. Check to see if the length of the set is 25 to tell that the screen is full.
 
                     .. code-block:: python
 
@@ -882,5 +882,9 @@ get_pixel and set_pixel
                             sleep(1)
                             display.clear()
 
+
+.. admonition:: Note
+
+    #. Sets can be good to use when checking somethings since members of the set cannot be be repeated. Adding a member to a set that already exists has no affect.
 
 
