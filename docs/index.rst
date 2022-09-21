@@ -122,7 +122,7 @@ Index:
     images/setting_pixels.rst
     images/random_pixels.rst
     images/custom_images.rst
-    images/custom images advanced.rst
+    images/custom_images_advanced.rst
     images/bytearray_images.rst
     images/moving_images.rst
     images/flame_simulation.rst
