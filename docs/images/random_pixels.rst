@@ -17,7 +17,7 @@ Random pixel randint
 
     Return a random integer from a to b, including both. 
 
-| The code below displays a random pixel of random brightness every 500ms, then clears the display before showing the next one.
+| The code below displays a random pixel of random brightness every 50ms, then clears the display before showing the next one.
 
 .. code-block:: python
 
@@ -29,7 +29,7 @@ Random pixel randint
         random_x = random.randint(0, 4)
         random_y = random.randint(0, 4)
         display.set_pixel(random_x, random_y, random_brightness)
-        sleep(500)
+        sleep(50)
         display.clear()
 
 ----
@@ -60,7 +60,7 @@ Random pixel randint
                         random_x = random.randint(1, 3)
                         random_y = random.randint(1, 3)
                         display.set_pixel(random_x, random_y, random_brightness)
-                        sleep(500)
+                        sleep(50)
                         display.clear()
 
 ----
@@ -88,7 +88,7 @@ Tuple unpacking using an asterisk in a function call
 
     while True:
         display.set_pixel(*rand_pix())
-        sleep(500)
+        sleep(50)
         display.clear()
 
 ----
@@ -121,7 +121,7 @@ Tuple unpacking using an asterisk in a function call
 
                     while True:
                         display.set_pixel(*rand_pix())
-                        sleep(500)
+                        sleep(50)
                         display.clear()
 
 ----
@@ -149,7 +149,7 @@ Tuple unpacking in multiple assignment
     while True:
         random_x, random_y, random_brightness = rand_pix()
         display.set_pixel(random_x, random_y, random_brightness)
-        sleep(500)
+        sleep(50)
         display.clear()
 
 ----
@@ -184,7 +184,7 @@ Tuple unpacking in multiple assignment
                     while True:
                         random_x, random_y, random_brightness = rand_pix()
                         display.set_pixel(random_x, random_y, random_brightness)
-                        sleep(500)
+                        sleep(50)
                         display.clear()
 
 ----
@@ -214,7 +214,7 @@ Random pixel randrange(stop)
     while True:
         random_x, random_y, random_brightness = rand_pix()
         display.set_pixel(random_x, random_y, random_brightness)
-        sleep(500)
+        sleep(50)
         display.clear()
 
 ----
@@ -247,7 +247,7 @@ Random pixel randrange(stop)
 
                         while True:
                             display.set_pixel(*rand_pix())
-                            sleep(500)
+                            sleep(50)
                             display.clear()
 
 
@@ -277,7 +277,7 @@ Random pixel randrange(start, stop)
     while True:
         random_x, random_y, random_brightness = rand_pix()
         display.set_pixel(random_x, random_y, random_brightness)
-        sleep(500)
+        sleep(50)
         display.clear()
 
 ----
@@ -310,7 +310,7 @@ Random pixel randrange(start, stop)
 
                         while True:
                             display.set_pixel(*rand_pix())
-                            sleep(500)
+                            sleep(50)
                             display.clear()
 
 ----
@@ -340,7 +340,7 @@ Random pixel randrange(start, stop, step)
     while True:
         random_x, random_y, random_brightness = rand_pix()
         display.set_pixel(random_x, random_y, random_brightness)
-        sleep(500)
+        sleep(50)
         display.clear()
 ----
 
@@ -371,7 +371,7 @@ Random pixel randrange(start, stop, step)
 
                         while True:
                             display.set_pixel(*rand_pix())
-                            sleep(500)
+                            sleep(50)
                             display.clear()
 
 ----
