@@ -466,7 +466,7 @@ Random Pixels
 
 | The code below sets the brightness to 9 for 3 pixels in random rows and random columns.
 | Note the use of the underscore, _, as a throw away variable, in **for _ in range(0, 3)**.
-| A single underscore is used in place of a variable whose value is not going to be used furtherin a  loop.
+| A single underscore is used in place of a variable whose value is not going to be used in a loop.
 
 .. code-block:: python
 
