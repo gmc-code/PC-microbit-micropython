@@ -5,7 +5,7 @@ Advanced python
 Some of these pages have python syntax beyond the beginner level.
 
 
-| alist.reverse()
+| list.reverse()
 | :ref:`Reverse direction of a list using the reverse method`
 
 | reversed(sequence)

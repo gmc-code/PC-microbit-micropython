@@ -11,7 +11,7 @@ Image()
 
 .. py:function:: Image()
 
-    | Returns an empty image object, with each pixel of brightness 0.
+    | Returns an image object, with each pixel of brightness 0.
     | **Image()** is equivalent to:
     | Image(
         '00000:'
@@ -43,7 +43,21 @@ Invert
         '99999:'
         )
 
-| When inverted, a pixel of brightness 0 becomes 9, 1 becomes 8, 2 becomes 7,....8 becomes 1, 9 becomes 0.   
+| When inverted, a pixel of brightness 0 becomes 9, 1 becomes 8, 2 becomes 7,....8 becomes 1, 9 becomes 0.
+
+.. sidebar::
+
+    vertical_gradient
+
+    .. image:: images/vertical_gradient.png
+        :scale: 50 %
+        :align: left
+    
+    vertical_gradient_inverted
+
+    .. image:: images/vertical_gradient_inverted.png
+        :scale: 50 %
+        :align: right
 
 | An image may be stored in a variable then inverted.
 | In the code below, the image is inverted, and so:
