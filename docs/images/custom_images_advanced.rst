@@ -190,7 +190,7 @@ Image of a single string character
 
 .. admonition:: Tasks
 
-    #. Modify the code to create an images of 3.
+    #. Modify the code to create an image of 3.
     #. Modify the code to create images of "m" and an inverted "m".
 
     .. dropdown::
@@ -224,13 +224,13 @@ Image of a single string character
                         from microbit import *
 
                         img_m = Image("m")
-                        img_invm = img_m.invert()
+                        img_m_inv = img_m.invert()
 
                         while True:
                             if button_a.is_pressed():
                                 display.show(img_m)
                             elif button_b.is_pressed():
-                                display.show(img_invm)
+                                display.show(img_m_inv)
                             sleep(200)
 
 ----
@@ -241,6 +241,10 @@ Adding Image pixels
 .. py:function:: image1 + image2
 
     | Create a new image by adding the brightness values from the two images for each pixel.
+
+    .. image:: images/mw.png
+        :scale: 50 %
+        :align: right
 
 | The code below adds the images made from an "m" and a "w".
 
