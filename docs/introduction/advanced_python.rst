@@ -2,10 +2,9 @@
 Advanced python
 ====================================================
 
-Some of these pages have python syntax beyond the beginner level.
+The image pages and the classes pages have more advanced syntax. 
 
-
-| list.reverse()
+| a_list.reverse()
 | :ref:`Reverse direction of a list using the reverse method`
 
 | reversed(sequence)
@@ -42,15 +41,20 @@ Some of these pages have python syntax beyond the beginner level.
 | a, b, c = (a, b, c)
 | :ref:`Tuple unpacking in multiple assignment`
 
-
 | throw away variable in a for loop: for _ in range(start, stop)
 | :ref:`Random Pixels`
-
 
 | newlist = [expression for item in iterable if condition == True]
 | :ref:`List comprehension for a series of images`
 
+| a_set = set()
+| :ref:`get_pixel and set_pixel`
+
+| a_set.add()
+| :ref:`get_pixel and set_pixel`
+
+| len(a_set)
+| :ref:`get_pixel and set_pixel`
 
 | 
-| :ref:``
-
+| :ref:` `

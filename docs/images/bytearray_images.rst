@@ -3,122 +3,346 @@ Byte array images
 ====================================================
 
 
-.. py:class::
-    Image(string)
-    Image(width=None, height=None, buffer=None)
+bytearray
+-----------------------------------------
 
-    If ``string`` is used, it has to consist of digits 0-9 arranged into
-    lines, describing the image, for example::
+.. py:function:: Image(width=None, height=None, buffer=None)
 
-        image = Image("90009:"
-                      "09090:"
-                      "00900:"
-                      "09090:"
-                      "90009")
+    | Creates an image with width columns and height rows. 
+    | Optionally buffer can be a list of integers passed passed to bytearray(integer_list)
 
-    will create a 5x5 image of an X. The end of a line is indicated by a colon.
-    It's also possible to use a newline (\n) to indicate the end of a line
-    like this::
+| The code below creates a brightness gradient.
 
-        image = Image("90009\n"
-                      "09090\n"
-                      "00900\n"
-                      "09090\n"
-                      "90009")
+.. code-block:: python
 
-    The other form creates an empty image with ``width`` columns and
-    ``height`` rows. Optionally ``buffer`` can be an array of
-    ``width``×``height`` integers in range 0-9 to initialize the image::
-   
-        Image(2, 2, b'\x08\x08\x08\x08')
+    from microbit import *
 
-    or::
+    newimg = Image(5, 5, bytearray([1,1,1,1,1,3,3,3,3,3,5,5,5,5,5,7,7,7,7,7,9,9,9,9,9]))
+    display.show(newimg)
 
-    	Image(2, 2, bytearray([9,9,9,9]))
-	
-    Will create a 2 x 2 pixel image at full brightness.
+----
+
+| The tasks below require the creation of definitions to produce the list of values for the bytearray function. 
+| The pixels brightness must be between 0 and 9, inclusive, and must be integers.
+| Example code to limit the values and round to an integer is below.
+| **x_val1** is the initial x value.
+| **x** is the x position of a pixel (from 0 to 4)
+| **xstep** is the step size for a gradient.
+| **int(x_val1 + (x * xstep))** makes sure the calculation gives an integer.
+| **max(0, x)** makes sure the value is at least 0.
+| **min(9, x)** makes sure the value is no more than 9.
+
+.. code-block:: python
+
+    value = min(9, max(0, int(x_val1 + (x * xstep))))
+
+
+.. admonition:: Tasks
+
+    #. Write a definition to produce the list to be used for horizontal gradient from 1 in the left to 9 in the right. [1, 3, 5, 7, 9, 1, 3, 5, 7, 9, 1, 3, 5, 7, 9, 1, 3, 5, 7, 9, 1, 3, 5, 7, 9]
+    #. Modify the code to create a horizontal gradient from 1 in the left to 9 in the right using a definition to produce the gradient list.
+    #. Use the definition for a horizontal gradient to create one from 7 in the left to 3 in the right.
+    #. Write a definition to produce the list to be used for vertical gradient from 1 in the top to 9 in the bottom. [1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 5, 5, 5, 5, 5, 7, 7, 7, 7, 7, 9, 9, 9, 9, 9]
+    #. Modify the code to create a vertical gradient from 1 in the top to 9 in the bottom using a definition to produce the gradient list.
+    #. Use the definition for a vertical gradient to create one from 9 in the top to 2 in the bottom. [9, 9, 9, 9, 9, 7, 7, 7, 7, 7, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 2, 2, 2, 2, 2]
+    #. Write a definition to produce the list to be used for diagoanl gradient from 1 in the top left to 9 in the bottom right. [1, 2, 3, 4, 5, 2, 3, 4, 5, 6, 3, 4, 5, 6, 7, 4, 5, 6, 7, 8, 5, 6, 7, 8, 9]
+    #. Modify the code to create a diagonal gradient from 1 in top left to 9 in bottom right. 
+
     
-    .. note::
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Write a definition to produce the list to be used for horizontal gradient from 1 in the left to 9 in the right. [1, 3, 5, 7, 9, 1, 3, 5, 7, 9, 1, 3, 5, 7, 9, 1, 3, 5, 7, 9, 1, 3, 5, 7, 9]
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+
+                        def gradient_x(x_val1, xstep):
+                            grid = []
+                            for y in range(5):
+                                for x in range(5):
+                                    newx = min(9, max(0, int(x_val1 + (x * xstep))))
+                                    grid.append(newx)
+                            return grid
+
+                        img_array = gradient_x(1, 9, 2)
+
+                .. tab-item:: Q2
+
+                    Modify the code to create a horizontal gradient from 1 in the left to 9 in the right using a definition to prodcue the gradient list.
+
+                    .. code-block:: python
+                        
+                        from microbit import *
+
+
+                        def gradient_x(x_val1, xstep):
+                            grid = []
+                            for y in range(5):
+                                for x in range(5):
+                                    newx = min(9, max(0, int(x_val1 + (x * xstep))))
+                                    grid.append(newx)
+                            return grid
+
+
+                        img_array = gradient_x(1, 9, 2)
+                        img_horzgrad = Image(5, 5, bytearray(img_array))
+                        display.show(img_horzgrad)
+
+
+                .. tab-item:: Q3
+
+                    Use the definition for a horizontal gradient to create one from 7 in the left to 3 in the right.
+
+                    .. code-block:: python
+                        
+                        from microbit import *
+
+
+                        def gradient_x(x_val1, xstep):
+                            grid = []
+                            for y in range(5):
+                                for x in range(5):
+                                    newx = min(9, max(0, int(x_val1 + (x * xstep))))
+                                    grid.append(newx)
+                            return grid
+
+
+                        img_array = gradient_x(7, -1)
+                        img_horzgrad = Image(5, 5, bytearray(img_array))
+                        display.show(img_horzgrad)
+
+                .. tab-item:: Q4
+
+                    Write a definition to produce the list to be used for vertical gradient from 1 in the top to 9 in the bottom. [1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 5, 5, 5, 5, 5, 7, 7, 7, 7, 7, 9, 9, 9, 9, 9]
+
+                    .. code-block:: python
+                        
+                        from microbit import *
+
+
+                        def gradient_y(y_val1, ystep):
+                            grid = []
+                            for y in range(5):
+                                newy = min(9, max(0, int(y_val1 + (y * ystep))))
+                                for x in range(5):
+                                    grid.append(newy)
+                            return grid
+
+
+                        img_array = gradient_y(1, 2)
+
+
+                .. tab-item:: Q5
+
+                    Modify the code to create a vertical gradient from 1 in the top to 9 in the bottom using a definition to produce the gradient list.
+
+                    .. code-block:: python
+                        
+                        from microbit import *
+
+
+                        def gradient_y(y_val1, ystep):
+                            grid = []
+                            for y in range(5):
+                                newy = min(9, max(0, int(y_val1 + (y * ystep))))
+                                for x in range(5):
+                                    grid.append(newy)
+                            return grid
+
+
+                        img_array = gradient_y(1, 2)
+                        img_vertgrad = Image(5, 5, bytearray(img_array))
+                        display.show(img_vertgrad)
+
+                .. tab-item:: Q6
+
+                    Use the definition for a vertical gradient to create one from 9 in the top to 2 in the bottom. [9, 9, 9, 9, 9, 7, 7, 7, 7, 7, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 2, 2, 2, 2, 2]
+
+                    .. code-block:: python
+                        
+                        from microbit import *
+
+
+                        def gradient_y(y_val1, ystep):
+                            grid = []
+                            for y in range(5):
+                                newy = min(9, max(0, int(y_val1 + (y * ystep))))
+                                for x in range(5):
+                                    grid.append(newy)
+                            return grid
+
+
+                        img_array = gradient_y(9, -8 / 5)
+                        img_vertgrad = Image(5, 5, bytearray(img_array))
+                        display.show(img_vertgrad)
+
+
+                .. tab-item:: Q7
+
+                    Write a definition to produce the list to be used for diagoanl gradient from 1 in the top left to 9 in the bottom right. [1, 2, 3, 4, 5, 2, 3, 4, 5, 6, 3, 4, 5, 6, 7, 4, 5, 6, 7, 8, 5, 6, 7, 8, 9]
+
+                    .. code-block:: python
+                        
+                        from microbit import *
+
+
+                        def gradient_xy(xy_val1, xstep, ystep):
+                            grid = []
+                            for y in range(5):
+                                yadd = min(9, max(0, (y * ystep)))
+                                for x in range(5):
+                                    xadd = min(9, max(0, (x * xstep)))
+                                    newxy = min(9, max(0, int(xy_val1 + xadd + yadd)))
+                                    grid.append(newxy)
+                            return grid
+
+
+                        img_array = gradient_xy(1, 1, 1)
+
+
+                .. tab-item:: Q8
+
+                    Modify the code to create a diagonal gradient from 1 in top left to 9 in bottom right. 
+
+                    .. code-block:: python
+                        
+                        from microbit import *
+
+
+                        def gradient_xy(xy_val1, xstep, ystep):
+                            grid = []
+                            for y in range(5):
+                                yadd = min(9, max(0, (y * ystep)))
+                                for x in range(5):
+                                    xadd = min(9, max(0, (x * xstep)))
+                                    newxy = min(9, max(0, int(xy_val1 + xadd + yadd)))
+                                    grid.append(newxy)
+                            return grid
+
+
+                        img_array = gradient_xy(1, 1, 1)
+                        img_vertgrad = Image(5, 5, bytearray(img_array))
+                        display.show(img_vertgrad)
+
+
+
+----
+
+| The code below creates a 5 by 5 images with random brightness.
+
+.. code-block:: python
+
+    from microbit import *
+    from random import randint
+
+
+    def full_screen_fill_bytes(minbrightness=1, maxbrightness=9):
+        screen_bytes = []
+        for y in range(0, 5):
+            for x in range(0, 5):
+                brightness = randint(minbrightness, maxbrightness)
+                screen_bytes.append(brightness)
+        return screen_bytes
+
+
+    while True:
+        screen_bytes = full_screen_fill_bytes(0, 9)
+        newimg = Image(5, 5, bytearray(screen_bytes))
+        display.show(newimg)
+        sleep(1000)
+
+----
+
+List comprehension for bytearray images
+--------------------------------------------
+
+See: https://www.w3schools.com/python/python_lists_comprehension.asp
+
+.. py:function:: newlist = [expression for item in iterable]
+                 newlist = [expression for item in iterable if condition == True]
+
+    | Create a list of expressions that take each item in an iterable, such as a list, tuple or string.
+
+----
+
+List comprehension for a series of images
+--------------------------------------------
+
+See: https://www.w3schools.com/python/python_lists_comprehension.asp
+
+.. py:function:: newlist = [expression for item in iterable]
+                 newlist = [expression for item in iterable if condition == True]
+
+    | Create a list of expressions that take each item in an iterable, such as a list, tuple or string.
+
+----
+
+| The code below creates a simple square brightness animation from 9 to 0 at different speeds set by the delay value.
+
+.. code-block:: python
+
+    from microbit import *
     
-        Keyword arguments cannot be passed to ``buffer``.
+    square_9to0_list = [Image().invert()*(i/9) for i in range(9, -1, -1)]
 
-    .. py:method:: width()
+    while True:
+        if button_a.is_pressed():
+            display.show(square_9to0_list, delay=100, wait=False)
+        elif button_b.is_pressed():
+            display.show(square_9to0_list, delay=300, wait=False)
 
-        Return the number of columns in the image.
+----
 
+.. admonition:: Tasks
 
-    .. py:method:: height()
+    #. Modify the code to create a series of images of a sad face with brightness of 9, 7, 5, 3, 1 using list comprehension.
+    #. Modify the code to create a series of images of a sad face with brightness of 1, 3, 5, 7, 9 using list comprehension.
+    
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
 
-        Return the numbers of rows in the image.
+            .. tab-set::
 
+                .. tab-item:: Q1
 
-    .. py:method:: set_pixel(x, y, value)
+                    Modify the code to create a series of images of a sad face with brightness of 9, 7, 5, 3, 1 using list comprehension.
 
-        Set the brightness of the pixel at column ``x`` and row ``y`` to the
-        ``value``, which has to be between 0 (dark) and 9 (bright).
+                    .. code-block:: python
 
-        This method will raise an exception when called on any of the built-in
-        read-only images, like ``Image.HEART``.
+                        from microbit import *
 
+                        sad_9to0_list = [Image.SAD * (i/9) for i in range(9, -1, -2)]
 
-    .. py:method:: get_pixel(x, y)
+                        while True:
+                            if button_a.is_pressed():
+                                display.show(sad_9to0_list, delay=100, wait=False)
+                            elif button_b.is_pressed():
+                                display.show(sad_9to0_list, delay=300, wait=False)
 
-        Return the brightness of pixel at column ``x`` and row ``y`` as an
-        integer between 0 and 9.
+                .. tab-item:: Q2
 
+                    Modify the code to create a series of images of a sad face with brightness of 1, 3, 5, 7, 9 using list comprehension.
 
-    .. py:method:: shift_left(n)
+                    .. code-block:: python
 
-        Return a new image created by shifting the picture left by ``n``
-        columns.
+                        from microbit import *
 
+                        sad_0to9_list = [Image.SAD * (i/9) for i in range(0, 10, 2)]
 
-    .. py:method:: shift_right(n)
+                        while True:
+                            if button_a.is_pressed():
+                                display.show(sad_0to9_list, delay=100, wait=False)
+                            elif button_b.is_pressed():
+                                display.show(sad_0to9_list, delay=300, wait=False)
 
-        Same as ``image.shift_left(-n)``.
-
-    .. py:method:: shift_up(n)
-
-        Return a new image created by shifting the picture up by ``n`` rows.
-
-
-    .. py:method:: shift_down(n)
-
-        Same as ``image.shift_up(-n)``.
-
-    .. py:method:: crop(x, y, w, h)
-
-        Return a new image by cropping the picture to a width of ``w`` and a
-	height of ``h``, starting with the pixel at column ``x`` and row ``y``.
-
-    .. py:method:: copy()
-
-        Return an exact copy of the image.
-
-    .. py:method:: invert()
-
-        Return a new image by inverting the brightness of the pixels in the
-        source image.
-
-    .. py:method:: fill(value)
-
-        Set the brightness of all the pixels in the image to the
-        ``value``, which has to be between 0 (dark) and 9 (bright).
-
-        This method will raise an exception when called on any of the built-in
-        read-only images, like ``Image.HEART``.
-
-    .. py:method:: blit(src, x, y, w, h, xdest=0, ydest=0)
-
-        Copy the rectangle defined by ``x``, ``y``, ``w``, ``h`` from the image ``src`` into
-        this image at ``xdest``, ``ydest``.
-        Areas in the source rectangle, but outside the source image are treated as having a value of 0.
-
-        ``shift_left()``, ``shift_right()``, ``shift_up()``, ``shift_down()`` and ``crop()``
-        can are all implemented by using ``blit()``.
-        For example, img.crop(x, y, w, h) can be implemented as::
-
-            def crop(self, x, y, w, h):
-                res = Image(w, h)
-                res.blit(self, x, y, w, h)
-                return res
