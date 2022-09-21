@@ -70,14 +70,10 @@ Invert
 
 .. sidebar::
 
-    HAPPY
-
     .. image:: images/HAPPY.png
         :scale: 50 %
         :align: left
     
-    inverted
-
     .. image:: images/happy_inverted.png
         :scale: 50 %
         :align: right
@@ -283,16 +279,17 @@ Adding Image pixels
     from microbit import *
 
 
-    img1 = Image.SAD
-    img2 = Image.HAPPY
-    while True:
-        display.show(img1)
-        sleep(500)
-        display.show(img2)
-        sleep(500)
-        display.show(img1 + img2)
-        sleep(500)
+    img_sad = Image.SAD
+    img_happy = Image.HAPPY
+    img_sadhappy = img_sad + img_happy
 
+    while True:
+        display.show(img_sad)
+        sleep(500)
+        display.show(img_happy)
+        sleep(500)
+        display.show(img_sadhappy)
+        sleep(500)
 
 ----
 
@@ -424,14 +421,16 @@ Subtracting Image pixels
                         from microbit import *
 
 
-                        img1 = Image.SAD
-                        img2 = Image.HAPPY
+                        img_sad = Image.SAD
+                        img_happy = Image.HAPPY
+                        img_sadlesshappy = img_sad - img_happy
+
                         while True:
-                            display.show(img1)
+                            display.show(img_sad)
                             sleep(500)
-                            display.show(img2)
+                            display.show(img_happy)
                             sleep(500)
-                            display.show(img1 - img2)
+                            display.show(img_sadlesshappy)
                             sleep(500)
 
 
