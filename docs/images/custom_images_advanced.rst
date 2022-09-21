@@ -538,9 +538,10 @@ List comprehension for a series of images
 
 See: https://www.w3schools.com/python/python_lists_comprehension.asp
 
-.. py:function:: newlist = [expression for item in iterable if condition == True]
+.. py:function:: newlist = [expression for item in iterable]
+                 newlist = [expression for item in iterable if condition == True]
 
-    | Create a series of 5 by 5 images with brightness decreasing from 9 to 0 in steps of 1.
+    | Create a list of expressions that take each item in an iterable, such as a list, tuple or string.
 
 ----
 
