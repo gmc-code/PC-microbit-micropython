@@ -135,7 +135,7 @@ bytearray gradients using List multiplication
 bytearray irregular patterns using List multiplication and concatenation
 ---------------------------------------------------------------------------
 
-| A list of 25 integers can be built using * and +.
+| A list of 25 integers can be built using * and + with lists.
 | e.g [2, 4, 6, 8] * 6 + [2] returns [2, 4, 6, 8, 2, 4, 6, 8, 2, 4, 6, 8, 2, 4, 6, 8, 2, 4, 6, 8, 2, 4, 6, 8, 2]
 
 .. sidebar::
@@ -175,7 +175,7 @@ bytearray irregular patterns using List multiplication and concatenation
 
                         from microbit import *
 
-                        img = Image(5, 5, bytearray([9, 4] * 12 + [1]))
+                        img = Image(5, 5, bytearray([9, 4] * 12 + [9]))
                         display.show(img)
 
                 .. tab-item:: Q2
@@ -251,10 +251,10 @@ bytearray irregular patterns
 
                 .. tab-item:: Q2
 
-                    Modify the code to create a prodcue the gradient list.
+                    Modify the code to create a horizontal gradient from 1 in the left to 9 in the right using a definition to produce the gradient list.
 
-                    .. code-block:: pythonhorizontal gradient from 1 in the left to 9 in the right using a definition to 
-                        
+                    .. code-block:: python
+                                                
                         from microbit import *
 
 
