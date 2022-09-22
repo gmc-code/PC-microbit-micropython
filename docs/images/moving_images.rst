@@ -2,123 +2,215 @@
 Moving images
 ====================================================
 
+Shift left and right
+--------------------------------
 
-.. py:class::
-    Image(string)
-    Image(width=None, height=None, buffer=None)
+| An image can be shifted left or right.
 
-    If ``string`` is used, it has to consist of digits 0-9 arranged into
-    lines, describing the image, for example::
+.. py:method:: shift_left(n)
 
-        image = Image("90009:"
-                      "09090:"
-                      "00900:"
-                      "09090:"
-                      "90009")
-
-    will create a 5x5 image of an X. The end of a line is indicated by a colon.
-    It's also possible to use a newline (\n) to indicate the end of a line
-    like this::
-
-        image = Image("90009\n"
-                      "09090\n"
-                      "00900\n"
-                      "09090\n"
-                      "90009")
-
-    The other form creates an empty image with ``width`` columns and
-    ``height`` rows. Optionally ``buffer`` can be an array of
-    ``width``×``height`` integers in range 0-9 to initialize the image::
-   
-        Image(2, 2, b'\x08\x08\x08\x08')
-
-    or::
-
-    	Image(2, 2, bytearray([9,9,9,9]))
-	
-    Will create a 2 x 2 pixel image at full brightness.
-    
-    .. note::
-    
-        Keyword arguments cannot be passed to ``buffer``.
-
-    .. py:method:: width()
-
-        Return the number of columns in the image.
+    Return a new image by shifting the image left by **n** columns.
 
 
-    .. py:method:: height()
+.. py:method:: shift_right(n)
 
-        Return the numbers of rows in the image.
-
-
-    .. py:method:: set_pixel(x, y, value)
-
-        Set the brightness of the pixel at column ``x`` and row ``y`` to the
-        ``value``, which has to be between 0 (dark) and 9 (bright).
-
-        This method will raise an exception when called on any of the built-in
-        read-only images, like ``Image.HEART``.
+    Return a new image by shifting the image right by **n** columns.
 
 
-    .. py:method:: get_pixel(x, y)
+| The code below shifts the small image of a dice, with a five on it, to the right 1 step, back, to the left 1 step and back.
 
-        Return the brightness of pixel at column ``x`` and row ``y`` as an
-        integer between 0 and 9.
+.. code-block:: python
+
+    from microbit import *
+
+    img = Image("00000:09090:00900:09090:00000")
+
+    display.show(img)
+    sleep(500)
+    img1 = img.shift_right(1)
+    display.show(img1)
+    sleep(500)
+    display.show(img)
+    sleep(500)
+    img1 = img.shift_left(1)
+    display.show(img1)
+    sleep(500)
+    display.show(img)
+
+----
+
+.. admonition:: Tasks
+
+    #.  Use a **for-loop** with the list: [-4, -3, -2, -1, 0, 1, 2, 3, 4] to shift the dice image to the right from off screen on the left to off screen on the right in 9 steps.
+    #.  Use a **for-loop** with the range function to do the same shifts to shift the dice image to the right from off screen on the left to off screen on the right in 9 steps.
+    #.  Use a **for-loop** with the list: [-4, -2, 0, 2, 4] to shift the dice image to the left from off screen on the right to off screen on the left in 5 steps.
+    #.  Use a **for-loop** with the range function to do the same shifts to shift the dice image to the left from off screen on the right to off screen on the left in 5 steps.
+    #.  Use a **for-loop** with the list: [0, 1, 2, 3, 4, -4, -3, -2, -1, 0] to shift the dice image to the right from a central position and back from off screen on the left in 10 steps.
+    #.  Use a **for-loop** with the list: [0, 2, 4, -4, -2, 0] shift the dice image to the left from a central position and back from off screen on the right in 6 steps.
 
 
-    .. py:method:: shift_left(n)
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
 
-        Return a new image created by shifting the picture left by ``n``
-        columns.
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Use a **for-loop** with the list: [-4, -3, -2, -1, 0, 1, 2, 3, 4] to move the dice image from off screen on the left to off screen on the right in 9 steps. 
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+                        img = Image("00000:09090:00900:09090:00000")
+
+                        for i in [-4, -3, -2, -1, 0, 1, 2, 3, 4]:
+                            d = img.shift_right(i)
+                            display.show(d)
+                            sleep(500)
 
 
-    .. py:method:: shift_right(n)
+                .. tab-item:: Q2
 
-        Same as ``image.shift_left(-n)``.
+                    Use a **for-loop** with the range function to do the same shifts to shift the dice image to the right from off screen on the left to off screen on the right in 9 steps.
 
-    .. py:method:: shift_up(n)
+                    .. code-block:: python
 
-        Return a new image created by shifting the picture up by ``n`` rows.
+                        from microbit import *
+
+                        img = Image("00000:09090:00900:09090:00000")
+
+                        for i in range(-4, 5, 1):
+                            d = img.shift_right(i)
+                            display.show(d)
+                            sleep(500)
+
+                .. tab-item:: Q3
+
+                    Use a **for-loop** with the list: [-4, -2, 0, 2, 4] to shift the dice image to the left from off screen on the right to off screen on the left in 5 steps.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+                        img = Image("00000:09090:00900:09090:00000")
+
+                        for i in [-4, -2, 0, 2, 4]:
+                            d = img.shift_left(i)
+                            display.show(d)
+                            sleep(500)
+
+                .. tab-item:: Q4
+
+                    Use a **for-loop** with the range function to do the same shifts to shift the dice image to the left from off screen on the right to off screen on the left in 5 steps.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+                        img = Image("00000:09090:00900:09090:00000")
+
+                        for i in range(-4, 5, 2):
+                            d = img.shift_left(i)
+                            display.show(d)
+                            sleep(500)
+
+                .. tab-item:: Q5
+
+                    Use a **for-loop** with the list: [0, 1, 2, 3, 4, -4, -3, -2, -1, 0] to shift the dice image to the right from a central position and back from off screen on the left in 10 steps.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+                        img = Image("00000:09090:00900:09090:00000")
+
+                        for i in [0, 1, 2, 3, 4, -4, -3, -2, -1, 0]:
+                            d = img.shift_right(i)
+                            display.show(d)
+                            sleep(500)
+
+                .. tab-item:: Q6
+
+                    Use a **for-loop** with the list: [0, 2, 4, -4, -2, 0] shift the dice image to the left from a central position and back from off screen on the right in 6 steps.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+                        img = Image("00000:09090:00900:09090:00000")
+
+                        for i in [0, 2, 4, -4, -2, 0]:
+                            d = img.shift_left(i)
+                            display.show(d)
+                            sleep(500)
+
+----
+
+Shift up and down
+--------------------------------
+
+| An image can be shifted up or down.
 
 
-    .. py:method:: shift_down(n)
+.. py:method:: shift_up(n)
 
-        Same as ``image.shift_up(-n)``.
+    Return a new image by shifting the image up by **n** rows.
+        
+.. py:method:: shift_down(n)
 
-    .. py:method:: crop(x, y, w, h)
+    Return a new image by shifting the image down by **n** rows.
 
-        Return a new image by cropping the picture to a width of ``w`` and a
-	height of ``h``, starting with the pixel at column ``x`` and row ``y``.
 
-    .. py:method:: copy()
 
-        Return an exact copy of the image.
+----
+Other methods
+---------------------
 
-    .. py:method:: invert()
+| Try out the other methods.
 
-        Return a new image by inverting the brightness of the pixels in the
-        source image.
+.. py:method:: width()
 
-    .. py:method:: fill(value)
+    Return the number of columns in the image.
 
-        Set the brightness of all the pixels in the image to the
-        ``value``, which has to be between 0 (dark) and 9 (bright).
+.. py:method:: height()
 
-        This method will raise an exception when called on any of the built-in
-        read-only images, like ``Image.HEART``.
+    Return the numbers of rows in the image.
 
-    .. py:method:: blit(src, x, y, w, h, xdest=0, ydest=0)
+.. py:method:: crop(x, y, w, h)
 
-        Copy the rectangle defined by ``x``, ``y``, ``w``, ``h`` from the image ``src`` into
-        this image at ``xdest``, ``ydest``.
-        Areas in the source rectangle, but outside the source image are treated as having a value of 0.
+    Return a new image by cropping the picture to a width of ``w`` and a height of ``h``, starting with the pixel at column ``x`` and row ``y``.
 
-        ``shift_left()``, ``shift_right()``, ``shift_up()``, ``shift_down()`` and ``crop()``
-        can are all implemented by using ``blit()``.
-        For example, img.crop(x, y, w, h) can be implemented as::
+.. py:method:: copy()
 
-            def crop(self, x, y, w, h):
-                res = Image(w, h)
-                res.blit(self, x, y, w, h)
-                return res
+    Return an exact copy of the image.
+
+.. py:method:: invert()
+
+    Return a new image by inverting the brightness of the pixels in the
+    source image.
+
+.. py:method:: fill(value)
+
+    Set the brightness of all the pixels in the image to the
+    ``value``, which has to be between 0 (dark) and 9 (bright).
+
+    This method will raise an exception when called on any of the built-in
+    read-only images, like ``Image.HEART``.
+
+.. py:method:: blit(src, x, y, w, h, xdest=0, ydest=0)
+
+    Copy the rectangle defined by ``x``, ``y``, ``w``, ``h`` from the image ``src`` into
+    this image at ``xdest``, ``ydest``.
+    Areas in the source rectangle, but outside the source image are treated as having a value of 0.
+
+    ``shift_left()``, ``shift_right()``, ``shift_up()``, ``shift_down()`` and ``crop()``
+    can are all implemented by using ``blit()``.
+    For example, img.crop(x, y, w, h) can be implemented as::
+
+        def crop(self, x, y, w, h):
+            res = Image(w, h)
+            res.blit(self, x, y, w, h)
+            return res
