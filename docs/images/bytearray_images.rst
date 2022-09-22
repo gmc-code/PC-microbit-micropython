@@ -64,7 +64,8 @@ bytearray with integer list
         display.show(my_image_diaggrad)
         sleep(700)
         display.clear()
-
+        sleep(700)
+        
 ----
 
 Uniform images using List multiplication
