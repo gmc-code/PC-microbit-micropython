@@ -215,8 +215,8 @@ Integer list producing definitions for bytearray
 | The definition, below, produces the integer list to be used for a horizontal gradient from 1 in the left to 9 in the right. [1, 3, 5, 7, 9, 1, 3, 5, 7, 9, 1, 3, 5, 7, 9, 1, 3, 5, 7, 9, 1, 3, 5, 7, 9]
 | It creates an empty list, **grid = []**.
 | It then appends each new value to it, **grid.append(new_val)**.
-| As the code loops through the x values, **for x in range(5)**, new values are calculated with an improved version of: **new_val = x_val1 + (x * xstep)**.
-| The image array is made using **gradient_x(1, 2)**, so that x satrts at 1 and increases in steps of 2.
+| As the code loops through the x values, **for x in range(5)**, new values are calculated by adding steps: **new_val = x_val1 + (x * xstep)**.
+| The image array is made using **gradient_x(1, 2)**, so that x starts at 1 and increases in steps of 2.
 
 .. code-block:: python
 
@@ -239,7 +239,7 @@ Integer list producing definitions for bytearray
     #. Write a definition to produce the list to be used for vertical gradient from 1 in the top to 9 in the bottom. [1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 5, 5, 5, 5, 5, 7, 7, 7, 7, 7, 9, 9, 9, 9, 9]
     #. Modify the code to create a vertical gradient from 1 in the top to 9 in the bottom using a definition to produce the gradient list.
     #. Use the definition for a vertical gradient to create one from 9 in the top to 2 in the bottom. [9, 9, 9, 9, 9, 7, 7, 7, 7, 7, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 2, 2, 2, 2, 2]
-    #. Write a definition to produce the list to be used for diagoanl gradient from 1 in the top left to 9 in the bottom right. [1, 2, 3, 4, 5, 2, 3, 4, 5, 6, 3, 4, 5, 6, 7, 4, 5, 6, 7, 8, 5, 6, 7, 8, 9]
+    #. Write a definition to produce the list to be used for a diagonal gradient from 1 in the top left to 9 in the bottom right. [1, 2, 3, 4, 5, 2, 3, 4, 5, 6, 3, 4, 5, 6, 7, 4, 5, 6, 7, 8, 5, 6, 7, 8, 9]
     #. Modify the code to create a diagonal gradient from 1 in top left to 9 in bottom right. 
 
     
@@ -340,7 +340,7 @@ Integer list producing definitions for bytearray
 
                 .. tab-item:: Q5
 
-                    Write a definition to produce the list to be used for diagoanl gradient from 1 in the top left to 9 in the bottom right. [1, 2, 3, 4, 5, 2, 3, 4, 5, 6, 3, 4, 5, 6, 7, 4, 5, 6, 7, 8, 5, 6, 7, 8, 9]
+                    Write a definition to produce the list to be used for a diagonal gradient from 1 in the top left to 9 in the bottom right. [1, 2, 3, 4, 5, 2, 3, 4, 5, 6, 3, 4, 5, 6, 7, 4, 5, 6, 7, 8, 5, 6, 7, 8, 9]
 
                     .. code-block:: python
                         
