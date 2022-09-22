@@ -9,7 +9,7 @@ bytearray with integer list
 .. py:function:: Image(width=None, height=None, buffer=None)
 
     | Creates an image with width columns and height rows. 
-    | The buffer can be a list of integers passed passed to bytearray(integer_list).
+    | The buffer can be a list of integers passed to bytearray as in bytearray(integer_list).
 
 | The code below creates a brightness gradient using a list of brightness values passed to bytearray.
 
@@ -21,7 +21,7 @@ bytearray with integer list
     display.show(newimg)
 
 
-| The advantage of using bytearray is that it allows integer lists to be used instead of stings.
+| The advantage of using bytearray is that it allows integer lists to be used instead of strings.
 | Integer lists are easier to manipulate.
 
 ----
@@ -132,7 +132,6 @@ bytearray gradients
                         display.show(img)
 ----
 
-
 bytearray irregular patterns
 ----------------------------------------
 
@@ -152,8 +151,8 @@ bytearray irregular patterns
 
 .. admonition:: Tasks
 
-    #. Modify the code to produce a horizontal gradient of decreasing brightness.
-    #. Modify the code to produce a horizontal gradient of decreasing then increasing brightness.
+    #. Modify the code to produce an alternating pattern of brightness 9 and 4.
+    #. Modify the code to produce a cyclic pattern of brightness 9 , 1 and 1.
 
     .. dropdown::
             :icon: codescan
@@ -164,14 +163,30 @@ bytearray irregular patterns
 
                 .. tab-item:: Q1
 
-                    Modify the code to produce a horizontal gradient of decreasing brightness.
+                    Modify the code to produce an alternating pattern of brightness 9 and 4.
 
                     .. code-block:: python
 
                         from microbit import *
 
-                        img = Image(5, 5, bytearray([9, 7, 5, 3, 1] * 5))
+                        img = Image(5, 5, bytearray([9, 4] * 12 + [1]))
                         display.show(img)
+
+                .. tab-item:: Q2
+
+                    Modify the code to produce a cyclic pattern of brightness 9 , 1 and 1.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+                        img = Image(5, 5, bytearray([9, 1, 1] * 8 + [9]))
+                        display.show(img)
+
+----
+
+bytearray irregular patterns
+----------------------------------------
 
 ----
 
@@ -226,13 +241,13 @@ bytearray irregular patterns
                                     grid.append(newx)
                             return grid
 
-                        img_array = gradient_x(1, 9, 2)
+                        img_array = gradient_x(1, 2)
 
                 .. tab-item:: Q2
 
-                    Modify the code to create a horizontal gradient from 1 in the left to 9 in the right using a definition to prodcue the gradient list.
+                    Modify the code to create a prodcue the gradient list.
 
-                    .. code-block:: python
+                    .. code-block:: pythonhorizontal gradient from 1 in the left to 9 in the right using a definition to 
                         
                         from microbit import *
 
@@ -246,7 +261,7 @@ bytearray irregular patterns
                             return grid
 
 
-                        img_array = gradient_x(1, 9, 2)
+                        img_array = gradient_x(1, 2)
                         img_horzgrad = Image(5, 5, bytearray(img_array))
                         display.show(img_horzgrad)
 
