@@ -24,6 +24,47 @@ bytearray with integer list
 | The advantage of using bytearray is that it allows integer lists to be used instead of strings.
 | Integer lists are easier to manipulate.
 
+
+| The code below uses bytearrays to design  gradient custom images.
+
+.. code-block:: python
+
+    from microbit import *
+
+    my_image_diaggrad = Image(5, 5, bytearray([
+    1, 2, 3, 4, 5,
+    2, 3, 4, 5, 6,
+    3, 4, 5, 6, 7,
+    4, 5, 6, 7, 8,
+    5, 6, 7, 8, 9,
+    ]))
+
+    my_image_horzgrad = Image(5, 5, bytearray([
+    1, 2, 3, 4, 5,
+    1, 2, 3, 4, 5,
+    1, 2, 3, 4, 5,
+    1, 2, 3, 4, 5,
+    1, 2, 3, 4, 5,
+    ]))
+
+    my_image_vertgrad = Image(5, 5, bytearray([
+    1, 1, 1, 1, 1,
+    2, 2, 2, 2, 2,
+    3, 3, 3, 3, 3,
+    4, 4, 4, 4, 4,
+    5, 5, 5, 5, 5,
+    ]))
+
+
+    while True:
+        display.show(my_image_horzgrad)
+        sleep(500)
+        display.show(my_image_vertgrad)
+        sleep(600)
+        display.show(my_image_diaggrad)
+        sleep(700)
+        display.clear()
+
 ----
 
 Uniform images using List multiplication
