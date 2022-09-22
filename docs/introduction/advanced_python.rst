@@ -59,5 +59,8 @@ The image pages and the classes pages have more advanced syntax.
 | string * integer
 | :ref:`Image strings: Multiplication of a line`
 
-| 
-| :ref:` `
+| list * integer
+| :ref:`Uniform images using List multiplication`
+
+| * and +.
+| :ref:`bytearray irregular patterns using List multiplication and concatenation`

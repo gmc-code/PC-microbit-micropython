@@ -80,10 +80,10 @@ Uniform images using List multiplication
 
 ----
 
-bytearray gradients
------------------------------------------
+bytearray gradients using List multiplication
+-------------------------------------------------
 
-| A row of pixels can be duplicated and used with bytearray.
+| A row of pixels can be replicated and used with bytearray.
 
 | [1, 3, 5, 7, 9] * 5 returns [1, 3, 5, 7, 9, 1, 3, 5, 7, 9, 1, 3, 5, 7, 9, 1, 3, 5, 7, 9, 1, 3, 5, 7, 9]
 | The code below creates an image with a horizontal gradient of increasing brightness.
@@ -132,11 +132,17 @@ bytearray gradients
                         display.show(img)
 ----
 
-bytearray irregular patterns
-----------------------------------------
+bytearray irregular patterns using List multiplication and concatenation
+---------------------------------------------------------------------------
 
-| A list of 25 interges can be built using * and +.
+| A list of 25 integers can be built using * and +.
 | e.g [2, 4, 6, 8] * 6 + [2] returns [2, 4, 6, 8, 2, 4, 6, 8, 2, 4, 6, 8, 2, 4, 6, 8, 2, 4, 6, 8, 2, 4, 6, 8, 2]
+
+.. sidebar::
+
+    .. image:: images/alternating.png
+        :scale: 50 %
+        :align: center
 
 | The code below creates an alternating pattern.
 
