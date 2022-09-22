@@ -191,10 +191,8 @@ bytearray irregular patterns using List multiplication and concatenation
 
 ----
 
-Integer list producing definitions for bytearray
+Integer-list-producing definitions for bytearray
 -----------------------------------------------------
-
-----
 
 | The tasks below require the creation of definitions to produce the list of values for the bytearray function. 
 | The pixels brightness must be between 0 and 9, inclusive, and must be integers.
@@ -232,15 +230,14 @@ Integer list producing definitions for bytearray
     img_horzgrad = Image(5, 5, bytearray(img_array))
     display.show(img_horzgrad)
 
+----
 
 .. admonition:: Tasks
 
-    #. Use the definition for a horizontal gradient to create oa gradient horizontally from 7 in the left to 3 in the right.
-    #. Write a definition to produce the list to be used for vertical gradient from 1 in the top to 9 in the bottom. [1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 5, 5, 5, 5, 5, 7, 7, 7, 7, 7, 9, 9, 9, 9, 9]
-    #. Modify the code to create a vertical gradient from 1 in the top to 9 in the bottom using a definition to produce the gradient list.
-    #. Use the definition for a vertical gradient to create one from 9 in the top to 2 in the bottom. [9, 9, 9, 9, 9, 7, 7, 7, 7, 7, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 2, 2, 2, 2, 2]
-    #. Write a definition to produce the list to be used for a diagonal gradient from 1 in the top left to 9 in the bottom right. [1, 2, 3, 4, 5, 2, 3, 4, 5, 6, 3, 4, 5, 6, 7, 4, 5, 6, 7, 8, 5, 6, 7, 8, 9]
-    #. Modify the code to create a diagonal gradient from 1 in top left to 9 in bottom right. 
+    #. Use the definition for a horizontal gradient to create a gradient horizontally from 7 in the left to 3 in the right.
+    #. Modify the code to create a vertical gradient from 1 in the top to 9 in the bottom using a definition to produce the gradient list: [1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 5, 5, 5, 5, 5, 7, 7, 7, 7, 7, 9, 9, 9, 9, 9]
+    #. Use the definition for a vertical gradient to create one from 9 in the top to 2 in the bottom. [9, 9, 9, 9, 9, 7, 7, 7, 7, 7, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 2, 2, 2, 2, 2], and display it.
+    #. Write a definition to produce the list to be used for a diagonal gradient from 1 in the top left to 9 in the bottom right. [1, 2, 3, 4, 5, 2, 3, 4, 5, 6, 3, 4, 5, 6, 7, 4, 5, 6, 7, 8, 5, 6, 7, 8, 9], and display it.
 
     
     .. dropdown::
@@ -252,7 +249,7 @@ Integer list producing definitions for bytearray
 
                 .. tab-item:: Q1
 
-                    Use the definition for a horizontal gradient to create oa gradient horizontally from 7 in the left to 3 in the right.
+                    Use the definition for a horizontal gradient to create a gradient horizontally from 7 in the left to 3 in the right.
 
                     .. code-block:: python
                         
@@ -274,28 +271,7 @@ Integer list producing definitions for bytearray
 
                 .. tab-item:: Q2
 
-                    Write a definition to produce the list to be used for vertical gradient from 1 in the top to 9 in the bottom. [1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 5, 5, 5, 5, 5, 7, 7, 7, 7, 7, 9, 9, 9, 9, 9]
-
-                    .. code-block:: python
-                        
-                        from microbit import *
-
-
-                        def gradient_y(y_val1, ystep):
-                            grid = []
-                            for y in range(5):
-                                newy = min(9, max(0, int(y_val1 + (y * ystep))))
-                                for x in range(5):
-                                    grid.append(newy)
-                            return grid
-
-
-                        img_array = gradient_y(1, 2)
-
-
-                .. tab-item:: Q3
-
-                    Modify the code to create a vertical gradient from 1 in the top to 9 in the bottom using a definition to produce the gradient list.
+                    Modify the code to create a vertical gradient from 1 in the top to 9 in the bottom using a definition to produce the gradient list: [1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 5, 5, 5, 5, 5, 7, 7, 7, 7, 7, 9, 9, 9, 9, 9]
 
                     .. code-block:: python
                         
@@ -315,9 +291,9 @@ Integer list producing definitions for bytearray
                         img_vertgrad = Image(5, 5, bytearray(img_array))
                         display.show(img_vertgrad)
 
-                .. tab-item:: Q4
+                .. tab-item:: Q3
 
-                    Use the definition for a vertical gradient to create one from 9 in the top to 2 in the bottom. [9, 9, 9, 9, 9, 7, 7, 7, 7, 7, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 2, 2, 2, 2, 2]
+                    Use the definition for a vertical gradient to create one from 9 in the top to 2 in the bottom, [9, 9, 9, 9, 9, 7, 7, 7, 7, 7, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 2, 2, 2, 2, 2], and display it.
 
                     .. code-block:: python
                         
@@ -338,32 +314,9 @@ Integer list producing definitions for bytearray
                         display.show(img_vertgrad)
 
 
-                .. tab-item:: Q5
+                .. tab-item:: Q4
 
-                    Write a definition to produce the list to be used for a diagonal gradient from 1 in the top left to 9 in the bottom right. [1, 2, 3, 4, 5, 2, 3, 4, 5, 6, 3, 4, 5, 6, 7, 4, 5, 6, 7, 8, 5, 6, 7, 8, 9]
-
-                    .. code-block:: python
-                        
-                        from microbit import *
-
-
-                        def gradient_xy(xy_val1, xstep, ystep):
-                            grid = []
-                            for y in range(5):
-                                yadd = min(9, max(0, (y * ystep)))
-                                for x in range(5):
-                                    xadd = min(9, max(0, (x * xstep)))
-                                    newxy = min(9, max(0, int(xy_val1 + xadd + yadd)))
-                                    grid.append(newxy)
-                            return grid
-
-
-                        img_array = gradient_xy(1, 1, 1)
-
-
-                .. tab-item:: Q6
-
-                    Modify the code to create a diagonal gradient from 1 in top left to 9 in bottom right. 
+                    Write a definition to produce the list to be used for a diagonal gradient from 1 in the top left to 9 in the bottom right, [1, 2, 3, 4, 5, 2, 3, 4, 5, 6, 3, 4, 5, 6, 7, 4, 5, 6, 7, 8, 5, 6, 7, 8, 9], and display it.
 
                     .. code-block:: python
                         
@@ -388,6 +341,9 @@ Integer list producing definitions for bytearray
 
 
 ----
+
+Random-integer-producing definitions for bytearray
+-----------------------------------------------------
 
 | The code below creates a 5 by 5 images with random brightness.
 
