@@ -185,7 +185,7 @@ Image strings: Multiplication of a line
 
                 .. tab-item:: Q1
 
-                    Modify the code above to go from dim on teh left edge to bright in the middle to dim on the right edge.
+                    Modify the code above to go from dim on the left edge to bright in the middle to dim on the right edge.
 
                     .. code-block:: python
 

@@ -55,6 +55,7 @@ The image pages and the classes pages have more advanced syntax.
 
 | newlist = [expression for item in iterable]
 | :ref:`List comprehension for a series of images`
+| :ref:`List comprehension for bytearray images`
 
 | string * integer
 | :ref:`Image strings: Multiplication of a line`

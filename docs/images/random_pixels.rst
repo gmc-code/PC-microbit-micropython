@@ -194,8 +194,7 @@ Random pixel randrange(stop)
 
 .. py:function:: random.randrange(stop)
 
-    Return a randomly selected integer from ``range(stop)``, from zero and up to (but not
-    including) ``stop``.
+    Return a randomly selected integer from zero and up to (but not including) **stop**.
 
 | The code below uses randrange for the x and y values.
 | **random.randrange(5)** returns values from 0 to 4.
@@ -258,8 +257,7 @@ Random pixel randrange(start, stop)
 
 .. py:function:: random.randrange(start, stop)
 
-    Return a randomly selected integer from ``range(start, stop)``, from ``start`` and up to (but not
-    including) ``stop``.
+    Return a randomly selected integer from **start** and up to (but not including) **stop**.
 
 | The code below uses randrange to restrict the x and y values to the inner square of 9 pixels.
 
@@ -320,8 +318,7 @@ Random pixel randrange(start, stop, step)
 
 .. py:function:: random.randrange(start, stop, step)
 
-    Return a randomly selected element from ``range(start, stop, step)``, from ``start`` and up to (but not
-    including) ``stop`` in steps of ``step``.
+    Return a randomly selected element from **start** and up to (but not including) **stop** in steps of **step**.
 
 | The code below uses randrange to restrict the x and y values to rows and columns 0, 2, 4.
 | The display is not cleared so that all the pixels that are set are shown.

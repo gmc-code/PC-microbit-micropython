@@ -439,7 +439,7 @@ See: https://www.w3schools.com/python/python_lists_comprehension.asp
 
 | The code below creates 5 by 5 images with random brightness.
 | **[random.randint(0, 9) for _ in range(25)]**  makes a list of 25 random integers.
-| **_** is used as a throw away variable sicne it is not used in the expression.
+| **_** is used as a throw away variable since it is not used in the expression.
 
 .. code-block:: python
 
