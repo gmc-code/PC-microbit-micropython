@@ -363,11 +363,55 @@ Random-integer-producing definitions for bytearray
 
 
     while True:
-        screen_bytes = full_screen_fill_bytes(0, 9)
+        screen_bytes = full_screen_fill_bytes(1, 9)
         newimg = Image(5, 5, bytearray(screen_bytes))
         display.show(newimg)
         sleep(1000)
 
+----
+
+.. admonition:: Tasks
+
+    #. Modify the code to add 2 nested for-loops for x values so that the left and right edges use the maxbrightness value.
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Modify the code to add 2 nested for-loops for x values so that the left and right edges use the maxbrightness value.
+
+                    .. code-block:: python
+                        
+                        from microbit import *
+                        from random import randint
+
+
+                        def full_screen_fill_bytes(minbrightness=1, maxbrightness=9):
+                            screen_bytes = []
+                            for y in range(0, 5):
+                                for x in range(0, 1):
+                                    brightness = maxbrightness
+                                    screen_bytes.append(brightness)
+                                for x in range(1, 4):
+                                    brightness = randint(minbrightness, maxbrightness)
+                                    screen_bytes.append(brightness)
+                                for x in range(4, 5):
+                                    brightness = maxbrightness
+                                    screen_bytes.append(brightness)
+                            return screen_bytes
+
+
+                        while True:
+                            screen_bytes = full_screen_fill_bytes(1, 9)
+                            newimg = Image(5, 5, bytearray(screen_bytes))
+                            display.show(newimg)
+                            sleep(1000)   
+          
 ----
 
 List comprehension for bytearray images
@@ -376,6 +420,141 @@ List comprehension for bytearray images
 See: https://www.w3schools.com/python/python_lists_comprehension.asp
 
 .. py:function:: newlist = [expression for item in iterable]
-                 newlist = [expression for item in iterable if condition == True]
+
+    | Create a list of the results of expressions that take each item in an iterable, such as a list, tuple or string.
+
+
+| The code below creates a 5 by 5 image with increasing brightness.
+| **[int(i/3 + 1) for i in range(25)]**  makes the list of integers: [1, 1, 1, 2, 2, 2, 3, 3, 3, 4, 4, 4, 5, 5, 5, 6, 6, 6, 7, 7, 7, 8, 8, 8, 9].
+
+.. code-block:: python
+
+    from microbit import *
+
+
+    brightness_array = [int(i/3 + 1) for i in range(25)]
+    newimg = Image(5, 5, bytearray(brightness_array))
+    display.show(newimg)
+
+
+| The code below creates 5 by 5 images with random brightness.
+| **[random.randint(0, 9) for _ in range(25)]**  makes a list of 25 random integers.
+| **_** is used as a throw away variable sicne it is not used in the expression.
+
+.. code-block:: python
+
+    from microbit import *
+    import random
+
+
+    while True:
+        brightness_array = [random.randint(0, 9) for _ in range(25)]
+        newimg = Image(5, 5, bytearray(brightness_array))
+        display.show(newimg)
+        sleep(300)
+
+----
+
+.. admonition:: Tasks
+
+    #. Modify the code to produce an image with pixels at a brightness determined by the formula: **int(((i % 3) + 1) * 3)**. This creates a cyclic pattern of 3.
+    #. Modify the code to produce images made up of random brightnesses chosen from the list [1, 5, 9]. 
+
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Modify the code to produce an image with pixels at a brightness determined by the formula: **int(((i % 3) + 1) * 3)**. This creates a cyclic pattern of 3.
+
+                    .. code-block:: python
+                        
+                        from microbit import *
+
+
+                        brightness_array = [int(((i % 3) + 1) * 3) for i in range(25)]
+                        newimg = Image(5, 5, bytearray(brightness_array))
+                        display.show(newimg)
+
+                .. tab-item:: Q2
+
+                    Modify the code to produce images made up of random brightnesses chosen from the list [1, 5, 9].
+
+                    .. code-block:: python
+                        
+                        from microbit import *
+                        import random
+
+
+                        while True:
+                            brightness_array = [random.choice([1, 5, 9]) for _ in range(25)]
+                            newimg = Image(5, 5, bytearray(brightness_array))
+                            display.show(newimg)
+                            sleep(500)
+
+----
+
+List comprehension with alternatives for bytearray images
+----------------------------------------------------------
+
+See: https://www.w3schools.com/python/python_lists_comprehension.asp
+
+.. py:function:: newlist = [expression if condition else expression2 for item in iterable]
 
     | Create a list of expressions that take each item in an iterable, such as a list, tuple or string.
+
+| The code below creates a 5 by 5 image with the brightness dependant on the position.
+| **i % 2 == 0** is 0 for all even integers, i.
+
+.. code-block:: python
+
+    from microbit import *
+
+
+    brightness_array = [9 if i % 2 == 0 else 0 for i in range(25)]
+    newimg = Image(5, 5, bytearray(brightness_array))
+    display.show(newimg)
+
+----
+
+.. admonition:: Tasks
+
+    #. Modify the code set the brightness to 9 when i mod 1 is 1 instead of 0.
+    #. Modify the code to use mod 3 instead of mod 2.
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Modify the code set the brightness to 9 when i mod 1 is 1 instead of 0.
+
+                    .. code-block:: python
+                        
+                        from microbit import *
+
+                        brightness_array = [9 if i % 2 == 1 else 0 for i in range(25)]
+                        newimg = Image(5, 5, bytearray(brightness_array))
+                        display.show(newimg)
+
+                .. tab-item:: Q2
+
+                    Modify the code to use mod 3 instead of mod 2.
+
+                    .. code-block:: python
+                        
+                        from microbit import *
+
+                        brightness_array = [9 if i % 3 == 0 else 0 for i in range(25)]
+                        newimg = Image(5, 5, bytearray(brightness_array))
+                        display.show(newimg)
+
