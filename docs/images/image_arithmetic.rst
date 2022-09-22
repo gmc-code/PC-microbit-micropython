@@ -1,5 +1,5 @@
 ====================================================
-Custom images advanced
+Image arithmetic
 ====================================================
 
 See: https://microbit-micropython.readthedocs.io/en/v2-docs/image.html
@@ -563,6 +563,7 @@ See: https://www.w3schools.com/python/python_lists_comprehension.asp
 
 .. admonition:: Tasks
 
+    #. Modify the code to create a simple square brightness animation from 0 to 9 at different speeds set by the delay value.
     #. Modify the code to create a series of images of a sad face with brightness of 9, 7, 5, 3, 1 using list comprehension.
     #. Modify the code to create a series of images of a sad face with brightness of 1, 3, 5, 7, 9 using list comprehension.
     
@@ -574,6 +575,22 @@ See: https://www.w3schools.com/python/python_lists_comprehension.asp
             .. tab-set::
 
                 .. tab-item:: Q1
+
+                    Modify the code to create a simple square brightness animation from 0 to 9 at different speeds set by the delay value.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+                        square_0to9_list = [Image().invert()*(i/9) for i in range(0, 10, 1)]
+
+                        while True:
+                            if button_a.is_pressed():
+                                display.show(square_0to9_list, delay=100, wait=False)
+                            elif button_b.is_pressed():
+                                display.show(square_0to9_list, delay=300, wait=False)
+
+                .. tab-item:: Q2
 
                     Modify the code to create a series of images of a sad face with brightness of 9, 7, 5, 3, 1 using list comprehension.
 
@@ -589,7 +606,7 @@ See: https://www.w3schools.com/python/python_lists_comprehension.asp
                             elif button_b.is_pressed():
                                 display.show(sad_9to0_list, delay=300, wait=False)
 
-                .. tab-item:: Q2
+                .. tab-item:: Q3
 
                     Modify the code to create a series of images of a sad face with brightness of 1, 3, 5, 7, 9 using list comprehension.
 
@@ -604,4 +621,3 @@ See: https://www.w3schools.com/python/python_lists_comprehension.asp
                                 display.show(sad_0to9_list, delay=100, wait=False)
                             elif button_b.is_pressed():
                                 display.show(sad_0to9_list, delay=300, wait=False)
-

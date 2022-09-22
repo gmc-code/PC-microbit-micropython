@@ -1,11 +1,9 @@
 ====================================================
-Image strings
+Custom images with Image strings
 ====================================================
 
-.. py:module:: display
-
-Image strings: one line
--------------------------
+Show image
+----------------
 
 | The basic syntax for showing an image is:
 
@@ -13,9 +11,23 @@ Image strings: one line
 
     | Display an image.
 
+----
+
+Image strings
+----------------
+
+| The basic syntax for creating an image from a string of 25 brightness values is:
+
+.. py:function:: Image(string)
+
+    | Create an image. 
+    | string is a string of 25 brightness values with every 5 separated by a colon.
+    | e.g. '01234:56789:09090:98765:43210'
+
 
 | The image can be a string made up of a 25 integers where each integer is the brightness from 0 to 9, where 0 if off and 9 is full brightness.
-| The 25 values are broken up into 5 lines of 5 with a colon between them.
+| The 25 values are broken up into groups of 5 with a colon between them.
+| Each group of 5 represents the brightness for a row on the microbit.
 | e.g. ``Image('01234:56789:09090:98765:43210')``
 
 .. sidebar::
@@ -123,6 +135,91 @@ Image strings: one line
 
                         display.show(Image('56789:45678:34567:23456:12345'))
                     
+
+----
+
+Image strings: Multiplication of a line
+----------------------------------------
+
+| Strings can be replicated using multiplication.
+
+.. py:function:: string * integer
+   
+   | Returns string + string + string .... integer times.
+
+| e.g "Ha" * 3 returns "HaHaHa"
+
+| The syntax for creating an Image by replicating a string representing one row is:
+
+.. py:function:: Image(line_string * 5)
+
+    | line_string is the first 5 pixel brightness values. e.g. "00000:"
+    | e.g. Image("00000:" * 5) create an image with all pixels off.
+    | e.g. Image("99999:" * 5) create an image with all pixels at full brightness.
+
+
+| The code below creates a horizontal gradient by repeating a string of 5 brightness values, 5 times.
+
+.. code-block:: python
+
+    from microbit import *
+
+    img = Image("13579:" * 5)
+    display.show(img)
+
+
+----
+
+.. admonition:: Tasks
+
+    #. Modify the code above to go from dim on the left edge to bright in the middle to dim on the right edge.
+    #. Modify the code above to go from bright on the left edge to dim on the right edge.
+    #. Write code to cycle between bright on the left edge to bight on the right edge.
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Modify the code above to go from dim on the left edge to bright in the middle to dim on the right edge.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+                        img = Image("15951:" * 5)
+                        display.show(img)
+
+                .. tab-item:: Q2
+
+                    Modify the code above to go from bright on the left edge to dim on the right edge.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+                        img = Image("97531:" * 5)
+                        display.show(img)
+
+                .. tab-item:: Q3
+
+                    Write code to cycle between bright on the left edge to bight on the right edge.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+                        while True:
+                            img1 = Image("97531:" * 5)
+                            display.show(img1)
+                            sleep(300)
+                            img2 = Image("13579:" * 5)
+                            display.show(img2)
+                            sleep(300)
 
 ----
 
@@ -272,7 +369,6 @@ Boat sinking animation
     sinking_boats = [boat1, boat2, boat3, boat4, boat5, boat6]
     while True:
         display.show(sinking_boats, delay=500)
-        sleep(500)
 
 ----
 
@@ -280,7 +376,6 @@ Boat sinking animation
 
     #. Write a list variable, ``rising_boats``, that lists the boats in reverse order and animates a rising boat. Rather than manually listing the order, use ``list(reversed(sinking_boats))``.
     #. Combine the 2 animations to show a boat sinking and rising over and over again.
-
 
     .. dropdown::
             :icon: codescan
@@ -309,7 +404,6 @@ Boat sinking animation
 
                         while True:
                             display.show(rising_boats, delay=500)
-                            sleep(500)
 
 
                 .. tab-item:: Q2
@@ -332,7 +426,84 @@ Boat sinking animation
 
                         while True:
                             display.show(sinking_boats, delay=500)
-                            sleep(500)
                             display.show(rising_boats, delay=500)
-                            sleep(500)
+
+----
+
+Image gradients using  string definitions
+--------------------------------------------
+
+| The definition below, **horzgrad**, takes  2 arguments, width and height.
+| The for-loop creates a string starting with a brightness of 1 and increasing by one to the width given, which should be 5 for the full width of the 5x5 grid.
+| The string is then replicated for each line given by height, which is 5 for the full grid.
+| **Image(horzgrad(5, 5))** results in **Image('12345:12345:12345:12345:12345:')**.
+
+.. code-block:: python
+        
+    from microbit import *
+
+
+    def horzgrad(w, h):
+        string = ""
+        for i in range(1, w + 1):
+            string += str(i)
+        return (string + ":") * h
+
+
+    img_horzgrad = Image(horzgrad(5, 5))
+    display.show(img_horzgrad)
+
+----
+
+.. admonition:: Tasks
+
+    #. Write a vertgrad definition to produce: **Image('11111:22222:33333:44444:55555:')**.
+    #. Write a diaggrad definition to produce: **Image('12345:23456:34567:45678:56789:')**.
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Write a vertgrad definition to produce: **Image('11111:22222:33333:44444:55555:')**.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+
+                        def vertgrad(w, h):
+                            string = ""
+                            for i in range(1, h + 1):
+                                string += (str(i) * w) + ":"
+                            return string
+
+
+                        img_vertgrad = Image(vertgrad(5, 5))
+                        display.show(img_vertgrad)
+
+                .. tab-item:: Q2
+
+                    Write a diaggrad definition to produce: **Image('12345:23456:34567:45678:56789:')**.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+
+                        def diaggrad(w, h):
+                            string = ""
+                            for j in range(1, h + 1):
+                                for i in range(1, w + 1):
+                                    string += str(i + j - 1)
+                                string += ":"
+                            return string
+
+
+                        img_diaggrad = Image(diaggrad(5, 5))
+                        display.show(img_diaggrad)
 
