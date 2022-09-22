@@ -191,8 +191,8 @@ bytearray irregular patterns using List multiplication and concatenation
 
 ----
 
-bytearray irregular patterns
-----------------------------------------
+Integer list producing definitions for bytearray
+-----------------------------------------------------
 
 ----
 
@@ -210,12 +210,30 @@ bytearray irregular patterns
 
     value = min(9, max(0, int(x_val1 + (x * xstep))))
 
+| The definition, below, produces the integer list to be used for a horizontal gradient from 1 in the left to 9 in the right. [1, 3, 5, 7, 9, 1, 3, 5, 7, 9, 1, 3, 5, 7, 9, 1, 3, 5, 7, 9, 1, 3, 5, 7, 9]
+| It creates an empty list, **grid = []**.
+| It then appends each new value to it, **grid.append(new_val)**.
+| As the code loops through the x values, **for x in range(5)**, new values are calculated with an improved version of: **new_val = x_val1 + (x * xstep)**.
+| The image array is made using **gradient_x(1, 2)**, so that x satrts at 1 and increases in steps of 2.
+
+.. code-block:: python
+
+    def gradient_x(x_val1, xstep):
+        grid = []
+        for y in range(5):
+            for x in range(5):
+                new_val = min(9, max(0, int(x_val1 + (x * xstep))))
+                grid.append(new_val)
+        return grid
+
+    img_array = gradient_x(1, 2)
+    img_horzgrad = Image(5, 5, bytearray(img_array))
+    display.show(img_horzgrad)
+
 
 .. admonition:: Tasks
 
-    #. Write a definition to produce the list to be used for horizontal gradient from 1 in the left to 9 in the right. [1, 3, 5, 7, 9, 1, 3, 5, 7, 9, 1, 3, 5, 7, 9, 1, 3, 5, 7, 9, 1, 3, 5, 7, 9]
-    #. Modify the code to create a horizontal gradient from 1 in the left to 9 in the right using a definition to produce the gradient list.
-    #. Use the definition for a horizontal gradient to create one from 7 in the left to 3 in the right.
+    #. Use the definition for a horizontal gradient to create oa gradient horizontally from 7 in the left to 3 in the right.
     #. Write a definition to produce the list to be used for vertical gradient from 1 in the top to 9 in the bottom. [1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 5, 5, 5, 5, 5, 7, 7, 7, 7, 7, 9, 9, 9, 9, 9]
     #. Modify the code to create a vertical gradient from 1 in the top to 9 in the bottom using a definition to produce the gradient list.
     #. Use the definition for a vertical gradient to create one from 9 in the top to 2 in the bottom. [9, 9, 9, 9, 9, 7, 7, 7, 7, 7, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 2, 2, 2, 2, 2]
@@ -232,49 +250,7 @@ bytearray irregular patterns
 
                 .. tab-item:: Q1
 
-                    Write a definition to produce the list to be used for horizontal gradient from 1 in the left to 9 in the right. [1, 3, 5, 7, 9, 1, 3, 5, 7, 9, 1, 3, 5, 7, 9, 1, 3, 5, 7, 9, 1, 3, 5, 7, 9]
-
-                    .. code-block:: python
-
-                        from microbit import *
-
-
-                        def gradient_x(x_val1, xstep):
-                            grid = []
-                            for y in range(5):
-                                for x in range(5):
-                                    newx = min(9, max(0, int(x_val1 + (x * xstep))))
-                                    grid.append(newx)
-                            return grid
-
-                        img_array = gradient_x(1, 2)
-
-                .. tab-item:: Q2
-
-                    Modify the code to create a horizontal gradient from 1 in the left to 9 in the right using a definition to produce the gradient list.
-
-                    .. code-block:: python
-                                                
-                        from microbit import *
-
-
-                        def gradient_x(x_val1, xstep):
-                            grid = []
-                            for y in range(5):
-                                for x in range(5):
-                                    newx = min(9, max(0, int(x_val1 + (x * xstep))))
-                                    grid.append(newx)
-                            return grid
-
-
-                        img_array = gradient_x(1, 2)
-                        img_horzgrad = Image(5, 5, bytearray(img_array))
-                        display.show(img_horzgrad)
-
-
-                .. tab-item:: Q3
-
-                    Use the definition for a horizontal gradient to create one from 7 in the left to 3 in the right.
+                    Use the definition for a horizontal gradient to create oa gradient horizontally from 7 in the left to 3 in the right.
 
                     .. code-block:: python
                         
@@ -294,7 +270,7 @@ bytearray irregular patterns
                         img_horzgrad = Image(5, 5, bytearray(img_array))
                         display.show(img_horzgrad)
 
-                .. tab-item:: Q4
+                .. tab-item:: Q2
 
                     Write a definition to produce the list to be used for vertical gradient from 1 in the top to 9 in the bottom. [1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 5, 5, 5, 5, 5, 7, 7, 7, 7, 7, 9, 9, 9, 9, 9]
 
@@ -315,7 +291,7 @@ bytearray irregular patterns
                         img_array = gradient_y(1, 2)
 
 
-                .. tab-item:: Q5
+                .. tab-item:: Q3
 
                     Modify the code to create a vertical gradient from 1 in the top to 9 in the bottom using a definition to produce the gradient list.
 
@@ -337,7 +313,7 @@ bytearray irregular patterns
                         img_vertgrad = Image(5, 5, bytearray(img_array))
                         display.show(img_vertgrad)
 
-                .. tab-item:: Q6
+                .. tab-item:: Q4
 
                     Use the definition for a vertical gradient to create one from 9 in the top to 2 in the bottom. [9, 9, 9, 9, 9, 7, 7, 7, 7, 7, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 2, 2, 2, 2, 2]
 
@@ -360,7 +336,7 @@ bytearray irregular patterns
                         display.show(img_vertgrad)
 
 
-                .. tab-item:: Q7
+                .. tab-item:: Q5
 
                     Write a definition to produce the list to be used for diagoanl gradient from 1 in the top left to 9 in the bottom right. [1, 2, 3, 4, 5, 2, 3, 4, 5, 6, 3, 4, 5, 6, 7, 4, 5, 6, 7, 8, 5, 6, 7, 8, 9]
 
@@ -383,7 +359,7 @@ bytearray irregular patterns
                         img_array = gradient_xy(1, 1, 1)
 
 
-                .. tab-item:: Q8
+                .. tab-item:: Q6
 
                     Modify the code to create a diagonal gradient from 1 in top left to 9 in bottom right. 
 
