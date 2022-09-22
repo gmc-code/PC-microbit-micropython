@@ -191,10 +191,8 @@ Shift up and down
     #.  Use a **for-loop** with the range function to do the same shifts to shift the dice image up from off screen on the bottom to off screen on the top in 9 steps.
     #.  Use a **for-loop** with the list: [-4, -2, 0, 2, 4] to shift the dice image to the bottom from off screen on the top to off screen on the bottom in 5 steps.
     #.  Use a **for-loop** with the range function to do the same shifts to shift the dice image to the bottom from off screen on the top to off screen on the bottom in 5 steps.
-    #.  
-    #.  Use a **for-loop** with the list: [0, 1, 2, 3, 4, -4, -3, -2, -1, 0] to shift the dice image to the right from a central position and back from off screen on the left in 10 steps.
-    #.  Use a **for-loop** with the list: [0, 2, 4, -4, -2, 0] shift the dice image to the left from a central position and back from off screen on the right in 6 steps.
-
+    #.  Use a **for-loop** with the list: [0, 1, 2, 3, 4, -4, -3, -2, -1, 0] to shift the dice image up from a central position and back from off screen on the bottom in 10 steps.
+    #.  Use a **for-loop** with the list: [0, 2, 4, -4, -2, 0] shift the dice image to the bottom from a central position and back from off screen on the top in 6 steps.
 
     .. dropdown::
             :icon: codescan
@@ -265,20 +263,33 @@ Shift up and down
 
                 .. tab-item:: Q5
 
-                    Use a **for-loop** with the list: [0, 1, 2, 3, 4, -4, -3, -2, -1, 0] to shift the dice image to the right from a central position and back from off screen on the left in 10 steps.
+                    Use a **for-loop** with the list: [0, 1, 2, 3, 4, -4, -3, -2, -1, 0] to shift the dice image up from a central position and back from off screen on the bottom in 10 steps.
 
                     .. code-block:: python
 
                         from microbit import *
+
+                        img1 = Image("00000:09090:00900:09090:00000")
+
+                        for i in [0, 1, 2, 3, 4, -4, -3, -2, -1, 0]:
+                            img = img1.shift_up(i)
+                            display.show(img)
+                            sleep(500)
 
                 .. tab-item:: Q6
 
-                    Use a **for-loop** with the list: [0, 2, 4, -4, -2, 0] shift the dice image to the left from a central position and back from off screen on the right in 6 steps.
+                    Use a **for-loop** with the list: [0, 2, 4, -4, -2, 0] shift the dice image to the bottom from a central position and back from off screen on the top in 6 steps.
 
                     .. code-block:: python
 
                         from microbit import *
 
+                        img1 = Image("00000:09090:00900:09090:00000")
+
+                        for i in [0, 2, 4, -4, -2, 0]:
+                            img = img1.shift_down(i)
+                            display.show(img)
+                            sleep(500)
 
 
 ----
