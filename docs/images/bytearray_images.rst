@@ -3,15 +3,15 @@ Byte array images
 ====================================================
 
 
-bytearray
+bytearray with integer list
 -----------------------------------------
 
 .. py:function:: Image(width=None, height=None, buffer=None)
 
     | Creates an image with width columns and height rows. 
-    | Optionally buffer can be a list of integers passed passed to bytearray(integer_list)
+    | The buffer can be a list of integers passed passed to bytearray(integer_list).
 
-| The code below creates a brightness gradient.
+| The code below creates a brightness gradient using a list of brightness values passed to bytearray.
 
 .. code-block:: python
 
@@ -19,6 +19,159 @@ bytearray
 
     newimg = Image(5, 5, bytearray([1,1,1,1,1,3,3,3,3,3,5,5,5,5,5,7,7,7,7,7,9,9,9,9,9]))
     display.show(newimg)
+
+
+| The advantage of using bytearray is that it allows integer lists to be used instead of stings.
+| Integer lists are easier to manipulate.
+
+----
+
+Uniform images using List multiplication
+-----------------------------------------
+
+| Like strings, the * operator acting on a list, outputs a list with multiple copies of itself.
+| e.g [1, 2, 3] * 2 returns [1, 2, 3, 1, 2, 3]
+
+| [1] * 25 returns [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1]
+| The code below creates a uniform image of brightness 1.
+
+.. code-block:: python
+
+    from microbit import *
+
+    img = Image(5, 5, bytearray([1] * 25))
+    display.show(img)
+
+----
+
+.. admonition:: Tasks
+
+    #. Modify the code to produce an image of uniform brightness of 3.
+    #. Modify the code to produce an image of uniform brightness of 7.
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Modify the code to produce an image of uniform brightness of 3.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+                        img = Image(5, 5, bytearray([3] * 25))
+                        display.show(img)
+
+                .. tab-item:: Q2
+
+                    Modify the code to produce an image of uniform brightness of 7.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+                        img = Image(5, 5, bytearray([7] * 25))
+                        display.show(img)
+
+----
+
+bytearray gradients
+-----------------------------------------
+
+| A row of pixels can be duplicated and used with bytearray.
+
+| [1, 3, 5, 7, 9] * 5 returns [1, 3, 5, 7, 9, 1, 3, 5, 7, 9, 1, 3, 5, 7, 9, 1, 3, 5, 7, 9, 1, 3, 5, 7, 9]
+| The code below creates an image with a horizontal gradient of increasing brightness.
+
+.. code-block:: python
+
+    from microbit import *
+
+    img = Image(5, 5, bytearray([1, 3, 5, 7, 9] * 5))
+    display.show(img)
+
+----
+
+.. admonition:: Tasks
+
+    #. Modify the code to produce a horizontal gradient of decreasing brightness.
+    #. Modify the code to produce a horizontal gradient of decreasing then increasing brightness.
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Modify the code to produce a horizontal gradient of decreasing brightness.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+                        img = Image(5, 5, bytearray([9, 7, 5, 3, 1] * 5))
+                        display.show(img)
+
+                .. tab-item:: Q2
+
+                    Modify the code to produce a horizontal gradient of decreasing then increasing brightness.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+                        img = Image(5, 5, bytearray([9, 6, 3, 6, 9] * 5))
+                        display.show(img)
+----
+
+
+bytearray irregular patterns
+----------------------------------------
+
+| A list of 25 interges can be built using * and +.
+| e.g [2, 4, 6, 8] * 6 + [2] returns [2, 4, 6, 8, 2, 4, 6, 8, 2, 4, 6, 8, 2, 4, 6, 8, 2, 4, 6, 8, 2, 4, 6, 8, 2]
+
+| The code below creates an alternating pattern.
+
+.. code-block:: python
+
+    from microbit import *
+
+    img = Image(5, 5, bytearray([1, 9] * 12 + [1]))
+    display.show(img)
+
+----
+
+.. admonition:: Tasks
+
+    #. Modify the code to produce a horizontal gradient of decreasing brightness.
+    #. Modify the code to produce a horizontal gradient of decreasing then increasing brightness.
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Modify the code to produce a horizontal gradient of decreasing brightness.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+                        img = Image(5, 5, bytearray([9, 7, 5, 3, 1] * 5))
+                        display.show(img)
 
 ----
 
