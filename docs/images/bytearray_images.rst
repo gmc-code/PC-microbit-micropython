@@ -208,6 +208,8 @@ Integer list producing definitions for bytearray
 
 .. code-block:: python
 
+    value = x_val1 + (x * xstep)
+    # is improved to make sure integers bewteen 0 and 9 are produced
     value = min(9, max(0, int(x_val1 + (x * xstep))))
 
 | The definition, below, produces the integer list to be used for a horizontal gradient from 1 in the left to 9 in the right. [1, 3, 5, 7, 9, 1, 3, 5, 7, 9, 1, 3, 5, 7, 9, 1, 3, 5, 7, 9, 1, 3, 5, 7, 9]
