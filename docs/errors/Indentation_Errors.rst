@@ -73,7 +73,7 @@ else statement indented by mistake
 
 ----
 
-for loop not indented
+for-loop not indented
 ---------------------------------------------
 
 | The correctly indented code is below:

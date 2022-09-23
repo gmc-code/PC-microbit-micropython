@@ -119,8 +119,8 @@ Blink All
 Blink using for i in range
 ----------------------------------------
 
-| Repeated blinking can be done with a for loop.
-| The for loop below runs 3 times, with i values of 0, 1, and 2.
+| Repeated blinking can be done with a for-loop.
+| The for-loop below runs 3 times, with i values of 0, 1, and 2.
 
 .. code-block:: python
 

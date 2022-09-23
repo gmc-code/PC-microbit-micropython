@@ -22,8 +22,8 @@ For loops with strings
 
 .. admonition:: Tasks
 
-    #. Write a for loop to scroll each letter in 'winner' individually.
-    #. Write a for loop to scroll each digit in 2023 individually.
+    #. Write a for-loop to scroll each letter in 'winner' individually.
+    #. Write a for-loop to scroll each digit in 2023 individually.
 
     .. dropdown::
         :icon: codescan
@@ -34,7 +34,7 @@ For loops with strings
 
             .. tab-item:: Q1
 
-                Write a for loop to scroll each letter in 'winner' individually.
+                Write a for-loop to scroll each letter in 'winner' individually.
 
                 .. code-block:: python
 
@@ -48,7 +48,7 @@ For loops with strings
 
             .. tab-item:: Q2
 
-                Write a for loop to scroll each digit in 2023 individually.
+                Write a for-loop to scroll each digit in 2023 individually.
 
                 .. code-block:: python
 
@@ -97,8 +97,8 @@ For loops with lists
 
 .. admonition:: Tasks
 
-    #. Write a for loop to scroll each name in the list ``['Ann', 'Liv', 'Sue']``.
-    #. Write a for loop to scroll each number in the list ``[1, 2, 3, 5, 8]``.
+    #. Write a for-loop to scroll each name in the list ``['Ann', 'Liv', 'Sue']``.
+    #. Write a for-loop to scroll each number in the list ``[1, 2, 3, 5, 8]``.
 
     .. dropdown::
         :icon: codescan
@@ -109,7 +109,7 @@ For loops with lists
 
             .. tab-item:: Q1
 
-                Write a for loop to scroll each name in the list ``['Ann', 'Liv', 'Sue']``.
+                Write a for-loop to scroll each name in the list ``['Ann', 'Liv', 'Sue']``.
 
                 .. code-block:: python
 
@@ -123,7 +123,7 @@ For loops with lists
 
             .. tab-item:: Q2
 
-                Write a for loop to scroll each number in the list ``[1, 2, 3, 5, 8]``.
+                Write a for-loop to scroll each number in the list ``[1, 2, 3, 5, 8]``.
 
                 .. code-block:: python
 
@@ -143,8 +143,8 @@ For loops with mixed lists
 | Mixed lists can be used with **display.show**.
 | Strings, integers and floats, and Images can all be displayed with **display.show**.
 | A short delay is used in **display.show** for when there are multipel characters in a string or number.
-| A short sleep is used in the **for loop** so that there is a noticable gap betwwen each list element no matter whether they are strings, numbers or images.
-| A longer sleep is used after the **for loop** before it repeats.
+| A short sleep is used in the **for-loop** so that there is a noticable gap betwwen each list element no matter whether they are strings, numbers or images.
+| A longer sleep is used after the **for-loop** before it repeats.
 
 .. code-block:: python
 
@@ -248,8 +248,8 @@ Nested For loops
 
 .. admonition:: Tasks
 
-    #. Write a for loop that shows the result from multiplying each number in the list, ``[3, 5, 7]`` by 5, using a variable for each part of the multiplication.
-    #. Write a nested for loop that finds the sum of every different combination of two numbers from the two lists: ``[2, 4, 6]`` and ``[3, 5, 7]``.
+    #. Write a for-loop that shows the result from multiplying each number in the list, ``[3, 5, 7]`` by 5, using a variable for each part of the multiplication.
+    #. Write a nested for-loop that finds the sum of every different combination of two numbers from the two lists: ``[2, 4, 6]`` and ``[3, 5, 7]``.
 
     .. dropdown::
         :icon: codescan
@@ -260,7 +260,7 @@ Nested For loops
 
             .. tab-item:: Q1
 
-                Write a for loop that shows the result from **multiplying** each number in the list, ``[3, 5, 7]`` by 5, using a variable for each part of the multiplication.
+                Write a for-loop that shows the result from **multiplying** each number in the list, ``[3, 5, 7]`` by 5, using a variable for each part of the multiplication.
 
                 .. code-block:: python
 
@@ -274,7 +274,7 @@ Nested For loops
 
             .. tab-item:: Q2
 
-                Write a nested for loop that finds the **sum** of every different combination of two numbers from the two lists: ``[2, 4, 6]`` and ``[3, 5, 7]``.
+                Write a nested for-loop that finds the **sum** of every different combination of two numbers from the two lists: ``[2, 4, 6]`` and ``[3, 5, 7]``.
 
                 .. code-block:: python
 

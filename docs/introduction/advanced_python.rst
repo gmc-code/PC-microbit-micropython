@@ -41,7 +41,7 @@ The image pages and the classes pages have more advanced syntax.
 | a, b, c = (a, b, c)
 | :ref:`Tuple unpacking in multiple assignment`
 
-| throw away variable in a for loop: for _ in range(start, stop)
+| throw away variable in a for-loop: for _ in range(start, stop)
 | :ref:`Random Pixels`
 
 | a_set = set()

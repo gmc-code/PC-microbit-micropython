@@ -2,6 +2,10 @@
 Built in images
 ====================================================
 
+.. admonition:: New
+
+    | The Sep 2022 new addition, **Image.SCISSORS**,  is available in the online micropython editor: https://python.microbit.org/v/beta, but not yet in Mu editor.
+    
 | The microbit library contains over 60 built in images that have specific names.
 | e.g ``Image.HEART``
 | The **Image** object must have a capital **I**.

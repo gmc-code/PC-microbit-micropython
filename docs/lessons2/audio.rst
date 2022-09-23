@@ -70,7 +70,7 @@ The built-in sounds can be called using ``audio.play(Sound.NAME)``.
     audio.play(Sound.GIGGLE)
 
 
-| The code below uses a for loop to loop through each Sound in the ``sound_list`` and play it.
+| The code below uses a for-loop to loop through each Sound in the ``sound_list`` and play it.
 
 .. code-block:: python
 
@@ -87,7 +87,7 @@ All Built in sounds
 ----------------------------------------
 
 | The code below plays all the built in sounds.
-| The A button can be pressed to exit the for loop then the while loop using ``break``.
+| The A button can be pressed to exit the for-loop then the while loop using ``break``.
 | Pressing the reset button on the back of the microbit will restart the code.
 
 .. code-block:: python

@@ -411,7 +411,7 @@ enumerate
 
 .. function:: enumerate(sequence, [start=0])
 
-enumerate() Function is used to combine a traversable data object (such as a list, tuple or string) into an index sequence, and list data and data subscripts. It is generally used in for loop.
+enumerate() Function is used to combine a traversable data object (such as a list, tuple or string) into an index sequence, and list data and data subscripts. It is generally used in for-loop.
 
 - ``sequence`` -- A sequence, iterator, or other object that supports iteration.
 - ``start`` -- Subscript start position.

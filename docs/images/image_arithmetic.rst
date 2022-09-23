@@ -48,7 +48,7 @@ Fill
 .. admonition:: Tasks
 
     #. Create a blank image and fill it with brightness of 9.
-    #. Create a blank image and use a for loop to set its brightness from 1 to 9 in less than 2 seconds using the fill method.
+    #. Create a blank image and use a for-loop to set its brightness from 1 to 9 in less than 2 seconds using the fill method.
     #. Create an animation using the fill method in which the brighness of all the pixels goes form 0 to 9 and back to 0 in less than 2 seconds.
 
     .. dropdown::
@@ -72,7 +72,7 @@ Fill
 
                 .. tab-item:: Q2
 
-                    Create a blank image and use a for loop to set its brightness from 1 to 9 in less than 2 seconds using the fill method.
+                    Create a blank image and use a for-loop to set its brightness from 1 to 9 in less than 2 seconds using the fill method.
 
                     .. code-block:: python
 
@@ -560,6 +560,7 @@ Multiplying and dividing Image pixels
 
     #. Modify the code to create the images of a "w" with brightness of 9, 1 and 4.
     #. Modify the code to create the addition of the images "m" at brightness 6 and "w" at brightness 3.
+    #. Using the pulsing code above as a starting point, add extra code so that it is possible to set use the number of pulses per second to calcualte the sleeptime.
 
     .. dropdown::
             :icon: codescan
@@ -613,6 +614,67 @@ Multiplying and dividing Image pixels
                             else:
                                 display.show(img_m6_w3)
                             sleep(500)
+
+----
+
+Pulsing HEART
+---------------
+
+| In the code below, image **img9** has pixels of brightness 9.
+| An image, **img1**, with brightness 1, is first created from that, then other brightnesses are obtained in for-loops so that the image is pulsed.
+| The sleeptime variable makes it convenient to adjust the pulsing rate.
+
+.. code-block:: python
+
+    from microbit import *
+
+    img9 = Image.HEART
+    img1 = img9 / 9
+    sleeptime = 50
+    while True:
+        for i in range(10):
+            img = img1 * i
+            display.show(img)
+            sleep(sleeptime)
+        for i in range(9, -1, -1):
+            img = img1 * i
+            display.show(img)
+            sleep(sleeptime)
+
+----
+
+.. admonition:: Tasks
+
+    #. Using the pulsing code above as a starting point, add extra code so that it is possible to set use the number of pulses per second to calcualte the sleeptime. Set the pulse rate to 100 pulses per minute.
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Using the pulsing code above as a starting point, add extra code so that it is possible to set use the number of pulses per second to calcualte the sleeptime.
+
+                    .. code-block:: python
+
+                        from microbit import *
+                        
+                        img9 = Image.HEART
+                        img1 = img9 / 9
+                        pulses_per_min = 100
+                        sleeptime = int(3000 / pulses_per_min)
+                        while True:
+                            for i in range(10):
+                                img = img1 * i
+                                display.show(img)
+                                sleep(sleeptime)
+                            for i in range(9, -1, -1):
+                                img = img1 * i
+                                display.show(img)
+                                sleep(sleeptime)
 
 ----
 

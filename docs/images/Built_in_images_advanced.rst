@@ -51,7 +51,7 @@ Reverse direction of a list using the reverse method
 
 .. py:function:: alist.reverse()
 
-    | The list, **alist**,is reversed. No parameters are involved.
+    | The list, **alist**, is reversed. No parameters are involved.
 
 | A list, **clock_list**, can be reversed using the **reverse** **method**: ``clock_list.reverse()``.
 | The original list has its elements reversed.
@@ -458,8 +458,8 @@ Interrupting an image list
 | There are several approaches to interrupting the display of a built in collection of images.
 
 | The approach below uses ``wait=False``. This causes **display.show** to run in the background. The rest of the code in the **while block** runs without waiting for the **display.show** to complete.
-| A **for loop** with timing to match the timing of the clocks is used to allow button pressing to interrupt the clocks animation.
-| Since the clocks has a delay of 100, with 12 images, the **for loop** must be set to run for a similar time so that the clocks images have enough time to complete. Using a range of 12 with a sleep of 100 will do this.
+| A **for-loop** with timing to match the timing of the clocks is used to allow button pressing to interrupt the clocks animation.
+| Since the clocks has a delay of 100, with 12 images, the **for-loop** must be set to run for a similar time so that the clocks images have enough time to complete. Using a range of 12 with a sleep of 100 will do this.
 | If a button is pressed, it stops the the display of the ALL_CLOCKS and displays the button letter.
 
 .. code-block:: python
@@ -475,7 +475,7 @@ Interrupting an image list
                 display.show("B")
             sleep(100)
 
-| The approach below converts ALL_CLOCKS to a list that can be iterated over in a for loop.
+| The approach below converts ALL_CLOCKS to a list that can be iterated over in a for-loop.
 | After displaying a clock image, the A and B buttons are checked.
 
 .. code-block:: python

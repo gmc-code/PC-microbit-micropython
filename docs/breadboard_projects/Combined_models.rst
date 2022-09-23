@@ -8,7 +8,7 @@ Tasks
 | Use at least 2 different types of devices on the **breadboard**, such as an **LED**, a **buzzer**, a **potentiometer**, a **motor** with transistor.
 | Use the microbit display to display **text** and **images**.
 | Use **button pressing**.
-| Use while and **for loops**.
+| Use while and **for-loops**.
 
 | Suggestions to complete the task are below.
 | Using ``for i in range(n):`` is recommended to repeat a particular action ``n`` times.

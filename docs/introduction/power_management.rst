@@ -31,7 +31,7 @@ Removing the USB power cable and re-adding it will also wake the micro:bit.
 .. admonition:: Warning
 
     | Mu v1.1.1 doesn't yet support the power module. Sep 2022.
-    | Use the online micropython editor intead: https://python.microbit.org/v/beta
+    | Use the online micropython editor instead: https://python.microbit.org/v/beta
 
 
 .. py:module:: power
