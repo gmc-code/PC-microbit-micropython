@@ -2,11 +2,19 @@
 Power Management **V2**
 ====================================================
 
+.. admonition:: Warning
+
+    | Mu v1.1.1 doesn't yet support this. Sep 2022.
+    | Use the online micropython editor intead: https://python.microbit.org/v/beta
+
 
 .. py:module:: power
 
 | This module lets you manage the power modes of the microbit V2.
 | See: https://microbit-micropython.readthedocs.io/en/v2-docs/power.html
+
+
+
 
 There are two low power modes:
 
