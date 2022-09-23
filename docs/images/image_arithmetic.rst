@@ -23,6 +23,89 @@ Image()
 
 ----
 
+
+Fill
+-----------------------------
+
+
+.. py:method:: Image().fill(value)
+
+    | Set the brightness of all the pixels in the image to the **value**, between 0 and 9.
+    | Don't use with built-in read-only images.
+
+| The code below sets all the pixels to a bightness of 6.
+
+.. code-block:: python
+
+    from microbit import *
+
+    img = Image()
+    img.fill(6)
+    display.show(img)
+
+----
+
+.. admonition:: Tasks
+
+    #. Create a blank image and fill it with brightness of 9.
+    #. Create a blank image and use a for loop to set its brightness from 1 to 9 in less than 2 seconds using the fill method.
+    #. Create an animation using the fill method in which the brighness of all the pixels goes form 0 to 9 and back to 0 in less than 2 seconds.
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Create a blank image and fill it with brightness of 9.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+                        img = Image()
+                        img.fill(6)
+                        display.show(img)
+
+                .. tab-item:: Q2
+
+                    Create a blank image and use a for loop to set its brightness from 1 to 9 in less than 2 seconds using the fill method.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+                        img = Image()
+
+                        for i in range(1, 10):
+                            img.fill(i)
+                            display.show(img)
+                            sleep(200)
+
+                .. tab-item:: Q2
+
+                    Create an animation using the fill method in which the brighness of all the pixels goes form 0 to 9 and back to 0 in less than 2 seconds.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+                        img = Image()
+
+                        for i in range(0, 10):
+                            img.fill(i)
+                            display.show(img)
+                            sleep(100)
+                        for i in range(9, -1, -1):
+                            img.fill(i)
+                            display.show(img)
+                            sleep(100)
+
+----
+
 Invert
 -----------------------------
 

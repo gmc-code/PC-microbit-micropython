@@ -308,7 +308,7 @@ Cropping images
 .. code-block:: python
 
     from microbit import *
-    
+
     display.show(Image('00300:'
                     '03630:'
                     '36963:'
@@ -336,18 +336,6 @@ Other methods
 
     Return an exact copy of the image.
 
-.. py:method:: invert()
-
-    Return a new image by inverting the brightness of the pixels in the
-    source image.
-
-.. py:method:: fill(value)
-
-    Set the brightness of all the pixels in the image to the
-    **value**, which has to be between 0 (dark) and 9 (bright).
-
-    This method will raise an exception when called on any of the built-in
-    read-only images, like **Image.HEART**.
 
 .. py:method:: blit(src, x, y, w, h, xdest=0, ydest=0)
 
