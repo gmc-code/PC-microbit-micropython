@@ -51,7 +51,7 @@ Reverse direction of a list using the reverse method
 
 .. py:function:: alist.reverse()
 
-    | No parameters are involved.
+    | The list, **alist**,is reversed. No parameters are involved.
 
 | A list, **clock_list**, can be reversed using the **reverse** **method**: ``clock_list.reverse()``.
 | The original list has its elements reversed.

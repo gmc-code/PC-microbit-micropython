@@ -7,7 +7,7 @@ Show image
 
 | The basic syntax for showing an image is:
 
-.. py:function:: show(image)
+.. py:function:: display.show(image)
 
     | Display an image.
 
