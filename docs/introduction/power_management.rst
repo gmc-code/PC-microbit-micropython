@@ -5,7 +5,8 @@ Power Management **V2**
 
 .. py:module:: power
 
-This module lets you manage the power modes of the microbit V2.
+| This module lets you manage the power modes of the microbit V2.
+| See: https://microbit-micropython.readthedocs.io/en/v2-docs/power.html
 
 There are two low power modes:
 
@@ -24,7 +25,6 @@ Power down the board
     | The microbit will only wake up if the reset button is pressed or, if on battery power, when a USB cable is connected.
     | When the board wakes up it will start from a reset state, so the programme will start running from the beginning.
 
-
 .. py:function:: deep_sleep(ms=None, wake_on=None, run_every=False)
 
     | Set the micro:bit into a low power mode where it can wake up and continue operation.
@@ -34,73 +34,7 @@ Power down the board
     | If no wake up sources have been configured it will sleep until the reset button is pressed (which resets the board) or, in battery power when the USB cable is inserted.
 
     :param ms: A time in milliseconds to wait before it wakes up.
-    :param wake_on: A single instance or a tuple of pins and/or buttons to
-        wake up the board, e.g. ``deep_sleep(wake_on=button_a)`` or
-        ``deep_sleep(wake_on=(pin0, pin2, button_b))``.
-    :param run_every: Set to ``True`` to wake up with each
-        ``microbit.run_every`` scheduled run.
+    :param wake_on: A single instance or a tuple of pins and/or buttons to wake up the board, e.g. ``deep_sleep(wake_on=button_a)`` or ``deep_sleep(wake_on=(pin0, pin2, button_b))``.
+    :param run_every: Set to ``True`` to wake up with each ``microbit.run_every`` scheduled run.
+    See: https://microbit-micropython.readthedocs.io/en/v2-docs/microbit.html
 
-Examples
-========
-
-Example programme showing the power management API:
-
-.. include:: ../examples/low-power.py
-    :code: python
-
-
-Example using data logging:
-
-.. include:: ../examples/datalog-sleep.py
-    :code: python
-
-
-Detailed Information
-====================
-
-The micro:bit board has two microcontrollers (MCUs), which can be
-independently asleep or awake:
-
-- **Target MCU** - Where MicroPython and your code run.
-- **Interface MCU** - A secondary microcontroller that provides the USB
-  functionality, like the ``MICROBIT`` USB drive, and the USB serial interface.
-
-.. image:: power-mcus.png
-
-Each MCU can be in one of these "MCU power modes":
-
-- **Awake**: Running normally.
-- **Sleep**: A low power mode where the MCU can be woken up from different
-  sources and continue operation.
-- **Power Down**: The lowest power mode for an individual MCU, when it wakes up
-  it will start from reset.
-
-The Python code can request a "board power mode", in this case **Deep Sleep**
-or **Off**, which will set the Target into a specific "MCU power mode",
-but the Interface MCU mode will depend on the micro:bit power source,
-i.e. if it's powered via USB (connector to a computer) or battery.
-
-In essence, on battery power the Interface MCU can go into a low power mode,
-but when it is connected to a computer via USB, it will stay awake to maintain
-the USB connection.
-
-+------------------+-----------------+--------------------+
-| .. centered:: USB Powered (Interface always awake)      |
-+------------------+-----------------+--------------------+
-| Board Power Mode | Target MCU Mode | Interface MCU mode |
-+==================+=================+====================+
-| **Deep Sleep**   | 💤  Sleep       | ⏰ Awake           |
-+------------------+-----------------+--------------------+
-| **Off**          | 📴 Power Down   | ⏰ Awake           |
-|                  |                 | (red LED blinking) |
-+------------------+-----------------+--------------------+
-
-+------------------+-----------------+--------------------+
-| .. centered:: Battery Powered                           |
-+------------------+-----------------+--------------------+
-| Board Power Mode | Target MCU Mode | Interface MCU mode |
-+==================+=================+====================+
-| **Deep Sleep**   | 💤 Sleep        | 💤 Sleep           |
-+------------------+-----------------+--------------------+
-| **Off**          | 📴 Power Down   | 📴 Power Down      |
-+------------------+-----------------+--------------------+
