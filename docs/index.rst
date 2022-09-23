@@ -16,7 +16,7 @@ Index:
 
     introduction/introduction.rst
     introduction/advanced_python.rst
-
+    introduction/power_management.rst
 
 .. toctree::
     :maxdepth: 2
