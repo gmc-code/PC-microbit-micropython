@@ -305,6 +305,16 @@ Cropping images
     | Return a new image by cropping the picture from x1, x2 to x2, y2.
     | The new image is positioned at 0, 0 in the top left.
 
+.. code-block:: python
+
+    from microbit import *
+    
+    display.show(Image('00300:'
+                    '03630:'
+                    '36963:'
+                    '03630:'
+                    '00300'))
+
 
 ----
 
@@ -353,3 +363,6 @@ Other methods
             res = Image(w, h)
             res.blit(self, x, y, w, h)
             return res
+
+
+
