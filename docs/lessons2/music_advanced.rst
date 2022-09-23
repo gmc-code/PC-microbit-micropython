@@ -21,7 +21,7 @@ See: https://random-music-generators.herokuapp.com/melody
 | i.e. **note name** + **octave** + **":"** + **length**
 | e.g. **c4:2**
 | Create a list of notes, a list of octaves and a list of durations that are to be used.
-| Create a defintion that takes as parameters the list of notes, the list of octaves and the list of durations, then randomly chooses one from each, joins them together and returns a full note.
+| Create a definition that takes as parameters the list of notes, the list of octaves and the list of durations, then randomly chooses one from each, joins them together and returns a full note.
 | Then, play the randomly generated notes.
 
 .. admonition:: Tasks
@@ -203,9 +203,9 @@ See: https://random-music-generators.herokuapp.com/melody
 Scales generator
 ----------------------------------------
 
-See: https://piano-music-theory.com/2016/05/31/major-scales/
-See: https://appliedguitartheory.com/lessons/how-to-determine-the-key-of-a-song/
-See: https://en.wikipedia.org/wiki/Key_signature#Scales_with_sharp_key_signatures
+| See: https://piano-music-theory.com/2016/05/31/major-scales/
+| See: https://appliedguitartheory.com/lessons/how-to-determine-the-key-of-a-song/
+| See: https://en.wikipedia.org/wiki/Key_signature#Scales_with_sharp_key_signatures
 
 | Design code to generate the notes in a major scale, given the key and the octave. 
 | Research the intervals for major and natural minor scales and place them in lists, **major_steps** and **minor_steps**. Define a function, **get_scale_steps(key_type)**, that returns the scale intervals for a Major or minor keys based on passing "M" for major and "m" for minor.
