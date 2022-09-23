@@ -2,6 +2,8 @@
 Moving images
 ====================================================
 
+.. py:class:: Image
+
 Shift left and right
 --------------------------------
 
@@ -291,6 +293,18 @@ Shift up and down
                             display.show(img)
                             sleep(500)
 
+----
+
+Cropping images
+--------------------------------
+
+| An image can be cropped.
+
+.. py:method:: crop(x1, y1, x2, y2)
+
+    | Return a new image by cropping the picture from x1, x2 to x2, y2.
+    | The new image is positioned at 0, 0 in the top left.
+
 
 ----
 
@@ -307,9 +321,6 @@ Other methods
 
     Return the numbers of rows in the image.
 
-.. py:method:: crop(x, y, w, h)
-
-    Return a new image by cropping the picture to a width of ``w`` and a height of ``h``, starting with the pixel at column ``x`` and row ``y``.
 
 .. py:method:: copy()
 
@@ -323,19 +334,19 @@ Other methods
 .. py:method:: fill(value)
 
     Set the brightness of all the pixels in the image to the
-    ``value``, which has to be between 0 (dark) and 9 (bright).
+    **value**, which has to be between 0 (dark) and 9 (bright).
 
     This method will raise an exception when called on any of the built-in
-    read-only images, like ``Image.HEART``.
+    read-only images, like **Image.HEART**.
 
 .. py:method:: blit(src, x, y, w, h, xdest=0, ydest=0)
 
-    Copy the rectangle defined by ``x``, ``y``, ``w``, ``h`` from the image ``src`` into
-    this image at ``xdest``, ``ydest``.
+    Copy the rectangle defined by **x**, **y**, **w**, **h** from the image **src** into
+    this image at **xdest**, **ydest**.
     Areas in the source rectangle, but outside the source image are treated as having a value of 0.
 
-    ``shift_left()``, ``shift_right()``, ``shift_up()``, ``shift_down()`` and ``crop()``
-    can are all implemented by using ``blit()``.
+    **shift_left()**, **shift_right()**, **shift_up()**, **shift_down()** and **crop()**
+    can are all implemented by using **blit()**.
     For example, img.crop(x, y, w, h) can be implemented as::
 
         def crop(self, x, y, w, h):
