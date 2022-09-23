@@ -28,9 +28,10 @@ Fill
 -----------------------------
 
 
-.. py:method:: Image().fill(value)
+.. py:method:: fill(value)
 
     | Set the brightness of all the pixels in the image to the **value**, between 0 and 9.
+    | THe fill method applies the fill in-place to the image.
     | Don't use with built-in read-only images.
 
 | The code below sets all the pixels to a bightness of 6.
@@ -109,9 +110,18 @@ Fill
 Invert
 -----------------------------
 
-.. py:function:: Image().invert()
+.. py:function:: invert()
 
     | Return a new image by inverting the brightness of the pixels in the source image.
+
+
+.. code-block:: python
+
+    from microbit import *
+    
+    img1 = Image()
+    img1_inverted = img1.invert()
+    display.show(img1_inverted)
 
 
 | **Image().invert()** is equivalent to:
@@ -656,7 +666,7 @@ Pulsing HEART
 
                 .. tab-item:: Q1
 
-                    Using the pulsing code above as a starting point, add extra code so that it is possible to set use the number of pulses per second to calcualte the sleeptime.
+                    Using the pulsing code above as a starting point, add extra code so that it is possible to use the number of pulses per second to calculate the sleeptime.
 
                     .. code-block:: python
 
@@ -697,6 +707,22 @@ See: https://www.w3schools.com/python/python_lists_comprehension.asp
     from microbit import *
     
     square_9to0_list = [Image().invert()*(i/9) for i in range(9, -1, -1)]
+
+    while True:
+        if button_a.is_pressed():
+            display.show(square_9to0_list, delay=100, wait=False)
+        elif button_b.is_pressed():
+            display.show(square_9to0_list, delay=300, wait=False)
+
+| Another way to do this is by multiplication of a base image wiht all piels at a brightness of 1.
+
+.. code-block:: python
+
+    from microbit import *
+    
+    img0 = Image()
+    img0.fill(1)
+    square_9to0_list = [img0 * i for i in range(9, -1, -1)]
 
     while True:
         if button_a.is_pressed():

@@ -300,9 +300,9 @@ Cropping images
 
 | An image can be cropped.
 
-.. py:method:: crop(x1, y1, x2, y2)
+.. py:method:: crop(x, y, w, h)
 
-    | Return a new image by cropping the picture from x1, x2 to x2, y2.
+    | Return a new image by cropping the picture from x, y with width w, height h.
     | The new image is positioned at 0, 0 in the top left.
 
 .. code-block:: python
