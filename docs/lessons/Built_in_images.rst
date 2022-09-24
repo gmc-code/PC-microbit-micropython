@@ -353,27 +353,29 @@ All Images
 
     from microbit import *
 
-    built_in_images = [Image.HEART, Image.HEART_SMALL,
-                        Image.HAPPY, Image.SMILE, Image.SAD, Image.CONFUSED,
-                        Image.ANGRY, Image.ASLEEP, Image.SURPRISED, Image.SILLY,
-                        Image.FABULOUS, Image.MEH, Image.YES, Image.NO,
-                        Image.CLOCK12, Image.CLOCK11, Image.CLOCK10, Image.CLOCK9,
-                        Image.CLOCK8, Image.CLOCK7, Image.CLOCK6, Image.CLOCK5,
-                        Image.CLOCK4, Image.CLOCK3,Image.CLOCK2, Image.CLOCK1,
-                        Image.ARROW_N, Image.ARROW_NE, Image.ARROW_E, Image.ARROW_SE,
-                        Image.ARROW_S, Image.ARROW_SW, Image.ARROW_W, Image.ARROW_NW,
-                        Image.TRIANGLE, Image.TRIANGLE_LEFT, Image.CHESSBOARD,
-                        Image.DIAMOND, Image.DIAMOND_SMALL, Image.SQUARE,
-                        Image.SQUARE_SMALL, Image.RABBIT, Image.COW,
-                        Image.MUSIC_CROTCHET, Image.MUSIC_QUAVER,
-                        Image.MUSIC_QUAVERS, Image.PITCHFORK, Image.XMAS,
-                        Image.PACMAN, Image.TARGET, Image.TSHIRT,
-                        Image.ROLLERSKATE, Image.DUCK, Image.HOUSE, Image.TORTOISE,
-                        Image.BUTTERFLY, Image.STICKFIGURE, Image.GHOST, Image.SWORD,
-                        Image.GIRAFFE, Image.SKULL, Image.UMBRELLA, Image.SNAKE]
+    built_in_images = [Image.ANGRY, Image.ARROW_E, Image.ARROW_N, Image.ARROW_NE,
+        Image.ARROW_NW, Image.ARROW_S, Image.ARROW_SE, Image.ARROW_SW,
+        Image.ARROW_W, Image.ASLEEP, Image.BUTTERFLY, Image.CHESSBOARD,
+        Image.CLOCK1, Image.CLOCK10, Image.CLOCK11, Image.CLOCK12,
+        Image.CLOCK2, Image.CLOCK3, Image.CLOCK4, Image.CLOCK5, Image
+        .CLOCK6, Image.CLOCK7, Image.CLOCK8, Image.CLOCK9, Image.CONFUSED,
+        Image.COW, Image.DIAMOND, Image.DIAMOND_SMALL, Image.DUCK,
+        Image.FABULOUS, Image.GHOST, Image.GIRAFFE, Image.HAPPY,
+        Image.HEART, Image.HEART_SMALL, Image.HOUSE, Image.MEH, Image
+        .MUSIC_CROTCHET, Image.MUSIC_QUAVER, Image.MUSIC_QUAVERS,
+        Image.NO, Image.PACMAN, Image.PITCHFORK, Image.RABBIT, Image.ROLLERSKATE,
+        Image.SAD, Image.SCISSORS, Image.SILLY, Image.SKULL, Image.SMILE,
+        Image.SNAKE, Image.SQUARE, Image.SQUARE_SMALL, Image.STICKFIGURE,
+        Image.SURPRISED, Image.SWORD, Image.TARGET, Image.TORTOISE,
+        Image.TRIANGLE, Image.TRIANGLE_LEFT, Image.TSHIRT, Image.UMBRELLA,
+        Image.XMAS, Image.YES,
+    ]
 
     while True:
         display.show(built_in_images, delay=100)
+
+.. image:: images/built_in_images.png
+    :scale: 50 %
 
 ----
 
