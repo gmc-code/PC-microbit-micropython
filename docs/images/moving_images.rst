@@ -51,6 +51,7 @@ Shift left and right
     #.  Use a **for-loop** with the range function to do the same shifts to shift the dice image to the left from off screen on the right to off screen on the left in 5 steps.
     #.  Use a **for-loop** with the list: [0, 1, 2, 3, 4, -4, -3, -2, -1, 0] to shift the dice image to the right from a central position and back from off screen on the left in 10 steps.
     #.  Use a **for-loop** with the list: [0, 2, 4, -4, -2, 0] shift the dice image to the left from a central position and back from off screen on the right in 6 steps.
+    #.  Create a definition, **h_shift_img_directions(img, directions, sleeptime=80)**,  that takes a list of shifts, **directions**,  for the shifts and applies them to move the dice image sideways, using [-4, -3, -2, -1, 0, 1, 2, 3, 4] as the argument for directions.
 
 
     .. dropdown::
@@ -150,6 +151,29 @@ Shift left and right
                             display.show(img)
                             sleep(500)
 
+                .. tab-item:: Q7
+
+                    Create a definition, **h_shift_img_directions(img, directions, sleeptime=80)**,  that takes a list of shifts, **directions**,  for the shifts and applies them to move the dice image sideways, using [-4, -3, -2, -1, 0, 1, 2, 3, 4] as the argument for directions.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+
+                        def h_shift_img_directions(img, directions, sleeptime=80):
+                            for x in directions:
+                                shift_img = img.shift_right(x)
+                                display.show(shift_img)
+                                sleep(sleeptime)
+
+
+                        img = Image("00000:09090:00900:09090:00000")
+                        sleeptime = 200
+                        h_directions = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+                        while True:
+                            h_shift_img_directions(img, h_directions, sleeptime)
+
+
 ----
 
 Shift up and down
@@ -197,6 +221,7 @@ Shift up and down
     #.  Use a **for-loop** with the range function to do the same shifts to shift the dice image to the bottom from off screen on the top to off screen on the bottom in 5 steps.
     #.  Use a **for-loop** with the list: [0, 1, 2, 3, 4, -4, -3, -2, -1, 0] to shift the dice image up from a central position and back from off screen on the bottom in 10 steps.
     #.  Use a **for-loop** with the list: [0, 2, 4, -4, -2, 0] shift the dice image to the bottom from a central position and back from off screen on the top in 6 steps.
+    #.  Create a definition, **v_shift_img_directions(img, directions, sleeptime=80)**,  that takes a list of shifts, **directions**,  for the shifts and applies them to move the dice image sideways, using [0, 1, 2, 3, 4, -4, -3, -2, -1, 0] as the argument for directions.
 
     .. dropdown::
             :icon: codescan
@@ -294,6 +319,77 @@ Shift up and down
                             img = img1.shift_down(i)
                             display.show(img)
                             sleep(500)
+
+                .. tab-item:: Q7
+
+                    Create a definition, **v_shift_img_directions(img, directions, sleeptime=80)**,  that takes a list of shifts, **directions**,  for the shifts and applies them to move the dice image sideways, using [0, 1, 2, 3, 4, -4, -3, -2, -1, 0] as the argument for directions.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+
+                        def v_shift_img_directions(img, directions, sleeptime=80):
+                            for y in directions:
+                                shift_img = img.shift_down(y)
+                                display.show(shift_img)
+                                sleep(sleeptime)
+
+
+                        img = Image("00000:09090:00900:09090:00000")
+                        sleeptime = 200
+                        v_directions = [0, 1, 2, 3, 4, -4, -3, -2, -1, 0]
+                        while True:
+                            v_shift_img_directions(img, v_directions, sleeptime)
+
+
+----
+
+Shifting vertically and horizontally
+-----------------------------------------
+
+| An image can be shifted in a vertical sequence and in a horizontal sequence to create movement patterns.
+
+
+.. admonition:: Tasks
+
+    #.  Use both **h_shift_img_directions(img, directions, sleeptime=80)** and **v_shift_img_directions(img, directions, sleeptime=80)**, to make a cross shaped movement pattern for Image("00000:09090:00900:09090:00000").
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                   Use both **h_shift_img_directions(img, directions, sleeptime=80)** and **v_shift_img_directions(img, directions, sleeptime=80)**, to make a cross shaped movement pattern for Image("00000:09090:00900:09090:00000").
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+
+                        def v_shift_img_directions(img, directions, sleeptime=80):
+                            for y in directions:
+                                shift_img = img.shift_down(y)
+                                display.show(shift_img)
+                                sleep(sleeptime)
+
+                        def h_shift_img_directions(img, directions, sleeptime=80):
+                            for x in directions:
+                                shift_img = img.shift_right(x)
+                                display.show(shift_img)
+                                sleep(sleeptime)
+
+                        img = Image("00000:09090:00900:09090:00000")
+                        sleeptime = 80
+                        directions = [0, 1, 2, 3, 4, -4, -3, -2, -1, 0]
+                        while True:
+                            h_shift_img_directions(img, directions, sleeptime)
+                            v_shift_img_directions(img, directions, sleeptime)
+
 
 ----
 
@@ -429,8 +525,8 @@ Shifting combined
 
                     Predict what the following directions might do: **directions =  [(0, 0), (0, -1), (1, -1), (1, 0), (1, 1), (0, 1), (-1, 1), (-1, 0), (-1, -1), (0, 0)]**
 
-                    They move the image clockwise in a 2 by 2 square rnaging from (-1, -1) to (1, 1).
-                    
+                    They move the image clockwise in a 2 by 2 square ranging from (-1, -1) to (1, 1).
+
 ----
 
 Cropping images
