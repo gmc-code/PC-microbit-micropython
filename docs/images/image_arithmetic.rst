@@ -809,7 +809,7 @@ Pulsing Images
     | **img** can be a built in such as **Image.HEART** or a custom image such as **Image("90909:" * 5)** or **Image(5, 5, bytearray([9] * 25))**.
     | Pulse_delay defaults to 100 ms. It is the time between each image.
 
-| Pulse_image uses the set_image_brightness to produce an image with the given brightness.
+| Pulse_image uses the image_brightness to produce an image with the given brightness.
 | Pixels in the original image with a brightness of 5 or more are included; other pixels will be off. 
 
 .. code-block:: python
@@ -817,13 +817,13 @@ Pulsing Images
     from microbit import *
 
 
-    def set_image_brightness(img, brightness):
+    def image_brightness(img, brightness):
         res = img / 9 * brightness
         return res
 
     def pulse_image(img, pulse_delay=100):
-        img_list1 = [set_image_brightness(img, i) for i in range(0, 10, 1)]
-        img_list2 = [set_image_brightness(img, i) for i in range(9, -1, -1)]
+        img_list1 = [image_brightness(img, i) for i in range(0, 10, 1)]
+        img_list2 = [image_brightness(img, i) for i in range(9, -1, -1)]
         display.show(img_list1 + img_list2, delay=pulse_delay, wait=True) 
 
     while True:
@@ -835,6 +835,8 @@ Pulsing Images
 
     #. Modify the code above to pulse a series of animal images.
     #. Modify the code to pulse a series of faces.
+    #. Add a for-loop to pulse each face 3 times before changing to the next face.
+    #. Replace the image_brightness function with image_brightness_with_inverted to create a combined image that has the inverted image of complimentary brightness. e.g. original image of brightness 2 added to inverted image of brightness 7. 
     
     .. dropdown::
             :icon: codescan
@@ -905,4 +907,57 @@ Pulsing Images
                             for img in images:
                                 pulse_image(img, 50)
 
+                .. tab-item:: Q3
+
+                    Add a for-loop to quickly pulse each face 3 times before changing to the next face.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+                        def image_brightness(img, brightness):
+                            res = img / 9 * brightness
+                            return res
+
+                        def pulse_image(img, pulse_delay=100):
+                            img_list1 = [image_brightness(img, i) for i in range(0, 10, 1)]
+                            img_list2 = [image_brightness(img, i) for i in range(9, -1, -1)]
+                            display.show(img_list1 + img_list2, delay=pulse_delay, wait=True) 
+
+                        images = [Image.HAPPY, Image.SMILE, Image.SAD, Image.CONFUSED,
+                            Image.ANGRY, Image.ASLEEP, Image.SURPRISED, Image.SILLY,
+                            Image.FABULOUS, Image.MEH]    
+                            
+                        while True:
+                            for img in images:
+                                for _ in range(3):
+                                    pulse_image(img, 40)
+
+               .. tab-item:: Q4
+
+                    Replace the image_brightness function with image_brightness_with_inverted to create a combined image that has the inverted image of complimentary brightness. e.g. original image of brightness 2 added to inverted image of brightness 7. 
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+                        def image_brightness_with_inverted(img, brightness):
+                            res = img / 9 * brightness
+                            res_inv = img.invert() / 9 * (9 - brightness)
+                            return res + res_inv
+
+                        def pulse_image(img, pulse_delay=100):
+                            img_list1 = [image_brightness_with_inverted(img, i) for i in range(0, 10, 1)]
+                            img_list2 = [image_brightness_with_inverted(img, i) for i in range(9, -1, -1)]
+                            display.show(img_list1 + img_list2, delay=pulse_delay, wait=True) 
+
+
+                        images = [Image.HAPPY, Image.SMILE, Image.SAD, Image.CONFUSED,
+                            Image.ANGRY, Image.ASLEEP, Image.SURPRISED, Image.SILLY,
+                            Image.FABULOUS, Image.MEH]    
+                            
+                        while True:
+                            for img in images:
+                                for _ in range(3):
+                                    pulse_image(img, 40)
 
