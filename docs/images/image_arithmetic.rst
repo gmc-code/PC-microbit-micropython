@@ -836,7 +836,7 @@ Pulsing Images
     #. Modify the code above to pulse a series of animal images.
     #. Modify the code to pulse a series of faces.
     #. Add a for-loop to pulse each face 3 times before changing to the next face.
-    #. Replace the image_brightness function with image_brightness_with_inverted to create a combined image that has the inverted image of complimentary brightness. e.g. original image of brightness 2 added to inverted image of brightness 7. 
+    #. Replace the image_brightness function with **image_brightness_with_inverted** to create a combined image that has the inverted image of complimentary brightness. e.g. original image of brightness 2 added to inverted image of brightness 7. Rename pulse_image to **pulse_image_inverted** to include the new **image_brightness_with_inverted**.
     
     .. dropdown::
             :icon: codescan
@@ -935,7 +935,7 @@ Pulsing Images
 
                 .. tab-item:: Q4
 
-                    Replace the image_brightness function with image_brightness_with_inverted to create a combined image that has the inverted image of complimentary brightness. e.g. original image of brightness 2 added to inverted image of brightness 7. 
+                    Replace the image_brightness function with **image_brightness_with_inverted** to create a combined image that has the inverted image of complimentary brightness. e.g. original image of brightness 2 added to inverted image of brightness 7. Rename pulse_image to **pulse_image_inverted** to include the new **image_brightness_with_inverted**.
 
                     .. code-block:: python
 
@@ -946,7 +946,7 @@ Pulsing Images
                             res_inv = img.invert() / 9 * (9 - brightness)
                             return res + res_inv
 
-                        def pulse_image(img, pulse_delay=100):
+                        def pulse_image_inverted(img, pulse_delay=100):
                             img_list1 = [image_brightness_with_inverted(img, i) for i in range(0, 10, 1)]
                             img_list2 = [image_brightness_with_inverted(img, i) for i in range(9, -1, -1)]
                             display.show(img_list1 + img_list2, delay=pulse_delay, wait=True) 
@@ -959,5 +959,5 @@ Pulsing Images
                         while True:
                             for img in images:
                                 for _ in range(3):
-                                    pulse_image(img, 40)
+                                    pulse_image_inverted(img, 40)
 
