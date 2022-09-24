@@ -801,26 +801,108 @@ Pulsing Images
 
 | The code below pulses any image with a given delay between each brightness.
 | The image is used to make 20 images with brightness values that go from 0 to 9 and back down to 0.
+| The input image needs to have pixel brightnesses of 9, although pixels of 5 or above will work.
+| The custom syntax is below:
 
 .. py:function:: pulse_image(img, pulse_delay=100)
 
-    | img can be a blank image such as Image(), or built in such as Image.HEART or a custom image such as Image("13579:" * 5)
+    | **img** can be a built in such as **Image.HEART** or a custom image such as **Image("90909:" * 5)** or **Image(5, 5, bytearray([9] * 25))**.
+    | Pulse_delay defaults to 100 ms. It is the time between each image.
 
+| Pulse_image uses the set_image_brightness to produce an image with the given brightness.
+| Pixels in the original image with a brightness of 5 or more are included; other pixels will be off. 
 
 .. code-block:: python
 
     from microbit import *
 
 
-    def image_brightness(img, brightness):
+    def set_image_brightness(img, brightness):
         res = img / 9 * brightness
         return res
 
     def pulse_image(img, pulse_delay=100):
-        img_list1 = [image_brightness(img, i) for i in range(0, 10, 1)]
-        img_list2 = [image_brightness(img, i) for i in range(9, -1, -1)]
+        img_list1 = [set_image_brightness(img, i) for i in range(0, 10, 1)]
+        img_list2 = [set_image_brightness(img, i) for i in range(9, -1, -1)]
         display.show(img_list1 + img_list2, delay=pulse_delay, wait=True) 
 
     while True:
         pulse_image(Image.HEART, 50)
+
+----
+
+.. admonition:: Tasks
+
+    #. Modify the code above to pulse a series of animal images.
+    #. Modify the code to pulse a series of faces.
+    
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Modify the code to create a simple square brightness animation from 0 to 9 at different speeds set by the delay value.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+
+                        def image_brightness(img, brightness):
+                            res = img / 9 * brightness
+                            return res
+
+                        def pulse_image(img, pulse_delay=100):
+                            img_list1 = [image_brightness(img, i) for i in range(0, 10, 1)]
+                            img_list2 = [image_brightness(img, i) for i in range(9, -1, -1)]
+                            display.show(img_list1 + img_list2, delay=pulse_delay, wait=True) 
+
+
+                        animal_images = [
+                                            Image.RABBIT,
+                                            Image.COW,
+                                            Image.DUCK,
+                                            Image.TORTOISE,
+                                            Image.BUTTERFLY,
+                                            Image.GIRAFFE,
+                                            Image.SNAKE,
+                                        ]
+                                        
+                            
+                        while True:
+                            for img in animal_images:
+                                pulse_image(img, 50)
+
+
+                .. tab-item:: Q2
+
+                    Modify the code to pulse a series of faces.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+
+                        def image_brightness(img, brightness):
+                            res = img / 9 * brightness
+                            return res
+
+                        def pulse_image(img, pulse_delay=100):
+                            img_list1 = [image_brightness(img, i) for i in range(0, 10, 1)]
+                            img_list2 = [image_brightness(img, i) for i in range(9, -1, -1)]
+                            display.show(img_list1 + img_list2, delay=pulse_delay, wait=True) 
+
+
+                        images = [Image.HAPPY, Image.SMILE, Image.SAD, Image.CONFUSED,
+                            Image.ANGRY, Image.ASLEEP, Image.SURPRISED, Image.SILLY,
+                            Image.FABULOUS, Image.MEH]    
+                            
+                        while True:
+                            for img in images:
+                                pulse_image(img, 50)
+
 
