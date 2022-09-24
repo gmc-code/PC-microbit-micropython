@@ -346,6 +346,12 @@ All Images
 
 | The code below displays all the built in images.
 
+.. sidebar::
+
+    .. image:: images/built_in_images.png
+        :scale: 50 %
+        :align: right
+
 .. code-block:: python
 
     from microbit import *
