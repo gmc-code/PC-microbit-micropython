@@ -390,6 +390,7 @@ Adding Image pixels
 
     #. Modify the code to create the addition of the images from 3 and 5.
     #. Modify the code to create the addition of the images "m" and an inverted "m".
+    #. Modify the code to create the addition of the sad and asleep images.
 
     .. dropdown::
             :icon: codescan
@@ -439,6 +440,27 @@ Adding Image pixels
                             else:
                                 display.show(img_mminv)
                             sleep(500)
+
+                .. tab-item:: Q3
+
+                    Modify the code to create the addition of the sad and asleep images.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+
+                        img1 = Image.SAD
+                        img2 = Image.ASLEEP
+                        img12 = img1 + img2
+
+                        while True:
+                            display.show(img1)
+                            sleep(800)
+                            display.show(img2)
+                            sleep(800)
+                            display.show(img12)
+                            sleep(800)
 
 ----
 

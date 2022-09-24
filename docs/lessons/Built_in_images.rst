@@ -1,11 +1,7 @@
 ====================================================
-Built in images
+Built-in images
 ====================================================
 
-.. admonition:: New
-
-    | The Sep 2022 new addition, **Image.SCISSORS**,  is available in the online micropython editor: https://python.microbit.org/v/beta, but not yet in Mu editor.
-    
 | The microbit library contains over 60 built in images that have specific names.
 | e.g ``Image.HEART``
 | The **Image** object must have a capital **I**.
@@ -376,7 +372,7 @@ All Images
 
 .. image:: images/built_in_images.png
     :scale: 50 %
-
+    
 ----
 
 .. admonition:: Tasks
@@ -454,6 +450,7 @@ All Images
                                     Image.HOUSE,
                                     Image.STICKFIGURE, 
                                     Image.GHOST,
+                                    Image.SCISSORS,
                                     Image.SWORD,
                                     Image.SKULL,
                                     Image.UMBRELLA,
@@ -482,4 +479,19 @@ All Images
 
                     while True:
                         display.show(shape_images, delay=250)
+
+ 
+.. admonition:: Tip
+
+    Advanced code to collect the list of all images is below.
+    
+    .. code-block:: python
+
+        from microbit import *
+
+        dir_images = dir(Image)
+        built_in_images = ["Image." + img for img in dir_images if type(getattr(Image, img)) == Image]
+        built_in_images_string = ", ".join(built_in_images)
+        built_in_images_string.replace('"', '')
+        print(built_in_images_string)
 

@@ -2,7 +2,6 @@
 Built-in images
 ====================================================
 
-
 | The microbit library contains over 60 built in images that have specific names.
 | e.g ``Image.HEART``
 | The **Image** object must have a capital **I**.
