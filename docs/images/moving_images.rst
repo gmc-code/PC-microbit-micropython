@@ -543,12 +543,241 @@ Cropping images
 
     from microbit import *
 
-    display.show(Image('00300:'
-                    '03630:'
-                    '36963:'
-                    '03630:'
-                    '00300'))
+    img = Image("00300:03630:36963:03630:00300")
+    img_crop = img.crop(2, 2, 3, 3)
 
+    while True:
+        display.show(img)
+        sleep(500)
+        display.show(img_crop)
+        sleep(500)
+
+| Cropping usually needs shifting combined with it.
+| The blit method is more useful for this.
+
+----
+
+Cropping images and repositioning with blit
+------------------------------------------------------
+
+| An image can be cropped and repositioned with blit.
+
+.. py:method:: blit(src, x, y, w, h, xdest=0, ydest=0)
+
+    | Copy the rectangle defined by **x**, **y**, **w**, **h** from an image **src** into
+    the image at **xdest**, **ydest**.
+    | Areas in the source rectangle, but outside the source image are given a value of 0.
+
+
+| The code below crops a source image, source_img, from pixel x, y for a width, w, and height, h, and places it a pixel i, j in the a new blank 5 by 5 image which is returned.
+
+.. code-block:: python
+
+    from microbit import *
+        
+    def crop_to(source_img, x, y, w, h, i, j):
+        res = Image(5, 5)
+        res.blit(source_img, x, y, w, h, i, j)
+        return res
+
+| The code below gives an example of cropping the centre part of **Image.SQUARE_SMALL** and repositioning it in new images along the top of the image.
+| The original image and the 3 new images are shown.
+
+.. code-block:: python
+
+    from microbit import *
+    
+
+    def crop_to(source_img, x, y, w, h, i, j):
+        res = Image(5, 5)
+        res.blit(source_img, x, y, w, h, i, j)
+        return res
+
+
+    img = Image.SQUARE_SMALL
+    img_00 = crop_to(img, 1, 1, 3, 3, 0, 0)    
+    img_10 = crop_to(img, 1, 1, 3, 3, 1, 0)
+    img_20 = crop_to(img, 1, 1, 3, 3, 2, 0)
+
+    while True:
+        display.show(img)
+        sleep(500)
+        display.show(img_00)
+        sleep(500)
+        display.show(img_10)
+        sleep(500)
+        display.show(img_20)
+        sleep(500)
+
+----
+
+.. admonition:: Tasks
+
+    #.  Rewrite the code above to achieve the same result, but by using a for-loop, **for x in [0, 1, 2]**, to create the 3 cropped images above and display them.
+    #.  Modify the code further to use nested for loops by adding **for y in [0, 1, 2]** to display the cropped image in 9 positions.
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                   Rewrite the code above to achieve the same result, but by using a for-loop, **for x in [0, 1, 2]**, to create the 3 cropped images above and display them.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+
+                        def crop_to(source_img, x, y, w, h, i, j):
+                            res = Image(5, 5)
+                            res.blit(source_img, x, y, w, h, i, j)
+                            return res
+
+
+                        img = Image.SQUARE_SMALL
+
+                        while True:
+                            display.show(img)
+                            sleep(500)
+                            for x in [0, 1, 2]:
+                                img_x = crop_to(img, 1, 1, 3, 3, x, 0)
+                                display.show(img_x)
+                                sleep(200)
+
+                .. tab-item:: Q2
+
+                   Modify the code further to use nested for loops by adding **for y in [0, 1, 2]** to display the cropped image in 9 positions.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+
+                        def crop_to(source_img, x, y, w, h, i, j):
+                            res = Image(5, 5)
+                            res.blit(source_img, x, y, w, h, i, j)
+                            return res
+
+
+                        img = Image.SQUARE_SMALL
+
+                        while True:
+                            display.show(img)
+                            sleep(500)
+                            for y in [0, 1, 2]:
+                                for x in [0, 1, 2]:
+                                    img_xy = crop_to(img, 1, 1, 3, 3, x, y)
+                                    display.show(img_xy)
+                                    sleep(200)
+
+----
+
+Filling images and repositioning with blit
+------------------------------------------------------
+
+| An rectangle can be filled and positioned with blit.
+
+| The code fills a rectangle of width, w, and height, h, and given brightness, and places it a pixel x, y in the a new blank 5 by 5 image which is returned.
+
+.. code-block:: python
+
+    from microbit import *
+        
+    def blit_fillrect(w, h, brightness, x, y):
+        src = Image(w, h)
+        src.fill(brightness)
+        res = Image(5, 5)
+        res.blit(src, 0, 0, 5, 5, x, y)
+        return res
+
+| The code below gives an example of creating rectangles that overlap.
+
+.. code-block:: python
+
+    from microbit import *
+
+
+    def blit_fillrect(w, h, brightness, x, y):
+        src = Image(w, h)
+        src.fill(brightness)
+        res = Image(5, 5)
+        res.blit(src, 0, 0, 5, 5, x, y)
+        return res
+
+
+    rect1 = blit_fillrect(3, 4, 5, 0, 0)
+    rect2 = blit_fillrect(4, 3, 4, 1, 2)
+    rects = rect1 + rect2
+
+    display.show(my_image_overlap)
+
+----
+
+.. admonition:: Tasks
+
+    #.  Write code to place 4, 2 by 2 squares, of brightness 5, in each corner.
+    #.  Write code to place 4, 2 by 2 squares, of brightness 5, in each corner using nested for loops for the x and y values, adding them to the display with a 500ms delay.
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                   Write code to place 4, 2 by 2 squares, of brightness 5, in each corner. 
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+
+                        def blit_fillrect(w, h, brightness, x, y):
+                            src = Image(w, h)
+                            src.fill(brightness)
+                            res = Image(5, 5)
+                            res.blit(src, 0, 0, 5, 5, x, y)
+                            return res
+
+
+                        rect1 = blit_fillrect(2, 2, 5, 0, 0)
+                        rect2 = blit_fillrect(2, 2, 5, 3, 0)
+                        rect3 = blit_fillrect(2, 2, 5, 0, 3)
+                        rect4 = blit_fillrect(2, 2, 5, 3, 3)
+                        rects = rect1 + rect2 + rect3 + rect4
+
+                        display.show(my_image_overlap)
+
+                .. tab-item:: Q2
+
+                   Write code to place 4, 2 by 2 squares, of brightness 5, in each corner. 
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+
+                        def blit_fillrect(w, h, brightness, x, y):
+                            src = Image(w, h)
+                            src.fill(brightness)
+                            res = Image(5, 5)
+                            res.blit(src, 0, 0, 5, 5, x, y)
+                            return res
+
+
+                        my_image_overlap = Image()
+                        for x in [0, 3]:
+                            for y in [0, 3]:
+                                rect = blit_fillrect(2, 2, 5, x, y)
+                                my_image_overlap = my_image_overlap + rect
+                                display.show(my_image_overlap)
+                                sleep(500)
 
 ----
 
@@ -571,20 +800,7 @@ Other methods
     Return an exact copy of the image.
 
 
-.. py:method:: blit(src, x, y, w, h, xdest=0, ydest=0)
 
-    Copy the rectangle defined by **x**, **y**, **w**, **h** from the image **src** into
-    this image at **xdest**, **ydest**.
-    Areas in the source rectangle, but outside the source image are treated as having a value of 0.
-
-    **shift_left()**, **shift_right()**, **shift_up()**, **shift_down()** and **crop()**
-    can are all implemented by using **blit()**.
-    For example, img.crop(x, y, w, h) can be implemented as::
-
-        def crop(self, x, y, w, h):
-            res = Image(w, h)
-            res.blit(self, x, y, w, h)
-            return res
 
 
 
