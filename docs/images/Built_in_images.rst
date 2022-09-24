@@ -487,18 +487,9 @@ All Images
 
         from microbit import *
 
-        built_in_images_string = str()
-        # get all the Image methods, including build in images
-        # dir() returns all properties and methods of the Image object
         dir_images = dir(Image)
-        # go through the list
-        for img in dir_images:
-            # getattr() returns the value of the img attribute from the Image object
-            img_object = getattr(Image, img)
-            # check that the value is actually an Image and not a method
-            if type(img_object) == Image:
-                # add it to the images
-                built_in_images_string += ("Image." + img + ", ")
-        # remove quotes
+        built_in_images = ["Image." + img for img in dir_images if type(getattr(Image, img)) == Image]
+        built_in_images_string = ", ".join(built_in_images)
         built_in_images_string.replace('"', '')
         print(built_in_images_string)
+

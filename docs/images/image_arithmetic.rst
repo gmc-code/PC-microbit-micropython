@@ -795,34 +795,31 @@ See: https://www.w3schools.com/python/python_lists_comprehension.asp
 
 ----
 
-| The code below creates a pulsing square.
+Pulsing Images
+---------------
+
+| The code below pulses any image with a given delay between each brightness.
+| The image is used to make 20 images with brightness values that go from 0 to 9 and back down to 0.
+
+.. py:function:: pulse_image(img, pulse_delay=100)
+
+    | img can be a blank image such as Image(), or built in such as Image.HEART or a custom image such as Image("13579:" * 5)
+
 
 .. code-block:: python
 
     from microbit import *
 
 
-    def fillimage(img, brightness):
-        img.fill(brightness)
-        return img
-        
-    square_9to0_list = [fillimage(Image(5, 5), i) for i in range(9, -1, -1)]
-    square_0to9_list = [fillimage(Image(5, 5), i) for i in range(0, 10, 1)]
+    def image_brightness(img, brightness):
+        res = img / 9 * brightness
+        return res
+
+    def pulse_image(img, pulse_delay=100):
+        img_list1 = [image_brightness(img, i) for i in range(0, 10, 1)]
+        img_list2 = [image_brightness(img, i) for i in range(9, -1, -1)]
+        display.show(img_list1 + img_list2, delay=pulse_delay, wait=True) 
 
     while True:
-        display.show(square_0to9_list, delay=100)
-        display.show(square_9to0_list, delay=100)
-    
-
-    
-        def fillimage(img, brightness):
-        img.fill(brightness)
-        return img
-        
-    square_9to0_list = [fillimage(Image.HEART, i) for i in range(9, -1, -1)]
-    square_0to9_list = [fillimage(Image.HEART, i) for i in range(0, 10, 1)]
-
-    while True:
-        display.show(square_0to9_list, delay=100)
-        display.show(square_9to0_list, delay=100)
+        pulse_image(Image.HEART, 50)
 
