@@ -792,3 +792,37 @@ See: https://www.w3schools.com/python/python_lists_comprehension.asp
                                 display.show(sad_0to9_list, delay=100, wait=False)
                             elif button_b.is_pressed():
                                 display.show(sad_0to9_list, delay=300, wait=False)
+
+----
+
+| The code below creates a pulsing square.
+
+.. code-block:: python
+
+    from microbit import *
+
+
+    def fillimage(img, brightness):
+        img.fill(brightness)
+        return img
+        
+    square_9to0_list = [fillimage(Image(5, 5), i) for i in range(9, -1, -1)]
+    square_0to9_list = [fillimage(Image(5, 5), i) for i in range(0, 10, 1)]
+
+    while True:
+        display.show(square_0to9_list, delay=100)
+        display.show(square_9to0_list, delay=100)
+    
+
+    
+        def fillimage(img, brightness):
+        img.fill(brightness)
+        return img
+        
+    square_9to0_list = [fillimage(Image.HEART, i) for i in range(9, -1, -1)]
+    square_0to9_list = [fillimage(Image.HEART, i) for i in range(0, 10, 1)]
+
+    while True:
+        display.show(square_0to9_list, delay=100)
+        display.show(square_9to0_list, delay=100)
+

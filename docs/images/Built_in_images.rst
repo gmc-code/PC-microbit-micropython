@@ -3,11 +3,6 @@ Built-in images
 ====================================================
 
 
-.. admonition:: New
-
-    | The Sep 2022 new addition, **Image.SCISSORS**,  is available in the online micropython editor: https://python.microbit.org/v/beta, but not yet in Mu editor.
-
-
 | The microbit library contains over 60 built in images that have specific names.
 | e.g ``Image.HEART``
 | The **Image** object must have a capital **I**.
@@ -355,24 +350,23 @@ All Images
 
     from microbit import *
 
-    built_in_images = [Image.HEART, Image.HEART_SMALL,
-                        Image.HAPPY, Image.SMILE, Image.SAD, Image.CONFUSED,
-                        Image.ANGRY, Image.ASLEEP, Image.SURPRISED, Image.SILLY,
-                        Image.FABULOUS, Image.MEH, Image.YES, Image.NO,
-                        Image.CLOCK12, Image.CLOCK11, Image.CLOCK10, Image.CLOCK9,
-                        Image.CLOCK8, Image.CLOCK7, Image.CLOCK6, Image.CLOCK5,
-                        Image.CLOCK4, Image.CLOCK3,Image.CLOCK2, Image.CLOCK1,
-                        Image.ARROW_N, Image.ARROW_NE, Image.ARROW_E, Image.ARROW_SE,
-                        Image.ARROW_S, Image.ARROW_SW, Image.ARROW_W, Image.ARROW_NW,
-                        Image.TRIANGLE, Image.TRIANGLE_LEFT, Image.CHESSBOARD,
-                        Image.DIAMOND, Image.DIAMOND_SMALL, Image.SQUARE,
-                        Image.SQUARE_SMALL, Image.RABBIT, Image.COW,
-                        Image.MUSIC_CROTCHET, Image.MUSIC_QUAVER,
-                        Image.MUSIC_QUAVERS, Image.PITCHFORK, Image.XMAS,
-                        Image.PACMAN, Image.TARGET, Image.TSHIRT,
-                        Image.ROLLERSKATE, Image.DUCK, Image.HOUSE, Image.TORTOISE,
-                        Image.BUTTERFLY, Image.STICKFIGURE, Image.GHOST, Image.SWORD,
-                        Image.GIRAFFE, Image.SKULL, Image.UMBRELLA, Image.SNAKE]
+    built_in_images = [Image.ANGRY, Image.ARROW_E, Image.ARROW_N, Image.ARROW_NE,
+        Image.ARROW_NW, Image.ARROW_S, Image.ARROW_SE, Image.ARROW_SW,
+        Image.ARROW_W, Image.ASLEEP, Image.BUTTERFLY, Image.CHESSBOARD,
+        Image.CLOCK1, Image.CLOCK10, Image.CLOCK11, Image.CLOCK12,
+        Image.CLOCK2, Image.CLOCK3, Image.CLOCK4, Image.CLOCK5, Image
+        .CLOCK6, Image.CLOCK7, Image.CLOCK8, Image.CLOCK9, Image.CONFUSED,
+        Image.COW, Image.DIAMOND, Image.DIAMOND_SMALL, Image.DUCK,
+        Image.FABULOUS, Image.GHOST, Image.GIRAFFE, Image.HAPPY,
+        Image.HEART, Image.HEART_SMALL, Image.HOUSE, Image.MEH, Image
+        .MUSIC_CROTCHET, Image.MUSIC_QUAVER, Image.MUSIC_QUAVERS,
+        Image.NO, Image.PACMAN, Image.PITCHFORK, Image.RABBIT, Image.ROLLERSKATE,
+        Image.SAD, Image.SCISSORS, Image.SILLY, Image.SKULL, Image.SMILE,
+        Image.SNAKE, Image.SQUARE, Image.SQUARE_SMALL, Image.STICKFIGURE,
+        Image.SURPRISED, Image.SWORD, Image.TARGET, Image.TORTOISE,
+        Image.TRIANGLE, Image.TRIANGLE_LEFT, Image.TSHIRT, Image.UMBRELLA,
+        Image.XMAS, Image.YES,
+    ]
 
     while True:
         display.show(built_in_images, delay=100)
@@ -454,6 +448,7 @@ All Images
                                     Image.HOUSE,
                                     Image.STICKFIGURE, 
                                     Image.GHOST,
+                                    Image.SCISSORS,
                                     Image.SWORD,
                                     Image.SKULL,
                                     Image.UMBRELLA,
@@ -483,3 +478,27 @@ All Images
                     while True:
                         display.show(shape_images, delay=250)
 
+ 
+.. admonition:: Tip
+
+    Advanced code to collect the list of all images is below.
+    
+    .. code-block:: python
+
+        from microbit import *
+
+        built_in_images_string = str()
+        # get all the Image methods, including build in images
+        # dir() returns all properties and methods of the Image object
+        dir_images = dir(Image)
+        # go through the list
+        for img in dir_images:
+            # getattr() returns the value of the img attribute from the Image object
+            img_object = getattr(Image, img)
+            # check that the value is actually an Image and not a method
+            if type(img_object) == Image:
+                # add it to the images
+                built_in_images_string += ("Image." + img + ", ")
+        # remove quotes
+        built_in_images_string.replace('"', '')
+        print(built_in_images_string)
