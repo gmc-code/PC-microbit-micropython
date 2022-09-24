@@ -714,7 +714,7 @@ See: https://www.w3schools.com/python/python_lists_comprehension.asp
         elif button_b.is_pressed():
             display.show(square_9to0_list, delay=300, wait=False)
 
-| Another way to do this is by multiplication of a base image wiht all piels at a brightness of 1.
+| Another way to do this is by multiplication of a base image with all pixels at a brightness of 1.
 
 .. code-block:: python
 
