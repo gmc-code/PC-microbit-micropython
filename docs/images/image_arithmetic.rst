@@ -847,7 +847,7 @@ Pulsing Images
 
                 .. tab-item:: Q1
 
-                    Modify the code to create a simple square brightness animation from 0 to 9 at different speeds set by the delay value.
+                    Modify the code above to pulse a series of animal images.
 
                     .. code-block:: python
 
