@@ -933,7 +933,7 @@ Pulsing Images
                                 for _ in range(3):
                                     pulse_image(img, 40)
 
-               .. tab-item:: Q4
+                .. tab-item:: Q4
 
                     Replace the image_brightness function with image_brightness_with_inverted to create a combined image that has the inverted image of complimentary brightness. e.g. original image of brightness 2 added to inverted image of brightness 7. 
 
