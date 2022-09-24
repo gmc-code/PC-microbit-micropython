@@ -821,10 +821,12 @@ Pulsing Images
         res = img / 9 * brightness
         return res
 
+
     def pulse_image(img, pulse_delay=100):
         img_list1 = [image_brightness(img, i) for i in range(0, 10, 1)]
         img_list2 = [image_brightness(img, i) for i in range(9, -1, -1)]
         display.show(img_list1 + img_list2, delay=pulse_delay, wait=True) 
+
 
     while True:
         pulse_image(Image.HEART, 50)
@@ -857,6 +859,7 @@ Pulsing Images
                         def image_brightness(img, brightness):
                             res = img / 9 * brightness
                             return res
+
 
                         def pulse_image(img, pulse_delay=100):
                             img_list1 = [image_brightness(img, i) for i in range(0, 10, 1)]
@@ -893,6 +896,7 @@ Pulsing Images
                             res = img / 9 * brightness
                             return res
 
+
                         def pulse_image(img, pulse_delay=100):
                             img_list1 = [image_brightness(img, i) for i in range(0, 10, 1)]
                             img_list2 = [image_brightness(img, i) for i in range(9, -1, -1)]
@@ -919,10 +923,12 @@ Pulsing Images
                             res = img / 9 * brightness
                             return res
 
+
                         def pulse_image(img, pulse_delay=100):
                             img_list1 = [image_brightness(img, i) for i in range(0, 10, 1)]
                             img_list2 = [image_brightness(img, i) for i in range(9, -1, -1)]
                             display.show(img_list1 + img_list2, delay=pulse_delay, wait=True) 
+
 
                         images = [Image.HAPPY, Image.SMILE, Image.SAD, Image.CONFUSED,
                             Image.ANGRY, Image.ASLEEP, Image.SURPRISED, Image.SILLY,
@@ -945,6 +951,7 @@ Pulsing Images
                             res = img / 9 * brightness
                             res_inv = img.invert() / 9 * (9 - brightness)
                             return res + res_inv
+
 
                         def pulse_image_inverted(img, pulse_delay=100):
                             img_list1 = [image_brightness_with_inverted(img, i) for i in range(0, 10, 1)]
