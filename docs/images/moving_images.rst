@@ -7,7 +7,9 @@ Moving images
 Shift left and right
 --------------------------------
 
-| An image can be shifted left or right.
+| An image can be shifted left or right. 
+| Parts of the image moved off screen are lost.
+| So, if making animations, it is best to reuse the original image rather than reuse moved images.
 
 .. py:method:: shift_left(n)
 
@@ -293,6 +295,142 @@ Shift up and down
                             display.show(img)
                             sleep(500)
 
+----
+
+Shifting combined
+--------------------------------
+
+| An image can be shifted up or down and left or right to create movement patterns.
+
+| The custom syntax below combines shifting in the x and y directions:
+
+.. function:: shift_x_y(img, x, y, sleeptime=80)
+
+    | **img** can be a built in such as **Image.HEART** or a custom image such as **Image("90909:" * 5)** or **Image(5, 5, bytearray([9] * 25))**.
+    | x is an integer
+    | **sleeptime** defaults to 80 ms. It is the sleep time after showing the shifted image.
+
+| The code below shifts a butterfly image clockwise in 4 moves. 
+
+
+.. code-block:: python
+
+    from microbit import *
+
+    def shift_x_y(img, x, y, sleeptime=80):
+        shift_img = img.shift_right(x)
+        shift_img = shift_img.shift_down(y)
+        display.show(shift_img)
+        sleep(sleeptime)
+            
+
+    img = Image.BUTTERFLY
+    sleeptime = 200
+    while True:
+        display.show(img)
+        sleep(sleeptime)
+        shift_x_y(img, 1, 0, sleeptime)
+        shift_x_y(img, 1, 1, sleeptime)
+        shift_x_y(img, 0, 1, sleeptime)
+
+----
+
+.. admonition:: Tasks
+
+    #.  Alter the arguments to move the butterfly anticlockwise.
+    #.  Create a definition, **shift_img_directions(img, directions, sleeptime=80)**,  that takes a list of tuples, **directions**,  for the shifts and applies them to move the butterfly anticlockwise.
+    #.  Use the definition, **shift_img_directions(img, directions, sleeptime=80)**, to move the butterfly clockwise.
+    #.  Predict what the following directions might do: **directions =  [(0, 0), (0, -1), (1, -1), (1, 0), (1, 1), (0, 1), (-1, 1), (-1, 0), (-1, -1), (0, 0)]**
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                   Alter the arguments to move the butterfly anticlockwise.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+                        def shift_x_y(img, x, y, sleeptime=80):
+                            shift_img = img.shift_right(x)
+                            shift_img = shift_img.shift_down(y)
+                            display.show(shift_img)
+                            sleep(sleeptime)
+                                
+
+                        img = Image.BUTTERFLY   
+                        sleeptime = 200
+                        while True:
+                            display.show(img)
+                            sleep(sleeptime)
+                            shift_x_y(img, 0, 1, sleeptime)
+                            shift_x_y(img, 1, 1, sleeptime)
+                            shift_x_y(img, 1, 0, sleeptime)
+
+                .. tab-item:: Q2
+
+                    Create a definition, **shift_img_directions(img, directions, sleeptime=80)**,  that takes a list of tuples, **directions**,  for the shifts and applies them to move the butterfly anticlockwise.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+                        def shift_x_y(img, x, y, sleeptime=80):
+                            shift_img = img.shift_right(x)
+                            shift_img = shift_img.shift_down(y)
+                            display.show(shift_img)
+                            sleep(sleeptime)
+                                
+                            
+                        def shift_img_directions(img, directions, sleeptime=80):
+                            for x,y in directions:
+                                shift_x_y(img, x, y, sleeptime)
+
+
+                        img = Image.BUTTERFLY
+                        sleeptime = 200
+                        while True:
+                            anticlockwise_directions =  [(0, 0), (0, 1), (1, 1), (1, 0)]
+                            shift_img_directions(img, anticlockwise_directions, sleeptime)
+
+                .. tab-item:: Q3
+
+                    Use the definition, **shift_img_directions(img, directions, sleeptime=80)**, to move the butterfly clockwise.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+                        def shift_x_y(img, x, y, sleeptime=80):
+                            shift_img = img.shift_right(x)
+                            shift_img = shift_img.shift_down(y)
+                            display.show(shift_img)
+                            sleep(sleeptime)
+                                
+                            
+                        def shift_img_directions(img, directions, sleeptime=80):
+                            for x,y in directions:
+                                shift_x_y(img, x, y, sleeptime)
+
+
+                        img = Image.BUTTERFLY
+                        sleeptime = 200
+                        while True:
+                            clockwise_directions =  [(0, 0), (1, 0), (1, 1), (0, 1) ]
+                            shift_img_directions(img, clockwise_directions, sleeptime)
+
+                .. tab-item:: Q4
+
+                    Predict what the following directions might do: **directions =  [(0, 0), (0, -1), (1, -1), (1, 0), (1, 1), (0, 1), (-1, 1), (-1, 0), (-1, -1), (0, 0)]**
+
+                    They move the image clockwise in a 2 by 2 square rnaging from (-1, -1) to (1, 1).
+                    
 ----
 
 Cropping images
