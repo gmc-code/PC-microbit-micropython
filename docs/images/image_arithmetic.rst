@@ -809,7 +809,7 @@ Pulsing Images
     | **img** can be a built in such as **Image.HEART** or a custom image such as **Image("90909:" * 5)** or **Image(5, 5, bytearray([9] * 25))**.
     | Pulse_delay defaults to 100 ms. It is the time between each image.
 
-| Pulse_image uses the image_brightness to produce an image with the given brightness.
+| Pulse_image uses the image_brightness function to produce an image with the given brightness.
 | Pixels in the original image with a brightness of 5 or more are included; other pixels will be off. 
 
 .. code-block:: python
