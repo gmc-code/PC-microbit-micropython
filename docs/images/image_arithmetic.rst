@@ -694,7 +694,7 @@ List comprehension for a series of images
 
 See: https://www.w3schools.com/python/python_lists_comprehension.asp
 
-.. py:function:: newlist = [expression for item in iterable]
+.. function:: newlist = [expression for item in iterable]
 
     | Create a list of expressions that take each item in an iterable, such as a list, tuple or string.
 
@@ -804,7 +804,7 @@ Pulsing Images
 | The input image needs to have pixel brightnesses of 9, although pixels of 5 or above will work.
 | The custom syntax is below:
 
-.. c:function:: pulse_image(img, pulse_delay=100)
+.. function:: pulse_image(img, pulse_delay=100)
 
     | **img** can be a built in such as **Image.HEART** or a custom image such as **Image("90909:" * 5)** or **Image(5, 5, bytearray([9] * 25))**.
     | Pulse_delay defaults to 100 ms. It is the time between each image.
