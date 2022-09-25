@@ -31,8 +31,8 @@ Fill
 .. py:method:: fill(value)
 
     | Set the brightness of all the pixels in the image to the **value**, between 0 and 9.
-    | THe fill method applies the fill in-place to the image.
-    | Don't use with built-in read-only images.
+    | The fill method applies the fill in-place to the image.
+    | Don't use with built-in images since they are read-only and cannot be altered.
 
 | The code below sets all the pixels to a bightness of 6.
 
@@ -592,7 +592,7 @@ Multiplying and dividing Image pixels
 
     #. Modify the code to create the images of a "w" with brightness of 9, 1 and 4.
     #. Modify the code to create the addition of the images "m" at brightness 6 and "w" at brightness 3.
-    #. Using the pulsing code above as a starting point, add extra code so that it is possible to set use the number of pulses per second to calcualte the sleeptime.
+    #. Using the pulsing code above as a starting point, add extra code so that it is possible to set the number of pulses per second and use that to calculate the sleeptime.
 
     .. dropdown::
             :icon: codescan
