@@ -676,6 +676,99 @@ Cropping images and repositioning with blit
 
 ----
 
+Repositioning a 3by3 image via accelerometer
+------------------------------------------------------
+
+| An 3 by 3 image can be moved around on screen using tilting.
+| The 3 by 3 image can be the central part of a 5 by 5 image.
+| The definition, **place_3by3**, takes a source image, uses its central 9 pixels and repositions them at position x, y in the returned image.
+| The definition, **get_3by3_pos**, takes a stasrting position, x, y, and adjusts the position using the accelerometer. The x and y values are rstricted to 0 to 2 so that a 3by3 image can always be seen fully on the display.
+
+.. code-block:: python
+
+    from microbit import *
+        
+    def place_3by3(source_img, x, y):
+        res = Image(5, 5)
+        res.blit(source_img, 1, 1, 3, 3, x, y)
+        return res
+
+
+    def get_3by3_pos(x, y):
+        dx = accelerometer.get_x()
+        dy = accelerometer.get_y()
+        sensitivity = 200
+        if dx > sensitivity:
+            x += 1
+        if dx < -sensitivity:
+            x -= 1
+        if dy > sensitivity:
+            y += 1
+        if dy < -sensitivity:
+            y -= 1
+        # keep on grid
+        x = max(0, min(x, 2))
+        y = max(0, min(y, 2))
+        return x, y
+
+----
+
+.. admonition:: Tasks
+
+    #.  Complete the code required to move a number 5 dice around the screen using the functions above.
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Rewrite the code
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+
+                        def place_3by3(source_img, x, y):
+                            res = Image(5, 5)
+                            res.blit(source_img, 1, 1, 3, 3, x, y)
+                            return res
+
+
+                        def get_3by3_pos(x, y):
+                            dx = accelerometer.get_x()
+                            dy = accelerometer.get_y()
+                            sensitivity = 200
+                            if dx > sensitivity:
+                                x += 1
+                            if dx < -sensitivity:
+                                x -= 1
+                            if dy > sensitivity:
+                                y += 1
+                            if dy < -sensitivity:
+                                y -= 1
+                            # keep on grid
+                            x = max(0, min(x, 2))
+                            y = max(0, min(y, 2))
+                            return x, y
+
+
+                        img1 = Image("00000:09090:00900:09090:00000")
+                        x, y = 2, 2
+
+                        while True:
+                            x, y = get_3by3_pos(x, y)
+                            img = place_3by3(img1, x, y)
+                            display.show(img)
+                            sleep(200)
+
+
+----
+
 Filling images and repositioning with blit
 ------------------------------------------------------
 
