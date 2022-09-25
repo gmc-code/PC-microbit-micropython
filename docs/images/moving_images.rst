@@ -682,7 +682,7 @@ Repositioning a 3by3 image via accelerometer
 | An 3 by 3 image can be moved around on screen using tilting.
 | The 3 by 3 image can be the central part of a 5 by 5 image.
 | The definition, **place_3by3**, takes a source image, uses its central 9 pixels and repositions them at position x, y in the returned image.
-| The definition, **get_3by3_pos**, takes a stasrting position, x, y, and adjusts the position using the accelerometer. The x and y values are rstricted to 0 to 2 so that a 3by3 image can always be seen fully on the display.
+| The definition, **get_3by3_pos**, takes a starting position, x, y, and adjusts the the x, y values using the accelerometer. The x and y values are restricted to 0 to 2 so that a 3by3 image can always be seen fully on the display.
 
 .. code-block:: python
 
