@@ -232,7 +232,7 @@ Shift up and down
 
                 .. tab-item:: Q1
 
-                   Use a **for-loop** with the list: [-4, -3, -2, -1, 0, 1, 2, 3, 4] to shift the dice image up from off screen on the bottom to off screen on the top in 9 steps.
+                    Use a **for-loop** with the list: [-4, -3, -2, -1, 0, 1, 2, 3, 4] to shift the dice image up from off screen on the bottom to off screen on the top in 9 steps.
 
                     .. code-block:: python
 
@@ -364,7 +364,7 @@ Shifting vertically and horizontally
 
                 .. tab-item:: Q1
 
-                   Use both **h_shift_img_directions(img, directions, sleeptime=80)** and **v_shift_img_directions(img, directions, sleeptime=80)**, to make a cross shaped movement pattern for Image("00000:09090:00900:09090:00000").
+                    Use both **h_shift_img_directions(img, directions, sleeptime=80)** and **v_shift_img_directions(img, directions, sleeptime=80)**, to make a cross shaped movement pattern for Image("00000:09090:00900:09090:00000").
 
                     .. code-block:: python
 
@@ -447,7 +447,7 @@ Shifting combined
 
                 .. tab-item:: Q1
 
-                   Alter the arguments to move the butterfly anticlockwise.
+                    Alter the arguments to move the butterfly anticlockwise.
 
                     .. code-block:: python
 
@@ -625,7 +625,7 @@ Cropping images and repositioning with blit
 
                 .. tab-item:: Q1
 
-                   Rewrite the code above to achieve the same result, but by using a for-loop, **for x in [0, 1, 2]**, to create the 3 cropped images above and display them.
+                    Rewrite the code above to achieve the same result, but by using a for-loop, **for x in [0, 1, 2]**, to create the 3 cropped images above and display them.
 
                     .. code-block:: python
 
@@ -650,7 +650,7 @@ Cropping images and repositioning with blit
 
                 .. tab-item:: Q2
 
-                   Modify the code further to use nested for loops by adding **for y in [0, 1, 2]** to display the cropped image in 9 positions.
+                    Modify the code further to use nested for loops by adding **for y in [0, 1, 2]** to display the cropped image in 9 positions.
 
                     .. code-block:: python
 
@@ -721,6 +721,8 @@ Filling images and repositioning with blit
 
     #.  Write code to place 4, 2 by 2 squares, of brightness 5, in each corner.
     #.  Write code to place 4, 2 by 2 squares, of brightness 5, in each corner using nested for loops for the x and y values, adding them to the display with a 500ms delay.
+    #.  Write a function, **rect_overlaps(count=2)**, to return a composite image of a given number of rectangles (default 2) of random size and position, of brightness 9. Restrict the width and height to 2 to 4. Restrict the topleft to (0,0) to (3,3). Display a new composite image every 200ms.
+    
 
     .. dropdown::
             :icon: codescan
@@ -731,7 +733,7 @@ Filling images and repositioning with blit
 
                 .. tab-item:: Q1
 
-                   Write code to place 4, 2 by 2 squares, of brightness 5, in each corner. 
+                    Write code to place 4, 2 by 2 squares, of brightness 5, in each corner. 
 
                     .. code-block:: python
 
@@ -756,7 +758,7 @@ Filling images and repositioning with blit
 
                 .. tab-item:: Q2
 
-                   Write code to place 4, 2 by 2 squares, of brightness 5, in each corner. 
+                    Write code to place 4, 2 by 2 squares, of brightness 5, in each corner. 
 
                     .. code-block:: python
 
@@ -778,6 +780,42 @@ Filling images and repositioning with blit
                                 my_image_overlap = my_image_overlap + rect
                                 display.show(my_image_overlap)
                                 sleep(500)
+
+               .. tab-item:: Q3
+
+                    Write a function, **rect_overlaps(count=2)**, to return a composite image of a given number of rectangles (default 2) of random size and position, of brightness 9. Restrict the width and height to 2 to 4. Restrict the topleft to (0,0) to (3,3). Display a new composite image every 200ms.
+
+                    .. code-block:: python
+
+                        from microbit import *
+                        import random
+
+
+                        def blit_fillrect(w, h, brightness, x, y):
+                            src = Image(w, h)
+                            src.fill(brightness)
+                            res = Image(5, 5)
+                            res.blit(src, 0, 0, 5, 5, x, y)
+                            return res
+
+
+                        def rect_overlaps(count=2):
+                            rect_overlap = Image()
+                            for _ in range(3):
+                                w = random.randint(2, 4)
+                                h = random.randint(2, 4)
+                                brightness = 9  # random.randint(3, 6)
+                                x = random.randint(0, 3)
+                                y = random.randint(0, 3)
+                                rect = blit_fillrect(w, h, brightness, x, y)
+                                rect_overlap = rect_overlap + rect
+                            return rect_overlap
+
+
+                        while True:
+                            display.show(rect_overlaps(count=2))
+                            sleep(200)
+
 
 ----
 
