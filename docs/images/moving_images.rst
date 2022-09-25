@@ -822,7 +822,7 @@ Filling images and repositioning with blit
 Other methods
 ---------------------
 
-| Try out the other methods.
+| The other image methods can be useful.
 
 .. py:method:: width()
 
