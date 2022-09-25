@@ -126,6 +126,7 @@ Index:
     images/moving_images.rst
     images/flame_simulation.rst
     images/heart_beat_simulation.rst
+    images/flipping_and_rotating_images.rst
     images/pixel_class.rst
     images/screen_class.rst
 

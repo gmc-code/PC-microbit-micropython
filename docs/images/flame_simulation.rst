@@ -7,6 +7,7 @@ The Flame simulation 1
 --------------------------
 
 .. code-block:: python
+    
     from microbit import *
     import random
 
