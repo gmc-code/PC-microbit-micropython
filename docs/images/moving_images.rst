@@ -726,7 +726,7 @@ Repositioning a 3by3 image via accelerometer
 
                 .. tab-item:: Q1
 
-                    Rewrite the code
+                    Complete the code required to move a number 5 dice around the screen using the functions above.
 
                     .. code-block:: python
 
