@@ -532,11 +532,11 @@ Shifting combined
 Cropping images
 --------------------------------
 
-| An image can be cropped.
+| An image can be cropped into a new image.
 
 .. py:method:: crop(x, y, w, h)
 
-    | Return a new image by cropping the picture from x, y with width w, height h.
+    | Return a new image by cropping the image from x, y with width w, height h.
     | The new image is positioned at 0, 0 in the top left.
 
 .. code-block:: python
@@ -560,7 +560,7 @@ Cropping images
 Cropping images and repositioning with blit
 ------------------------------------------------------
 
-| An image can be cropped and repositioned with blit.
+| An image can be cropped and positioned in another image with the blit method.
 
 .. py:method:: blit(src, x, y, w, h, xdest=0, ydest=0)
 
@@ -679,9 +679,9 @@ Cropping images and repositioning with blit
 Filling images and repositioning with blit
 ------------------------------------------------------
 
-| An rectangle can be filled and positioned with blit.
+| A rectangle image can be filled and positioned in an another image with blit.
 
-| The code fills a rectangle of width, w, and height, h, and given brightness, and places it a pixel x, y in the a new blank 5 by 5 image which is returned.
+| The code below fills a rectangle of width, w, and height, h, and given brightness, and places it at pixel x, y in the a new blank 5 by 5 image which is then returned.
 
 .. code-block:: python
 
