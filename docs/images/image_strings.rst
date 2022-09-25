@@ -430,6 +430,19 @@ Boat sinking animation
 
 ----
 
+Rotating line animation
+-----------------------------
+
+| Create 4 custom images. line1, line2, line3, line4.
+| line1: a horizontal line with y = 2.
+| line2: a diagonal line from the top left to the bottom right.
+| line3: a vertical line with x = 2.
+| line4: a diagonal line from the top right to the bottom left.
+| Create an animation in which the lines appear to rotate clockwise.
+| Create an animation in which the lines appear to rotate anticlockwise.
+
+----
+
 Image gradients using  string definitions
 --------------------------------------------
 
