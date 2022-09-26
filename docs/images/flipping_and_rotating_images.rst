@@ -80,22 +80,14 @@ String replace
 Flipping horizontally
 ---------------------------
 
-.. image:: images/DUCK.png
+.. image:: images/flip_hor.png
     :scale: 70 %
-    :align: left
-
-.. image:: images/DUCK_flip_hor.png
-    :scale: 70 %
-    :align: right
+    :align: center
 
 | The code to flip an image horizontally will be broken up into 2 custom functions.
 | **get_image_array(img)** takes an image object as an argument and returns a list of pixel brightnesses.
 | **get_image_flipped_hor(imgarray)** takes the image array returned by **get_image_array** and outputs a flipped image array.
 | **display.show(Image(5, 5, bytearray(img_array)))** displays the flipped image.
-
-    .. image:: images/flip_hor.png
-        :scale: 20 %
-        :align: right
 
 | **get_image_flipped_hor(imgarray)** should use list slices to get each row.
 | The top row would be the first 5 items of the list as given by: row0 = imgarray[:5]
