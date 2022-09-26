@@ -81,11 +81,11 @@ Flipping horizontally
 ---------------------------
 
 .. image:: images/DUCK.png
-    :scale: 50 %
-    :align: left
+    :scale: 40 %
+    :align: center
 
 .. image:: images/DUCK_flip_hor.png
-    :scale: 50 %
+    :scale: 40 %
     :align: right
 
 | The code to flip an image horizontally will be broken up into 2 custom functions.
@@ -97,7 +97,7 @@ Flipping horizontally
 
     .. image:: images/flip_hor.png
         :scale: 20 %
-        :align: left
+        :align: right
 
 | **get_image_flipped_hor(imgarray)** should use list slices to get each row.
 | The top row would be the first 5 items of the list as given by: row0 = imgarray[:5]
