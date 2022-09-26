@@ -7,16 +7,44 @@ Flipping and Rotating images
 
 ----
 
-Pixels from repr
+Useful Syntax
 ------------------
 
-| To get the pixel data, use the **repr** function on the image object.
-
+Image repr
+~~~~~~~~~~~
 
 .. py:function:: repr(image)
 
     | Get a compact string representation of the image.
+    
+----
 
+String replace
+~~~~~~~~~~~~~~~~~~~~~~
+
+| The replace method will be used to remove the colons in the image brightness string.
+
+.. py:function:: string.replace(oldvalue, newvalue, count)
+
+    | oldvalue	The string to search for
+    | newvalue	The string to replace the old value with
+    | count	Optional. A number specifying how many occurrences of the old value to be replaced. Defaults to all occurrences if omitted.
+
+----
+
+Reverse list method syntax
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+.. py:function:: a_list.reverse()
+
+    | Reverses a list. No parameters are involved.
+
+----
+
+Pixels from repr
+------------------
+
+| To get the pixel data, use the **repr** function on the image object.
 | In the code example below, the **repr** for the DUCK image is printed.
 | Image('09900:99900:09999:09990:00000:')
 
@@ -31,17 +59,8 @@ Pixels from repr
 
 ----
 
-String replace
+Brightness array
 ------------------
-
-| The replace method will be used to remove the colons in the image brightness string.
-
-.. py:function:: string.replace(oldvalue, newvalue, count)
-
-    | oldvalue	The string to search for
-    | newvalue	The string to replace the old value with
-    | count	Optional. A number specifying how many occurrences of the old value to be replaced. Defaults to all occurrences if omitted.
-
 
 | The next step is to collect just the numbers from the string, then put the numbers in a list format that can then be used to create an image using bytearray.
 | So: Image('09900:99900:09999:09990:00000:')
@@ -62,6 +81,9 @@ String replace
     img_array = [int(x) for x in img_str]
 
 ----
+
+So far
+---------
 
 | So far the code has gone from 
 | **Image.DUCK** 
@@ -93,14 +115,6 @@ Flipping horizontally
 | The top row would be the first 5 items of the list as given by: row0 = imgarray[:5]
 | Each row slice can be reversed: row0.reverse()
 
-----
-
-Reverse list method syntax
------------------------------
-
-.. py:function:: a_list.reverse()
-
-    | Reverses a list. No parameters are involved.
 
 ----
 
