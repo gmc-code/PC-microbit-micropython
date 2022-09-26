@@ -44,6 +44,8 @@ String replace
 
 
 | The next step is to collect just the numbers from the string, then put the numbers in a list format that can then be used to create an image using bytearray.
+| so that: Image('09900:99900:09999:09990:00000:')
+| is converted to: [0, 9, 9, 0, 0, 9, 9, 9, 0, 0, 0, 9, 9, 9, 9, 0, 9, 9, 9, 0, 0, 0, 0, 0, 0]
 
 | The string can be sliced to ignore the first 6 characters and the last 3 characters
 | This is done using **img_repr[7:-3]**.
