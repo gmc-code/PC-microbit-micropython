@@ -88,7 +88,7 @@ Flipping horizontally
         :align: left
 
 | **get_image_flipped_hor(imgarray)** should use list slices to get each row.
-| The top row would be the first 5 items of the list as given by: imgarray[:5]
+| The top row would be the first 5 items of the list as given by: row0 = imgarray[:5]
 | Each row slice can be reversed: row0.reverse()
 
 .. py:function:: a_list.reverse()
@@ -124,17 +124,17 @@ Flipping horizontally
 
                         def get_image_flipped_hor(imgarray):
                             # get every 5 elements and reverse them
-                            line0 = imgarray[:5]
-                            line1 = imgarray[5:10]
-                            line2 = imgarray[10:15]
-                            line3 = imgarray[15:20]
-                            line4 = imgarray[20:]
-                            line0.reverse()
-                            line1.reverse()
-                            line2.reverse()
-                            line3.reverse()
-                            line4.reverse()
-                            output_array = line0 + line1 + line2 + line3 + line4
+                            row0 = imgarray[:5]
+                            row1 = imgarray[5:10]
+                            row2 = imgarray[10:15]
+                            row3 = imgarray[15:20]
+                            row4 = imgarray[20:]
+                            row0.reverse()
+                            row1.reverse()
+                            row2.reverse()
+                            row3.reverse()
+                            row4.reverse()
+                            output_array = row0 + row1 + row2 + row3 + row4
                             return output_array
                             
                         img1 = Image.DUCK
