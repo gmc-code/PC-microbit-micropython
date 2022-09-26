@@ -180,7 +180,7 @@ Flipping vertically
     :align: center
 
 
-| The code to flip an image vertically add a new custom function.
+| Add a new function to flip an image vertically using the image array.
 | **get_image_flipped_vert(imgarray)** takes the image array returned by **get_image_array** and outputs a flipped image array.
 
 | **get_image_flipped_vert(imgarray)** should use list slices to get each row.
@@ -231,6 +231,193 @@ Flipping vertically
 
                         img1 = Image.DUCK
                         img_array = get_image_flipped_vert(get_image_array(img1))
+
+                        while True:
+                            display.show(img1)
+                            sleep(300)
+                            display.show(Image(5, 5, bytearray(img_array)))
+                            sleep(300)
+
+
+----
+
+Rotating 90 degrees anticlockwise
+-------------------------------------
+
+.. image:: images/rotating_90_anti.png
+    :scale: 100 %
+    :align: center
+
+
+| Add a new function to rotate an image 90 degrees anticlockwise using the image array.
+
+| **get_image_rotated_90_anticlockwise(imgarray)** takes the image array returned by **get_image_array** and outputs a rotated image array.
+
+| **get_image_rotated_90_anticlockwise(imgarray)** should use list comprehensions to get each row.
+| The top row is made up of pixels that had previous array indices of 4, 9, 14, 19, 24.
+| This sequence can be created with the range function.
+| A similar pattern occurs for the others rows.
+
+.. admonition:: Tasks
+
+    #. Complete the grid of the renumbering of the indices in the image array. Observe the pattern and use that to code range functions for each list comprehension for each row of pixels.
+
+    .. image:: images/rotate_90_anti_arrayQ.png
+        :scale: 100 %
+        :align: center  
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Complete the grid of the renumbering of the indices in the image array. Observe the pattern and use that to code range functions for each list comprehension for each row of pixels.
+
+                    .. image:: images/rotate_90_anti_array.png
+                        :scale: 100 %
+                        :align: center
+
+----
+
+.. admonition:: Tasks
+
+    #. Write code to rotate the duck 90 degrees anticlockwise and swap between the display of a duck and the flipped duck.
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                   Write code to rotate the duck 90 degrees anticlockwise and swap between the display of a duck and the flipped duck.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+
+                        def get_image_array(img):
+                            img_repr = repr(img)
+                            img_str = img_repr[7:-3]
+                            img_str = img_str.replace(":", "")
+                            img_array = [int(x) for x in img_str]
+                            return img_array
+
+
+                        def get_image_rotated_90_anticlockwise(imgarray):
+                            # 4, 9, 14, 19, 24;; 3, 8, 13, 18, 23.
+                            row0 = [imgarray[x] for x in range(4, 25, 5)]
+                            row1 = [imgarray[x] for x in range(3, 25, 5)]
+                            row2 = [imgarray[x] for x in range(2, 25, 5)]
+                            row3 = [imgarray[x] for x in range(1, 25, 5)]
+                            row4 = [imgarray[x] for x in range(0, 25, 5)]
+                            output_array = row0 + row1 + row2 + row3 + row4
+                            return output_array
+
+
+                        img1 = Image.DUCK
+                        img_array = get_image_rotated_90_anticlockwise(get_image_array(img1))
+
+                        while True:
+                            display.show(img1)
+                            sleep(300)
+                            display.show(Image(5, 5, bytearray(img_array)))
+                            sleep(300)
+
+----
+
+Rotating 90 degrees clockwise
+-------------------------------------
+
+.. image:: images/rotating_90_clock.png
+    :scale: 100 %
+    :align: center
+
+
+| Add a new function to rotate an image 90 degrees anticlockwise using the image array.
+
+| **get_image_rotated_90_clockwise(imgarray)** takes the image array returned by **get_image_array** and outputs a rotated image array.
+
+| **get_image_rotated_90_clockwise(imgarray)** should use list comprehensions to get each row.
+| The top row is made up of pixels that had previous array indices of 20, 15, 10, 5, 0.
+| This sequence can be created with the range function.
+| A similar pattern occurs for the others rows.
+
+
+.. admonition:: Tasks
+
+    #. Complete the grid of the renumbering of the indices in the image array. Observe the pattern and use that to code range functions for each list comprehension for each row of pixels.
+
+    .. image:: images/rotate_90_clock_arrayQ.png
+        :scale: 100 %
+        :align: center  
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                   Complete the grid of the renumbering of the indices in the image array. Observe the pattern and use that to code range functions for each list comprehension for each row of pixels.
+
+                   .. image:: images/rotate_90_clock_array.png
+                        :scale: 100 %
+                        :align: center
+
+----
+
+.. admonition:: Tasks
+
+    #. Write code to rotate the duck 90 degrees clockwise and swap between the display of a duck and the flipped duck.
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                   Write code to rotate the duck 90 degrees clockwise and swap between the display of a duck and the flipped duck.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+
+                        def get_image_array(img):
+                            img_repr = repr(img)
+                            img_str = img_repr[7:-3]
+                            img_str = img_str.replace(":", "")
+                            img_array = [int(x) for x in img_str]
+                            return img_array
+
+
+                        def get_image_rotated_90_clockwise(imgarray):
+                            # 20,15,10,5,0;;21,16,11,6,1...
+                            row0 = [imgarray[x] for x in range(20, -1, -5)]
+                            row1 = [imgarray[x] for x in range(21, -1, -5)]
+                            row2 = [imgarray[x] for x in range(22, -1, -5)]
+                            row3 = [imgarray[x] for x in range(23, -1, -5)]
+                            row4 = [imgarray[x] for x in range(24, -1, -5)]
+                            output_array = row0 + row1 + row2 + row3 + row4
+                            return output_array
+
+
+
+                        img1 = Image.DUCK
+                        img_array = get_image_rotated_90_clockwise(get_image_array(img1))
 
                         while True:
                             display.show(img1)
