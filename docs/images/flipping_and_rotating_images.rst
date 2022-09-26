@@ -44,7 +44,7 @@ String replace
 
 
 | The next step is to collect just the numbers from the string, then put the numbers in a list format that can then be used to create an image using bytearray.
-| so that: Image('09900:99900:09999:09990:00000:')
+| So: Image('09900:99900:09999:09990:00000:')
 | is converted to: [0, 9, 9, 0, 0, 9, 9, 9, 0, 0, 0, 9, 9, 9, 9, 0, 9, 9, 9, 0, 0, 0, 0, 0, 0]
 
 | The string can be sliced to ignore the first 6 characters and the last 3 characters
@@ -61,6 +61,8 @@ String replace
     img_str = img_str.replace(":", "")
     img_array = [int(x) for x in img_str]
 
+----
+
 | So far the code has gone from 
 | **Image.DUCK** 
 | to 
@@ -68,7 +70,7 @@ String replace
 | to 
 | **[0, 9, 9, 0, 0, 9, 9, 9, 0, 0, 0, 9, 9, 9, 9, 0, 9, 9, 9, 0, 0, 0, 0, 0, 0]**.
 
-| Now functions need to be created for:
+| Now, functions need to be created for:
 * flipping horizontally
 * flipping vertically
 * rotating 90 degrees clockwise or 90 anticlockwise.
@@ -78,10 +80,18 @@ String replace
 Flipping horizontally
 ---------------------------
 
+.. image:: images/DUCK.png
+    :scale: 50 %
+    :align: left
+
+.. image:: images/DUCK_flip_hor.png
+    :scale: 50 %
+    :align: right
+
 | The code to flip an image horizontally will be broken up into 2 custom functions.
-| **get_image_array(img=Image.HEART)** takes an image object as an argument and returns a list of pixel brightness.
-| **get_image_flipped_hor(imgarray)** takes the image array and outputs a flipped image array.
-| **display.show(Image(5, 5, bytearray(img_array)))** display of the flipped image
+| **get_image_array(img)** takes an image object as an argument and returns a list of pixel brightnesses.
+| **get_image_flipped_hor(imgarray)** takes the image array returned by **get_image_array** and outputs a flipped image array.
+| **display.show(Image(5, 5, bytearray(img_array)))** displays the flipped image.
 
 .. sidebar::
 
@@ -93,9 +103,15 @@ Flipping horizontally
 | The top row would be the first 5 items of the list as given by: row0 = imgarray[:5]
 | Each row slice can be reversed: row0.reverse()
 
+
+Reverse list method syntax
+-----------------------------
+
 .. py:function:: a_list.reverse()
 
     | Reverses a list. No parameters are involved.
+
+----
 
 .. admonition:: Tasks
 
@@ -117,7 +133,7 @@ Flipping horizontally
                         from microbit import *
 
 
-                        def get_image_array(img=Image.HEART):
+                        def get_image_array(img):
                             img_repr = repr(img)
                             img_str = img_repr[7:-3]
                             img_str = img_str.replace(":", "")
