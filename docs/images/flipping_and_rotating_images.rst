@@ -81,19 +81,17 @@ Flipping horizontally
 ---------------------------
 
 .. image:: images/DUCK.png
-    :scale: 40 %
-    :align: center
+    :scale: 70 %
+    :align: left
 
 .. image:: images/DUCK_flip_hor.png
-    :scale: 40 %
+    :scale: 70 %
     :align: right
 
 | The code to flip an image horizontally will be broken up into 2 custom functions.
 | **get_image_array(img)** takes an image object as an argument and returns a list of pixel brightnesses.
 | **get_image_flipped_hor(imgarray)** takes the image array returned by **get_image_array** and outputs a flipped image array.
 | **display.show(Image(5, 5, bytearray(img_array)))** displays the flipped image.
-
-.. sidebar::
 
     .. image:: images/flip_hor.png
         :scale: 20 %
