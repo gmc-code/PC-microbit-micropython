@@ -102,8 +102,8 @@ So far
 Flipping horizontally
 ---------------------------
 
-.. image:: images/flip_hor.png
-    :scale: 70 %
+.. image:: images/flipping_horizontally.png
+    :scale: 50 %
     :align: center
 
 | The code to flip an image horizontally will be broken up into 2 custom functions.
