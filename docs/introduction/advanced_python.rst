@@ -65,3 +65,9 @@ The image pages and the classes pages have more advanced syntax.
 
 | * and +.
 | :ref:`bytearray irregular patterns using List multiplication and concatenation`
+
+| string slicing
+| :ref:`Pixels from repr`
+
+| string .replace method
+| :ref:`Pixels from repr`

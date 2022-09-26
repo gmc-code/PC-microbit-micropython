@@ -3,6 +3,12 @@ Flipping and Rotating images
 ====================================================
 
 | Custom functions are needed to flip or rotate images.
+| The pixel brightness data needs to be obtained then reorganised and used to create a new image.
+
+----
+
+Pixels from repr
+------------------
 
 | To get the pixel data, use the **repr** function on the image object.
 
@@ -22,6 +28,20 @@ Flipping and Rotating images
     img_repr = repr(img1)
     print(img_repr)
     # Image('09900:99900:09999:09990:00000:')
+
+----
+
+String replace
+------------------
+
+| The replace method will be used to remove the colons in the image brightness string.
+
+.. py:function:: string.replace(oldvalue, newvalue, count)
+
+    | oldvalue	The string to search for
+    | newvalue	The string to replace the old value with
+    | count	Optional. A number specifying how many occurrences of the old value to be replaced. Defaults to all occurrences if omitted.
+
 
 | The next step is to collect just the numbers from the string, then put the numbers in a list format that can then be used to create an image using bytearray.
 
@@ -51,3 +71,77 @@ Flipping and Rotating images
 * flipping vertically
 * rotating 90 degrees clockwise or 90 anticlockwise.
 
+----
+
+Flipping horizontally
+---------------------------
+
+| The code to flip an image horizontally will be broken up into 2 custom functions.
+| **get_image_array(img=Image.HEART)** takes an image object as an argument and returns a list of pixel brightness.
+| **get_image_flipped_hor(imgarray)** takes the image array and outputs a flipped image array.
+| **display.show(Image(5, 5, bytearray(img_array)))** display of the flipped image
+
+.. sidebar::
+
+    .. image:: images/flip_hor.png
+        :scale: 20 %
+        :align: left
+
+| **get_image_flipped_hor(imgarray)** should use list slices to get each row.
+| The top row would be the first 5 items of the list as given by: imgarray[:5]
+| Each row slice can be reversed: row0.reverse()
+
+.. py:function:: a_list.reverse()
+
+    | Reverses a list. No parameters are involved.
+
+.. admonition:: Tasks
+
+    #. Write code to flip a duck horizontally and swap between the display of a duck and the flipped duck.
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Write code to flip a duck horizontally and swap between the display of a duck and the flipped duck.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+
+                        def get_image_array(img=Image.HEART):
+                            img_repr = repr(img)
+                            img_str = img_repr[7:-3]
+                            img_str = img_str.replace(":", "")
+                            img_array = [int(x) for x in img_str]
+                            return img_array
+
+                        def get_image_flipped_hor(imgarray):
+                            # get every 5 elements and reverse them
+                            line0 = imgarray[:5]
+                            line1 = imgarray[5:10]
+                            line2 = imgarray[10:15]
+                            line3 = imgarray[15:20]
+                            line4 = imgarray[20:]
+                            line0.reverse()
+                            line1.reverse()
+                            line2.reverse()
+                            line3.reverse()
+                            line4.reverse()
+                            output_array = line0 + line1 + line2 + line3 + line4
+                            return output_array
+                            
+                        img1 = Image.DUCK
+                        img_array = get_image_flipped_hor(get_image_array(img1))
+
+                        while True:
+                            display.show(img1)
+                            sleep(300)
+                            display.show(Image(5, 5, bytearray(img_array)))
+                            sleep(300)
