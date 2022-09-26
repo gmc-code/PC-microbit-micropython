@@ -49,8 +49,8 @@ String replace
 
 | The string can be sliced to ignore the first 6 characters and the last 3 characters
 | This is done using **img_repr[7:-3]**.
-| Then the colon is removed using the replace method.
-| Finally, list comprehension is used on the string to converst each string numeral to an int in a list.
+| Then the colon is removed using the replace method. **img_str = img_str.replace(":", "")**
+| Finally, list comprehension, **img_array = [int(x) for x in img_str]**,  is used on the string to convert each string numeral to an int in a list.
 | This produces the list for a DUCK: [0, 9, 9, 0, 0, 9, 9, 9, 0, 0, 0, 9, 9, 9, 9, 0, 9, 9, 9, 0, 0, 0, 0, 0, 0]
 
 .. code-block:: python
