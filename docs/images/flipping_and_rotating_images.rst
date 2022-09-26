@@ -103,6 +103,7 @@ Flipping horizontally
 | The top row would be the first 5 items of the list as given by: row0 = imgarray[:5]
 | Each row slice can be reversed: row0.reverse()
 
+----
 
 Reverse list method syntax
 -----------------------------

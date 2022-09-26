@@ -6,6 +6,7 @@ The image pages and the classes pages have more advanced syntax.
 
 | a_list.reverse()
 | :ref:`Reverse direction of a list using the reverse method`
+| :ref:`Reverse list method syntax`
 
 | reversed(sequence)
 | :ref:`Reverse direction of list using the reversed function`
@@ -69,5 +70,7 @@ The image pages and the classes pages have more advanced syntax.
 | string slicing
 | :ref:`Pixels from repr`
 
-| string .replace method
-| :ref:`Pixels from repr`
+| string.replace method
+| :ref:`String replace`
+
+
