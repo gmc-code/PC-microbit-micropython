@@ -103,8 +103,9 @@ Flipping horizontally
 ---------------------------
 
 .. image:: images/flipping_horizontally.png
-    :scale: 50 %
+    :scale: 100 %
     :align: center
+
 
 | The code to flip an image horizontally will be broken up into 2 custom functions.
 | **get_image_array(img)** takes an image object as an argument and returns a list of pixel brightnesses.
