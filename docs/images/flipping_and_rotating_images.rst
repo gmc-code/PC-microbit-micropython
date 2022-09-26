@@ -169,3 +169,72 @@ Flipping horizontally
                             sleep(300)
                             display.show(Image(5, 5, bytearray(img_array)))
                             sleep(300)
+
+----
+
+Flipping vertically
+---------------------------
+
+.. image:: images/flipping_vertically.png
+    :scale: 100 %
+    :align: center
+
+
+| The code to flip an image vertically add a new custom function.
+| **get_image_flipped_vert(imgarray)** takes the image array returned by **get_image_array** and outputs a flipped image array.
+
+| **get_image_flipped_vert(imgarray)** should use list slices to get each row.
+| The top row would be the first 5 items of the list as given by: row0 = imgarray[:5]
+| The order of each row needs to be reversed, so that the top row goes to the bottom row.
+
+
+----
+
+.. admonition:: Tasks
+
+    #. Write code to flip a duck vertically and swap between the display of a duck and the flipped duck.
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Write code to flip a duck vertically and swap between the display of a duck and the flipped duck.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+
+                        def get_image_array(img):
+                            img_repr = repr(img)
+                            img_str = img_repr[7:-3]
+                            img_str = img_str.replace(":", "")
+                            img_array = [int(x) for x in img_str]
+                            return img_array
+
+
+                        def get_image_flipped_vert(imgarray):
+                            # get every 5 elements as rows and reverse order of rows.
+                            row0 = imgarray[:5]
+                            row1 = imgarray[5:10]
+                            row2 = imgarray[10:15]
+                            row3 = imgarray[15:20]
+                            row4 = imgarray[20:]
+                            output_array = row4 + row3 + row2 + row1 + row0
+                            return output_array
+
+
+                        img1 = Image.DUCK
+                        img_array = get_image_flipped_vert(get_image_array(img1))
+
+                        while True:
+                            display.show(img1)
+                            sleep(300)
+                            display.show(Image(5, 5, bytearray(img_array)))
+                            sleep(300)
+
