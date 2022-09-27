@@ -344,6 +344,8 @@ All Images
 ----------------------------------------
 
 | The code below displays all the built in images.
+| Image.SCISSORS is not yet available in Mu Editor but is online in the beta version at:
+| https://python.microbit.org/v/beta
 
 .. code-block:: python
 
@@ -357,10 +359,10 @@ All Images
         .CLOCK6, Image.CLOCK7, Image.CLOCK8, Image.CLOCK9, Image.CONFUSED,
         Image.COW, Image.DIAMOND, Image.DIAMOND_SMALL, Image.DUCK,
         Image.FABULOUS, Image.GHOST, Image.GIRAFFE, Image.HAPPY,
-        Image.HEART, Image.HEART_SMALL, Image.HOUSE, Image.MEH, Image
-        .MUSIC_CROTCHET, Image.MUSIC_QUAVER, Image.MUSIC_QUAVERS,
+        Image.HEART, Image.HEART_SMALL, Image.HOUSE, Image.MEH,
+        Image.MUSIC_CROTCHET, Image.MUSIC_QUAVER, Image.MUSIC_QUAVERS,
         Image.NO, Image.PACMAN, Image.PITCHFORK, Image.RABBIT, Image.ROLLERSKATE,
-        Image.SAD, Image.SCISSORS, Image.SILLY, Image.SKULL, Image.SMILE,
+        Image.SAD, Image.SILLY, Image.SKULL, Image.SMILE,
         Image.SNAKE, Image.SQUARE, Image.SQUARE_SMALL, Image.STICKFIGURE,
         Image.SURPRISED, Image.SWORD, Image.TARGET, Image.TORTOISE,
         Image.TRIANGLE, Image.TRIANGLE_LEFT, Image.TSHIRT, Image.UMBRELLA,
@@ -450,7 +452,6 @@ All Images
                                     Image.HOUSE,
                                     Image.STICKFIGURE, 
                                     Image.GHOST,
-                                    Image.SCISSORS,
                                     Image.SWORD,
                                     Image.SKULL,
                                     Image.UMBRELLA,
