@@ -266,7 +266,7 @@ Rotating 270 degrees
 
     #. Complete the grid of the renumbering of the indices in the image array. Observe the pattern and use that to code range functions for each list comprehension for each row of pixels.
 
-    .. image:: images/rotate_90_anti_arrayQ.png
+    .. image:: images/rotate_270_arrayQ.png
         :scale: 100 %
         :align: center  
 
@@ -281,7 +281,7 @@ Rotating 270 degrees
 
                     Complete the grid of the renumbering of the indices in the image array. Observe the pattern and use that to code range functions for each list comprehension for each row of pixels.
 
-                    .. image:: images/rotate_90_anti_array.png
+                    .. image:: images/rotate_270_array.png
                         :scale: 100 %
                         :align: center
 
@@ -375,7 +375,7 @@ Rotating 90 degrees clockwise
 
                     Complete the grid of the renumbering of the indices in the image array. Observe the pattern and use that to code range functions for each list comprehension for each row of pixels.
 
-                    .. image:: images/rotate_90_clock_array.png
+                    .. image:: images/rotate_90_array.png
                         :scale: 100 %
                         :align: center
 
@@ -445,11 +445,7 @@ Rotating 180 degrees
 .. admonition:: Tasks
 
     #. Write a function to combine flipping to rotate an image 180 degrees.
-    #. Write code to rotate the duck 180 degrees and swap between the display of the duck and the flipped duck.
-
-    .. image:: images/rotate_90_arrayQ.png
-        :scale: 100 %
-        :align: center  
+    #. Write code to rotate the duck 180 degrees and swap between the display of the duck and the flipped duck. 
 
     .. dropdown::
             :icon: codescan
