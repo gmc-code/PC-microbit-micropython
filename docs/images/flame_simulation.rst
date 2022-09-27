@@ -1,63 +1,13 @@
 ====================================================
-Flame simulations
+Flame simulation
 ====================================================
 
 
-The Flame simulation 1
---------------------------
-
-.. code-block:: python
-    
-    from microbit import *
-    import random
-
-    # User adjustable values for range of brightness in flames.
-    MIN_BRIGHTNESS = 2
-    MAX_BRIGHTNESS = 8
-
-    # User adjustable values for speed of animation; use b button
-    MIN_SLEEP = 0
-    MAX_SLEEP = 200
-
-    # create an empty image
-    i = Image("00000:" * 5)
-
-    # start with the fire at medium intensity
-    intensity = 0.5
-
-    # start with the sleep at medium 
-    sleeptime = 100
-
-    # keep looping
-    while True:
-        # show the image and wait
-        display.show(i)
-        sleep(sleeptime)
-        
-        if button_b.is_pressed():
-            sleeptime += 50
-            if sleeptime > MAX_SLEEP:
-                sleeptime = MIN_SLEEP
-            
-        # stoke the fire
-        if button_a.is_pressed():
-            intensity = 1
-        # shift the image up and fade it slightly
-        i = i.shift_up(1) * intensity
-
-        # let the fire burn down a little (reduce the intensity)
-        intensity *= 0.98
-
-        # choose random brightness for bottom row of fire
-        for x in range(5):
-            i.set_pixel(x, 4, random.randint(MIN_BRIGHTNESS, MAX_BRIGHTNESS))
-
-
-
-----
-
 The Flame simulation
 -------------------------
+
+| The simulation uses a mask to multiply the brighteness of each pixel by a given factor.
+| Pixels are shifted up the display, taking into account the pixel brightness of those around them.
 
 .. code-block:: python
 
@@ -86,7 +36,7 @@ The Flame simulation
     DISPLAY_WIDTH = 5
     DISPLAY_HEIGHT = 5
 
-    # flame can be oriented in either direction; Ture has top of flame at top of microbit
+    # flame can be oriented in either direction; True has top of flame at top of microbit
     INVERT_DISPLAY = True 
 
     # MASK to create fire shape. multiplies values %

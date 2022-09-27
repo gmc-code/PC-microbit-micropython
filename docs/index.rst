@@ -119,14 +119,15 @@ Index:
     images/Built_in_images.rst
     images/Built_in_images_advanced.rst
     images/image_strings.rst
+    images/heart_beat_simulation.rst
     images/setting_pixels.rst
     images/random_pixels.rst
     images/image_arithmetic.rst
     images/bytearray_images.rst
     images/moving_images.rst
-    images/flame_simulation.rst
-    images/heart_beat_simulation.rst
     images/flip_and_rotate_images.rst
+    images/image_masks.rst
+    images/flame_simulation.rst
     images/pixel_class.rst
     images/screen_class.rst
 
