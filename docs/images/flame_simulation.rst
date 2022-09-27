@@ -6,7 +6,8 @@ Flame simulation
 The Flame simulation
 -------------------------
 
-| The simulation uses a mask to multiply the brighteness of each pixel by a given factor.
+| See: https://github.com/bbcmicrobit/micropython/blob/master/examples/flame_simulation.py
+| The simulation uses a mask to multiply the brightness of each pixel by a given factor.
 | Pixels are shifted up the display, taking into account the pixel brightness of those around them.
 
 .. code-block:: python
@@ -86,7 +87,7 @@ The Flame simulation
                     screen.set_pixel(x, DISPLAY_HEIGHT - y - 1, int(newval))
                 else:
                     screen.set_pixel(x, y, int(newval))
-        # first row interpolates with the "next" line
+        # first row interpolates with the "next" line; y == 1 from loop above
         for x in range(DISPLAY_WIDTH):
             mask = MASK[y][x]
             newval = ((100 - pcnt) * grid[0][x] + pcnt * line[x]) / 100.0
