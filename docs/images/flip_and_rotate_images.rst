@@ -3,7 +3,7 @@ Flip and Rotate images
 ====================================================
 
 | Custom functions are needed to flip or rotate images.
-| The pixel brightness data needs to be obtained then reorganised and used to create a new image.
+| The pixel brightness data needs to be obtained then re-organised and used to create a new image.
 
 ----
 
@@ -610,10 +610,13 @@ Rotating image animation
 
 
                         img0 = Image.DUCK
+                        img90 = Image(5, 5, bytearray(get_imgarr_rotate_90(get_image_array(img0))))
                         img180 = Image(5, 5, bytearray(get_imgarr_rotate_180(get_image_array(img0))))
                         img270 = Image(5, 5, bytearray(get_imgarr_rotate_270(get_image_array(img0))))
-                        img90 = Image(5, 5, bytearray(get_imgarr_rotate_90(get_image_array(img0))))
+                        
 
                         img_seq = [img0, img90, img180, img270]
                         while True:
                             display.show(img_seq, delay=400)
+
+
