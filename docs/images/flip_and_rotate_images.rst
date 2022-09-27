@@ -245,9 +245,9 @@ Flipping vertically
 Flipping a list of images
 ---------------------------
 
-| Here is the list of some images that are not laterally symmetrical: 
+| Here is the list of some images that are not laterally symmetrical (left and right sides are diferent): 
 | [Image.MUSIC_CROTCHET, Image.MUSIC_QUAVER, Image.MUSIC_QUAVERS, Image.PACMAN, Image.ROLLERSKATE, Image.TRIANGLE_LEFT, Image.UMBRELLA, Image.YES]
-| Create a function, **flip_imagelist(image_list, transition_time=500)**, which creates img0, img0_flip_hor and img0_flip_vert for each image in the list, then creates a list of these which are then displayed using a transition_time which defaults to 300ms.
+| Create a function, **flip_imagelist(image_list, transition_time=500)**, which creates img0, img0_flip_hor and img0_flip_vert for each image in the list, then creates a list of these, **[img0, img_flip_hor, img0, img_flip_vert, img0]** which are then displayed using a transition_time which defaults to a delay of 300ms between each image.
 
 
 .. admonition:: Tasks
