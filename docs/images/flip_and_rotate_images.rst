@@ -546,7 +546,7 @@ Rotating image animation
 
                     .. code-block:: python
 
-                         from microbit import *
+                        from microbit import *
 
 
                         def get_image_array(img=Image.DUCK):
