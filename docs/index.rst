@@ -116,6 +116,7 @@ Index:
     :caption: Challenges
     :numbered:
 
+    challenges/number_chooser.rst
     challenges/words.rst
 
 
