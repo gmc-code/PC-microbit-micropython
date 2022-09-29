@@ -386,7 +386,6 @@ Code design
                             vowel_current = 2
                             # flag 0 for current and 1 for vowel_current
                             change_flag = 0
-                            display.show(chars[current])
                             while button_a.was_pressed() is False:
                                 if button_b.is_pressed():
                                     return ""
