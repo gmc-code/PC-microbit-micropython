@@ -113,6 +113,14 @@ Index:
  
 .. toctree::
     :maxdepth: 2
+    :caption: Challenges
+    :numbered:
+
+    challenges/words.rst
+
+
+.. toctree::
+    :maxdepth: 2
     :caption: Images
     :numbered:
 
