@@ -196,8 +196,7 @@ Code design
 
 
                         chars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N",
-                            "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"
-                        ]
+                                "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
                         max_char_index = len(chars) - 1
                         middle_index = int(max_char_index/2)
 
@@ -250,6 +249,7 @@ Code design
     #. Modify the code to use lower case letters.
     #. Modify the code to use numbers instead of letters.
     #. Modify the code to add tilting in the y direction to be able to choose the vowels directly. 
+    #. Modify the code to use tilting in the x direction for luppercase; tilting in the y direction for lowercase.
 
     .. dropdown::
             :icon: codescan
@@ -260,7 +260,7 @@ Code design
 
                 .. tab-item:: Q1
 
-                    Modify the code to create images of 3 and 5.
+                    Modify the code to use lower case letters.
 
                     .. code-block:: python
 
@@ -311,31 +311,194 @@ Code design
                                 display.scroll(currentWord)
                             sleep(330)
 
-                .. tab-item:: Q1
+                .. tab-item:: Q2
 
-                    Modify the code to create images of 3 and 5.
-
-                    .. code-block:: python
-
-                        from microbit import *
-
-
-                .. tab-item:: Q1
-
-                    Modify the code to create images of 3 and 5.
+                    Modify the code to use numbers instead of letters.
 
                     .. code-block:: python
 
                         from microbit import *
 
 
-                .. tab-item:: Q1
+                        chars = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"]
+                        max_char_index = len(chars) - 1
+                        middle_index = int(max_char_index / 2)
 
-                    Modify the code to create images of 3 and 5.
+
+                        def get_char():
+                            current = middle_index
+                            display.show(chars[current])
+                            # the while loops runs until button A is pressed
+                            while button_a.was_pressed() is False:
+                                # pressing B doesn't add a letter but returns back to
+                                if button_b.is_pressed():
+                                    return ""
+                                if accelerometer.get_x() > 300:
+                                    current += 1
+                                elif accelerometer.get_x() < -300:
+                                    current -= 1
+                                current = max(0, min(current, max_char_index))
+                                display.show(chars[current])
+                                sleep(330)
+                            # button A was pressed so return chosen letter
+                            return chars[current]
+
+
+                        def get_string():
+                            usertext = ""
+                            # continue adding letters if B button has not been pressed
+                            while button_b.was_pressed() is False:
+                                usertext += get_char()
+                            # B button was presed, return final word so it can be scrolled
+                            return usertext
+
+
+                        while True:
+                            display.show(Image.ARROW_W)
+                            # press A to start
+                            if button_a.is_pressed():
+                                display.clear()
+                                sleep(1000)
+                                # clear button a pressing for checking again in get_string
+                                a = button_a.was_pressed()
+                                currentWord = get_string()
+                                display.scroll(currentWord)
+                            sleep(330)
+
+
+                .. tab-item:: Q3
+
+                    Modify the code to add tilting in the y direction to be able to choose the vowels directly. 
 
                     .. code-block:: python
 
                         from microbit import *
 
-    
 
+                        chars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N",
+                                "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+                        max_char_index = len(chars) - 1
+                        middle_index = int(max_char_index / 2)
+                        vowels = ["A", "E", "I", "O", "U"]
+
+
+                        def get_char():
+                            current = middle_index
+                            vowel_current = 2
+                            # flag 0 for current and 1 for vowel_current
+                            change_flag = 0
+                            display.show(chars[current])
+                            while button_a.was_pressed() is False:
+                                if button_b.is_pressed():
+                                    return ""
+                                if accelerometer.get_y() > 300:
+                                    vowel_current += 1
+                                    change_flag = 1
+                                elif accelerometer.get_y() < -300:
+                                    vowel_current -= 1
+                                    change_flag = 1
+                                elif accelerometer.get_x() > 300:
+                                    current += 1
+                                    change_flag = 0
+                                elif accelerometer.get_x() < -300:
+                                    current -= 1
+                                    change_flag = 0
+                                if change_flag == 0:
+                                    current = max(0, min(current, max_char_index))
+                                    display.show(chars[current])
+                                else:
+                                    vowel_current = max(0, min(vowel_current, 4))
+                                    display.show(vowels[vowel_current])
+                                sleep(330)
+                            if change_flag == 0:
+                                return chars[current]
+                            else:
+                                return vowels[vowel_current]
+
+
+                        def get_string():
+                            usertext = ""
+                            while button_b.was_pressed() is False:
+                                usertext += get_char()
+                            return usertext
+
+
+                        while True:
+                            display.show(Image.ARROW_W)
+                            if button_a.is_pressed():
+                                display.clear()
+                                sleep(1000)
+                                a = button_a.was_pressed()
+                                currentWord = get_string()
+                                display.scroll(currentWord)
+                            sleep(330)
+   
+
+
+                .. tab-item:: Q4
+
+                    Modify the code to use tilting in the x direction for luppercase; tilting in the y direction for lowercase.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+
+                        chars = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N",
+                                "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"]
+                        max_char_index = len(chars) - 1
+                        middle_index = int(max_char_index / 2)
+                        chars2 = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n",
+                                "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+                        max_char_index2 = len(chars2) - 1
+                        middle_index2 = int(max_char_index2 / 2)
+
+                        def get_char():
+                            current = middle_index
+                            current2 = middle_index2
+                            # flag 0 for current and 1 for current2
+                            change_flag = 0
+                            while button_a.was_pressed() is False:
+                                if button_b.is_pressed():
+                                    return ""
+                                if accelerometer.get_y() > 300:
+                                    current2 += 1
+                                    change_flag = 1
+                                elif accelerometer.get_y() < -300:
+                                    current2 -= 1
+                                    change_flag = 1
+                                elif accelerometer.get_x() > 300:
+                                    current += 1
+                                    change_flag = 0
+                                elif accelerometer.get_x() < -300:
+                                    current -= 1
+                                    change_flag = 0
+                                if change_flag == 0:
+                                    current = max(0, min(current, max_char_index))
+                                    display.show(chars[current])
+                                else:
+                                    current2 = max(0, min(current2, max_char_index2))
+                                    display.show(chars2[current2])
+                                sleep(330)
+                            if change_flag == 0:
+                                return chars[current]
+                            else:
+                                return chars2[current2]
+
+
+                        def get_string():
+                            usertext = ""
+                            while button_b.was_pressed() is False:
+                                usertext += get_char()
+                            return usertext
+
+
+                        while True:
+                            display.show(Image.ARROW_W)
+                            if button_a.is_pressed():
+                                display.clear()
+                                sleep(1000)
+                                a = button_a.was_pressed()
+                                currentWord = get_string()
+                                display.scroll(currentWord)
+                            sleep(330)
