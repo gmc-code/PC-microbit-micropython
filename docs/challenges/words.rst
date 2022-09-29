@@ -191,7 +191,6 @@ Code design
 
                     .. code-block:: python
 
-                        # based on http://www.multiwingspan.co.uk/micro.php?page=acctext
                         from microbit import *
 
 
