@@ -3,7 +3,7 @@ Number chooser
 ====================================================
 
 
-| Use the A button to cycle through the digits form 0 to 9, and continue again from 0.
+| Use the A button to cycle through the digits from 0 to 9, and continue again from 0.
 | Use the B button to select the number.
 
 ----
