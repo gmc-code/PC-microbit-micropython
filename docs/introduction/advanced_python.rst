@@ -55,6 +55,7 @@ The image pages and the classes pages have more advanced syntax.
 | :ref:`get_pixel and set_pixel`
 
 | newlist = [expression for item in iterable]
+| :ref:`Producing character lists via list comprehension`
 | :ref:`List comprehension for a series of images`
 | :ref:`List comprehension for bytearray images`
 
