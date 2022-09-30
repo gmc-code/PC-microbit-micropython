@@ -5,7 +5,7 @@ Modules
 Module list
 ----------------
 
-| To get a list of built in modules for the microbit:
+| To get a list of built-in modules for the microbit:
 
 | Open the REPL
 | Type: help('modules')

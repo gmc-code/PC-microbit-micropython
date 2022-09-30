@@ -828,7 +828,7 @@ Pulsing Images
 
 .. function:: pulse_image(img, pulse_delay=100)
 
-    | **img** can be a built in such as **Image.HEART** or a custom image such as **Image("90909:" * 5)** or **Image(5, 5, bytearray([9] * 25))**.
+    | **img** can be a built-in such as **Image.HEART** or a custom image such as **Image("90909:" * 5)** or **Image(5, 5, bytearray([9] * 25))**.
     | Pulse_delay defaults to 100 ms. It is the time between each image.
 
 | Pulse_image uses the image_brightness function to produce an image with the given brightness.

@@ -40,35 +40,35 @@ Tasks
     | **2 LED & Buzzer melody**
     | 2a Write code that displays a text message to press A or B. 
     | When A is pressed, repeat 3 times turning on and off a red LED and display the image ``Image.NO``. 
-    | When B is pressed, play a built in melody and display the image ``Image.MUSIC_CROTCHET``.
+    | When B is pressed, play a built-in melody and display the image ``Image.MUSIC_CROTCHET``.
 
     | 2b. Write code that displays a text message to press A or B. 
     | When A is pressed, repeat 4 times turning on and off a green LED and display the image ``Image.YES``. 
-    | When B is pressed, play a built in melody and display the image ``Image.MUSIC_QUAVER``.
+    | When B is pressed, play a built-in melody and display the image ``Image.MUSIC_QUAVER``.
 
     | 2c. Write code that displays a text message to press A or B. 
     | When A is pressed, repeat 5 times turning on and off a yellow LED and display the image ``Image.SQUARE``. 
-    | When B is pressed, play a built in melody and display the image ``Image.MUSIC_QUAVERS``.
+    | When B is pressed, play a built-in melody and display the image ``Image.MUSIC_QUAVERS``.
 
     | 2d. Write code that displays a text message to press A or B. 
     | When A is pressed, repeat 6 times turning on and off a red LED and display the image ``Image.SAD``. 
-    | When B is pressed, play a built in melody and display the image ``Image.MUSIC_CROTCHET``.
+    | When B is pressed, play a built-in melody and display the image ``Image.MUSIC_CROTCHET``.
 
     | 2e. Write code that displays a text message to press A or B. 
     | When A is pressed, repeat 7 times turning on and off a green LED and display the image ``Image.SMILE``. 
-    | When B is pressed, play a built in melody and display the image ``Image.MUSIC_QUAVERS``
+    | When B is pressed, play a built-in melody and display the image ``Image.MUSIC_QUAVERS``
 
     | **3 LED, potentiometer & Buzzer**
     | 3a. Write code that displays a message to press A or B, and turn on an LED with brightness controlled by a potentiometer.
-    | When A is pressed, playing a built in melody while displaying an image. 
+    | When A is pressed, playing a built-in melody while displaying an image. 
     | When B is pressed, repeat 3 times turning on and off an LED, and display 3 different images in sequence from a list of images.
 
     | 3b. Write code that displays a message to press A or B, and turn on an LED with brightness controlled by a potentiometer.
-    | When A is pressed, playing a built in melody while displaying an image. 
+    | When A is pressed, playing a built-in melody while displaying an image. 
     | When B is pressed, repeat 4 times turning on and off an LED, and display 4 different images in sequence from a list of images.
 
     | 3c. Write code that displays a message to press A or B, and turn on an LED with brightness controlled by a potentiometer.
-    | When A is pressed, playing a built in melody while displaying an image. 
+    | When A is pressed, playing a built-in melody while displaying an image. 
     | When B is pressed, repeat 5 times turning on and off an LED, and display 5 different images in sequence from a list of images.
 
     | **4 LEDs & Motor**

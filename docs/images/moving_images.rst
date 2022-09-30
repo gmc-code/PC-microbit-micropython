@@ -402,7 +402,7 @@ Shifting combined
 
 .. function:: shift_x_y(img, x, y, sleeptime=80)
 
-    | **img** can be a built in such as **Image.HEART** or a custom image such as **Image("90909:" * 5)** or **Image(5, 5, bytearray([9] * 25))**.
+    | **img** can be a built-in such as **Image.HEART** or a custom image such as **Image("90909:" * 5)** or **Image(5, 5, bytearray([9] * 25))**.
     | x is an integer
     | **sleeptime** defaults to 80 ms. It is the sleep time after showing the shifted image.
 

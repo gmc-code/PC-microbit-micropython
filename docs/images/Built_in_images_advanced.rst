@@ -455,7 +455,7 @@ Randomize image list
 Interrupting an image list
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-| There are several approaches to interrupting the display of a built in collection of images.
+| There are several approaches to interrupting the display of a built-in collection of images.
 
 | The approach below uses ``wait=False``. This causes **display.show** to run in the background. The rest of the code in the **while block** runs without waiting for the **display.show** to complete.
 | A **for-loop** with timing to match the timing of the clocks is used to allow button pressing to interrupt the clocks animation.

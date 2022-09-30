@@ -2,10 +2,10 @@
 Built-in images
 ====================================================
 
-| The microbit library contains over 60 built in images that have specific names.
+| The microbit library contains over 60 built-in images that have specific names.
 | e.g ``Image.HEART``
 | The **Image** object must have a capital **I**.
-| The built in image name must be in capitals. e.g **HEART** not **heart**.
+| The built-in image name must be in capitals. e.g **HEART** not **heart**.
 | No quotation marks are used. e.g ``Image.HEART`` not ``**'Image.HEART'**``.
 | The same syntax that was used to show text can be used for images.
 | In Mu editor, when typing ``Image.``, as soon as the stop is typed, a drop list of images will be displayed to allow selection of an image.
@@ -19,7 +19,7 @@ Built-in images
 
 ----
 
-Display.show a built in Image
+Display.show a built-in Image
 ----------------------------------------
 
 .. py:function:: display.show(image)
@@ -426,7 +426,7 @@ Image sentences
 ----------------------------------------
 
 | The code below makes a sentence using words and images.
-| Delays, ``sleep(300)`` is used to prevent the sequence from being too fast to see.
+| Delays of ``sleep(300)`` are used to prevent the sequence from being too fast to see.
 
 .. code-block:: python
 
@@ -444,7 +444,7 @@ Image sentences
  
 .. admonition:: Tasks
 
-    #. Write a code sentence combining words and images.
+    #. Write an image sentence combining words and images.
 
     .. dropdown::
         :icon: codescan
@@ -455,7 +455,7 @@ Image sentences
 
             .. tab-item:: Q1
 
-                Write a code sentence combining words and images.
+                Write an image sentence combining words and images.
 
                 .. code-block:: python
 
@@ -483,12 +483,15 @@ Image sentences using "mixed" lists
 | Multiple digits as in Image("12345") set the pixel brightness for those pixels.
 | Strings, such as "1234" or "abcd" will be ignored.
 
+| The image sentence below uses a built-in image and an image from a digit and an image from a letter.
+
 .. code-block:: python
 
     from microbit import *
 
     while True:
-        mixed_list = [Image.HEART, "4", "U"]
+        # PACMAN ate you
+        mixed_list = [Image.PACMAN, "8", "U"]
         display.show(mixed_list, delay=300, clear=True)
         sleep(300)
 
@@ -497,8 +500,9 @@ Image sentences using "mixed" lists
 
 .. admonition:: Tasks
 
-    #. Write code, using a short delay of 200ms, to show 99.94, then clear the screen for 1 sec.
-    #. Write code, using a short delay of 150ms, to show 5.64, then clear the screen for half a sec.
+    #. Write an image sentence using an image list that asks if you are sad.
+    #. Write an image sentence using an image list that encourages joy.
+    #. Write an image sentence using an image list that translates as "Are you surprised to be confused?"
 
 
     .. dropdown::
@@ -510,11 +514,42 @@ Image sentences using "mixed" lists
 
             .. tab-item:: Q1
 
-                Write code, using a short delay of 200ms, to show 99.94, then clear the screen for 1 sec.
+                Write an image sentence using an image list that asks if you are sad.
 
                 .. code-block:: python
 
                     from microbit import *
+
+                    while True:
+                        mixed_list = ["R", "U", Image.SAD]
+                        display.show(mixed_list, delay=700, clear=True)
+                        sleep(1000)
+
+            .. tab-item:: Q2
+
+                Write an image sentence using an image list that encourages joy.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        mixed_list = ["B", Image.HAPPY]
+                        display.show(mixed_list, delay=700, clear=True)
+                        sleep(1000)
+
+            .. tab-item:: Q3
+
+                Write an image sentence using an image list that translates as "Are you surprised to be confused?"
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        mixed_list = ["R", "U", Image.SURPRISED, "2", "B", Image.CONFUSED, "?"]
+                        display.show(mixed_list, delay=700, clear=True)
+                        sleep(1000)
 
 
 ----
@@ -522,7 +557,7 @@ Image sentences using "mixed" lists
 All Images
 ----------------------------------------
 
-| The code below displays all the built in images.
+| The code below displays all the built-in images.
 | Image.SCISSORS is not yet available in Mu Editor but is online in the beta version at:
 | https://python.microbit.org/v/beta
 
@@ -558,10 +593,10 @@ All Images
 
 .. admonition:: Tasks
 
-    #. Edit the built in images list from above to just include animals.
-    #. Edit the built in images list from above to just include faces.
-    #. Edit the built in images list from above to just include objects.
-    #. Edit the built in images list from above to just include shapes.
+    #. Edit the built-in images list from above to just include animals.
+    #. Edit the built-in images list from above to just include faces.
+    #. Edit the built-in images list from above to just include objects.
+    #. Edit the built-in images list from above to just include shapes.
     
     .. dropdown::
         :icon: codescan
@@ -572,7 +607,7 @@ All Images
 
             .. tab-item:: Q1
 
-                Edit the built in images list from above to just include animals.
+                Edit the built-in images list from above to just include animals.
 
                 .. code-block:: python
 
@@ -592,7 +627,7 @@ All Images
 
             .. tab-item:: Q2
 
-                Edit the built in images list from above to just include animals.
+                Edit the built-in images list from above to just include animals.
 
                 .. code-block:: python
 
@@ -616,7 +651,7 @@ All Images
 
             .. tab-item:: Q3
 
-                Edit the built in images list from above to just include objects.
+                Edit the built-in images list from above to just include objects.
 
                 .. code-block:: python
 
@@ -642,7 +677,7 @@ All Images
 
             .. tab-item:: Q4
 
-                Edit the built in images list from above to just include shapes.
+                Edit the built-in images list from above to just include shapes.
 
                 .. code-block:: python
 

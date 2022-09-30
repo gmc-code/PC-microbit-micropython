@@ -75,7 +75,7 @@ Library
 ---------------------
 
 | By default sound output will be via the edge connector on pin0 and the **V2** built-in speaker. 
-| The **V2** built in speaker can be turned off or on without affecting playing via pin0.
+| The **V2** built-in speaker can be turned off or on without affecting playing via pin0.
 
 .. py:function::  speaker.off()
 
@@ -402,7 +402,7 @@ Scales
 Built in music
 ----------------------------------------
 
-| There are built in melodies that can be found by typing ``music.``
+| There are built-in melodies that can be found by typing ``music.``
 | Melodies can be played using ``music.play(melody)``.
 
 .. code-block:: python
@@ -415,7 +415,7 @@ Built in music
 
 
 | The code below uses a for-loop to loop through each melody in the ``melodies_list`` and play it.
-| For a list of built in meodies see: https://microbit-micropython.readthedocs.io/en/v2-docs/music.html
+| For a list of built-in meodies see: https://microbit-micropython.readthedocs.io/en/v2-docs/music.html
 
 .. code-block:: python
 

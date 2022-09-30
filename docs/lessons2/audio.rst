@@ -86,7 +86,7 @@ The built-in sounds can be called using ``audio.play(Sound.NAME)``.
 All Built in sounds
 ----------------------------------------
 
-| The code below plays all the built in sounds.
+| The code below plays all the built-in sounds.
 | The A button can be pressed to exit the for-loop then the while loop using ``break``.
 | Pressing the reset button on the back of the microbit will restart the code.
 
@@ -119,8 +119,8 @@ All Built in sounds
 
 .. admonition:: Tasks
 
-    #. Play any 3 built in sounds using a list, separating them with a 1 second pause.
-    #. Use the choice function to randomly pick a built in sound from a sound list. See: https://www.w3schools.com/python/ref_random_choice.asp. Use button pressing to break out of the while loop to stop playing sounds.
+    #. Play any 3 built-in sounds using a list, separating them with a 1 second pause.
+    #. Use the choice function to randomly pick a built-in sound from a sound list. See: https://www.w3schools.com/python/ref_random_choice.asp. Use button pressing to break out of the while loop to stop playing sounds.
 
     .. dropdown::
         :icon: codescan
@@ -131,7 +131,7 @@ All Built in sounds
 
             .. tab-item:: Q1
 
-                Play any 3 built in sounds using a list, separating them with a 1 second pause.
+                Play any 3 built-in sounds using a list, separating them with a 1 second pause.
 
                 .. code-block:: python
 
@@ -145,7 +145,7 @@ All Built in sounds
 
             .. tab-item:: Q2
 
-                Use the choice function to randomly pick a built in sound from a sound list. See: https://www.w3schools.com/python/ref_random_choice.asp. Use button pressing to break out of the while loop to stop playing sounds.
+                Use the choice function to randomly pick a built-in sound from a sound list. See: https://www.w3schools.com/python/ref_random_choice.asp. Use button pressing to break out of the while loop to stop playing sounds.
 
                 .. code-block:: python
 

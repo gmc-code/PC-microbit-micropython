@@ -359,7 +359,7 @@ Scales
 Built in music
 ----------------------------------------
 
-| There are built in melodies that can be found by typing ``music.``
+| There are built-in melodies that can be found by typing ``music.``
 | Melodies can be played using ``music.play(melody)``.
 
 .. code-block:: python
@@ -371,7 +371,7 @@ Built in music
 
 
 | The code below uses a for-loop to loop through each melody in the ``melodies_list`` and play it.
-| For a list of built in meodies see: https://microbit-micropython.readthedocs.io/en/v2-docs/music.html
+| For a list of built-in meodies see: https://microbit-micropython.readthedocs.io/en/v2-docs/music.html
 
 .. code-block:: python
 

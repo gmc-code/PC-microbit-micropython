@@ -1,4 +1,4 @@
-/* inline literals; change colour from built in red to blue */
+/* inline literals; change colour from built-in red to blue */
 
 .rst-content tt.literal, .rst-content tt.literal, .rst-content code.literal {
     color: #3333ff;
