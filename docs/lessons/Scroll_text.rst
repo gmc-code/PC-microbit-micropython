@@ -76,7 +76,7 @@ To scroll the float, ``3.14``, across the display, use ``display.scroll(3.14)``:
                     from microbit import *
 
                     while True:
-                        display.scroll("Gerard")
+                        display.scroll("Tim")
 
             .. tab-item:: Q2
 

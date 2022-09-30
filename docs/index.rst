@@ -29,8 +29,8 @@ Index:
     lessons/while_True_loops.rst
     lessons/Mu_editor_Errors.rst
     lessons/Sleep.rst
-    lessons/Show_text.rst
     lessons/Built_in_images.rst
+    lessons/Show_text.rst
     lessons/Buttons_and_selection.rst
     lessons/While_loops.rst
     lessons/For_loops.rst
