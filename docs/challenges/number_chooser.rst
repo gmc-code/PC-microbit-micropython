@@ -39,7 +39,7 @@ Number chooser
 
 ----
 
-| The moodified code, below, for the while loop, uses the ARROW_W as the starting point with an A button press to repeat hte process of choose a number.
+| The moodified code, below, for the while loop, uses the ARROW_W as the starting point with an A button press to repeat the process of choose a number.
 
 .. code-block:: python
 

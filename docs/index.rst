@@ -117,6 +117,7 @@ Index:
     :numbered:
 
     challenges/number_chooser.rst
+    challenges/guess_the_number.rst
     challenges/words.rst
 
 
