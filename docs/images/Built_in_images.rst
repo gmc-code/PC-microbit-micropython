@@ -480,8 +480,8 @@ Image sentences using "mixed" lists
 | Normally, a text image requires **Image** as in Image("U").
 | But the list input for **display.show** automatically treats "U" as Image("U").
 | Single quoted digits, e.g. "4", work in a similar way. 
-| Multiple digits as in Image("12345") set the pixel brightness for those pixels.
-| Strings, such as "1234" or "abcd" will be ignored.
+| Multiple digits in an image, as in Image("12345"), set the pixel brightness for those pixels.
+| Strings, such as "1234" or "abcd", will be ignored.
 
 | The image sentence below uses a built-in image and an image from a digit and an image from a letter.
 
