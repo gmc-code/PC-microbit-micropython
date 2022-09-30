@@ -24,9 +24,9 @@ Display.show a built in Image
 
 .. py:function:: display.show(image)
 
-    | Display an image, where image is a built in image such as **Image.Heart**.
+    | Display an image, where image is an image such as the built-in image **Image.Heart**.
 
-| The code below displays a the built-in heart image.
+| The code below displays a built-in heart image.
 
 .. code-block:: python
 
@@ -82,6 +82,141 @@ Display.show a built in Image
                     while True:
                         display.show(Image.SMILE)
 
+----
+
+Flashing Image
+----------------------------------------
+
+| When a sleep is used along wiht clearing the display, an image can be made to flash.
+| The code below flashes a the built-in heart image 
+
+.. code-block:: python
+
+    from microbit import *
+
+    while True:
+        display.show(Image.HEART)
+        sleep(300)
+        display.clear()
+        sleep(300)
+
+----
+
+.. admonition:: Tasks
+
+    #. Modify the code to have the heart appear for 1/3 of the time.
+    #. Modify the code to have the heart appear for 2/3 of the time.
+    
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Modify the code to have the heart appear for 1/3 of the time.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        display.show(Image.HEART)
+                        sleep(300)
+                        display.clear()
+                        sleep(600)
+
+            .. tab-item:: Q2
+
+                Modify the code to have the heart appear for 2/3 of the time.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        display.show(Image.HEART)
+                        sleep(600)
+                        display.clear()
+                        sleep(300)
+
+----
+
+Random times for flashing an image
+-----------------------------------
+
+| Import the random library. Then use randint to get a random times for flashing an image.
+
+.. py:function:: random.randint(a, b)
+
+    Return a random integer from a to b, including both. 
+
+| The code below gets a random integer from 600 to 900 and uses that for the sleep time during which the image is shown.
+| Then it is used to calculate sleep time during which the display is cleared.
+| This creates some variation in the flashing of the image.
+
+.. code-block:: python
+
+    from microbit import *
+    import random
+
+    while True:
+        on_time = random.randint(600, 900)
+        off_time = 1000 - on_time
+        display.show(Image.HEART)
+        sleep(on_time)
+        display.clear()
+        sleep(off_time)
+
+----
+
+.. admonition:: Tasks
+
+    #. Write the code to have the heart appear for 300ms, but clear the screen for a random time ranging from 100 to 300ms.
+    #. Write the code to have the heart appear for a random time ranging from 100 to 300ms, but clear the screen for 300ms.
+    
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Write the code to have the heart appear for 500ms but clear the screen for a random time ranging from 100 to 500ms.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import random
+
+                    while True:
+                        on_time = 500
+                        off_time = random.randint(100, 500)
+                        display.show(Image.HEART)
+                        sleep(on_time)
+                        display.clear()
+                        sleep(off_time)
+
+            .. tab-item:: Q2
+
+                Write the code to have the heart appear for a random time ranging from 100 to 500ms, but clear the screen for 500ms.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import random
+
+                    while True:
+                        on_time = random.randint(100, 500)
+                        off_time = 500
+                        display.show(Image.HEART)
+                        sleep(on_time)
+                        display.clear()
+                        sleep(off_time)
 
 ----
 
@@ -111,7 +246,7 @@ Display.show a list of images
 .. admonition:: Tasks
 
     #. Write code to show a list of 3 different animals with an 0.5 sec delay between them.
-    #. Write code to show a list of 4 different arrows with an 0.4 sec delay between them.
+    #. Write code to show a list of 4 different arrows with an 400ms delay between them.
     #. Write code to show a list of 3 different shapes with an 0.3 sec delay between them.
 
     .. dropdown::
@@ -134,7 +269,7 @@ Display.show a list of images
 
             .. tab-item:: Q2
 
-                Write code to show a list of 4 different arrows with an 0.4 sec delay between them.
+                Write code to show a list of 4 different arrows with an 400ms delay between them.
 
                 .. code-block:: python
 
