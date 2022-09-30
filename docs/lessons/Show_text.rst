@@ -4,7 +4,7 @@ Show text
 
 .. py:module:: display
 
-Display.show simple version
+display.show simple version
 ----------------------------------------
 
 .. py:function:: show(value)
@@ -157,7 +157,7 @@ Display.clear
 ----
 
 
-Display.show with clear
+display.show with clear
 ----------------------------------------
 
 .. py:function:: show(value, clear=False)
@@ -220,7 +220,7 @@ Display.show with clear
 
 ----
 
-Display.show with delay
+display.show with delay
 ----------------------------------------
 
 .. py:function:: show(value, delay=400)
@@ -343,7 +343,7 @@ Show at different speeds
 
 ----
 
-Display.show using variables
+display.show using variables
 ----------------------------------------
 
 | In the code below, 3 variables are used to hold a string, integer and float.
@@ -432,7 +432,7 @@ Display.show using variables
 
 ----
 
-Display.show full syntax
+Show full syntax
 ----------------------------------------
 
 .. py:function:: show(value, delay=400, \*, wait=True, loop=False, clear=False)
@@ -460,7 +460,7 @@ Display.show full syntax
 
 .. admonition:: Tip
 
-    | Display.show has a ``wait`` parameter that can be set to ``False`` so that displaying information on the microbit display doesn't hold up other actions like driving motors on a bot. 
+    | **display.show** has a ``wait`` parameter that can be set to ``False`` so that displaying information on the microbit display doesn't hold up other actions like driving motors on a bot. 
     | e.g. ``display.show(motor_speed, wait=False)``
 
 

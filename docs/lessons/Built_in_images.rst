@@ -422,8 +422,6 @@ Built-in Image lists
                         display.show(Image.ALL_ARROWS, delay=200)
 ----
 
-
-
 Image sentences
 ----------------------------------------
 
@@ -471,6 +469,52 @@ Image sentences
                         sleep(300)
                         display.scroll("long")
                         sleep(300)
+
+----
+
+Image sentences using "mixed" lists
+----------------------------------------
+
+| **display.show** can be used to show text images along with other images.
+| The text images must be one character in quotes.
+| Normally, a text image requires **Image** as in Image("U").
+| But the list input for **display.show** automatically treats "U" as Image("U").
+| Single quoted digits, e.g. "4", work in a similar way. 
+| Multiple digits as in Image("12345") set the pixel brightness for those pixels.
+| Strings, such as "1234" or "abcd" will be ignored.
+
+.. code-block:: python
+
+    from microbit import *
+
+    while True:
+        mixed_list = [Image.HEART, "4", "U"]
+        display.show(mixed_list, delay=300, clear=True)
+        sleep(300)
+
+
+----
+
+.. admonition:: Tasks
+
+    #. Write code, using a short delay of 200ms, to show 99.94, then clear the screen for 1 sec.
+    #. Write code, using a short delay of 150ms, to show 5.64, then clear the screen for half a sec.
+
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Write code, using a short delay of 200ms, to show 99.94, then clear the screen for 1 sec.
+
+                .. code-block:: python
+
+                    from microbit import *
 
 
 ----
