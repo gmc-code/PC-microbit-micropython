@@ -490,8 +490,8 @@ Image sentences using "mixed" lists
     from microbit import *
 
     while True:
-        # PACMAN ate you
-        mixed_list = [Image.PACMAN, "8", "U"]
+        # snake ate rabbit
+        mixed_list = [Image.SNAKE, "8", Image.RABBIT]
         display.show(mixed_list, delay=300, clear=True)
         sleep(300)
 
