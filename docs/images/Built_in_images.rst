@@ -422,13 +422,11 @@ Built-in Image lists
                         display.show(Image.ALL_ARROWS, delay=200)
 ----
 
-
-
 Image sentences
 ----------------------------------------
 
 | The code below makes a sentence using words and images.
-| Delays, ``sleep(300)`` is used to prevent the sequence from being too fast to see.
+| Delays of ``sleep(300)`` are used to prevent the sequence from being too fast to see.
 
 .. code-block:: python
 
@@ -446,7 +444,7 @@ Image sentences
  
 .. admonition:: Tasks
 
-    #. Write a code sentence combining words and images.
+    #. Write an image sentence combining words and images.
 
     .. dropdown::
         :icon: codescan
@@ -457,7 +455,7 @@ Image sentences
 
             .. tab-item:: Q1
 
-                Write a code sentence combining words and images.
+                Write an image sentence combining words and images.
 
                 .. code-block:: python
 
@@ -471,6 +469,87 @@ Image sentences
                         sleep(300)
                         display.scroll("long")
                         sleep(300)
+
+----
+
+Image sentences using "mixed" lists
+----------------------------------------
+
+| **display.show** can be used to show text images along with other images.
+| The text images must be one character in quotes.
+| Normally, a text image requires **Image** as in Image("U").
+| But the list input for **display.show** automatically treats "U" as Image("U").
+| Single quoted digits, e.g. "4", work in a similar way. 
+| Multiple digits as in Image("12345") set the pixel brightness for those pixels.
+| Strings, such as "1234" or "abcd" will be ignored.
+
+| The image sentence below uses a built-in image and an image from a digit and an image from a letter.
+
+.. code-block:: python
+
+    from microbit import *
+
+    while True:
+        # PACMAN ate you
+        mixed_list = [Image.PACMAN, "8", "U"]
+        display.show(mixed_list, delay=300, clear=True)
+        sleep(300)
+
+
+----
+
+.. admonition:: Tasks
+
+    #. Write an image sentence using an image list that asks if you are sad.
+    #. Write an image sentence using an image list that encourages joy.
+    #. Write an image sentence using an image list that translates as "Are you surprised to be confused?"
+
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Write an image sentence using an image list that asks if you are sad.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        mixed_list = ["R", "U", Image.SAD]
+                        display.show(mixed_list, delay=700, clear=True)
+                        sleep(1000)
+
+            .. tab-item:: Q2
+
+                Write an image sentence using an image list that encourages joy.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        mixed_list = ["B", Image.HAPPY]
+                        display.show(mixed_list, delay=700, clear=True)
+                        sleep(1000)
+
+            .. tab-item:: Q3
+
+                Write an image sentence using an image list that translates as "Are you surprised to be confused?"
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        mixed_list = ["R", "U", Image.SURPRISED, "2", "B", Image.CONFUSED, "?"]
+                        display.show(mixed_list, delay=700, clear=True)
+                        sleep(1000)
 
 
 ----
