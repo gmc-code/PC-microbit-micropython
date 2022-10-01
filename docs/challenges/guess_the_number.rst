@@ -71,7 +71,7 @@ Check the guess
 -----------------
 
 | The guess number needs to be compared with the secret number.
-| The function, **check_guess(secret_num, guess)**, returns True if the **secret_num** and **guess** match. It returns False if they don't match.
+| The function, **check_guess(secret_num, guess)**, returns True if the **secret_num** and the **guess** match. It returns False if they don't match.
 | Visual feedback is added via images: YES for correct, arrows to hint at the guess direction.
 | When wrong, the guess number needs to be reshown after the feedback, as a reminder of the last guess.
 
@@ -98,7 +98,7 @@ Check the guess
 
 .. admonition:: Tasks
 
-    #. Complete the code for teh check_guess function.
+    #. Complete the code for the check_guess function.
 
     .. dropdown::
             :icon: codescan
@@ -212,17 +212,20 @@ New versions:
 -------------------------
 
 | Modify the while loop so that a new game is automatically started.
-| Add counting of hte number of guess made and display it at the end of a game.
+| Add counting of the number of guesses made and display it at the end of a game.
 | Add tracking of the total number of games played and the best and worst score and the average.
 
 ----
 
+Guess the number version 2
+-----------------------------
 
-
+| Modify the while loop so that a new game is automatically started.
+| Do this by moving the condition out of the while loop and test it in an if statement.
 
 .. admonition:: Tasks
 
-    #. Build a guessing game.
+    #. Modify the while loop so that a new game is automatically started.
 
     .. dropdown::
             :icon: codescan
@@ -231,7 +234,7 @@ New versions:
 
             .. tab-set::
 
-                .. tab-item:: Q1
+                .. tab-item:: Automatic new game
 
                     .. code-block:: python
 
@@ -240,60 +243,155 @@ New versions:
 
 
                         def get_secret(min_num=1, max_num=9):
-                            # default to from 1 to 9
                             return random.randint(min_num, max_num)
 
 
-                        def select_number(num, min_num=1, max_num=9):
-                            # limit to 1 to 9; repeat until both buttons pressed together
-                            while True:
-                                display.show(num)
-                                if button_a.is_pressed() and button_b.is_pressed():
-                                    return num
-                                elif button_a.is_pressed() and not (button_b.is_pressed()):
-                                    if num > min_num:
-                                        num -= 1
-                                elif button_b.is_pressed() and not (button_a.is_pressed()):
-                                    if num < max_num:
-                                        num += 1
+                        def select_number(start_num, min_num=1, max_num=9):
+                            counter = start_num
+                            display.show(counter, delay=200)
+                            while button_b.was_pressed() is False:
+                                if button_a.is_pressed():
+                                    counter += 1
+                                    if counter > max_num:
+                                        counter = min_num
+                                    display.show(counter, delay=200)
                                 sleep(200)
+                            return counter
 
 
-                        def check_guess(secret_num, guess, game_guesses):
+                        def check_guess(secret_num, guess):
                             if guess == secret_num:
                                 display.show(Image.YES)
-                                sleep(400)
-                                display.scroll(str(game_guesses) + " GUESSES", delay=80)
                                 sleep(400)
                                 return True
                             elif guess > secret_num:
                                 display.show(Image.ARROW_S)
                                 sleep(400)
-                                display.show(str(guess))
+                                display.show(guess)
+                                return False
                             else:
                                 display.show(Image.ARROW_N)
                                 sleep(400)
-                                display.show(str(guess))
-                            return False
+                                display.show(guess)
+                                return False
 
 
-                        game_guesses = 0
                         secret_num = get_secret()
                         guess = 5
-                        
+                        guessed = False
+                        display.scroll("1-9?")
                         while True:
                             guess = select_number(guess, min_num=1, max_num=9)
-                            game_guesses += 1
-                            guessed = check_guess(secret_num, guess, game_guesses)
+                            guessed = check_guess(secret_num, guess)
                             if guessed:
                                 # new game
                                 secret_num = get_secret()
-                                game_guesses = 0
+                                guess = 5
+                                guessed = False 
+
 
 ----
 
-Guess the number level 2
---------------------------
+Guess the number version 3
+-----------------------------
 
-| Enhance the guessing game.
-| Store the total games played and the total guesses in the variables: totalgames, totalguesses. 
+| Add counting of the number of guesses made and display it at the end of a game.
+| Add a variable **game_guesses** to keep track of the number of guesses made.
+
+.. admonition:: Tasks
+
+    #. Add counting of the number of guesses made and display it at the end of each game.
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Automatic new game
+
+                    .. code-block:: python
+
+                        from microbit import *
+                        import random
+
+
+                        def get_secret(min_num=1, max_num=9):
+                            return random.randint(min_num, max_num)
+
+
+                        def select_number(start_num, min_num=1, max_num=9):
+                            counter = start_num
+                            display.show(counter, delay=200)
+                            while button_b.was_pressed() is False:
+                                if button_a.is_pressed():
+                                    counter += 1
+                                    if counter > max_num:
+                                        counter = min_num
+                                    display.show(counter, delay=200)
+                                sleep(200)
+                            return counter
+
+
+                        def check_guess(secret_num, guess):
+                            if guess == secret_num:
+                                display.show(Image.YES)
+                                sleep(400)
+                                return True
+                            elif guess > secret_num:
+                                display.show(Image.ARROW_S)
+                                sleep(400)
+                                display.show(guess)
+                                return False
+                            else:
+                                display.show(Image.ARROW_N)
+                                sleep(400)
+                                display.show(guess)
+                                return False
+
+
+                        secret_num = get_secret()
+                        guess = 5
+                        game_guesses = 0
+                        guessed = False
+                        display.scroll("1-9?")
+                        while True:
+                            guess = select_number(guess, min_num=1, max_num=9)
+                            game_guesses += 1
+                            guessed = check_guess(secret_num, guess)
+                            if guessed:
+                                display.scroll(str(game_guesses) + " GUESSES", delay=80)
+                                # new game
+                                secret_num = get_secret()
+                                guess = 5
+                                game_guesses = 0
+                                guessed = False
+
+----
+
+Guess the number version 4
+-----------------------------
+
+| Add tracking of the total number of games played and the best and worst score and the average.
+| Add the variables **total_guesses** and **total_games**.
+
+.. admonition:: Tasks
+
+    #. Add tracking of the total number of games played and the best and worst score and the average.
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Automatic new game
+
+                    .. code-block:: python
+
+                        from microbit import *
+                        import random
+
+
