@@ -6,6 +6,8 @@ Guess the number
 
 ----
 
+| The microbit needs to pick a random integer between 1 and 9 that will be guessed by the user.
+
 Random integer
 -----------------
 
@@ -23,7 +25,7 @@ Random integer
 .. admonition:: Tasks
 
     #. Add parameters to the **get_secret** function, **min_num** and **max_num** to specify the lowest and highest possible returned integers.
-    #. Change the parameters use have a default **min_num** of 1 and  **max_num** of 9.
+    #. Modify the parameters to have a default of 1 for **min_num** of 9 for  **max_num**.
 
     .. dropdown::
             :icon: codescan
@@ -33,6 +35,8 @@ Random integer
             .. tab-set::
 
                 .. tab-item:: Q1
+
+                    Add parameters to the **get_secret** function, **min_num** and **max_num** to specify the lowest and highest possible returned integers.
 
                     .. code-block:: python
 
@@ -44,31 +48,174 @@ Random integer
 
                 .. tab-item:: Q2
 
+                    Modify the parameters to have a default of 1 for **min_num** of 9 for  **max_num**.
+
                     .. code-block:: python
 
                         from microbit import *
                         import random
                         
                         def get_secret(min_num=1, max_num=9):
-                            # default to 1 to 9
                             return random.randint(min_num, max_num)
 
 
 ----
 
-Guess the number level 1
---------------------------
+| The user needs to use the buttons to select a guess number to make the guess with.
+
+Select number
+-----------------
+
+| The function, **select_number(start_num, min_num, max_num)**, was developed in the **number_chooser** page.
+
+----
+
+| The guess number needs to be compared with the secret number.
+
+Check the guess
+-----------------
+
+| The function, **check_guess(secret_num, guess)**, returns True if the **secret_num** and **guess** match. It returns False if they don't match.
+| Visual feedback is added via images: YES for correct, arrows to hint at the guess direction.
+| When wrong, the guess number needs to be reshown after the feedback, as a reminder of the last guess.
+
+| The code is scaffolded below, but needs completion.
+
+.. code-block:: python
+
+    def check_guess(secret_num, guess):
+        if guess == secret_num:
+            display.show.........
+            sleep(400)
+            return .........
+        elif guess > secret_num:
+            display.show(.........)
+            sleep(400)
+            display.show(guess)
+            return .........
+        else:
+            display.show(.........)
+            sleep(400)
+            display.show(guess)
+            return .........
+
+
+.. admonition:: Tasks
+
+    #. Complete the code for teh check_guess function.
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: check_guess
+
+                    .. code-block:: python
+   
+                        def check_guess(secret_num, guess):
+                            if guess == secret_num:
+                                display.show(Image.YES)
+                                sleep(400)
+                                return True
+                            elif guess > secret_num:
+                                display.show(Image.ARROW_S)
+                                sleep(400)
+                                display.show(guess)
+                                return False
+                            else:
+                                display.show(Image.ARROW_N)
+                                sleep(400)
+                                display.show(guess)
+                                return False
+
+
+----
+
+Guess the number version 1
+-----------------------------
 
 | Build a guessing game in which the player has to guess a number between 1 and 9.
-| Scroll the text "1-9?" at the start then display "5" as the starting number for your guess.
-| Use random.randint(x,y) for random integers.
-| Use while True for the event loop.
-| Use the A button to decrease the guess number by 1.  Use the special operator += to add 1 to the variable. e.g. variablename += 1 
+| Scroll the text "1-9?" at the start then display "5" as the starting number for the user's guess.
+| Use random.randint(min_num=1, max_num=9) for the secret number to be guessed.
+| Use select_number(start_num, min_num, max_num) to select the number for the guess.
+| Use the A button to increase the guess number by 1.
 | Use the B button to make a guess.
 | Give feedback with ARROW_N to go higher and ARROW_S to go lower
 | Show a tick when correct.
+| Use a while loop that stops when the secret number has been guessed. Set the flag: **guessed = False** before the loop.
 
 ----
+
+.. admonition:: Tasks
+
+    #. Build Guess the number version 1.
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Version 1
+
+                    .. code-block:: python
+
+                        from microbit import *
+                        import random
+
+
+                        def get_secret(min_num=1, max_num=9):
+                            return random.randint(min_num, max_num)
+
+
+                        def select_number(start_num, min_num=1, max_num=9):
+                            counter = start_num
+                            display.show(counter, delay=200)
+                            while button_b.was_pressed() is False:
+                                if button_a.is_pressed():
+                                    counter += 1
+                                    if counter > max_num:
+                                        counter = min_num
+                                    display.show(counter, delay=200)
+                                sleep(200)
+                            return counter
+                            
+
+                        def check_guess(secret_num, guess):
+                            if guess == secret_num:
+                                display.show(Image.YES)
+                                sleep(400)
+                                return True
+                            elif guess > secret_num:
+                                display.show(Image.ARROW_S)
+                                sleep(400)
+                                display.show(guess)
+                                return False
+                            else:
+                                display.show(Image.ARROW_N)
+                                sleep(400)
+                                display.show(guess)
+                                return False
+
+                        secret_num = get_secret()
+                        guess = 5
+                        guessed = False
+                        display.scroll("1-9?")
+                        while guessed is False:
+                            guess = select_number(guess, min_num=1, max_num=9)
+                            guessed = check_guess(secret_num, guess)
+
+
+----
+
+----
+
+
+
 
 .. admonition:: Tasks
 
