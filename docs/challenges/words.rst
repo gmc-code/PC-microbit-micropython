@@ -110,7 +110,7 @@ Code design
 --------------
 
 | Show an arrow to the A button, suggesting to press the A button to start.
-| The special use of ``a = button_a.was_pressed()`` clears the A button pressses so it can be checked again in the other functions.
+| The special use of ``a = button_a.was_pressed()`` clears the A button presses so it can be checked again in the other functions.
 | ``get_string()`` calls ``get_char()`` to add characters to the word string as long as the B button hasn't been pressed, otherwise it returns the word string, **usertext**.
 | get_char() starts at the middle character.
 | get_char() loops until the A button is pressed, and when it is, it returns the current character.
