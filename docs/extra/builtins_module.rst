@@ -1263,7 +1263,7 @@ Sort all objects that can be iterated
 
 - ``iterable`` -- Iteratable object. 
 - ``key`` -- It is mainly used to compare elements with only one parameter. The parameters of specific functions are taken from the iteratable objects, and one element of the iteratable objects is specified for sorting.
-- ``reverse`` -- collation, reverse = True descending order ,  reverse = False ascending order (default) 。
+- ``reverse`` -- collation, reverse=True descending order ,  reverse=False ascending order (default) 。
 
 sorted the easiest way to use::
 

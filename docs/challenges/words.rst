@@ -12,7 +12,7 @@ Words
 Chr Syntax
 --------------
 
-| Words requires a list of characters to choose form.
+| Words requires a list of characters to choose from.
 | Rather than typing them out, the quickest way to get the alphabet in a list is to use ASCII numbers for the letters and convert them using the **chr** function.
 | The **chr** function converts an ASCII number to its a character.
 | e.g chr(65) gives 'A'
