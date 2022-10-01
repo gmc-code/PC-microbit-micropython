@@ -185,9 +185,7 @@ Code design
 
             .. tab-set::
 
-                .. tab-item:: Q1
-
-                    Create the code.
+                .. tab-item:: Full code.
 
                     .. code-block:: python
 
@@ -248,7 +246,7 @@ Code design
     #. Modify the code to use lower case letters.
     #. Modify the code to use numbers instead of letters.
     #. Modify the code to add tilting in the y direction to be able to choose the vowels directly. 
-    #. Modify the code to use tilting in the x direction for luppercase; tilting in the y direction for lowercase.
+    #. Modify the code to use tilting in the x direction for uppercase; tilting in the y direction for lowercase.
 
     .. dropdown::
             :icon: codescan
