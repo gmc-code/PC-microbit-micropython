@@ -48,7 +48,7 @@ Letter chooser: by function
     from microbit import *
 
     chars = ["A", "B", "C", "D", "E"]
-    max_char_index = len(chars)
+    max_char_index = len(chars) - 1
     middle_index = int(max_char_index / 2)
 
 
@@ -75,7 +75,7 @@ Letter chooser: by function
 
 .. admonition:: Tasks
 
-    #. Add the parameter **start_num** parameter to **select_char**, so it looks like: **select_char(start_num)**
+    #. Add the parameter **start_char** parameter to **select_char**, so it looks like: **select_char(start_char)**
 
     .. dropdown::
             :icon: codescan
@@ -86,29 +86,35 @@ Letter chooser: by function
 
                 .. tab-item:: Q1
 
-                    Add the parameters, **min_num** and **max_num**, to the **select_char** function so that the numbers are not limited to 0 to 9. Test with numbers 10 to 19. Modify the initial **counter** value to be the average of the **min_num** and **max_num** values. Add a short delay to **display.show** so the **counter** values are shown faster.
+                    Add the parameter **start_char** parameter to **select_char**, so it looks like: **select_char(start_char)**
 
                     .. code-block:: python
 
                         from microbit import *
 
+                        chars = ["A", "B", "C", "D", "E"]
+                        max_char_index = len(chars) - 1
 
-                        def select_char(min_num, max_num):
-                            counter = int((min_num + max_num)/2)
-                            display.show(counter, delay=200)
+
+                        def select_char(start_char): 
+                            index = chars.index(start_char)
+                            display.show(chars[index])
                             while button_b.was_pressed() is False:
                                 if button_a.is_pressed():
-                                    counter += 1
-                                    if counter > max_num:
-                                        counter = min_num
-                                    display.show(counter, delay=200)
+                                    index += 1
+                                    if index > max_char_index:
+                                        index = 0
+                                    display.show(chars[index])
                                 sleep(200)
-                            return counter
+                            return chars[index]
 
 
+                        letter = "A"
                         while True:
-                            num = select_char(10, 19)
-                            display.scroll(num)
+                            letter = select_char(letter)
+                            display.scroll(letter)
                             sleep(200)
+
+
 
                 
