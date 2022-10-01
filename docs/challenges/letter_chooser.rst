@@ -3,7 +3,7 @@ Letter chooser
 ====================================================
 
 | The letter choose follows a similar coding structure as the number chooser.
-| The main difference is that the letters are chosen form a list so list indexing is needed.
+| The main difference is that the letters are chosen from a list, so list indexing is needed.
 
 ----
 
