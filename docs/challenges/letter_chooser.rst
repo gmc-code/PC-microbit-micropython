@@ -75,7 +75,7 @@ Letter chooser: by function
 
 .. admonition:: Tasks
 
-    #. Add the parameter **start_char** parameter to **select_char**, so it looks like: **select_char(start_char)**
+    #. Add the parameter **start_char** parameter to **select_char**, so it looks like: **select_char(start_char)**. Use the index method to get the corresponding index for the letter.
 
     .. dropdown::
             :icon: codescan
@@ -86,7 +86,7 @@ Letter chooser: by function
 
                 .. tab-item:: Q1
 
-                    Add the parameter **start_char** parameter to **select_char**, so it looks like: **select_char(start_char)**
+                    Add the parameter **start_char** parameter to **select_char**, so it looks like: **select_char(start_char)**. Use the index method to get the corresponding index for the letter.
 
                     .. code-block:: python
 
