@@ -2,18 +2,45 @@
 Letter chooser
 ====================================================
 
-| The letter choose foolows a similar code=ing structure as the number chooser.
+| The letter choose foolows a similar coding structure as the number chooser.
 
 ----
 
-Letter chooser simple version
+Letter chooser: simple version
+-------------------------------
+
+| The code below, sets a variable, **char_index**, to a starting number, 2.
+| It then displays the character with index 2 in the list, **chars**.
+| When the A button is pressed, **char_index** is increased by 1. 
+| To make sure **char_index** doesn't just keep increasing without limit, if it is already 4 when the A button is pressed, it is reset to 0.
+
+.. code-block:: python
+    
+    from microbit import *
+
+    chars = ["A", "B", "C", "D", "E"]
+
+    char_index = 2
+    display.show(chars[char_index])
+    while True:
+        if button_a.is_pressed():
+            char_index += 1
+            if char_index == 4:
+                char_index = 0
+            display.show(chars[char_index])
+        sleep(200)
+
+
+----
+
+Letter chooser: by function
 -------------------------------
 
 | The code below chooses a letter from a list of letters.
 | In the main while loop, **select_char()** is called to choose a letter, **letter**, which is then displayed.
-| The function, **select_char()**, starts the variable, **index_num**, at the middle index position of the **chars** list. The **middle_index** is previously calculated by halving the length of the **chars** list.
-| The while loop keeps running until the B button is pressed, then **chars[index_num]** is returned.
-| In the while loop, A button pressing is used to increase the variable, **index_num**, until it gets to its biggest allowed value, **max_char_index**, then it restarts at 0. 
+| The function, **select_char()**, starts the variable, **char_index**, at the middle index position of the **chars** list. The **middle_index** is previously calculated by halving the length of the **chars** list.
+| The while loop keeps running until the B button is pressed, then **chars[char_index]** is returned.
+| In the while loop, A button pressing is used to increase the variable, **char_index**, until it gets to its biggest allowed value, **max_char_index**, then it restarts at 0. 
 
 .. code-block:: python
     
@@ -25,16 +52,16 @@ Letter chooser simple version
 
 
     def select_char():
-        index_num = middle_index
-        display.show(chars[index_num])
+        char_index = middle_index
+        display.show(chars[char_index])
         while button_b.was_pressed() is False:
             if button_a.is_pressed():
-                index_num += 1
-                if index_num == max_char_index:
-                    index_num = 0
-                display.show(chars[index_num])
+                char_index += 1
+                if char_index == max_char_index:
+                    char_index = 0
+                display.show(chars[char_index])
             sleep(200)
-        return chars[index_num]
+        return chars[char_index]
 
 
     while True:

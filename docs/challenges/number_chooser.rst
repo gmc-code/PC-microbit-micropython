@@ -30,7 +30,7 @@ Number chooser: simple version
 
 ----
 
-Number chooser by function
+Number chooser: by function
 -------------------------------
 
 | The code below chooses a number from 0 to 9. THese limits are set in the **select_number** function.
