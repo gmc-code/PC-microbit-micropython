@@ -6,11 +6,10 @@ Guess the number
 
 ----
 
-| The microbit needs to pick a random integer between 1 and 9 that will be guessed by the user.
-
 Random integer
 -----------------
 
+| The microbit needs to pick a random integer between 1 and 9 that will be guessed by the user.
 | The function, **get_secret**, returns a random integer from 1 to 9 inclusive.
 
 .. code-block:: python
@@ -58,23 +57,20 @@ Random integer
                         def get_secret(min_num=1, max_num=9):
                             return random.randint(min_num, max_num)
 
-
 ----
-
-| The user needs to use the buttons to select a guess number to make the guess with.
 
 Select number
 -----------------
 
+| The user needs to use the buttons to select a guess number to make the guess with.
 | The function, **select_number(start_num, min_num, max_num)**, was developed in the **number_chooser** page.
 
 ----
 
-| The guess number needs to be compared with the secret number.
-
 Check the guess
 -----------------
 
+| The guess number needs to be compared with the secret number.
 | The function, **check_guess(secret_num, guess)**, returns True if the **secret_num** and **guess** match. It returns False if they don't match.
 | Visual feedback is added via images: YES for correct, arrows to hint at the guess direction.
 | When wrong, the guess number needs to be reshown after the feedback, as a reminder of the last guess.
@@ -211,6 +207,13 @@ Guess the number version 1
 
 
 ----
+
+New versions:
+-------------------------
+
+| Modify the while loop so that a new game is automatically started.
+| Add counting of hte number of guess made and display it at the end of a game.
+| Add tracking of the total number of games played and the best and worst score and the average.
 
 ----
 
