@@ -136,6 +136,7 @@ Index:
     images/image_arithmetic.rst
     images/bytearray_images.rst
     images/moving_images.rst
+    images/oversize_bytearray_images.rst
     images/flip_and_rotate_images.rst
     images/image_masks.rst
     images/flame_simulation.rst
