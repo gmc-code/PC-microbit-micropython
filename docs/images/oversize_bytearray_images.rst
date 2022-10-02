@@ -198,9 +198,17 @@ Tall array
 
 ----
 
-.. admonition:: Tasks
+.. admonition:: Exercise
 
     #. Modify the code to use a function that returns the **tall_img** from the **tall_arr**.
+    #. Design your own tall array and explore shifting up.
+ 
+----
+
+.. admonition:: Exercise
+
+    #. Design your own big array (tall and wide), modify a function to produce the image from it, and explore shifting up and right in combination.
+ 
  
 
 
