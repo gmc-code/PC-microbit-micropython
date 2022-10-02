@@ -575,3 +575,15 @@ Guess the number version 4
                                 game_guesses = 0
                                 guessed = False
 
+----
+
+Guess the number extension ideas
+---------------------------------
+
+| Replace automatic new games with being asked to confirm a new game with a button press.
+| At the start of the game, ask for button presses to confirm the number range as 1-9 or 1 - 99.
+| For 1-99 games, use sideways tilting to change the guess, with greater tilting used to move in steps of 10.
+| Add more feedback at the end of games, including best and worst scores, total games and average. Consider asking the user to confirm this with a button press.
+
+
+
