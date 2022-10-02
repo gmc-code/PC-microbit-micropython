@@ -199,6 +199,19 @@ Example Masks
                         [1, 1, 1, 1, 1],
                     ]
 
+            .. tab-item:: duller5_mask
+
+                .. code-block:: python
+
+                    duller5_mask = [
+                        [5, 5, 5, 5, 5],
+                        [5, 5, 5, 5, 5],
+                        [5, 5, 5, 5, 5],
+                        [5, 5, 5, 5, 5],
+                        [5, 5, 5, 5, 5],
+                    ]
+
+
 
 ----
 
