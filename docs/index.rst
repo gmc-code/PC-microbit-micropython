@@ -141,7 +141,7 @@ Index:
     images/flame_simulation.rst
     images/pixel_class.rst
     images/screen_class.rst
-
+    images/other_image_methods.rst
 
 .. toctree::
     :maxdepth: 2

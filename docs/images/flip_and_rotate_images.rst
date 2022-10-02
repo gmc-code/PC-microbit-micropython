@@ -82,6 +82,33 @@ Brightness array
 
 ----
 
+.. admonition:: Tasks
+
+    #. Write a function to return and image array from an image.
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: get_image_array
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+
+                        def get_image_array(img):
+                            img_repr = repr(img)
+                            img_str = img_repr[7:-3]
+                            img_str = img_str.replace(":", "")
+                            img_array = [int(x) for x in img_str]
+                            return img_array
+
+----
+
 So far
 ---------
 

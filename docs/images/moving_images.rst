@@ -909,29 +909,3 @@ Filling images and repositioning with blit
                             display.show(rect_overlaps(count=2))
                             sleep(200)
 
-
-----
-
-Other methods
----------------------
-
-| The other image methods can be useful.
-
-.. py:method:: width()
-
-    Return the number of columns in the image.
-
-.. py:method:: height()
-
-    Return the numbers of rows in the image.
-
-
-.. py:method:: copy()
-
-    Return an exact copy of the image.
-
-
-
-
-
-
