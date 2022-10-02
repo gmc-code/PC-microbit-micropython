@@ -49,13 +49,7 @@ The Flame simulation
         [10, 33, 66, 33, 10],
     ]
 
-    # MASK = [
-    #     [100, 100, 100, 100, 100],
-    #     [100, 100, 100, 100, 100],
-    #     [100, 100, 100, 100, 100],
-    #     [100, 100, 100, 100, 100],
-    #     [100, 100, 100, 100, 100],
-    # ]
+
     # Generate a new bottom row of random values for the flames
     def generate_line(start=MIN_BRIGHTNESS, end=MAX_BRIGHTNESS):
         "start and end define range of dimmest to brightest 'flames'"

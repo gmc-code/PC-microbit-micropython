@@ -874,7 +874,7 @@ Filling images and repositioning with blit
                                 display.show(my_image_overlap)
                                 sleep(500)
 
-               .. tab-item:: Q3
+                .. tab-item:: Q3
 
                     Write a function, **rect_overlaps(count=2)**, to return a composite image of a given number of rectangles (default 2) of random size and position, of brightness 9. Restrict the width and height to 2 to 4. Restrict the topleft to (0,0) to (3,3). Display a new composite image every 200ms.
 
