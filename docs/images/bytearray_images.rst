@@ -260,6 +260,9 @@ Integer-list-producing definitions for bytearray
 
 .. code-block:: python
 
+    from microbit import *
+
+    
     def gradient_x(x_val1, xstep):
         grid = []
         for y in range(5):
