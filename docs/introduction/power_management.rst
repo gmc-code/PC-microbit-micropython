@@ -66,7 +66,7 @@ Power off
 ----
 
 | The code below uses button-B pressing to power down the microbit.
-| Oress the reset button to wake it and restart the programme from the beginning.
+| Press the reset button to wake it and restart the programme from the beginning.
 
 .. code-block:: python
 
