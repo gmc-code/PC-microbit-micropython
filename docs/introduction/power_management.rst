@@ -14,7 +14,7 @@ Removing the USB power cable and re-adding it will also wake the micro:bit.
 Power off
 ----------
 
-When powered by battery press and hold power/reset for 5 seconds to power off the micro:bit. The micro:bit power LED will dim from bright red to off. It will then remain off until you press the power/reset to wake up. Disconnecting the USB and battery power supply will also power off the micro:bit.
+When powered by battery. press and hold power/reset for 5 seconds to power off the micro:bit. The micro:bit power LED will dim from bright red to off. It will then remain off until you press the power/reset to wake up. Disconnecting the USB and battery power supply will also power off the micro:bit.
 
 Inserting a USB power lead will also wake the device.
 
@@ -78,7 +78,7 @@ Power down the board
 Power off
 -----------------------
 
-| The code below uses button b pressing to power down the microbit.
+| The code below uses button B pressing to power down the microbit.
 | The microbit, not on battery power, will only wake up if the reset button is pressed.
 | If on battery power, connecting a USB cable can wake it as well.
 | Waking up from this mode starts the programme from the beginning.

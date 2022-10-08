@@ -22,7 +22,7 @@ The Flame simulation
     # User adjustable values for speed of animation; use b button
     MIN_SLEEP = 0
     MAX_SLEEP = 100
-    # set button b value to adjust sleep times in increments
+    # set button B value to adjust sleep times in increments
     INC_SLEEP = 20
 
     # User adjustable values for interpolation; use a button
