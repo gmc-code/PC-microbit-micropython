@@ -37,7 +37,7 @@ Number chooser: by function
 | In the main while loop, the function, **select_number**, is called to choose a number, **num**, which is then displayed.
 | The function, **select_number**, starts the variable, **counter**, at 5.
 | The while loop keeps running until the B button is pressed, then the variable, **counter**, is returned.
-| In the while loop, button A pressing is used to increase the variable, **counter**, until it gets to its biggest allowed value, 9, then it restarts at 0. 
+| In the while loop, button-A pressing is used to increase the variable, **counter**, until it gets to its biggest allowed value, 9, then it restarts at 0. 
 
 .. code-block:: python
     

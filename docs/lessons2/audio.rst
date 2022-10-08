@@ -183,7 +183,7 @@ The audio module can consumes an iterable (sequence, like list or tuple, or gene
             yield frame
 
 
-    # Press button A to stop
+    # Press button-A to stop
     def show_wave(name, frame, duration=1500):
         display.scroll(name + " wave", wait=False, delay=100)
         audio.play(repeated_frame(frame, duration), wait=False)

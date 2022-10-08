@@ -134,7 +134,7 @@ Code design
     def get_char():
         current = middle_index
         display.show(chars[........])
-        # the while loops runs until button A is pressed
+        # the while loops runs until button-A is pressed
         while button_a.was_pressed() is False:
             # pressing B doesn't add a character but returns back to get_string
             if button_b.is_pressed():
@@ -146,7 +146,7 @@ Code design
             current = max(0, min(current, max_char_index))
             display.show(chars[.......])
             sleep(330)
-        # button A was pressed so return chosen character
+        # button-A was pressed so return chosen character
         return chars[........]
 
 
@@ -200,7 +200,7 @@ Code design
                         def get_char():
                             current = middle_index
                             display.show(chars[current])
-                            # the while loops runs until button A is pressed
+                            # the while loops runs until button-A is pressed
                             while button_a.was_pressed() is False:
                                 # pressing B doesn't add a character but returns back to get_string
                                 if button_b.is_pressed():
@@ -212,7 +212,7 @@ Code design
                                 current = max(0, min(current, max_char_index))
                                 display.show(chars[current])
                                 sleep(330)
-                            # button A was pressed so return chosen character
+                            # button-A was pressed so return chosen character
                             return chars[current]
 
 
@@ -271,7 +271,7 @@ Code design
                         def get_char():
                             current = middle_index
                             display.show(chars[current])
-                            # the while loops runs until button A is pressed
+                            # the while loops runs until button-A is pressed
                             while button_a.was_pressed() is False:
                                 # pressing B doesn't add a letter but returns back to 
                                 if button_b.is_pressed():
@@ -283,7 +283,7 @@ Code design
                                 current = max(0, min(current, max_char_index))
                                 display.show(chars[current])
                                 sleep(330)
-                            # button A was pressed so return chosen letter
+                            # button-A was pressed so return chosen letter
                             return chars[current]
 
 
@@ -325,7 +325,7 @@ Code design
                         def get_char():
                             current = middle_index
                             display.show(chars[current])
-                            # the while loops runs until button A is pressed
+                            # the while loops runs until button-A is pressed
                             while button_a.was_pressed() is False:
                                 # pressing B doesn't add a letter but returns back to
                                 if button_b.is_pressed():
@@ -337,7 +337,7 @@ Code design
                                 current = max(0, min(current, max_char_index))
                                 display.show(chars[current])
                                 sleep(330)
-                            # button A was pressed so return chosen letter
+                            # button-A was pressed so return chosen letter
                             return chars[current]
 
 

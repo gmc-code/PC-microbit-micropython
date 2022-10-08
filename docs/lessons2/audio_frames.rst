@@ -87,7 +87,7 @@ Advanced Example
             yield frame
 
 
-    # Press button A to skip to next wave.
+    # Press button-A to skip to next wave.
     def show_wave(name, frame, duration=1500):
         display.scroll(name + " wave", wait=False,delay=100)
         audio.play(repeated_frame(frame, duration),wait=False)
