@@ -119,11 +119,7 @@ Deep sleep
          if button_a.was_pressed():
             display.scroll("deep sleep", delay=60)
             sleep(300)
-            power.deep_sleep(
-                wake_on=(button_a),
-                ms=30 * 60 * 1000,
-                run_every=False,
-            )
+            power.deep_sleep(wake_on=(button_a), ms=30 * 60 * 1000, run_every=False)
             display.scroll("waking", delay=60)
         display.show(Image.HAPPY)
         sleep(200)
@@ -154,11 +150,7 @@ Deep sleep wake via run_every
         if button_a.was_pressed():
             display.show(Image.ARROW_S)
             sleep(300)
-            power.deep_sleep(
-                wake_on=None,
-                ms=30 * 1000,
-                run_every=True,
-            )
+            power.deep_sleep(wake_on=None,ms=30 * 1000,run_every=True)
         display.show(Image.HAPPY)
         sleep(1000)
 
