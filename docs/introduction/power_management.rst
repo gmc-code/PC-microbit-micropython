@@ -20,7 +20,7 @@ Inserting a USB power lead will also wake the device.
 
 
 Wake
-----
+-------------------
 
 Pressing the power/reset again when in sleep/power-off mode will wake the micro:bit and your program will restart.
 
@@ -39,17 +39,20 @@ Removing the USB power cable and re-adding it will also wake the micro:bit.
 | This module lets you manage the power modes of the microbit V2.
 | See: https://microbit-micropython.readthedocs.io/en/v2-docs/power.html
 
+----
 
-
+Power down the microbit
+--------------------------
 
 There are two low power modes:
 
+- **Off**: The power mode with the lowest power consumption, the only way to wake up the board is via the reset button, or by plugging the USB cable while on battery power. When the board wakes up it will restart and execute the programme from the beginning.
+
 - **Deep Sleep**: Low power mode where the board can be woken up via multiple sources (pins, button presses, or a timer) and resume operation.
-- **Off**: The power mode with the lowest power consumption, the only way to wake up the board is via the reset button, or by plugging the USB cable while on battery power. When the board wakes up it will restart and execute your programme from the beginning.
 
 ----
 
-Power down the board
+Power off
 -----------------------
 
 .. py:function:: off()
@@ -58,6 +61,82 @@ Power down the board
     | This is the equivalent to pressing the reset button for a few seconds, to set the board to "Off mode".
     | The microbit will only wake up if the reset button is pressed or, if on battery power, when a USB cable is connected.
     | When the board wakes up it will start from a reset state, so the programme will start running from the beginning.
+
+----
+
+| The code below uses button-B pressing to power down the microbit.
+| The microbit, not on battery power, will only wake up if the reset button is pressed.
+| If on battery power, connecting a USB cable can wake it as well.
+| Waking up from this mode starts the programme from the beginning.
+
+.. code-block:: python
+
+    from microbit import *
+    import power
+
+
+    display.scroll("starting up", delay=60)
+    while True:
+        if button_b.is_pressed():
+            display.scroll("power off", delay=60)
+            power.off()
+        display.show(Image.HAPPY)
+        sleep(200)
+
+----
+
+.. admonition:: Tasks
+
+    #. Fix the code in 3 places so that is shows the No image for 1 second before powering off if the A-button is pressed at any time.
+
+        .. code-block:: python
+
+            from microbit import *
+
+
+            display.show(Image.YES)
+            while True:
+                if button_a.is_pressed():
+                    display.show(Image.NO)
+                    power.off()
+                display.show(Image.HAPPY)
+                sleep(1000)
+                display.show("?")
+                sleep(1000)
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Fix the code in 3 places so that is shows the No image for 1 second before powering off if the A-button is pressed at any time.
+
+                    .. code-block:: python
+
+                        from microbit import *
+                        import power
+
+
+                        display.show(Image.YES)
+                        while True:
+                            if button_a.was_pressed():
+                                display.show(Image.NO)
+                                sleep(1000)
+                                power.off()
+                            display.show(Image.HAPPY)
+                            sleep(1000)
+                            display.show("?")
+                            sleep(1000)
+
+----
+
+Deep Sleep
+-----------------------
+
 
 .. py:function:: deep_sleep(ms=None, wake_on=None, run_every=False)
 
@@ -73,40 +152,10 @@ Power down the board
     See: https://microbit-micropython.readthedocs.io/en/v2-docs/microbit.html
 
 
-----
-
-Power off
------------------------
-
-| The code below uses button-B pressing to power down the microbit.
-| The microbit, not on battery power, will only wake up if the reset button is pressed.
-| If on battery power, connecting a USB cable can wake it as well.
-| Waking up from this mode starts the programme from the beginning.
-
-.. code-block:: python
-
-    from microbit import *
-    import power
-
-    while True:
-    display.scroll("starting up", delay=60)
-    while True:
-        if button_b.is_pressed():
-            display.scroll("power off", delay=60)
-            power.off()
-        display.show(Image.HAPPY)
-        sleep(200)
-
-
-----
-
-Deep sleep
------------------------
-
 | The code below uses button-B pressing to go into a deep sleep.
-| **wake_on=(button_a)** allows pressing button-A to wake it.
+| **wake_on=button_a** allows pressing button-A to wake it.
 | **ms=30 * 60 * 1000** is a 30 minute deep sleep.
-| **run_every=False** prevents run_every events to wake it.
+| **run_every=False** prevents run_every events from waking it.
 
 
 .. code-block:: python
@@ -119,7 +168,7 @@ Deep sleep
         if button_b.was_pressed():
             display.scroll("deep sleep", delay=60)
             sleep(300)
-            power.deep_sleep(wake_on=(button_a), ms=30 * 60 * 1000, run_every=False)
+            power.deep_sleep(wake_on=button_a, ms=30 * 60 * 1000, run_every=False)
             display.scroll("waking", delay=60)
         display.show(Image.HAPPY)
         sleep(200)
