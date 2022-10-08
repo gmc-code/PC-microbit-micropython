@@ -139,16 +139,17 @@ Deep Sleep
 
 .. py:function:: deep_sleep(ms=None, wake_on=None, run_every=False)
 
+    :param ms: A time in milliseconds to wait before it wakes up.
+    :param wake_on: A single instance or a tuple of pins and/or buttons to wake up the board, e.g. ``deep_sleep(wake_on=button_a)`` or ``deep_sleep(wake_on=(pin0, pin2, button_b))``.
+    :param run_every: Set to ``True`` to wake up with each ``microbit.run_every`` scheduled run.
+    
+    
     | Set the micro:bit into a low power mode where it can wake up and continue operation.
     | The programme state is preserved and when it wakes up it will resume operation where it left off.
     | Deep Sleep mode will consume more battery power than Off mode.
     | The wake up sources are configured via arguments.
-    | If no wake up sources have been configured it will sleep until the reset button is pressed (which resets the board) or, in battery power when the USB cable is inserted.
-
-    :param ms: A time in milliseconds to wait before it wakes up.
-    :param wake_on: A single instance or a tuple of pins and/or buttons to wake up the board, e.g. ``deep_sleep(wake_on=button_a)`` or ``deep_sleep(wake_on=(pin0, pin2, button_b))``.
-    :param run_every: Set to ``True`` to wake up with each ``microbit.run_every`` scheduled run.
-    See: https://microbit-micropython.readthedocs.io/en/v2-docs/microbit.html
+    | If no wake up sources have been configured it will sleep until the reset button is pressed (which resets the board) or, on battery power, when the USB cable is inserted.
+    | See: https://microbit-micropython.readthedocs.io/en/v2-docs/microbit.html
 
 
 | The code below uses button-B pressing to go into a deep sleep.
