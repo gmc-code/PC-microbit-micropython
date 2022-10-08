@@ -87,7 +87,7 @@ Power off
 
 .. admonition:: Tasks
 
-    #. Fix the code in 3 places so that is shows the No image for 1 second before powering off if the A-button is pressed at any time.
+    #. Fix the code in 3 places so that is shows the No image for 1 second before powering off if the B-button is pressed at any time.
 
         .. code-block:: python
 
@@ -96,7 +96,7 @@ Power off
 
             display.show(Image.YES)
             while True:
-                if button_a.is_pressed():
+                if button_b.is_pressed():
                     display.show(Image.NO)
                     power.off()
                 display.show(Image.HAPPY)
@@ -113,7 +113,7 @@ Power off
 
                 .. tab-item:: Q1
 
-                    Fix the code in 3 places so that is shows the No image for 1 second before powering off if the A-button is pressed at any time.
+                    Fix the code in 3 places so that is shows the No image for 1 second before powering off if the B-button is pressed at any time.
 
                     .. code-block:: python
 
