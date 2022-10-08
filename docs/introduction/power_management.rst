@@ -103,7 +103,7 @@ Power off
 Deep sleep
 -----------------------
 
-| The code below uses button-A pressing to go into a deep sleep.
+| The code below uses button-B pressing to go into a deep sleep.
 | **wake_on=(button_a)** allows pressing button-A to wake it.
 | **ms=30 * 60 * 1000** is a 30 minute deep sleep.
 | **run_every=False** prevents run_every events to wake it.
@@ -116,7 +116,7 @@ Deep sleep
 
     display.scroll("starting up", delay=60)
     while True:
-         if button_a.was_pressed():
+        if button_b.was_pressed():
             display.scroll("deep sleep", delay=60)
             sleep(300)
             power.deep_sleep(wake_on=(button_a), ms=30 * 60 * 1000, run_every=False)
@@ -147,7 +147,7 @@ Deep sleep wake via run_every
         
     display.show(Image.YES)
     while True:
-        if button_a.was_pressed():
+        if button_b.was_pressed():
             display.show(Image.ARROW_S)
             sleep(300)
             power.deep_sleep(wake_on=None,ms=30 * 1000,run_every=True)
