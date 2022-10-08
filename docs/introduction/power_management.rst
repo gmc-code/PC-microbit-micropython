@@ -122,7 +122,7 @@ Power off
 
                         display.show(Image.YES)
                         while True:
-                            if button_a.was_pressed():
+                            if button_b.was_pressed():
                                 display.show(Image.NO)
                                 sleep(1000)
                                 power.off()
