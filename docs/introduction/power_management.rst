@@ -59,15 +59,14 @@ Power off
 
     | Power down the board to the lowest possible power mode.
     | This is the equivalent to pressing the reset button for a few seconds, to set the board to "Off mode".
-    | The microbit will only wake up if the reset button is pressed or, if on battery power, when a USB cable is connected.
-    | When the board wakes up it will start from a reset state, so the programme will start running from the beginning.
+    | The microbit, not on battery power, will only wake up if the reset button is pressed.
+    | If on battery power, connecting a USB cable can wake it as well.
+    | Waking up from this mode starts the programme from the beginning.
 
 ----
 
 | The code below uses button-B pressing to power down the microbit.
-| The microbit, not on battery power, will only wake up if the reset button is pressed.
-| If on battery power, connecting a USB cable can wake it as well.
-| Waking up from this mode starts the programme from the beginning.
+| Oress the reset button to wake it and restart the programme from the beginning.
 
 .. code-block:: python
 
