@@ -4,12 +4,16 @@ Power Management **V2**
 
 The reset button can be used to manually control the power modes of the microbit.
 
+----
+
 Sleep
 ------
 
 When powered by USB, press and hold power/reset for 5 seconds to enter sleep. The micro:bit power LED will dim from bright red to off. It will then flash on/off, showing you that it is still connected to the power source. Press power/reset to wake up. 
 
 Removing the USB power cable and re-adding it will also wake the micro:bit.
+
+----
 
 Power off
 ----------
@@ -18,6 +22,7 @@ When powered by battery. press and hold power/reset for 5 seconds to power off t
 
 Inserting a USB power lead will also wake the device.
 
+----
 
 Wake
 -------------------
@@ -27,11 +32,13 @@ Pressing the power/reset again when in sleep/power-off mode will wake the micro:
 Removing the USB power cable and re-adding it will also wake the micro:bit.
 
 
+----
 
 .. admonition:: Warning
 
     | Mu v1.1.1 doesn't yet support the power module. Sep 2022.
     | Use the online micropython editor instead: https://python.microbit.org/v/beta
+    | Thonny v 4 can also be used.
 
 
 .. py:module:: power
