@@ -96,12 +96,12 @@ uname
     print("version", info.version)
     print("machine", info.machine) 
 
-| The code above outputed:
+| The code above output was:
 
-| (sysname='microbit', nodename='microbit', release='2.1.0', version='micro:bit v2.1.0+e4321a8 on 2022-09-26; MicroPython v1.18 on 2022-09-26', machine='micro:bit with nRF52833')
-| sysname microbit
-| nodename microbit
-| release 2.1.0
-| version micro:bit v2.1.0+e4321a8 on 2022-09-26; MicroPython v1.18 on 2022-09-26
-| machine micro:bit with nRF52833 
+    | (sysname='microbit', nodename='microbit', release='2.1.0', version='micro:bit v2.1.0+e4321a8 on 2022-09-26; MicroPython v1.18 on 2022-09-26', machine='micro:bit with nRF52833')
+    | sysname microbit
+    | nodename microbit
+    | release 2.1.0
+    | version micro:bit v2.1.0+e4321a8 on 2022-09-26; MicroPython v1.18 on 2022-09-26
+    | machine micro:bit with nRF52833 
 
