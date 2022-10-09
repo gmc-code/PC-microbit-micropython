@@ -14,7 +14,7 @@ listdir
 
 .. py:function:: listdir()
 
-    Returns a list of the names of all the files contained within the local persistent on-device file system.
+    | Returns a list of the names of all the files contained within the local persistent on-device file system.
 
 .. code-block:: python
 
@@ -40,11 +40,13 @@ remove
     from microbit import *
     import os
 
-    print(os.listdir())
-    file_to_delete = os.listdir()[1]
-    print(os.remove(file_to_delete))
-    print(os.listdir())
- 
+    file_list = os.listdir()
+    print(file_list)
+    file_to_delete = file_list[1]
+    os.remove(file_to_delete)
+    file_list = os.listdir()
+    print(file_list)
+
 ----
 
 size
@@ -73,8 +75,7 @@ uname
 
 .. py:function:: uname()
 
-    Returns information identifying the current operating system. The return
-    value is an object with five attributes:
+    | Returns information identifying the current operating system. The return value is an object with five attributes:
 
     * ``sysname`` - operating system name
     * ``nodename`` - name of machine on network (implementation-defined)
@@ -94,3 +95,13 @@ uname
     print("release", info.release)
     print("version", info.version)
     print("machine", info.machine) 
+
+| The code above outputed:
+
+| (sysname='microbit', nodename='microbit', release='2.1.0', version='micro:bit v2.1.0+e4321a8 on 2022-09-26; MicroPython v1.18 on 2022-09-26', machine='micro:bit with nRF52833')
+| sysname microbit
+| nodename microbit
+| release 2.1.0
+| version micro:bit v2.1.0+e4321a8 on 2022-09-26; MicroPython v1.18 on 2022-09-26
+| machine micro:bit with nRF52833 
+
