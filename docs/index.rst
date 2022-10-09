@@ -174,9 +174,10 @@ Index:
     extra/builtins_module.rst
     extra/antigravity love this.rst
     extra/gc_module.rst
+    extra/os_module.rst
+    extra/machine_module.rst
     ..extra/utime_module.rst
     ..extra/urandom_module.rst
     ..extra/uarray_module.rst
     ..extra/ucollections_module.rst
-    ..extra/machine_module.rst
-    ..extra/os_module.rst
+
