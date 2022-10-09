@@ -2,8 +2,9 @@
 builtins
 ==========================
 
-All built-in functions do not require explicit importing of the builtins module.
-See: https://docs.python.org/3/library/functions.html
+| All built-in functions do not require explicit importing of the builtins module.
+| See: https://docs.python.org/3/library/functions.html
+| See: https://mpython.readthedocs.io/en/master/library/pythonStd/builtins.html
 
 ----
 
