@@ -7,6 +7,7 @@ Module list
 
 | To get a list of built-in modules for the microbit:
 
+| In Mu editor:
 | Open the REPL
 | Type: help('modules')
 
@@ -15,17 +16,23 @@ The output is:
 .. table:: Microbit modules
    :widths: auto
 =============     =============     =============     ============= 
-__main__          machine           os                uerrno
-antigravity       math              radio             urandom
-audio             microbit          speech            ustruct
-builtins          micropython       this              usys
-gc                music             uarray            utime
-love              neopixel          ucollections
+__main__          machine           power             urandom
+antigravity       math              radio             ustruct
+audio             microbit          speech            usys
+builtins          micropython       this              utime
+gc                music             uarray
+log               neopixel          ucollections
+love              os                uerrno
 =============     =============     =============     ============= 
 
-See: https://docs.micropython.org/en/latest/library/gc.html
+| Use the REPL and the reset button (or command D) to see the output from the print function after flashing to the microbit.
 
-| Use the REPL and the reset button to see the output from the print funtion after flashing to the microbit.
+.. code-block:: python
+    
+    from microbit import *
+
+    print(help('modules'))
+
 
 ----
 
@@ -38,8 +45,80 @@ https://github.com/micropython/micropython/tree/master/docs/library
 ----
 
 ----------------
+antigravity
+----------------
+
+| The ``antigravity`` module has no practical purpose.
+| Use the REPL and press the reset button (or ctrl D in the REPL) to see the printout after flashing to the microbit.
+
+.. code-block:: python
+
+    from microbit import *
+    import antigravity
+
+::
+
++-xkcd.com/353---------------------------------------------------+
+|                                                                |
+|                                                    \0/         |
+|                                                  /   \         |
+|        You're flying!                  MicroPython!  /|        |
+|            How?                                      \ \       |
+|            /                                                   |
+|          0                                                     |
+|         /|\                                                    |
+|          |                                                     |
+|-----____/_\______________________________----------------------|
+|                                                                |
++----------------------------------------------------------------+
+
+----
+
+----------------
+love
+----------------
+
+| The ``love`` module has limited practical purpose.
+
+.. py:function::  love.badaboom()
+
+    Pulse the heart image 7 times.
+
+.. code-block:: python
+
+    from microbit import *
+    import love
+
+    love.badaboom()
+
+----
+
+----------------
+this
+----------------
+
+| The ``this`` module has no practical purpose.
+
+.. py:function::  this.authors()
+
+    Returns the authors of micropython for the microbit.
+
+| Use the REPL and the reset button to see the printout after flashing to the microbit.
+
+.. code-block:: python
+
+    from microbit import *
+    import this
+
+    print(this.authors())
+
+----
+
+----------------
 gc
 ----------------
+
+| See: https://docs.micropython.org/en/latest/library/gc.html
 
 .. py:function::  gc.mem_alloc()
 
@@ -105,74 +184,15 @@ usys
     import usys
 
     # print(help(usys))
-    print(usys.version_info)
-    print(usys.version)
-    print(usys.platform)
-    print(usys.implementation)
-    print(usys.maxsize)
-    bits = 0
-    v = usys.maxsize
-    while v:
-        bits += 1
-        v >>= 1
-    if bits > 32:
-        print('64-bit (or more) platform')
+    print('version_info', usys.version_info)
+    print('version', usys.version)
+    print('platform', usys.platform)
+    print('implementation', usys.implementation)
+    print('maxsize', usys.maxsize)
+    if usys.maxsize > 2147483648:
+        print('64-bit')
     else:
-        print('32-bit (or less) platform')
-
-----
-
-----------------
-love
-----------------
-
-| The ``love`` module has limited practical purpose.
-
-.. py:function::  love.badaboom()
-
-    Pulse the heart image 7 times.
-
-.. code-block:: python
-
-    from microbit import *
-    import love
-
-    love.badaboom()
-
-----
-
-----------------
-this
-----------------
-
-| The ``this`` module has no practical purpose.
-
-.. py:function::  this.authors()
-
-    Returns the authors of micropython for the microbit.
-
-| Use the REPL and the reset button to see the printout after flashing to the microbit.
-
-.. code-block:: python
-
-    from microbit import *
-    import this
-
-    print(this.authors())
-
-----
-
-----------------
-antigravity
-----------------
-
-| The ``antigravity`` module has no practical purpose.
-| Use the REPL and press the reset button (or ctrl D in the REPL) to see the printout after flashing to the microbit.
-
-.. code-block:: python
-
-    from microbit import *
-    import antigravity
+        print('32-bit')
 
 ----
 

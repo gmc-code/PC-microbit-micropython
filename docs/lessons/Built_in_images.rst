@@ -558,8 +558,8 @@ All Images
 ----------------------------------------
 
 | The code below displays all the built-in images.
-| Image.SCISSORS is not yet available in Mu Editor but is online in the beta version at:
-| https://python.microbit.org/v/beta
+| Image.SCISSORS is not yet available in Mu Editor but is online at:
+| https://python.microbit.org/v/3
 
 .. code-block:: python
 

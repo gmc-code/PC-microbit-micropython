@@ -49,8 +49,7 @@ Microbit software using micropython:
 
 | The **Mu** editor for laptops, https://codewith.mu/en/tutorials/1.1/microbit, is the first choice for coding on the microbit.
 
-| The standard online **micropython** editor: https://python.microbit.org/v/2 is an online editor consistent with Mu editor.
-| The beta version is at: https://python.microbit.org/v/beta
+| The standard online **micropython** editor: https://python.microbit.org/v/3 is an online editor consistent with Mu editor.
 
 | **Thonny** for laptops, can be downloaded from https://thonny.org/.
 | See: https://core-electronics.com.au/tutorials/how-to-program-a-microbit-using-thonny.html for setting up the microbit to use Thonny.
@@ -60,7 +59,7 @@ Microbit software using micropython:
 .. admonition:: Warning
 
     | Mu v1.1.1 doesn't yet support the power module. Sep 2022.
-    | The micropython online editor supports the power module: https://python.microbit.org/v/beta
+    | The micropython online editor supports the power module: https://python.microbit.org/v/3
     | Thonny v4 supports the power module.
 
 ----
@@ -68,7 +67,7 @@ Microbit software using micropython:
 Micropython simulator:
 ----------------------------------------
 
-| https://python.microbit.org/v/beta uses the latest micropython for the latest version of the microbit.
+| https://python.microbit.org/v/3 uses the latest micropython for the latest version of the microbit.
 
 
 | Create with code UK, https://create.withcode.uk/, works with standard python or micropython. Starting the code with "from microbit import /*" will pop up the simulator when the code is run.
