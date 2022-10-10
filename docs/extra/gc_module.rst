@@ -8,18 +8,6 @@ gc module
 
 ----
 
-| Functions:
-|  collect
-|  disable
-|  enable
-|  isenabled
-|  mem_free
-|  mem_alloc
-|  threshold
-
-
-----
-
 .. py:function::  gc.enable()
 
     Enable automatic garbage collection.
