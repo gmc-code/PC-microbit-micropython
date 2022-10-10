@@ -49,6 +49,11 @@ Microbit software using micropython:
 
 | The **Mu** editor for laptops, https://codewith.mu/en/tutorials/1.1/microbit, is the first choice for coding on the microbit.
 
+.. admonition:: Warning
+    | Mu v1.1.1 uses micropython 1.15 and so doesn't support some newer freatures
+    | The micropython online editor uses micropython 1.18.
+    | Thonny v4 uses micropython 1.18.
+
 | The standard online **micropython** editor: https://python.microbit.org/v/3 is an online editor consistent with Mu editor.
 
 | **Thonny** for laptops, can be downloaded from https://thonny.org/.
@@ -56,11 +61,6 @@ Microbit software using micropython:
 
 | **Edublocks**, https://app.edublocks.org/#MicroBit, is an online editor with both blocky code and micropython consistent with Mu editor, and can display the block code and micropython code side by side.
 
-.. admonition:: Warning
-
-    | Mu v1.1.1 doesn't yet support the power module. Sep 2022.
-    | The micropython online editor supports the power module: https://python.microbit.org/v/3
-    | Thonny v4 supports the power module.
 
 ----
 

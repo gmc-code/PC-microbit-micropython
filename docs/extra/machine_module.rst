@@ -1,5 +1,5 @@
 ==========================
-machine
+machine module
 ==========================
 
 .. py:module:: machine
@@ -10,7 +10,7 @@ machine
 
    Many functions achieve direct and unrestricted access to the hardware blocks on a the microbit. Used incorrectly, this can lead to malfunction of the microbit, and in extreme cases, hardware damage.
 
-See: https://microbit-micropython.readthedocs.io/en/v2-docs/machine.html
+| See: https://microbit-micropython.readthedocs.io/en/v2-docs/machine.html
 
 
 ----

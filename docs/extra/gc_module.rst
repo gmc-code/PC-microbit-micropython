@@ -1,5 +1,5 @@
 ==========================
-gc Module
+gc module
 ==========================
 
 | Garbage Collector: A background process that runs in MicroPython to reclaim unused memory in the heap.
