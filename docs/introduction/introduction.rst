@@ -50,6 +50,7 @@ Microbit software using micropython:
 | The **Mu** editor for laptops, https://codewith.mu/en/tutorials/1.1/microbit, is the first choice for coding on the microbit.
 
 .. admonition:: Warning
+    
     | Mu v1.1.1 uses micropython 1.15 and so doesn't support some newer freatures
     | The micropython online editor uses micropython 1.18.
     | Thonny v4 uses micropython 1.18.
