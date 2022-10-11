@@ -13,6 +13,16 @@ Connections
 .. image:: images/47ohm.png
     :scale: 50 %
 
+| Bend the resistor by holding it at the bend position so it is U-shaped.
+
+.. image:: images/resistor_shape.png
+    :scale: 50 %
+
+| Place the resistor in the breadboard so that the legs go in about 5mm. 
+
+.. image:: images/resistor_on_breadboard_low.png
+    :scale: 50 %
+
 ----
 
 Model
