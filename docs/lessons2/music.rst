@@ -634,3 +634,24 @@ A	    1760
                             music.pitch(freq, duration=timing)
                         if button_a.is_pressed():
                             break
+
+----
+
+Custom tunes
+------------------
+
+| Guess the nursery rhyme (care of Raph).
+
+.. code-block:: python
+
+    from microbit import *
+    import music
+
+    speaker.off()
+    music.set_tempo(ticks=4, bpm=240)
+    notes_list = ['e', 'd', 'c', 'd', 'e', 'e','e','d','d','d','e','g','g','e','d','c','d','e','e','e','d','d','e','d','c']
+    
+
+    while True:
+        music.play(notes_list)
+        sleep(1000)
