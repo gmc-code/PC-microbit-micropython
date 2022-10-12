@@ -424,8 +424,8 @@ Write analog
 
 
                         def random_colours():
-                            randval = randrange(0, 1024)
-                            randpin = randrange(0, 3)
+                            randval = random.randrange(0, 1024)
+                            randpin = random.randrange(0, 3)
                             if randpin = 0:
                                 pin0.write_analog(randval)
                             elif randpin = 1:
@@ -449,7 +449,7 @@ Write analog
 
 
                         def random_pin_brightness():
-                            randval = randrange(0, 1024)
+                            randval = random.randrange(0, 1024)
                             randpin = random.choice(pinlist)
                             randpin.write_analog(randval)
 
@@ -469,7 +469,7 @@ Write analog
 
 
                         def weighted_pin_brightness():
-                            randval = randrange(0, 1024)
+                            randval = random.randrange(0, 1024)
                             randpin = random.choices(pinlist, weights = [3, 1, 3])
                             randpin.write_analog(randval)
 
