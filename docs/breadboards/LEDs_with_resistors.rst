@@ -29,7 +29,7 @@ Model
 ----------------------------------------
 
 #.  Place the resistors first.
-#.  Place the LEDs with the long lead (leg) so that it is closest to the pin side of the circuit. In this model, the long lead is on the left side of the breadboard.
+#.  Place the LEDs with the **long lead** (leg) so that it is closest to the pin side of the circuit. In this model, the long lead is on the **left** side of the breadboard.
 #.  Check that the red LED is connected to pin0, yellow to pin1, and green to pin2.
 #.  Connect with the jumper wires.
 
