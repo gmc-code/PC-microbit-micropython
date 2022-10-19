@@ -98,8 +98,8 @@ Read and Write analog
 
 .. admonition:: Exercise
 
-    #. Use a red and green led on separate pins. When the potentiometer value is 500 or more, use digital write to turn on the green led and turn the red led off. When the potentiometer value is under 500, use digital write to turn on the red led and turn the green led off.
-    #. Add to the code above to display a yes image when the green led is on and a no image when the red led is on.
+    #. Use a red and yellow led on separate pins. When the potentiometer value is 500 or more, use digital write to turn on the yellow led and turn the red led off. When the potentiometer value is under 500, use digital write to turn on the red led and turn the yellow led off.
+    #. Add to the code above to display a yes image when the yellow led is on and a no image when the red led is on.
 
 
     
