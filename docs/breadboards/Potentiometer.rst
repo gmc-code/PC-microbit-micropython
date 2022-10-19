@@ -10,7 +10,7 @@ Potentiometer
 Model
 ----------------------------------------
 
-#.  Place the potentiomter.
+#.  Place the potentiometer.
 #.  Connect with the jumper wires.
 
 .. image:: images/potentiometer1_bb.png
