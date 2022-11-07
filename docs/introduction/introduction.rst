@@ -26,7 +26,7 @@ Home pages:
 
 | **python**
 | python: https://pc-python.readthedocs.io/en/latest/index.html
-
+| pillow: https://pc-pillow.readthedocs.io/en/latest/index.html
 
 ----
 
