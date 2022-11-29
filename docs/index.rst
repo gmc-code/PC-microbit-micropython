@@ -19,31 +19,7 @@ Index:
     introduction/power_management.rst
 
  
-.. toctree::
-    :maxdepth: 2
-    :caption: BreadBoards
-    :numbered:
-
-    breadboards/Breadboard_connections.rst
-    breadboards/Edge_Connector.rst
-    breadboards/Motor_with_transistor.rst
-    breadboards/LEDs_with_resistors.rst
-    breadboards/Potentiometer.rst
-    breadboards/Potentiometer_with_LED.rst
-    breadboards/Piezo_Buzzer_and_music.rst
-
-
-.. toctree::
-    :maxdepth: 2
-    :caption: BreadBoard_projects
-    :numbered:
-
-    breadboard_projects/Combined_models.rst
-    breadboard_projects/Models_using_definitions.rst
-    breadboard_projects/Organising_with_selection_and_definitions.rst
-    breadboard_projects/Combined_iteration_using_zip.rst
- 
- 
+  
 .. toctree::
     :maxdepth: 2
     :caption: Lessons_1
@@ -62,20 +38,6 @@ Index:
     lessons/For_loops.rst
     lessons/For_loops_with_range.rst
 
-
-.. toctree::
-    :maxdepth: 2
-    :caption: Errors
-    :numbered:
-
-    errors/Types_of_Errors.rst
-    errors/Library_Errors.rst
-    errors/Indentation_Errors.rst    
-    errors/Missing_Colon_Errors.rst
-    errors/Variable_Errors.rst
-    errors/Whitespace_Errors.rst    
-    errors/Whitespace_NonErrors.rst
-    errors/Other_Errors.rst
 
 
 .. toctree::
@@ -112,6 +74,48 @@ Index:
     lessons2/gestures.rst
     lessons2/movement.rst
 
+
+.. toctree::
+    :maxdepth: 2
+    :caption: BreadBoards
+    :numbered:
+
+    breadboards/Breadboard_connections.rst
+    breadboards/Edge_Connector.rst
+    breadboards/Motor_with_transistor.rst
+    breadboards/LEDs_with_resistors.rst
+    breadboards/Potentiometer.rst
+    breadboards/Potentiometer_with_LED.rst
+    breadboards/Piezo_Buzzer_and_music.rst
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: BreadBoard_projects
+    :numbered:
+
+    breadboard_projects/Combined_models.rst
+    breadboard_projects/Models_using_definitions.rst
+    breadboard_projects/Organising_with_selection_and_definitions.rst
+    breadboard_projects/Combined_iteration_using_zip.rst
+ 
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Errors
+    :numbered:
+
+    errors/Types_of_Errors.rst
+    errors/Library_Errors.rst
+    errors/Indentation_Errors.rst    
+    errors/Missing_Colon_Errors.rst
+    errors/Variable_Errors.rst
+    errors/Whitespace_Errors.rst    
+    errors/Whitespace_NonErrors.rst
+    errors/Other_Errors.rst
+
+
  
 .. toctree::
     :maxdepth: 2
@@ -145,6 +149,7 @@ Index:
     images/pixel_class.rst
     images/screen_class.rst
     images/other_image_methods.rst
+
 
 .. toctree::
     :maxdepth: 2
