@@ -5,7 +5,8 @@ Radio examples
 Send on button pressing
 -------------------------
 
-| Set up the group in pairs with a value 0-255.
+| Set up the group in pairs with a value 0-255 by modifying the group in: ``radio.config(group=8)``.
+| Turn on the radio using: ``radio.on()``
 | Use ``button_a.was_pressed()`` to send a message, **"A"**.
 | Scroll any received messages.
 | ``if incoming_message is not None:`` relies on ``radio.receive()`` returning **None** when there is no message received. 
