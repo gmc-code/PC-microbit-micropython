@@ -1,34 +1,15 @@
-==========================
+==============================
 Potentiometer Class
-==========================
+==============================
 
+| A potentiometer can be connected to a microbit using a breadboard.
 | Create a class for the Potentiometer that makes it easy to:
+
     - get the potentiometer analog reading, 
     - keep track of the last reading, 
     - be able to tell if the potentiometer analog reading has changed 
     - and to convert the reading to a particular range, such as, from 0 to 10.
   
-----
-
-.. py:module:: Potentiometer
-
-Potentiometer Syntax
-----------------------------------------
-
-.. py:function:: get_val()
-
-    | Returns the potentiometer value from **0 to 1023**.
-
-.. py:function:: was_changed()
-
-    | Returns **True** if the potentiometer value changed, otherwise, **False**.
-
-.. py:function:: get_scaled_val(scale=10)
-
-    | Returns the potentiometer value scaled from **0 to scale** using a default scale of 10.
-
-----
-
 | The code below, first checks to see if the value of the potentiometer has changed, and then if it has, displays the value as a scaled value in the range 0 to 10 via ``display.show(pot.get_range(10))``.
 | ``pot = Potentiometer()`` uses the default pin: pin0. 
 | The pin is kept track of via the **self.io_pin** variable.
@@ -37,6 +18,7 @@ Potentiometer Syntax
 
 .. code-block:: python
 
+    # potentiometer using class
     from microbit import *
 
 
@@ -56,16 +38,27 @@ Potentiometer Syntax
             else:
                 return False
 
-        def get_scaled_val(self, scale=10):
+        def get_range(self, rng):
             analog_read = self.get_val()
-            scaled_read = scale * (analog_read / 1023)
-            return int(scaled_read)
+            scaled = rng * (analog_read / 1023)
+            return int(scaled)
 
-
+    # this defaults to pin0
+    # to use pinl1 instead use pot = Potentiometer(pin1)
     pot = Potentiometer()
     while True:
         if pot.was_changed():
-            display.show(pot.get_scaled_val(10))
+            display.show(pot.get_range(10))
+
+
+----
+
+.. admonition:: Tasks
+
+    #. Modify the code so there is a short sleep between potentiometer readings.
+    #. Modify the code so that the potentiometer only displays values from 0 to 5.
+
+----
 
 ----
  

@@ -1,5 +1,5 @@
 ==========================
-Screen Class
+Screen Class challenge
 ==========================
 
 | Design a screen class that keeps track of the brightness of all pixels on the 5 by 5 LED display of the microbit.
