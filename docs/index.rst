@@ -61,6 +61,22 @@ Index:
 
 .. toctree::
     :maxdepth: 2
+    :caption: Errors
+    :numbered:
+
+    errors/Types_of_Errors.rst
+    errors/Library_Errors.rst
+    errors/Indentation_Errors.rst    
+    errors/Missing_Colon_Errors.rst
+    errors/Variable_Errors.rst
+    errors/Whitespace_Errors.rst    
+    errors/Whitespace_NonErrors.rst
+    errors/Other_Errors.rst
+
+
+
+.. toctree::
+    :maxdepth: 2
     :caption: Lessons_2
     :numbered:
 
@@ -99,22 +115,6 @@ Index:
     breadboard_projects/Organising_with_selection_and_definitions.rst
     breadboard_projects/Combined_iteration_using_zip.rst
  
-
-
-.. toctree::
-    :maxdepth: 2
-    :caption: Errors
-    :numbered:
-
-    errors/Types_of_Errors.rst
-    errors/Library_Errors.rst
-    errors/Indentation_Errors.rst    
-    errors/Missing_Colon_Errors.rst
-    errors/Variable_Errors.rst
-    errors/Whitespace_Errors.rst    
-    errors/Whitespace_NonErrors.rst
-    errors/Other_Errors.rst
-
 
  
 .. toctree::
