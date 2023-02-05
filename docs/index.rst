@@ -26,13 +26,13 @@ Index:
     :numbered:
 
     lessons/Mu_editor.rst
-    lessons/Scroll_text.rst
     lessons/Microbit_library.rst
-    lessons/while_True_loops.rst
     lessons/Mu_editor_Errors.rst
+    lessons/while_True_loops.rst
+    lessons/Scroll_text.rst
+    lessons/Show_text.rst
     lessons/Sleep.rst
     lessons/Built_in_images.rst
-    lessons/Show_text.rst
     lessons/Buttons_and_selection.rst
     lessons/While_loops.rst
     lessons/For_loops.rst
