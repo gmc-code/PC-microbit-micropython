@@ -88,7 +88,7 @@ Flashing Image
 ----------------------------------------
 
 | When a sleep is used along wiht clearing the display, an image can be made to flash.
-| The code below flashes a the built-in heart image 
+| The code below flashes a the built-in heart image.
 
 .. code-block:: python
 
@@ -174,8 +174,8 @@ Random times for flashing an image
 
 .. admonition:: Tasks
 
-    #. Write the code to have the heart appear for 300ms, but clear the screen for a random time ranging from 100 to 300ms.
-    #. Write the code to have the heart appear for a random time ranging from 100 to 300ms, but clear the screen for 300ms.
+    #. Write the code to have the heart appear for 500ms, but clear the screen for a random time ranging from 100 to 500ms.
+    #. Write the code to have the heart appear for a random time ranging from 100 to 500ms, but clear the screen for 500ms.
     
     .. dropdown::
         :icon: codescan
@@ -420,6 +420,44 @@ Built-in Image lists
 
                     while True:
                         display.show(Image.ALL_ARROWS, delay=200)
+
+----
+
+Random images
+-----------------------------------
+
+| Import the random library. Then use random.choice to show a random image from a list.
+
+.. py:function:: random.choice(image_list)
+
+    Return a random image from the list of images: image_list. 
+
+| The code below shows a random image from a list eveery 500ms.
+
+.. code-block:: python
+
+    from microbit import *
+
+    shape_list = [
+        Image.TRIANGLE,
+        Image.TRIANGLE_LEFT,
+        Image.DIAMOND,
+        Image.DIAMOND_SMALL,
+        Image.SQUARE,
+        Image.SQUARE_SMALL,
+    ]
+    while True:
+        img = random.choice(shape_list)
+        display.show(img)
+        sleep(500)
+
+----
+
+.. admonition:: Exercise
+
+    #. Write the code to show a random face image every second.
+    #. Write the code to show a random animal image every 800ms.
+
 ----
 
 Image sentences
