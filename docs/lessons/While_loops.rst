@@ -153,10 +153,10 @@ Step size
 
 .. admonition:: Tasks
 
-    #. Write a while loop that counts up from 1 to 5, showing the numbers 1,2,3,4,5.
-    #. Write a while loop that counts up from 3 to 12 in steps of 3, scrolling the numbers 3,6,9,12.
-    #. Write a while loop that counts down from 9 to 1, showing the numbers 9,8,7,6,5,4,3,2,1.
-    #. Write a while loop that counts down from 24 to 18 in steps of 2, scrolling the numbers 24,22,20,18.
+    #. Write a while loop that counts up from 1 to 5, showing the numbers 1, 2, 3, 4, 5.
+    #. Write a while loop that counts up from 3 to 12 in steps of 3, scrolling the numbers 3, 6, 9, 12.
+    #. Write a while loop that counts down from 9 to 1, showing the numbers 9, 8, 7, 6, 5, 4, 3, 2, 1.
+    #. Write a while loop that counts down from 24 to 18 in steps of 2, scrolling the numbers 24, 22, 20, 18.
  
     .. dropdown::
         :icon: codescan
@@ -167,7 +167,7 @@ Step size
 
             .. tab-item:: Q1
 
-                Write a while loop that counts up from 1 to 5, showing the numbers 1,2,3,4,5.
+                Write a while loop that counts up from 1 to 5, showing the numbers 1, 2, 3, 4, 5.
 
                 .. code-block:: python
 
@@ -181,7 +181,7 @@ Step size
 
             .. tab-item:: Q2
 
-                Write a while loop that counts up from 3 to 12 in steps of 3, scrolling the numbers 3,6,9,12.
+                Write a while loop that counts up from 3 to 12 in steps of 3, scrolling the numbers 3, 6, 9, 12.
 
                 .. code-block:: python
 
@@ -196,7 +196,7 @@ Step size
 
             .. tab-item:: Q3
 
-                Write a while loop that counts down from 9 to 1, showing the numbers 9,8,7,6,5,4,3,2,1.
+                Write a while loop that counts down from 9 to 1, showing the numbers 9, 8, 7, 6, 5, 4, 3, 2, 1.
 
                 .. code-block:: python
 
@@ -211,7 +211,7 @@ Step size
 
             .. tab-item:: Q4
 
-                Write a while loop that counts down from 24 to 18 in steps of 2, scrolling the numbers 24,22,20,18.
+                Write a while loop that counts down from 24 to 18 in steps of 2, scrolling the numbers 24, 22, 20, 18.
 
                 .. code-block:: python
 
