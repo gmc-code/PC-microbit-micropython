@@ -115,7 +115,7 @@ For loops with lists
 
                     from microbit import *
 
-                    names_list= ``['Ann', 'Liv', 'Sue']``
+                    names_list = ['Ann', 'Liv', 'Sue']
                     while True:
                         for name in names_list:
                             display.scroll(name)
