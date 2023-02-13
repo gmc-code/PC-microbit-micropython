@@ -1016,20 +1016,20 @@ print
 
 In printout, the most common function. 
 
-    - ``objects`` : Phural, indicating that multiple objects can be output onve. When exporting multiple objects, need to separate them.
-    - ``sep`` : Use a space as the interval to separate to multiple objects. 
-    - ``end`` : Used to set what to ends with. The default value is newline \n. We can change it to another string.
+    - ``objects`` : Phural, indicating that multiple objects can be output once. When printing multiple objects, separate them.
+    - ``sep`` : Use a space as the interval to separate the multiple objects. 
+    - ``end`` : Used to set what to end with. The default value is newline \n.
     - ``file`` : The object to write.
 
 ::
 
          print(1)
     1
-         print("Hello World
+         print("Hello World)
     Hello World
          a = 1
          b = 'w3cschool'
-         print(a,b)
+         print(a, b)
     1 w3cschool
          print("aaa""bbb")
     aaabbb
@@ -1083,7 +1083,7 @@ Function syntax:
 
 ::
 
-        range(5)
+    range(5)
     range(0, 5)
          for i in range(5):
    ...     print(i)
@@ -1093,9 +1093,9 @@ Function syntax:
     2
     3
     4
-         list(range(5))
+    list(range(5))
     [0, 1, 2, 3, 4]
-         list(range(0))
+    list(range(0))
     []
         
 
