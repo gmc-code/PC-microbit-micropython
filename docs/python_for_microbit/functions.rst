@@ -118,9 +118,13 @@ Functions with default parameters
     employee_info()
     employee_info("B. Ginner", 30000)
 
+----
 
-| Note: non-default parameter have to come before default parameters.
-| e.g the **name** parameter below must come before the **salary** parameter.
+Parameter type order
+-----------------------------------------------
+
+| Non-default parameters have to come before default parameters.
+| e.g in the code below, the **name** parameter (without a default value) must come before the **salary** parameter (with a default value).
 
 .. code-block:: python
 
