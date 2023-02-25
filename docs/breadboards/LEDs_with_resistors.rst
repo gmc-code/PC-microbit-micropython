@@ -334,7 +334,7 @@ Write analog
                         
 
                         def pulse_all_on():
-                            sleeptime = 4
+                            sleeptime = 40
                             stepsize = 30
                             for i in range(0, 1024, stepsize):
                                 pin0.write_analog(i)
@@ -344,7 +344,7 @@ Write analog
 
 
                         def pulse_all_off():
-                            sleeptime = 4
+                            sleeptime = 40
                             stepsize = 30
                             for i in range(1023, -1, -stepsize):
                                 pin0.write_analog(i)
@@ -367,28 +367,28 @@ Write analog
                     .. code-block:: python
 
                         from microbit import *
-                        
+
 
                         def pulse_all_diff_on():
-                            sleeptime = 4
+                            sleeptime = 50
                             stepsize = 30
                             for i in range(0, 1704, stepsize):
                                 pin0.write_analog(min(1023, i))
-                                pin1.write_analog(min(1023, i - 340))
-                                pin2.write_analog(min(1023, i - 680))
+                                pin1.write_analog(max(0, min(1023, i - 340)))
+                                pin2.write_analog(max(0, min(1023, i - 680)))
                                 sleep(sleeptime)
 
 
 
                         def pulse_all_diff_off():
-                            sleeptime = 4
+                            sleeptime = 50
                             stepsize = 30
                             for i in range(1704, -1, -stepsize):
                                 pin0.write_analog(min(1023, i))
-                                pin1.write_analog(min(1023, i - 340))
-                                pin2.write_analog(min(1023, i - 680))
+                                pin1.write_analog(max(0, min(1023, i - 340)))
+                                pin2.write_analog(max(0, min(1023, i - 680)))
                                 sleep(sleeptime)
-
+                            pin0.write_analog(0)
 
 
                         while True:
@@ -404,7 +404,6 @@ Write analog
 
     #. Investigate the use of the randrange function for creating random light displays. See: https://www.w3schools.com/python/ref_random_randrange.asp
     #. Investigate the use of the choice function for creating random light displays. Use ``pinlist = [pin0, pin1, pin2]`` to make a list of pins to choose from. See: https://www.w3schools.com/python/ref_random_choice.asp
-    #. Investigate the use of the choices function with a weighted list for creating random light displays See: https://www.w3schools.com/python/ref_random_choices.asp
 
     .. dropdown::
             :icon: codescan
@@ -456,23 +455,4 @@ Write analog
                             random_pin_brightness()
                             sleep(100)
 
-                .. tab-item:: Q3
-
-                    .. code-block:: python
-
-                        from microbit import *
-                        import random
-
-                        pinlist = [pin0, pin1, pin2]
-
-
-                        def weighted_pin_brightness():
-                            randval = random.randrange(0, 1024)
-                            randpin = random.choices(pinlist, weights = [3, 1, 3])
-                            randpin.write_analog(randval)
-
-
-                        while True:
-                            weighted_pin_brightness()
-                            sleep(100)
 
