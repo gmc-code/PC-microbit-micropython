@@ -18,7 +18,7 @@ Removing the USB power cable and re-adding it will also wake the micro:bit.
 Power off
 ----------
 
-When powered by battery. press and hold power/reset for 5 seconds to power off the micro:bit. The micro:bit power LED will dim from bright red to off. It will then remain off until you press the power/reset to wake up. Disconnecting the USB and battery power supply will also power off the micro:bit.
+When powered by battery, press and hold power/reset for 5 seconds to power off the micro:bit. The micro:bit power LED will dim from bright red to off. It will then remain off until you press the power/reset to wake up. Disconnecting the USB and battery power supply will also power off the micro:bit.
 
 Inserting a USB power lead will also wake the device.
 
@@ -40,8 +40,10 @@ Removing the USB power cable and re-adding it will also wake the micro:bit.
     | Use the online micropython editor instead: https://python.microbit.org/v/3
     | Thonny v 4 can also be used.
 
+----
 
-.. py:module:: power
+Power module
+--------------------------
 
 | This module lets you manage the power modes of the microbit V2.
 | See: https://microbit-micropython.readthedocs.io/en/v2-docs/power.html
@@ -98,6 +100,7 @@ Power off
         .. code-block:: python
 
             from microbit import *
+            import power
 
 
             display.show(Image.YES)
