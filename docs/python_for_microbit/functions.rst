@@ -305,8 +305,8 @@ Functions returning information
 
 ----
 
-``*args``
-----------------------------------------
+Allowing for a variable number of arguments
+---------------------------------------------
 
 | ``*args`` allow a function to take any number of positional arguments (non keyword arguments).
 
