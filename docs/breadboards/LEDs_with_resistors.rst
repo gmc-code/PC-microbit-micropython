@@ -341,7 +341,6 @@ Write analog
                                 pin1.write_analog(i)
                                 pin2.write_analog(i)
                                 sleep(sleeptime)
-                            pin0.write_analog(0)
 
 
                         def pulse_all_off():
@@ -352,7 +351,6 @@ Write analog
                                 pin1.write_analog(i)
                                 pin2.write_analog(i)
                                 sleep(sleeptime)
-                            pin0.write_analog(0)
 
 
                         while True:
@@ -374,23 +372,23 @@ Write analog
                         def pulse_all_diff_on():
                             sleeptime = 4
                             stepsize = 30
-                            for i in range(0, 1024, stepsize):
-                                pin0.write_analog(i)
-                                pin1.write_analog(max(i - 340))
-                                pin2.write_analog(max(i - 680))
+                            for i in range(0, 1704, stepsize):
+                                pin0.write_analog(min(1023, i))
+                                pin1.write_analog(min(1023, i - 340))
+                                pin2.write_analog(min(1023, i - 680))
                                 sleep(sleeptime)
-                            pin0.write_analog(0)
+
 
 
                         def pulse_all_diff_off():
                             sleeptime = 4
                             stepsize = 30
-                            for i in range(1023, -1, -stepsize):
-                                pin0.write_analog(i)
-                                pin1.write_analog(max(i - 340))
-                                pin2.write_analog(max(i - 680))
+                            for i in range(1704, -1, -stepsize):
+                                pin0.write_analog(min(1023, i))
+                                pin1.write_analog(min(1023, i - 340))
+                                pin2.write_analog(min(1023, i - 680))
                                 sleep(sleeptime)
-                            pin0.write_analog(0)
+
 
 
                         while True:
