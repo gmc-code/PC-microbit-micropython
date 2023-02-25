@@ -203,7 +203,7 @@ Functions returning information
     area = area_of_rectangle(9, 7)
     display.scroll(area)
 
-| Below is an example of a function that takes two parameters and returns a welcome message using the name and age of a person.
+| Below is an example of a function that takes two parameters and returns a string.
 | Text joins are carried out with a ``+`` between the text strings.
 | ``str()`` is used to turn ``age``, which is a integer, into a string.
 
