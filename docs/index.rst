@@ -17,8 +17,15 @@ Index:
     introduction/introduction.rst
     introduction/power_management.rst
 
- 
- 
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Python for microbit
+    :numbered:
+
+    python_for_microbit/functions.rst
+
+
 .. toctree::
     :maxdepth: 2
     :caption: BreadBoards
@@ -44,14 +51,6 @@ Index:
     breadboard_projects/Combined_iteration_using_zip.rst
  
 
-.. toctree::
-    :maxdepth: 2
-    :caption: Python for microbit
-    :numbered:
-
-    python_for_microbit/functions.rst
-
- 
 .. toctree::
     :maxdepth: 2
     :caption: Lessons_1
