@@ -310,22 +310,52 @@ Allowing for a variable number of arguments
 
 | ``*args`` allow a function to take any number of positional arguments (non keyword arguments).
 
-| ``*num`` allows a variable number of arguments to be passed in to be added in the ``multi_add`` function.
-| In the function, ``num`` is a tuple of the arguments.
-| For ``multi_add(1, 3, 5, 7, 9)``, num is the tuple ``(1, 3, 5, 7, 9)``.
+| ``*nums`` allows a variable number of arguments to be passed in to be added in the ``multi_add`` function.
+| In the function, ``nums`` is a tuple of the arguments.
+| For ``multi_add(1, 3, 5, 7, 9)``, nums is the tuple ``(1, 3, 5, 7, 9)``.
 
 .. code-block:: python
 
     from microbit import *
 
 
-    def multi_add(*num):
+    def multi_add(*nums):
         sum = 0
-        for n in num:
-            sum = sum + n
+        for num in nums:
+            sum = sum + num
         return sum
 
 
     display.scroll(multi_add(1, 3, 5, 7, 9), delay=70)
 
+----
+
+.. admonition:: Tasks
+
+    #. Define a function ``multi_product(*nums)`` that finds the product of the arguments.
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Define a function ``multi_product(*nums)`` that finds the product of the first 4 primes.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+
+                        def multi_product(*nums):
+                            total = 1
+                            for num in nums:
+                                total = total * num
+                            return total
+
+
+                        display.scroll(multi_product(2, 3, 5, 7), delay=70)
 
