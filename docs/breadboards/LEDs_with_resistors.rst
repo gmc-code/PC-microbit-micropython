@@ -404,6 +404,7 @@ Write analog
 
     #. Investigate the use of the randrange function for creating random light displays. See: https://www.w3schools.com/python/ref_random_randrange.asp
     #. Investigate the use of the choice function for creating random light displays. Use ``pinlist = [pin0, pin1, pin2]`` to make a list of pins to choose from. See: https://www.w3schools.com/python/ref_random_choice.asp
+    #. V2 micorbit: Use power module so that the b button puts the micorbit into a deep sleep for 10 minutes. Wake it on pressing the a button. Turn on random LEDS at random brightness every 3 seconds, then off.
 
     .. dropdown::
             :icon: codescan
@@ -454,5 +455,42 @@ Write analog
                         while True:
                             random_pin_brightness()
                             sleep(100)
+
+
+                .. tab-item:: Q2
+
+                    .. code-block:: python
+
+                        from microbit import *
+                        import random
+                        import power
+
+
+                        pinlist = [pin0, pin1, pin2]
+
+
+                        def random_pin_brightness():
+                            randval = random.randrange(0, 1024)
+                            randpin = random.choice(pinlist)
+                            randpin.write_analog(randval)
+
+
+                        def turnoff():
+                            pin0.write_digital(0)
+                            pin1.write_digital(0)
+                            pin2.write_digital(0)
+                            
+                        @run_every(s=3)
+                        def wakeup_call():
+                            random_pin_brightness()
+                            sleep(2000)
+                            turnoff()
+
+
+                        while True:
+                            if button_b.was_pressed():
+                                sleep(300)
+                                power.deep_sleep(wake_on=button_a,ms=600 * 1000,run_every=False)
+                            sleep(1000)
 
 
