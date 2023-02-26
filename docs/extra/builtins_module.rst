@@ -214,9 +214,9 @@ chr
     from microbit import *
     # import builtins
 
-    chr(0x30)
-    chr(97) 
-    chr(8364)
+    print(chr(0x30))
+    print(chr(97))
+    print(chr(8364))
 
 ----
 
@@ -227,8 +227,8 @@ See: https://www.programiz.com/python-programming/methods/built-in/classmethod
 
 .. decorator:: classmethod()
 
-    Converts a regular method into a class method
-    Class methods can be called on a class or on an instance.
+    | Converts a regular method into a class method
+    | Class methods can be called on a class or on an instance.
 
 .. code-block:: python
     
@@ -244,6 +244,8 @@ See: https://www.programiz.com/python-programming/methods/built-in/classmethod
     # create printAge class method
     Person.printAge = classmethod(Person.printAge)
     # call the class method
+    Person.printAge()
+    Person.age = 20
     Person.printAge()
 
 | Using a decorator instead:
@@ -261,6 +263,8 @@ See: https://www.programiz.com/python-programming/methods/built-in/classmethod
             print('The age is:', cls.age)
 
     Person.printAge()
+    Person.age = 20
+    Person.printAge()
 
 ----
 
@@ -269,11 +273,12 @@ complex
 
 .. class:: complex([real[, imag]])
 
-    Returns a complex number with a value of real + imag * 1J, or converts a string or number to a complex number. 
-    If the first parameter is a character string, it is interpreted as a complex number and must be called without a second parameter. 
-    The second parameter cannot be a character string. 
-    Each argument can be of any numeric type (including complex numbers).
-    If imag is omitted, the default value is zero, and the constructor performs numerical conversion like int and float. If both arguments are omitted, 0j is returned.
+    | Returns a complex number with a value of real + imag * 1J, or converts a string or number to a complex number. 
+    |  If the first parameter is a character string, it is interpreted as a complex number and must be called without a second parameter. 
+    | The second parameter cannot be a character string. 
+    | Each argument can be of any numeric type (including complex numbers).
+    | If imag is omitted, the default value is zero, and the constructor performs numerical conversion like int and float. 
+    | If both arguments are omitted, 0j is returned.
 
 .. code-block:: python
     
@@ -292,28 +297,33 @@ delattr
 
 .. function:: delattr(obj, name)
 
-setattr() Related functions. An argument is an object and a string. The string must be a property of the object. If the object allows it, the function deletes the specified property.
-Such as delattr(x, 'foobar') equivalent to del x.foobar.
+    | An argument is an object and a string. 
+    | The string must be a property of the object. 
+    | If the object allows it, the function deletes the specified property.
+    | Such as delattr(x, 'foobar') equivalent to del x.foobar.
 
-::
+.. code-block:: python
+    
+    from microbit import *
+    # import builtins
 
     class Coordinate:
         x = 10
         y = -5
         z = 0
-    
+
     point1 = Coordinate() 
-    
+
     print('x = ',point1.x)
     print('y = ',point1.y)
     print('z = ',point1.z)
-    
+
     delattr(Coordinate, 'z')
-    
-    print('--delete z after attribute--')
+    print('--deleted z attribute--')
+
     print('x = ',point1.x)
     print('y = ',point1.y)
-    
+
     # Trigger error
     print('z = ',point1.z)
 
