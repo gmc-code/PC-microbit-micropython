@@ -345,13 +345,13 @@ dict() Function to create a dictionary
 
 ::
 
-        dict()                        # Create an empty dictionary
+    dict()                        # Create an empty dictionary
     {}
-         dict(a='a', b='b', t='t')     # enter keyword
+    dict(a='a', b='b', t='t')     # enter keyword
     {'a': 'a', 'b': 'b', 't': 't'}
-         dict(zip(['one', 'two', 'three'], [1, 2, 3]))   # Mapping function mode to construct dictionary
+    dict(zip(['one', 'two', 'three'], [1, 2, 3]))   # Mapping function mode to construct dictionary
     {'three': 3, 'two': 2, 'one': 1} 
-         dict([('one', 1), ('two', 2), ('three', 3)])    # Iterative object method to construct the dictionary
+    dict([('one', 1), ('two', 2), ('three', 3)])    # Iterative object method to construct the dictionary
     {'three': 3, 'two': 2, 'one': 1}
         
 
