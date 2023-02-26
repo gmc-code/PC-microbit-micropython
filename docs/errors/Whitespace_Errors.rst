@@ -48,7 +48,6 @@ Whitespace in parentheses: Error
 .. image:: images/whitespace_in_parentheses_error.png
     :scale: 50 %
 
-----
 
 
 

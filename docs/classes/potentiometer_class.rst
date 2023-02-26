@@ -59,8 +59,6 @@ Potentiometer Class
     #. Modify the code so that the potentiometer only displays values from 0 to 5.
 
 ----
-
-----
  
 .. admonition:: Tasks
 

@@ -130,10 +130,10 @@ bytearray
 
 .. class:: bytearray()
 
-    Return to a new bytes array. 
-    From a given length, e.g. bytearray(1) is zero-filled (\x00)
-    From an iterable of integers, e.g. bytearray(range(4))
-    From text given the encoding, e.g. bytearray(b'Hi!')
+    | Returns a new bytes array. 
+    | From a given length, e.g. bytearray(1) is zero-filled (\x00)
+    | From an iterable of integers, e.g. bytearray(range(4))
+    | From text given the encoding, e.g. bytearray("mb", 'utf-8')
 
 See: https://www.programiz.com/python-programming/methods/built-in/bytearray
 
@@ -143,9 +143,9 @@ See: https://www.programiz.com/python-programming/methods/built-in/bytearray
     # import builtins
 
     val1 = bytearray()
-    val2 = bytearray(2)
+    val2 = bytearray(3)
     val3 = bytearray([2,4,6])
-    val4 = bytearray("mb")
+    val4 = bytearray("mb", 'utf-8')
     print(val1)
     print(val2)
     print(val3)
@@ -158,12 +158,11 @@ bytes
 
 .. class:: bytes()
 
-    
-    The bytes() function returns a bytes object that cannot be modified.
-    It can convert objects into bytes objects, or create empty bytes object of the specified size.
-    From a given length, e.g. bytes(1) is zero-filled (\x00)
-    From an iterable of integers, e.g. bytes(range(4))
-    From text given the encoding, e.g. bytes(b'Hi!')
+    | The bytes() function returns a bytes object that cannot be modified.
+    | It can convert objects into bytes objects, or create empty bytes object of the specified size.
+    | From a given length, e.g. bytes(1) is zero-filled (\x00)
+    | From an iterable of integers, e.g. bytes(range(4))
+    | From text given the encoding, e.g. bytes("mb", 'utf-8')
 
 
 .. code-block:: python
@@ -426,6 +425,7 @@ enumerate() Function is used to combine a traversable data object (such as a lis
     0 one
     1 two
     2 three
+
 ----
 
 eval

@@ -6,6 +6,8 @@ Piezo_Buzzer_and_music
 
 .. py:module:: music
 
+----
+
 Connections
 --------------------------
 
@@ -29,7 +31,7 @@ Model
 ----
 
 Library
-----------------------------------------
+-------------------
 
 | Put ``import music`` at the top under ``from microbit import *``.
 

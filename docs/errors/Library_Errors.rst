@@ -14,7 +14,7 @@ Missing asterisk
     from microbit import 
 
 | If the asterisk is left out, a red wavy line will be shown at the end of the line and a **Syntax error** is reported.
-| It hints that the asterisk, *, is missing.
+| It hints that the asterisk, \*, is missing.
 
 
 .. image:: images/import_error_1b.png

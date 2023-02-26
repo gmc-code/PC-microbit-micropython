@@ -31,6 +31,7 @@ Model
 .. image:: images/motor.jpg
     :scale: 30 %
 
+----
 
 Write digital
 ----------------------------------------
@@ -38,6 +39,7 @@ Write digital
 | To turn the motor on fully use ``pin0.write_digital(1)``.
 | To turn the LED off use ``pin0.write_digital(0)``.
 
+----
 
 Turn on and off pin0
 ----------------------------------------
