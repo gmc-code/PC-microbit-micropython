@@ -193,7 +193,7 @@ Blink using for i in range
                             if button_a.is_pressed():
                                 do_A()
                             elif button_b.is_pressed():
-                                blink_all()
+                                do_B()
                             sleep(500)
 
                 .. tab-item:: Q2
