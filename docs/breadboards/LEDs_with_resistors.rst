@@ -286,7 +286,7 @@ Write analog
 
 
     def pulse_on():
-        sleeptime = 4
+        sleeptime = 40
         stepsize = 30
         for i in range(0, 1024, stepsize):
             pin0.write_analog(i)
@@ -295,7 +295,7 @@ Write analog
 
 
     def pulse_off():
-        sleeptime = 4
+        sleeptime = 40
         stepsize = 30
         for i in range(1023, -1, -stepsize):
             pin0.write_analog(i)
