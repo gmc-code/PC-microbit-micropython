@@ -92,7 +92,7 @@ Power meter simulation
 | Each of these variables is first checked to see if it is ``None`` before setting the pixels it controls.
 
 
-.. code-block:: python
+.. code-block::
      
     def display_level(level):
         xlist = [0, 1, 2, 3, 4]
