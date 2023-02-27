@@ -71,7 +71,7 @@ Read analog
 ----
 
 
-Power meter simulation
+Advanced: Power meter simulation
 ----------------------------------------
 
 .. sidebar::
@@ -97,7 +97,6 @@ Power meter simulation
     def display_level(level):
         xlist = [0, 1, 2, 3, 4]
 
-    
         # display
         val = int((level % 200) * 9 / 200)
         if level < 200:
@@ -145,7 +144,6 @@ Power meter simulation
     def display_level(level):
         xlist = [0, 1, 2, 3, 4]
 
-    
         # display
         val = int((level % 200) * 9 / 200)
         if level < 200:
