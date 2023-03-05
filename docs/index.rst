@@ -5,7 +5,6 @@ PC-Microbit
 ====================================================
 
 
-
 Index:
 ========
 
@@ -70,7 +69,6 @@ Index:
     lessons/For_loops_with_range.rst
 
 
-
 .. toctree::
     :maxdepth: 2
     :caption: Lessons_1_Practice
@@ -89,7 +87,6 @@ Index:
     lessons/Practice_tasks_2_Answers.rst
 
 
-
 .. toctree::
     :maxdepth: 2
     :caption: Errors
@@ -103,7 +100,6 @@ Index:
     errors/Whitespace_Errors.rst    
     errors/Whitespace_NonErrors.rst
     errors/Other_Errors.rst
-
 
 
 .. toctree::
@@ -147,7 +143,6 @@ Index:
     breadboard_projects/Combined_iteration_using_zip.rst
  
 
- 
 .. toctree::
     :maxdepth: 2
     :caption: Challenges
