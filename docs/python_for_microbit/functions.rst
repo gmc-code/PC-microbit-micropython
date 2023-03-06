@@ -112,7 +112,7 @@ Functions with default parameters
 
 
     def player_info(name="Novice", score=0):
-        display.scroll(name + "has a score of " + str(score), delay=80)
+        display.scroll(name + " has a score of " + str(score), delay=80)
 
 
     player_info()
@@ -132,7 +132,7 @@ Order with named parameters
 
 
     def player_info(name="Novice", score=0):
-        display.scroll(name + "has a score of " + str(score), delay=80)
+        display.scroll(name + "  a score of " + str(score), delay=80)
 
 
     player_info(name="Rookie", score=10)
@@ -152,7 +152,7 @@ Parameter order: positional before default
 
 
     def player_info(name, score=0):
-        display.scroll(name + "has a score of " + str(score), delay=80)
+        display.scroll(name + " has a score of " + str(score), delay=80)
 
 
     player_info("novice")
