@@ -6,6 +6,11 @@ Piezo_Buzzer_and_music
 
 .. py:module:: music
 
+.. admonition:: Warning
+
+    For use of the buzzer on the breadboard, set the speaker to off so that the in-built speaker does not also play sounds.
+
+
 ----
 
 Connections
