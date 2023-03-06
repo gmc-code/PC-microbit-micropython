@@ -140,7 +140,7 @@ Order with named parameters
 
 ----
 
-Parameter type order
+Parameter order: positional before default
 -----------------------------------------------
 
 | Non-default parameters have to come before default parameters.
