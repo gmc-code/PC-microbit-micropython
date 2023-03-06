@@ -26,7 +26,7 @@ Functions without parameters
     from microbit import *
 
     def show_welcome():
-        display.scroll("Hello mb user!")
+        display.scroll("Hello mb user!", delay=80)
 
     show_welcome()
 
@@ -53,7 +53,7 @@ Functions without parameters
                         from microbit import *
 
                         def scroll_name():
-                            display.scroll("my name")
+                            display.scroll("my name", delay=80)
 
                         scroll_name()
 

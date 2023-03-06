@@ -437,7 +437,8 @@ Random images
 .. code-block:: python
 
     from microbit import *
-
+    import random
+    
     shape_list = [
         Image.TRIANGLE,
         Image.TRIANGLE_LEFT,
