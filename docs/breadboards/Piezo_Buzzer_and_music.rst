@@ -9,8 +9,7 @@ Piezo_Buzzer_and_music
 .. admonition:: Warning
 
     | For use of the buzzer on the **breadboard**, set the speaker to **off** so that the in-built speaker does not also play sounds.
-    | For use of the inbuilt speaker on the **microbit**, set the speaker to **on**.
-
+    | For use of the inbuilt speaker on the **V2 microbit**, set the speaker to **on**.
 
 ----
 
