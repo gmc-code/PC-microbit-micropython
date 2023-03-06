@@ -79,7 +79,7 @@ Functions without parameters
 Functions with parameters
 -----------------------------
 
-| Functions can be more powerful by using `parameters`. 
+| Functions can be more flexible when they use `parameters`. 
 | A parameter is the variable in the parentheses of the function which allows information to be passed to the function.
 | An argument is the value in the parentheses that is sent to the function when it is called.
 | In the code below, ``name`` is the parameter, and ``"beginner"`` and ``"user"`` are the arguments.
@@ -101,22 +101,42 @@ Functions with parameters
 Functions with default parameters
 -----------------------------------------------
 
-| Default values can be added to parameters. e.g. name="N. U. Guy"
+| Default values can be added to parameters. e.g. name="Novice"
 
 | Text joins are carried out with a ``+`` between the text strings.
-| ``str()`` is used to turn ``age``, which is a integer, into a string.
+| ``str()`` is used to turn ``score``, which is a integer, into a string.
 
 .. code-block:: python
 
     from microbit import *
 
 
-    def employee_info(name="N. U. Guy", salary=20000):
-        display.scroll(name + "earns $" + str(salary) + " per year", delay=80)
+    def player_info(name="Novice", score=0):
+        display.scroll(name + "has a score of " + str(score), delay=80)
 
 
-    employee_info()
-    employee_info("B. Ginner", 30000)
+    player_info()
+    player_info("Rookie", 100)
+
+
+----
+
+Order with named parameters
+-----------------------------------------------
+
+| When named parameters are used, their order is not important.
+
+.. code-block:: python
+
+    from microbit import *
+
+
+    def player_info(name="Novice", score=0):
+        display.scroll(name + "has a score of " + str(score), delay=80)
+
+
+    player_info(name="Rookie", score=10)
+    player_info(score=10, name="Rookie")
 
 ----
 
@@ -124,19 +144,20 @@ Parameter type order
 -----------------------------------------------
 
 | Non-default parameters have to come before default parameters.
-| e.g in the code below, the **name** parameter (without a default value) must come before the **salary** parameter (with a default value).
+| e.g in the code below, the **name** parameter (without a default value) must come before the **score** parameter (with a default value).
 
 .. code-block:: python
 
     from microbit import *
 
 
-    def employee_info(name, salary=20000):
-        display.scroll(name + "earns $" + str(salary) + " per year", delay=80)
+    def player_info(name, score=0):
+        display.scroll(name + "has a score of " + str(score), delay=80)
 
 
-    employee_info("novice")
-    employee_info("B. Ginner", 30000)
+    player_info("novice")
+    player_info("Rookie", 100)
+
 
 ----
 
