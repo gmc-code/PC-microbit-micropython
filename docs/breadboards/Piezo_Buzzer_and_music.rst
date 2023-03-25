@@ -4,8 +4,6 @@ Piezo_Buzzer_and_music
 
 | See: https://microbit-micropython.readthedocs.io/en/v2-docs/music.html
 
-.. py:module:: music
-
 .. admonition:: Warning
 
     | For use of the buzzer on the **breadboard**, set the speaker to **off** so that the in-built speaker does not also play sounds.
