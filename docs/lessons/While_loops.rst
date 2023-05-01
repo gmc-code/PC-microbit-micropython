@@ -157,6 +157,7 @@ Step size
     #. Write a while loop that counts up from 3 to 12 in steps of 3, scrolling the numbers 3, 6, 9, 12.
     #. Write a while loop that counts down from 9 to 1, showing the numbers 9, 8, 7, 6, 5, 4, 3, 2, 1.
     #. Write a while loop that counts down from 24 to 18 in steps of 2, scrolling the numbers 24, 22, 20, 18.
+    #. Write 2 while loops to scroll 0 to 8 going up in 2s then 9 down to 1 going down in 2s.
  
     .. dropdown::
         :icon: codescan
@@ -223,3 +224,21 @@ Step size
                             display.scroll(i, delay=50)
                             i -= 2
 
+            .. tab-item:: Q5
+
+                Write 2 while loops to scroll 0 to 8 going up in 2s then 9 down to 1 going down in 2s.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        i = 0
+                        while i < 9:
+                            display.scroll(i, delay=50)
+                            i += 2
+                        i = 9
+                        while i > 0:
+                            display.scroll(i, delay=50)
+                            i -= 2
+                        sleep(1000)
