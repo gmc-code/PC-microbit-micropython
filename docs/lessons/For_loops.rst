@@ -16,7 +16,7 @@ For loops with strings
     while True:
         for character in welcome_string:
             display.show(character)
-            sleep(300)
+        sleep(300)
 
 ----
 
@@ -44,7 +44,7 @@ For loops with strings
                     while True:
                         for character in string:
                             display.scroll(character)
-                            sleep(300)
+                        sleep(300)
 
             .. tab-item:: Q2
 
@@ -58,7 +58,28 @@ For loops with strings
                     while True:
                         for character in string:
                             display.scroll(character)
-                            sleep(300)
+                        sleep(300)
+
+----
+
+Using for loops  with strings
+---------------------------------
+
+| What does this code do?
+
+
+.. code-block:: python
+
+    from microbit import *
+
+    welcome_string = 'hqz'
+    while True:
+        for character in welcome_string:
+            asciinum = ord(character)
+            asciinum -=2
+            newchar = chr(asciinum)
+            display.scroll(newchar, delay=50)
+        sleep(300)
 
 
 ----
@@ -77,7 +98,7 @@ For loops with lists
     while True:
         for tennis_star in tennis_champs:
             display.scroll(tennis_star, delay=80)
-            sleep(300)
+        sleep(300)
 
 
 | In the code below, each number in the list is displayed.
@@ -119,7 +140,7 @@ For loops with lists
                     while True:
                         for name in names_list:
                             display.scroll(name)
-                            sleep(300)
+                        sleep(300)
 
             .. tab-item:: Q2
 
@@ -133,7 +154,40 @@ For loops with lists
                     while True:
                         for num in num_list:
                             display.scroll(num)
-                            sleep(300)
+                        sleep(300)
+
+----
+
+Using for loops  with lists
+---------------------------------
+
+| What does this code do?
+
+
+.. code-block:: python
+
+    from microbit import *
+
+    tennis_champs = ['Novak', 'Roger', 'Rafael']
+    while True:
+        for tennis_star in tennis_champs:
+            display.scroll(tennis_star[0:3], delay=80)
+        sleep(300)
+
+
+| What does this code do?
+
+
+.. code-block:: python
+
+    from microbit import *
+
+    primes = [2, 3, 5, 7]
+    while True:
+        for num in primes:
+            display.scroll(num*2, delay=50)
+        sleep(300)
+
 
 ----
 
