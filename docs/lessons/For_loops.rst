@@ -62,11 +62,10 @@ For loops with strings
 
 ----
 
-Using for loops  with strings
----------------------------------
+Advanced: Using for-loops  with strings
+-----------------------------------------
 
 | What does this code do?
-
 
 .. code-block:: python
 
@@ -158,8 +157,8 @@ For loops with lists
 
 ----
 
-Using for loops  with lists
----------------------------------
+Advanced: Using for loops with lists
+--------------------------------------
 
 | What does this code do?
 
@@ -180,13 +179,15 @@ Using for loops  with lists
 
 .. code-block:: python
 
-    from microbit import *
+from microbit import *
 
-    primes = [2, 3, 5, 7]
-    while True:
-        for num in primes:
-            display.scroll(num*2, delay=50)
-        sleep(300)
+primes = [2, 3, 5, 7]
+test_num = 42
+while True:
+    for num in primes:
+        if test_num % num == 0:
+            display.scroll(num, delay=50)
+    sleep(300)
 
 
 ----
