@@ -254,4 +254,17 @@ Using range to count down with a negative step size
                                 display.scroll(n, delay=80)
                             sleep(500)
 
+----
+
+| What does this code do?
+
+.. code-block:: python
+    
+    from microbit import *
+
+    while True:
+        for startnum in range(4):
+            for n in range(startnum, startnum + 7, 2):
+                display.scroll(n, delay=40)
+
 
