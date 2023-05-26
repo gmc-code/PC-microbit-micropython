@@ -5,6 +5,7 @@ Combined models
 Tasks 
 --------------------------
 
+| Use at least 2 different types of devices on the **
 | Use at least 2 different types of devices on the **breadboard**, such as an **LED**, a **buzzer**, a **potentiometer**, a **motor** with transistor.
 | Use the microbit display to display **text** and **images**.
 | Use **button pressing**.
@@ -13,6 +14,8 @@ Tasks
 | Suggestions to complete the task are below.
 | Using ``for i in range(n):`` is recommended to repeat a particular action ``n`` times.
 
+| For extra pins, pin8 and pin12 are recommended.
+| See: https://microbit-micropython.readthedocs.io/en/v2-docs/pin.html
 
 .. admonition:: Tasks
 
