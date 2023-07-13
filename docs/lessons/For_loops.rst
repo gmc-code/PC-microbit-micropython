@@ -16,7 +16,7 @@ For loops with strings
     while True:
         for character in welcome_string:
             display.show(character)
-        sleep(300)
+         sleep(300)
 
 ----
 
