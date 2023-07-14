@@ -16,7 +16,7 @@ For loops with strings
     while True:
         for character in welcome_string:
             display.show(character)
-         sleep(300)
+            sleep(300)
 
 ----
 
@@ -44,7 +44,7 @@ For loops with strings
                     while True:
                         for character in string:
                             display.scroll(character)
-                        sleep(300)
+                            sleep(300)
 
             .. tab-item:: Q2
 
@@ -58,7 +58,7 @@ For loops with strings
                     while True:
                         for character in string:
                             display.scroll(character)
-                        sleep(300)
+                            sleep(300)
 
 ----
 
