@@ -270,7 +270,7 @@ Nested For loops
     from microbit import *
 
     col_letters = ['A', 'B', 'C']
-    row_nums  = ['1', '2', '3', '4']
+    row_nums = ['1', '2', '3', '4']
     while True:
         for col in col_letters:
             for row in row_nums:
