@@ -86,7 +86,7 @@ Building on each definitions
 Better names for definitions
 ------------------------------
 
-Instead of do_A_action or similar def names, hte defs belwo have more informative names.
+Instead of do_A_action or similar def names, the defs below have more informative names.
 
 | Sample task:
 | Write code that displays a message "A or B". 
