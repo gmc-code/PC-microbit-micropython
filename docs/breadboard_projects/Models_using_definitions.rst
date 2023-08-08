@@ -2,6 +2,10 @@
 Models using definitions
 ==========================
 
+| The following examples use write_digital to power a device connected to a given pin number.
+| In most examples, pin0 is used, but pin1 or pin2 could jsut as easily be used.
+
+----
 
 Moving code to definitions
 -----------------------------
@@ -16,11 +20,14 @@ Moving code to definitions
 
     while True:
         if button_a.is_pressed():
+            # turn on device on pin0
             pin0.write_digital(1)
         elif button_b.is_pressed():
+            # turn off device on pin0
             pin0.write_digital(0)
         else:
-            display.scroll('a or b')
+            # helpful indication that abutton A or B needs pressing
+            display.scroll('A or B', delay=80)
 
 | The restructured code is below.
 
@@ -30,13 +37,16 @@ Moving code to definitions
 
 
     def A_action():
+        # turn on device on pin0
         pin0.write_digital(1)
 
     def B_action():
+        # turn off device on pin0
         pin0.write_digital(0)
 
     def no_action():
-        display.scroll('a or b')
+        # helpful indication that abutton A or B needs pressing
+        display.scroll('A or B')
 
     while True:
         if button_a.is_pressed():
@@ -47,12 +57,13 @@ Moving code to definitions
             no_action()
 
 
+----
 
 Building on each definitions
 -----------------------------
 
-| Beginning with the code above each def can have several related actions.
-
+| Beginning with the code above, each def be modified for different effects.
+| The special use of '_' occurs in the line ``for _ in range(3)``. This is a python convention to use '_' as the iterating variable when the variable is not used again in the code.
 
 .. code-block:: python 
 
@@ -60,11 +71,13 @@ Building on each definitions
 
 
     def A_action():
+        # turn on for 3 seconds
         pin0.write_digital(1)
         sleep(3000)
         pin0.write_digital(0)
 
     def B_action():
+        # turn on and off with 0.3 sec delays, 3 times
         for _ in range(3)
             pin0.write_digital(1)
             sleep(500)
@@ -72,7 +85,7 @@ Building on each definitions
             sleep(500)
 
     def no_action():
-        display.scroll('a or b')
+        display.scroll('A or B')
 
     while True:
         if button_a.is_pressed():
@@ -109,14 +122,14 @@ Instead of do_A_action or similar def names, the defs below have more informativ
 
 
     def use_motorA():
-        # on pin 0
+        # turn on the motor on pin0, wait 3 sec, then off
         pin0.write_digital(1)
         sleep(3000)
         pin0.write_digital(0)
 
 
     def use_LEDsB():
-        # on pin 1
+        # turn on the LEDS on pin1, wait 2 sec, then off
         pin1.write_digital(1)
         sleep(2000)
         pin1.write_digital(0)
@@ -135,10 +148,10 @@ Instead of do_A_action or similar def names, the defs below have more informativ
 Scaffold for Tasks
 --------------------------
 
-| Break the code up into separate blocks using definitions.
+| Imagine that button pressing will control 5 things: text displayed, images shown, LEDS, the motor and the buzzer.
 | For each different type of action to do on the microbit have a separate definition.
 | An example of such a code structure is below.
-| To use the scaffold, delete all the ``pass`` statements and replace them with the specific code. 
+| To use the scaffold, delete the unwanted def blocks and threir calls. 
 
 .. code-block:: python 
 
@@ -147,58 +160,47 @@ Scaffold for Tasks
 
 
     def display_startupmessage():
-        # replace pass with the code to display some text
-        pass
+        display.scroll('A or B')
 
 
     def display_textA():
-        # replace pass with the code to display some text
-        pass
+        display.scroll('A')
 
 
     def display_textB():
-        # replace pass with the code to display some text
-        pass
+        display.scroll('B')
 
 
     def display_imagesA():
-        # replace pass with the code to display one or more images
-        pass
+        display.show(Image.YES)
 
 
     def display_imagesB():
-        # replace pass with the code to display one or more images
-        pass
+        display.show(Image.NO)
 
 
     def use_LEDsA():
-        # replace pass with the code to control one of more LEDS on their pins
-        pass
+        pin1.write_digital(1)
 
 
     def use_LEDsB():
-        # replace pass with the code to control one of more LEDS on their pins
-        pass
+        pin1.write_digital(1)
 
 
     def use_buzzerA():
-        # replace pass with the code to control a buzzer
-        pass 
+        music.play("c4:8")
 
 
     def use_buzzerB():
-        # replace pass with the code to control a buzzer
-        pass
+        music.play("e5:2")
 
 
     def use_motorA():
-        # replace pass with the code to control a motor
-        pass 
+        pin2.write_digital(1)
 
 
     def use_motorB():
-        # replace pass with the code to control a motor
-        pass
+        pin2.write_digital(0)
 
 
     display_startupmessage()
