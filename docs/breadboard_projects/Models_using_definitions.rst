@@ -3,7 +3,7 @@ Models using definitions
 ==========================
 
 | The following examples use write_digital to power a device connected to a given pin number.
-| In most examples, pin0 is used, but pin1 or pin2 could jsut as easily be used.
+| In most examples, pin0 is used, but pin1 or pin2 could just as easily be used.
 
 ----
 
@@ -11,7 +11,7 @@ Moving code to definitions
 -----------------------------
 
 | Beginning with the code below, restructure it to use definitions.
-| Reorganizing the code is called **refactoring**.
+| Reorganizing the code wihtout changing what is does is called **refactoring**.
 
 
 .. code-block:: python 
@@ -59,32 +59,29 @@ Moving code to definitions
 
 ----
 
-Building on each definitions
+Building on each definition
 -----------------------------
 
-| Beginning with the code above, each def be modified for different effects.
-| The special use of '_' occurs in the line ``for _ in range(3)``. This is a python convention to use '_' as the iterating variable when the variable is not used again in the code.
-
+| Beginning with the code above, the ``A_action()`` and ``B_action()`` defs have scrolling text added to them.
+| The special `wait` parameter is set to `False` so that the scrolling is non-blocking.
+ 
 .. code-block:: python 
 
     from microbit import *
 
 
     def A_action():
-        # turn on for 3 seconds
+        # turn on device on pin0
+        display.scroll('ON', wait=False, delay=70)
         pin0.write_digital(1)
-        sleep(3000)
-        pin0.write_digital(0)
 
     def B_action():
-        # turn on and off with 0.3 sec delays, 3 times
-        for _ in range(3)
-            pin0.write_digital(1)
-            sleep(500)
-            pin0.write_digital(0)
-            sleep(500)
+        # turn off device on pin0
+        display.scroll('OFF', wait=False, delay=70)
+        pin0.write_digital(0)
 
     def no_action():
+        # helpful indication that abutton A or B needs pressing
         display.scroll('A or B')
 
     while True:
@@ -94,6 +91,94 @@ Building on each definitions
             B_action()
         else:
             no_action()
+
+----
+
+.. admonition:: Tasks
+
+    Modify the def blocks to add the functionality described below.
+
+    #. Modify the A_action() def to turn on the device for 3sec. Modify the B_action() def to on and off with a delay of 0.3sec 3 times using a for loop.
+    #. Modify the A_action() def to play a `c4:8` note 3 tiems with 0.5 sec between them and scroll the play times. Modify the B_action() def to play an `e5:4` note 5 times with 0.5 sec between them and scroll the play times.
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Modify the A_action() def to turn on the device for 3sec. Modify the B_action() def to on and off with a delay of 0.5sec 3 times using a for loop.
+
+                    .. code-block:: python 
+
+                        from microbit import *
+
+
+                        def A_action():
+                            # turn on for 3 seconds
+                            pin0.write_digital(1)
+                            sleep(3000)
+                            pin0.write_digital(0)
+
+                        def B_action():
+                            # turn on and off with 0.5 sec delays, 3 times
+                            for _ in range(3)
+                                pin0.write_digital(1)
+                                sleep(500)
+                                pin0.write_digital(0)
+                                sleep(500)
+
+                        def no_action():
+                            display.scroll('A or B')
+
+                        while True:
+                            if button_a.is_pressed():
+                                A_action()
+                            elif button_b.is_pressed():
+                                B_action()
+                            else:
+                                no_action()
+
+                .. tab-item:: Q2
+
+                    Modify the A_action() def to play a `c4:8` note 3 tiems with 0.5 sec between them and scroll the play times. Modify the B_action() def to play an `e5:4` note 5 times with 0.5 sec between them and scroll the play times.
+
+                    .. code-block:: python
+
+                        from microbit import *
+                        import music
+
+                        speaker.off()
+
+                        def A_action():
+                            speaker.on()
+                            note = 'c4:8'
+                            for n in range(3):
+                                display.scroll(n, wait=False, delay=50)
+                                music.play(note)
+                                sleep(500)
+
+                        def B_action():
+                            speaker.off()
+                            note = 'e5:4'
+                            for n in range(5):
+                                display.scroll(n, wait=False, delay=50)
+                                music.play(note)
+                                sleep(500)
+
+                        def no_action():
+                            display.scroll('A or B')
+
+                        while True:
+                            if button_a.is_pressed():
+                                A_action()
+                            elif button_b.is_pressed():
+                                B_action()
+                            else:
+                                no_action()
 
 ----
 

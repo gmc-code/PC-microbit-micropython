@@ -377,8 +377,8 @@ Display.scroll full syntax
 
     The use of ``\*,`` in the syntax is to indicate that for those parameters after it, ``wait``, ``loop`` and ``monospace``, the arguments must be specified using their keyword. e.g ``wait=True`` is needed; not simply ``True``.
 
-    If ``wait`` is ``True``, this function will block until the animation is
-    finished, otherwise the animation will happen in the background.
+    If ``wait`` is ``True``, this function will block until the animation is finished.
+    If ``wait`` is ``False``, the animation will happen in the background.
 
     If ``loop`` is ``True``, the animation will repeat forever.
 
