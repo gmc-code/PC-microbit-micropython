@@ -4,10 +4,10 @@ EXT: Scroll text
 
 .. py:module:: display
 
-Display.scroll full syntax
+display.scroll full syntax
 ----------------------------------------
 
-| The use of the wait parameter is useful when wanting ot scroll text and paly sounds at the same time.
+| The use of the wait parameter is useful when wanting to scroll text and play sounds at the same time.
 
 .. py:function:: scroll(value, delay=150, \*, wait=True, loop=False, monospace=False)
 

@@ -5,8 +5,10 @@ EXT: Show text
 .. py:module:: display
 
 
-Show full syntax
+display.show full syntax
 ----------------------------------------
+
+| The use of the wait parameter is useful when wanting to show text and play sounds at the same time.
 
 .. py:function:: show(value, delay=400, \*, wait=True, loop=False, clear=False)
 
