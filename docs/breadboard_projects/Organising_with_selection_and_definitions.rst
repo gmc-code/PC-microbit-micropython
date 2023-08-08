@@ -7,7 +7,14 @@ Definitions
 
 | Use definitions for one purpose. 
 | Definitions help break up lengthy code into smaller well defined blocks.
-| Definitions use the same naming conventions as for variables. (See variables in the python section)
+| Definitions use the same naming conventions as for variables. In general, use lowercase letters.
+
+| Rules for Python variable names:
+    • A variable name must start with a letter or the underscore character
+    • A variable name cannot start with a number
+    • A variable name can only contain alpha-numeric characters (A-z, 0-9) and underscores ( _ )
+    • Variable names are case-sensitive (``age``, ``Age`` and ``AGE`` are three different variables)
+
 | Definitions start with the ``def`` keyword.
 | All the code for a definition is indented.
 | Below is an example of a definition that scrolls some text and displays an image.
