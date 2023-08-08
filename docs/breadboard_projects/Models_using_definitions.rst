@@ -7,6 +7,7 @@ Moving code to definitions
 -----------------------------
 
 | Beginning with the code below, restructure it to use definitions.
+| Reorganizing the code is called **refactoring**.
 
 
 .. code-block:: python 
