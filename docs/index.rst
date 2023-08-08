@@ -45,11 +45,11 @@ Index:
     :caption: Definition_blocks
     :numbered:
 
-    breadboard_projects/Organising_with_selection_and_definitions.rst
-    breadboard_projects/Models_using_definitions.rst
-    breadboard_projects/Combined_iteration_using_zip.rst
+    microbit_definitions/functions.rst
+    microbit_definitions/Organising_with_selection_and_definitions.rst
+    microbit_definitions/Models_using_definitions.rst
+    microbit_definitions/Combined_iteration_using_zip.rst
  
-
 
  
 .. toctree::
@@ -62,6 +62,7 @@ Index:
     lessons/Mu_editor_Errors.rst
     lessons/while_True_loops.rst
     lessons/Scroll_text.rst
+    lessons/Scroll_text_2.rst
     lessons/Show_text.rst
     lessons/Sleep.rst
     lessons/Built_in_images.rst
