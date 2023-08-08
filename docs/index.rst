@@ -32,6 +32,13 @@ Index:
     breadboards/Piezo_Buzzer_and_music.rst
 
 
+.. toctree::
+    :maxdepth: 2
+    :caption: BreadBoard_projects
+    :numbered:
+
+    breadboard_projects/Combined_models.rst
+
 
 .. toctree::
     :maxdepth: 2
@@ -42,14 +49,6 @@ Index:
     breadboard_projects/Models_using_definitions.rst
     breadboard_projects/Combined_iteration_using_zip.rst
  
-
-.. toctree::
-    :maxdepth: 2
-    :caption: BreadBoard_projects
-    :numbered:
-
-    breadboard_projects/Combined_models.rst
-    breadboard_projects/Models_using_definitions.rst
 
 
  
