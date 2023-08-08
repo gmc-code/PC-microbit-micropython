@@ -1,5 +1,5 @@
 ====================================================
-While loops
+EXT: While loops
 ====================================================
 
 | See: https://www.w3schools.com/python/python_while_loops.asp
@@ -242,3 +242,4 @@ Step size
                             display.scroll(i, delay=50)
                             i -= 2
                         sleep(1000)
+
