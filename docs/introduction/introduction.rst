@@ -125,6 +125,7 @@ For an introduction to python see:
 
 * https://docs.python.org/3.9/tutorial/introduction.html
 * https://docs.python.org/3.10/tutorial/index.html
+* https://docs.python.org/3.11/tutorial/index.html
 * https://www.w3schools.com/python/default.asp
 * https://www.programiz.com/python-programming
 * https://www.geeksforgeeks.org/python-programming-language/?ref=shm
