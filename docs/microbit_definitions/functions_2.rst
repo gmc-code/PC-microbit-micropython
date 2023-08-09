@@ -76,7 +76,7 @@ Functions with default parameters
 
 .. admonition:: Tasks
 
-    #. Write a function called ``player_health`` with 2 default parameters for their user_name and their game health status and display an example using it.
+    #. Write a function called ``player_health`` with 2 default parameters for their user_name and their game health status and display an example using the defaults and and example passing values.
 
     .. dropdown::
             :icon: codescan
@@ -87,7 +87,7 @@ Functions with default parameters
 
                 .. tab-item:: Q1
 
-                    Write a function called ``player_health`` with 2 default parameters for their user_name and their game health status and display an example using it.
+                    Write a function called ``player_health`` with 2 default parameters for their user_name and their game health status and display an example using the defaults and and example passing values.
 
                     .. code-block:: python
 
