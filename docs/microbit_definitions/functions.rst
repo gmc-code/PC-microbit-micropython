@@ -385,7 +385,7 @@ Allowing for a variable number of arguments
 Spy codes
 ---------------
 
-| A code below converts a code string into a message string.
+| The code below converts a code string into a message string.
 | This can be refactored to use a defintion block with parameters that might make it more useful.
 
 .. code-block:: python
@@ -525,3 +525,11 @@ Spy codes
                         while True:
                             display.scroll(code_message, delay=50)
                             sleep(300)
+
+.. admonition:: Exercise
+
+    #. Here is a code message. "EWWL SL LZW KSXWZGMKW. TJAFY LZW HSUCSYW. OSLUZ QGMJ TSUC." The shifter value has been lost. Can you try out all shifter values to read the message?
+
+
+
+
