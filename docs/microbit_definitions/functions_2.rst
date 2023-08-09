@@ -76,7 +76,7 @@ Functions with default parameters
 
 .. admonition:: Tasks
 
-    #. Write a function called ``player_health`` with 2 default parameters for their user_name and their game health status and display an example using the defaults and and example passing values.
+    #. Write a function called ``player_health`` with 2 default parameters for their user_name and their game health status and display an example using the defaults and an example passing values.
 
     .. dropdown::
             :icon: codescan
@@ -87,15 +87,15 @@ Functions with default parameters
 
                 .. tab-item:: Q1
 
-                    Write a function called ``player_health`` with 2 default parameters for their user_name and their game health status and display an example using the defaults and and example passing values.
+                    Write a function called ``player_health`` with 2 default parameters for their user_name and their game health status and display an example using the defaults and an example passing values.
 
                     .. code-block:: python
 
                         from microbit import *
 
 
-                        def player_health(name="novice", health=100):
-                            display.scroll(name + "has health of " + str(health), delay=80)
+                        def player_health(user_name="novice", health=100):
+                            display.scroll(user_name + "has health of " + str(health), delay=80)
 
 
                         player_health()
