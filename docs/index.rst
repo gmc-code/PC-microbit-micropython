@@ -46,6 +46,7 @@ Index:
     :numbered:
 
     microbit_definitions/functions.rst
+    microbit_definitions/functions_2.rst
     microbit_definitions/Organising_with_selection_and_definitions.rst
     microbit_definitions/Models_using_definitions.rst
     microbit_definitions/Combined_iteration_using_zip.rst
@@ -91,8 +92,6 @@ Index:
 
     lessons/Practice_tasks_1_Answers.rst
     lessons/Practice_tasks_2_Answers.rst
-
-
 
 
 .. toctree::
