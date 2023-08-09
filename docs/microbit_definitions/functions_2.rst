@@ -142,11 +142,11 @@ Order with named parameters
                         from microbit import *
 
 
-                        def player_health(name="novice", health=100):
-                            display.scroll(name + "has health of " + str(health), delay=80)
+                        def player_health(user_name="novice", health=100):
+                            display.scroll(user_name + "has health of " + str(health), delay=80)
 
 
-                        player_health(health=85, name="speedy")
+                        player_health(health=85, user_name="speedy")
 
 ----
 
