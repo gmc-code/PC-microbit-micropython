@@ -18,18 +18,6 @@ for-loops with strings
             display.scroll(character)
             sleep(300)
 
-| There is no need to use a for-loop on a string if the only purpose is to display the string.
-| This could be done more simply using htthee code below.
-
-.. code-block:: python
-
-    from microbit import *
-
-    welcome_string = 'Hello'
-    while True:
-        display.scroll(welcome_string)
-        sleep(300)
-
 | Using a for-loop allows other actions on each character or between each character in the string.
 
 | The code below scrolls each character in the string ``Hello`` and puts another character between them.
@@ -51,7 +39,9 @@ for-loops with strings
 .. admonition:: Tasks
 
     #. Write a for-loop to scroll each letter in 'ace' individually and show a "-" between them.
-    #. Write a for-loop to scroll each digit in '123' individually and show a "*" between them.
+    #. Write a for-loop to scroll each digit in '123' individually and show a "*" between them. 
+    #. Write a for-loop to scroll each letter in the word 'Hello' and show a happy face image after each letter.   
+    #. Write a for-loop to scroll each letter in 'christmas' and show a XMAS image after each letter.
 
     .. dropdown::
         :icon: codescan
@@ -92,6 +82,43 @@ for-loops with strings
                             display.show(gap_character)
                             sleep(300)
 
+            .. tab-item:: Q3
+
+                Write a for-loop to scroll each letter in the word 'Hello' and show a happy face image after each letter.  
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    # A string with the word "Christmas"
+                    word = "Christmas"
+
+                    # Loop through each letter in the word
+                    for letter in word:
+                        # Scroll the letter on the display quickly
+                        display.scroll(letter, delay=50)
+                        # Show the XMAS image for 300 ms
+                        display.show(Image.XMAS)
+                        sleep(300)
+
+            .. tab-item:: Q4
+
+                Write a for-loop to scroll each letter in 'christmas' individually and show a XMAS image between them.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    # A string with the word "Christmas"
+                    word = "Christmas"
+
+                    # Loop through each letter in the word
+                    for letter in word:
+                        # Scroll the letter on the display quickly
+                        display.scroll(letter, delay=50)
+                        # Show the XMAS image for 300 ms
+                        display.show(Image.XMAS)
+                        sleep(300)
 
 ----
 
