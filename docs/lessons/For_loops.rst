@@ -90,15 +90,15 @@ for-loops with strings
 
                     from microbit import *
 
-                    # A string with the word "Christmas"
-                    word = "Christmas"
+                    # A string with the word "Hello"
+                    word = "Hello"
 
                     # Loop through each letter in the word
                     for letter in word:
                         # Scroll the letter on the display quickly
                         display.scroll(letter, delay=50)
-                        # Show the XMAS image for 300 ms
-                        display.show(Image.XMAS)
+                        # Show the HAPPY image for 300 ms
+                        display.show(Image.HAPPY)
                         sleep(300)
 
             .. tab-item:: Q4
@@ -122,80 +122,6 @@ for-loops with strings
 
 ----
 
-Secret codes using for-loops with strings
------------------------------------------
-
-| What does this code do? 
-| Guess what the displayed text will be.
-
-.. code-block:: python
-
-    from microbit import *
-
-    secret_string = 'hqz'
-    while True:
-        for character in secret_string:
-            # convert the string character to an ascii number
-            asciinum = ord(character)
-            # subtract 2 from the acscii number
-            asciinum -=2
-            # convert the ascii number to a string character
-            newchar = chr(asciinum)
-            # scroll the secret character
-            display.scroll(newchar, delay=50)
-        sleep(300)
-
-----
-
-.. admonition:: Tasks
-
-    #. Write a for-loop to scroll each letter in 'ace' individually and show a "-" between them.
-    #. Write a for-loop to scroll each digit in '123' individually and show a "*" between them. 
-
-
-    .. dropdown::
-        :icon: codescan
-        :color: primary
-        :class-container: sd-dropdown-container
-
-        .. tab-set::
-
-            .. tab-item:: Q1
-
-                Write a for-loop to scroll each letter in 'ace' individually and show a "-" between them.
-
-                .. code-block:: python
-
-                    from microbit import *
-
-                    string = 'ace'
-                    gap_character = "-"
-                    while True:
-                        for character in string:
-                            display.scroll(character)
-                            display.show(gap_character)
-                            sleep(300)
-
-            .. tab-item:: Q2
-
-                Write a for-loop to scroll each digit in '123' individually and show a "*" between them.
-
-                .. code-block:: python
-
-                    from microbit import *
-
-                    string = '123'
-                    gap_character = "*"
-                    while True:
-                        for character in string:
-                            display.scroll(character)
-                            display.show(gap_character)
-                            sleep(300)
-
-
-
-----
-
 for-loops with lists
 ----------------------------------------
 
@@ -206,7 +132,7 @@ for-loops with lists
 
     from microbit import *
 
-    tennis_champs = ['Novak', 'Roger', 'Rafael']
+    tennis_champs = ['Novak', 'Rafael', 'Roger']
     while True:
         for tennis_star in tennis_champs:
             display.scroll(tennis_star, delay=80)
@@ -270,22 +196,8 @@ for-loops with lists
 
 ----
 
-Advanced: Using for-loops with lists
---------------------------------------
-
-| What does this code do?
-
-
-.. code-block:: python
-
-    from microbit import *
-
-    tennis_champs = ['Novak', 'Roger', 'Rafael']
-    while True:
-        for tennis_star in tennis_champs:
-            display.scroll(tennis_star[0:3], delay=80)
-        sleep(300)
-
+Conditions within a for-loops with lists
+-----------------------------------------------
 
 | What does this code do?
 
