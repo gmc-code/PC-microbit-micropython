@@ -376,7 +376,7 @@ If - elif - else
  
 ----
 
-If - elif - elif - else
+If - elif - elif - else via logical and
 ----------------------------------------
 
 .. image:: images/if_elif_elif_else.png
