@@ -473,7 +473,7 @@ Spy codes
 
 .. admonition:: Exercise
 
-    #. Here is a code message. "EWWL SL LZW KSXWZGMKW. TJAFY LZW HSUCSYW. OSLUZ QGMJ TSUC." The shifter value has been lost. Can you try out all shifter values to read the message?
+    #. Here is a code message. "EWWL SL LZW KSXWZGMKW. TJAFY LZW HSUCSYW. OSLUZ QGMJ TSUC." The shifter value has been lost. Can you try out all shifter values to read the message? Can you find the value of the shifter and use it to decode this second message: "LZW KLGJE AK UGEAFY."
 
 
 

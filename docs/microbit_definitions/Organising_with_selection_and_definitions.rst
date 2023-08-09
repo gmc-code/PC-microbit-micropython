@@ -5,11 +5,11 @@ Organising with selection and definitions
 Definitions
 ----------------------------------------
 
-| Use definitions for one purpose. 
 | Definitions help break up lengthy code into smaller well defined blocks.
 | Definitions use the same naming conventions as for variables. In general, use lowercase letters.
 
 | Rules for Python variable names:
+
     • A variable name must start with a letter or the underscore character
     • A variable name cannot start with a number
     • A variable name can only contain alpha-numeric characters (A-z, 0-9) and underscores ( _ )
