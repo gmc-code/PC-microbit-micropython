@@ -6,23 +6,27 @@ For loops with strings
 ----------------------------------------
 
 | Python can loop through each character in a string and do something with it.
-| ``for character in welcome_string`` takes each character in the string ``welcome_string`` and puts it in the variable ``letter``.
+| ``for character in welcome_string`` takes each character in the string ``welcome_string`` and puts it in the variable ``character``.
 
 .. code-block:: python
 
     from microbit import *
 
-    welcome_string = 'Hi Mb user'
+    welcome_string = 'Hello'
     while True:
         for character in welcome_string:
             display.show(character)
             sleep(300)
 
+| There is no need to use a for loop on a strint if the only purpose is to display the string.
+| Using a for loop allows other actions on each character or between each character in the string.
+
+
 ----
 
 .. admonition:: Tasks
 
-    #. Write a for-loop to scroll each letter in 'winner' individually.
+    #. Write a for-loop to scroll each letter in 'ace' individually.
     #. Write a for-loop to scroll each digit in 2023 individually.
 
     .. dropdown::
@@ -34,7 +38,7 @@ For loops with strings
 
             .. tab-item:: Q1
 
-                Write a for-loop to scroll each letter in 'winner' individually.
+                Write a for-loop to scroll each letter in 'ace' individually.
 
                 .. code-block:: python
 
@@ -62,9 +66,10 @@ For loops with strings
 
 ----
 
-Advanced: Using for-loops  with strings
+Secret codes using for-loops with strings
 -----------------------------------------
 
+| The above 
 | What does this code do?
 
 .. code-block:: python

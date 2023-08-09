@@ -67,6 +67,7 @@ Index:
     lessons/Show_text_2.rst
     lessons/Sleep.rst
     lessons/Built_in_images.rst
+    lessons/Built_in_images_2rst
     lessons/Buttons_and_selection.rst
     lessons/While_loops.rst
     lessons/For_loops.rst
