@@ -19,6 +19,17 @@ For loops with strings
             sleep(300)
 
 | There is no need to use a for loop on a string if the only purpose is to display the string.
+| This could be done more simply using htthee code below.
+
+.. code-block:: python
+
+    from microbit import *
+
+    welcome_string = 'Hello'
+    while True:
+        display.scroll(welcome_string)
+        sleep(300)
+
 | Using a for loop allows other actions on each character or between each character in the string.
 
 | The code below scrolls each character in the string ``Hello`` and puts another character between them.
@@ -40,7 +51,7 @@ For loops with strings
 .. admonition:: Tasks
 
     #. Write a for-loop to scroll each letter in 'ace' individually and show a "-" between them.
-    #. Write a for-loop to scroll each digit in 2023 individually and show a "*" between them.
+    #. Write a for-loop to scroll each digit in '123' individually and show a "*" between them.
 
     .. dropdown::
         :icon: codescan
@@ -67,13 +78,13 @@ For loops with strings
 
             .. tab-item:: Q2
 
-                Write a for-loop to scroll each digit in 2023 individually and show a "*" between them.
+                Write a for-loop to scroll each digit in '123' individually and show a "*" between them.
 
                 .. code-block:: python
 
                     from microbit import *
 
-                    string = '2023'
+                    string = '123'
                     gap_character = "*"
                     while True:
                         for character in string:
@@ -94,12 +105,16 @@ Secret codes using for-loops with strings
 
     from microbit import *
 
-    welcome_string = 'hqz'
+    secret_string = 'hqz'
     while True:
-        for character in welcome_string:
+        for character in secret_string:
+            # convert the string character to an ascii number
             asciinum = ord(character)
+            # subtract 2 from the acscii number
             asciinum -=2
+            # convert the ascii number to a string character
             newchar = chr(asciinum)
+            # scroll the secret character
             display.scroll(newchar, delay=50)
         sleep(300)
 
