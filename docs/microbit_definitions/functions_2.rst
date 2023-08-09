@@ -24,6 +24,34 @@ Functions with parameters
 
 ----
 
+.. admonition:: Tasks
+
+    #. Write a function called ``ask_play_again`` with a parameter for their player_name, and display an example using it.
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Write a function called ``ask_play_again`` with a parameter for their player_name, and display an example using it.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+
+                        def ask_play_again(player_name):
+                            display.scroll("play again " + player_name + "?", delay=80)
+
+
+                        ask_play_again("champ")
+
+----
+
 Functions with default parameters
 -----------------------------------------------
 
@@ -44,6 +72,34 @@ Functions with default parameters
     player_info()
     player_info("Rookie", 100)
 
+----
+
+.. admonition:: Tasks
+
+    #. Write a function called ``player_health`` with 2 default parameters for their user_name and their game health status and display an example using it.
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Write a function called ``player_health`` with 2 default parameters for their user_name and their game health status and display an example using it.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+
+                        def player_health(name="novice", health=100):
+                            display.scroll(name + "has health of " + str(health), delay=80)
+
+
+                        player_health()
+                        player_health("speedy", 85)
 
 ----
 
@@ -63,6 +119,34 @@ Order with named parameters
 
     player_info(name="Rookie", score=10)
     player_info(score=10, name="Rookie")
+
+----
+
+.. admonition:: Tasks
+
+    #. Write a function called ``player_health`` with 2 default parameters for their user_name and their game health status and display an example using it with the parameter order mixed up.
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Write a function called ``player_health`` with 2 default parameters for their user_name and their game health status and display an example using it with the parameter order mixed up.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+
+                        def player_health(name="novice", health=100):
+                            display.scroll(name + "has health of " + str(health), delay=80)
+
+
+                        player_health(health=85, name="speedy")
 
 ----
 
