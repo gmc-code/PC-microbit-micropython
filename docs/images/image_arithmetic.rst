@@ -332,7 +332,7 @@ Image of a single string character
 
                         # A function to check if a number is prime
                         def is_odd(n):
-                            # Corner cases
+                            # remainder from dividing by 2 is 1 for odd numbers
                             if n % 2 == 1:
                                 return True
                             else:
@@ -346,9 +346,9 @@ Image of a single string character
                             # Loop through all pixels
                             for x in range(5):
                                 for y in range(5):
-                                    # If the pixel is not at level 9, set it to level 2
+                                    # If the pixel is not at level 9, set it to level 6
                                     if img.get_pixel(x, y) != 9:
-                                        img.set_pixel(x, y, 5)
+                                        img.set_pixel(x, y, 6)
                             # Display the image for 500 ms
                             display.show(img)
                             sleep(1000)
