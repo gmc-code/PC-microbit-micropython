@@ -168,7 +168,36 @@ Parameter order: positional before default
     player_info("novice")
     player_info("Rookie", 100)
 
+----
 
+.. admonition:: Tasks
+
+    #. Write a function called ``player_health`` which takes the user_name as the first parameter and their game health status as a default parameter  and display an example using it with and without passing a value to the default parameter.
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Write a function called ``player_health`` which takes the user_name as the first parameter and their game health status as a default parameter  and display an example using it with and without passing a value to the default parameter.
+
+                    
+                    .. code-block:: python
+
+                        from microbit import *
+
+
+                        def player_health(user_name, health=100):
+                            display.scroll(user_name + "has health of " + str(health), delay=80)
+
+
+                        player_health("speedy")
+                        player_health("speedy", 85)
+            
 ----
 
 .. admonition:: Tasks
