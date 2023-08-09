@@ -6,7 +6,7 @@ For loops with strings
 ----------------------------------------
 
 | Python can loop through each character in a string and do something with it.
-| ``for character in welcome_string`` takes each character in the string ``welcome_string`` and puts it in the variable ``character``.
+| ``for character in welcome_string`` takes each character in the string ``Hello`` and puts it in the variable ``character``.
 
 .. code-block:: python
 
@@ -15,19 +15,32 @@ For loops with strings
     welcome_string = 'Hello'
     while True:
         for character in welcome_string:
-            display.show(character)
+            display.scroll(character)
             sleep(300)
 
-| There is no need to use a for loop on a strint if the only purpose is to display the string.
+| There is no need to use a for loop on a string if the only purpose is to display the string.
 | Using a for loop allows other actions on each character or between each character in the string.
 
+| The code below scrolls each character in the string ``Hello`` and puts another character between them.
+
+.. code-block:: python
+
+    from microbit import *
+
+    welcome_string = 'Hello'
+    gap_character = "-"
+    while True:
+        for character in welcome_string:
+            display.scroll(character)
+            display.show(gap_character)
+            sleep(300)
 
 ----
 
 .. admonition:: Tasks
 
-    #. Write a for-loop to scroll each letter in 'ace' individually.
-    #. Write a for-loop to scroll each digit in 2023 individually.
+    #. Write a for-loop to scroll each letter in 'ace' individually and show a "-" between them.
+    #. Write a for-loop to scroll each digit in 2023 individually and show a "*" between them.
 
     .. dropdown::
         :icon: codescan
@@ -38,31 +51,36 @@ For loops with strings
 
             .. tab-item:: Q1
 
-                Write a for-loop to scroll each letter in 'ace' individually.
+                Write a for-loop to scroll each letter in 'ace' individually and show a "-" between them.
 
                 .. code-block:: python
 
                     from microbit import *
 
-                    string = 'winner'
+                    string = 'ace'
+                    gap_character = "-"
                     while True:
                         for character in string:
                             display.scroll(character)
+                            display.show(gap_character)
                             sleep(300)
 
             .. tab-item:: Q2
 
-                Write a for-loop to scroll each digit in 2023 individually.
+                Write a for-loop to scroll each digit in 2023 individually and show a "*" between them.
 
                 .. code-block:: python
 
                     from microbit import *
 
                     string = '2023'
+                    gap_character = "*"
                     while True:
                         for character in string:
                             display.scroll(character)
+                            display.show(gap_character)
                             sleep(300)
+
 
 ----
 
