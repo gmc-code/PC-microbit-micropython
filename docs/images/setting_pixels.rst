@@ -165,7 +165,7 @@ Set pixel
 Pixel rows and columns
 ------------------------
 
-| For loops can be used to turn on all the pixels in a row or colum.
+| for-loops can be used to turn on all the pixels in a row or colum.
 
 | The code below sets the brightness to 9 for the first column, column 0.
 
@@ -240,7 +240,7 @@ Pixel rows and columns
 Pixel rows and columns lists
 ------------------------------
 
-| For loops can be used to turn on pixels based on values in lists.
+| for-loops can be used to turn on pixels based on values in lists.
 | Each row will have the same patern of pixels.
 | Each column will have the same patern of pixels.
 | A variable, ``xlist``, can store the columns numbers.

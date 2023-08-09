@@ -34,7 +34,7 @@ Fill
     | The fill method applies the fill in-place to the image.
     | Don't use with built-in images since they are read-only and cannot be altered.
 
-| The code below sets all the pixels to a bightness of 6.
+| The code below sets all the pixels to a brightness of 6.
 
 .. code-block:: python
 
@@ -50,7 +50,7 @@ Fill
 
     #. Create a blank image and fill it with brightness of 9.
     #. Create a blank image and use a for-loop to set its brightness from 1 to 9 in less than 2 seconds using the fill method.
-    #. Create an animation using the fill method in which the brighness of all the pixels goes form 0 to 9 and back to 0 in less than 2 seconds.
+    #. Create an animation using the fill method in which the brightness of all the pixels goes from 0 to 9 and back to 0 in less than 2 seconds.
 
     .. dropdown::
             :icon: codescan
@@ -86,9 +86,9 @@ Fill
                             display.show(img)
                             sleep(200)
 
-                .. tab-item:: Q2
+                .. tab-item:: Q3
 
-                    Create an animation using the fill method in which the brighness of all the pixels goes form 0 to 9 and back to 0 in less than 2 seconds.
+                    Create an animation using the fill method in which the brightness of all the pixels goes from 0 to 9 and back to 0 in less than 2 seconds.
 
                     .. code-block:: python
 
@@ -104,6 +104,7 @@ Fill
                             img.fill(i)
                             display.show(img)
                             sleep(100)
+
 
 ----
 
@@ -277,6 +278,7 @@ Image of a single string character
 
     #. Modify the code to create an image of 3.
     #. Modify the code to create images of "m" and an inverted "m".
+    #. Display the numbers from 1 to 9 and fill in the unused pixels at brightness 6 if the number is odd.
 
     .. dropdown::
             :icon: codescan
@@ -317,6 +319,50 @@ Image of a single string character
                             elif button_b.is_pressed():
                                 display.show(img_m_inv)
                             sleep(200)
+
+
+                .. tab-item:: Q3
+
+                    Display the numbers from 1 to 9 and fill in the unused pixels at brightness 6 if the number is odd.
+
+                    .. code-block:: python
+
+                        from microbit import *
+                        import math
+
+                        # A function to check if a number is prime
+                        def is_odd(n):
+                            # Corner cases
+                            if n % 2 == 1:
+                                return True
+                            else:
+                                return False
+
+
+                        # A function to display a number with all pixels filled at level 2 unless already at 9
+                        def display_with_fill(n):
+                            # Create an image object with the number
+                            img = Image(str(n))
+                            # Loop through all pixels
+                            for x in range(5):
+                                for y in range(5):
+                                    # If the pixel is not at level 9, set it to level 2
+                                    if img.get_pixel(x, y) != 9:
+                                        img.set_pixel(x, y, 5)
+                            # Display the image for 500 ms
+                            display.show(img)
+                            sleep(1000)
+
+
+                        # Loop through the numbers from 1 to 9
+                        for n in range(1, 10):
+                            # If the number is prime, display it with fill
+                            if is_odd(n):
+                                display_with_fill(n)
+                            # Otherwise, just display the number for 500 ms
+                            else:
+                                display.show(n)
+                                sleep(500)
 
 ----
 

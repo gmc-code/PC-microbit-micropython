@@ -1,5 +1,5 @@
 ====================================================
-For loops using the range function
+for-loops using the range function
 ====================================================
 
 See: https://www.w3schools.com/python/python_for_loops.asp
@@ -256,7 +256,7 @@ Using range to count down with a negative step size
 
 ----
 
-Advanced: nested for loops with range function
+Advanced: nested for-loops with range function
 -------------------------------------------------
 
 | What does this code do?

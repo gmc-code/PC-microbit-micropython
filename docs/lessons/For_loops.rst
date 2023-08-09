@@ -1,8 +1,8 @@
 ====================================================
-For loops
+for-loops
 ====================================================
 
-For loops with strings
+for-loops with strings
 ----------------------------------------
 
 | Python can loop through each character in a string and do something with it.
@@ -18,7 +18,7 @@ For loops with strings
             display.scroll(character)
             sleep(300)
 
-| There is no need to use a for loop on a string if the only purpose is to display the string.
+| There is no need to use a for-loop on a string if the only purpose is to display the string.
 | This could be done more simply using htthee code below.
 
 .. code-block:: python
@@ -30,7 +30,7 @@ For loops with strings
         display.scroll(welcome_string)
         sleep(300)
 
-| Using a for loop allows other actions on each character or between each character in the string.
+| Using a for-loop allows other actions on each character or between each character in the string.
 
 | The code below scrolls each character in the string ``Hello`` and puts another character between them.
 
@@ -121,7 +121,7 @@ Secret codes using for-loops with strings
 
 ----
 
-For loops with lists
+for-loops with lists
 ----------------------------------------
 
 | Python can loop through each element in a list and do something with it.
@@ -195,7 +195,7 @@ For loops with lists
 
 ----
 
-Advanced: Using for loops with lists
+Advanced: Using for-loops with lists
 --------------------------------------
 
 | What does this code do?
@@ -230,7 +230,7 @@ Advanced: Using for loops with lists
 
 ----
 
-For loops with mixed lists
+for-loops with mixed lists
 ----------------------------------------
 
 | Mixed lists can be used with **display.show**.
@@ -297,7 +297,7 @@ For loops with mixed lists
 
 ----
 
-Nested For loops
+Nested for-loops
 ----------------------------------------
 
 | A loop within another loop within is called a nested loop.

@@ -98,7 +98,7 @@ Building on each definition
 
     Modify the def blocks to add the functionality described below.
 
-    #. Modify the A_action() def to turn on the device for 3sec. Modify the B_action() def to on and off with a delay of 0.3sec 3 times using a for loop.
+    #. Modify the A_action() def to turn on the device for 3sec. Modify the B_action() def to on and off with a delay of 0.3sec 3 times using a for-loop.
     #. Modify the A_action() def to play a `c4:8` note 3 tiems with 0.5 sec between them and scroll the play times. Modify the B_action() def to play an `e5:4` note 5 times with 0.5 sec between them and scroll the play times.
 
     .. dropdown::
@@ -110,7 +110,7 @@ Building on each definition
 
                 .. tab-item:: Q1
 
-                    Modify the A_action() def to turn on the device for 3sec. Modify the B_action() def to on and off with a delay of 0.5sec 3 times using a for loop.
+                    Modify the A_action() def to turn on the device for 3sec. Modify the B_action() def to on and off with a delay of 0.5sec 3 times using a for-loop.
 
                     .. code-block:: python 
 
