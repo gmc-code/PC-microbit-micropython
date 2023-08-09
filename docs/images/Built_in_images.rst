@@ -87,7 +87,7 @@ Display.show a built-in Image
 Flashing Image
 ----------------------------------------
 
-| When a sleep is used along wiht clearing the display, an image can be made to flash.
+| When a sleep is used along with clearing the display, an image can be made to flash.
 | The code below flashes a the built-in heart image 
 
 .. code-block:: python

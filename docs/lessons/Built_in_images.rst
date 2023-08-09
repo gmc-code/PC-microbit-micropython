@@ -6,7 +6,7 @@ Built-in images
 | e.g ``Image.HEART``
 | The **Image** object must have a capital **I**.
 | The built-in image name must be in capitals. e.g **HEART** not **heart**.
-| No quotation marks are used. e.g ``Image.HEART`` not ``**'Image.HEART'**``.
+| No quotation marks are used. e.g ``Image.HEART`` not 'Image.HEART'.
 | The same syntax that was used to show text can be used for images.
 | In Mu editor, when typing ``Image.``, as soon as the stop is typed, a drop list of images will be displayed to allow selection of an image.
 
@@ -87,7 +87,7 @@ Display.show a built-in Image
 Flashing an Image
 ----------------------------------------
 
-| When a sleep is used along wiht clearing the display, an image can be made to flash.
+| When a sleep is used along with clearing the display, an image can be made to flash.
 | The code below flashes a the built-in heart image.
 
 .. code-block:: python
