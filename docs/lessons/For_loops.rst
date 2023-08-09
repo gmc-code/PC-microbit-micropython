@@ -125,8 +125,8 @@ for-loops with strings
 Secret codes using for-loops with strings
 -----------------------------------------
 
-| The above 
-| What does this code do?
+| What does this code do? 
+| Guess what the displayed text will be.
 
 .. code-block:: python
 
@@ -144,6 +144,54 @@ Secret codes using for-loops with strings
             # scroll the secret character
             display.scroll(newchar, delay=50)
         sleep(300)
+
+----
+
+.. admonition:: Tasks
+
+    #. Write a for-loop to scroll each letter in 'ace' individually and show a "-" between them.
+    #. Write a for-loop to scroll each digit in '123' individually and show a "*" between them. 
+
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Write a for-loop to scroll each letter in 'ace' individually and show a "-" between them.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    string = 'ace'
+                    gap_character = "-"
+                    while True:
+                        for character in string:
+                            display.scroll(character)
+                            display.show(gap_character)
+                            sleep(300)
+
+            .. tab-item:: Q2
+
+                Write a for-loop to scroll each digit in '123' individually and show a "*" between them.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    string = '123'
+                    gap_character = "*"
+                    while True:
+                        for character in string:
+                            display.scroll(character)
+                            display.show(gap_character)
+                            sleep(300)
+
 
 
 ----
