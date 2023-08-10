@@ -31,6 +31,6 @@ display.scroll full syntax
 
 .. admonition:: Exercise
 
-    1. Experiment with the ``scroll`` named parameters by trying them out with True or False to see what effect they have.
+    1. Experiment with the named parameters by trying them out with True or False to see what effect they have.
     2. Experiment with scrolling text using ``wait=False`` and playing sounds.
 

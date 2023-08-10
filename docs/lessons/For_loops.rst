@@ -156,7 +156,7 @@ for-loops with lists
 
 .. admonition:: Tasks
 
-    #. Write a for-loop to scroll each name in the list ``['Ann', 'Liv', 'Sue']``.
+    #. Write a for-loop to scroll each car in the list ``['Lotus', 'Shelby', 'Porsche']``.
     #. Write a for-loop to scroll each number in the list ``[1, 2, 3, 5, 8]``.
 
     .. dropdown::
@@ -168,16 +168,16 @@ for-loops with lists
 
             .. tab-item:: Q1
 
-                Write a for-loop to scroll each name in the list ``['Ann', 'Liv', 'Sue']``.
+                Write a for-loop to scroll each car in the list ``['Lotus', 'Shelby', 'Porsche']``.
 
                 .. code-block:: python
 
                     from microbit import *
 
-                    names_list = ['Ann', 'Liv', 'Sue']
+                    cars_list = ['Lotus', 'Shelby', 'Porsche']
                     while True:
-                        for name in names_list:
-                            display.scroll(name)
+                        for car in cars_list:
+                            display.scroll(car)
                         sleep(300)
 
             .. tab-item:: Q2
@@ -196,11 +196,12 @@ for-loops with lists
 
 ----
 
-Conditions within a for-loops with lists
+Conditions within for-loops with lists
 -----------------------------------------------
 
 | What does this code do?
-
+| ``test_num % num`` gets the remainder from division.
+| Which numbers in the list are factors of 42?
 
 .. code-block:: python
 
