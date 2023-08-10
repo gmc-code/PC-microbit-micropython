@@ -113,8 +113,8 @@ Nested for-loops
 
 .. admonition:: Tasks
 
-    #. Write a for-loop that shows the result from multiplying each number in the list, ``[3, 5, 7]`` by 5, using a variable for each part of the multiplication.
-    #. Write a nested for-loop that finds the sum of every different combination of two numbers from the two lists: ``[2, 4, 6]`` and ``[3, 5, 7]``.
+    #. Write a nested for-loop that finds the sum of every different combination of one number from each of the two lists: ``[1, 2, 3]`` and ``[6, 5, 4]``.
+    #. Write a nested for-loop that scrolls the 2 digit number formed from the joining of every different combination of one number from each of the two lists: ``[1, 2, 3]`` and ``[4, 5]``, keeping the digit from the first list first.
 
     .. dropdown::
         :icon: codescan
@@ -125,31 +125,32 @@ Nested for-loops
 
             .. tab-item:: Q1
 
-                Write a for-loop that shows the result from **multiplying** each number in the list, ``[3, 5, 7]`` by 5, using a variable for each part of the multiplication.
+                Write a nested for-loop that scrolls the sum of every different combination of one number from each of the two lists: ``[1, 2, 3]`` and ``[6, 5, 4]``.
 
                 .. code-block:: python
 
                     from microbit import *
 
-                    nums_1_list = [3, 5, 7]
-                    num_2 = 5
-                    while True:
-                        for num_1 in nums_1_list:
-                            display.scroll(num_1 * num_2, delay=80)
-
-            .. tab-item:: Q2
-
-                Write a nested for-loop that finds the **sum** of every different combination of two numbers from the two lists: ``[2, 4, 6]`` and ``[3, 5, 7]``.
-
-                .. code-block:: python
-
-                    from microbit import *
-
-                    nums_1_list = [2, 4, 6]
-                    nums_2_list = [3, 5, 7]
+                    nums_1_list = [1, 2, 3]
+                    nums_2_list = [6, 5, 4]
                     while True:
                         for num_1 in nums_1_list:
                             for num_2 in nums_2_list:
-                                display.scroll(num_1 + num_2, delay=80)
+                                display.scroll(num_1 + num_2, delay=50)
+
+            .. tab-item:: Q2
+
+                Write a nested for-loop that scrolls the 2 digit number formed from the joining of every different combination of one number from each of the two lists: ``[1, 2, 3]`` and ``[4, 5]``, keeping the digit from the first list first.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    nums_1_list = [1, 2, 3]
+                    nums_2_list = [4, 5]
+                    while True:
+                        for num_1 in nums_1_list:
+                            for num_2 in nums_2_list:
+                                display.scroll(str(num_1) + str(num_2), delay=50)
 
 
