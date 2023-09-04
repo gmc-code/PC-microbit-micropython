@@ -129,13 +129,6 @@ Index:
     lessons2/movement.rst
 
 
-.. toctree::
-    :maxdepth: 2
-    :caption: Python for microbit
-    :numbered:
-
-    python_for_microbit/functions.rst
-
 
 .. toctree::
     :maxdepth: 2
