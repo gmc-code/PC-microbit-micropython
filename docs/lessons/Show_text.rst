@@ -66,7 +66,7 @@ To show the float, ``3.14``, one digit at a time on the display, use ``display.s
                     from microbit import *
 
                     while True:
-                        display.show("Hughes")
+                        display.show("blue")
 
             .. tab-item:: Q2
 
