@@ -32,6 +32,6 @@ Practice tasks 2 Answers
 
     while True:
         num = 5
-        while num > -1
+        while num > -1:
             display.scroll(num, delay=50)
             num -= 1
