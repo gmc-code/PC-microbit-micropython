@@ -1,5 +1,5 @@
 ====================================
-EXT: Functions for the microbit
+Functions for the microbit
 ====================================
 
 Functions with parameters

@@ -17,40 +17,6 @@ Index:
     introduction/power_management.rst
 
 
-.. toctree::
-    :maxdepth: 2
-    :caption: BreadBoards
-    :numbered:
-
-    breadboards/Breadboard_connections.rst
-    breadboards/Edge_Connector.rst
-    breadboards/Motor_with_transistor.rst
-    breadboards/LEDs_with_resistors.rst
-    breadboards/Potentiometer.rst
-    breadboards/Potentiometer_with_LED.rst
-    breadboards/Piezo_Buzzer_and_music.rst
-
-
-.. toctree::
-    :maxdepth: 2
-    :caption: BreadBoard_projects
-    :numbered:
-
-    breadboard_projects/Combined_models.rst
-
-
-.. toctree::
-    :maxdepth: 2
-    :caption: Definition_blocks
-    :numbered:
-
-    microbit_definitions/functions.rst
-    microbit_definitions/functions_2.rst
-    microbit_definitions/Organising_with_selection_and_definitions.rst
-    microbit_definitions/Models_using_definitions.rst
-    microbit_definitions/Combined_iteration_using_zip.rst
- 
-
  
 .. toctree::
     :maxdepth: 2
@@ -96,6 +62,40 @@ Index:
     lessons/Practice_tasks_2_Answers.rst
 
 
+
+.. toctree::
+    :maxdepth: 2
+    :caption: BreadBoards
+    :numbered:
+
+    breadboards/Breadboard_connections.rst
+    breadboards/Edge_Connector.rst
+    breadboards/Motor_with_transistor.rst
+    breadboards/LEDs_with_resistors.rst
+    breadboards/Potentiometer.rst
+    breadboards/Potentiometer_with_LED.rst
+    breadboards/Piezo_Buzzer_and_music.rst
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: BreadBoard_projects
+    :numbered:
+
+    breadboard_projects/Combined_models.rst
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Definition_blocks
+    :numbered:
+
+    microbit_definitions/Simple_Functions_microbit.rst
+    microbit_definitions/Functions_microbit.rst
+    microbit_definitions/Organising_with_selection_and_definitions.rst
+    microbit_definitions/Models_using_definitions.rst
+    microbit_definitions/Combined_iteration_using_zip.rst
+ 
 
 .. toctree::
     :maxdepth: 2

@@ -1,6 +1,6 @@
-============================
-Functions for the microbit
-============================
+===================================
+Simple Functions for the microbit
+===================================
 
 | See: https://www.w3schools.com/python/python_functions.asp
 
