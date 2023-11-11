@@ -1,5 +1,5 @@
 ====================================================
-Power Management **V2**
+EXT: Power Management **V2**
 ====================================================
 
 The reset button can be used to manually control the power modes of the microbit.

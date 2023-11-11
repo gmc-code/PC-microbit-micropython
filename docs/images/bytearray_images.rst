@@ -565,6 +565,7 @@ See: https://www.w3schools.com/python/python_lists_comprehension.asp
     newimg = Image(5, 5, bytearray(brightness_array))
     display.show(newimg)
 
+
 ----
 
 .. admonition:: Tasks

@@ -14,18 +14,19 @@ Index:
     :numbered:
 
     introduction/introduction.rst
+    introduction/Micropython.rst
+    introduction/Micropython_editor_modules.rst
     introduction/power_management.rst
+    introduction/Mu_editor.rst
+    introduction/Mu_editor_Errors.rst
 
 
- 
 .. toctree::
     :maxdepth: 2
     :caption: Lessons_1
     :numbered:
 
-    lessons/Mu_editor.rst
     lessons/Microbit_library.rst
-    lessons/Mu_editor_Errors.rst
     lessons/while_True_loops.rst
     lessons/Scroll_text.rst
     lessons/Scroll_text_2.rst
@@ -196,10 +197,9 @@ Index:
     extra/machine_module.rst
     extra/gc_module.rst
     extra/antigravity love this.rst
-
-
-    ..extra/utime_module.rst
-    ..extra/urandom_module.rst
-    ..extra/uarray_module.rst
-    ..extra/ucollections_module.rst
+    extra/usys_module.rst
+    extra/utime_module.rst
+    extra/urandom_module.rst
+    extra/uarray_module.rst
+    extra/ucollections_module.rst
 
