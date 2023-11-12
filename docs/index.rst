@@ -14,8 +14,7 @@ Index:
     :numbered:
 
     introduction/introduction.rst
-    introduction/MicroMicropython_editor.rst
-    introduction/Micropython_editor_modules.rst
+    introduction/Micropython_editor.rst
     introduction/power_management.rst
     introduction/Mu_editor.rst
 
