@@ -65,11 +65,6 @@ Fixing indenting quickly
 | Unindent them all at once using ``SHIFT TAB``.
 | Indent them all at once using ``TAB``
 
-
-.. image:: images/multi_line_indent_moving.gif
-    :scale: 80 %
-    :align: center
-
 ----
 
 .. admonition:: Questions
@@ -106,6 +101,18 @@ Fixing indenting quickly
 
                 What is the shortcut to select all the text?
                 Ctrl: A
+
+----
+
+Mu editor Errors
+-----------------------
+
+| For examples see the Errors section.
+| https://pc-microbit-micropython.readthedocs.io/en/latest/errors/Types_of_Errors.html
+
+| Working out what has gone wrong and how to fix it is a key part of everyday programming.
+| Some errors will show up using the **check** button.
+| Some errors will not show up using the **check** button, but instead, will be scrolled on the microbit as an error message when the microbit is flashed. They contain the line number for where you should start to identify and fix the issue.
 
 
 ----

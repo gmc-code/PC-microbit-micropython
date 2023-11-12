@@ -14,11 +14,11 @@ Index:
     :numbered:
 
     introduction/introduction.rst
-    introduction/Micropython.rst
+    introduction/MicroMicropython_editor.rst
     introduction/Micropython_editor_modules.rst
     introduction/power_management.rst
     introduction/Mu_editor.rst
-    introduction/Mu_editor_Errors.rst
+
 
 
 .. toctree::
