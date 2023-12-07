@@ -154,6 +154,44 @@ Send on button pressing
 
 ----
 
+
+Send random number on button pressing
+------------------------------------------
+
+| Set up the group such as in: ``radio.config(group=23, power=7)``.
+| Turn on the radio using: ``radio.on()``
+| Use ``button_a.was_pressed()`` to send a message containing a random integer from 1 to 9.
+| Scroll any received messages.
+| ``if message:`` relies on ``radio.receive()`` returning a message, otherwise it will return **None**, which in turn fives a False result for the conditional. 
+
+
+.. code-block:: python
+    
+    from microbit import *
+    import radio
+    import random
+
+    radio.config(group=23, power=7)
+    radio.on()
+
+    display.scroll('Hi')
+    display.show(Image.HEART)
+
+    while True:
+        if button_a.was_pressed():
+            randomnum = str(random.randint(1,9))
+            radio.send(randomnum)
+            display.scroll(randomnum)
+        message = radio.receive()
+        if message:
+            display.scroll(message)
+
+.. admonition:: Tasks
+
+    #. Modify the power level to values from 0 to 7 and experiment with a partner to get an estimate of the transmission distance at each power level.
+
+----
+
 Send on tilting
 -----------------
 
@@ -201,4 +239,8 @@ Send on tilting
         incoming_message = radio.receive()
         if incoming_message is not None:
             display.scroll(incoming_message)
+
+.. admonition:: Tasks
+
+    #. Modify the code to allow 9 different messages to be sent based on tilting.
 
