@@ -16,24 +16,24 @@ PC-Microbit
 Home pages:
 ---------------------
 
-| **year 7**
+| **year 7-8**
 | microbit: https://pc-microbit-micropython.readthedocs.io/en/latest/index.html
-| bots: https://pc-microbit-extension.readthedocs.io/en/latest/index.html
+| bots, games, classes: https://pc-microbit-extension.readthedocs.io/en/latest/index.html
+
+| **year 8**
+| python: https://pc-python.readthedocs.io/en/latest/index.html
 
 | **year 9-10**
 | algorithms: https://pc-algorithms.readthedocs.io/en/latest/index.html
 | app development: https://pc-app-development.readthedocs.io/en/latest/index.html
 
-| **python**
-| python: https://pc-python.readthedocs.io/en/latest/index.html
-| pillow: https://pc-pillow.readthedocs.io/en/latest/index.html
 
 ----
 
-Micropython coding:
+Online microbit coding:
 ----------------------------------------
 
-| Recommended for coding the microbit: https://python.microbit.org/v/3.
+| Online microbit coding: https://python.microbit.org/v/3.
 
 ----
 
@@ -41,7 +41,6 @@ Key microbit references:
 --------------------------
 
 | **microbit**:
-| latest:  https://microbit-micropython.readthedocs.io/en/latest/index.html
 | v2 from 2022: https://microbit-micropython.readthedocs.io/en/v2-docs/index.html
 | v1 in 2021: https://microbit-micropython.readthedocs.io/en/v1.0.1/index.html
 | Features: https://microbit.org/get-started/user-guide/features-in-depth/
