@@ -30,6 +30,13 @@ Home pages:
 
 ----
 
+Micropython coding:
+----------------------------------------
+
+| Recommended for coding the microbit: https://python.microbit.org/v/3.
+
+----
+
 Key microbit references:
 --------------------------
 
@@ -47,22 +54,20 @@ Microbit software using micropython:
 
 | Comparison of microbit programming options:
 
-| The **Mu** editor for laptops, https://codewith.mu/en/tutorials/1.1/microbit, is the first choice for coding on the microbit.
+| The standard online **micropython** editor: https://python.microbit.org/v/3 is consistently the most up to date online editor for the microbit, supporting V2 of the micorbit.
+| Use ``Send CTRL-C to REPL`` to see the MicroPython version; v1.18.
 
-.. admonition:: Warning
-
-    | As of Sep 2022, Mu v1.1.1 uses micropython 1.15 and so doesn't support some newer features.
-    | The **micropython online editor** uses micropython 1.18.
-    | **Thonny v4** uses micropython 1.18.
-    | When flashing from the online editor the micropython will be flashed as well.
-
-| The standard online **micropython** editor: https://python.microbit.org/v/3 is an online editor consistent with Mu editor.
+| The **Mu** editor for laptops, https://codewith.mu/en/tutorials/1.2/microbit, is a simple choice for desktop coding on the microbit.
+| As of Dec 2023, Mu v1.2 doesn't support some of the newer features of the microbit V2.
+| For latest news on updates see: https://mu.readthedocs.io/en/latest/changes.html#id1
+| Use ``REPL`` to see the MicroPython version; v1.18.
 
 | **Thonny** for laptops, can be downloaded from https://thonny.org/.
 | See: https://core-electronics.com.au/tutorials/how-to-program-a-microbit-using-thonny.html for setting up the microbit to use Thonny.
+| **Thonny v4.14** uses MicroPython v1.18 on 2023-10-30; micro:bit v2.1.2 with nRF52833
 
 | **Edublocks**, https://app.edublocks.org/#MicroBit, is an online editor with both blocky code and micropython consistent with Mu editor, and can display the block code and micropython code side by side.
-
+| Add a block to import the microbit library then check the serial tab to see the MicroPython version; v1.18.
 
 ----
 
