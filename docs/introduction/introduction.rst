@@ -68,7 +68,7 @@ Microbit software using micropython:
 
 | **Edublocks**, https://app.edublocks.org/#MicroBit, is an online editor with both blocky code and micropython, and can display the block code and micropython code side by side and a simulator.
 | Add a block to import the microbit library then check the serial tab to see the MicroPython version; v1.18.
-| The blocks may not cover teh full rnage of possibilities available elsewhere.
+| The blocks may not cover the full range of possibilities available elsewhere.
 
 ----
 
