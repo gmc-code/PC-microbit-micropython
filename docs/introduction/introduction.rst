@@ -55,7 +55,7 @@ Microbit software using micropython:
 | Comparison of microbit programming options:
 
 | The standard online **micropython** editor: https://python.microbit.org/v/3 is consistently the most up to date online editor for the microbit, supporting V2 of the micorbit.
-| Use ``Send CTRL-C to REPL`` to see the MicroPython version; v1.18.
+| Choose ``Send CTRL-C to REPL`` in the serial tab 3 dots bitton to see the MicroPython version; v1.18.
 
 | The **Mu** editor for laptops, https://codewith.mu/en/tutorials/1.2/microbit, is a simple choice for desktop coding on the microbit.
 | As of Dec 2023, Mu v1.2 doesn't support some of the newer features of the microbit V2.
@@ -66,8 +66,9 @@ Microbit software using micropython:
 | See: https://core-electronics.com.au/tutorials/how-to-program-a-microbit-using-thonny.html for setting up the microbit to use Thonny.
 | **Thonny v4.14** uses MicroPython v1.18 on 2023-10-30; micro:bit v2.1.2 with nRF52833
 
-| **Edublocks**, https://app.edublocks.org/#MicroBit, is an online editor with both blocky code and micropython consistent with Mu editor, and can display the block code and micropython code side by side.
+| **Edublocks**, https://app.edublocks.org/#MicroBit, is an online editor with both blocky code and micropython, and can display the block code and micropython code side by side and a simulator.
 | Add a block to import the microbit library then check the serial tab to see the MicroPython version; v1.18.
+| The blocks may not cover teh full rnage of possibilities available elsewhere.
 
 ----
 
@@ -77,14 +78,17 @@ Micropython simulator:
 | https://python.microbit.org/v/3 uses the latest micropython for the latest version of the microbit.
 
 
-| Create with code UK, https://create.withcode.uk/, works with standard python or micropython. Starting the code with "from microbit import /*" will pop up the simulator when the code is run.
+| An older simulator is at Create with code UK, https://create.withcode.uk/. It works with standard python or micropython. Starting the code with "from microbit import /*" will pop up the simulator when the code is run.
 
 ----
 
 Blocky code simulator:
 ----------------------------------------
 
-The Makecode website https://makecode.microbit.org/ allows blocky code use, but it has its own unique version of micropython based on its own translation of the typescript code that it uses, and so it will not work with Mu editor or the standard online micropython editor. It has an excellent simulator and vast extensions library for exploring other devices that can be connected to the microbit.
+| **Edublocks**, https://app.edublocks.org/#MicroBit, is an online editor with both blocky code and micropython, and can display the block code and micropython code side by side and a simulator.
+| Add a block to import the microbit library then check the serial tab to see the MicroPython version; v1.18.
+
+The Makecode website https://makecode.microbit.org/ allows blocky code use, but it has its own unique version of micropython based on its own translation of the typescript code that it uses, and so it will not work the standard online micropython editor. It has a simulator and vast extensions library for exploring other devices that can be connected to the microbit.
 
 ----
 
