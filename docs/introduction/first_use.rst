@@ -5,7 +5,7 @@ EXT: First Use **V2**
 Firmware
 ------------
 
-| Some Micorbits can have their firmware updated depending on the microbit version. 
+| Some Microbits can have their firmware updated depending on the microbit version. 
 | See: https://microbit.org/get-started/user-guide/firmware/
 | See: https://tech.microbit.org/software/daplink-interface/#daplink-software
 
@@ -15,8 +15,7 @@ Out of Box hex file v2
 --------------------------
 
 | The hex file that is on new microbits can be found at: https://microbit.org/get-started/user-guide/out-of-box-experience/
-
-| The code below is similar to the out-of-box-experience.
+| The code below is similar to the out-of-box-experience that occurs when a new microbit is first started.
 
 .. code-block:: python
 
