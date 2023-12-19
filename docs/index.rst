@@ -15,9 +15,9 @@ Index:
 
     introduction/introduction.rst
     introduction/Micropython_editor.rst
+    introduction/first_use.rst
     introduction/power_management.rst
     introduction/Mu_editor.rst
-
 
 
 .. toctree::

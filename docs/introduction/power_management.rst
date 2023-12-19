@@ -2,6 +2,11 @@
 EXT: Power Management **V2**
 ====================================================
 
+Sleep, Power off, wake
+-------------------------
+
+See: https://support.microbit.org/support/solutions/articles/19000120358-how-do-i-power-off-or-put-the-micro-bit-to-sleep-
+
 The reset button can be used to manually control the power modes of the microbit.
 
 ----
@@ -36,7 +41,7 @@ Removing the USB power cable and re-adding it will also wake the micro:bit.
 
 .. admonition:: Warning
 
-    | Mu v1.1.1 doesn't yet support the power module. Sep 2022.
+    | Mu v1.2 doesn't yet support the power module. Sep 2023.
     | Use the online micropython editor instead: https://python.microbit.org/v/3
     | Thonny v 4 can also be used.
 
