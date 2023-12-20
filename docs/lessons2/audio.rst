@@ -174,7 +174,7 @@ All Built in sounds
 | ``audio.play`` requires an iterable (a list or generator) of **AudioFrame** instances, each 32 samples at 7812.5 Hz, and uses linear interpolation to output a PWM signal at 32.5 kHz, which gives tolerable sound quality.
 | Use ``frame = audio.AudioFrame()`` to create the audioframe object. 
 | Use ``frame[i] = ...`` to fill all 32 samples as i changes from 0 to 31.
-| The sawtooth values below go down by 8 each sample: [252,244,236,228,220,212,204,196,188,180,172,164,156,148,140,132,124,116,108,100,92,84,76,68,60,52,44,36,28,20,12,4].
+| The sawtooth values below go down by 8 each sample: [252,244,236,...,20,12,4].
 
 | Since an audio frame only goes for 4ms, it needs to be repeated 250 times to last for 1 second.
 | If it is repeated in a list, as in ``repeated_frame1`` below, the size is limited to about 8000 iterations (about 20seconds).
@@ -190,6 +190,7 @@ All Built in sounds
 
 | Generators are used in this case to avoid memory issues.
 | Use ``yield`` in the for-loop to create a generator that releases each repeat of the ``frame`` as it is needed in the calling code.
+| The function, ``repeated_frame``, uses a generator (yield keyword) to create an iterable object. This means it generates each repetition on-the-fly each time you iterate over it, which is more memory-efficient than creating a large list or other collection. This is especially useful if count is a large number.
 
 .. code-block:: python
         
@@ -202,9 +203,22 @@ All Built in sounds
 
 .. code-block:: python
         
-    from microbit import *
-    import audio
+from microbit import *
+import audio
 
+
+    def play_rep_frame(name, frame, count):
+        wave = repeated_frame(frame, count)
+        while audio.is_playing():
+            sleep(4)
+            audio.stop()
+        display.scroll(name, wait=False, delay=60)
+        audio.play(wave, wait=False)
+        
+    def repeated_frame(frame, count):
+        # use a generator to reduce memory usage
+        for i in range(count):
+            yield frame
 
     def get_sawtooth_frame():
         frame = audio.AudioFrame()
@@ -213,30 +227,15 @@ All Built in sounds
             frame[i] = int(252 - i * 8)
         return frame
 
-    def repeated_frame(frame, count):
-        # use a generator to reduce memory usage
-        for i in range(count):
-            yield frame
-
-    def play_wave(name, wave, cycles):
-        display.scroll(name + " wave", wait=False, delay=80)
-        audio.play(wave, wait=False)
-        for i in range(cycles):
-            if button_b.is_pressed():
-                display.scroll("")
-                audio.stop()
-                break
-            sleep(4)
-
-
-    cycles = 500
+    repeat_count = 100
     sawtooth_frame = get_sawtooth_frame()
-    sawtooth_wave = repeated_frame(sawtooth_frame, cycles)
 
     while True:
         if button_a.is_pressed():
-            play_wave("Sawtooth", sawtooth_wave, cycles)
+            play_rep_frame("saw", sawtooth_frame, repeat_count)
         sleep(100)
+
+
 
 
 ----
