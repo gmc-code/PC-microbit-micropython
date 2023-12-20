@@ -52,19 +52,23 @@ Christmas tunes
 
 ----
 
-| Write the notes for this song.
+.. admonition:: Task
 
-.. image:: images/we_wish_you.png
-    :scale: 50 %
-    :align: center
+    #. Write the notes for this song.
+
+    .. image:: images/we_wish_you.png
+        :scale: 50 %
+        :align: center
 
 ----
 
-| Write the notes for this hymn.
+.. admonition:: Task
 
-.. image:: images/silent_night.png
-    :scale: 50 %
-    :align: center
+    #. Write the notes for this hymn.
+
+    .. image:: images/silent_night.png
+        :scale: 50 %
+        :align: center
 
 ----
 
