@@ -8,6 +8,66 @@ Music_advanced
 
 ----
 
+Christmas tunes
+----------------------
+
+| Jingle bells chorus:
+
+.. code-block:: python
+
+    from microbit import *
+    import music
+
+    notes = [
+        'E4:4', 'E4:4', 'E4:8',
+        'E4:4', 'E4:4', 'E4:8',
+        'E4:4', 'G4:4', 'C4:6', 'D4:2', 
+        'E4:12', 'R:4',
+        'F4:4', 'F4:4', 'F4:6', 'F4:2',
+        'F4:4', 'E4:4', 'E4:4', 'E4:2', 'E4:2',
+        'E4:4', 'D4:4', 'D4:4', 'E4:4', 
+        'D4:8', 'G4:8',
+        'E4:4', 'E4:4', 'E4:8',
+        'E4:4', 'E4:4', 'E4:8',
+        'E4:4', 'G4:4', 'C4:6', 'D4:2', 
+        'E4:12', 'R:4',
+        'F4:4', 'F4:4', 'F4:6', 'F4:2',
+        'F4:4', 'E4:4', 'E4:4', 'E4:2', 'E4:2',
+        'G4:4', 'G4:4', 'F4:4', 'D4:4', 
+        'C4:16'
+    ]
+
+    while True:
+        if button_a.was_pressed():
+            music.stop()
+            music.set_tempo(ticks=8, bpm=120)
+            music.play(notes, wait=False)
+        elif button_b.was_pressed():
+            music.stop()
+        sleep(1000)
+
+.. image:: images/jingle_bells.png
+    :scale: 10 %
+    :align: center
+
+----
+
+| Write the notes for this song.
+
+.. image:: images/we_wish_you.png
+    :scale: 50 %
+    :align: center
+
+----
+
+| Write the notes for this hymn.
+
+.. image:: images/silent_night.png
+    :scale: 50 %
+    :align: center
+
+----
+
 Random notes Task
 ----------------------------------------
 
@@ -453,63 +513,3 @@ Scales generator
 
     #. Create a dictionary of keys and their notes and save it to a file to be accessed on the microbit.
     #. Create a dictionary of tunes, save it to a file to be accessed on the microbit.
-
-----
-
-Christmas tunes
-----------------------
-
-| Jingle bells chorus:
-
-.. code-block:: python
-
-    from microbit import *
-    import music
-
-    notes = [
-        'E4:4', 'E4:4', 'E4:8',
-        'E4:4', 'E4:4', 'E4:8',
-        'E4:4', 'G4:4', 'C4:6', 'D4:2', 
-        'E4:12', 'R:4',
-        'F4:4', 'F4:4', 'F4:6', 'F4:2',
-        'F4:4', 'E4:4', 'E4:4', 'E4:2', 'E4:2',
-        'E4:4', 'D4:4', 'D4:4', 'E4:4', 
-        'D4:8', 'G4:8',
-        'E4:4', 'E4:4', 'E4:8',
-        'E4:4', 'E4:4', 'E4:8',
-        'E4:4', 'G4:4', 'C4:6', 'D4:2', 
-        'E4:12', 'R:4',
-        'F4:4', 'F4:4', 'F4:6', 'F4:2',
-        'F4:4', 'E4:4', 'E4:4', 'E4:2', 'E4:2',
-        'G4:4', 'G4:4', 'F4:4', 'D4:4', 
-        'C4:16'
-    ]
-
-    while True:
-        if button_a.was_pressed():
-            music.stop()
-            music.set_tempo(ticks=8, bpm=120)
-            music.play(notes, wait=False)
-        elif button_b.was_pressed():
-            music.stop()
-        sleep(1000)
-
-.. image:: images/jingle_bells.png
-    :scale: 10 %
-    :align: center
-
-----
-
-| Write the notes for this song.
-
-.. image:: images/we_wish_you.png
-    :scale: 50 %
-    :align: center
-
-----
-
-| Write the notes for this hymn.
-
-.. image:: images/silent_night.png
-    :scale: 50 %
-    :align: center
