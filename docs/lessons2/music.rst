@@ -33,9 +33,7 @@ Library
     | Configure the output volume of the microbit speaker and pins.
     | **volume** is an integer between 0 and 255.
 
-| The code below increases the volume and plays a C note in octave 4 for 2 ticks at each volume.
-| The A button can be pressed to exit the for-loop then the while loop using ``break``.
-| Pressing the reset button on the back of the microbit will restart the code.
+| The code below sets the volume at different levels and plays a C note in octave 4 for 2 ticks at each volume.
 
 .. code-block:: python
 
@@ -45,13 +43,82 @@ Library
 
     note = "c4:2"
     while True:
-        for v in range(0, 255, 25):
-            set_volume(v)
-            music.play(note)
-            if button_a.is_pressed():
-                break
-        if button_a.is_pressed():
-            break
+        set_volume(255)
+        music.play(note)
+        set_volume(128)
+        music.play(note)
+        set_volume(64)
+        music.play(note)
+
+----
+
+.. admonition:: Tasks
+
+    #. Instead of playing the same note each time, play a different note "c4:2", "e4:2","f#4:2" for a dfifferent volume.
+    #. Put the 3 sound levels in a list and use a for loop to set the volume and play the note.
+    #. To the previous task, add the ability to stop the playing by exiting the ``while True`` loop on pressing the A button via the use of ``break``. Pressing the reset button on the back of the microbit will restart the code.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Instead of playing the same note each time, play a different note "c4:2", "e4:2","f#4:2" for a dfifferent volume.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import music
+
+
+                    note0 = "c4:2"
+                    note1 = "e4:2"
+                    note2 = "f#4:2"
+                    while True:
+                        set_volume(255)
+                        music.play(note0)
+                        set_volume(128)
+                        music.play(note1)
+                        set_volume(64)
+                        music.play(note2)
+
+            .. tab-item:: Q2
+
+                Put the 3 sound levels in a list and use a for loop to set the volume and play the note.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import music
+
+                    note = "c4:2"
+                    volumes = [255, 125, 64]
+                    while True:
+                        for v in volumes:
+                            set_volume(v)
+                            music.play(note)
+
+            .. tab-item:: Q3
+
+                To the previous task, add the ability to stop the playing by exiting the ``while True`` loop on pressing the A button via the use of ``break``. Pressing the reset button on the back of the microbit will restart the code.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import music
+
+                    note = "c4:2"
+                    volumes = [255, 125, 64]
+                    while True:
+                        for v in volumes:
+                            set_volume(v)
+                            music.play(note)
+                        if button_a.was_pressed():
+                            break
 
 ----
 
@@ -69,12 +136,6 @@ Library
 .. py:function::  speaker.on()
 
     Use on() to turn on the speaker.
-
-.. admonition:: Note
-
-    | The docs suggest that there is a test for the speaker status via ``speaker.is_on()``.
-    | However, ``print(help(speaker))`` does not list it as being available yet (as of July 2022).
-    | See: https://microbit-micropython.readthedocs.io/en/v2-docs/microbit_micropython_api.html
 
 ----
 
