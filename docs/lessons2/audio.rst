@@ -45,10 +45,11 @@ main controls
 
 ----
 
-**V2** Built-in sounds 
-------------------------
+**V2** Expressive sounds 
+--------------------------
 
-The built-in sounds can be called using ``audio.play(Sound.NAME)``.
+| The built-in expressive sounds can be called using ``audio.play(Sound. ...)``.
+| e.g. ``audio.play(Sound.GIGGLE)``
 
 * ``Sound.GIGGLE``
 * ``Sound.HAPPY``
@@ -103,9 +104,11 @@ All Built in sounds
         Sound.SAD,
         Sound.SLIDE,
         Sound.SOARING,
+        Sound.SPRING,
         Sound.TWINKLE,
         Sound.YAWN,
     ]
+ 
     while True:
         for sound in built_in_sounds:
             audio.play(sound)
@@ -138,7 +141,7 @@ All Built in sounds
                     from microbit import *
                     import audio
 
-                    sound_list = [Sound.SAD, Sound.HAPPY, Sound.YAWN,]
+                    sound_list = [Sound.SAD, Sound.HAPPY, Sound.YAWN]
                     for sound in sound_list:
                         audio.play(sound)
                         sleep(1000)
@@ -166,11 +169,36 @@ All Built in sounds
 **AudioFrame**
 ------------------
 
-An AudioFrame object is a list of 32 samples each of which is an unsigned byte (whole number between 0 and 255).
+| An AudioFrame object is a list of 32 samples each of which is an unsigned byte (whole number between 0 and 255).
+| It takes just over 4 ms to play a single frame.
+| ``audio.play`` requires an iterable (a list or generator) of **AudioFrame** instances, each 32 samples at 7812.5 Hz, and uses linear interpolation to output a PWM signal at 32.5 kHz, which gives tolerable sound quality.
+| Use ``frame = audio.AudioFrame()`` to create the audioframe object. 
+| Use ``frame[i] = ...`` to fill all 32 samples as i changes from 0 to 31.
+| The sawtooth values below go down by 8 each sample: [252,244,236,228,220,212,204,196,188,180,172,164,156,148,140,132,124,116,108,100,92,84,76,68,60,52,44,36,28,20,12,4].
 
-It takes just over 4 ms to play a single frame.
-The audio module can consumes an iterable (sequence, like list or tuple, or generator) of **AudioFrame** instances, each 32 samples at 7812.5 Hz, and uses linear interpolation to output a PWM signal at 32.5 kHz, which gives tolerable sound quality.
+| Since an audio frame only goes for 4ms, it needs to be repeated 250 times to last for 1 second.
+| If it is repeated in a list, as in ``repeated_frame1`` below, the size is limited to about 8000 iterations (about 20seconds).
 
+.. code-block:: python
+        
+    def repeated_frame1(frame, count):
+        # will hit a memory problem after about 8000 repeats
+        wave = []
+        for i in range(count):
+            wave.append(frame)
+        return wave
+
+| Generators are used in this case to avoid memory issues.
+| Use ``yield`` in the for-loop to create a generator that releases each repeat of the ``frame`` as it is needed in the calling code.
+
+.. code-block:: python
+        
+    def repeated_frame(frame, count):
+        # use a generator to reduce memory usage
+        for i in range(count):
+            yield frame
+
+| Final code that plays a sawtooth audioframe for about 2 seconds:
 
 .. code-block:: python
         
@@ -178,25 +206,145 @@ The audio module can consumes an iterable (sequence, like list or tuple, or gene
     import audio
 
 
+    def get_sawtooth_frame():
+        frame = audio.AudioFrame()
+        # len = 32
+        for i in range(len(frame)):
+            frame[i] = int(252 - i * 8)
+        return frame
+
     def repeated_frame(frame, count):
+        # use a generator to reduce memory usage
         for i in range(count):
             yield frame
 
-
-    # Press button-A to stop
-    def show_wave(name, frame, duration=1500):
-        display.scroll(name + " wave", wait=False, delay=100)
-        audio.play(repeated_frame(frame, duration), wait=False)
-        for i in range(75):
-            if button_a.is_pressed():
-                display.clear()
+    def play_wave(name, wave, cycles):
+        display.scroll(name + " wave", wait=False, delay=80)
+        audio.play(wave, wait=False)
+        for i in range(cycles):
+            if button_b.is_pressed():
+                display.scroll("")
                 audio.stop()
                 break
-            sleep(100)
+            sleep(4)
 
-    frame = audio.AudioFrame()
-    # len = 32
-    for i in range(len(frame)):
-        frame[i] = int(252 - i * 8)
-        print(frame[i])
-    show_wave("Sawtooth", frame, duration=1000)
+
+    cycles = 500
+    sawtooth_frame = get_sawtooth_frame()
+    sawtooth_wave = repeated_frame(sawtooth_frame, cycles)
+
+    while True:
+        if button_a.is_pressed():
+            play_wave("Sawtooth", sawtooth_wave, cycles)
+        sleep(100)
+
+
+----
+
+Common AudioFrame structures
+-----------------------------------
+
+| Sawtooth, square and triangle audioframes are constructed and played below.
+
+.. code-block:: python
+        
+    from microbit import *
+    import audio
+
+
+    def play_rep_frame(name, frame, count):
+        wave = repeated_frame(frame, count)
+        while audio.is_playing():
+            sleep(4)
+            audio.stop()
+        display.scroll(name, wait=False, delay=60)
+        audio.play(wave, wait=False)
+        
+    def repeated_frame(frame, count):
+        # use a generator to reduce memory usage
+        for i in range(count):
+            yield frame
+
+    def get_sawtooth_frame():
+        frame = audio.AudioFrame()
+        # len = 32
+        for i in range(len(frame)):
+            frame[i] = int(252 - i * 8)
+        return frame
+
+
+    def get_sawtooth2_frame():
+        frame = audio.AudioFrame()
+        for i in range(len(frame)):
+            if i < len(frame) // 2:
+                frame[i] = int(252 - i * 16)
+            else:
+                frame[i] = int(252 - (i - 16) * 16)
+        return frame
+
+    def get_square_frame():
+        frame = audio.AudioFrame()
+        for i in range(len(frame)):
+            if i < len(frame) // 2:
+                frame[i] = 252
+            else:
+                frame[i] = 0
+        return frame
+        
+    def get_square2_frame():
+        frame = audio.AudioFrame()
+        for i in range(len(frame)):
+            if i < len(frame) // 4:
+                frame[i] = 252
+            elif i < len(frame) * 2 // 4:
+                frame[i] = 0
+            elif i < len(frame) * 3 // 4:
+                frame[i] = 252
+            else:
+                frame[i] = 0
+        return frame
+
+    def get_triangle_frame():
+        frame = audio.AudioFrame()
+        for i in range(len(frame)):
+            if i < len(frame) // 2:
+                frame[i] = i * 8
+            else:
+                frame[i] = 252 - (i - 16) * 8
+        return frame
+        
+    def get_triangle2_frame():
+        frame = audio.AudioFrame()
+        for i in range(len(frame)):
+            if i < len(frame) // 4:
+                frame[i] = i * 16
+            elif i < len(frame) * 2 // 4:
+                frame[i] = 252 - (i - 8) * 16
+            elif i < len(frame) * 3 // 4:
+                frame[i] = (i - 16) * 16
+            else:
+                frame[i] = 252 - (i - 24) * 16
+        return frame
+
+    repeat_count = 100
+    sawtooth_frame = get_sawtooth_frame()
+    sawtooth2_frame = get_sawtooth2_frame()
+    square_frame = get_square_frame()
+    square2_frame = get_square2_frame()
+    triangle_frame = get_triangle_frame()
+    triangle2_frame = get_triangle2_frame()
+
+    while True:
+        if pin_logo.is_touched():
+            play_rep_frame("saw", sawtooth_frame, repeat_count)
+            sleep(repeat_count * 5)
+            play_rep_frame("saw2", sawtooth2_frame, repeat_count)
+        elif button_a.is_pressed():
+            play_rep_frame("sqr", square_frame, repeat_count)
+            sleep(repeat_count * 5)
+            play_rep_frame("sqr2", square2_frame, repeat_count)
+        elif button_b.is_pressed():
+            play_rep_frame("tri", triangle_frame, repeat_count)
+            sleep(repeat_count * 5)
+            play_rep_frame("tri2", triangle2_frame, repeat_count)
+        sleep(100)
