@@ -52,7 +52,7 @@ Christmas tunes
 
 ----
 
-.. admonition:: Task
+.. admonition:: Exercise
 
     #. Write the notes for this song.
 
@@ -62,7 +62,7 @@ Christmas tunes
 
 ----
 
-.. admonition:: Task
+.. admonition:: Exercise
 
     #. Write the notes for this hymn.
 
@@ -272,8 +272,8 @@ Scales generator
 | See: https://en.wikipedia.org/wiki/Key_signature#Scales_with_sharp_key_signatures
 
 | Design code to generate the notes in a major scale, given the key and the octave. 
-| Research the intervals for major and natural minor scales and place them in lists, **major_steps** and **minor_steps**. Define a function, **get_scale_steps(key_type)**, that returns the scale intervals for a Major or minor keys based on passing "M" for major and "m" for minor.
-| Define a function, **get_2oct**,  to return 2 octaves of notes, starting at **c**,  given the start octave and the notes. Use list comprehension to take each not and add the octave to it as a string. e.g "c" and 4 are joined to become "c4".
+| Research the intervals for major and natural minor scales and place them in lists, **major_steps** and **minor_steps**. Define a function, **get_scale_steps(key_type)**, that returns the scale intervals for a Major or minor key based on passing "M" for major and "m" for minor.
+| Define a function, **get_2oct**,  to return 2 octaves of notes, starting at **c**,  given the start octave and the notes. Use list comprehension to take each note and add the octave to it as a string. e.g "c" and 4 are joined to become "c4".
 | Define a function, **get_key_notes**,  to return the notes in a key given the key. Research the keys that have sharps in them (see: circle of fifths) and make a list of them, **sharp_keys**. Check to see if the key is in that list and return a list of all possible notes, starting at c, that include sharps, **["c", "c#", ...]**, or return the list of notes that includes flats, **["c", "db", ...]**.
 | Define a function, **get_scale(key_note, key_type, octave)**, that returns the list of notes that include sharps or flats based on the key_note and key_type. Then build 2 octaves of notes based on those notes and the octave. Use the index method to get the index of the key_note in that 2 octave list. Then iterate through the scale_steps, adding the scale step interval to the index and append that note to the scale. Return the one octave scale.
 | Test the definitions by playing some scales that include a scale with a sharp, and a scale with a flat, as well as both major and minor scales.
@@ -513,7 +513,7 @@ Scales generator
                             music.play(random_notes)
                             sleep(1000)
 
-.. admonition:: Tasks
+.. admonition:: Exercises
 
     #. Create a dictionary of keys and their notes and save it to a file to be accessed on the microbit.
     #. Create a dictionary of tunes, save it to a file to be accessed on the microbit.
