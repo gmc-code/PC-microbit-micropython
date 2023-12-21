@@ -326,7 +326,10 @@ Stop background music
     import music
 
     # Define the melody
-    melody1 = ['C4:4', 'C4:4', 'G4:4', 'G4:4', 'A4:4', 'A4:4', 'G4:8', 'F4:4', 'F4:4', 'E4:4', 'E4:4', 'D4:4', 'D4:4', 'C4:8']
+    melody1 = ['C4:4', 'C4:4', 'G4:4', 'G4:4', 
+                'A4:4', 'A4:4', 'G4:8', 
+                'F4:4', 'F4:4', 'E4:4', 'E4:4',
+                'D4:4', 'D4:4', 'C4:8']
 
     # Play the melody
     music.play(melody1, wait=False, loop=True)
@@ -346,7 +349,7 @@ Stop background music
 .. admonition:: Tasks
 
     #. Add a rest equivalent to 4 crotchets to the end of the melody so it provides a pause equivalent to one bar as the melody loops.
-    #. Modify the example above to have 2 melodies: melody1 = ['C4:4', 'C4:4', 'G4:4', 'G4:4', 'A4:4', 'A4:4', 'G4:8', 'F4:4', 'F4:4', 'E4:4', 'E4:4', 'D4:4', 'D4:4', 'C4:8'] and =melody2 = ['E4:4', 'D4:4', 'C4:4', 'D4:4', 'E4:4', 'E4:4', 'E4:8', 'D4:4', 'D4:4', 'D4:8', 'E4:4', 'G4:4', 'G4:8']. Firstly, melody1 loops and can be stopped by the A-button. Then melody2 loops and can be stopped by the B-button.
+    #. Modify the example above to have 2 melodies: melody1 = ['C4:4', 'C4:4', 'G4:4', 'G4:4', 'A4:4', 'A4:4', 'G4:8', 'F4:4', 'F4:4', 'E4:4', 'E4:4', 'D4:4', 'D4:4', 'C4:8'] and melody2 = ['E4:4', 'D4:4', 'C4:4', 'D4:4', 'E4:4', 'E4:4', 'E4:8', 'D4:4', 'D4:4', 'D4:8', 'E4:4', 'G4:4', 'G4:8']. Firstly, melody1 loops and can be stopped by the A-button. Then melody2 loops and can be stopped by the B-button.
 
     .. dropdown::
         :icon: codescan
@@ -365,7 +368,11 @@ Stop background music
                     import music
 
                     # Define the melody
-                    melody1 = ['C4:4', 'C:4', 'G:4', 'G4:4', 'A4:4', 'A4:4', 'G4:8', 'F4:4', 'F4:4', 'E4:4', 'E4:4', 'D4:4', 'D4:4', 'C4:8', 'R:16']
+                        melody1 = ['C4:4', 'C4:4', 'G4:4', 'G4:4', 
+                                    'A4:4', 'A4:4', 'G4:8', 
+                                    'F4:4', 'F4:4', 'E4:4', 'E4:4',
+                                    'D4:4', 'D4:4', 'C4:8',
+                                    'R:16']
 
                     # Play the melody
                     music.play(melody1, wait=False, loop=True)
@@ -382,7 +389,13 @@ Stop background music
 
             .. tab-item:: Q2
 
-                Modify the example above to have 2 melodies: melody1 = ['C4:4', 'C4:4', 'G4:4', 'G4:4', 'A4:4', 'A4:4', 'G4:8', 'F4:4', 'F4:4', 'E4:4', 'E4:4', 'D4:4', 'D4:4', 'C4:8'] and =melody2 = ['E4:4', 'D4:4', 'C4:4', 'D4:4', 'E4:4', 'E4:4', 'E4:8', 'D4:4', 'D4:4', 'D4:8', 'E4:4', 'G4:4', 'G4:8']. Firstly, melody1 loops and can be stopped by the A-button. Then melody2 loops and can be stopped by the B-button.
+                Modify the example above to have 2 melodies: melody1 = ['E4:4', 'D:4', 'C:4', 'D:4', 
+                            'E:4', 'E:4', 'E:8', 
+                            'D:4', 'D:4', 'D:8', 
+                            'E:4', 'G:4', 'G:8'] and melody2 = ['E4:4', 'D:4', 'C:4', 'D:4', 
+                            'E:4', 'E:4', 'E:4', 'E:4',
+                            'D:4', 'D:4', 'E:4', 'D:4', 
+                            'C:16']. Firstly, melody1 loops and can be stopped by the A-button. Then melody2 loops and can be stopped by the B-button.
 
                 .. code-block:: python
 
@@ -390,11 +403,17 @@ Stop background music
                     import music
 
                     # Define the first melody
-                    melody1 = ['C4:4', 'C4:4', 'G4:4', 'G4:4', 'A4:4', 'A4:4', 'G4:8', 'F4:4', 'F4:4', 'E4:4', 'E4:4', 'D4:4', 'D4:4', 'C4:8']
+                    melody1 = ['E4:4', 'D:4', 'C:4', 'D:4', 
+                            'E:4', 'E:4', 'E:8', 
+                            'D:4', 'D:4', 'D:8', 
+                            'E:4', 'G:4', 'G:8']
 
 
                     # Define the second melody
-                    melody2 = ['E4:4', 'D4:4', 'C4:4', 'D4:4', 'E4:4', 'E4:4', 'E4:8', 'D4:4', 'D4:4', 'D4:8', 'E4:4', 'G4:4', 'G4:8']
+                    melody2 = ['E4:4', 'D:4', 'C:4', 'D:4', 
+                            'E:4', 'E:4', 'E:4', 'E:4',
+                            'D:4', 'D:4', 'E:4', 'D:4', 
+                            'C:16']
 
                     # Play the first melody
                     music.play(melody1, wait=False, loop=True)
