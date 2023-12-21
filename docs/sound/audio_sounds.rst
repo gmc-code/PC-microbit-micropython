@@ -5,7 +5,7 @@ Audio: built in sounds **V2**
 Expressive sounds  **V2** 
 --------------------------
 
-| The built-in expressive sounds can be called using ``audio.play(Sound.SOUNDNAME)`` where SOUNDNAME is replaced with the name of a sound.
+| The built-in expressive sounds can be called using ``audio.play(Sound.SOUNDNAME)`` where SOUNDNAME is replaced with the name of a sound in capital letters.
 | e.g. ``audio.play(Sound.GIGGLE)``
 
 The built in sounds are
@@ -30,7 +30,7 @@ The built in sounds are
     audio.play(Sound.GIGGLE)
 
 
-| The code below uses a for-loop to loop through each Sound in the ``sound_list`` and play each sound.
+| The code below uses a for-loop to loop through each sound in the ``sound_list`` and play each sound.
 
 .. code-block:: python
 
@@ -172,7 +172,7 @@ Sound name with sound
 
 | The advanced code below uses ``replace`` methods on the string version of the sound to get the simple name of the sound for scrolling.
 | The sound playing is started first, using the non-blocking form with ``wait=False``.
-| The sound name is scrolled using the blocking form with ``wait=True``, so that the hte next sound is not played till the scrolling has completed.
+| The sound name is scrolled using the blocking form with ``wait=True``, so that the the next sound is not played till the scrolling has completed.
 
 .. code-block:: python
 
@@ -232,6 +232,8 @@ Built in sounds and images
 
 | The following code uses a dictionary to associate sounds and images.
 | It then displays the image and plays the sound.
+| In the code ``for emotion, attributes in emotions.items():``, 'emotion, attributes' follow the pattern 'key, value' where emotion is the key and attribute is the value for that key.
+| 'happy' is he first emotion (key). It value, attribute, is a nested dictionary with keys 'sound' and 'image'.
 
 .. code-block:: python
 
