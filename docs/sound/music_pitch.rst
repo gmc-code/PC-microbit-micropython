@@ -193,6 +193,7 @@ A	    1760
 
     #. Begin with the scale Am_4 = [440, 494, 523, 587, 659, 698, 784, 880]. Use list comprehension to create a new list, Am_5, in which the frequencies are multiplied by 2, but include the condition that the frequency is not 440. Scroll the octave number, without blocking the sound, when the octave list sounds start. See: https://pc-python.readthedocs.io/en/latest/python_advanced/list_comprehensions.html
     #. Begin with the scale Am_4= [440, 494, 523, 587, 659, 698, 784, 880]. Use list comprehension to create a new list, Am_5, exluding 440 and a new list, Am_3, in which the frequencies are divided by 2, exluding 880. Scroll the octave number, without blocking the sound, when the octave list sounds start.
+    #. Begin with the scale Am_4= [440, 494, 523, 587, 659, 698, 784, 880]. Use list comprehension to create a new list, Am_54_rev, which is the reverse of Am_4, exluding 880. Show an up arrow when Am_4 is played and a down arrow for Am_54_rev.
     
     .. dropdown::
         :icon: codescan
@@ -252,4 +253,27 @@ A	    1760
                             music.pitch(freq, duration=timing)
                         if button_a.was_pressed():
                             break
-                        
+
+            .. tab-item:: Q3
+
+               Begin with the scale Am_4= [440, 494, 523, 587, 659, 698, 784, 880]. Use list comprehension to create a new list, Am_54_rev, which is the reverse of Am_4, exluding 880. Show an up arrow when Am_4 is played and a down arrow for Am_54_rev.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import music                            
+
+                    Am_4 = [440, 494, 523, 587, 659, 698, 784, 880]
+                    Am_4_rev = [freq for freq in Am_4[::-1] if freq != 880]
+
+                    timing = 400
+                    while True:
+                        display.show(Image.ARROW_N, wait=False)
+                        for freq in Am_4:
+                            music.pitch(freq, duration=timing)
+                        display.show(Image.ARROW_S, wait=False)
+                        for freq in Am_4_rev:
+                            music.pitch(freq, duration=timing)
+                        if button_a.was_pressed():
+                            break
+
