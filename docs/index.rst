@@ -114,21 +114,30 @@ Index:
 
 .. toctree::
     :maxdepth: 2
-    :caption: Lessons_2
+    :caption: Sound
     :numbered:
 
-    lessons2/music.rst
-    lessons2/music_advanced.rst
-    lessons2/audio.rst
-    lessons2/audio_sounds.rst
-    lessons2/audio_soundeffects.rst
-    lessons2/audio_frames.rst
-    lessons2/compass_syntax.rst
-    lessons2/compass.rst
-    lessons2/thermometer.rst
-    lessons2/accelerometer_syntax.rst
-    lessons2/gestures.rst
-    lessons2/movement.rst
+    sound/music.rst
+    sound/music_melodies.rst
+    sound/music_advanced.rst
+    sound/music_pitch.rst
+    sound/audio.rst
+    sound/audio_sounds.rst
+    sound/audio_soundeffects.rst
+    sound/audio_frames.rst
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Sensors
+    :numbered:
+
+    sensors/compass_syntax.rst
+    sensors/compass.rst
+    sensors/thermometer.rst
+    sensors/accelerometer_syntax.rst
+    sensors/gestures.rst
+    sensors/movement.rst
 
 
 .. toctree::
