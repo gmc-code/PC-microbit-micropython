@@ -494,7 +494,7 @@ Interrupting an image list
             sleep(400)
 
 
-.. admonition:: Challenge
+.. admonition:: Exercise
 
     #. Modify the code to make better use of A or B-button pressing.
 
@@ -560,7 +560,7 @@ See: https://realpython.com/python-enumerate/
 
 ----
 
-.. admonition:: Challenge
+.. admonition:: Exercise
 
     #. Modify the code to display 12 instead of 0 when the clock is in the 12 O'clock position.
 

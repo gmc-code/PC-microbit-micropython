@@ -41,21 +41,47 @@ The built in sounds are
     for sound in sound_list:
         audio.play(sound)
 
-| The advanced code below uses ``replace`` methods on the string version of the sound to get the simple name of the sound for scrolling.
-| The sound playing is started first, using the non-blocking form with ``wait=False``.
-| The sound name is scrolled using the blocking form with ``wait=True``, so that the hte next sound is not played till the scrolling has completed.
+----
 
-.. code-block:: python
+.. admonition:: Tasks
 
-    from microbit import *
-    import audio
+    #. Play the HELLO sound and scroll "hello" using wait=True for both.
+    #. Play the HELLO sound and scroll "hello" using wait=False for the sound and wait=True for the text.
 
-    sound_list = [Sound.GIGGLE, Sound.TWINKLE]
-    for sound in sound_list:
-        # Remove 'Sound(' from the start and ')' from the end
-        sound_name = str(sound).replace("Sound('", '').replace("')", '')
-        audio.play(sound, wait=False)
-        display.scroll(sound_name, delay=80, wait=True)
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Play the HELLO sound and scroll "hello" using wait=True for both.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import audio
+
+                    while True:
+                        audio.play(Sound.HELLO, wait=True)
+                        display.scroll("hello", wait=True)
+                        sleep(1000)
+
+            .. tab-item:: Q2
+
+                Play the HELLO sound and scroll "hello" using wait=False for the sound and wait=True for the text.
+                
+                .. code-block:: python
+
+                    from microbit import *
+                    import audio
+
+                    while True:
+                        audio.play(Sound.HELLO, wait=False)
+                        display.scroll("hello", wait=True)
+                        sleep(1000)
 
 ----
 
@@ -138,6 +164,67 @@ All Built in sounds
                         sleep(1000)
                         if button_a.is_pressed():
                             break
+
+----
+
+Sound name with sound
+--------------------------
+
+| The advanced code below uses ``replace`` methods on the string version of the sound to get the simple name of the sound for scrolling.
+| The sound playing is started first, using the non-blocking form with ``wait=False``.
+| The sound name is scrolled using the blocking form with ``wait=True``, so that the hte next sound is not played till the scrolling has completed.
+
+.. code-block:: python
+
+    from microbit import *
+    import audio
+
+    sound_list = [Sound.GIGGLE, Sound.TWINKLE]
+    for sound in sound_list:
+        # Remove 'Sound(' from the start and ')' from the end
+        sound_name = str(sound).replace("Sound('", '').replace("')", '')
+        audio.play(sound, wait=False)
+        display.scroll(sound_name, delay=80, wait=True)
+
+.. admonition:: Tasks
+
+    #. Modify the code above to use all built in sounds.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Modify the code above to use all built in sounds.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import audio
+
+                    sound_list = [
+                        Sound.GIGGLE,
+                        Sound.HAPPY,
+                        Sound.HELLO,
+                        Sound.MYSTERIOUS,
+                        Sound.SAD,
+                        Sound.SLIDE,
+                        Sound.SOARING,
+                        Sound.SPRING,
+                        Sound.TWINKLE,
+                        Sound.YAWN,
+                    ]
+
+                    for sound in sound_list:
+                        # Remove 'Sound(' from the start and ')' from the end
+                        sound_name = str(sound).replace("Sound('", '').replace("')", '')
+                        audio.play(sound, wait=False)
+                        display.scroll(sound_name, delay=80, wait=True)
+                        
 ----
 
 Built in sounds and images
@@ -173,7 +260,7 @@ Built in sounds and images
             sleep(1000)
 
 
-.. admonition:: Challenge
+.. admonition:: Exercise
 
     #. Modify the emotions dictionary to illustrate 2 other images with 2 of the built in sounds.
 
