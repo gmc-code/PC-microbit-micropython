@@ -65,7 +65,7 @@ Play music
 
 | Use ``music.play(notes)`` to play a list of notes in the ``notes_list`` variable.
 | The code below plays a list of notes. The octave changes from 4 to 5.
-| The tempo can be sped up by changing ticks from 4 to 8 or by changing bpm from 120 to 240.
+
 
 .. code-block:: python
 
@@ -73,12 +73,6 @@ Play music
     import music
 
     notes_list = ['e4', 'f#', 'g', 'a', 'b', 'c5', 'd', 'e']
-
-    music.set_tempo(ticks=4, bpm=120)
-    music.play(notes_list)
-    music.set_tempo(ticks=8, bpm=120)
-    music.play(notes_list)
-    music.set_tempo(ticks=8, bpm=240)
     music.play(notes_list)
 
 ----
@@ -98,16 +92,12 @@ Notes
 | The octave and duration parameters are states that carry over to subsequent notes until re-specified. 
 | e.g. ['c4:1', 'e', 'g:8'] The `e` is octave 4 for 1 tick. The `g` is octave 4 for 8 ticks.
 
-
 ----
 
 .. admonition:: Tasks
 
     #. Play the 5 notes: c, e, g, e, c in octave 4.
     #. Starting with C in octave 4, play the next 6 notes that are each one semitone higher than the previous note. Use sharps as needed.
-    #. Play the 5 notes: c, e, g, e, c with a tempo of 120, 180 and 240bpm without a for loop.
-    #. Play the 3 notes: 'e4:4', 'f#', 'g' with a tempo of 120, 180 and 240bpm using a for loop for the tempos. 
-    #. Design a function that takes the list of 3 notes ['e4:4', 'f#', 'g'] as one parameter; takes a tempo list of 120, 240, 360 , 480 and 600 bpm as a second parameter and a third parameter sleep_time with default value 1000. Use a repeat loop to set the tempo and play the notes_list.
 
     .. dropdown::
         :icon: codescan
@@ -146,7 +136,89 @@ Notes
                         music.play(notes_list)
                         sleep(1000)
 
-            .. tab-item:: Q3
+----
+
+Tempo
+----------
+
+.. py:function::  music.set_tempo(ticks=4, bpm=120)
+
+    | Sets the tempo for playback.
+    | A number of ticks, expressed as an integer, make a beat. The default is 4 ticks per beat.
+    | Each beat is to be played at a certain frequency, beats per minute, expressed as an integer. The default is 120 bpm.
+
+| Examples of use:
+| music.set_tempo() - reset the tempo to default of ticks = 4, bpm = 120
+| music.set_tempo(ticks=8) - change the beat to 8 ticks
+| music.set_tempo(bpm=240) - just change the tempo to 240 beats per minute
+
+| The length of a beat in milliseconds is (60 sec * 1000 / bpm). 
+| For the default value of 120 bpm, that's 60000/120 or 1 beat in 500 milliseconds.
+
+| The code below plays a list of notes.
+| The tempo can be sped up by changing ticks from 4 to 8 or by changing bpm from 120 to 240.
+
+.. code-block:: python
+
+    from microbit import *
+    import music
+
+    notes_list = ['e4', 'f#', 'g', 'a', 'b', 'c5', 'd', 'e']
+
+    music.set_tempo(ticks=4, bpm=120)
+    music.play(notes_list)
+    music.set_tempo(ticks=8, bpm=120)
+    music.play(notes_list)
+    music.set_tempo(ticks=8, bpm=240)
+    music.play(notes_list)
+
+----
+
+.. py:function::  music.get_tempo()
+
+    Gets the current tempo as a tuple of integers: (bpm, ticks).
+
+| To display the tuple from get_tempo it can be converted to a string:
+
+.. code-block:: python
+
+    from microbit import *
+    import music
+
+    music.set_tempo(ticks=4, bpm=240)
+    tempo_data = str(music.get_tempo())
+    display.scroll(tempo_data)
+
+| Each value in the tuple can be accessed using its index as shown below:
+
+.. code-block:: python
+
+    from microbit import *
+    import music
+
+    music.set_tempo(ticks=2, bpm=120)
+    tempo_data = music.get_tempo()
+    bpm = tempo_data[0]
+    ticks = tempo_data[1]
+    display.scroll(bpm)
+    display.scroll(ticks)
+
+----
+
+.. admonition:: Tasks
+
+    #. Play the 5 notes: c, e, g, e, c with a tempo of 120, 180 and 240bpm without a for loop.
+    #. Play the 3 notes: 'e4:4', 'f#', 'g' with a tempo of 120, 180 and 240bpm using a for loop for the tempos. 
+    #. Design a function that takes the list of 3 notes ['e4:4', 'f#', 'g'] as one parameter; takes a tempo list of 120, 240, 360 , 480 and 600 bpm as a second parameter and a third parameter sleep_time with default value 1000. Use a repeat loop to set the tempo and play the notes_list.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
 
                 Play the 5 notes: c, e, g, e, c with a tempo of 120, 180 and 240bpm without a for loop. 
 
@@ -168,7 +240,7 @@ Notes
                         music.play(notes_list)
                         sleep(1000)
 
-            .. tab-item:: Q4
+            .. tab-item:: Q2
 
                 Play the 3 notes: 'e4:4', 'f#', 'g' with a tempo of 120, 180 and 240bpm using a for loop for the tempos. 
 
@@ -186,7 +258,7 @@ Notes
                             sleep(1000)
         
 
-            .. tab-item:: Q5
+            .. tab-item:: Q3
 
                 Design a function that takes the list of 3 notes ['e4:4', 'f#', 'g'] as one parameter; takes a tempo list of 120, 240, 360 , 480 and 600 bpm as a second parameter and a third parameter sleep_time with default value 1000. Use a repeat loop to set the tempo and play the notes_list.
  
@@ -206,6 +278,24 @@ Notes
                         
                     while True:
                         tempo_play(notes_list, tempo_list, sleep_time=1000)
+
+----
+
+Tuple unpacking for advanced users
+-------------------------------------
+
+| For advanced users, tuple unpacking can be used instead of indices: ``bpm, ticks = music.get_tempo()``.
+| See: https://www.w3schools.com/python/python_tuples_unpack.asp
+
+.. code-block:: python
+
+    from microbit import *
+    import music
+
+    music.set_tempo(ticks=2, bpm=120)
+    bpm, ticks = music.get_tempo()
+    display.scroll(bpm)
+    display.scroll(ticks)
 
 ----
 
@@ -257,7 +347,6 @@ Volume **V2**
 
                     from microbit import *
                     import music
-
 
                     note0 = "c4:2"
                     note1 = "e4:2"
@@ -444,68 +533,6 @@ Other music methods
     | Resets the state of the following attributes as listed:
     | ticks = 4; bpm = 120; duration = 4; octave = 4
 
-.. py:function::  music.set_tempo(ticks=4, bpm=120)
-
-    | Sets the tempo for playback.
-    | A number of ticks, expressed as an integer, make a beat. The default is 4 ticks per beat.
-    | Each beat is to be played at a certain frequency, beats per minute, expressed as an integer. The default is 120 bpm.
-
-| Examples of use:
-| music.set_tempo() - reset the tempo to default of ticks = 4, bpm = 120
-| music.set_tempo(ticks=8) - change the beat to 8 ticks
-| music.set_tempo(bpm=240) - just change the tempo to 240 beats per minute
-
-| The length of a beat in milliseconds is (60 sec * 1000 / bpm). 
-| For the default value of 120 bpm, that's 60000/120 or 1 beat in 500 milliseconds.
-
-.. py:function::  music.get_tempo()
-
-    Gets the current tempo as a tuple of integers: (bpm, ticks).
-
-| To display the tuple from get_tempo it can be converted to a string:
-
-.. code-block:: python
-
-    from microbit import *
-    import music
-
-    music.set_tempo(ticks=4, bpm=240)
-    tempo_data = str(music.get_tempo())
-    display.scroll(tempo_data)
-
-| Each value in the tuple can be accessed using its index as shown below:
-
-.. code-block:: python
-
-    from microbit import *
-    import music
-
-    music.set_tempo(ticks=2, bpm=120)
-    tempo_data = music.get_tempo()
-    bpm = tempo_data[0]
-    ticks = tempo_data[1]
-    display.scroll(bpm)
-    display.scroll(ticks)
-
-----
-
-Tuple unpacking for advanced users
--------------------------------------
-
-| For advanced users, tuple unpacking can be used instead of indices: ``bpm, ticks = music.get_tempo()``.
-| See: https://www.w3schools.com/python/python_tuples_unpack.asp
-
-.. code-block:: python
-
-    from microbit import *
-    import music
-
-    music.set_tempo(ticks=2, bpm=120)
-    bpm, ticks = music.get_tempo()
-    display.scroll(bpm)
-    display.scroll(ticks)
-
-----
 
 Scales
 ----------------------------------------
