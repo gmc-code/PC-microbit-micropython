@@ -289,13 +289,100 @@ Notes
 
 ----
 
-Other music methods
+Stop background music
 -----------------------------------
 
 .. py:function::  music.stop(pin=pin0)
 
     | Stops all music playback on the built-in speaker and any pin outputting sound. 
     | An optional argument can be provided to specify a pin, eg. music.stop(pin=pin1).
+
+
+| In the example below wait=False so that the music plays in the background.
+| In the example below loop=True so that the music loops for ever.
+| "A" is scrolled in the background to suggest pressing A to stop the music.
+
+.. code-block:: python
+
+    from microbit import *
+    import music
+
+    # Define the melody
+    melody1 = ['C4:4', 'C4:4', 'G4:4', 'G4:4', 'A4:4', 'A4:4', 'G4:8', 'F4:4', 'F4:4', 'E4:4', 'E4:4', 'D4:4', 'D4:4', 'C4:8']
+
+    # Play the melody
+    music.play(melody1, wait=False, loop=True)
+
+    display.scroll("A", wait=False, loop=True)
+    while True: # Allow 2 seconds to choose to press the A button
+        sleep(2000)
+        if button_a.was_pressed():
+            # Stop the melody
+            music.stop()
+            break
+
+    display.scroll("THE END")
+
+----
+
+.. admonition:: Tasks
+
+    #. Instead of playing the same note each time, play a different note "c4:2", "e4:2","f#4:2" for a dfifferent volume.
+    #. Put the 3 sound levels in a list and use a for loop to set the volume and play the note "c4:2".
+    #. To the previous task, add the ability to stop the playing by exiting the ``while True`` loop on pressing the A button via the use of ``break``. Pressing the reset button on the back of the microbit will restart the code.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Instead of playing the same note each time, play a different note "c4:2", "e4:2","f#4:2" for a dfifferent volume.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import music
+
+                    # Define the first melody
+                    melody1 = ['C4:4', 'C4:4', 'G4:4', 'G4:4', 'A4:4', 'A4:4', 'G4:8', 'F4:4', 'F4:4', 'E4:4', 'E4:4', 'D4:4', 'D4:4', 'C4:8']
+
+
+                    # Define the second melody
+                    melody2 = ['E4:4', 'D4:4', 'C4:4', 'D4:4', 'E4:4', 'E4:4', 'E4:8', 'D4:4', 'D4:4', 'D4:8', 'E4:4', 'G4:4', 'G4:8']
+
+                    # Play the first melody
+                    music.play(melody1, wait=False, loop=True)
+
+                    display.scroll("A", wait=False, loop=True)
+                    while True:  # Allow 2 seconds to choose to press the A button
+                        sleep(2000)
+                        if button_a.was_pressed():
+                            # Stop the first melody
+                            music.stop()
+                            break
+
+                    # Play the second melody
+                    music.play(melody2, wait=False, loop=True)
+
+                    display.scroll("B", wait=False, loop=True)
+                    while True:  # Allow 2 seconds to choose to press the B button
+                        sleep(2000)
+                        if button_b.was_pressed():
+                            # Stop the second melody
+                            music.stop()
+                            break
+
+                    display.scroll("THE END")
+
+
+----
+
+Other music methods
+-----------------------------------
 
 .. py:function::  music.reset()
 
