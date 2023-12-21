@@ -2,19 +2,14 @@
 Audio: built in sounds **V2** 
 ================================
 
-| See: https://microbit-micropython.readthedocs.io/en/v2-docs/audio.html
-| For control of the speaker and volume in V2 see: 
-| https://pc-microbit-micropython.readthedocs.io/en/latest/lessons2/music.html#v2-volume
-
-----
-
 Expressive sounds  **V2** 
 --------------------------
 
-| The built-in expressive sounds can be called using ``audio.play(Sound. ...)``.
+| The built-in expressive sounds can be called using ``audio.play(Sound.SOUNDNAME)`` where SOUNDNAME is replaced with the name of a sound.
 | e.g. ``audio.play(Sound.GIGGLE)``
 
 The built in sounds are
+
 * Sound.GIGGLE
 * Sound.HAPPY
 * Sound.HELLO

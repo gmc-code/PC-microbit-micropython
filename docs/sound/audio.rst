@@ -41,4 +41,4 @@ main controls
 
 .. py:function:: stop()
 
-    Stops all audio playback.
+    Stops all audio playback. This would be useful if ``wait=False`` such that the sound playing is non blocking. 
