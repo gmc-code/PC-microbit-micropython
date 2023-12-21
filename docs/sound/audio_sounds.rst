@@ -232,8 +232,8 @@ Built in sounds and images
 
 | The following code uses a dictionary to associate sounds and images.
 | It then displays the image and plays the sound.
-| In the code ``for emotion, attributes in emotions.items():``, 'emotion, attributes' follow the pattern 'key, value' where emotion is the key and attribute is the value for that key.
-| 'happy' is he first emotion (key). It value, attribute, is a nested dictionary with keys 'sound' and 'image'.
+| In the code ``for emotion, attributes in emotions.items():``, 'emotion, attributes' follow the pattern 'key, value', where emotion is the key and attribute is the value for that key.
+| 'happy' is the first emotion (key). Its value, attribute, is a nested dictionary with keys 'sound' and 'image'.
 
 .. code-block:: python
 
