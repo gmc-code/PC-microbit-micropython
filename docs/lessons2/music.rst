@@ -105,9 +105,10 @@ Notes
 .. admonition:: Tasks
 
     #. Play the 5 notes: c, e, g, e, c in octave 4.
-    #. Starting with C in octave 4, play the next 6 notes that are each one semitone higher htan the previous note. Use sharps as needed.
-    #. Play the 5 notes: c, e, g, e, c with a tempo of 120, 180 and 240bpm. 
-    #. Design a function that takes the 5 notes: c, e, g, e, c, as one parameter; takes a tempo list of 120, 240, 360 , 480 and 600 bpm as a second parameter and a third parameter: sleep_time with default value 1000. Use a repeat loop to set the tempo and play the notes_list.
+    #. Starting with C in octave 4, play the next 6 notes that are each one semitone higher than the previous note. Use sharps as needed.
+    #. Play the 5 notes: c, e, g, e, c with a tempo of 120, 180 and 240bpm without a for loop.
+    #. Play the 3 notes: 'e4:4', 'f#', 'g' with a tempo of 120, 180 and 240bpm using a for loop for the tempos. 
+    #. Design a function that takes the list of 3 notes ['e4:4', 'f#', 'g'] as one parameter; takes a tempo list of 120, 240, 360 , 480 and 600 bpm as a second parameter and a third parameter sleep_time with default value 1000. Use a repeat loop to set the tempo and play the notes_list.
 
     .. dropdown::
         :icon: codescan
@@ -133,7 +134,7 @@ Notes
 
             .. tab-item:: Q2
 
-                Starting with C in octave 4, play the next 6 notes that are each one semitone higher htan the previous note. Use sharps as needed. 
+                Starting with C in octave 4, play the next 6 notes that are each one semitone higher than the previous note. Use sharps as needed. 
 
                 .. code-block:: python
 
@@ -148,7 +149,7 @@ Notes
 
             .. tab-item:: Q3
 
-                Play the 5 notes: c, e, g, e, c with a tempo of 120, 180 and 240bpm. 
+                Play the 5 notes: c, e, g, e, c with a tempo of 120, 180 and 240bpm without a for loop. 
 
                 .. code-block:: python
 
@@ -170,14 +171,32 @@ Notes
 
             .. tab-item:: Q4
 
-                Design a function that takes the 5 notes: c, e, g, e, c, as one parameter; takes a tempo list of 120, 240, 360 , 480 and 600 bpm as a second parameter and a third parameter: sleep_time with default value 1000. Use a repeat loop to set the tempo and play the notes_list.
+                Play the 3 notes: 'e4:4', 'f#', 'g' with a tempo of 120, 180 and 240bpm with a for loop. 
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import music
+
+                    notes_list = ['e4:4', 'f#', 'g']
+
+                    while True:
+                        for tempo in [120, 180, 240]:
+                            music.set_tempo(bpm=tempo) 
+                            music.play(notes_list)
+                            sleep(1000)
+        
+
+            .. tab-item:: Q5
+
+                Design a function that takes the list of 3 notes ['e4:4', 'f#', 'g'] as one parameter; takes a tempo list of 120, 240, 360 , 480 and 600 bpm as a second parameter and a third parameter sleep_time with default value 1000. Use a repeat loop to set the tempo and play the notes_list.
  
                 .. code-block:: python
 
                     from microbit import *
                     import music
 
-                    notes_list = ['c4:4', 'e', 'g', 'e', 'c']
+                    notes_list = ['e4:4', 'f#', 'g']
                     tempo_list = [120, 240, 360, 480, 600]
 
                     def tempo_play(notes_list, tempo_list, sleep_time=1000):
