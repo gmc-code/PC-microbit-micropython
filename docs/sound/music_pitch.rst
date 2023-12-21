@@ -122,7 +122,7 @@ A	    1760
 ----
 
 | The code uses a for-loop to play each frequency.
-| the A-button can be pressed to exit the while loop using ``break``. "was_pressed" can be used to break out of the for-loop. Keep holding down the A-button so "is_pressed" can be used to break out of the while-loop. 
+| the A-button can be pressed to exit the while loop using ``break``.
 | Pressing the reset button on the back of the microbit will restart the code.
 
 .. code-block:: python
@@ -135,9 +135,7 @@ A	    1760
     while True:
         for freq in Am_4:
             music.pitch(freq, duration=timing)
-            if button_a.was_pressed():
-                break
-        if button_a.is_pressed():
+        if button_a.was_pressed():
             break
 
 ----
@@ -168,10 +166,9 @@ A	    1760
                     while True:
                         for freq in Em_freqs:
                             music.pitch(freq, duration=timing)
-                            if button_a.was_pressed():
+                        if button_a.was_pressed():
                                 break
-                        if button_a.is_pressed():
-                            break
+
 
             .. tab-item:: Q2
 
@@ -187,9 +184,7 @@ A	    1760
                     while True:
                         for freq in DM_freqs:
                             music.pitch(freq, duration=timing)
-                            if button_a.was_pressed():
-                                break
-                        if button_a.is_pressed():
+                        if button_a.was_pressed():
                             break
 
 
@@ -219,7 +214,6 @@ A	    1760
                     Am_5 = [freq * 2 for freq in Am_4 if freq != 440]
                     print(Am_5)
 
-                    sleep(3000)
                     timing = 400
                     while True:
                         display.scroll(4, wait=False)
@@ -245,7 +239,6 @@ A	    1760
                     Am_5 = [freq * 2 for freq in Am_4 if freq != 440]
                     Am_3 = [freq // 2 for freq in Am_4 if freq != 880]
 
-                    sleep(3000)
                     timing = 400
                     while True:
                         display.scroll(3, wait=False)
@@ -259,3 +252,4 @@ A	    1760
                             music.pitch(freq, duration=timing)
                         if button_a.was_pressed():
                             break
+                        
