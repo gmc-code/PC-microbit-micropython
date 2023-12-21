@@ -11,7 +11,7 @@ Music
     | For use of the inbuilt speaker on the **V2 microbit**, set the speaker to **on**.
     | For use of an external buzzer on a **breadboard**, set the speaker to **off** so that the in-built speaker does not also play sounds.
 
-**V2** speaker
+Speaker **V2** 
 ---------------------
 
 | By default sound output will be via the edge connector on pin0 and the **V2** built-in speaker. 
@@ -78,9 +78,8 @@ Play music
     music.play(notes_list)
     music.set_tempo(ticks=8, bpm=120)
     music.play(notes_list)
-    music.set_tempo(ticks=4, bpm=240)
+    music.set_tempo(ticks=8, bpm=240)
     music.play(notes_list)
-
 
 ----
 
@@ -90,7 +89,7 @@ Notes
 | An individual note is specified as: ``NOTE[octave][:duration]``.
 
 | Notes are the letters a to g with or without an accidental (`#` for a sharp, `b` for a flat). Lower case or upper case notes are the same. eg. `A` and `a` are the same. **Ab** is A-flat and **C#** is C-sharp.
-| If the note name **R** is used then it is treated as a rest (silence).
+| Use **r** or **R** for a rest (silence).
 
 | If the octave is left out it defaults to 4 (containing middle C).
 | If the duration is left out it defaults to 4 (a crotchet).
@@ -171,7 +170,7 @@ Notes
 
             .. tab-item:: Q4
 
-                Play the 3 notes: 'e4:4', 'f#', 'g' with a tempo of 120, 180 and 240bpm with a for loop. 
+                Play the 3 notes: 'e4:4', 'f#', 'g' with a tempo of 120, 180 and 240bpm using a for loop for the tempos. 
 
                 .. code-block:: python
 
@@ -210,7 +209,7 @@ Notes
 
 ----
 
-**V2** volume
+Volume **V2** 
 ---------------------
 
 .. py:function:: set_volume(volume)
@@ -239,7 +238,7 @@ Notes
 
 .. admonition:: Tasks
 
-    #. Instead of playing the same note each time, play a different note "c4:2", "e4:2","f#4:2" for a dfifferent volume.
+    #. Instead of playing the same note each time, play each different note "c4:2", "e4:2","f#4:2" at a different volume.
     #. Put the 3 sound levels in a list and use a for loop to set the volume and play the note "c4:2".
     #. To the previous task, add the ability to stop the playing by exiting the ``while True`` loop on pressing the A button via the use of ``break``. Pressing the reset button on the back of the microbit will restart the code.
 
@@ -252,7 +251,7 @@ Notes
 
             .. tab-item:: Q1
 
-                Instead of playing the same note each time, play a different note "c4:2", "e4:2","f#4:2" for a dfifferent volume.
+                Instead of playing the same note each time, play a different note "c4:2", "e4:2","f#4:2" at a dfifferent volume.
 
                 .. code-block:: python
 
@@ -317,8 +316,8 @@ Stop background music
     | An optional argument can be provided to specify a pin, eg. music.stop(pin=pin1).
 
 
-| In the example below wait=False so that the music plays in the background.
-| In the example below loop=True so that the music loops for ever.
+| In the example below ``wait=False`` so that the music plays in the background.
+| In the example below ``loop=True`` so that the music loops for ever.
 | "A" is scrolled in the background to suggest pressing A to stop the music.
 
 .. code-block:: python
@@ -346,9 +345,8 @@ Stop background music
 
 .. admonition:: Tasks
 
-    #. Instead of playing the same note each time, play a different note "c4:2", "e4:2","f#4:2" for a dfifferent volume.
-    #. Put the 3 sound levels in a list and use a for loop to set the volume and play the note "c4:2".
-    #. To the previous task, add the ability to stop the playing by exiting the ``while True`` loop on pressing the A button via the use of ``break``. Pressing the reset button on the back of the microbit will restart the code.
+    #. Add a rest equivalent to 4 crotchets to the end of the melody so it provides a pause equivalent to one bar as the melody loops.
+    #. Modify the example above to have 2 melodies: melody1 = ['C4:4', 'C4:4', 'G4:4', 'G4:4', 'A4:4', 'A4:4', 'G4:8', 'F4:4', 'F4:4', 'E4:4', 'E4:4', 'D4:4', 'D4:4', 'C4:8'] and =melody2 = ['E4:4', 'D4:4', 'C4:4', 'D4:4', 'E4:4', 'E4:4', 'E4:8', 'D4:4', 'D4:4', 'D4:8', 'E4:4', 'G4:4', 'G4:8']. Firstly, melody1 loops and can be stopped by the A-button. Then melody2 loops and can be stopped by the B-button.
 
     .. dropdown::
         :icon: codescan
@@ -360,6 +358,31 @@ Stop background music
             .. tab-item:: Q1
 
                 Instead of playing the same note each time, play a different note "c4:2", "e4:2","f#4:2" for a dfifferent volume.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import music
+
+                    # Define the melody
+                    melody1 = ['C4:4', 'C:4', 'G:4', 'G4:4', 'A4:4', 'A4:4', 'G4:8', 'F4:4', 'F4:4', 'E4:4', 'E4:4', 'D4:4', 'D4:4', 'C4:8', 'R:16']
+
+                    # Play the melody
+                    music.play(melody1, wait=False, loop=True)
+
+                    display.scroll("A", wait=False, loop=True)
+                    while True: # Allow 2 seconds to choose to press the A button
+                        sleep(2000)
+                        if button_a.was_pressed():
+                            # Stop the melody
+                            music.stop()
+                            break
+
+                    display.scroll("THE END")
+
+            .. tab-item:: Q2
+
+                Modify the example above to have 2 melodies: melody1 = ['C4:4', 'C4:4', 'G4:4', 'G4:4', 'A4:4', 'A4:4', 'G4:8', 'F4:4', 'F4:4', 'E4:4', 'E4:4', 'D4:4', 'D4:4', 'C4:8'] and =melody2 = ['E4:4', 'D4:4', 'C4:4', 'D4:4', 'E4:4', 'E4:4', 'E4:8', 'D4:4', 'D4:4', 'D4:8', 'E4:4', 'G4:4', 'G4:8']. Firstly, melody1 loops and can be stopped by the A-button. Then melody2 loops and can be stopped by the B-button.
 
                 .. code-block:: python
 
