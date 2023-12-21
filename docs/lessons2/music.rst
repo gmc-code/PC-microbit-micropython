@@ -53,7 +53,7 @@ Play music
     | If loop is set to True, the music repeats until stop is called. Set wait to False to sue this.
 
 | Use ``music.play(note)`` to play a note given by the ``note`` variable.
-| The note is written as a string with quotes: 'c4:8'. This is a c note in octave 4 wiht a duration of 8 ticks (a minim or 2 crotchet beats).
+| The note is written as a string with quotes: 'c4:8'. This is a c note in octave 4 with a duration of 8 ticks (a minim or 2 crotchet beats).
 
 .. code-block:: python
 
@@ -74,6 +74,48 @@ Play music
 
     notes_list = ['e4', 'f#', 'g', 'a', 'b', 'c5', 'd', 'e']
     music.play(notes_list)
+
+.. admonition:: Tasks
+
+    #. Play the note e over and over again with 1 second between them.
+    #. Play the notes c, e, g over and over again with 1 second between replays.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Play the note e.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import music
+
+                    note = 'e'
+
+                    while True:
+                        music.play(note)
+                        sleep(1000)
+
+            .. tab-item:: Q2
+
+                Play the notes c, e, g over and over again with 1 second between replays. 
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import music
+
+                    notes_list = ['c', 'e', 'g']
+
+                    while True:
+                        music.play(notes_list)
+                        sleep(1000)
 
 ----
 
