@@ -130,10 +130,10 @@ A	    1760
     from microbit import *
     import music
 
-    Am_freqs = [440, 494, 523, 587, 659, 698, 784, 880]
+    Am_4 = [440, 494, 523, 587, 659, 698, 784, 880]
     timing = 400
     while True:
-        for freq in Am_freqs:
+        for freq in Am_4:
             music.pitch(freq, duration=timing)
             if button_a.was_pressed():
                 break
@@ -192,3 +192,70 @@ A	    1760
                         if button_a.is_pressed():
                             break
 
+
+
+.. admonition:: Tasks
+
+    #. Begin with the scale Am_4 = [440, 494, 523, 587, 659, 698, 784, 880]. Use list comprehension to create a new list, Am_5, in which the frequencies are multiplied by 2, but include the condition that the frequency is not 440. Scroll the octave number, without blocking the sound, when the octave list sounds start. See: https://pc-python.readthedocs.io/en/latest/python_advanced/list_comprehensions.html
+    #. Begin with the scale Am_4= [440, 494, 523, 587, 659, 698, 784, 880]. Use list comprehension to create a new list, Am_5, exluding 440 and a new list, Am_3, in which the frequencies are divided by 2, exluding 880. Scroll the octave number, without blocking the sound, when the octave list sounds start.
+    
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Begin with the scale Am_4 = [440, 494, 523, 587, 659, 698, 784, 880]. Use list comprehension to create a new list, Am_5, in which the frequencies are multiplied by 2, but include the condition that the frequency is not 440. Scroll the octave number, without blocking the sound, when the octave list sounds start.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import music
+
+                    Am_4 = [440, 494, 523, 587, 659, 698, 784, 880]
+                    Am_5 = [freq * 2 for freq in Am_4 if freq != 440]
+                    print(Am_5)
+
+                    sleep(3000)
+                    timing = 400
+                    while True:
+                        display.scroll(4, wait=False)
+                        for freq in Am_4:
+                            music.pitch(freq, duration=timing)
+                        display.scroll(5, wait=False)
+                        for freq in Am_5:
+                            music.pitch(freq, duration=timing)
+                        if button_a.was_pressed():
+                            break
+
+            .. tab-item:: Q2
+
+               Begin with the scale Am_4= [440, 494, 523, 587, 659, 698, 784, 880]. Use list comprehension to create a new list, Am_5, exluding 440 and a new list, Am_3, in which the frequencies are divided by 2, exluding 880. Scroll the octave number, without blocking the sound, when the octave list sounds start.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import music
+                
+
+                    Am_4 = [440, 494, 523, 587, 659, 698, 784, 880]
+                    Am_5 = [freq * 2 for freq in Am_4 if freq != 440]
+                    Am_3 = [freq // 2 for freq in Am_4 if freq != 880]
+
+                    sleep(3000)
+                    timing = 400
+                    while True:
+                        display.scroll(3, wait=False)
+                        for freq in Am_3:
+                            music.pitch(freq, duration=timing)
+                        display.scroll(4, wait=False)
+                        for freq in Am_4:
+                            music.pitch(freq, duration=timing)
+                        display.scroll(5, wait=False)
+                        for freq in Am_5:
+                            music.pitch(freq, duration=timing)
+                        if button_a.was_pressed():
+                            break
