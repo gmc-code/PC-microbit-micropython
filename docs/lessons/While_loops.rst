@@ -18,7 +18,7 @@ Events as conditions
 | If the condition is False, the loop is exited.
 
 | Button pressing can be used as the condition in a while loop.
-| In the code below, the code within the while loop runs only while the A button is being held down.
+| In the code below, the code within the while loop runs only while the A-button is being held down.
 
 .. code-block:: python
 
@@ -34,8 +34,8 @@ Events as conditions
 
 .. admonition:: Tasks
 
-    #. Write a while loop that displays a happy face while the A button is pressed, and when it is not, Image.ALL_CLOCKS is used to display a rotating clock hand.
-    #. Write a while loop that displays a sad face while the B button is pressed, and when it is not, Image.ALL_CLOCKS is used to display a rotating clock hand.
+    #. Write a while loop that displays a happy face while the A-button is pressed, and when it is not, Image.ALL_CLOCKS is used to display a rotating clock hand.
+    #. Write a while loop that displays a sad face while the B-button is pressed, and when it is not, Image.ALL_CLOCKS is used to display a rotating clock hand.
 
     .. dropdown::
         :icon: codescan
@@ -46,7 +46,7 @@ Events as conditions
 
             .. tab-item:: Q1
 
-                Write a while loop that displays a happy face while the A button is pressed, and when it is not, Image.ALL_CLOCKS is used to display a rotating clock hand.
+                Write a while loop that displays a happy face while the A-button is pressed, and when it is not, Image.ALL_CLOCKS is used to display a rotating clock hand.
 
                 .. code-block:: python
 
@@ -60,7 +60,7 @@ Events as conditions
 
             .. tab-item:: Q2
 
-                Write a while loop that displays a sad face while the B button is pressed, and when it is not, Image.ALL_CLOCKS is used to display a rotating clock hand.
+                Write a while loop that displays a sad face while the B-button is pressed, and when it is not, Image.ALL_CLOCKS is used to display a rotating clock hand.
 
                 .. code-block:: python
 

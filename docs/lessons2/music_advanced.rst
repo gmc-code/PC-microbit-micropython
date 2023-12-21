@@ -151,7 +151,7 @@ See: https://random-music-generators.herokuapp.com/melody
 .. admonition:: Tasks
 
     #. Include a note modification parameter to sharpen, flatten or leave the note unchanged.
-    #. Create a function, **get_random_notes**, to return a random list of notes, given the number of notes. Use a for-loop to add the random notes to a list within the function. Play the notes when a button is pressed.
+    #. Create a function, **get_random_notes**, to return a random list of notes, given the number of notes. Use a for-loop to add the random notes to a list within the function. Play the notes when the A-button is pressed.
     #. Rewrite the function, **get_random_notes**, to use list comprehension.
 
     .. dropdown::
@@ -194,7 +194,7 @@ See: https://random-music-generators.herokuapp.com/melody
 
             .. tab-item:: Q2
 
-                Create a function, **get_random_notes**, to return a random list of notes, given the number of notes. Use a for-loop to add the random notes to a list within the function. Play the notes when a button is pressed.
+                Create a function, **get_random_notes**, to return a random list of notes, given the number of notes. Use a for-loop to add the random notes to a list within the function. Play the notes when the A-button is pressed.
 
                 .. code-block:: python
 
@@ -224,10 +224,9 @@ See: https://random-music-generators.herokuapp.com/melody
 
                     while True:
                         if button_a.is_pressed():
-
-                        random_notes = get_random_notes(10)
-                        music.play(random_notes)
-                        sleep(2000)
+                            random_notes = get_random_notes(10)
+                            music.play(random_notes)
+                            sleep(2000)
 
             .. tab-item:: Q3
 

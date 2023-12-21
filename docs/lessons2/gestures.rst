@@ -188,10 +188,10 @@ is_gesture counts
 
 .. admonition:: Tasks
 
-    #. Modify the code to reset the count back to 0 when the A button is pressed.
-    #. Modify the code to reset the count to a number 2 less than the current count when the B button is pressed. Hint: use the max function.
-    #. Modify the code to reset the count to a number 2 less than the current count, but not lower than 0, when the B button is pressed.
-    #. Modify the code to include both the A button and B button actions.
+    #. Modify the code to reset the count back to 0 when the A-button is pressed.
+    #. Modify the code to reset the count to a number 2 less than the current count when the B-button is pressed. Hint: use the max function.
+    #. Modify the code to reset the count to a number 2 less than the current count, but not lower than 0, when the B-button is pressed.
+    #. Modify the code to include both the A-button and B-button actions.
 
     .. dropdown::
         :icon: codescan
@@ -202,7 +202,7 @@ is_gesture counts
 
             .. tab-item:: Q1
 
-                Modify the code to reset the count back to 0 when the A button is pressed.
+                Modify the code to reset the count back to 0 when the A-button is pressed.
 
                 .. code-block:: python
 
@@ -222,7 +222,7 @@ is_gesture counts
 
             .. tab-item:: Q2
 
-                Modify the code to reset the count to a number 2 less than the current count when the B button is pressed. Hint: use the max function.
+                Modify the code to reset the count to a number 2 less than the current count when the B-button is pressed. Hint: use the max function.
 
                 .. code-block:: python
 
@@ -242,7 +242,7 @@ is_gesture counts
 
             .. tab-item:: Q3
 
-                Modify the code to reset the count to a number 2 less than the current count, but not lower than 0, when the B button is pressed.
+                Modify the code to reset the count to a number 2 less than the current count, but not lower than 0, when the B-button is pressed.
 
                 .. code-block:: python
 
@@ -262,7 +262,7 @@ is_gesture counts
 
             .. tab-item:: Q4
 
-                Modify the code to include both the A button and B button actions.
+                Modify the code to include both the A-button and B-button actions.
 
                 .. code-block:: python
 
@@ -416,8 +416,8 @@ was_gesture counts
 .. admonition:: Tasks
 
     #. Modify the code to reset the count back to 5 when the count gets to 0.
-    #. Keeping the modifications, modify the code further to reset the count to 5 when the A button is pressed.
-    #. Keeping the modifications, modify the code further to raise the count by 2 when the B button is pressed.
+    #. Keeping the modifications, modify the code further to reset the count to 5 when the A-button is pressed.
+    #. Keeping the modifications, modify the code further to raise the count by 2 when the B-button is pressed.
 
     .. dropdown::
         :icon: codescan
@@ -448,7 +448,7 @@ was_gesture counts
 
             .. tab-item:: Q2
 
-                Keeping the modifications, modify the code further to reset the count to 5 when the A button is pressed.
+                Keeping the modifications, modify the code further to reset the count to 5 when the A-button is pressed.
 
                 .. code-block:: python
 
@@ -473,7 +473,7 @@ was_gesture counts
 
             .. tab-item:: Q3
 
-                Keeping the modifications, modify the code further to raise the count by 2 when the B button is pressed.
+                Keeping the modifications, modify the code further to raise the count by 2 when the B-button is pressed.
 
                 .. code-block:: python
 
@@ -573,8 +573,8 @@ tilt sideways counter
 
 .. admonition:: Tasks
 
-    #. Add code to reset the count back to 0 when the A button is pressed.
-    #. Further modify the code to reset the count to a number 2 less than the current count, but no lower than 0, when the B button is pressed.
+    #. Add code to reset the count back to 0 when the A-button is pressed.
+    #. Further modify the code to reset the count to a number 2 less than the current count, but no lower than 0, when the B-button is pressed.
     #. Further modify the code to count the total number of tilts up or down.
     #. Further modify the code to count the total number of tilts to the left or right or up or down.
 
@@ -587,7 +587,7 @@ tilt sideways counter
 
             .. tab-item:: Q1
 
-                Add code to reset the count back to 0 when the A button is pressed.
+                Add code to reset the count back to 0 when the A-button is pressed.
 
                 .. code-block:: python
 
@@ -608,7 +608,7 @@ tilt sideways counter
 
             .. tab-item:: Q2
 
-                Further modify the code to reset the count to a number 2 less than the current count, but no lower than 0, when the B button is pressed.
+                Further modify the code to reset the count to a number 2 less than the current count, but no lower than 0, when the B-button is pressed.
 
                 .. code-block:: python
 

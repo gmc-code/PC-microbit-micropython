@@ -35,7 +35,7 @@ Send on button pressing
 
 .. admonition:: Tasks
 
-    #. Modify the code to send "B" if the B button was pressed.
+    #. Modify the code to send "B" if the B-button was pressed.
     #. Modify the code to send back a "B" if "A" is received and "A" if "B" is received, but not until having first displayed the received message.
     #. Modify the code to send "T" or "F" from button pressing so it can be used to answer True and False questions.
     #. Modify the code to send "T" or "F" from button pressing and then show the Image.YES if "T" is received, and the Image.NO if "F" is received.
@@ -50,7 +50,7 @@ Send on button pressing
 
                 .. tab-item:: Q1
 
-                    Modify the code to send "B" if the B button was pressed.
+                    Modify the code to send "B" if the B-button was pressed.
 
                     .. code-block:: python
                         

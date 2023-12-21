@@ -79,7 +79,7 @@ Power off
 
 ----
 
-| The code below uses button-B pressing to power down the microbit.
+| The code below uses B-button pressing to power down the microbit.
 | Press the reset button to wake it and restart the programme from the beginning.
 
 .. code-block:: python
@@ -167,8 +167,8 @@ Deep Sleep
     | See: https://microbit-micropython.readthedocs.io/en/v2-docs/microbit.html
 
 
-| The code below uses button-B pressing to go into a deep sleep.
-| **wake_on=button_a** allows pressing button-A to wake it.
+| The code below uses B-button pressing to go into a deep sleep.
+| **wake_on=button_a** allows pressing A-button to wake it.
 | **ms=30 * 60 * 1000** is a 30 minute deep sleep.
 | **run_every=False** prevents run_every events from waking it.
 
@@ -193,7 +193,7 @@ Deep Sleep
 Deep sleep wake via run_every
 -------------------------------
 
-| The code below uses button-A pressing to go into a deep sleep.
+| The code below uses A-button pressing to go into a deep sleep.
 | **wake_on=None** prevents button pressing from waking it.
 | **ms=30 * 1000** is a 30 second deep sleep.
 | **run_every=True** allows run_every events to wake it.

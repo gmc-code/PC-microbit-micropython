@@ -240,7 +240,7 @@ Volume **V2**
 
     #. Instead of playing the same note each time, play each different note "c4:2", "e4:2","f#4:2" at a different volume.
     #. Put the 3 sound levels in a list and use a for loop to set the volume and play the note "c4:2".
-    #. To the previous task, add the ability to stop the playing by exiting the ``while True`` loop on pressing the A button via the use of ``break``. Pressing the reset button on the back of the microbit will restart the code.
+    #. To the previous task, add the ability to stop the playing by exiting the ``while True`` loop on pressing the A-button via the use of ``break``. Pressing the reset button on the back of the microbit will restart the code.
 
     .. dropdown::
         :icon: codescan
@@ -288,7 +288,7 @@ Volume **V2**
 
             .. tab-item:: Q3
 
-                To the previous task, add the ability to stop the playing by exiting the ``while True`` loop on pressing the A button via the use of ``break``. Pressing the reset button on the back of the microbit will restart the code.
+                To the previous task, add the ability to stop the playing by exiting the ``while True`` loop on pressing the A-button via the use of ``break``. Pressing the reset button on the back of the microbit will restart the code.
 
                 .. code-block:: python
 
@@ -317,7 +317,7 @@ Stop background music
 
 
 | In the example below ``wait=False`` so that the music plays in the background.
-| In the example below ``loop=True`` so that the music loops for ever.
+| In the example below ``loop=True`` so that the music loops forever.
 | "A" is scrolled in the background to suggest pressing A to stop the music.
 
 .. code-block:: python
@@ -332,7 +332,7 @@ Stop background music
     music.play(melody1, wait=False, loop=True)
 
     display.scroll("A", wait=False, loop=True)
-    while True: # Allow 2 seconds to choose to press the A button
+    while True: # Allow 2 seconds to choose to press the A-button
         sleep(2000)
         if button_a.was_pressed():
             # Stop the melody
@@ -371,7 +371,7 @@ Stop background music
                     music.play(melody1, wait=False, loop=True)
 
                     display.scroll("A", wait=False, loop=True)
-                    while True: # Allow 2 seconds to choose to press the A button
+                    while True: # Allow 2 seconds to choose to press the A-button
                         sleep(2000)
                         if button_a.was_pressed():
                             # Stop the melody
@@ -400,7 +400,7 @@ Stop background music
                     music.play(melody1, wait=False, loop=True)
 
                     display.scroll("A", wait=False, loop=True)
-                    while True:  # Allow 2 seconds to choose to press the A button
+                    while True:  # Allow 2 seconds to choose to press the A-button
                         sleep(2000)
                         if button_a.was_pressed():
                             # Stop the first melody
@@ -411,7 +411,7 @@ Stop background music
                     music.play(melody2, wait=False, loop=True)
 
                     display.scroll("B", wait=False, loop=True)
-                    while True:  # Allow 2 seconds to choose to press the B button
+                    while True:  # Allow 2 seconds to choose to press the B-button
                         sleep(2000)
                         if button_b.was_pressed():
                             # Stop the second melody
@@ -522,7 +522,7 @@ Scales
 
     #. Play the 8 notes of D major. See: https://www.pianoscales.org/major.html
     #. Play the 8 notes of F minor. See: https://www.pianoscales.org/minor.html
-    #. Play the D major scale when the A button is pressed and the F minor scale when the B button is pressed.
+    #. Play the D major scale when the A-button is pressed and the F minor scale when the B-button is pressed.
 
     .. dropdown::
         :icon: codescan
@@ -565,7 +565,7 @@ Scales
 
             .. tab-item:: Q3
 
-                Play the D major scale when the A button is pressed and the F minor scale when the B button is pressed.
+                Play the D major scale when the A-button is pressed and the F minor scale when the B-button is pressed.
 
                 .. code-block:: python
 
@@ -616,7 +616,7 @@ All Built in melodies
 ----------------------------------------
 
 | This code plays all the melodies.
-| The A button can be used to stop all sounds by first breaking out of the ``for`` loop, then the ``while True`` loop.
+| the A-button can be used to stop all sounds by first breaking out of the ``for`` loop, then the ``while True`` loop.
 
 .. code-block:: python
 
@@ -799,7 +799,7 @@ A	    1760
 ----
 
 | The code uses a for-loop to play each frequency.
-| The A button can be pressed to exit the while loop using ``break``.
+| the A-button can be pressed to exit the while loop using ``break``.
 | Pressing the reset button on the back of the microbit will restart the code.
 
 .. code-block:: python

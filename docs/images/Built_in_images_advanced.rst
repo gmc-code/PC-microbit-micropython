@@ -460,7 +460,7 @@ Interrupting an image list
 | The approach below uses ``wait=False``. This causes **display.show** to run in the background. The rest of the code in the **while block** runs without waiting for the **display.show** to complete.
 | A **for-loop** with timing to match the timing of the clocks is used to allow button pressing to interrupt the clocks animation.
 | Since the clocks has a delay of 100, with 12 images, the **for-loop** must be set to run for a similar time so that the clocks images have enough time to complete. Using a range of 12 with a sleep of 100 will do this.
-| If a button is pressed, it stops the the display of the ALL_CLOCKS and displays the button letter.
+| If either button is pressed, it stops the the display of the ALL_CLOCKS and displays the button letter.
 
 .. code-block:: python
 
@@ -476,7 +476,7 @@ Interrupting an image list
             sleep(100)
 
 | The approach below converts ALL_CLOCKS to a list that can be iterated over in a for-loop.
-| After displaying a clock image, the A and B buttons are checked.
+| After displaying a clock image, the A and B-buttons are checked.
 
 .. code-block:: python
 
@@ -496,7 +496,7 @@ Interrupting an image list
 
 .. admonition:: Tasks
 
-    #. Modify the code to make better use of A or B button pressing.
+    #. Modify the code to make better use of A or B-button pressing.
 
 
 ----
@@ -517,7 +517,7 @@ See: https://realpython.com/python-enumerate/
 
 | The code below uses enumerate to create an object made up of tuples consisting of the count number (set to start at 0 using the optional start number; even though the default is 0 when the start parameter is left out).
 | The enumerate object is used up when iterated through, so it must either be placed in the **while True** loop to be recreated each time or converted to a list to be reused.
-| Pressing the A button shows the time as a number
+| Pressing the A-button shows the time as a number
 
 .. code-block:: python
 

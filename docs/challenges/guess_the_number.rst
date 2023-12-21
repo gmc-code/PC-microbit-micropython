@@ -137,8 +137,8 @@ Guess the number version 1
 | Scroll the text "1-9?" at the start then display "5" as the starting number for the user's guess.
 | Use random.randint(min_num=1, max_num=9) for the secret number to be guessed.
 | Use select_number(start_num, min_num, max_num) to select the number for the guess.
-| Use the A button to increase the guess number by 1.
-| Use the B button to make a guess.
+| Use the A-button to increase the guess number by 1.
+| Use the B-button to make a guess.
 | Give feedback with ARROW_N to go higher and ARROW_S to go lower
 | Show a tick when correct.
 | Use a while loop that stops when the secret number has been guessed. Set the flag: **guessed = False** before the loop.

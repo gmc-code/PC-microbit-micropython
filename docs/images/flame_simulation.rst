@@ -19,13 +19,13 @@ The Flame simulation
     import microbit
     import random
 
-    # User adjustable values for speed of animation; use b button
+    # User adjustable values for speed of animation; use B-button
     MIN_SLEEP = 0
     MAX_SLEEP = 100
-    # set button-B value to adjust sleep times in increments
+    # set B-button value to adjust sleep times in increments
     INC_SLEEP = 20
 
-    # User adjustable values for interpolation; use a button
+    # User adjustable values for interpolation; use A-button
     MAX_percent_increment = 55
     MIN_percent_increment = 5
 

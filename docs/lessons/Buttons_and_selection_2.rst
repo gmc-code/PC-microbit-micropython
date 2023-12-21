@@ -2,12 +2,12 @@
 EXT: Buttons and selection
 ====================================================
 
-Changing values with A and B buttons
+Changing values with A and B-buttons
 ----------------------------------------
 
-| Use the A button to increase a variable.
-| Use the B button to decrease a variable.
-| In the code below, the ``delay_time`` variable is increased in steps of 10 by the A button and decreased in steps of 10 by the B button. Finally, text is scrolled with a delay of ``delay_time``.
+| Use the A-button to increase a variable.
+| Use the B-button to decrease a variable.
+| In the code below, the ``delay_time`` variable is increased in steps of 10 by the A-button and decreased in steps of 10 by the B-button. Finally, text is scrolled with a delay of ``delay_time``.
 
 .. code-block:: python
 
