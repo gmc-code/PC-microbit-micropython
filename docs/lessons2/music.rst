@@ -104,6 +104,7 @@ Notes
 .. admonition:: Tasks
 
     #. Play the 5 notes: c, e, g, e, c in octave 4.
+    #. Starting with C in octave 4, play the next 6 notes that are each one semitone higher htan the previous note. Use sharps as needed.
     #. Play the 5 notes: c, e, g, e, c with a tempo of 120, 180 and 240bpm. 
     #. Design a function that takes the 5 notes: c, e, g, e, c, as one parameter; takes a tempo list of 120, 240, 360 , 480 and 600 bpm as a second parameter and a third parameter: sleep_time with default value 1000. Use a repeat loop to set the tempo and play the notes_list.
 
@@ -131,6 +132,21 @@ Notes
 
             .. tab-item:: Q2
 
+                Starting with C in octave 4, play the next 6 notes that are each one semitone higher htan the previous note. Use sharps as needed. 
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import music
+
+                    notes_list = ['C4', 'C#', 'D', 'D#', 'E', 'F', 'F#']
+
+                    while True:
+                        music.play(notes_list)
+                        sleep(1000)
+
+            .. tab-item:: Q3
+
                 Play the 5 notes: c, e, g, e, c with a tempo of 120, 180 and 240bpm. 
 
                 .. code-block:: python
@@ -151,7 +167,7 @@ Notes
                         music.play(notes_list)
                         sleep(1000)
 
-            .. tab-item:: Q3
+            .. tab-item:: Q4
 
                 Design a function that takes the 5 notes: c, e, g, e, c, as one parameter; takes a tempo list of 120, 240, 360 , 480 and 600 bpm as a second parameter and a third parameter: sleep_time with default value 1000. Use a repeat loop to set the tempo and play the notes_list.
  
