@@ -29,7 +29,7 @@ main controls
 
 ----
 
-**V2** Sound Effects 
+Sound Effects **V2** 
 ------------------------------------
 
 .. py:class::

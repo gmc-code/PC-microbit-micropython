@@ -1,5 +1,5 @@
 ================================
-Audio: Expressive sounds **V2** 
+Audio: built in sounds **V2** 
 ================================
 
 | See: https://microbit-micropython.readthedocs.io/en/v2-docs/audio.html
@@ -8,43 +8,23 @@ Audio: Expressive sounds **V2**
 
 ----
 
-main controls
----------------
-
-.. py:function:: play(source, wait=True, pin=pin0)
-
-    | Play the source of the sound.
-    | ``source`` can be a built-in sound or a sound effect, or an iterable of sound effects, created via the audio.SoundEffect() class, or an iterable of AudioFrame elements.
-    | If **wait** is ``True``, this function will block until the source has been completely played.
-    | **pin** is on optional argument to specify the output pin with default of ``pin0``. Use ``pin=None`` to make no sound.
-
-
-.. py:function:: is_playing()
-
-    Returns ``True`` if audio is playing, otherwise returns ``False``.
-
-.. py:function:: stop()
-
-    Stops all audio playback.
-
-----
-
-**V2** Expressive sounds 
+Expressive sounds  **V2** 
 --------------------------
 
 | The built-in expressive sounds can be called using ``audio.play(Sound. ...)``.
 | e.g. ``audio.play(Sound.GIGGLE)``
 
-* ``Sound.GIGGLE``
-* ``Sound.HAPPY``
-* ``Sound.HELLO``
-* ``Sound.MYSTERIOUS``
-* ``Sound.SAD``
-* ``Sound.SLIDE``
-* ``Sound.SOARING``
-* ``Sound.SPRING``
-* ``Sound.TWINKLE``
-* ``Sound.YAWN``
+The built in sounds are
+* Sound.GIGGLE
+* Sound.HAPPY
+* Sound.HELLO
+* Sound.MYSTERIOUS
+* Sound.SAD
+* Sound.SLIDE
+* Sound.SOARING
+* Sound.SPRING
+* Sound.TWINKLE
+* Sound.YAWN
 
 
 .. code-block:: python

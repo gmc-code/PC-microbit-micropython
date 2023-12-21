@@ -45,7 +45,7 @@ Library
 
 ----
 
-**V2** volume
+Volume **V2** 
 ---------------------
 
 .. py:function:: set_volume(volume)
@@ -76,7 +76,7 @@ Library
 
 ----
 
-**V2** speaker
+Speaker **V2** 
 ---------------------
 
 | By default sound output will be via the edge connector on pin0 and the **V2** built-in speaker. 
