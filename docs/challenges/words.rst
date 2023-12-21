@@ -134,7 +134,7 @@ Code design
     def get_char():
         current = middle_index
         display.show(chars[........])
-        # the while loops runs until A-button is pressed
+        # the while-loops runs until A-button is pressed
         while button_a.was_pressed() is False:
             # pressing B doesn't add a character but returns back to get_string
             if button_b.is_pressed():
@@ -200,7 +200,7 @@ Code design
                         def get_char():
                             current = middle_index
                             display.show(chars[current])
-                            # the while loops runs until A-button is pressed
+                            # the while-loops runs until A-button is pressed
                             while button_a.was_pressed() is False:
                                 # pressing B doesn't add a character but returns back to get_string
                                 if button_b.is_pressed():
@@ -271,7 +271,7 @@ Code design
                         def get_char():
                             current = middle_index
                             display.show(chars[current])
-                            # the while loops runs until A-button is pressed
+                            # the while-loops runs until A-button is pressed
                             while button_a.was_pressed() is False:
                                 # pressing B doesn't add a letter but returns back to 
                                 if button_b.is_pressed():
@@ -325,7 +325,7 @@ Code design
                         def get_char():
                             current = middle_index
                             display.show(chars[current])
-                            # the while loops runs until A-button is pressed
+                            # the while-loops runs until A-button is pressed
                             while button_a.was_pressed() is False:
                                 # pressing B doesn't add a letter but returns back to
                                 if button_b.is_pressed():

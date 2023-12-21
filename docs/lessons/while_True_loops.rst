@@ -3,7 +3,7 @@ while True loops
 ====================================================
 
 | See: https://www.w3schools.com/python/python_while_loops.asp
-| While loops run a set of statements as long as a test condition is true.
+| while-loops run a set of statements as long as a test condition is true.
 
 
 While true
@@ -14,9 +14,9 @@ While true
     :align: center
 
 | ``while True:`` loops run forever.
-| Instead of using a condition that returns True or False, ``True`` is used in place of the condition to make the condition always True. As a result, the while loop runs forever.
+| Instead of using a condition that returns True or False, ``True`` is used in place of the condition to make the condition always True. As a result, the while-loop runs forever.
 
-| The statements within the loop are indented with the tab key (which is equivalent to 4 spaces) to make those lines part of the while loop.
+| The statements within the loop are indented with the tab key (which is equivalent to 4 spaces) to make those lines part of the while-loop.
 
 | The ``while True`` loop below scrolls the text ``I never stop`` across the LED display, over and over again.
 
@@ -34,7 +34,7 @@ When testing code on the microbit, it can be useful to do it within a ``while Tr
 
 .. admonition:: Questions
 
-    Find the error in the first line of these while loops.
+    Find the error in the first line of these while-loops.
 
     #. ``while true:``
     #. ``While True:``

@@ -82,7 +82,7 @@ Reverse direction of list using the reversed function
 | The reversed object is a generator that can only be iterated through once.
 | Note that is it not necessary to create the list from Image.ALL_CLOCKS, since the reversed function can work directly on Image.ALL_CLOCKS.
 
-| The code below only displays the clock hands once despite being in a while loop since the generator that is pointed to by the variable, clock_list_anticlockwise, is actually used up the first time through the loop.
+| The code below only displays the clock hands once despite being in a while-loop since the generator that is pointed to by the variable, clock_list_anticlockwise, is actually used up the first time through the loop.
 
 .. code-block:: python
 
@@ -494,7 +494,7 @@ Interrupting an image list
             sleep(400)
 
 
-.. admonition:: Tasks
+.. admonition:: Challenge
 
     #. Modify the code to make better use of A or B-button pressing.
 
@@ -560,7 +560,7 @@ See: https://realpython.com/python-enumerate/
 
 ----
 
-.. admonition:: Tasks
+.. admonition:: Challenge
 
     #. Modify the code to display 12 instead of 0 when the clock is in the 12 O'clock position.
 

@@ -55,7 +55,7 @@ Volume **V2**
     :param volume: An integer between 0 and 255 to set the volume.
 
 | The code below increases the volume and plays a C note in octave 4 for 2 ticks at each volume.
-| the A-button can be pressed to exit the for-loop then the while loop using ``break``.
+| the A-button can be pressed to exit the for-loop then the while-loop using ``break``.
 | Pressing the reset button on the back of the microbit will restart the code.
 
 .. code-block:: python
@@ -438,7 +438,7 @@ All Built in melodies
 ----------------------------------------
 
 | This code plays all the melodies.
-| the A-button can be pressed to exit the for-loop then the while loop using ``break``.
+| the A-button can be pressed to exit the for-loop then the while-loop using ``break``.
 | Pressing the reset button on the back of the microbit will restart the code.
 
 .. code-block:: python
@@ -634,7 +634,7 @@ A	    1760
 ----
 
 | The code uses a for-loop to play each frequency.
-| the A-button can be pressed to exit the while loop using ``break``.
+| the A-button can be pressed to exit the while-loop using ``break``.
 | Pressing the reset button on the back of the microbit will restart the code.
 
 .. code-block:: python

@@ -279,8 +279,8 @@ Tempo
 
 .. admonition:: Tasks
 
-    #. Play the 5 notes: c, e, g, e, c with a tempo of 120, 180 and 240bpm without a for loop.
-    #. Play the 3 notes: 'e4:4', 'f#', 'g' with a tempo of 120, 180 and 240bpm using a for loop for the tempos. 
+    #. Play the 5 notes: c, e, g, e, c with a tempo of 120, 180 and 240bpm without a for-loop.
+    #. Play the 3 notes: 'e4:4', 'f#', 'g' with a tempo of 120, 180 and 240bpm using a for-loop for the tempos. 
     #. Design a function that takes the list of 3 notes ['e4:4', 'f#', 'g'] as one parameter; takes a tempo list of 120, 240, 360 , 480 and 600 bpm as a second parameter and a third parameter sleep_time with default value 1000. Use a repeat loop to set the tempo and play the notes_list.
 
     .. dropdown::
@@ -292,7 +292,7 @@ Tempo
 
             .. tab-item:: Q1
 
-                Play the 5 notes: c, e, g, e, c with a tempo of 120, 180 and 240bpm without a for loop. 
+                Play the 5 notes: c, e, g, e, c with a tempo of 120, 180 and 240bpm without a for-loop. 
 
                 .. code-block:: python
 
@@ -314,7 +314,7 @@ Tempo
 
             .. tab-item:: Q2
 
-                Play the 3 notes: 'e4:4', 'f#', 'g' with a tempo of 120, 180 and 240bpm using a for loop for the tempos. 
+                Play the 3 notes: 'e4:4', 'f#', 'g' with a tempo of 120, 180 and 240bpm using a for-loop for the tempos. 
 
                 .. code-block:: python
 
@@ -383,7 +383,7 @@ Volume **V2**
 .. admonition:: Tasks
 
     #. Instead of playing the same note each time, play each different note "c4:2", "e4:2","f#4:2" at a different volume.
-    #. Put the 3 sound levels in a list and use a for loop to set the volume and play the note "c4:2".
+    #. Put the 3 sound levels in a list and use a for-loop to set the volume and play the note "c4:2".
     #. To the previous task, add the ability to stop the playing by exiting the ``while True`` loop on pressing the A-button via the use of ``break``. Pressing the reset button on the back of the microbit will restart the code.
 
     .. dropdown::
@@ -415,7 +415,7 @@ Volume **V2**
 
             .. tab-item:: Q2
 
-                Put the 3 sound levels in a list and use a for loop to set the volume and play the note "c4:2".
+                Put the 3 sound levels in a list and use a for-loop to set the volume and play the note "c4:2".
 
                 .. code-block:: python
 

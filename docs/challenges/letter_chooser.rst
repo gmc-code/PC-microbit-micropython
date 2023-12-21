@@ -38,10 +38,10 @@ Letter chooser: by function
 -------------------------------
 
 | The code below chooses a letter from a list of letters.
-| In the main while loop, **select_char** is called to choose a letter, **letter**, which is then displayed.
+| In the main while-loop, **select_char** is called to choose a letter, **letter**, which is then displayed.
 | The function, **select_char(** starts the variable, **char_index**, at the middle index position of the **chars** list. The **middle_index** is previously calculated by halving the length of the **chars** list. **middle_index = int(max_char_index / 2)**
-| The while loop keeps running until the B-button is pressed, then **chars[char_index]** is returned.
-| In the while loop, A-button pressing is used to increase the variable, **char_index**, until it gets to its biggest allowed value, **max_char_index**, then it restarts at 0. 
+| The while-loop keeps running until the B-button is pressed, then **chars[char_index]** is returned.
+| In the while-loop, A-button pressing is used to increase the variable, **char_index**, until it gets to its biggest allowed value, **max_char_index**, then it restarts at 0. 
 
 .. code-block:: python
     

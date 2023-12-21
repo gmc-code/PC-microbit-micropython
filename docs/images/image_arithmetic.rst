@@ -187,9 +187,9 @@ Invert
 
 .. admonition:: Tasks
 
-    #. Invert the square: ``Image('99999:90009:90009:90009:99999')``. Display the square and its inversion in a while loop.
-    #. Invert the gradient: ``Image('11111:33333:55555:77777:99999')``. Display the gradient and its inversion in a while loop.
-    #. Invert Image.SAD. Display the sad face and its inversion in a while loop.
+    #. Invert the square: ``Image('99999:90009:90009:90009:99999')``. Display the square and its inversion in a while-loop.
+    #. Invert the gradient: ``Image('11111:33333:55555:77777:99999')``. Display the gradient and its inversion in a while-loop.
+    #. Invert Image.SAD. Display the sad face and its inversion in a while-loop.
 
     .. dropdown::
             :icon: codescan
@@ -200,7 +200,7 @@ Invert
 
                 .. tab-item:: Q1
 
-                    Invert the square: ``Image('99999:90009:90009:90009:99999')``. Display the square and its inversion in a while loop.
+                    Invert the square: ``Image('99999:90009:90009:90009:99999')``. Display the square and its inversion in a while-loop.
 
                     .. code-block:: python
 
@@ -217,7 +217,7 @@ Invert
 
                 .. tab-item:: Q2
 
-                    Invert the gradient: ``Image('11111:33333:55555:77777:99999')``. Display the gradient and its inversion in a while loop.
+                    Invert the gradient: ``Image('11111:33333:55555:77777:99999')``. Display the gradient and its inversion in a while-loop.
 
                     .. code-block:: python
 
@@ -234,7 +234,7 @@ Invert
 
                 .. tab-item:: Q3
 
-                    Invert Image.SAD. Display the sad face and its inversion in a while loop.
+                    Invert Image.SAD. Display the sad face and its inversion in a while-loop.
 
                     .. code-block:: python
 

@@ -141,7 +141,7 @@ Guess the number version 1
 | Use the B-button to make a guess.
 | Give feedback with ARROW_N to go higher and ARROW_S to go lower
 | Show a tick when correct.
-| Use a while loop that stops when the secret number has been guessed. Set the flag: **guessed = False** before the loop.
+| Use a while-loop that stops when the secret number has been guessed. Set the flag: **guessed = False** before the loop.
 
 ----
 
@@ -211,7 +211,7 @@ Guess the number version 1
 New versions:
 -------------------------
 
-| Modify the while loop so that a new game is automatically started.
+| Modify the while-loop so that a new game is automatically started.
 | Add counting of the number of guesses made and display it at the end of a game.
 | Add tracking of the total number of games played and the best score.
 
@@ -221,12 +221,12 @@ New versions:
 Guess the number version 2
 -----------------------------
 
-| Modify the while loop so that a new game is automatically started.
-| Do this by moving the condition out of the while loop and test it in an if statement.
+| Modify the while-loop so that a new game is automatically started.
+| Do this by moving the condition out of the while-loop and test it in an if statement.
 
 .. admonition:: Tasks
 
-    #. Modify the while loop so that a new game is automatically started. Just show the main code, excluding functions.
+    #. Modify the while-loop so that a new game is automatically started. Just show the main code, excluding functions.
     #. Show the full code.
 
     .. dropdown::

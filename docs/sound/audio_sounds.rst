@@ -30,7 +30,7 @@ The built in sounds are
     audio.play(Sound.GIGGLE)
 
 
-| The code below uses a for-loop to loop through each Sound in the ``sound_list`` and play it.
+| The code below uses a for-loop to loop through each Sound in the ``sound_list`` and play each sound.
 
 .. code-block:: python
 
@@ -41,13 +41,29 @@ The built in sounds are
     for sound in sound_list:
         audio.play(sound)
 
+| The advanced code below uses ``replace`` methods on the string version of the sound to get the simple name of the sound for scrolling.
+| The sound playing is started first, using the non-blocking form with ``wait=False``.
+| The sound name is scrolled using the blocking form with ``wait=True``, so that the hte next sound is not played till the scrolling has completed.
+
+.. code-block:: python
+
+    from microbit import *
+    import audio
+
+    sound_list = [Sound.GIGGLE, Sound.TWINKLE]
+    for sound in sound_list:
+        # Remove 'Sound(' from the start and ')' from the end
+        sound_name = str(sound).replace("Sound('", '').replace("')", '')
+        audio.play(sound, wait=False)
+        display.scroll(sound_name, delay=80, wait=True)
+
 ----
 
 All Built in sounds
 ----------------------------------------
 
 | The code below plays all the built-in sounds.
-| the A-button can be pressed to exit the for-loop then the while loop using ``break``.
+| the A-button can be pressed to exit the for-loop then the while-loop using ``break``.
 | Pressing the reset button on the back of the microbit will restart the code.
 
 .. code-block:: python
@@ -70,10 +86,10 @@ All Built in sounds
  
     while True:
         for sound in built_in_sounds:
-            audio.play(sound)
-            sleep(1000)
-            if button_a.is_pressed():
+            if button_a.was_pressed():
                 break
+            audio.play(sound)
+            sleep(500)
         if button_a.is_pressed():
             break
 
@@ -82,7 +98,7 @@ All Built in sounds
 .. admonition:: Tasks
 
     #. Play any 3 built-in sounds using a list, separating them with a 1 second pause.
-    #. Use the choice function to randomly pick a built-in sound from a sound list. See: https://www.w3schools.com/python/ref_random_choice.asp. Use button pressing to break out of the while loop to stop playing sounds.
+    #. Use the choice function to randomly pick a built-in sound from a sound list. See: https://www.w3schools.com/python/ref_random_choice.asp. Use button pressing to break out of the while-loop to stop playing sounds.
 
     .. dropdown::
         :icon: codescan
@@ -107,7 +123,7 @@ All Built in sounds
 
             .. tab-item:: Q2
 
-                Use the choice function to randomly pick a built-in sound from a sound list. See: https://www.w3schools.com/python/ref_random_choice.asp. Use button pressing to break out of the while loop to stop playing sounds.
+                Use the choice function to randomly pick a built-in sound from a sound list. See: https://www.w3schools.com/python/ref_random_choice.asp. Use button pressing to break out of the while-loop to stop playing sounds.
 
                 .. code-block:: python
 
@@ -122,3 +138,42 @@ All Built in sounds
                         sleep(1000)
                         if button_a.is_pressed():
                             break
+----
+
+Built in sounds and images
+---------------------------
+
+| The following code uses a dictionary to associate sounds and images.
+| It then displays the image and plays the sound.
+
+.. code-block:: python
+
+    from microbit import *
+    import audio
+
+    # Define the sounds and images for happy and sad emotions
+    emotions = {
+        'happy': {
+            'sound': Sound.HAPPY,
+            'image': Image.HAPPY
+        },
+        'sad': {
+            'sound': Sound.SAD,
+            'image': Image.SAD
+        }
+    }
+
+    while True:
+        for emotion, attributes in emotions.items():
+            # Display the image
+            display.show(attributes['image'])
+            # Play the sound
+            audio.play(attributes['sound'], wait=True)
+            display.clear()
+            sleep(1000)
+
+
+.. admonition:: Challenge
+
+    #. Modify the emotions dictionary to illustrate 2 other images with 2 of the built in sounds.
+
