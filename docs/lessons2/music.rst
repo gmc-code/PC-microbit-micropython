@@ -28,7 +28,7 @@ Music
 
 ----
 
-Library
+Music Library
 ----------------------------------------
 
 | Put ``import music`` at the top under ``from microbit import *``.
@@ -52,22 +52,7 @@ Play music
     | If wait is set to True, playing is blocking, and the music will be played to the end.
     | If loop is set to True, the music repeats until stop is called. Set wait to False to sue this.
 
-
-
-Notes
-----------------------------------------
-
-| An individual note is specified thus: ``NOTE[octave][:duration]``.
-| Notes are the letters a to g. Lower case or upper case are the same.
-| If the octave is left out it defaults to 4 (containing middle C).
-| If the duration is left out it defaults to 4 (a crotchet).
-| For example, **a2:4** refers to the note “A” in octave 2 that lasts for four ticks (a tick is an arbitrary length of time defined by a tempo setting function). If the note name **R** is used then it is treated as a rest (silence).
-| Accidentals (flats and sharps) are denoted by the b (flat - a lower case b) and # (sharp - a hash symbol).
-| For example, **Ab** is A-flat and **C#** is C-sharp.
-| The octave and duration parameters are states that carry over to subsequent notes until re-specified. 
-| The tempo can be set using ``music.set_tempo(ticks=4, bpm=120)``
-
-| Use ``music.play(note)`` to play a note in the ``note`` variable.
+| Use ``music.play(note)`` to play a note set in the ``note`` variable.
 
 .. code-block:: python
 
@@ -78,23 +63,47 @@ Notes
     music.play(note)
 
 | Use ``music.play(notes)`` to play a list of notes in the ``notes_list`` variable.
-| The code below plays a list of notes that use various forms to specify them.
+| The code below plays a list of notes. The octave changes from 4 to 5.
+| The tempo can be sped up by changing ticks from 4 to 8 or by changing bpm from 120 to 240.
 
 .. code-block:: python
 
     from microbit import *
     import music
 
-    notes_list = ['c4:1', 'e:4', 'g:8', 'c:2', 'e5', 'g4','f#','eb']
+    notes_list = ['e4', 'f#', 'g', 'a', 'b', 'c5', 'd', 'e']
 
+    music.set_tempo(ticks=4, bpm=120)
+    music.play(notes_list)
+    music.set_tempo(ticks=8, bpm=120)
+    music.play(notes_list)
     music.set_tempo(ticks=4, bpm=240)
     music.play(notes_list)
+
+
+----
+
+Notes
+----------------------------------------
+
+| An individual note is specified as: ``NOTE[octave][:duration]``.
+
+| Notes are the letters a to g with or without an accidental (`#` for a sharp, `b` for a flat). Lower case or upper case notes are the same. eg. `A` and `a` are the same. **Ab** is A-flat and **C#** is C-sharp.
+| If the note name **R** is used then it is treated as a rest (silence).
+
+| If the octave is left out it defaults to 4 (containing middle C).
+| If the duration is left out it defaults to 4 (a crotchet).
+| For example, **a2:4** refers to the note “A” in octave 2 that lasts for four ticks (a tick is an arbitrary length of time defined by a tempo setting function). 
+
+| The octave and duration parameters are states that carry over to subsequent notes until re-specified. 
+| e.g. ['c4:1', 'e', 'g:8'] The `e` is octave 4 for 1 tick. The `g` is octave 4 for 8 ticks.
+
 
 ----
 
 .. admonition:: Tasks
 
-    #. Play the 5 notes: c, e, g, e, c.
+    #. Play the 5 notes: c, e, g, e, c in octave 4.
     #. Play the 5 notes: c, e, g, e, c with a tempo of 120, 180 and 240bpm. 
     #. Design a function that takes the 5 notes: c, e, g, e, c, as one parameter; takes a tempo list of 120, 240, 360 , 480 and 600 bpm as a second parameter and a third parameter: sleep_time with default value 1000. Use a repeat loop to set the tempo and play the notes_list.
 
@@ -107,7 +116,7 @@ Notes
 
             .. tab-item:: Q1
 
-                Play the 5 notes: c, e, g, e, c.
+                Play the 5 notes: c, e, g, e, c in octave 4.
 
                 .. code-block:: python
 
@@ -162,8 +171,6 @@ Notes
                         
                     while True:
                         tempo_play(notes_list, tempo_list, sleep_time=1000)
-
-----
 
 ----
 
