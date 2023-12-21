@@ -47,12 +47,13 @@ Play music
 
     | Play the music.
     | Music can be a string, such as 'c1:4', or a list of notes as strings, such as ['c', 'd', 'e']
-    | The duration and octave values are reset to their defaults before the music is played.
-    | The output pin can be used to override the default pin0. Use pin=None to prevent sounds being played.
+    | The duration and octave values are reset to their defaults (of 4 each) before the music is played.
+    | The output pin can be used to override the default pin0. pin=None prevents sounds from being played.
     | If wait is set to True, playing is blocking, and the music will be played to the end.
     | If loop is set to True, the music repeats until stop is called. Set wait to False to sue this.
 
-| Use ``music.play(note)`` to play a note set in the ``note`` variable.
+| Use ``music.play(note)`` to play a note given by the ``note`` variable.
+| The note is written as a string with quotes: 'c4:8'. This is a c note in octave 4 wiht a duration of 8 ticks (a minim or 2 crotchet beats).
 
 .. code-block:: python
 
