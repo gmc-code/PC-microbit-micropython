@@ -142,17 +142,6 @@ Index:
 
 .. toctree::
     :maxdepth: 2
-    :caption: Challenges
-    :numbered:
-
-    challenges/number_chooser.rst
-    challenges/letter_chooser.rst
-    challenges/guess_the_number.rst
-    challenges/words.rst
-
-
-.. toctree::
-    :maxdepth: 2
     :caption: Images
     :numbered:
 
@@ -174,6 +163,27 @@ Index:
     images/other_image_methods.rst
 
 
+.. toctree::
+    :maxdepth: 2
+    :caption: Radio
+    :numbered:
+
+    radio/radio_syntax.rst
+    radio/radio_examples.rst
+    radio/radio_secrets.rst
+    radio/radio_advanced.rst
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Challenges
+    :numbered:
+
+    challenges/number_chooser.rst
+    challenges/letter_chooser.rst
+    challenges/guess_the_number.rst
+    challenges/words.rst
+
 
 .. toctree::
     :maxdepth: 2
@@ -184,17 +194,6 @@ Index:
     classes/potentiometer_class.rst
     classes/pixel_class.rst
     classes/screen_class.rst
-
-
-.. toctree::
-    :maxdepth: 2
-    :caption: Radio
-    :numbered:
-
-    radio/radio_syntax.rst
-    radio/radio_examples.rst
-    radio/radio_secrets.rst
-    radio/radio_advanced.rst
 
 
 .. toctree::
