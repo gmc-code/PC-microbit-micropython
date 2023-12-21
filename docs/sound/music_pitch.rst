@@ -122,7 +122,7 @@ A	    1760
 ----
 
 | The code uses a for-loop to play each frequency.
-| the A-button can be pressed to exit the while loop using ``break``.
+| the A-button can be pressed to exit the while loop using ``break``. "was_pressed" can be used to break out of the for-loop. Keep holding down the A-button so "is_pressed" can be used to break out of the while-loop. 
 | Pressing the reset button on the back of the microbit will restart the code.
 
 .. code-block:: python
@@ -135,6 +135,8 @@ A	    1760
     while True:
         for freq in Am_freqs:
             music.pitch(freq, duration=timing)
+            if button_a.was_pressed():
+                break
         if button_a.is_pressed():
             break
 
@@ -166,6 +168,8 @@ A	    1760
                     while True:
                         for freq in Em_freqs:
                             music.pitch(freq, duration=timing)
+                            if button_a.was_pressed():
+                                break
                         if button_a.is_pressed():
                             break
 
@@ -178,11 +182,13 @@ A	    1760
                     from microbit import *
                     import music
 
-                    D_freqs = [587, 659, 740, 784, 880, 988, 1108, 1174]
+                    DM_freqs = [440, 494, 523, 587, 659, 698, 784, 880]
                     timing = 400
                     while True:
-                        for freq in D_freqs:
+                        for freq in DM_freqs:
                             music.pitch(freq, duration=timing)
+                            if button_a.was_pressed():
+                                break
                         if button_a.is_pressed():
                             break
 
