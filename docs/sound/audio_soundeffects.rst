@@ -2,33 +2,6 @@
 Audio: SoundEffects **V2** 
 ==========================
 
-| See: https://microbit-micropython.readthedocs.io/en/v2-docs/audio.html
-| For control of the speaker and volume in V2 see: 
-| https://pc-microbit-micropython.readthedocs.io/en/latest/lessons2/music.html#v2-volume
-
-----
-
-main controls
----------------
-
-.. py:function:: play(source, wait=True, pin=pin0)
-
-    | Play the source of the sound.
-    | ``source`` can be a built-in sound or a sound effect, or an iterable of sound effects, created via the audio.SoundEffect() class, or an iterable of AudioFrame elements.
-    | If **wait** is ``True``, this function will block until the source has been completely played.
-    | **pin** is on optional argument to specify the output pin with default of ``pin0``. Use ``pin=None`` to make no sound.
-
-
-.. py:function:: is_playing()
-
-    Returns ``True`` if audio is playing, otherwise returns ``False``.
-
-.. py:function:: stop()
-
-    Stops all audio playback.
-
-----
-
 Sound Effects **V2** 
 ------------------------------------
 
@@ -103,30 +76,19 @@ Sound Effects **V2**
         in frequency. One of the following values: ``SHAPE_LINEAR``,
         ``SHAPE_CURVE``, ``SHAPE_LOG``.
 
-The arguments used to create any Sound Effect,
-can be inspected by looking at each of the SoundEffect instance attributes,
-or by converting the instance into a string (which can be done via ``str()``
-function, or by using a function that does the conversion automatically like
-``print()``).
+| The arguments used to create any Sound Effect, can be inspected by looking at each of the SoundEffect instance attributes, or by converting the instance into a string (which can be done via ``str()`` function, or by using a function that does the conversion automatically like ``print()``).
+| The ``repr()`` function can be used to create a string of Python code that can be stored or transferred
+(you could transmit sounds via micro:bit radio!) and be executed with the ``eval()`` function.
+| SoundEffect(500, 2500, 500, 255, 0, 3, 0, 18)
 
-For example, with the :doc:`REPL </devguide/repl>` you can inspect the
-default SoundEffects::
+ .. code-block:: python
+    
+    from microbit import *
+    from audio import SoundEffect
 
-    >>> print(audio.SoundEffect())
-    SoundEffect(freq_start=500, freq_end=2500, duration=500, vol_start=255, vol_end=0, waveform=WAVE_SQUARE, fx=FX_NONE, shape=SHAPE_LOG)
-
-This format is "human readable", which means it is easy for us to read,
-and it looks very similar to the code needed to create that SoundEffect,
-but it's not quite right. The ``repr()`` function can be used to create a
-string of Python code that can be stored or transferred
-(you could transmit sounds via micro:bit radio!) and be executed with the
-``eval()`` function::
-
-    >>> from audio import SoundEffect
-    >>> sound_code = repr(SoundEffect())
-    >>> print(sound_code)
-    SoundEffect(500, 2500, 500, 255, 0, 3, 0, 18)
-    >>> eval("audio.play({})".format(sound_code))
+    sound_code = repr(SoundEffect())  # SoundEffect(500, 2500, 500, 255, 0, 3, 0, 18)
+    print(sound_code)
+    eval("audio.play({})".format(sound_code))
 
 ----
 

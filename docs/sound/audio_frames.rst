@@ -2,12 +2,6 @@
 Audio: AudioFrames
 ==========================
 
-| See: https://microbit-micropython.readthedocs.io/en/v2-docs/audio.html
-| For control of the speaker and volume in V2 see: 
-| https://pc-microbit-micropython.readthedocs.io/en/latest/lessons2/music.html#v2-volume
-
-----
-
 AudioFrames
 ------------------
 

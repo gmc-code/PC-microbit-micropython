@@ -43,7 +43,7 @@ Music Library
 Play music
 ----------------
 
-.. py:function::  music.play(music, pin=pin0, wait=True, loop=False)
+.. py:function:: music.play(music, pin=pin0, wait=True, loop=False)
 
     | Play the music.
     | Music can be a string, such as 'c1:4', or a list of notes as strings, such as ['c', 'd', 'e']
