@@ -6,14 +6,11 @@ AudioFrames
 ------------------
 
 | An AudioFrame object is a list of 32 samples each of which is an unsigned byte (whole number between 0 and 255).
-| It takes just over 4 ms to play a single frame.
-| ``audio.play`` requires an iterable (a list or generator) of **AudioFrame** instances, each 32 samples at 7812.5 Hz, and uses linear interpolation to output a PWM signal at 32.5 kHz, which gives tolerable sound quality.
 | Use ``frame = audio.AudioFrame()`` to create the audioframe object. 
 | Use ``frame[i] = ...`` to fill all 32 samples as i changes from 0 to 31.
-| The sawtooth values below go down by 8 each sample: [252,244,236,...,20,12,4].
-
+| ``audio.play`` requires an iterable (a list or generator) of **AudioFrame** instances, each 32 samples.
 | Since an audio frame only goes for 4ms, it needs to be repeated 250 times to last for 1 second.
-| If it is repeated in a list, as in ``repeated_frame1`` below, the size is limited to about 8000 iterations (about 20seconds).
+| If it is repeated in a list, as in ``repeated_frame1`` below, the size is limited to about 8000 iterations (about 20seconds) as it takes up memory.
 
 .. code-block:: python
         
