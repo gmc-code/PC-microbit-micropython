@@ -9,7 +9,7 @@ AudioFrames
 | Use ``frame = audio.AudioFrame()`` to create the audioframe object. 
 | Use ``frame[i] = ...`` to fill all 32 samples as i changes from 0 to 31.
 
-| The code below creates an AudioFrame in which the 32 values decrease from 252 in steps of 8: 252,244,236,228,220,212,204,196,188,180,172,164,156,148,140,132,124,116,108,100,92,84,76,68,60,52,44,36,28,20,12,4.
+| The code below creates an AudioFrame in which the 32 values decrease from 252 in steps of 8: 252, 244, 236, 228, 220, 212, 204, 196, 188, 180, 172, 164, 156, 148, 140, 132, 124, 116, 108, 100, 92, 84, 76, 68, 60, 52, 44, 36, 28, 20, 12, 4.
 | This is a sound profile that satrts high and decreases steadily.
 
 .. code-block:: python
