@@ -131,51 +131,90 @@ Common AudioFrame structures
 
 .. code-block:: python
         
-    from microbit import *
-    import audio
-
+    from microbit import *  # Importing all the modules from microbit library
+    import audio  # Importing the audio module
 
     def play_rep_frame(name, frame, count):
-        wave = repeated_frame(frame, count)
-        while audio.is_playing():
-            sleep(4)
-            audio.stop()
-        display.scroll(name, wait=False, delay=60)
-        audio.play(wave, wait=False)
+        """
+        This function plays a repeated audio frame.
         
+        Parameters:
+        name (str): The name of the audio frame.
+        frame (AudioFrame): The audio frame to be repeated.
+        count (int): The number of times the frame is to be repeated.
+        """
+        wave = repeated_frame(frame, count)  # Generate the repeated audio frame
+        while audio.is_playing():  # If an audio is already playing
+            sleep(4)  # Wait for 4 milliseconds
+            audio.stop()  # Stop the currently playing audio
+        display.scroll(name, wait=False, delay=60)  # Display the name of the audio frame
+        audio.play(wave, wait=False)  # Play the new audio frame
+
     def repeated_frame(frame, count):
-        # use a generator to reduce memory usage
-        for i in range(count):
-            yield frame
+        """
+        This function generates a repeated audio frame using a generator to reduce memory usage.
+        
+        Parameters:
+        frame (AudioFrame): The audio frame to be repeated.
+        count (int): The number of times the frame is to be repeated.
+        
+        Returns:
+        generator: A generator that yields the audio frame 'count' number of times.
+        """
+        for i in range(count):  # Repeat for 'count' number of times
+            yield frame  # Yield the audio frame
 
     def get_sawtooth_frame():
-        frame = audio.AudioFrame()
-        # len = 32
-        for i in range(len(frame)):
-            frame[i] = int(252 - i * 8)
-        return frame
+        """
+        This function generates a sawtooth audio frame.
+        
+        Returns:
+        AudioFrame: A sawtooth audio frame.
+        """
+        frame = audio.AudioFrame()  # Create a new audio frame
+        for i in range(len(frame)):  # For each sample in the audio frame
+            frame[i] = int(252 - i * 8)  # Generate a sawtooth wave
+        return frame  # Return the sawtooth audio frame
 
     def get_sawtooth2_frame():
-        frame = audio.AudioFrame()
-        for i in range(len(frame)):
+        """
+        This function generates a modified sawtooth audio frame.
+        
+        Returns:
+        AudioFrame: A modified sawtooth audio frame.
+        """
+        frame = audio.AudioFrame()  # Create a new audio frame
+        for i in range(len(frame)):  # For each sample in the audio frame
             if i < len(frame) // 2:
                 frame[i] = int(252 - i * 16)
             else:
                 frame[i] = int(252 - (i - 16) * 16)
-        return frame
+        return frame  # Return the modified sawtooth audio frame
 
     def get_square_frame():
-        frame = audio.AudioFrame()
-        for i in range(len(frame)):
+        """
+        This function generates a square wave audio frame.
+        
+        Returns:
+        AudioFrame: A square wave audio frame.
+        """
+        frame = audio.AudioFrame()  # Create a new audio frame
+        for i in range(len(frame)):  # For each sample in the audio frame
             if i < len(frame) // 2:
                 frame[i] = 252
             else:
                 frame[i] = 0
-        return frame
-        
+        return frame  # Return the square wave audio frame
+
     def get_square2_frame():
-        frame = audio.AudioFrame()
-        for i in range(len(frame)):
+        """
+        This function generates a modified square wave audio frame.
+        
+        Returns:
+        AudioFrame: A modified square wave audio frame.
+        """
+        frame = audio.AudioFrame()  # Create a new audio frame
+        for i in range(len(frame)):  # For each sample in the audio frame
             if i < len(frame) // 4:
                 frame[i] = 252
             elif i < len(frame) * 2 // 4:
@@ -184,20 +223,32 @@ Common AudioFrame structures
                 frame[i] = 252
             else:
                 frame[i] = 0
-        return frame
+        return frame  # Return the modified square wave audio frame
 
     def get_triangle_frame():
-        frame = audio.AudioFrame()
-        for i in range(len(frame)):
+        """
+        This function generates a triangle wave audio frame.
+        
+        Returns:
+        AudioFrame: A triangle wave audio frame.
+        """
+        frame = audio.AudioFrame()  # Create a new audio frame
+        for i in range(len(frame)):  # For each sample in the audio frame
             if i < len(frame) // 2:
                 frame[i] = i * 8
             else:
                 frame[i] = 252 - (i - 16) * 8
-        return frame
-        
+        return frame  # Return the triangle wave audio frame
+
     def get_triangle2_frame():
-        frame = audio.AudioFrame()
-        for i in range(len(frame)):
+        """
+        This function generates a modified triangle wave audio frame.
+        
+        Returns:
+        AudioFrame: A modified triangle wave audio frame.
+        """
+        frame = audio.AudioFrame()  # Create a new audio frame
+        for i in range(len(frame)):  # For each sample in the audio frame
             if i < len(frame) // 4:
                 frame[i] = i * 16
             elif i < len(frame) * 2 // 4:
@@ -206,7 +257,8 @@ Common AudioFrame structures
                 frame[i] = (i - 16) * 16
             else:
                 frame[i] = 252 - (i - 24) * 16
-        return frame
+        return frame  # Return the modified triangle wave audio frame
+
 
     repeat_count = 40
     sawtooth_frame = get_sawtooth_frame()
@@ -254,6 +306,7 @@ Yield from and yield in Generators
             ["G'day", "mate"],
         ]
         for greeting in greetings:
+            print("")
             yield from gen1(greeting)
 
     # Use a loop to print the values generated by gen2
@@ -349,3 +402,4 @@ More complex AudioFrames
             # If the logo pin is touched, play the sequence of chords
             audio.play(play_sequence())
             sleep(10)
+
