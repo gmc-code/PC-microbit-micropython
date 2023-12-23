@@ -9,6 +9,11 @@ AudioFrames
 | Use ``frame = audio.AudioFrame()`` to create the audioframe object. 
 | Use ``frame[i] = ...`` to fill all 32 samples as i changes from 0 to 31.
 
+----
+
+Example AudioFrame
+--------------------
+
 | The code below creates an AudioFrame in which the 32 values decrease from 252 in steps of 8: 252, 244, 236, 228, 220, 212, 204, 196, 188, 180, 172, 164, 156, 148, 140, 132, 124, 116, 108, 100, 92, 84, 76, 68, 60, 52, 44, 36, 28, 20, 12, 4.
 | This is a sound profile that satrts high and decreases steadily.
 
@@ -25,10 +30,15 @@ AudioFrames
             frame[i] = int(252 - i * 8)
         return frame
 
+----
+
+Generators to avoid memory limits
+-----------------------------------
+
 | Since an audio frame only goes for (4ms to) 6ms, it needs to be repeated about 160 times to last for 1 second.
-| ``audio.play`` requires an iterable (a list or generator) of **AudioFrame** instances.
-| If it is repeated in a list, as in ``repeated_frame1`` below, the size is limited to about 8000 iterations (about 20seconds) as it takes up memory.
-| This may be fine for short souns, but is not good practice.
+| ``audio.play`` plays an iterable (a list or generator) of **AudioFrame** instances.
+| If the AudioFrame is repeated in a list, as in ``repeated_frame1`` below, the list size is limited to about 8000 iterations (about 50 seconds) as it takes up memory.
+| This may be fine for short sounds; but is not good practice.
 
 .. code-block:: python
         
@@ -53,41 +63,63 @@ AudioFrames
         for i in range(count):
             yield frame
 
-| Final code that plays a sawtooth audioframe for about 0.25 seconds:
+| The code that plays a sawtooth audioframe is below. 
+| Adjust ``repeat_count = 40`` to alter the length it is played.
 
 .. code-block:: python
         
-    from microbit import *
-    import audio
-
+    from microbit import *  # Importing all the modules from microbit library
+    import audio  # Importing the audio module
 
     def play_rep_frame(name, frame, count):
-        wave = repeated_frame(frame, count)
-        while audio.is_playing():
-            sleep(4)
-            audio.stop()
-        display.scroll(name, wait=False, delay=60)
-        audio.play(wave, wait=False)
+        """
+        This function plays a repeated audio frame.
         
+        Parameters:
+        name (str): The name of the audio frame.
+        frame (AudioFrame): The audio frame to be repeated.
+        count (int): The number of times the frame is to be repeated.
+        """
+        wave = repeated_frame(frame, count)  # Generate the repeated audio frame
+        while audio.is_playing():  # If an audio is already playing
+            sleep(4)  # Wait for 4 milliseconds
+            audio.stop()  # Stop the currently playing audio
+        display.scroll(name, wait=False, delay=60)  # Display the name of the audio frame on the microbit LED display
+        audio.play(wave, wait=False)  # Play the new audio frame
+
     def repeated_frame(frame, count):
-        # use a generator to reduce memory usage
-        for i in range(count):
-            yield frame
+        """
+        This function generates a repeated audio frame using a generator to reduce memory usage.
+        
+        Parameters:
+        frame (AudioFrame): The audio frame to be repeated.
+        count (int): The number of times the frame is to be repeated.
+        
+        Returns:
+        generator: A generator that yields the audio frame 'count' number of times.
+        """
+        for i in range(count):  # Repeat for 'count' number of times
+            yield frame  # Yield the audio frame
 
     def get_sawtooth_frame():
-        frame = audio.AudioFrame()
-        # len = 32
-        for i in range(len(frame)):
-            frame[i] = int(252 - i * 8)
-        return frame
+        """
+        This function generates a sawtooth audio frame.
+        
+        Returns:
+        AudioFrame: A sawtooth audio frame.
+        """
+        frame = audio.AudioFrame()  # Create a new audio frame
+        for i in range(len(frame)):  # For each sample in the audio frame
+            frame[i] = int(252 - i * 8)  # Generate a sawtooth wave
+        return frame  # Return the sawtooth audio frame
 
-    repeat_count = 40
-    sawtooth_frame = get_sawtooth_frame()
+    repeat_count = 40  # The number of times the audio frame is to be repeated
+    sawtooth_frame = get_sawtooth_frame()  # Get the sawtooth audio frame
 
-    while True:
-        if button_a.is_pressed():
-            play_rep_frame("saw", sawtooth_frame, repeat_count)
-        sleep(100)
+    while True:  # Main loop
+        if button_a.is_pressed():  # If button A is pressed
+            play_rep_frame("saw", sawtooth_frame, repeat_count)  # Play the sawtooth audio frame
+        sleep(100)  # Wait for 100 milliseconds
 
 ----
 
