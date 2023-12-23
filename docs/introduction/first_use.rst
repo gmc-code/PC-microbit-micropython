@@ -72,7 +72,7 @@ Out of Box hex file v2
             on_gesture_shake()
         if pin_logo.is_touched():
             on_logo_touched()
-        if button_a.is_pressed() and button_b.is_pressed():
+        elif button_a.is_pressed() and button_b.is_pressed():
             on_button_pressed_ab()
         elif button_a.is_pressed():
             on_button_pressed_a()
