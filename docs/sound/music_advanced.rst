@@ -47,7 +47,7 @@ Christmas tunes
         sleep(1000)
 
 .. image:: images/jingle_bells.png
-    :scale: 10 %
+    :scale: 60 %
     :align: center
 
 ----
@@ -57,7 +57,7 @@ Christmas tunes
     #. Write the notes for this song.
 
     .. image:: images/we_wish_you.png
-        :scale: 50 %
+        :scale: 60 %
         :align: center
 
 ----
@@ -67,7 +67,7 @@ Christmas tunes
     #. Write the notes for this hymn.
 
     .. image:: images/silent_night.png
-        :scale: 50 %
+        :scale: 60 %
         :align: center
 
 ----
@@ -77,7 +77,7 @@ Christmas tunes
     #. Write the notes for this hymn.
 
     .. image:: images/we_three_kings.png
-        :scale: 50 %
+        :scale: 80 %
         :align: center
 
 ----
