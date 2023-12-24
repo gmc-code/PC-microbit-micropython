@@ -72,10 +72,18 @@ Christmas tunes
 
 ----
 
+.. admonition:: Exercise
+
+    #. Write the notes for this hymn.
+
+    .. image:: images/we_three_kings.png
+        :scale: 50 %
+        :align: center
+
+----
+
 Random notes Task
 ----------------------------------------
-
-See: https://random-music-generators.herokuapp.com/melody
 
 | Design code to generate random notes, using separate lists of possibilities for each feature of a note:  **note name**, **octave**, **length**.
 | Use **random.choice(list_name)** to choose a random element from a list.
