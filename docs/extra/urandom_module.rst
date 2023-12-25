@@ -165,3 +165,29 @@ seed
     import urandom
 
     urandom.seed()
+
+----
+
+Shuffle alternative
+----------------------
+
+| While not on the microbit, in python, the ``random.shuffle()`` method takes a sequence, like a list, and reorganize the order of the items.
+
+| Since sorting a list is useful, the algorithm below can be used instead.
+| The Fisher-Yates shuffle, also known as the Knuth shuffle, is an algorithm for generating a random permutation of a finite sequence. 
+| The algorithm shuffles a sequence, ensuring that every permutation is equally likely.
+| It works by iterating through the list from the last element to the first. For each element, it selects a random element from the remaining unvisited elements (including the current one) and swaps the two. 
+
+
+.. code-block:: python
+
+    from microbit import *
+
+
+    # Function to shuffle a list
+    def shuffle_list(lst):
+        for i in range(len(lst)-1, 0, -1):
+            j = random.randint(0, i)
+            lst[i], lst[j] = lst[j], lst[i]
+        return lst
+

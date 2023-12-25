@@ -1,3 +1,6 @@
+'''
+Press A to get a new song. Press B to stop. Touch the logo to replay a song.
+'''
 from microbit import *
 import music
 import random
@@ -21,7 +24,7 @@ jingle_bells = [
     'C4:16'
 ]
 
-merry_christmas = [
+we_wish_you_a_merry_christmas = [
     'R:4','R:4','D4:4',
     'G4:4','G4:2','A4:2','G4:2','F#4:2',
     'E4:4','E4:4','E4:4',
@@ -94,31 +97,92 @@ we_three_kings = [
     'C4:4','A3:2','C4:6',
 ]
 
-# Put the songs into a list
-songs = [jingle_bells, merry_christmas, silent_night, we_three_kings]
-song = random.choice(songs)
+god_rest_ye_merry_gentlemen = [
+    'E4:4',
+    'E4:4','B4:4','B4:4','A4:4',
+    'G4:4','F#4:4','E4:4','D4:4',
+    'E4:4','F#4:4','G4:4','A4:4',
+    'B4:12','E4:4',
+
+    'E4:4','B4:4','B4:4','A4:4',
+    'G4:4','F#4:4','E4:4','D4:4',
+    'E4:4','F#4:4','G4:4','A4:4',
+    'B4:12','B4:4',
+
+    'C5:4','A4:4','B4:4','C5:4',
+    'D5:4','E5:4','B4:4','A4:4',
+    'G4:4','E4:4','F#4:4','G4:4',
+    'A4:8','G4:4','A4:4',
+
+    'B4:8','C5:4','B4:4',
+    'B4:4','A4:4','G4:4','F#4:4',
+    'E4:8','G4:2','F#4:2','E4:4',
+    'A4:8','G4:4','A4:4',
+    
+    'B4:4','C5:4','D5:4','E5:4',
+    'B4:4','A4:4','G4:4','F#4:4',
+    'E4:28',
+]
+
+# Create a dictionary with the BPM and notes for each song
+songs_dict = {
+     
+    'jingle_bells': {'bpm': 180, 'notes': jingle_bells},
+    'we_wish_you_a_merry_christmas': {'bpm': 140, 'notes': we_wish_you_a_merry_christmas},
+    'silent_night': {'bpm': 100, 'notes': silent_night},
+    'we_three_kings': {'bpm': 120, 'notes': we_three_kings},
+    'god_rest_ye_merry_gentlemen': {'bpm': 180, 'notes': god_rest_ye_merry_gentlemen}
+}
+
+# Put the song names into a list
+songs = list(songs_dict.keys())
+
+def get_song_from_not_playing(songs, current_song):
+    choices = [song for song in songs if song != current_song]
+    return random.choice(choices)
+    
+# Function to shuffle a list
+def shuffle_list(lst):
+    for i in range(len(lst)-1, 0, -1):
+        j = random.randint(0, i)
+        lst[i], lst[j] = lst[j], lst[i]
+    return lst
+    
+# Randomly sort the song list  
+songs = shuffle_list(songs)
+
+# Index to keep track of the current song
+current_song_index = -1
+
+def advance_song_counter(current_song_index):
+    current_song_index = (current_song_index + 1) % len(songs)
+    return current_song_index
+
+def do_tune(current_song_index):
+    sleep(200)
+    song_name = songs[current_song_index]
+    song = songs_dict[song_name]
+    # Set the tempo
+    music.set_tempo(ticks=4, bpm=song['bpm'])
+    # Play the current song
+    music.play(song['notes'], wait=False)
+    display.scroll(song_name.upper(), delay=60, wait=False)
+    
 while True:
     if button_a.was_pressed():
-        music.set_tempo(ticks=4, bpm=120)
-        # Stop any currently playing song
+        # Move to the next song
+        current_song_index = advance_song_counter(current_song_index)
         music.stop()
-        # Choose a random song from the list
-        song = random.choice(songs)
-        # Play the chosen song
-        music.play(song, wait=False)
+        # Get the current song
+        do_tune(current_song_index)
     elif button_b.was_pressed():
         # Stop any currently playing song
         music.stop()
     elif pin_logo.is_touched():
         # Stop any currently playing song
         music.stop()
-        # Set the tempo to twice the speed
-        music.set_tempo(ticks=4, bpm=180)
-        # Choose a random song from the list
-        if not song:
-            song = random.choice(songs)
-        # Play the chosen song
-        music.play(song, wait=False)
-    sleep(1000)
+        # again
+        do_tune(current_song_index)
+    sleep(10)
 
 
