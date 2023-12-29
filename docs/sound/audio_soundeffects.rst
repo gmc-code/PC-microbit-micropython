@@ -2,23 +2,17 @@
 Audio: SoundEffects **V2** 
 ==========================
 
-Sound Effects **V2** 
+Sound Effect Syntax
 ------------------------------------
 
 .. py:class::
-    SoundEffect(freq_start=500, freq_end=2500, duration=500, vol_start=255, vol_end=0, waveform=WAVEFORM_SQUARE, fx=FX_NONE, shape=SHAPE_LOG)
+    audio.SoundEffect(freq_start=500, freq_end=2500, duration=500, vol_start=255, vol_end=0, waveform=audio.SoundEffect.WAVEFORM_SQUARE, fx=audio.SoundEffect.FX_NONE, shape=audio.SoundEffect.SHAPE_LOG)
 
-    An ``SoundEffect`` instance represents a sound effect, composed by a set of
-    parameters configured via the constructor or attributes.
+     ``SoundEffect`` instance represents a sound effect. 
 
-    All the parameters are optional, with default values as shown above, and
-    they can all be modified via attributes of the same name. For example, we
-    can first create an effect ``my_effect = SoundEffect(duration=1000)``,
-    and then change its attributes ``my_effect.duration = 500``.
-
-    :param freq_start: Start frequency in Hertz (Hz), default: ``500``
-    :param freq_end: End frequency in Hertz (Hz), default: ``2500``
-    :param duration: Duration of the sound (ms), default: ``500``
+    :param freq_start: Start frequency in Hertz (Hz), range 0-9999, default: ``500``
+    :param freq_end: End frequency in Hertz (Hz), , range 0-9999, default: ``2500``
+    :param duration: Duration of the sound (ms), , range 0-9999, default: ``500``
     :param vol_start: Start volume value, range 0-255, default: ``255``
     :param vol_end: End volume value, range 0-255, default: ``0``
     :param waveform: Type of waveform shape, one of these values:
@@ -33,56 +27,392 @@ Sound Effects **V2**
         in frequency. One of the following values: ``SHAPE_LINEAR``,
         ``SHAPE_CURVE``, ``SHAPE_LOG``. Default: ``SHAPE_LOG``
 
-    .. py:function:: copy()
+| The parameter values can all be modified via attributes of the same name. 
+| For example, first create an effect ``my_effect = SoundEffect(duration=1000)``,
+and then change its attribute for duration: ``my_effect.duration = 500``.
 
-        :returns: A copy of the SoundEffect.
+----
 
-    .. py:attribute:: freq_start
+Vary frequencies
+---------------------
 
-        Start frequency in Hertz (Hz), a number between ``0`` and ``9999``.
+| The code below plays different sound effects by pressing the A or B button on the microbit. 
+| The sound effect's frequency sweep goes from low to high when the A button is pressed, and from high to low when the B button is pressed.
 
-    .. py:attribute:: freq_end
+----
 
-        End frequency in Hertz (Hz), a number between ``0`` and ``9999```.
+| When the A button is pressed, the start frequency is increased in steps while the end frequency is kept the same.
 
-    .. py:attribute:: duration
+.. code-block:: python
+    
+    from microbit import *
+    import audio
 
-        Duration of the sound in milliseconds, a number between ``0`` and
-        ``9999``.
+    sound_effect = audio.SoundEffect()  # use defaults
+    # SoundEffect(freq_start=500, freq_end=2500, duration=500, vol_start=255, vol_end=0, waveform=WAVEFORM_SQUARE, fx=FX_NONE, shape=SHAPE_LOG)
+    while True:
+        if button_a.is_pressed():
+            sound_effect.freq_start = 880 - (100 * 4)
+            sound_effect.freq_end = 880
+            for freq_step in range(4):
+                sound_effect.freq_start += 100
+                audio.play(sound_effect, wait=True)                                           
+                sleep(100)
+        sleep(50)
 
-    .. py:attribute:: vol_start
+----
 
-        Start volume value, a number between ``0`` and ``255``.
+.. admonition:: Tasks
 
-    .. py:attribute:: vol_end
+    #. Modify the code above to so that when the B button is pressed, the start frequency is kept the same while the end frequency is increased in steps.
+    #. Use both the A and B-button pressing code and replace all values with variables: ``base_freq``, ``step_size``, ``steps``.
+    #. Modify the code above to use definitions with parameters. Name the def block, ``increase_freq``, for A-buuton pressing and  ``decrease_freq``, for B-buuton pressing.
 
-        End volume value, a number between ``0`` and ``255``.
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-    .. py:attribute:: waveform
+        .. tab-set::
 
-        Type of waveform shape, one of these values: ``WAVEFORM_SINE``,
-        ``WAVEFORM_SAWTOOTH``, ``WAVEFORM_TRIANGLE``, ``WAVEFORM_SQUARE``,
-        ``WAVEFORM_NOISE`` (randomly generated noise).
+            .. tab-item:: Q1
 
-    .. py:attribute:: fx
+                Modify the code above to so that when the B button is pressed, the start frequency is kept the same while the end frequency is increased in steps.
 
-        Effect to add on the sound, one of the following values:
-        ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE``, or ``None``.
+                .. code-block:: python
+                    
+                    from microbit import *
+                    import audio
 
-    .. py:attribute:: shape
+                    sound_effect = audio.SoundEffect()  # use defaults
+                    # SoundEffect(freq_start=500, freq_end=2500, duration=500, vol_start=255, vol_end=0, waveform=WAVEFORM_SQUARE, fx=FX_NONE, shape=SHAPE_LOG)
+                    base_freq = 880
+                    step_size = 100
+                    steps = 4
+                    while True:
+                        if button_b.is_pressed():
+                            sound_effect.freq_start = 880
+                            sound_effect.freq_end = 880 - (100 * 4)
+                            for freq_step in range(4):
+                                audio.play(sound_effect, wait=True)                                           
+                                sound_effect.freq_end += 100
+                                sleep(100)
+                        sleep(50)
+                    
+            .. tab-item:: Q2
 
-        The type of interpolation curve between the start and end
-        frequencies, different wave shapes have different rates of change
-        in frequency. One of the following values: ``SHAPE_LINEAR``,
-        ``SHAPE_CURVE``, ``SHAPE_LOG``.
+                Use both the A and B-button pressing code and replace all values with variables: ``base_freq``, ``step_size``, ``steps``.
 
-| The arguments used to create any Sound Effect, can be inspected by looking at each of the SoundEffect instance attributes, or by converting the instance into a string (which can be done via ``str()`` function, or by using a function that does the conversion automatically like ``print()``).
+                .. code-block:: python
+                    
+                    from microbit import *
+                    import audio
+
+                    sound_effect = audio.SoundEffect()  # use defaults
+                    # SoundEffect(freq_start=500, freq_end=2500, duration=500, vol_start=255, vol_end=0, waveform=WAVEFORM_SQUARE, fx=FX_NONE, shape=SHAPE_LOG)
+                    base_freq = 880
+                    step_size = 100
+                    steps = 4
+                    while True:
+                        if button_a.is_pressed():
+                            sound_effect.freq_start = base_freq - (step_size * steps)
+                            sound_effect.freq_end = base_freq
+                            for freq_step in range(steps):
+                                audio.play(sound_effect, wait=True)                                           
+                                sound_effect.freq_start += step_size
+                                sleep(100)
+                        elif button_b.is_pressed():
+                            sound_effect.freq_start = base_freq
+                            sound_effect.freq_end = base_freq - (step_size * steps)
+                            for freq_step in range(steps):
+                                audio.play(sound_effect, wait=True)                                           
+                                sound_effect.freq_end += step_size
+                                sleep(100)
+                        sleep(50)
+
+            .. tab-item:: Q3
+
+                Modify the code above to use definitions with parameters. Name the def block, ``increase_freq``, for A-buuton pressing and ``decrease_freq``, for B-buuton pressing.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import audio
+
+
+                    def increase_freq(sound_effect, base_freq, step_size, steps):
+                        sound_effect.freq_start = base_freq - (step_size * steps)
+                        sound_effect.freq_end = base_freq
+                        for freq_step in range(steps):
+                            audio.play(sound_effect, wait=True)
+                            sound_effect.freq_start += step_size                                       
+                            sleep(100)
+
+                    def decrease_freq(sound_effect, base_freq, step_size, steps):
+                        sound_effect.freq_start = base_freq
+                        sound_effect.freq_end = base_freq - (step_size * steps)
+                        for freq_step in range(steps):
+                            audio.play(sound_effect, wait=True)
+                            sound_effect.freq_end += step_size                                     
+                            sleep(100)
+
+                    sound_effect = audio.SoundEffect()  # use defaults
+                    # SoundEffect(freq_start=500, freq_end=2500, duration=500, vol_start=255, vol_end=0, waveform=WAVEFORM_SQUARE, fx=FX_NONE, shape=SHAPE_LOG)
+                    base_freq = 880
+                    step_size = 100
+                    steps = 4
+
+                    while True:
+                        if button_a.is_pressed():
+                            increase_freq(sound_effect, base_freq, step_size, steps)
+                        elif button_b.is_pressed():
+                            decrease_freq(sound_effect, base_freq, step_size, steps)
+                        sleep(50)
+
+----  
+
+Vary the waveform
+--------------------
+
+| The code below plays sounds based on the default sound effect.
+| When the A button is pressed, each of the different waveforms is tried.
+| Which waveforms sound similar?
+
+.. code-block:: python
+    
+    from microbit import *
+    import audio
+
+    sound_effect = audio.SoundEffect()  # use defaults
+    waveform_list = [audio.SoundEffect.WAVEFORM_SINE, audio.SoundEffect.WAVEFORM_SAWTOOTH,
+                     audio.SoundEffect.WAVEFORM_TRIANGLE, audio.SoundEffect.WAVEFORM_SQUARE,
+                     audio.SoundEffect.WAVEFORM_NOISE]
+
+    while True:
+        if button_a.is_pressed():
+            for waveform_choice in waveform_list:
+                sound_effect.waveform = waveform_choice
+                audio.play(sound_effect, wait=True)                                           
+                sleep(500)
+        sleep(50)
+
+----
+
+microbit scale function
+-------------------------
+
+.. py:function:: scale(value, from_, to)
+
+    Converts a value from a range to another range.
+
+    :param value: A number to convert.
+    :param from_: A tuple to define the range to convert from.
+    :param to: A tuple to define the range to convert to.
+
+    :returns: The ``value`` (float or int; int returned if both to vlaeus are integers) converted to the ``to`` range.
+
+    e.g. scaled_value = scale(200, from_=(0,255), to=(0, 10))
+
+
+----
+
+.. admonition:: Tasks
+
+    #. Modify the code above to use the x-tilt of the microbit to choose the waveform to use from the list. Use the scale function to scale the x accelerometer readings to integers form 0 to 4.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Modify the code above use the x-tilt of the microbit to choose the waveform to use from the list. Use the scale function to scale the x accelerometer readings to integers form 0 to 4.
+
+                .. code-block:: python
+                    
+                    from microbit import *
+                    import audio
+
+                    sound_effect = audio.SoundEffect()  # use defaults
+                    waveform_list = [audio.SoundEffect.WAVEFORM_SINE, audio.SoundEffect.WAVEFORM_SAWTOOTH,
+                                    audio.SoundEffect.WAVEFORM_TRIANGLE, audio.SoundEffect.WAVEFORM_SQUARE,
+                                    audio.SoundEffect.WAVEFORM_NOISE]
+
+                    while True:
+                        if button_a.is_pressed():
+                            xreading = abs(accelerometer.get_x())
+                            waveform_index = scale(accelerometer.get_x(), from_=(-1023, 1023), to=(0, 4))
+                            sound_effect.waveform = waveform_list[waveform_index]
+                            audio.play(sound_effect, wait=True)                                           
+                            sleep(500)
+                        sleep(50)
+    
+----
+
+Vary the fx
+----------------
+
+| The code below plays sounds based on the default sound effect.
+| When the A button is pressed, each of the different add on effects is tried.
+
+.. code-block:: python
+    
+    from microbit import *
+    import audio
+
+    sound_effect = audio.SoundEffect()  # use defaults
+    fx_list =[audio.SoundEffect.FX_TREMOLO, audio.SoundEffect.FX_VIBRATO, 
+                audio.SoundEffect.FX_WARBLE, audio.SoundEffect.FX_NONE]
+
+    while True:
+        if button_a.is_pressed():
+            for fx_choice in fx_list:
+                sound_effect.fx = fx_choice
+                audio.play(sound_effect, wait=True)                                           
+                sleep(500)
+        sleep(50)
+
+----
+
+Copying sound effects
+---------------------------
+
+| Copying a sound effects can be useful when a second sound effect is to be based on another.
+
+.. py:function:: copy()
+
+    :returns: A copy of the SoundEffect.
+
+----
+
+| The code below specifies a sound effect, snd_effect1, start and end frequencies.
+| snd_effect1 si copied to snd_effect2, which is then modified.
+| A and B-buttons are used to play the 2 sound effects.
+
+ .. code-block:: python
+    
+    from microbit import *
+    import audio
+
+    # Create a new Sound Effect and immediately play it
+    snd_effect1 = audio.SoundEffect(freq_start=300, freq_end=1200)
+
+    snd_effect2 = snd_effect1.copy()
+    snd_effect2.freq_start = 2100
+    snd_effect2.waveform=audio.SoundEffect.WAVEFORM_SAWTOOTH
+
+    while True:
+        if button_a.is_pressed():
+            # the A-button silences the micro:bit
+            audio.play(snd_effect1, wait=False)
+            sleep(500)
+        elif button_b.is_pressed():
+            # B-button re-enables the speaker & plays an effect while showing an image
+            audio.play(snd_effect2, wait=False)
+            sleep(500)
+        sleep(50)
+
+----
+
+Custom sound effects
+--------------------------
+
+| The code below plays the custom sound effects when the A-button is pressed.
+
+ .. code-block:: python
+    
+    from microbit import *
+    import audio
+
+
+    laser = audio.SoundEffect(freq_start=1600, freq_end=1, duration=300, 
+                            vol_start=255, vol_end=0, 
+                            waveform=audio.SoundEffect.WAVEFORM_SQUARE, 
+                            fx=audio.SoundEffect.FX_NONE, 
+                            shape=audio.SoundEffect.SHAPE_CURVE)
+
+    radio = audio.SoundEffect(freq_start=500, freq_end=499, duration=750, 
+                            vol_start=255, vol_end=0, 
+                            waveform=audio.SoundEffect.WAVEFORM_NOISE, 
+                            fx=audio.SoundEffect.FX_NONE, 
+                            shape=audio.SoundEffect.SHAPE_LINEAR)
+
+    jump = audio.SoundEffect(freq_start=400, freq_end=600, duration=100, 
+                            vol_start=255, vol_end=0, 
+                            waveform=audio.SoundEffect.WAVEFORM_SQUARE, 
+                            fx=audio.SoundEffect.FX_WARBLE, 
+                            shape=audio.SoundEffect.SHAPE_LINEAR)
+
+    water_drop = audio.SoundEffect(freq_start=200, freq_end=600, duration=150, 
+                                vol_start=255, vol_end=0, 
+                                waveform=audio.SoundEffect.WAVEFORM_SINE, 
+                                fx=audio.SoundEffect.FX_NONE, 
+                                shape=audio.SoundEffect.SHAPE_LINEAR)
+
+    kick_drum = audio.SoundEffect(freq_start=200, freq_end=1, duration=100, 
+                                vol_start=255, vol_end=0, 
+                                waveform=audio.SoundEffect.WAVEFORM_SQUARE, 
+                                fx=audio.SoundEffect.FX_NONE, 
+                                shape=audio.SoundEffect.SHAPE_CURVE)
+
+    tom = audio.SoundEffect(freq_start=300, freq_end=200, duration=75, 
+                            vol_start=255, vol_end=0, 
+                            waveform=audio.SoundEffect.WAVEFORM_TRIANGLE, 
+                            fx=audio.SoundEffect.FX_NONE, 
+                            shape=audio.SoundEffect.SHAPE_CURVE)
+
+    snare = audio.SoundEffect(freq_start=523, freq_end=1, duration=100, 
+                            vol_start=255, vol_end=0, 
+                            waveform=audio.SoundEffect.WAVEFORM_NOISE, 
+                            fx=audio.SoundEffect.FX_WARBLE, 
+                            shape=audio.SoundEffect.SHAPE_LOG)
+
+    hi_hat = audio.SoundEffect(freq_start=500, freq_end=1, duration=10, 
+                            vol_start=255, vol_end=0, 
+                            waveform=audio.SoundEffect.WAVEFORM_NOISE, 
+                            fx=audio.SoundEffect.FX_NONE, 
+                            shape=audio.SoundEffect.SHAPE_LINEAR)
+
+    cowbell = audio.SoundEffect(freq_start=500, freq_end=500, duration=50, 
+                                vol_start=255, vol_end=0, 
+                                waveform=audio.SoundEffect.WAVEFORM_SINE, 
+                                fx=audio.SoundEffect.FX_VIBRATO, 
+                                shape=audio.SoundEffect.SHAPE_LINEAR)
+
+    triangle = audio.SoundEffect(freq_start=54, freq_end=54, duration=500, 
+                                vol_start=255, vol_end=0, 
+                                waveform=audio.SoundEffect.WAVEFORM_NOISE, 
+                                fx=audio.SoundEffect.FX_NONE, 
+                                shape=audio.SoundEffect.SHAPE_LINEAR)
+
+    sound_names = [laser, radio, jump, water_drop, kick_drum, tom, snare, hi_hat, cowbell, triangle]
+
+    while True:
+        if button_a.is_pressed():
+            for snd in sound_names:
+                audio.play(snd, wait=True)                                           
+                sleep(500)
+        sleep(50)
+        
+.. admonition:: Exercsie
+
+    #. Put some of the custom sounds in a new order and play them on button pressing.
+
+----
+
+Transferring Sound Effects
+----------------------------------------
+
 | The ``repr()`` function can be used to create a string of Python code that can be stored or transferred
 (you could transmit sounds via micro:bit radio!) and be executed with the ``eval()`` function.
 | SoundEffect(500, 2500, 500, 255, 0, 3, 0, 18)
 
- .. code-block:: python
-    
+
+.. code-block:: python
+
     from microbit import *
     from audio import SoundEffect
 
@@ -90,64 +420,3 @@ Sound Effects **V2**
     print(sound_code)
     eval("audio.play({})".format(sound_code))
 
-----
-
-Sound Effects Example
----------------------
-
- .. code-block:: python
-    
-    from microbit import *
-
-
-    # Play the default Sound Effect
-    audio.play(audio.SoundEffect())
-
-    # Create a new Sound Effect and immediately play it
-    audio.play(audio.SoundEffect(
-        freq_start=400,
-        freq_end=2000,
-        duration=500,
-        vol_start=100,
-        vol_end=255,
-        waveform=audio.SoundEffect.WAVEFORM_TRIANGLE,
-        fx=audio.SoundEffect.FX_VIBRATO,
-        shape=audio.SoundEffect.SHAPE_LOG
-    ))
-
-    # Play a Sound Effect instance, modify an attribute, and play it again
-    my_effect = audio.SoundEffect(
-        freq_start=400,
-        freq_end=2000,
-    )
-    audio.play(my_effect)
-    my_effect.duration = 1000
-    audio.play(my_effect)
-
-    # You can also create a new effect based on an existing one, and modify
-    # any of its characteristics via arguments
-    my_modified_effect = my_effect.copy()
-    my_modified_effect.waveform = audio.SoundEffect.WAVEFORM_NOISE
-    audio.play(my_modified_effect)
-
-    # Use sensor data to modify and play an existing Sound Effect instance
-    my_effect.duration = 600
-    while True:
-        # int() might be temporarily needed: https://github.com/microbit-foundation/micropython-microbit-v2/issues/121
-        my_effect.freq_start = int(scale(accelerometer.get_x(), from_=(-2000, 2000), to=(0, 9999)))
-        my_effect.freq_end = int(scale(accelerometer.get_y(), from_=(-2000, 2000), to=(0, 9999)))
-        audio.play(my_effect)
-
-        if button_a.is_pressed():
-            # Button A silences the micro:bit
-            speaker.off()
-            display.show(Image("09090:00000:00900:09990:00900"))
-            sleep(500)
-        elif button_b.is_pressed():
-            # Button B re-enables the speaker & plays an effect while showing an image
-            speaker.on()
-            audio.play(audio.SoundEffect(), wait=False)
-            display.show(Image.MUSIC_QUAVER)
-            sleep(500)
-
-        sleep(150)

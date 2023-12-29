@@ -18,7 +18,7 @@ Sound effects using pitch
     | If wait is set to True, this function is blocking.
 
    
-| The code below inreases the pitch in steps of 16 with playing duration of 20 ms.
+| The code below increases the pitch in steps of 16 with playing duration of 20 ms.
 
 .. code-block:: python
     
@@ -28,6 +28,19 @@ Sound effects using pitch
     for freq in range(880, 1760, 16):
         music.pitch(freq, duration=20)
 
+| The code below alters the pitch as the microbit is tilted sideways.
+| ``abs(accelerometer.get_x()) * 4`` uses the absolute function to turn negative values into positive.  Multiplying by 4 increases the maximum pitch that can be produced.
+| A-button pressing is required to make the sound.
+
+.. code-block:: python
+    
+    from microbit import *
+    import music
+
+    while True:
+        if button_a.is_pressed():
+            music.pitch(abs(accelerometer.get_x()) * 4, 25)
+
 ----
 
 .. admonition:: Tasks
@@ -35,6 +48,7 @@ Sound effects using pitch
     #. Modify the code to increase the pitch in steps of 32 with a duration of 40.
     #. Modify the code to decrease the pitch instead.
     #. Modify the code to increase then decrease the pitch.
+    #. Modify the accelerometer code example to incldue B-button pressing for a duration of 100ms.
 
     .. dropdown::
         :icon: codescan
@@ -80,6 +94,22 @@ Sound effects using pitch
                         music.pitch(freq, duration=20)
                     for freq in range(1760, 880, -16):
                         music.pitch(freq, duration=20)
+
+            .. tab-item:: Q4
+
+                Modify the accelerometer code example to incldue B-button pressing for a duration of 100ms.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import music
+
+                    while True:
+                        if button_a.is_pressed():
+                            music.pitch(abs(accelerometer.get_x()) * 4, 25)
+                        elif button_b.is_pressed():
+                            music.pitch(abs(accelerometer.get_x()) * 4, 100)
+                    
 
 ----
 

@@ -136,7 +136,7 @@ Code design
         display.show(chars[........])
         # the while-loops runs until A-button is pressed
         while button_a.was_pressed() is False:
-            # pressing B doesn't add a character but returns back to get_string
+            # pressing B doesn't add a character but returns ''get_string
             if button_b.is_pressed():
                 return ""
             if accelerometer.get_x() > 300:
@@ -165,7 +165,7 @@ Code design
         if button_a.is_pressed():
             display.clear()
             sleep(1000)
-            # clear button Apressing so it can be checked for being pressed again in get_string
+            # clear A-button pressing so it can be checked for being pressed again in get_string
             a = button_a.was_pressed()
             currentWord = ...........()
             display.scroll(...........)
@@ -202,7 +202,7 @@ Code design
                             display.show(chars[current])
                             # the while-loops runs until A-button is pressed
                             while button_a.was_pressed() is False:
-                                # pressing B doesn't add a character but returns back to get_string
+                                # pressing B doesn't add a character but returns ''get_string
                                 if button_b.is_pressed():
                                     return ""
                                 if accelerometer.get_x() > 300:
@@ -231,7 +231,7 @@ Code design
                             if button_a.is_pressed():
                                 display.clear()
                                 sleep(1000)
-                                # clear button Apressing so it can be checked for being pressed again in get_string
+                                # clear A-button pressing so it can be checked for being pressed again in get_string
                                 a = button_a.was_pressed()
                                 currentWord = get_string()
                                 display.scroll(currentWord)
@@ -273,7 +273,7 @@ Code design
                             display.show(chars[current])
                             # the while-loops runs until A-button is pressed
                             while button_a.was_pressed() is False:
-                                # pressing B doesn't add a letter but returns back to 
+                                # pressing B doesn't add a letter but returns ''
                                 if button_b.is_pressed():
                                     return ""
                                 if accelerometer.get_x() > 300:
@@ -302,7 +302,7 @@ Code design
                             if button_a.is_pressed():
                                 display.clear()
                                 sleep(1000)
-                                # clear button Apressing so it can be checked for being pressed again in get_string
+                                # clear A-button pressing so it can be checked for being pressed again in get_string
                                 a = button_a.was_pressed()
                                 currentWord = get_string()
                                 display.scroll(currentWord)
@@ -356,7 +356,7 @@ Code design
                             if button_a.is_pressed():
                                 display.clear()
                                 sleep(1000)
-                                # clear button Apressing for checking again in get_string
+                                # clear A-button pressing for checking again in get_string
                                 a = button_a.was_pressed()
                                 currentWord = get_string()
                                 display.scroll(currentWord)

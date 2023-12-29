@@ -2,7 +2,6 @@
 Movement
 ====================================================
 
-
 Accelerometer
 -----------------
 
@@ -38,7 +37,7 @@ Spirit level
 
 | For example, here's a very simple spirit-level that uses ``get_x`` to measure
 how level the device is along the X axis.
-| A reading of 20 is small enough to amke this very sensitive to a slight tilt. 
+| A reading of 20 is small enough to make this very sensitive to a slight tilt. 
 
 .. code-block:: python
 

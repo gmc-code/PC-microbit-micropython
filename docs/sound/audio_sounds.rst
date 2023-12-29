@@ -261,8 +261,50 @@ Built in sounds and images
             display.clear()
             sleep(1000)
 
+----
 
-.. admonition:: Exercise
+.. admonition:: Tasks
 
-    #. Modify the emotions dictionary to illustrate 2 other images with 2 of the built in sounds.
+    #. Modify the emotions dictionary to associate 2 other images with 2 other built in sounds. Use button pressing to utilize each one separately. Use a def block to do the image display and sound playing.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Modify the emotions dictionary to associate 2 other images with 2 other built in sounds. Use button pressing to utilize each one separately. Use a def block to do the image display and sound playing.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import audio
+
+
+                    emotions = {
+                        'alert': {
+                            'sound': Sound.TWINKLE,
+                            'image': Image.DIAMOND
+                        },
+                        'tired': {
+                            'sound': Sound.YAWN,
+                            'image': Image.ASLEEP
+                        }
+                    }
+
+                    def do_emotion(emotion):
+                        display.show(emotions[emotion]['image'])
+                            # Play the sound
+                        audio.play(emotions[emotion]['sound'], wait=True)
+                        display.clear()
+
+                    while True:
+                        if button_a.is_pressed():
+                            do_emotion('alert')
+                        elif button_b.is_pressed():
+                            do_emotion('tired')
+                        sleep(100)
 

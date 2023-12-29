@@ -1,5 +1,8 @@
 '''
-Press A to get a new song. Press B to stop. Touch the logo to replay a song.
+Press A to get a new song; it loops by default.
+Touch the logo to stop a song.
+Press B to play all; press again to stop when a song finishes.
+based on https://www.christmasmusicsongs.com
 '''
 from microbit import *
 import music
@@ -124,9 +127,107 @@ god_rest_ye_merry_gentlemen = [
     'E4:28',
 ]
 
+o_come_o_come_emmanuel = [
+    'A4:4',
+    'C5:4','E5:4','E5:4','E5:4',
+    'D5:4','F5:4','E5:4','D5:4',
+    'C5:12','D5:4',
+    
+    'E5:4','C5:4','A4:4','C5:4',
+    'D5:4','B4:4','A4:4','G4:4',
+    'A4:12','D5:4',
+    
+    'D5:4','A4:4','A4:4','B4:4',
+    'C5:8','B4:4','A4:4',
+    'G4:12','C5:4', 
+    
+    'D5:4','E5:4','E5:4','E5:4',
+    'D5:4','F5:4','E5:4','D5:4',
+    'C5:12','G5:4',
+        
+    'G5:12','E5:4', 
+    'E5:12','E5:4',
+    'D5:4','F5:4','E5:4','D5:4',
+    
+    'C5:12','D5:4',
+    'E5:4','C5:4','A4:4','C5:4',
+    'D5:4','B4:4','A4:4','G4:4',
+    'A4:28' 
+]
+
+good_king_wenceslas = [
+    'C5:4','C5:4','C5:4','D5:4',
+    'C5:4','C5:4','G4:8',
+    'A4:4','G4:4','A4:4','B4:4',
+    'C5:8','C5:8',
+
+    'C5:4','C5:4','C5:4','D5:4',
+    'C5:4','C5:4','G4:8',
+    'A4:4','G4:4','A4:4','B4:4',
+    'C5:8','C5:8',
+
+    'G5:4','F5:4','E5:4','D5:4',
+    'E5:4','D5:4','C5:8',
+    'A4:4','G4:4','A4:4','B4:4',
+    'C5:8','C5:8',
+
+    'G4:4','G4:4','A4:4','B4:4',
+    'C5:4','C5:4','D5:8',
+    'G5:4','F5:4','E5:4','D5:4',
+    'C5:8','F5:8','C5:16'
+]
+
+away_in_a_manger = [
+    'G4:4',
+    'G4:6','F4:2','E4:4',
+    'E4:4','D4:4','C4:4',
+    'C4:4','B3:4','A3:4',
+    'G3:8','G3:4',
+    
+    'G3:6','A3:2','G3:4',
+    'G3:4','D4:4','B3:4',
+    'A3:4','G3:4','C4:4',
+    'E4:8','G4:4',
+
+    'G4:6','F4:2','E4:4',
+    'E4:4','D4:4','C4:4',
+    'C4:4','B3:4','A3:4',
+    'G3:8','G3:4',
+    
+    'F4:6','E4:2','D4:4',
+    'E4:4','D4:4','C4:4',
+    'D4:4','A3:4','B3:4',
+    'C4:16',
+]
+
+ding_dong_merrily_on_high = [
+    'G4:4','G4:4','A4:2','G4:2','F#4:2','E4:2',
+    'D4:12','D4:4',
+    'E4:4','G4:4','G4:4','F#4:4',
+    'G4:8','G4:8',
+
+    'G4:4','G4:4','A4:2','G4:2','F#4:2','E4:2',
+    'D4:12','D4:4',
+    'E4:4','G4:4','G4:4','F#4:4',
+    'G4:8','G4:8',
+
+    'D5:6','C5:2','B4:2','C5:2','D5:2','B4:2',
+    'C5:6','B4:2','A4:2','B4:2','C5:2','A4:2',
+    'B4:6','A4:2','G4:2','A4:2','B4:2','G4:2',
+    'A4:6','G4:2','F#4:2','G4:2','A4:2','F#4:2',
+ 
+    'G4:6','F#4:2','E4:2','F#4:2','G4:2','E4:2',
+    'F#4:6','E4:2','D:4','D:4',
+    'E4:4','G4:4','G4:4','F#4:4',
+    'G4:8','G:8'
+]
+
 # Create a dictionary with the BPM and notes for each song
 songs_dict = {
-     
+    'good_king_wenceslas': {'bpm': 140, 'notes': good_king_wenceslas},   
+    'away_in_a_manger': {'bpm': 120, 'notes': away_in_a_manger},
+    'ding_dong_merrily_on_high': {'bpm': 160, 'notes': ding_dong_merrily_on_high},
+    'o_come_o_come_emmanuel': {'bpm': 140, 'notes': o_come_o_come_emmanuel},   
     'jingle_bells': {'bpm': 180, 'notes': jingle_bells},
     'we_wish_you_a_merry_christmas': {'bpm': 140, 'notes': we_wish_you_a_merry_christmas},
     'silent_night': {'bpm': 100, 'notes': silent_night},
@@ -158,15 +259,15 @@ def advance_song_counter(current_song_index):
     current_song_index = (current_song_index + 1) % len(songs)
     return current_song_index
 
-def do_tune(current_song_index):
+def do_tune(current_song_index, play_loop=True, play_wait=False):
     sleep(200)
     song_name = songs[current_song_index]
     song = songs_dict[song_name]
     # Set the tempo
     music.set_tempo(ticks=4, bpm=song['bpm'])
     # Play the current song
-    music.play(song['notes'], wait=False)
-    display.scroll(song_name.upper(), delay=60, wait=False)
+    display.scroll(song_name.upper().replace("_", " "), delay=60, loop=play_loop, wait=False)
+    music.play(song['notes'], loop=play_loop, wait=play_wait)
     
 while True:
     if button_a.was_pressed():
@@ -177,12 +278,19 @@ while True:
         do_tune(current_song_index)
     elif button_b.was_pressed():
         # Stop any currently playing song
-        music.stop()
+        while True:
+            # Move to the next song
+            current_song_index = advance_song_counter(current_song_index)
+            music.stop()
+            # Get the current song
+            do_tune(current_song_index, play_loop=False, play_wait=True)
+            if button_b.was_pressed():
+                break
     elif pin_logo.is_touched():
         # Stop any currently playing song
         music.stop()
         # again
-        do_tune(current_song_index)
+        # do_tune(current_song_index)
     sleep(10)
 
 

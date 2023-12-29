@@ -22,7 +22,7 @@ Firefly
 
     # Event loop.
     while True:
-        # Button A sends a "flash" message.
+        # the A-button sends a "flash" message.
         if button_a.was_pressed():
             radio.send('flash')  # a-ha
         # Read any incoming messages.

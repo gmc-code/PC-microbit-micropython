@@ -526,7 +526,7 @@ Sound effects using pitch
     If wait is set to True, this function is blocking.
 
    
-| The code below inreases the picth in steps of 16 with playing duration of 20 ms.
+| The code below increases the picth in steps of 16 with playing duration of 20 ms.
 
 .. code-block:: python
     

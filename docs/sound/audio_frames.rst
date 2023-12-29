@@ -117,7 +117,7 @@ Generators to avoid memory limits
     sawtooth_frame = get_sawtooth_frame()  # Get the sawtooth audio frame
 
     while True:  # Main loop
-        if button_a.is_pressed():  # If button A is pressed
+        if button_a.is_pressed():  # If the A-button is pressed
             play_rep_frame("saw", sawtooth_frame, repeat_count)  # Play the sawtooth audio frame
         sleep(100)  # Wait for 100 milliseconds
 

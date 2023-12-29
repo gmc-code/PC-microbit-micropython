@@ -19,7 +19,7 @@ Classes
 Example code using classes for LED control
 --------------------------------------------
 
-It defines a class for an LED light, with methods to turn the light on and off. An instance of the class is created, and then in an infinite loop, the program checks if either of the two buttons on the micro:bit has been pressed. If button A was pressed, the LED light is turned on with a brightness of 9. If button B was pressed, the LED light is turned off. The loop then pauses for 100 milliseconds before checking the button states again. This allows the micro:bit to respond to button presses to control the LED light.
+It defines a class for an LED light, with methods to turn the light on and off. An instance of the class is created, and then in an infinite loop, the program checks if either of the two buttons on the micro:bit has been pressed. If the A-button was pressed, the LED light is turned on with a brightness of 9. If - was pressed, the LED light is turned off. The loop then pauses for 100 milliseconds before checking the button states again. This allows the micro:bit to respond to button presses to control the LED light.
 
 .. code-block:: python
 
