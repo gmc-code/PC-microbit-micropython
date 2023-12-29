@@ -8,7 +8,7 @@ Sound Effect Syntax
 .. py:class::
     audio.SoundEffect(freq_start=500, freq_end=2500, duration=500, vol_start=255, vol_end=0, waveform=audio.SoundEffect.WAVEFORM_SQUARE, fx=audio.SoundEffect.FX_NONE, shape=audio.SoundEffect.SHAPE_LOG)
 
-     ``SoundEffect`` instance represents a sound effect. 
+     ``audio.SoundEffect()`` represents a sound effect htat can be played. 
 
     :param freq_start: Start frequency in Hertz (Hz), range 0-9999, default: ``500``
     :param freq_end: End frequency in Hertz (Hz), , range 0-9999, default: ``2500``
@@ -16,16 +16,19 @@ Sound Effect Syntax
     :param vol_start: Start volume value, range 0-255, default: ``255``
     :param vol_end: End volume value, range 0-255, default: ``0``
     :param waveform: Type of waveform shape, one of these values:
-        ``WAVEFORM_SINE``, ``WAVEFORM_SAWTOOTH``, ``WAVEFORM_TRIANGLE``,
-        ``WAVEFORM_SQUARE``, ``WAVEFORM_NOISE`` (randomly generated noise).
+        ``audio.SoundEffect.WAVEFORM_SINE``, ``audio.SoundEffect.WAVEFORM_SAWTOOTH``, 
+        ``audio.SoundEffect.WAVEFORM_TRIANGLE``, ``audio.SoundEffect.WAVEFORM_SQUARE``,
+        ``audio.SoundEffect.WAVEFORM_NOISE`` (randomly generated noise).
         Default: ``WAVEFORM_SQUARE``
     :param fx: Effect to add on the sound, one of the following values:
-        ``FX_TREMOLO``, ``FX_VIBRATO``, ``FX_WARBLE``, or ``FX_NONE``.
-        Default: ``FX_NONE``
+        ``audio.SoundEffect.FX_TREMOLO``, ``audio.SoundEffect.FX_VIBRATO``, 
+        ``audio.SoundEffect.FX_WARBLE``, or ``audio.SoundEffect.FX_NONE``.
+        Default: ``audio.SoundEffect.FX_NONE``
     :param shape: The type of the interpolation curve between the start and end
         frequencies, different wave shapes have different rates of change
-        in frequency. One of the following values: ``SHAPE_LINEAR``,
-        ``SHAPE_CURVE``, ``SHAPE_LOG``. Default: ``SHAPE_LOG``
+        in frequency. One of the following values: ``audio.SoundEffect.SHAPE_LINEAR``,
+        ``audio.SoundEffect.SHAPE_CURVE``, ``audio.SoundEffect.SHAPE_LOG``. 
+        Default: ``audio.SoundEffect.SHAPE_LOG``
 
 | The parameter values can all be modified via attributes of the same name. 
 | For example, first create an effect ``my_effect = SoundEffect(duration=1000)``,
@@ -49,7 +52,6 @@ Vary frequencies
     import audio
 
     sound_effect = audio.SoundEffect()  # use defaults
-    # SoundEffect(freq_start=500, freq_end=2500, duration=500, vol_start=255, vol_end=0, waveform=WAVEFORM_SQUARE, fx=FX_NONE, shape=SHAPE_LOG)
     while True:
         if button_a.is_pressed():
             sound_effect.freq_start = 880 - (100 * 4)
@@ -85,7 +87,6 @@ Vary frequencies
                     import audio
 
                     sound_effect = audio.SoundEffect()  # use defaults
-                    # SoundEffect(freq_start=500, freq_end=2500, duration=500, vol_start=255, vol_end=0, waveform=WAVEFORM_SQUARE, fx=FX_NONE, shape=SHAPE_LOG)
                     base_freq = 880
                     step_size = 100
                     steps = 4
@@ -109,7 +110,6 @@ Vary frequencies
                     import audio
 
                     sound_effect = audio.SoundEffect()  # use defaults
-                    # SoundEffect(freq_start=500, freq_end=2500, duration=500, vol_start=255, vol_end=0, waveform=WAVEFORM_SQUARE, fx=FX_NONE, shape=SHAPE_LOG)
                     base_freq = 880
                     step_size = 100
                     steps = 4
@@ -157,7 +157,6 @@ Vary frequencies
                             sleep(100)
 
                     sound_effect = audio.SoundEffect()  # use defaults
-                    # SoundEffect(freq_start=500, freq_end=2500, duration=500, vol_start=255, vol_end=0, waveform=WAVEFORM_SQUARE, fx=FX_NONE, shape=SHAPE_LOG)
                     base_freq = 880
                     step_size = 100
                     steps = 4
@@ -399,7 +398,7 @@ Custom sound effects
         
 .. admonition:: Exercsie
 
-    #. Put some of the custom sounds in a new order and play them on button pressing.
+    #. Put some of the custom sound effects in a new order and play them on button pressing.
 
 ----
 
