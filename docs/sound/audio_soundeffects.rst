@@ -316,6 +316,48 @@ Copying sound effects
 
 ----
 
+.. admonition:: Tasks
+
+    #. Modify the code above to use this sound effect and a copy at double the frequency: water_drop = audio.SoundEffect(freq_start=200, freq_end=600, duration=150, vol_start=255, vol_end=0, waveform=audio.SoundEffect.WAVEFORM_SINE, fx=audio.SoundEffect.FX_NONE, shape=audio.SoundEffect.SHAPE_LINEAR) 
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Modify the code above use the x-tilt of the microbit to choose the waveform to use from the list. Use the scale function to scale the x accelerometer readings to integers form 0 to 4.
+
+                .. code-block:: python
+                    
+                    from microbit import *
+                    import audio
+
+                    # Create a new Sound Effect and immediately play it
+                    water_drop = audio.SoundEffect(freq_start=200, freq_end=600, duration=150, vol_start=255, vol_end=0, waveform=audio.SoundEffect.WAVEFORM_SINE, fx=audio.SoundEffect.FX_NONE, shape=audio.SoundEffect.SHAPE_LINEAR) 
+
+
+                    water_drop2 = water_drop.copy()
+                    water_drop2.freq_start = 400
+                    water_drop2.freq_end=1200
+
+                    while True:
+                        if button_a.is_pressed():
+                            # the A-button silences the micro:bit
+                            audio.play(water_drop, wait=False)
+                            sleep(500)
+                        elif button_b.is_pressed():
+                            # B-button re-enables the speaker & plays an effect while showing an image
+                            audio.play(water_drop2, wait=False)
+                            sleep(500)
+                        sleep(50)
+
+
+----
+
 Custom sound effects
 --------------------------
 
@@ -333,7 +375,7 @@ Custom sound effects
                             fx=audio.SoundEffect.FX_NONE, 
                             shape=audio.SoundEffect.SHAPE_CURVE)
 
-    radio = audio.SoundEffect(freq_start=500, freq_end=499, duration=750, 
+    radio_snd = audio.SoundEffect(freq_start=500, freq_end=499, duration=750, 
                             vol_start=255, vol_end=0, 
                             waveform=audio.SoundEffect.WAVEFORM_NOISE, 
                             fx=audio.SoundEffect.FX_NONE, 
@@ -387,7 +429,7 @@ Custom sound effects
                                 fx=audio.SoundEffect.FX_NONE, 
                                 shape=audio.SoundEffect.SHAPE_LINEAR)
 
-    sound_names = [laser, radio, jump, water_drop, kick_drum, tom, snare, hi_hat, cowbell, triangle]
+    sound_names = [laser, radio_snd, jump, water_drop, kick_drum, tom, snare, hi_hat, cowbell, triangle]
 
     while True:
         if button_a.is_pressed():
@@ -396,7 +438,7 @@ Custom sound effects
                 sleep(500)
         sleep(50)
         
-.. admonition:: Exercsie
+.. admonition:: Exercise
 
     #. Put some of the custom sound effects in a new order and play them on button pressing.
 
@@ -405,17 +447,38 @@ Custom sound effects
 Transferring Sound Effects
 ----------------------------------------
 
-| The ``repr()`` function can be used to create a string of Python code that can be stored or transferred
-(you could transmit sounds via micro:bit radio!) and be executed with the ``eval()`` function.
+| The ``repr()`` function can be used to create a string of Python code that can be sent by radio and be executed with the ``eval()`` function on another microbit.
 | SoundEffect(500, 2500, 500, 255, 0, 3, 0, 18)
 
 
 .. code-block:: python
 
     from microbit import *
-    from audio import SoundEffect
+    import radio
 
-    sound_code = repr(SoundEffect())  # SoundEffect(500, 2500, 500, 255, 0, 3, 0, 18)
-    print(sound_code)
-    eval("audio.play({})".format(sound_code))
+    # Choose own group in pairs 0-255
+    radio.config(group=8)
+    # Turn on the radio
+    radio.on()
+
+    sound_code = repr(audio.SoundEffect())  
+    # SoundEffect(500, 2500, 500, 255, 0, 3, 0, 18)
+    sound_code = "audio." + sound_code
+
+    while True:
+        # send
+        if button_a.was_pressed():
+            radio.send(sound_code)
+            display.scroll(sound_code, delay=60, wait=False)
+        # receive
+        incoming_message = radio.receive()
+        if incoming_message is not None:
+            display.scroll(incoming_message, delay=60, wait=False)
+            eval("audio.play({})".format(sound_code))
+
+----
+
+.. admonition:: Exercise
+
+    #. Use A and B-buttons to send diffferent custom sound effects to another microbit.
 

@@ -676,3 +676,25 @@ Scales
                             music.play(fminor)
                         sleep(1000)
 
+----
+
+Custom tunes
+-----------------
+
+| Make use of these custom dictionaries that store notes and tempos for some short tunes.
+
+.. code-block:: python
+
+    from microbit import *
+    import music
+
+    scale = {"name": "Scale", "notes": "C5 B A G F E D C", "tempo": 120}
+    reverse = {"name": "Reverse", "notes": "C D E F G A B C5", "tempo": 120}
+    mystery = {"name": "Mystery", "notes": "E B C5 A B G A F", "tempo": 120}
+    gilroy = {"name": "Gilroy", "notes": "A F E F D G E F", "tempo": 120}
+    falling = {"name": "Falling", "notes": "C5 A B G A F G E", "tempo": 120}
+    hopeful = {"name": "Hopeful", "notes": "G B A G C5 B A B", "tempo": 120}
+    tokyo = {"name": "Tokyo", "notes": "B A G A G F A C5", "tempo": 120}
+    paris = {"name": "Paris", "notes": "G F G A - F E D", "tempo": 120}
+    rising = {"name": "Rising", "notes": "E D G F B A C5 B", "tempo": 120}
+    sitka = {"name": "Sitka", "notes": "C5 G B A F A C5 B", "tempo": 120}
