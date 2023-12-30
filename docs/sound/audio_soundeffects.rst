@@ -8,7 +8,7 @@ Sound Effect Syntax
 .. py:class::
     audio.SoundEffect(freq_start=500, freq_end=2500, duration=500, vol_start=255, vol_end=0, waveform=audio.SoundEffect.WAVEFORM_SQUARE, fx=audio.SoundEffect.FX_NONE, shape=audio.SoundEffect.SHAPE_LOG)
 
-     ``audio.SoundEffect()`` represents a sound effect htat can be played. 
+     ``audio.SoundEffect()`` represents a sound effect that can be played. 
 
     :param freq_start: Start frequency in Hertz (Hz), range 0-9999, default: ``500``
     :param freq_end: End frequency in Hertz (Hz), , range 0-9999, default: ``2500``
@@ -27,12 +27,12 @@ Sound Effect Syntax
     :param shape: The type of the interpolation curve between the start and end
         frequencies, different wave shapes have different rates of change
         in frequency. One of the following values: ``audio.SoundEffect.SHAPE_LINEAR``,
-        ``audio.SoundEffect.SHAPE_CURVE``, ``audio.SoundEffect.SHAPE_LOG``. 
+        ``audio.SoundEffect.SHAPE_CURVE``, ``audio.SoundEffect.SHAPE_LOG``.
         Default: ``audio.SoundEffect.SHAPE_LOG``
 
 | The parameter values can all be modified via attributes of the same name. 
 | For example, first create an effect ``my_effect = SoundEffect(duration=1000)``,
-and then change its attribute for duration: ``my_effect.duration = 500``.
+then change its attribute for duration: ``my_effect.duration = 500``.
 
 ----
 
@@ -447,7 +447,7 @@ Custom sound effects
 Transferring Sound Effects
 ----------------------------------------
 
-| The ``repr()`` function can be used to create a string of Python code that can be sent by radio and be executed with the ``eval()`` function on another microbit.
+| The ``repr()`` function can be used to create a string of Python code that can be sent by radio.
 | SoundEffect(500, 2500, 500, 255, 0, 3, 0, 18)
 
 
@@ -455,26 +455,80 @@ Transferring Sound Effects
 
     from microbit import *
     import radio
+    import audio
 
     # Choose own group in pairs 0-255
-    radio.config(group=8)
+    radio.config(group=8, length=251, queue=20)
     # Turn on the radio
     radio.on()
+    '''
+    audio.SoundEffect(freq_start=500, freq_end=2500, duration=500, 
+    vol_start=255, vol_end=0, 
+    waveform=audio.SoundEffect.WAVEFORM_SQUARE, 
+    fx=audio.SoundEffect.FX_NONE, 
+    shape=audio.SoundEffect.SHAPE_LOG)
 
-    sound_code = repr(audio.SoundEffect())  
-    # SoundEffect(500, 2500, 500, 255, 0, 3, 0, 18)
-    sound_code = "audio." + sound_code
+    '''
+
+
+    laser = audio.SoundEffect(freq_start=1600, freq_end=1, duration=1000,
+                            vol_start=255, vol_end=0,
+                            waveform=audio.SoundEffect.WAVEFORM_SQUARE,
+                            fx=audio.SoundEffect.FX_NONE,
+                            shape=audio.SoundEffect.SHAPE_CURVE)
+
+    radio_snd = audio.SoundEffect(freq_start=500, freq_end=499, duration=1000,
+                            vol_start=255, vol_end=0,
+                            waveform=audio.SoundEffect.WAVEFORM_NOISE,
+                            fx=audio.SoundEffect.FX_NONE,
+                            shape=audio.SoundEffect.SHAPE_LINEAR)
+
+    jump = audio.SoundEffect(freq_start=400, freq_end=600, duration=1000, 
+                            vol_start=255, vol_end=0, 
+                            waveform=audio.SoundEffect.WAVEFORM_SQUARE, 
+                            fx=audio.SoundEffect.FX_NONE, 
+                            shape=audio.SoundEffect.SHAPE_LINEAR)
+
+    snare = audio.SoundEffect(freq_start=523, freq_end=1, duration=1000, 
+                            vol_start=255, vol_end=0, 
+                            waveform=audio.SoundEffect.WAVEFORM_NOISE, 
+                            fx=audio.SoundEffect.FX_NONE, 
+                            shape=audio.SoundEffect.SHAPE_LOG)
+
+    sound_names = [laser, radio_snd, jump, snare]
+
 
     while True:
         # send
         if button_a.was_pressed():
-            radio.send(sound_code)
-            display.scroll(sound_code, delay=60, wait=False)
+            counter = 0
+            for snd_var in sound_names:
+                counter += 1
+                radio.send(str(counter))
+                snd_eff_str = repr(snd_var)
+                # "SoundEffect(54, 54, 1000, 255, 0, 4, 0, 1)"
+                start = snd_eff_str.find("(") + 1
+                end = snd_eff_str.find(")")
+                params = snd_eff_str[start:end]
+                # "54, 54, 1000, 255, 0, 4, 0, 1"
+                radio.send(params)
+                
         # receive
         incoming_message = radio.receive()
         if incoming_message is not None:
-            display.scroll(incoming_message, delay=60, wait=False)
-            eval("audio.play({})".format(sound_code))
+            if len(incoming_message) < 5:
+                display.show(incoming_message)
+            else:
+                # Convert the message back to a tuple of integers
+                mparams = tuple(map(int, incoming_message.split(',')))
+                # Create the sound effect wiht tuple unpacking
+                sound_effect = audio.SoundEffect(*mparams)
+                # Play the sound effect
+                audio.play(sound_effect)
+                sleep(600)
+ 
+
+
 
 ----
 

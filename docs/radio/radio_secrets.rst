@@ -33,7 +33,7 @@ Unique groups
 
 ----
 
-.. admonition:: Tasks
+.. admonition:: Exercise
 
     #. Modify the code to send "Y" when A is pressed, and "N" when B is pressed in order to answer Yes/No questions in secret.
 
@@ -92,7 +92,7 @@ Caesar cipher
 
 ----
 
-.. admonition:: Tasks
+.. admonition:: Exercises
 
     #. Modify the group and secret.
     #. Try setting up random groups by setting the group to a random integer from 1 to 9. Also use a secret message based on that group number.

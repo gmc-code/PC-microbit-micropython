@@ -186,7 +186,7 @@ Send random number on button pressing
         if message:
             display.scroll(message)
 
-.. admonition:: Tasks
+.. admonition:: Exercise
 
     #. Modify the power level to values from 0 to 7 and experiment with a partner to get an estimate of the transmission distance at each power level.
 
@@ -240,7 +240,7 @@ Send on tilting
         if incoming_message is not None:
             display.scroll(incoming_message)
 
-.. admonition:: Tasks
+.. admonition:: Exercise
 
     #. Modify the code to allow 9 different messages to be sent based on tilting.
 
