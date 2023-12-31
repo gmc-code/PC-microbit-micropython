@@ -305,7 +305,7 @@ Copying sound effects
 
     while True:
         if button_a.is_pressed():
-            # the A-button silences the micro:bit
+            # the A-button silences the microbit
             audio.play(snd_effect1, wait=False)
             sleep(500)
         elif button_b.is_pressed():
@@ -318,7 +318,7 @@ Copying sound effects
 
 .. admonition:: Tasks
 
-    #. Modify the code above to use this sound effect and a copy at double the frequency: water_drop = audio.SoundEffect(freq_start=200, freq_end=600, duration=150, vol_start=255, vol_end=0, waveform=audio.SoundEffect.WAVEFORM_SINE, fx=audio.SoundEffect.FX_NONE, shape=audio.SoundEffect.SHAPE_LINEAR) 
+    #. Modify the code above to use the laser sound effect and a copy at double the frequency: laser = audio.SoundEffect(freq_start=1600, freq_end=400, duration=400, shape=audio.SoundEffect.SHAPE_CURVE)
 
     .. dropdown::
         :icon: codescan
@@ -329,7 +329,7 @@ Copying sound effects
 
             .. tab-item:: Q1
 
-                Modify the code above use the x-tilt of the microbit to choose the waveform to use from the list. Use the scale function to scale the x accelerometer readings to integers form 0 to 4.
+                #. Modify the code above to use the laser sound effect and a copy at double the frequency: laser = audio.SoundEffect(freq_start=1600, freq_end=400, duration=400, shape=audio.SoundEffect.SHAPE_CURVE)
 
                 .. code-block:: python
                     
@@ -337,21 +337,21 @@ Copying sound effects
                     import audio
 
                     # Create a new Sound Effect and immediately play it
-                    water_drop = audio.SoundEffect(freq_start=200, freq_end=600, duration=150, vol_start=255, vol_end=0, waveform=audio.SoundEffect.WAVEFORM_SINE, fx=audio.SoundEffect.FX_NONE, shape=audio.SoundEffect.SHAPE_LINEAR) 
+                    laser = audio.SoundEffect(freq_start=1600, freq_end=400, duration=400,
+                                            shape=audio.SoundEffect.SHAPE_CURVE)
 
-
-                    water_drop2 = water_drop.copy()
-                    water_drop2.freq_start = 400
-                    water_drop2.freq_end=1200
+                    laser2 = laser.copy()
+                    laser2.freq_start = 3200
+                    laser2.freq_end=800
 
                     while True:
                         if button_a.is_pressed():
-                            # the A-button silences the micro:bit
-                            audio.play(water_drop, wait=False)
+                            # the A-button silences the microbit
+                            audio.play(laser, wait=False)
                             sleep(500)
                         elif button_b.is_pressed():
                             # B-button re-enables the speaker & plays an effect while showing an image
-                            audio.play(water_drop2, wait=False)
+                            audio.play(laser2, wait=False)
                             sleep(500)
                         sleep(50)
 
@@ -369,67 +369,20 @@ Custom sound effects
     import audio
 
 
-    laser = audio.SoundEffect(freq_start=1600, freq_end=1, duration=300, 
-                            vol_start=255, vol_end=0, 
-                            waveform=audio.SoundEffect.WAVEFORM_SQUARE, 
-                            fx=audio.SoundEffect.FX_NONE, 
+    laser = audio.SoundEffect(freq_start=1600, freq_end=400, duration=1000,
                             shape=audio.SoundEffect.SHAPE_CURVE)
 
-    radio_snd = audio.SoundEffect(freq_start=500, freq_end=499, duration=750, 
-                            vol_start=255, vol_end=0, 
-                            waveform=audio.SoundEffect.WAVEFORM_NOISE, 
-                            fx=audio.SoundEffect.FX_NONE, 
+    radio_snd = audio.SoundEffect(freq_start=500, freq_end=499, duration=1000,
+                            waveform=audio.SoundEffect.WAVEFORM_NOISE,
                             shape=audio.SoundEffect.SHAPE_LINEAR)
 
-    jump = audio.SoundEffect(freq_start=400, freq_end=600, duration=100, 
-                            vol_start=255, vol_end=0, 
-                            waveform=audio.SoundEffect.WAVEFORM_SQUARE, 
-                            fx=audio.SoundEffect.FX_WARBLE, 
+    jump = audio.SoundEffect(freq_start=400, freq_end=600, duration=1000,  
                             shape=audio.SoundEffect.SHAPE_LINEAR)
 
-    water_drop = audio.SoundEffect(freq_start=200, freq_end=600, duration=150, 
-                                vol_start=255, vol_end=0, 
-                                waveform=audio.SoundEffect.WAVEFORM_SINE, 
-                                fx=audio.SoundEffect.FX_NONE, 
-                                shape=audio.SoundEffect.SHAPE_LINEAR)
+    snare = audio.SoundEffect(freq_start=523, freq_end=1, duration=1000, 
+                            waveform=audio.SoundEffect.WAVEFORM_NOISE)
 
-    kick_drum = audio.SoundEffect(freq_start=200, freq_end=1, duration=100, 
-                                vol_start=255, vol_end=0, 
-                                waveform=audio.SoundEffect.WAVEFORM_SQUARE, 
-                                fx=audio.SoundEffect.FX_NONE, 
-                                shape=audio.SoundEffect.SHAPE_CURVE)
-
-    tom = audio.SoundEffect(freq_start=300, freq_end=200, duration=75, 
-                            vol_start=255, vol_end=0, 
-                            waveform=audio.SoundEffect.WAVEFORM_TRIANGLE, 
-                            fx=audio.SoundEffect.FX_NONE, 
-                            shape=audio.SoundEffect.SHAPE_CURVE)
-
-    snare = audio.SoundEffect(freq_start=523, freq_end=1, duration=100, 
-                            vol_start=255, vol_end=0, 
-                            waveform=audio.SoundEffect.WAVEFORM_NOISE, 
-                            fx=audio.SoundEffect.FX_WARBLE, 
-                            shape=audio.SoundEffect.SHAPE_LOG)
-
-    hi_hat = audio.SoundEffect(freq_start=500, freq_end=1, duration=10, 
-                            vol_start=255, vol_end=0, 
-                            waveform=audio.SoundEffect.WAVEFORM_NOISE, 
-                            fx=audio.SoundEffect.FX_NONE, 
-                            shape=audio.SoundEffect.SHAPE_LINEAR)
-
-    cowbell = audio.SoundEffect(freq_start=500, freq_end=500, duration=50, 
-                                vol_start=255, vol_end=0, 
-                                waveform=audio.SoundEffect.WAVEFORM_SINE, 
-                                fx=audio.SoundEffect.FX_VIBRATO, 
-                                shape=audio.SoundEffect.SHAPE_LINEAR)
-
-    triangle = audio.SoundEffect(freq_start=54, freq_end=54, duration=500, 
-                                vol_start=255, vol_end=0, 
-                                waveform=audio.SoundEffect.WAVEFORM_NOISE, 
-                                fx=audio.SoundEffect.FX_NONE, 
-                                shape=audio.SoundEffect.SHAPE_LINEAR)
-
-    sound_names = [laser, radio_snd, jump, water_drop, kick_drum, tom, snare, hi_hat, cowbell, triangle]
+    sound_names = [laser, radio_snd, jump, snare]
 
     while True:
         if button_a.is_pressed():
@@ -437,10 +390,12 @@ Custom sound effects
                 audio.play(snd, wait=True)                                           
                 sleep(500)
         sleep(50)
-        
+
+----
+
 .. admonition:: Exercise
 
-    #. Put some of the custom sound effects in a new order and play them on button pressing.
+    #. Play 2 of the sound effects on A-button pressing and another two on B-button pressing.
 
 ----
 
@@ -450,6 +405,24 @@ Transferring Sound Effects
 | The ``repr()`` function can be used to create a string of Python code that can be sent by radio.
 | SoundEffect(500, 2500, 500, 255, 0, 3, 0, 18)
 
+| This code below allows two or more microbits to send and receive sound effects to each other over radio. 
+| When a user presses the A-button, it sends the predefined sound effects to all other microbits in the same radio group.
+| When a microbit receives a sound effect, it plays the sound effect. 
+| The sound effects are represented as strings of parameters that are sent over the radio and then converted back into sound effects on the receiving microbit.
+
+| ``snd_eff_str = repr(snd_var)``: This line is using the built-in Python function repr() to create a string representation of the snd_var object, which is an instance of the SoundEffect class. The repr() function returns a string that would yield an object with the same value when passed to eval(). In this case, it returns a string that looks like a valid Python expression, which could be used to recreate an object with the same value.
+
+| ``start = snd_eff_str.find("(") + 1``: This line is finding the position of the first opening parenthesis “(” in the snd_eff_str string, and adding 1 to it. This is done to get the start index for slicing the string to extract the parameters of the SoundEffect.
+
+| ``end = snd_eff_str.find(")")``: This line is finding the position of the first closing parenthesis “)” in the snd_eff_str string. This is the end index for slicing the string.
+
+| ``params = snd_eff_str[start:end]``: This line is slicing the snd_eff_str string from start to end to get the parameters of the SoundEffect. The result is a string of numbers separated by commas, which represent the parameters of the SoundEffect.
+
+| ``mparams = tuple(map(int, incoming_message.split(',')))``: This line is splitting the `incoming_message` string at each comma and converting each resulting string to an integer. The results are then packed into a tuple and assigned to `mparams`.
+
+| ``sound_effect = audio.SoundEffect(*mparams)``: This line is creating a `SoundEffect` object from the `audio` module. The `*mparams` syntax is using tuple unpacking to pass the values in `mparams` as arguments to `SoundEffect`.
+
+| In summary, these lines of code are converting a SoundEffect object to a string representation, and then extracting the parameters of the SoundEffect from the string. This allows the parameters to be sent over the radio as a string, and then converted back into a SoundEffect on the receiving microbit.
 
 .. code-block:: python
 
@@ -458,42 +431,31 @@ Transferring Sound Effects
     import audio
 
     # Choose own group in pairs 0-255
-    radio.config(group=8, length=251, queue=20)
+    radio.config(group=8, length=251)
     # Turn on the radio
     radio.on()
+
     '''
+    default sound effect
     audio.SoundEffect(freq_start=500, freq_end=2500, duration=500, 
     vol_start=255, vol_end=0, 
     waveform=audio.SoundEffect.WAVEFORM_SQUARE, 
     fx=audio.SoundEffect.FX_NONE, 
     shape=audio.SoundEffect.SHAPE_LOG)
-
     '''
 
-
-    laser = audio.SoundEffect(freq_start=1600, freq_end=1, duration=1000,
-                            vol_start=255, vol_end=0,
-                            waveform=audio.SoundEffect.WAVEFORM_SQUARE,
-                            fx=audio.SoundEffect.FX_NONE,
+    laser = audio.SoundEffect(freq_start=1600, freq_end=400, duration=1000,
                             shape=audio.SoundEffect.SHAPE_CURVE)
 
     radio_snd = audio.SoundEffect(freq_start=500, freq_end=499, duration=1000,
-                            vol_start=255, vol_end=0,
                             waveform=audio.SoundEffect.WAVEFORM_NOISE,
-                            fx=audio.SoundEffect.FX_NONE,
                             shape=audio.SoundEffect.SHAPE_LINEAR)
 
-    jump = audio.SoundEffect(freq_start=400, freq_end=600, duration=1000, 
-                            vol_start=255, vol_end=0, 
-                            waveform=audio.SoundEffect.WAVEFORM_SQUARE, 
-                            fx=audio.SoundEffect.FX_NONE, 
+    jump = audio.SoundEffect(freq_start=400, freq_end=600, duration=1000,  
                             shape=audio.SoundEffect.SHAPE_LINEAR)
 
     snare = audio.SoundEffect(freq_start=523, freq_end=1, duration=1000, 
-                            vol_start=255, vol_end=0, 
-                            waveform=audio.SoundEffect.WAVEFORM_NOISE, 
-                            fx=audio.SoundEffect.FX_NONE, 
-                            shape=audio.SoundEffect.SHAPE_LOG)
+                            waveform=audio.SoundEffect.WAVEFORM_NOISE)
 
     sound_names = [laser, radio_snd, jump, snare]
 
@@ -519,16 +481,13 @@ Transferring Sound Effects
             if len(incoming_message) < 5:
                 display.show(incoming_message)
             else:
-                # Convert the message back to a tuple of integers
+                # Convert the message back to a tuple of integers: 54, 54, 1000, 255, 0, 4, 0, 1)
                 mparams = tuple(map(int, incoming_message.split(',')))
-                # Create the sound effect wiht tuple unpacking
+                # Create the sound effect with tuple unpacking: audio.SoundEffect(54, 54, 1000, 255, 0, 4, 0, 1)
                 sound_effect = audio.SoundEffect(*mparams)
                 # Play the sound effect
                 audio.play(sound_effect)
                 sleep(600)
- 
-
-
 
 ----
 
