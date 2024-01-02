@@ -522,5 +522,53 @@ Scales generator
 
 .. admonition:: Exercises
 
+    #. Set up two microbits and send a key from one to the other and have it play on the receiver.
     #. Create a dictionary of keys and their notes and save it to a file to be accessed on the microbit.
-    #. Create a dictionary of tunes, save it to a file to be accessed on the microbit.
+
+----
+
+Accelerometer based notes
+-------------------------------
+
+| The code below uses the accelerometer to choose the note and the note duration.
+| The scale function is used to scale the tilting range to the length of the notes list and the length of the durations list.
+| The pitches used are based on the E minor scale.
+
+.. code-block:: python
+
+    from microbit import *
+    import music
+
+    accelerometer.set_range(1)
+
+    play_notes = ["E3", "F#3", "G3", "A3", "B3", 
+            "E4", "F#4", "G4", "A4", "B4", 
+            "E5", "F#5", "G5", "A5", "B5", 
+            "E6", "F#6", "G6", "A6", "B6"]
+    play_durations = ["1", "2", "4", "8", "16"]
+    durationlen = len(play_durations)
+    notelen = len(play_notes)
+
+    play_music = True
+    while True:
+        #use A to toggle music
+        if button_a.was_pressed():
+            play_music = not play_music
+        if not play_music:
+            continue
+        #get accelerometer readings
+        xreading = abs(accelerometer.get_x())
+        yreading = abs(accelerometer.get_y())
+        # use above 1023 incase some micorbits give slightly higher readings
+        scaled_x = scale(xreading, from_=(-1200, 1200), to=(-notelen +1, notelen -1))
+        scaled_y = scale(yreading, from_=(-1200, 1200), to=(-durationlen +1, durationlen -1))
+        #get a note based on tilt
+        music.play(play_notes[scaled_x] + ":" + play_durations[scaled_y])
+
+----
+
+.. admonition:: Exercise
+
+    #. Use the accelerometer to control 8 notes of a scale over just one octave.
+
+

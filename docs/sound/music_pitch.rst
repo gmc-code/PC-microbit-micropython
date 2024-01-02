@@ -307,3 +307,56 @@ A	    1760
                         if button_a.was_pressed():
                             break
 
+----
+
+Accelerometer based pitches
+-------------------------------
+
+| The code below uses the accelerometer to choose the pitch and the note duration.
+| The scale function is used to scale the tilting range to the length of the notes list and the length of the durations list.
+| The pitches used are based on the E minor scale.
+
+.. code-block:: python
+
+    from microbit import *
+    import music
+
+    accelerometer.set_range(1)
+
+    # A selection of E minor notes
+    notes = [164.81, 185.00, 196.00, 220.00, 246.94,  # E3, F#3, G3, A3, B3
+            329.63, 369.99, 392.00, 440.00, 493.88,  # E4, F#4, G4, A4, B4
+            659.25, 739.99, 783.99, 880.00, 987.77,  # E5, F#5, G5, A5, B5
+            1318.51, 1479.98, 1567.98, 1760.00, 1975.53]  # E6, F#6, G6, A6, B6
+
+    # note lengths 4 ticks per beat or per 500ms
+    durations = [125, 250, 500, 1000, 2000]
+
+    durationlen = len(durations)
+    notelen = len(notes)
+
+    play_music = True
+    while True:
+        #use A to toggle music
+        if button_a.was_pressed():
+            play_music = not play_music
+        if not play_music:
+            continue
+        #get accelerometer readings
+        xreading = abs(accelerometer.get_x())
+        yreading = abs(accelerometer.get_y())
+        # use above 1023 incase some micorbits give slightly higher readings
+        scaled_x = scale(xreading, from_=(-1200, 1200), to=(-notelen +1, notelen -1))
+        scaled_y = scale(yreading, from_=(-1200, 1200), to=(-durationlen +1, durationlen -1))
+        #get a note based on tilt
+        pitch = notes[scaled_x]
+        duration = durations[scaled_y]
+        music.pitch(int(pitch), duration)
+
+----
+
+.. admonition:: Exercise
+
+    #. Use the accelerometer to control 8 pitches of a scale over just one octave.
+
+
