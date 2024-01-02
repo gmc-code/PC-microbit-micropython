@@ -54,7 +54,7 @@ Microbit software using micropython:
 | Comparison of microbit programming options:
 
 | The standard online **micropython** editor: https://python.microbit.org/v/3 is consistently the most up to date online editor for the microbit, supporting V2 of the micorbit.
-| Choose ``Send CTRL-C to REPL`` in the serial tab 3 dots bitton to see the MicroPython version; v1.18.
+| Choose ``Send CTRL-C to REPL`` in the serial tab 3 dots button to see the MicroPython version; v1.18.
 
 | The **Mu** editor for laptops, https://codewith.mu/en/tutorials/1.2/microbit, is a simple choice for desktop coding on the microbit.
 | As of Dec 2023, Mu v1.2 doesn't support some of the newer features of the microbit V2.
