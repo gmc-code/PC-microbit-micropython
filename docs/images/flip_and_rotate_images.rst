@@ -16,6 +16,7 @@ Image repr
 .. py:function:: repr(image)
 
     | Get a compact string representation of the image.
+    | e.g **repr(Image.DUCK)** returns Image('09900:99900:09999:09990:00000:')
     
 ----
 
@@ -29,6 +30,7 @@ String replace
     | oldvalue	The string to search for
     | newvalue	The string to replace the old value with
     | count	Optional. A number specifying how many occurrences of the old value to be replaced. Defaults to all occurrences if omitted.
+    | e.g. img_str = img_str.replace(":", "")
 
 ----
 
@@ -52,8 +54,8 @@ Pixels from repr
     
     from microbit import *
     
-    img0 = Image.DUCK
-    img_repr = repr(img0)
+    img = Image.DUCK
+    img_repr = repr(img)
     print(img_repr)
     # Image('09900:99900:09999:09990:00000:')
 
@@ -451,7 +453,7 @@ Flipping a list of images
 
 | Here is the list of some images that are not laterally symmetrical (left and right sides are diferent): 
 | [Image.MUSIC_CROTCHET, Image.MUSIC_QUAVER, Image.MUSIC_QUAVERS, Image.PACMAN, Image.ROLLERSKATE, Image.TRIANGLE_LEFT, Image.UMBRELLA, Image.YES]
-| Create a function, **flip_imagelist(image_list, transition_time=500)**, which creates img0, img0_flip_hor and img0_flip_vert for each image in the list, then creates a list of these, **[img0, img_flip_hor, img0, img_flip_vert, img0]** which are then displayed using a transition_time which defaults to a delay of 300ms between each image.
+| Create a function, **flip_imagelist(image_list, transition_time=500)**, which creates img, img_flip_hor and img_flip_vert for each image in the list, then creates a list of these, **[img, img_flip_hor, img, img_flip_vert, img]** which are then displayed using a transition_time which defaults to a delay of 300ms between each image.
 
 
 .. admonition:: Tasks
@@ -615,12 +617,12 @@ Rotating 270 degrees
                             return output_array
 
 
-                        img0 = Image.DUCK
-                        img_array = get_imgarr_rotate_270(get_image_array(img0))
+                        img = Image.DUCK
+                        img_array = get_imgarr_rotate_270(get_image_array(img))
                         img270 = Image(5, 5, bytearray(img_array))
 
                         while True:
-                            display.show(img0)
+                            display.show(img)
                             sleep(300)
                             display.show(img270)
                             sleep(300)
@@ -709,12 +711,12 @@ Rotating 90 degrees clockwise
                             return output_array
 
 
-                        img0 = Image.DUCK
-                        img_array = get_imgarr_rotate_90(get_image_array(img0))
+                        img = Image.DUCK
+                        img_array = get_imgarr_rotate_90(get_image_array(img))
                         img90 = Image(5, 5, bytearray(img_array))
 
                         while True:
-                            display.show(img0)
+                            display.show(img)
                             sleep(300)
                             display.show(img90)
                             sleep(300)
@@ -798,12 +800,12 @@ Rotating 180 degrees
                             return get_imgarr_flip_vert(get_imgarr_flip_hor(imgarray))
 
 
-                        img0 = Image.DUCK
-                        img180 = Image(5, 5, bytearray(get_imgarr_rotate_180(get_image_array(img0))))
+                        img = Image.DUCK
+                        img180 = Image(5, 5, bytearray(get_imgarr_rotate_180(get_image_array(img))))
 
 
                         while True:
-                            display.show(img0)
+                            display.show(img)
                             sleep(800)
                             display.show(img180)
                             sleep(800)
