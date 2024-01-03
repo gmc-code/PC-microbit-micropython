@@ -70,7 +70,8 @@ Brightness array
 | This is done using **img_repr[7:-3]**.
 | Then the colon is removed using the replace method. **img_str = img_str.replace(":", "")**
 | Finally, list comprehension, **img_array = [int(x) for x in img_str]**,  is used on the string to convert each string numeral to an int in a list.
-| This produces the list for a DUCK: [0, 9, 9, 0, 0, 9, 9, 9, 0, 0, 0, 9, 9, 9, 9, 0, 9, 9, 9, 0, 0, 0, 0, 0, 0]
+| This produces the list for the Image of a DUCK: 
+| [0, 9, 9, 0, 0, 9, 9, 9, 0, 0, 0, 9, 9, 9, 9, 0, 9, 9, 9, 0, 0, 0, 0, 0, 0]
 
 .. code-block:: python
     
@@ -134,15 +135,14 @@ Flipping horizontally
     :align: center
 
 
-| The code to flip an image horizontally will be broken up into 2 custom functions.
+| The code to flip an image horizontally will be broken up into custom functions.
+| **get_image_flip_hor(img)** takes the original image and returns the flipped image.
 | **get_image_array(img)** takes an image object as an argument and returns a list of pixel brightnesses.
 | **get_imgarr_flip_hor(imgarray)** takes the image array returned by **get_image_array** and outputs a flipped image array.
-| **Image(5, 5, bytearray(img_array))** creates the flipped image.
-
 | **get_imgarr_flip_hor(imgarray)** should use list slices to get each row.
 | The top row would be the first 5 items of the list as given by: row0 = imgarray[:5]
 | Each row slice can be reversed: row0.reverse()
-
+| **Image(5, 5, bytearray(img_array))** creates the flipped image.
 
 ----
 
@@ -188,33 +188,70 @@ Flipping horizontally
                             output_array = row0 + row1 + row2 + row3 + row4
                             return output_array
                             
-                        img0 = Image.DUCK
-                        img_array = get_imgarr_flip_hor(get_image_array(img0))
-                        img0_flip_hor= Image(5, 5, bytearray(img_array))
-
+                        def get_image_flip_hor(img):
+                            img_array = get_imgarr_flip_hor(get_image_array(img))
+                            img_flip_hor= Image(5, 5, bytearray(img_array))
+                            return img_flip_hor
+                            
+                        img = Image.DUCK
+                        img_flip_hor = get_image_flip_hor(img)
+                        
                         while True:
-                            display.show(img0)
+                            display.show(img)
                             sleep(300)
-                            display.show(img0_flip_hor)
+                            display.show(img_flip_hor)
                             sleep(300)
 
 | In the previous answer, notice the pattern in each slice can be replaced with a loop using ``imgarray[i:i+5]``. 
 | Use the range function to set i to multiples of 5: ``for i in range(0, len(imgarray), 5)``
 
-.. code-block:: python
+.. admonition:: Tasks
 
-    from microbit import *
+    #. Modify get_imgarr_flip_hor to use a for-loop.
+
+        .. code-block:: python
+
+            from microbit import *
+
+            def get_imgarr_flip_hor(imgarray):
+                # get every 5 elements and reverse them
+                row0 = imgarray[0:5]
+                row1 = imgarray[5:10]
+                row2 = imgarray[10:15]
+                row3 = imgarray[15:20]
+                row4 = imgarray[20:25]
+                row0.reverse()
+                row1.reverse()
+                row2.reverse()
+                row3.reverse()
+                row4.reverse()
+                output_array = row0 + row1 + row2 + row3 + row4
+                return output_array
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Modify get_imgarr_flip_hor to use a for-loop.
+
+                    .. code-block:: python
+
+                        from microbit import *
 
 
-    def get_imgarr_flip_hor(imgarray):
-        output_array = []
-        for i in range(0, len(imgarray), 5):
-            row = imgarray[i:i+5]
-            row.reverse()
-            output_array += row
-        return output_array
+                        def get_imgarr_flip_hor(imgarray):
+                            output_array = []
+                            for i in range(0, len(imgarray), 5):
+                                row = imgarray[i:i+5]
+                                row.reverse()
+                                output_array += row
+                            return output_array
 
-| Add a def, ``get_image_flip_hor``, to get the flipped image from another image.
 | Full code:
 
 .. code-block:: python
@@ -244,7 +281,7 @@ Flipping horizontally
         
     img = Image.DUCK
     img_flip_hor = get_image_flip_hor(img)
-
+    
     while True:
         display.show(img)
         sleep(300)
@@ -267,34 +304,51 @@ Flipping vertically
 | **get_imgarr_flip_vert(imgarray)** should use list slices to get each row.
 | The top row would be the first 5 items of the list as given by: row0 = imgarray[:5]
 | The order of each row needs to be reversed, so that the top row goes to the bottom row.
+
 | Here is the **get_imgarr_flip_vert** code.
+| The **get_imgarr_flip_vert** code can be modified to sue a for-loop by adding row 4 to the returned array, then row 3 down to row 0.
 
-.. code-block:: python
 
-    from microbit import *
+.. admonition:: Tasks
 
-    def get_imgarr_flip_vert(imgarray):
-        # get every 5 elements as rows and reverse order of rows.
-        row0 = imgarray[0:5]
-        row1 = imgarray[5:10]
-        row2 = imgarray[10:15]
-        row3 = imgarray[15:20]
-        row4 = imgarray[20:25]
-        output_array = row4 + row3 + row2 + row1 + row0
-        return output_array
+    #. Modify get_imgarr_flip_vert to use a for-loop.
 
-| The **get_imgarr_flip_vert** code can be simplified by adding row 4 to the array, then row 3 down to row 0.
+        .. code-block:: python
 
-.. code-block:: python
-                    
-    from microbit import *
+            from microbit import *
 
-    def get_imgarr_flip_vert(imgarray):
-        output_array = []
-        for i in range(4, -1, -1):
-            row = imgarray[i*5:(i+1)*5]
-            output_array += row
-        return output_array
+            def get_imgarr_flip_vert(imgarray):
+                # get every 5 elements as rows and reverse order of rows.
+                row0 = imgarray[0:5]
+                row1 = imgarray[5:10]
+                row2 = imgarray[10:15]
+                row3 = imgarray[15:20]
+                row4 = imgarray[20:25]
+                output_array = row4 + row3 + row2 + row1 + row0
+                return output_array
+
+
+    .. dropdown::
+            :icon: codescan
+            :color: primary
+            :class-container: sd-dropdown-container
+
+            .. tab-set::
+
+                .. tab-item:: Q1
+
+                    Modify get_imgarr_flip_vert to use a for-loop.
+
+                    .. code-block:: python
+                                        
+                        from microbit import *
+
+                        def get_imgarr_flip_vert(imgarray):
+                            output_array = []
+                            for i in range(4, -1, -1):
+                                row = imgarray[i*5:(i+1)*5]
+                                output_array += row
+                            return output_array
 
 
 ----
@@ -376,7 +430,7 @@ Flipping a list of images
 
                     .. code-block:: python
 
-                        from microbit import 
+                        from microbit import *
 
 
                         def get_image_array(img=Image.DUCK):
@@ -386,32 +440,30 @@ Flipping a list of images
                             img_array = [int(x) for x in img_str]
                             return img_array
 
-
                         def get_imgarr_flip_hor(imgarray):
-                            # get every 5 elements and reverse them in each row
-                            row0 = imgarray[:5]
-                            row1 = imgarray[5:10]
-                            row2 = imgarray[10:15]
-                            row3 = imgarray[15:20]
-                            row4 = imgarray[20:]
-                            row0.reverse()
-                            row1.reverse()
-                            row2.reverse()
-                            row3.reverse()
-                            row4.reverse()
-                            output_array = row0 + row1 + row2 + row3 + row4
+                            output_array = []
+                            for i in range(0, len(imgarray), 5):
+                                row = imgarray[i:i+5]
+                                row.reverse()
+                                output_array += row
                             return output_array
 
-
+                        def get_image_flip_hor(img):
+                            img_array = get_imgarr_flip_hor(get_image_array(img))
+                            img_flip_hor= Image(5, 5, bytearray(img_array))
+                            return img_flip_hor
+                                
                         def get_imgarr_flip_vert(imgarray):
-                            # get every 5 elements as rows and reverse order of rows.
-                            row0 = imgarray[:5]
-                            row1 = imgarray[5:10]
-                            row2 = imgarray[10:15]
-                            row3 = imgarray[15:20]
-                            row4 = imgarray[20:]
-                            output_array = row4 + row3 + row2 + row1 + row0
+                            output_array = []
+                            for i in range(4, -1, -1):
+                                row = imgarray[i*5:(i+1)*5]
+                                output_array += row
                             return output_array
+
+                        def get_image_flip_vert(img):
+                            img_array = get_imgarr_flip_vert(get_image_array(img))
+                            img_flip_vert= Image(5, 5, bytearray(img_array))
+                            return img_flip_vert
 
 
                         object_images = [
@@ -428,15 +480,14 @@ Flipping a list of images
 
                         def flip_imagelist(image_list, transition_time=500):
                             for img in image_list:
-                                img0 = img
-                                img_flip_hor = Image(5, 5, bytearray(get_imgarr_flip_hor(get_image_array(img0))))
-                                img_flip_vert = Image(5, 5, bytearray(get_imgarr_flip_vert(get_image_array(img0))))
-                                img_seq = [img0, img_flip_hor, img0, img_flip_vert, img0]
+                                img_flip_hor = get_image_flip_hor(img)
+                                img_flip_vert = get_image_flip_vert(img)
+                                img_seq = [img, img_flip_hor, img, img_flip_vert, img]
                                 display.show(img_seq, delay=transition_time)
 
 
                         while True:
-                            flip_imagelist(object_images)
+                            flip_imagelist(object_images, transition_time=200)
 
 ----
 
