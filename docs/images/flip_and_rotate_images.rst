@@ -27,9 +27,9 @@ String replace
 
 .. py:function:: string.replace(oldvalue, newvalue, count)
 
-    | oldvalue	The string to search for
-    | newvalue	The string to replace the old value with
-    | count	Optional. A number specifying how many occurrences of the old value to be replaced. Defaults to all occurrences if omitted.
+    | oldvalue - The string to search for
+    | newvalue - The string to replace the old value with
+    | count	(optional) - A number specifying how many occurrences of the old value to be replaced. Defaults to all occurrences if omitted.
     | e.g. img_str = img_str.replace(":", "")
 
 ----
@@ -40,6 +40,7 @@ Reverse list method syntax
 .. py:function:: a_list.reverse()
 
     | Reverses a list. No parameters are involved.
+    | e.g. [9, 9, 9, 0, 0] beis reversed to become [0, 0, 9, 9, 9]
 
 ----
 
@@ -106,7 +107,7 @@ Brightness array
 
             .. tab-set::
 
-                .. tab-item:: get_image_array
+                .. tab-item::
 
                     .. code-block:: python
 
