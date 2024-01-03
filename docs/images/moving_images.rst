@@ -13,12 +13,14 @@ Shift left and right
 
 .. py:method:: shift_left(n)
 
-    Return a new image by shifting the image left by **n** columns.
+    | Return a new image by shifting the image left by **n** columns.
+    | e.g. img_left_1 = Image("00000:09090:00900:09090:00000").shift_left(1)
 
 
 .. py:method:: shift_right(n)
 
-    Return a new image by shifting the image right by **n** columns.
+    | Return a new image by shifting the image right by **n** columns.
+    | e.g. img_right_1 = Image("00000:09090:00900:09090:00000").shift_right(1)
 
 
 | The code below shifts the small image of a dice, with a five on it, to the right 1 step, back, to the left 1 step and back.
@@ -27,19 +29,19 @@ Shift left and right
 
     from microbit import *
 
-    img1 = Image("00000:09090:00900:09090:00000")
+    img = Image("00000:09090:00900:09090:00000")
 
-    display.show(img1)
-    sleep(500)
-    img = img1.shift_right(1)
     display.show(img)
     sleep(500)
-    display.show(img1)
+    img_r1 = img.shift_right(1)
+    display.show(img_r1)
     sleep(500)
-    img = img1.shift_left(1)
     display.show(img)
     sleep(500)
-    display.show(img1)
+    img_l1 = img.shift_left(1)
+    display.show(img_l1)
+    sleep(500)
+    display.show(img)
 
 ----
 
@@ -69,11 +71,11 @@ Shift left and right
 
                         from microbit import *
 
-                        img1 = Image("00000:09090:00900:09090:00000")
+                        img = Image("00000:09090:00900:09090:00000")
 
                         for i in [-4, -3, -2, -1, 0, 1, 2, 3, 4]:
-                            img = img1.shift_right(i)
-                            display.show(img)
+                            img_r = img.shift_right(i)
+                            display.show(img_r)
                             sleep(500)
 
                 .. tab-item:: Q2
@@ -84,11 +86,11 @@ Shift left and right
 
                         from microbit import *
 
-                        img1 = Image("00000:09090:00900:09090:00000")
+                        img = Image("00000:09090:00900:09090:00000")
 
                         for i in range(-4, 5, 1):
-                            img = img1.shift_right(i)
-                            display.show(img)
+                            iimg_rmg = img.shift_right(i)
+                            display.show(img_r)
                             sleep(500)
 
                 .. tab-item:: Q3
@@ -99,11 +101,11 @@ Shift left and right
 
                         from microbit import *
 
-                        img1 = Image("00000:09090:00900:09090:00000")
+                        img = Image("00000:09090:00900:09090:00000")
 
                         for i in [-4, -2, 0, 2, 4]:
-                            img = img1.shift_left(i)
-                            display.show(img)
+                            img_l = img.shift_left(i)
+                            display.show(img_l)
                             sleep(500)
 
                 .. tab-item:: Q4
@@ -114,11 +116,11 @@ Shift left and right
 
                         from microbit import *
 
-                        img1 = Image("00000:09090:00900:09090:00000")
+                        img = Image("00000:09090:00900:09090:00000")
 
                         for i in range(-4, 5, 2):
-                            img = img1.shift_left(i)
-                            display.show(img)
+                            img_l = img.shift_left(i)
+                            display.show(img_l)
                             sleep(500)
 
                 .. tab-item:: Q5
@@ -129,11 +131,11 @@ Shift left and right
 
                         from microbit import *
 
-                        img1 = Image("00000:09090:00900:09090:00000")
+                        img = Image("00000:09090:00900:09090:00000")
 
                         for i in [0, 1, 2, 3, 4, -4, -3, -2, -1, 0]:
-                            img = img1.shift_right(i)
-                            display.show(img)
+                            img_r = img.shift_right(i)
+                            display.show(img_r)
                             sleep(500)
 
                 .. tab-item:: Q6
@@ -144,11 +146,11 @@ Shift left and right
 
                         from microbit import *
 
-                        img1 = Image("00000:09090:00900:09090:00000")
+                        img = Image("00000:09090:00900:09090:00000")
 
                         for i in [0, 2, 4, -4, -2, 0]:
-                            img = img1.shift_left(i)
-                            display.show(img)
+                            img_l = img.shift_left(i)
+                            display.show(img_l)
                             sleep(500)
 
                 .. tab-item:: Q7
@@ -184,11 +186,13 @@ Shift up and down
 
 .. py:method:: shift_up(n)
 
-    Return a new image by shifting the image up by **n** rows.
+    | Return a new image by shifting the image up by **n** rows.
+    | e.g. img_up_1 = Image("00000:09090:00900:09090:00000").shift_up(1)
         
 .. py:method:: shift_down(n)
 
-    Return a new image by shifting the image down by **n** rows.
+    | Return a new image by shifting the image down by **n** rows.
+    | e.g. img_down_1 = Image("00000:09090:00900:09090:00000").shift_down(1)
 
 
 | The code below shifts the small image of a dice, with a five on it, up 1 step, back, down 1 step and back.
@@ -197,19 +201,19 @@ Shift up and down
 
     from microbit import *
 
-    img1 = Image("00000:09090:00900:09090:00000")
+    img = Image("00000:09090:00900:09090:00000")
 
-    display.show(img1)
-    sleep(500)
-    img = img1.shift_up(1)
     display.show(img)
     sleep(500)
-    display.show(img1)
+    img_up_1 = img.shift_up(1)
+    display.show(img_up_1)
     sleep(500)
-    img = img1.shift_down(1)
     display.show(img)
     sleep(500)
-    display.show(img1)
+    img_down_1 = img.shift_down(1)
+    display.show(img_down_1)
+    sleep(500)
+    display.show(img)
 
 ----
 
@@ -238,11 +242,11 @@ Shift up and down
 
                         from microbit import *
 
-                        img1 = Image("00000:09090:00900:09090:00000")
+                        img = Image("00000:09090:00900:09090:00000")
 
                         for i in [-4, -3, -2, -1, 0, 1, 2, 3, 4]:
-                            img = img1.shift_up(i)
-                            display.show(img)
+                            img_up = img.shift_up(i)
+                            display.show(img_up)
                             sleep(500)
 
                 .. tab-item:: Q2
@@ -253,11 +257,11 @@ Shift up and down
 
                         from microbit import *
 
-                        img1 = Image("00000:09090:00900:09090:00000")
+                        img = Image("00000:09090:00900:09090:00000")
 
                         for i in range(-4, 5, 1):
-                            img = img1.shift_up(i)
-                            display.show(img)
+                            img_up = img.shift_up(i)
+                            display.show(img_up)
                             sleep(500)
 
                 .. tab-item:: Q3
@@ -268,11 +272,11 @@ Shift up and down
 
                         from microbit import *
 
-                        img1 = Image("00000:09090:00900:09090:00000")
+                        img = Image("00000:09090:00900:09090:00000")
 
                         for i in [-4, -2, 0, 2, 4]:
-                            img = img1.shift_down(i)
-                            display.show(img)
+                            img_down = img.shift_down(i)
+                            display.show(img_down)
                             sleep(500)
 
                 .. tab-item:: Q4
@@ -283,11 +287,11 @@ Shift up and down
 
                         from microbit import *
 
-                        img1 = Image("00000:09090:00900:09090:00000")
+                        img = Image("00000:09090:00900:09090:00000")
 
                         for i in range(-4, 5, 2):
-                            img = img1.shift_down(i)
-                            display.show(img)
+                            img_down = img.shift_down(i)
+                            display.show(img_down)
                             sleep(500)
 
                 .. tab-item:: Q5
@@ -298,11 +302,11 @@ Shift up and down
 
                         from microbit import *
 
-                        img1 = Image("00000:09090:00900:09090:00000")
+                        img = Image("00000:09090:00900:09090:00000")
 
                         for i in [0, 1, 2, 3, 4, -4, -3, -2, -1, 0]:
-                            img = img1.shift_up(i)
-                            display.show(img)
+                            img_up = img.shift_up(i)
+                            display.show(img_up)
                             sleep(500)
 
                 .. tab-item:: Q6
@@ -313,11 +317,11 @@ Shift up and down
 
                         from microbit import *
 
-                        img1 = Image("00000:09090:00900:09090:00000")
+                        img = Image("00000:09090:00900:09090:00000")
 
                         for i in [0, 2, 4, -4, -2, 0]:
-                            img = img1.shift_down(i)
-                            display.show(img)
+                            img_down = img.shift_down(i)
+                            display.show(img_down)
                             sleep(500)
 
                 .. tab-item:: Q7
