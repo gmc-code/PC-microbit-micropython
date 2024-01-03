@@ -68,13 +68,6 @@ Brightness array
 | So: Image('09900:99900:09999:09990:00000:')
 | is converted to: [0, 9, 9, 0, 0, 9, 9, 9, 0, 0, 0, 9, 9, 9, 9, 0, 9, 9, 9, 0, 0, 0, 0, 0, 0]
 
-| The string can be sliced to ignore the first 6 characters and the last 3 characters
-| This is done using **img_repr[7:-3]**.
-| Then the colon is removed using the replace method. **img_str = img_str.replace(":", "")**
-| Finally, list comprehension, **img_array = [int(x) for x in img_str]**,  is used on the string to convert each string numeral to an int in a list.
-| This produces the list for the Image of a DUCK: 
-| [0, 9, 9, 0, 0, 9, 9, 9, 0, 0, 0, 9, 9, 9, 9, 0, 9, 9, 9, 0, 0, 0, 0, 0, 0]
-
 .. code-block:: python
     
     from microbit import *
@@ -83,11 +76,28 @@ Brightness array
     img_str = img_str.replace(":", "")
     img_array = [int(x) for x in img_str]
 
+| The string can be sliced to ignore the first 6 characters and the last 3 characters
+| This is done using **img_repr[7:-3]**.
+| Then the colon is removed using the replace method. **img_str = img_str.replace(":", "")**
+
+| Finally, list comprehension, **img_array = [int(x) for x in img_str]**,  is used on the string to convert each string numeral to an int in a list.
+| This produces the list for the Image of a DUCK: 
+| [0, 9, 9, 0, 0, 9, 9, 9, 0, 0, 0, 9, 9, 9, 9, 0, 9, 9, 9, 0, 0, 0, 0, 0, 0]
+| This list comprehension is short for a for-loop like this:
+
+.. code-block:: python
+    
+    from microbit import *
+
+    img_array = []
+    for x in img_str:
+        img_array.append(int(x))
+
 ----
 
 .. admonition:: Tasks
 
-    #. Write a function to return an image array from an image.
+    #. Put together the steps above to write a function, **get_image_array(img)**, that returns an image array from an image. So the code converts **Image.DUCK** to **Image('09900:99900:09999:09990:00000:')** then returns **[0, 9, 9, 0, 0, 9, 9, 9, 0, 0, 0, 9, 9, 9, 9, 0, 9, 9, 9, 0, 0, 0, 0, 0, 0]**.
 
     .. dropdown::
             :icon: codescan
@@ -112,15 +122,8 @@ Brightness array
 
 ----
 
-So far
----------
-
-| So far the code has gone from 
-| **Image.DUCK** 
-| to 
-| **Image('09900:99900:09999:09990:00000:')** 
-| to 
-| **[0, 9, 9, 0, 0, 9, 9, 9, 0, 0, 0, 9, 9, 9, 9, 0, 9, 9, 9, 0, 0, 0, 0, 0, 0]**.
+Next steps
+-----------
 
 | Now, functions need to be created for:
 * flipping horizontally
