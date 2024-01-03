@@ -148,7 +148,6 @@ ucollections.namedtuple
                             for pixel in pixels:
                                 display.set_pixel(pixel.x, pixel.y, pixel.brightness)
                             sleep(2000)
-                            # Clear the display
                             display.clear()
 
 ----

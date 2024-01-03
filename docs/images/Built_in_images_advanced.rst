@@ -509,8 +509,8 @@ Enumerate to show the clock time
 
 .. py:function:: enumerate(iterable, start)
 
-    | iterable An iterable object such as a list or tuple
-    | start A number defining the start number of the enumerate object. Default 0.
+    | iterable  - An iterable object such as a list or tuple
+    | start  - A number defining the start number of the enumerate object. Default 0.
 
 
 See: https://realpython.com/python-enumerate/
