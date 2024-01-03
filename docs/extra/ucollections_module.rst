@@ -9,9 +9,7 @@ ucollections
 | See: http://docs.micropython.org/en/v1.14/library/ucollections.html#module-ucollections
 | See: https://mpython.readthedocs.io/en/master/library/pythonStd/ucollections.html
 
-
-
-| namedtuple is a function
+| namedtuple is a function that creates a named tuple class
 | OrderedDict is a class
 
 ----
@@ -21,28 +19,74 @@ ucollections.namedtuple
 
 .. function:: ucollections.namedtuple(name, fields)
 
-    | Create a new namedtuple type with a specific name and set of fields. 
-    | A namedtuple is a subclass of tuple which allows access to its fields not just by numeric index, but also with an attribute access syntax using field names. 
-    | Fields is a sequence of strings specifying field names. 
-    | It can also be a a string with space-separated field named (but this is less efficient).
+    | Create a namedtuple with a specific ``name`` and a fields``. tuple or list of ``fields``. 
+    | A namedtuple is like a tuple which allows access to its fields with an attribute access syntax using field names. 
+    | ``fields`` is a tuple or list of field names. 
+    | e.g ``Point = namedtuple('Point', ['x', 'y'])`` and ``p1 = Point(x=1, y=2)`` and ``display.set_pixel(p1.x, p1.y, 9)``.
+    | By convention, use a capital for the name of the namedtuple since it is a class in python.
 
+| The code below instantiates a namedtuple with keyword arguments and then accesses those values by field name, then uses those to set the pixel brightness.
 
 .. code-block:: python
 
     from microbit import *
     from ucollections import namedtuple as nt
 
-    Point = nt('Point', ['x', 'y'])
-    p = Point(3, y=4)     # instantiate with positional or keyword arguments
+    while True:
+        Point = nt('Point', ['x', 'y'])
+        p1 = Point(x=2, y=1)     # instantiate keyword arguments
+        display.set_pixel(p1.x, p1.y, 9) # fields accessible by name
+        sleep(1000)
+        display.clear()
+        sleep(1000) 
 
-    disp(p[0], p[1])            # indexable like the plain tuple (11, 22)
+| The code below instantiates a namedtuple with positional arguments and then accesses those values by field name, then uses those to set the pixel brightness.
 
-    x, y = p                # unpack like a regular tuple
-    print(x, y)
+.. code-block:: python
 
-    print(p.x, p.y)           # fields also accessible by name
+    from microbit import *
+    from ucollections import namedtuple as nt
 
-    print(p)                       # readable __repr__ with a name=value style
+    while True:
+        Point = nt('Point', ['x', 'y'])
+        p1 = Point(2, 1)     # instantiate with positional arguments
+        display.set_pixel(p1.x, p1.y, 9) # fields accessible by name
+        sleep(1000)
+        display.clear()
+        sleep(1000) 
+
+
+| The code below shows tuple indexing of a namedtuple, ``p1[0]``, then uses that to set the pixel brightness.
+
+.. code-block:: python
+
+    from microbit import *
+    from ucollections import namedtuple as nt
+
+    while True:
+        Point = nt('Point', ['x', 'y'])
+        p1 = Point(x=2, y=1)     # instantiate keyword arguments    
+        display.set_pixel(p1[0], p1[1], 9)  # indexable like the plain tuple
+        sleep(1000)
+        display.clear()
+        sleep(1000)
+
+
+| The code below showing unpacking of a namedtuple, ``x1, y1 = p1``, then the use of the x and y variables to set the pixel brightness.
+
+.. code-block:: python
+
+    from microbit import *
+    from ucollections import namedtuple as nt
+
+    while True:
+        Point = nt('Point', ['x', 'y'])
+        p1 = Point(x=2, y=1)     # instantiate keyword arguments
+        x1, y1 = p1              # unpack like a regular tuple
+        display.set_pixel(x1, y1, 9)
+        sleep(1000)
+        display.clear()
+        sleep(1000)
 
 ----
 
