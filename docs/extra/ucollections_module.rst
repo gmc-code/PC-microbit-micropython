@@ -93,27 +93,28 @@ ucollections.namedtuple
 .. admonition:: Tasks
 
     #. Convert the code below to use a named tuple.
+    
         .. code-block:: python
 
-        from microbit import *
+            from microbit import *
 
-        # Define the pixels to be controlled
-        # Each tuple/list contains x, y, and brightness values
-        pixels = [
-            (0, 0, 9),  # Top-left pixel, full brightness
-            (2, 2, 5),  # Middle pixel, half brightness
-            (4, 4, 1),  # Bottom-right pixel, low brightness
-        ]
+            # Define the pixels to be controlled
+            # Each tuple/list contains x, y, and brightness values
+            pixels = [
+                (0, 0, 9),  # Top-left pixel, full brightness
+                (2, 2, 5),  # Middle pixel, half brightness
+                (4, 4, 1),  # Bottom-right pixel, low brightness
+            ]
 
-        while True:
-            if button_a.was_pressed():
-                # Turn on the defined pixels
-                for pixel in pixels:
-                    # unpacked tuple
-                    x, y, brightness = pixel
-                    display.set_pixel(x, y, brightness)
-                sleep(2000)
-                display.clear()
+            while True:
+                if button_a.was_pressed():
+                    # Turn on the defined pixels
+                    for pixel in pixels:
+                        # unpacked tuple
+                        x, y, brightness = pixel
+                        display.set_pixel(x, y, brightness)
+                    sleep(2000)
+                    display.clear()
                             
     .. dropdown::
         :icon: codescan
