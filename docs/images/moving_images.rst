@@ -438,6 +438,7 @@ Shifting combined
 .. admonition:: Tasks
 
     #.  Alter the arguments to move the butterfly anticlockwise.
+    #.  Modify the code to move a small square in a complete circle.
     #.  Create a definition, **shift_img_directions(img, directions, sleeptime=80)**,  that takes a list of tuples, **directions**,  for the shifts and applies them to move the butterfly anticlockwise.
     #.  Use the definition, **shift_img_directions(img, directions, sleeptime=80)**, to move the butterfly clockwise.
     #.  Predict what the following directions might do: **directions =  [(0, 0), (0, -1), (1, -1), (1, 0), (1, 1), (0, 1), (-1, 1), (-1, 0), (-1, -1), (0, 0)]**
@@ -475,6 +476,35 @@ Shifting combined
 
                 .. tab-item:: Q2
 
+                    Modify the code to move a small square in a complete circle.
+
+                    .. code-block:: python
+
+                        from microbit import *
+
+                        def shift_x_y(img, x, y, sleeptime=80):
+                            shift_img = img.shift_right(x)
+                            shift_img = shift_img.shift_down(y)
+                            display.show(shift_img)
+                            sleep(sleeptime)
+
+
+                        img = Image.SQUARE_SMALL
+                        sleeptime = 500
+                        display.show(img)
+                        sleep(sleeptime)
+                        while True:
+                            shift_x_y(img, 1, 0, sleeptime)
+                            shift_x_y(img, 1, 1, sleeptime)
+                            shift_x_y(img, 0, 1, sleeptime)
+                            shift_x_y(img, -1, 1, sleeptime)
+                            shift_x_y(img, -1, 0, sleeptime)
+                            shift_x_y(img, -1, -1, sleeptime)
+                            shift_x_y(img, 0, -1, sleeptime)
+                            shift_x_y(img, 1, -1, sleeptime)
+
+                .. tab-item:: Q3
+
                     Create a definition, **shift_img_directions(img, directions, sleeptime=80)**,  that takes a list of tuples, **directions**,  for the shifts and applies them to move the butterfly anticlockwise.
 
                     .. code-block:: python
@@ -499,7 +529,7 @@ Shifting combined
                             anticlockwise_directions =  [(0, 0), (0, 1), (1, 1), (1, 0)]
                             shift_img_directions(img, anticlockwise_directions, sleeptime)
 
-                .. tab-item:: Q3
+                .. tab-item:: Q4
 
                     Use the definition, **shift_img_directions(img, directions, sleeptime=80)**, to move the butterfly clockwise.
 
@@ -525,7 +555,7 @@ Shifting combined
                             clockwise_directions =  [(0, 0), (1, 0), (1, 1), (0, 1) ]
                             shift_img_directions(img, clockwise_directions, sleeptime)
 
-                .. tab-item:: Q4
+                .. tab-item:: Q5
 
                     Predict what the following directions might do: **directions =  [(0, 0), (0, -1), (1, -1), (1, 0), (1, 1), (0, 1), (-1, 1), (-1, 0), (-1, -1), (0, 0)]**
 
