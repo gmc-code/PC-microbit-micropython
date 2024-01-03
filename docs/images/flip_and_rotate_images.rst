@@ -214,7 +214,7 @@ Flipping horizontally
             output_array += row
         return output_array
 
-| Add a def, ``get_image_flipped_hor``, to get the flipped image from another image.
+| Add a def, ``get_image_flip_hor``, to get the flipped image from another image.
 | Full code:
 
 .. code-block:: python
@@ -237,13 +237,13 @@ Flipping horizontally
             output_array += row
         return output_array
 
-    def get_image_flipped_hor(img):
+    def get_image_flip_hor(img):
         img_array = get_imgarr_flip_hor(get_image_array(img))
         img_flip_hor= Image(5, 5, bytearray(img_array))
         return img_flip_hor
         
     img = Image.DUCK
-    img_flip_hor = get_image_flipped_hor(img)
+    img_flip_hor = get_image_flip_hor(img)
 
     while True:
         display.show(img)
