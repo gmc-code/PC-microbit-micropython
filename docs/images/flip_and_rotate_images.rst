@@ -150,6 +150,47 @@ Flipping horizontally
 
     #. Write code to flip the duck horizontally and swap between the display of the duck and the flipped duck.
 
+        .. code-block:: python
+            
+            from microbit import *
+
+
+            def get_image_array(img):
+                img_repr = repr(img)
+                img_str = img_repr[7:-3]
+                img_str = img_str.replace(":", "")
+                img_array = [int(x) for x in img_str]
+                return img_array
+
+            def get_imgarr_flip_hor(imgarray):
+                # get every 5 elements and reverse them
+                row0 = imgarray[0:5]
+                row1 = 
+                row2 = 
+                row3 = 
+                row4 = 
+                row0.reverse()
+                row1.
+                row2.
+                row3.
+                row4.
+                output_array = row0 + 
+                return output_array
+                
+            def get_image_flip_hor(img): 
+                img_array = 
+                img_flip_hor= Image(5, 5, bytearray(img_array))
+                return 
+                
+            img = Image.DUCK
+            img_flip_hor = 
+            
+            while True:
+                display.show(img)
+                sleep(300)
+                display.show(img_flip_hor)
+                sleep(300)
+
     .. dropdown::
             :icon: codescan
             :color: primary
