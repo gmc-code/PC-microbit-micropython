@@ -156,7 +156,7 @@ Flipping horizontally
 
 .. admonition:: Tasks
 
-    #. Write code to flip the duck horizontally and swap between the display of the duck and the flipped duck.
+    #. Complete the code to flip the duck horizontally and swap between the display of the duck and the flipped duck.
 
         .. code-block:: python
             
@@ -336,6 +336,25 @@ Flipping horizontally
         sleep(300)
         display.show(img_flip_hor)
         sleep(300)
+
+----
+
+List comprehension for get_imgarr_flip_hor
+--------------------------------------------------
+
+| **get_imgarr_flip_hor** can also be done via list comprehension usinga helper function to do the list reversal.
+
+.. code-block:: python
+
+    from microbit import *
+
+    def reverse_list(input_list):
+        input_list.reverse()
+        return input_list
+
+    def get_imgarr_flip_hor(imgarray):
+        return [pixel for i in range(0, len(imgarray), 5) for pixel in reverse_list(imgarray[i:i+5])]
+
 
 ----
 
