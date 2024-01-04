@@ -98,7 +98,7 @@ Brightness array
 
 .. admonition:: Tasks
 
-    #. Put together the steps above to write a function, **get_image_array(img)**, that returns an image array from an image. So the code converts **Image.DUCK** to **Image('09900:99900:09999:09990:00000:')** then returns **[0, 9, 9, 0, 0, 9, 9, 9, 0, 0, 0, 9, 9, 9, 9, 0, 9, 9, 9, 0, 0, 0, 0, 0, 0]**.
+    #. Put together the steps above to write a function, *get_image_array(img)*, that returns an image array from an image. So the code converts *Image.DUCK* to *Image('09900:99900:09999:09990:00000:')* then returns *[0, 9, 9, 0, 0, 9, 9, 9, 0, 0, 0, 9, 9, 9, 9, 0, 9, 9, 9, 0, 0, 0, 0, 0, 0]*.
 
     .. dropdown::
             :icon: codescan

@@ -447,7 +447,7 @@ Mask loops
 
 .. admonition:: Tasks
 
-    #.  Write code to loop though a list of 8 mask names and apply them to a TSHIRT image.
+    #.  Write code to loop though a list of 9 mask names and apply them to a TSHIRT image.
 
     .. dropdown::
             :icon: codescan
@@ -458,7 +458,7 @@ Mask loops
 
                 .. tab-item:: Q1
 
-                    Write code to loop though a list of 8 mask names and apply them to a TSHIRT image.
+                    Write code to loop though a list of 9 mask names and apply them to a TSHIRT image.
 
                     .. code-block:: python
 
