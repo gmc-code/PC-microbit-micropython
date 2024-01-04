@@ -45,6 +45,7 @@ Wide array
     for y in range(5):
         img_array.extend(wide_arr[y])
 
+| Advanced users could use ``img_array = [pixel for row in wide_arr for pixel in row]`` to replace the for-loop above.
 
 | Below is the first draft of code that animates the array from right to left.
 | The wide_img is first made using **wide_img = Image(width, 5, bytearray(img_array))**
@@ -78,6 +79,7 @@ Wide array
             shown_img = wide_img.shift_left(i)
             display.show(shown_img)
             sleep(100)
+
 
 ----
 

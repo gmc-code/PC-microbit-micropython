@@ -187,6 +187,18 @@ Example Masks
                         [4, 4, 4, 4, 4],
                     ]
 
+            .. tab-item:: inwards_mask
+
+                .. code-block:: python
+
+                    inwards_mask = [
+                        [9, 9, 9, 9, 9],
+                        [9, 7, 7, 7, 9],
+                        [9, 7, 4, 7, 9],
+                        [9, 7, 7, 7, 9],
+                        [9, 9, 9, 9, 9],
+                    ]
+
             .. tab-item:: duller1_mask
 
                 .. code-block:: python
@@ -480,7 +492,6 @@ Mask loops
                             [3, 3, 3, 3, 3],
                             [1, 1, 1, 1, 1],
                         ]
-
                         up_mask = [
                             [1, 1, 1, 1, 1],
                             [3, 3, 3, 3, 3],
@@ -488,13 +499,19 @@ Mask loops
                             [7, 7, 7, 7, 7],
                             [9, 9, 9, 9, 9],
                         ]
-
                         outwards_mask = [
                             [4, 4, 4, 4, 4],
                             [4, 7, 7, 7, 4],
                             [4, 7, 9, 7, 4],
                             [4, 7, 7, 7, 4],
                             [4, 4, 4, 4, 4],
+                        ]
+                        inwards_mask = [
+                            [9, 9, 9, 9, 9],
+                            [9, 7, 7, 7, 9],
+                            [9, 7, 4, 7, 9],
+                            [9, 7, 7, 7, 9],
+                            [9, 9, 9, 9, 9],
                         ]
                         duller5_mask = [
                             [5, 5, 5, 5, 5],
@@ -544,6 +561,7 @@ Mask loops
                             up_mask,
                             down_mask,
                             outwards_mask,
+                            inwards_mask,
                             duller5_mask,
                             duller1_mask,
                         ]
