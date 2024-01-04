@@ -107,7 +107,9 @@ Brightness array
 
             .. tab-set::
 
-                .. tab-item::
+                .. tab-item:: Q1
+
+                    Put together the steps above to write a function, *get_image_array(img)*.
 
                     .. code-block:: python
 
