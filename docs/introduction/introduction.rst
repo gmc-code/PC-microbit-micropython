@@ -141,6 +141,14 @@ For an introduction to python see:
 * https://www.tutorialsteacher.com/python
 * https://realpython.com/tutorials/python/
 
+
+----
+
+Micropython differences with Python
+-------------------------------------
+
+| See: https://docs.micropython.org/en/latest/genrst/index.html
+
 ----
 
 .. admonition:: Tip
