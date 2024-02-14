@@ -2,6 +2,55 @@
 EXT: for-loops
 ====================================================
 
+Using if to test strings within for-loops
+-----------------------------------------------
+
+| What does this code do?
+| ``name[0] in "AEIOU"`` returns True if the first character in the name string is in hte string of vowels.
+
+| A string can be changed to upper case using ``.upper()``.
+| e.g. ``anna.upper()`` returns "ANNA"
+
+The code below scrolls the name in upper case only if the first letter is a vowel.
+
+.. code-block:: python
+
+    from microbit import *
+
+    name = "Anna"
+    while True:
+        if name[0] in "AEIOU":
+            display.scroll(name.upper(), delay=50)
+
+----
+
+.. admonition:: Tasks
+
+    #. Write a for-loop to scroll names beginning with a vowel in ['Olivia', 'Emily', 'Chloe', 'Catherine', 'Anna', 'Gabriella', 'Hannah', 'Isabel', 'Julia']. Display the names in uppercase.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Write a for-loop to scroll names beginning with a vowel in ['Olivia', 'Emily', 'Chloe', 'Catherine', 'Anna', 'Gabriella', 'Hannah', 'Isabel', 'Julia']. Display the names in uppercase.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    name_list = ['Olivia', 'Emily', 'Chloe', 'Catherine', 'Anna', 'Gabriella', 'Hannah', 'Isabel', 'Julia']
+                    while True:
+                        for name in name_list:
+                            if name[0] in "AEIOU":
+                                display.scroll(name.upper(), delay=50)
+                        sleep(300)
+
+
 for-loops with mixed lists
 ----------------------------------------
 

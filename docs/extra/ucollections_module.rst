@@ -6,8 +6,7 @@ ucollections
 
 | MicroPython contains an ``ucollections`` module based upon the ``collections`` module in the Python standard library.
 | This module has 2 collections from the standard python collections module.
-| See: http://docs.micropython.org/en/v1.14/library/ucollections.html#module-ucollections
-| See: https://mpython.readthedocs.io/en/master/library/pythonStd/ucollections.html
+| See: https://docs.micropython.org/en/latest/library/collections.html#module-ucollections
 
 | namedtuple is a function that creates a named tuple class
 | OrderedDict is a class

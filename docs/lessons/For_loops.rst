@@ -221,8 +221,7 @@ Conditions within for-loops with lists
 
     #. Write a for-loop to scroll the prime factors of 63 from a list of the first 4 primes.
     #. Write a for-loop to scroll the even numbers in the list of squares ``[1, 4, 9, 16, 25, 36]``.
-    #. Write a for-loop to scroll names beginning with a vowel in ['Olivia', 'Emily', 'Chloe', 'Catherine', 'Anna', 'Gabriella', 'Hannah', 'Isabel', 'Julia']. Display the names in uppercase.
-
+    
     .. dropdown::
         :icon: codescan
         :color: primary
@@ -259,20 +258,5 @@ Conditions within for-loops with lists
                         for num in num_list:
                             if num % 2 == 0:
                                 display.scroll(num, delay=50)
-                        sleep(300)
-
-            .. tab-item:: Q3
-
-                Write a for-loop to scroll names beginning with a vowel in ['Olivia', 'Emily', 'Chloe', 'Catherine', 'Anna', 'Gabriella', 'Hannah', 'Isabel', 'Julia']. Display the names in uppercase.
-
-                .. code-block:: python
-
-                    from microbit import *
-
-                    name_list = ['Olivia', 'Emily', 'Chloe', 'Catherine', 'Anna', 'Gabriella', 'Hannah', 'Isabel', 'Julia']
-                    while True:
-                        for name in name_list:
-                            if name[0] in "AEIOU":
-                                display.scroll(name.upper(), delay=50)
                         sleep(300)
 
