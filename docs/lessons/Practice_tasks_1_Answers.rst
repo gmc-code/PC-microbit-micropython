@@ -9,7 +9,7 @@ Practice tasks 1 Answers
     3.  Write code to repetitively display a heart and a giraffe with a gap of 250 millisec between them.
     4.  Write code to repetitively display 3 different shapes using a **list**, using default timing.
     5.  Write code to repetitively scroll (rapidly) the numbers from the **list** 2, 3, 5, 7, 11, 13, 17, 19 via a **for-loop**.
-    6.  Write code to repetitively scroll the numbers 1 to 9 using a **for-loop** along with the **range** function.
+    6.  Write code to repetitively scroll (rapidly) the numbers 1 to 9 using a **for-loop** along with the **range** function.
     7.  Write code to repetitively scroll (quickly) each character in 'go team' using a **for-loop**, when the **A-button** is pressed.
     8.  Write code to repetitively scroll (rapidly) each sport in the list ``['swimming', 'rowing', 'canoeing']`` using a **for-loop**, when the **B-button** is pressed.
     9.  Write code in a ``while True`` loop to respond to button pressing such that when A is pressed each character in 'go team' is scrolled quickly using a **for-loop**, when B is pressed each sport in the **list** ``['swimming', 'rowing', 'canoeing']`` is scrolled quickly using a **for-loop**, and when no button is pressed the screen is **cleared**.
@@ -82,7 +82,7 @@ Practice tasks 1 Answers
 
 ----
 
-6.  Write code to repetitively scroll the numbers 1 to 9 using a for-loop along with the range function.
+6.  Write code to repetitively scroll (rapidly) the numbers 1 to 9 using a for-loop along with the range function.
 
 .. code-block:: python
 
@@ -90,7 +90,7 @@ Practice tasks 1 Answers
 
     while True:
         for num in range(1, 10):
-            display.scroll(num, delay=50)
+            display.scroll(num, delay=60)
 
 ----
 
@@ -178,16 +178,16 @@ Practice tasks 1 Answers
 
     while True:
         # using string
-        display.scroll(num_string, delay=60)
+        display.scroll(num_string, delay=80)
         sleep(1000)
         # using a list
         for num in nums:
-            display.scroll(num, delay=60)
+            display.scroll(num, delay=80)
         sleep(1000)
         # using range
         for num in range(98, 101):
-            display.scroll(num, delay=60)
+            display.scroll(num, delay=80)
         for num in range(0, 3):
-            display.scroll(num, delay=60)
+            display.scroll(num, delay=80)
         sleep(1000)
 
