@@ -19,14 +19,14 @@ Practice tasks 1 Answers
 
 
 
-1.  Write code to repetitively display 'WinWINNERner' one character at a time, with 200ms between characters, and with a gap of a second before repeating.
-2.  
+1.  Write code to repetitively display 'WINNER' one character at a time, with 200ms between characters, and with a gap of a second before repeating.
+ 
 .. code-block:: python
 
     from microbit import *
 
     while True:
-        display.show('Winner', delay=200)
+        display.show('WINNER', delay=200)
         sleep(1000)
 
 
