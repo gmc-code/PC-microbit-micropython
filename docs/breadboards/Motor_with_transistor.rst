@@ -1,5 +1,5 @@
 ==========================
-Motor_with_transistor
+Motor with transistor
 ==========================
 
 

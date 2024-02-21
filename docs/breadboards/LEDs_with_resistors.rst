@@ -1,5 +1,5 @@
 ==========================
-LEDs_with_resistors
+LEDs with resistors
 ==========================
 
 Connections

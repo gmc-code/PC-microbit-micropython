@@ -1,5 +1,5 @@
 ==========================
-Piezo_Buzzer_and_music
+Piezo Buzzer and music
 ==========================
 
 | See: https://microbit-micropython.readthedocs.io/en/v2-docs/music.html

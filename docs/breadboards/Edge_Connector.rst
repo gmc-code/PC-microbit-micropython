@@ -1,5 +1,5 @@
 ==========================
-Edge_Connector
+Edge Connector
 ==========================
 
 Connecting the microbit to the edge connector

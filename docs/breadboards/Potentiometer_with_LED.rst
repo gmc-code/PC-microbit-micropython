@@ -1,5 +1,5 @@
 ==========================
-Potentiometer_with_LED
+Potentiometer with LED
 ==========================
 
 Connections
