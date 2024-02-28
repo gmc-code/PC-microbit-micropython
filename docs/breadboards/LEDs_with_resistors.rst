@@ -428,7 +428,7 @@ Write analog
                                 pin0.write_analog(randval)
                             elif randpin == 1:
                                 pin1.write_analog(randval)
-                            rlif randpin == 2:
+                            elif randpin == 2:
                                 pin2.write_analog(randval)
 
                 
