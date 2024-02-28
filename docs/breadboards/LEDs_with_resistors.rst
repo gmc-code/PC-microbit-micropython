@@ -424,11 +424,11 @@ Write analog
                         def random_colours():
                             randval = random.randrange(0, 1024)
                             randpin = random.randrange(0, 3)
-                            if randpin = 0:
+                            if randpin == 0:
                                 pin0.write_analog(randval)
-                            elif randpin = 1:
+                            elif randpin == 1:
                                 pin1.write_analog(randval)
-                            rlif randpin = 2:
+                            rlif randpin == 2:
                                 pin2.write_analog(randval)
 
                 
