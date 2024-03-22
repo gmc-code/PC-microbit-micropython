@@ -7,6 +7,25 @@ Micropython editor
 
 ----
 
+Saving python files
+---------------------------------------
+
+.. image:: images/save_python.PNG
+    :scale: 50 %
+
+| Type in some code.
+| Click on the three vertical dots of teh SAve button and save as a python file.
+
+----
+
+Opening python files
+---------------------------------------
+
+| Click on the Open button and navigate to a saved python file.
+
+
+----
+
 Uploading modules to the microbit
 ---------------------------------------
 
@@ -22,4 +41,3 @@ Uploading modules to the microbit
 
 .. image:: images/online_editor_open_file.png
     :scale: 50 %
-
