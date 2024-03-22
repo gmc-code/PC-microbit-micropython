@@ -10,7 +10,7 @@ Micropython editor
 Saving python files
 ---------------------------------------
 
-.. image:: images/save_python.PNG
+.. image:: images/save_python_file.png
     :scale: 50 %
 
 | Type in some code.
