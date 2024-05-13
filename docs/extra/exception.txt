@@ -1,0 +1,5 @@
+    except Exception as e:
+        log.critical('--- Caught Exception ---')
+        import sys
+        sys.print_exception(e)
+        log.critical('----------------------------')

@@ -1,0 +1,271 @@
+/* inline literals; change colour from built-in red to blue */
+
+.rst-content tt.literal, .rst-content tt.literal, .rst-content code.literal {
+    color: #3333ff;
+    font-size: 90%!important;
+}
+/* ========================================== */
+/* Custom transition  4+char like ---- */
+/* keep grey for both #e1e4e5  and not rst  #413d3d */
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 4px solid #e1e4e5;
+    margin: 24px 0;
+    padding: 0;
+}
+
+.rst-versions .rst-other-versions hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    margin: 24px 0;
+    padding: 0;
+    border-top: 4px solid #e1e4e5;
+}
+
+/* ========================================== */
+/* Custom admonition */
+
+div.admonition-answer,
+div.admonition-answers{
+    color: blue;
+    border: 2px solid;
+    background-color: #e7f2fa;
+}
+
+div.admonition-answer p.admonition-title,
+div.admonition-answers p.admonition-title{
+    text-transform: capitalize;
+    color: black!important;
+    background-color: #6ab0de;
+}
+
+div.admonition-question,
+div.admonition-questions{
+    color: blue;
+    border: 2px solid gold;
+    background-color: lightyellow!important;
+}
+
+div.admonition-question p.admonition-title,
+div.admonition-questions p.admonition-title{
+    text-transform: capitalize;
+    color: black!important;
+    background-color: gold!important;
+}
+
+div.admonition-task,
+div.admonition-tasks {
+    color: blue;
+    border: 2px solid gold;
+    background-color: lightyellow!important;
+}
+
+div.admonition-task p.admonition-title,
+div.admonition-tasks p.admonition-title {
+    text-transform: capitalize;
+    color: black!important;
+    background-color: gold!important;
+}
+
+div.admonition-exercise,
+div.admonition-exercises {
+    color: blue;
+    border: 2px solid rgb(0, 255, 0);
+    background-color: lightyellow!important;
+}
+
+div.admonition-exercise p.admonition-title,
+div.admonition-exercises p.admonition-title {
+    text-transform: capitalize;
+    color: black!important;
+    background-color: rgb(0, 255, 0)!important;
+}
+
+div.admonition-project,
+div.admonition-projects {
+    color: blue;
+    border: 2px solid gold;
+    background-color: lightyellow!important;
+}
+
+div.admonition-project p.admonition-title,
+div.admonition-projects p.admonition-title {
+    text-transform: capitalize;
+    color: black!important;
+    background-color: gold!important;
+}
+
+
+/* ========================================== */
+/* Custom dropdown light primary D4D4F7 F7F7FF */
+.sd-dropdown-container {
+    background-color: #F7F7FF; 
+}
+
+/* Custom dropdown reduce padding of dropdown */
+details.sd-dropdown summary {
+    padding: 0.2em;
+}
+
+/* Custom dropdown move arrow on right up 0.5em cf default */
+details.sd-dropdown .sd-summary-up, details.sd-dropdown .sd-summary-down {
+    top: 0.4em;
+}
+
+/* Custom dropdown lighten primary color 2E2FE3 7171FF */
+.sd-bg-primary {
+    background-color: #7171FF !important;
+}
+
+/* Custom dropdown reduce margin from 1em 1em */
+.sd-tab-set {
+    margin: 0.1em 0.1em;
+}
+
+.sd-card-body {
+    padding: 0.2rem 0.5rem;
+}
+
+/* ========================================== */
+/* Hide "Search" section from versions menu */
+div.rst-versions > div.rst-other-versions > div.injected > dl:nth-child(5) {
+    display: none;
+}
+/* Hide "On GitHub" section from versions menu */
+div.rst-versions > div.rst-other-versions > div.injected > dl:nth-child(4) {
+    display: none;
+}
+/* Hide "On Read the Docs" section from versions menu */
+div.rst-versions > div.rst-other-versions > div.injected > dl:nth-child(3) {
+    display: none;
+}
+/* Hide "versions" section from versions menu */
+div.rst-versions > div.rst-other-versions > div.injected > dl:nth-child(1) {
+    display: none;
+}
+
+/* ========================================== */
+/* kbd role for keyboard shortcuts */
+
+.rst-content kbd {
+    -moz-border-radius:3px;
+    -moz-box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
+    -webkit-border-radius:3px;
+    -webkit-box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
+    background-color:#f7f7f7;
+    border:1px solid #ccc;
+    border-radius:3px;
+    box-shadow:0 1px 0 rgba(0,0,0,0.2),0 0 0 2px #fff inset;
+    color:#333;
+    display:inline-block;
+    font-family:Arial,Helvetica,sans-serif;
+    font-size:14px;
+    line-height:1.6;
+    margin:0 .1em;
+    padding:.1em .6em;
+    text-shadow:0 1px 0 #fff;
+}
+
+/* ========================================== */
+/* Copy buttons for sphinx-copybutton extension */
+/* Copy buttons for sphinx-copybutton extension */
+/* https://github.com/executablebooks/sphinx-copybutton/blob/master/sphinx_copybutton/_static/copybutton.css */
+
+/* w,h orig 1.7 em; top, right .3em opacity: 0 */
+button.copybtn {
+    top: .1em;
+    right: .1em;
+    width: 1.5em;
+    height: 1.5em;
+	opacity: 1;
+    border: #1b1f2426 1px solid;
+    background-color: #f6f8fa;
+    color: blue
+    /* The colors that GitHub uses 
+    border: #1b1f2426 1px solid;
+    background-color: #f6f8fa;
+    color: #57606a; */
+}
+
+/* w,h orig 1.5 em */
+button.copybtn svg {
+    stroke: currentColor;
+    width: 1.4em;   
+    height: 1.4em;
+    padding: 0.1em;
+}
+
+
+
+/* ========================================== */
+/**
+ * A minimal CSS-only tooltip copied from:
+ *   https://codepen.io/mildrenben/pen/rVBrpK
+ * To use, write HTML like the following:
+ * <p class="o-tooltip--left" data-tooltip="Hey">Short</p>
+ */
+
+.o-tooltip--left {
+    position: relative;
+}
+
+.o-tooltip--left:after {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    content: attr(data-tooltip);
+    padding: 2px;
+    top: 0;
+    left: -.2em;
+    background: grey;
+    font-size: 1rem;
+    color: white;
+    white-space: nowrap;
+    z-index: 2;
+    border-radius: 2px;
+    transform: translateX(-102%) translateY(0);
+    transition: opacity 0.2s cubic-bezier(0.64, 0.09, 0.08, 1), transform 0.2s cubic-bezier(0.64, 0.09, 0.08, 1);
+}
+
+.o-tooltip--left:hover:after {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-100%) translateY(0);
+    transition: opacity 0.2s cubic-bezier(0.64, 0.09, 0.08, 1), transform 0.2s cubic-bezier(0.64, 0.09, 0.08, 1);
+    transition-delay: .5s;
+}
+
+
+/* ========================================== */
+/**  overrides */
+/* ========================================== */
+/** to override text  file background */
+
+div.highlight-default div.highlight {
+    background: #eef5ff;
+}
+
+/** to override table padding from 8 and 16 */
+
+.rst-content table.docutils td, .rst-content table.docutils th, .rst-content table.field-list td, .rst-content table.field-list th, .wy-table td, .wy-table th {
+    padding: 4px 8px;
+}
+
+/* override table width restrictions */ 
+.wy-table-responsive table td, .wy-table-responsive table th { 
+    white-space: normal; 
+} 
+ 
+.wy-table-responsive { 
+    margin-bottom: 24px; 
+    max-width: 100%; 
+    overflow: visible; 
+} 
+ 
+.wy-table-responsive th p { 
+    margin-bottom: unset; 
+} 
