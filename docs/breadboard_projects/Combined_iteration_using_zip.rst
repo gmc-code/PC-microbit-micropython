@@ -17,7 +17,7 @@ zip 2 lists
 | Each tuple has an element from each of the initial lists.
 | A list of tuples can be iterated over using the syntax: ``for num, letter in tuple_list:``
 
-| The code below has 2 lists that are interated over together via the zip function.
+| The code below has 2 lists that are iterated over together via the zip function.
 
 .. code-block:: python
 
@@ -63,7 +63,7 @@ zip 2 lists
 ----
 
 | The code below zips the list of images and the list of frequencies in the A minor scale.
-| ``for freq, img in zip(Am_freqs, animal_images)`` interates over the zipped object, placing each frequency and each Image into the ``freq`` and ``img`` variables for use. 
+| ``for freq, img in zip(Am_freqs, animal_images)`` iterates over the zipped object, placing each frequency and each Image into the ``freq`` and ``img`` variables for use. 
 | The A button can be pressed to exit the while loop using ``break`` so that the sounds can be easily stopped.
 | Pressing the reset button on the back of the microbit will restart the code.
 
@@ -130,7 +130,7 @@ zip 3 lists
 | The code below requires a breadboard with 3 LEDS.
 | See: https://pc-microbit-micropython.readthedocs.io/en/latest/breadboards/LEDs_with_resistors.html
 | The code below zips the list of images, the list of frequencies in the A minor scale as well as a list of pins to use.
-| ``for freq, img, pinx in zip(freqs, animal_images, pins)`` interates over the zipped object, placing each frequency, each Image, and each pin into the ``freq``, ``img`` and ``pins`` variables for use. 
+| ``for freq, img, pinx in zip(freqs, animal_images, pins)`` iterates over the zipped object, placing each frequency, each Image, and each pin into the ``freq``, ``img`` and ``pins`` variables for use. 
 | This allows a sound, an image and an LED to be used in the same for-loop.
 | The A button can be pressed to exit the while loop using ``break`` so that the actions can be easily stopped.
 | Pressing the reset button on the back of the microbit will restart the code.

@@ -40,7 +40,7 @@ See: https://random-music-generators.herokuapp.com/melody
 
             def get_random_note(notes, octaves, durations):
                 note = random.choice(......)
-                # convert numbers to strings so they ccan be joined
+                # convert numbers to strings so they can be joined
                 octave = str(random.choice(.......))
                 duration = str(random.choice(.......))
                 full_note = ..... + ...... + ":" + ......
@@ -72,7 +72,7 @@ See: https://random-music-generators.herokuapp.com/melody
 
                         def get_random_note(notes, octaves, durations):
                             note = random.choice(notes)
-                            # convert numbers to strings so they ccan be joined
+                            # convert numbers to strings so they can be joined
                             octave = str(random.choice(octaves))
                             duration = str(random.choice(durations))
                             full_note = note + octave + ":" + duration

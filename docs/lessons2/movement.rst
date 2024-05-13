@@ -38,7 +38,7 @@ Spirit level
 
 | For example, here's a very simple spirit-level that uses ``get_x`` to measure
 how level the device is along the X axis.
-| A reading of 20 is small enough to amke this very sensitive to a slight tilt. 
+| A reading of 20 is small enough to make this very sensitive to a slight tilt. 
 
 .. code-block:: python
 
@@ -242,7 +242,7 @@ Z axis.
 
 .. admonition:: Tasks
 
-    #. Combine the two tasks which displayed output for the 9 differnt tilts and use text if the A button **is** pressed and use arrows if the B button **is** pressed. Clear the screen if no button is pressed.
+    #. Combine the two tasks which displayed output for the 9 different tilts and use text if the A button **is** pressed and use arrows if the B button **is** pressed. Clear the screen if no button is pressed.
 
     .. dropdown::
         :icon: codescan
@@ -253,7 +253,7 @@ Z axis.
 
             .. tab-item:: Q1
 
-                Combine the two tasks which displayed output for the 9 differnt tilts and use text if the A button **is** pressed and use arrows if the B button **is** pressed. Clear the screen if no button is pressed.
+                Combine the two tasks which displayed output for the 9 different tilts and use text if the A button **is** pressed and use arrows if the B button **is** pressed. Clear the screen if no button is pressed.
 
                 .. code-block:: python
 

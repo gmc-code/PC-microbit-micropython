@@ -6,7 +6,7 @@ Accelerometer syntax
 
 | The accelerometer can measure changes in speed of movement in any direction.
 | The accelerometer also provides convenience functions for detecting gestures. 
-| The recognised gestures are: ``up``, ``down``, ``left``, ``right``, ``face up``, ``face down``, ``freefall``, ``3g``, ``6g``, ``8g``, ``shake``.
+| The recognized gestures are: ``up``, ``down``, ``left``, ``right``, ``face up``, ``face down``, ``freefall``, ``3g``, ``6g``, ``8g``, ``shake``.
 | The accelerometer range is from -2g to +2g.
 
 ----

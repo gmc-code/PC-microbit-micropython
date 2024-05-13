@@ -6,7 +6,7 @@ Breadboard connections
     :scale: 50 %
 
 | The breadboard allows electrical devices, such as resistors, LEDS, motors, buzzers and potentiometers, to be connected in circuits.
-| The microbit can be connected to the electical devices and control them or collect data from them.
+| The microbit can be connected to the electrical devices and control them or collect data from them.
 
 ----
 
