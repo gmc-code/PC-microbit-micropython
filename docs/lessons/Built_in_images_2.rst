@@ -250,7 +250,7 @@ Random images
 
     Return a random image from the list of images: image_list. 
 
-| The code below shows a random image from a list eveery 500ms.
+| The code below shows a random image from a list every 500ms.
 
 .. code-block:: python
 

@@ -197,8 +197,8 @@ For loops with mixed lists
 
 | Mixed lists can be used with **display.show**.
 | Strings, integers and floats, and Images can all be displayed with **display.show**.
-| A short delay is used in **display.show** for when there are multipel characters in a string or number.
-| A short sleep is used in the **for-loop** so that there is a noticable gap betwwen each list element no matter whether they are strings, numbers or images.
+| A short delay is used in **display.show** for when there are multiple characters in a string or number.
+| A short sleep is used in the **for-loop** so that there is a noticeable gap between each list element no matter whether they are strings, numbers or images.
 | A longer sleep is used after the **for-loop** before it repeats.
 
 .. code-block:: python

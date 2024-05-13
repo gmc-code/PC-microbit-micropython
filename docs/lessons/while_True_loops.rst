@@ -53,7 +53,7 @@ When testing code on the microbit, it can be useful to do it within a ``while Tr
 
                 .. code-block:: python
 
-                    # must have uppper case T
+                    # must have upper case T
                     while True:
 
             .. tab-item:: Q2
