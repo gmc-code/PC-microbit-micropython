@@ -70,7 +70,7 @@ Radio settings
     indicate the strength of signal used when broadcasting a message. The
     higher the value the stronger the signal, but the more power is consumed
     by the device. The numbering translates to positions in the following list
-    of dBm (decibel milliwatt) values: [-30, -20, -16, -12, -8, -4, 0, 4].
+    of dBm (decibel milli-watt) values: [-30, -20, -16, -12, -8, -4, 0, 4].
 
     The ``address`` (default=0x75626974) is an arbitrary name, expressed as a
     32-bit address, that's used to filter incoming packets at the hardware
@@ -83,7 +83,7 @@ Radio settings
     which you want to send your message.
 
     The ``data_rate`` (default=radio.RATE_1MBIT) indicates the speed at which
-    data throughput takes place. Can be one of the following contants defined
+    data throughput takes place. Can be one of the following constants defined
     in the ``radio`` module : ``RATE_1MBIT`` or ``RATE_2MBIT``.
 
     .. note::
@@ -197,7 +197,7 @@ Radio settings
     * a microsecond timestamp: the value returned by ``time.ticks_us()`` when the message was received.
     
     This function is useful for providing information needed for triangulation
-    and/or triliteration with other micro:bit devices.
+    and/or trilateration (using distances) with other micro:bit devices.
 
 .. code-block:: python
 

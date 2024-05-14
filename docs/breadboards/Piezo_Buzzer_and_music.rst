@@ -322,14 +322,14 @@ Scales
     import music
 
     speaker.off()
-    cmajor = ['c', 'd', 'e', 'f', 'g', 'a', 'b', 'c']
-    eminor = ['e', 'f#', 'g', 'a', 'b', 'c', 'd', 'e']
+    c_major = ['c', 'd', 'e', 'f', 'g', 'a', 'b', 'c']
+    e_minor = ['e', 'f#', 'g', 'a', 'b', 'c', 'd', 'e']
 
     while True:
         if button_a.is_pressed():
-            music.play(cmajor)
+            music.play(c_major)
         elif button_b.is_pressed():
-            music.play(eminor)
+            music.play(e_minor)
         sleep(1000)
 
 
@@ -358,10 +358,10 @@ Scales
                     import music
 
                     speaker.off()
-                    dmajor = ["D", "E", "F#", "G", "A", "B", "C#", "D"]
+                    d_major = ["D", "E", "F#", "G", "A", "B", "C#", "D"]
 
                     while True:
-                        music.play(dmajor)
+                        music.play(d_major)
                         sleep(1000)
 
 
@@ -375,10 +375,10 @@ Scales
                     import music
 
                     speaker.off()
-                    fminor = ["F", "G", "Ab", "Bb", "C", "Db", "Eb", "F"]
+                    f_minor = ["F", "G", "Ab", "Bb", "C", "Db", "Eb", "F"]
 
                     while True:
-                        music.play(fminor)
+                        music.play(f_minor)
                         sleep(1000)
 
 
@@ -392,14 +392,14 @@ Scales
                     import music
 
                     speaker.off()
-                    dmajor = ["D", "E", "F#", "G", "A", "B", "C#", "D"]
-                    fminor = ["F", "G", "Ab", "Bb", "C", "Db", "Eb", "F"]
+                    d_major = ["D", "E", "F#", "G", "A", "B", "C#", "D"]
+                    f_minor = ["F", "G", "Ab", "Bb", "C", "Db", "Eb", "F"]
 
                     while True:
                         if button_a.is_pressed():
-                            music.play(dmajor)
+                            music.play(d_major)
                         elif button_b.is_pressed():
-                            music.play(fminor)
+                            music.play(f_minor)
                         sleep(1000)
 
 ----

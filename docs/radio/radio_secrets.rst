@@ -118,10 +118,10 @@ Caesar cipher 2
     # Caesar cipher parameters
 
     ALPHABET = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-    groupx = random.randint(1, 3)
-    radio.config(channel=7, group=groupx)
-    SHIFT = groupx
-    SECRET = 'UR' + str(groupx)
+    group_x = random.randint(1, 3)
+    radio.config(channel=7, group=group_x)
+    SHIFT = group_x
+    SECRET = 'UR' + str(group_x)
 
     def caesar_cipher(message, shift):
         """
@@ -142,7 +142,7 @@ Caesar cipher 2
         incoming = radio.receive()
         if incoming:
             # Decode and display the message
-            message = caesar_cipher(incoming, -groupx)
+            message = caesar_cipher(incoming, -group_x)
             display.scroll(message)
         # Check button presses to send a secret message
         if button_a.was_pressed():

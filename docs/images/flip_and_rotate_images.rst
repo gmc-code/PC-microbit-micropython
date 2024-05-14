@@ -24,10 +24,10 @@ String replace
 
 | The replace method will be used to remove the colons in the image brightness string.
 
-.. py:function:: string.replace(oldvalue, newvalue, count)
+.. py:function:: string.replace(old_value, new_value, count)
 
-    | oldvalue	The string to search for
-    | newvalue	The string to replace the old value with
+    | old_value	The string to search for
+    | new_value	The string to replace the old value with
     | count	Optional. A number specifying how many occurrences of the old value to be replaced. Defaults to all occurrences if omitted.
 
 ----
@@ -136,11 +136,11 @@ Flipping horizontally
 
 | The code to flip an image horizontally will be broken up into 2 custom functions.
 | **get_image_array(img)** takes an image object as an argument and returns a list of pixel brightnesses.
-| **get_imgarr_flip_hor(imgarray)** takes the image array returned by **get_image_array** and outputs a flipped image array.
+| **get_img_arr_flip_hor(img_array)** takes the image array returned by **get_image_array** and outputs a flipped image array.
 | **Image(5, 5, bytearray(img_array))** creates the flipped image.
 
-| **get_imgarr_flip_hor(imgarray)** should use list slices to get each row.
-| The top row would be the first 5 items of the list as given by: row0 = imgarray[:5]
+| **get_img_arr_flip_hor(img_array)** should use list slices to get each row.
+| The top row would be the first 5 items of the list as given by: row0 = img_array[:5]
 | Each row slice can be reversed: row0.reverse()
 
 
@@ -173,13 +173,13 @@ Flipping horizontally
                             img_array = [int(x) for x in img_str]
                             return img_array
 
-                        def get_imgarr_flip_hor(imgarray):
+                        def get_img_arr_flip_hor(img_array):
                             # get every 5 elements and reverse them
-                            row0 = imgarray[:5]
-                            row1 = imgarray[5:10]
-                            row2 = imgarray[10:15]
-                            row3 = imgarray[15:20]
-                            row4 = imgarray[20:]
+                            row0 = img_array[:5]
+                            row1 = img_array[5:10]
+                            row2 = img_array[10:15]
+                            row3 = img_array[15:20]
+                            row4 = img_array[20:]
                             row0.reverse()
                             row1.reverse()
                             row2.reverse()
@@ -189,7 +189,7 @@ Flipping horizontally
                             return output_array
                             
                         img0 = Image.DUCK
-                        img_array = get_imgarr_flip_hor(get_image_array(img0))
+                        img_array = get_img_arr_flip_hor(get_image_array(img0))
                         img0_flip_hor= Image(5, 5, bytearray(img_array))
 
                         while True:
@@ -209,10 +209,10 @@ Flipping vertically
 
 
 | Add a new function to flip an image vertically using the image array.
-| **get_imgarr_flip_vert(imgarray)** takes the image array returned by **get_image_array** and outputs a flipped image array.
+| **get_img_arr_flip_vert(img_array)** takes the image array returned by **get_image_array** and outputs a flipped image array.
 
-| **get_imgarr_flip_vert(imgarray)** should use list slices to get each row.
-| The top row would be the first 5 items of the list as given by: row0 = imgarray[:5]
+| **get_img_arr_flip_vert(img_array)** should use list slices to get each row.
+| The top row would be the first 5 items of the list as given by: row0 = img_array[:5]
 | The order of each row needs to be reversed, so that the top row goes to the bottom row.
 
 
@@ -246,19 +246,19 @@ Flipping vertically
                             return img_array
 
 
-                        def get_imgarr_flip_vert(imgarray):
+                        def get_img_arr_flip_vert(img_array):
                             # get every 5 elements as rows and reverse order of rows.
-                            row0 = imgarray[:5]
-                            row1 = imgarray[5:10]
-                            row2 = imgarray[10:15]
-                            row3 = imgarray[15:20]
-                            row4 = imgarray[20:]
+                            row0 = img_array[:5]
+                            row1 = img_array[5:10]
+                            row2 = img_array[10:15]
+                            row3 = img_array[15:20]
+                            row4 = img_array[20:]
                             output_array = row4 + row3 + row2 + row1 + row0
                             return output_array
 
 
                         img0 = Image.DUCK
-                        img_array = get_imgarr_flip_vert(get_image_array(img0))
+                        img_array = get_img_arr_flip_vert(get_image_array(img0))
                         img0_flip_vert = Image(5, 5, bytearray(img_array))
 
                         while True:
@@ -272,14 +272,14 @@ Flipping vertically
 Flipping a list of images
 ---------------------------
 
-| Here is the list of some images that are not laterally symmetrical (left and right sides are diferent): 
+| Here is the list of some images that are not laterally symmetrical (left and right sides are different): 
 | [Image.MUSIC_CROTCHET, Image.MUSIC_QUAVER, Image.MUSIC_QUAVERS, Image.PACMAN, Image.ROLLERSKATE, Image.TRIANGLE_LEFT, Image.UMBRELLA, Image.YES]
-| Create a function, **flip_imagelist(image_list, transition_time=500)**, which creates img0, img0_flip_hor and img0_flip_vert for each image in the list, then creates a list of these, **[img0, img_flip_hor, img0, img_flip_vert, img0]** which are then displayed using a transition_time which defaults to a delay of 300ms between each image.
+| Create a function, **flip_image_list(image_list, transition_time=500)**, which creates img0, img0_flip_hor and img0_flip_vert for each image in the list, then creates a list of these, **[img0, img_flip_hor, img0, img_flip_vert, img0]** which are then displayed using a transition_time which defaults to a delay of 300ms between each image.
 
 
 .. admonition:: Tasks
 
-    #. Write code to rotate a list of images using flip_imagelist(image_list, transition_time=300).
+    #. Write code to rotate a list of images using flip_image_list(image_list, transition_time=300).
 
     .. dropdown::
             :icon: codescan
@@ -290,7 +290,7 @@ Flipping a list of images
 
                 .. tab-item:: Q1
 
-                    Write code to rotate a list of images using rotate_imagelist(image_list, transition_time=500).
+                    Write code to rotate a list of images using rotate_image_list(image_list, transition_time=500).
 
                     .. code-block:: python
 
@@ -305,13 +305,13 @@ Flipping a list of images
                             return img_array
 
 
-                        def get_imgarr_flip_hor(imgarray):
+                        def get_img_arr_flip_hor(img_array):
                             # get every 5 elements and reverse them in each row
-                            row0 = imgarray[:5]
-                            row1 = imgarray[5:10]
-                            row2 = imgarray[10:15]
-                            row3 = imgarray[15:20]
-                            row4 = imgarray[20:]
+                            row0 = img_array[:5]
+                            row1 = img_array[5:10]
+                            row2 = img_array[10:15]
+                            row3 = img_array[15:20]
+                            row4 = img_array[20:]
                             row0.reverse()
                             row1.reverse()
                             row2.reverse()
@@ -321,13 +321,13 @@ Flipping a list of images
                             return output_array
 
 
-                        def get_imgarr_flip_vert(imgarray):
+                        def get_img_arr_flip_vert(img_array):
                             # get every 5 elements as rows and reverse order of rows.
-                            row0 = imgarray[:5]
-                            row1 = imgarray[5:10]
-                            row2 = imgarray[10:15]
-                            row3 = imgarray[15:20]
-                            row4 = imgarray[20:]
+                            row0 = img_array[:5]
+                            row1 = img_array[5:10]
+                            row2 = img_array[10:15]
+                            row3 = img_array[15:20]
+                            row4 = img_array[20:]
                             output_array = row4 + row3 + row2 + row1 + row0
                             return output_array
 
@@ -344,17 +344,17 @@ Flipping a list of images
                         ]
 
 
-                        def flip_imagelist(image_list, transition_time=500):
+                        def flip_image_list(image_list, transition_time=500):
                             for img in image_list:
                                 img0 = img
-                                img_flip_hor = Image(5, 5, bytearray(get_imgarr_flip_hor(get_image_array(img0))))
-                                img_flip_vert = Image(5, 5, bytearray(get_imgarr_flip_vert(get_image_array(img0))))
+                                img_flip_hor = Image(5, 5, bytearray(get_img_arr_flip_hor(get_image_array(img0))))
+                                img_flip_vert = Image(5, 5, bytearray(get_img_arr_flip_vert(get_image_array(img0))))
                                 img_seq = [img0, img_flip_hor, img0, img_flip_vert, img0]
                                 display.show(img_seq, delay=transition_time)
 
 
                         while True:
-                            flip_imagelist(object_images)
+                            flip_image_list(object_images)
 
 ----
 
@@ -370,9 +370,9 @@ Rotating 270 degrees
 | Add a new function to rotate an image 90 degrees anticlockwise using the image array.
 
 
-| **get_imgarr_rotate_270(imgarray)** takes the image array returned by **get_image_array** and outputs a rotated image array.
+| **get_img_arr_rotate_270(img_array)** takes the image array returned by **get_image_array** and outputs a rotated image array.
 
-| **get_imgarr_rotate_270(imgarray)** should use list comprehensions to get each row.
+| **get_img_arr_rotate_270(img_array)** should use list comprehensions to get each row.
 | The top row is made up of pixels that had previous array indices of 4, 9, 14, 19, 24.
 | This sequence can be created with the range function.
 | A similar pattern occurs for the others rows.
@@ -430,19 +430,19 @@ Rotating 270 degrees
                             return img_array
 
 
-                        def get_imgarr_rotate_270(imgarray):
+                        def get_img_arr_rotate_270(img_array):
                             # 4, 9, 14, 19, 24;; 3, 8, 13, 18, 23.
-                            row0 = [imgarray[x] for x in range(4, 25, 5)]
-                            row1 = [imgarray[x] for x in range(3, 25, 5)]
-                            row2 = [imgarray[x] for x in range(2, 25, 5)]
-                            row3 = [imgarray[x] for x in range(1, 25, 5)]
-                            row4 = [imgarray[x] for x in range(0, 25, 5)]
+                            row0 = [img_array[x] for x in range(4, 25, 5)]
+                            row1 = [img_array[x] for x in range(3, 25, 5)]
+                            row2 = [img_array[x] for x in range(2, 25, 5)]
+                            row3 = [img_array[x] for x in range(1, 25, 5)]
+                            row4 = [img_array[x] for x in range(0, 25, 5)]
                             output_array = row0 + row1 + row2 + row3 + row4
                             return output_array
 
 
                         img0 = Image.DUCK
-                        img_array = get_imgarr_rotate_270(get_image_array(img0))
+                        img_array = get_img_arr_rotate_270(get_image_array(img0))
                         img270 = Image(5, 5, bytearray(img_array))
 
                         while True:
@@ -463,9 +463,9 @@ Rotating 90 degrees clockwise
 
 | Add a new function to rotate an image 90 degrees anticlockwise using the image array.
 
-| **get_imgarr_rotate_90(imgarray)** takes the image array returned by **get_image_array** and outputs a rotated image array.
+| **get_img_arr_rotate_90(img_array)** takes the image array returned by **get_image_array** and outputs a rotated image array.
 
-| **get_imgarr_rotate_90(imgarray)** should use list comprehensions to get each row.
+| **get_img_arr_rotate_90(img_array)** should use list comprehensions to get each row.
 | The top row is made up of pixels that had previous array indices of 20, 15, 10, 5, 0.
 | This sequence can be created with the range function.
 | A similar pattern occurs for the others rows.
@@ -524,19 +524,19 @@ Rotating 90 degrees clockwise
                             return img_array
 
 
-                        def get_imgarr_rotate_90(imgarray):
+                        def get_img_arr_rotate_90(img_array):
                             # 20,15,10,5,0;;21,16,11,6,1...
-                            row0 = [imgarray[x] for x in range(20, -1, -5)]
-                            row1 = [imgarray[x] for x in range(21, -1, -5)]
-                            row2 = [imgarray[x] for x in range(22, -1, -5)]
-                            row3 = [imgarray[x] for x in range(23, -1, -5)]
-                            row4 = [imgarray[x] for x in range(24, -1, -5)]
+                            row0 = [img_array[x] for x in range(20, -1, -5)]
+                            row1 = [img_array[x] for x in range(21, -1, -5)]
+                            row2 = [img_array[x] for x in range(22, -1, -5)]
+                            row3 = [img_array[x] for x in range(23, -1, -5)]
+                            row4 = [img_array[x] for x in range(24, -1, -5)]
                             output_array = row0 + row1 + row2 + row3 + row4
                             return output_array
 
 
                         img0 = Image.DUCK
-                        img_array = get_imgarr_rotate_90(get_image_array(img0))
+                        img_array = get_img_arr_rotate_90(get_image_array(img0))
                         img90 = Image(5, 5, bytearray(img_array))
 
                         while True:
@@ -553,8 +553,8 @@ Rotating 180 degrees
 
 | Rotating 180 degrees can be achieved by combine flipping horizontally with flipping vertically.
 
-| **get_imgarr_rotate_180(imgarray)** takes the image array returned by **get_image_array** and outputs a rotated image array.
-| **get_imgarr_rotate_180(imgarray)** combines the flipping functions.
+| **get_img_arr_rotate_180(img_array)** takes the image array returned by **get_image_array** and outputs a rotated image array.
+| **get_img_arr_rotate_180(img_array)** combines the flipping functions.
 
 
 .. admonition:: Tasks
@@ -575,8 +575,8 @@ Rotating 180 degrees
 
                         from microbit import *
 
-                            def get_imgarr_rotate_180(imgarray):
-                                return get_imgarr_flip_vert(get_imgarr_flip_hor(imgarray))
+                            def get_img_arr_rotate_180(img_array):
+                                return get_img_arr_flip_vert(get_img_arr_flip_hor(img_array))
 
                 .. tab-item:: Q2
 
@@ -593,13 +593,13 @@ Rotating 180 degrees
                             return img_array
 
 
-                        def get_imgarr_flip_hor(imgarray):
+                        def get_img_arr_flip_hor(img_array):
                             # get every 5 elements and reverse them in each row
-                            row0 = imgarray[:5]
-                            row1 = imgarray[5:10]
-                            row2 = imgarray[10:15]
-                            row3 = imgarray[15:20]
-                            row4 = imgarray[20:]
+                            row0 = img_array[:5]
+                            row1 = img_array[5:10]
+                            row2 = img_array[10:15]
+                            row3 = img_array[15:20]
+                            row4 = img_array[20:]
                             row0.reverse()
                             row1.reverse()
                             row2.reverse()
@@ -609,23 +609,23 @@ Rotating 180 degrees
                             return output_array
 
 
-                        def get_imgarr_flip_vert(imgarray):
+                        def get_img_arr_flip_vert(img_array):
                             # get every 5 elements as rows and reverse order of rows.
-                            row0 = imgarray[:5]
-                            row1 = imgarray[5:10]
-                            row2 = imgarray[10:15]
-                            row3 = imgarray[15:20]
-                            row4 = imgarray[20:]
+                            row0 = img_array[:5]
+                            row1 = img_array[5:10]
+                            row2 = img_array[10:15]
+                            row3 = img_array[15:20]
+                            row4 = img_array[20:]
                             output_array = row4 + row3 + row2 + row1 + row0
                             return output_array
 
 
-                        def get_imgarr_rotate_180(imgarray):
-                            return get_imgarr_flip_vert(get_imgarr_flip_hor(imgarray))
+                        def get_img_arr_rotate_180(img_array):
+                            return get_img_arr_flip_vert(get_img_arr_flip_hor(img_array))
 
 
                         img0 = Image.DUCK
-                        img180 = Image(5, 5, bytearray(get_imgarr_rotate_180(get_image_array(img0))))
+                        img180 = Image(5, 5, bytearray(get_img_arr_rotate_180(get_image_array(img0))))
 
 
                         while True:
@@ -673,13 +673,13 @@ Rotating image animation
                             return img_array
 
 
-                        def get_imgarr_flip_hor(imgarray):
+                        def get_img_arr_flip_hor(img_array):
                             # get every 5 elements and reverse them in each row
-                            row0 = imgarray[:5]
-                            row1 = imgarray[5:10]
-                            row2 = imgarray[10:15]
-                            row3 = imgarray[15:20]
-                            row4 = imgarray[20:]
+                            row0 = img_array[:5]
+                            row1 = img_array[5:10]
+                            row2 = img_array[10:15]
+                            row3 = img_array[15:20]
+                            row4 = img_array[20:]
                             row0.reverse()
                             row1.reverse()
                             row2.reverse()
@@ -689,46 +689,46 @@ Rotating image animation
                             return output_array
 
 
-                        def get_imgarr_flip_vert(imgarray):
+                        def get_img_arr_flip_vert(img_array):
                             # get every 5 elements as rows and reverse order of rows.
-                            row0 = imgarray[:5]
-                            row1 = imgarray[5:10]
-                            row2 = imgarray[10:15]
-                            row3 = imgarray[15:20]
-                            row4 = imgarray[20:]
+                            row0 = img_array[:5]
+                            row1 = img_array[5:10]
+                            row2 = img_array[10:15]
+                            row3 = img_array[15:20]
+                            row4 = img_array[20:]
                             output_array = row4 + row3 + row2 + row1 + row0
                             return output_array
 
 
-                        def get_imgarr_rotate_270(imgarray):
+                        def get_img_arr_rotate_270(img_array):
                             # 4, 9, 14, 19, 24;; 3, 8, 13, 18, 23.
-                            row0 = [imgarray[x] for x in range(4, 25, 5)]
-                            row1 = [imgarray[x] for x in range(3, 25, 5)]
-                            row2 = [imgarray[x] for x in range(2, 25, 5)]
-                            row3 = [imgarray[x] for x in range(1, 25, 5)]
-                            row4 = [imgarray[x] for x in range(0, 25, 5)]
+                            row0 = [img_array[x] for x in range(4, 25, 5)]
+                            row1 = [img_array[x] for x in range(3, 25, 5)]
+                            row2 = [img_array[x] for x in range(2, 25, 5)]
+                            row3 = [img_array[x] for x in range(1, 25, 5)]
+                            row4 = [img_array[x] for x in range(0, 25, 5)]
                             output_array = row0 + row1 + row2 + row3 + row4
                             return output_array
 
 
-                        def get_imgarr_rotate_90(imgarray):
+                        def get_img_arr_rotate_90(img_array):
                             # 20,15,10,5,0;;21,16,11,6,1...
-                            row0 = [imgarray[x] for x in range(20, -1, -5)]
-                            row1 = [imgarray[x] for x in range(21, -1, -5)]
-                            row2 = [imgarray[x] for x in range(22, -1, -5)]
-                            row3 = [imgarray[x] for x in range(23, -1, -5)]
-                            row4 = [imgarray[x] for x in range(24, -1, -5)]
+                            row0 = [img_array[x] for x in range(20, -1, -5)]
+                            row1 = [img_array[x] for x in range(21, -1, -5)]
+                            row2 = [img_array[x] for x in range(22, -1, -5)]
+                            row3 = [img_array[x] for x in range(23, -1, -5)]
+                            row4 = [img_array[x] for x in range(24, -1, -5)]
                             output_array = row0 + row1 + row2 + row3 + row4
                             return output_array
                             
-                        def get_imgarr_rotate_180(imgarray):
-                            return get_imgarr_flip_vert(get_imgarr_flip_hor(imgarray))
+                        def get_img_arr_rotate_180(img_array):
+                            return get_img_arr_flip_vert(get_img_arr_flip_hor(img_array))
 
 
                         img0 = Image.DUCK
-                        img90 = Image(5, 5, bytearray(get_imgarr_rotate_90(get_image_array(img0))))
-                        img180 = Image(5, 5, bytearray(get_imgarr_rotate_180(get_image_array(img0))))
-                        img270 = Image(5, 5, bytearray(get_imgarr_rotate_270(get_image_array(img0))))
+                        img90 = Image(5, 5, bytearray(get_img_arr_rotate_90(get_image_array(img0))))
+                        img180 = Image(5, 5, bytearray(get_img_arr_rotate_180(get_image_array(img0))))
+                        img270 = Image(5, 5, bytearray(get_img_arr_rotate_270(get_image_array(img0))))
                         
 
                         img_seq = [img0, img90, img180, img270]
@@ -753,13 +753,13 @@ Rotating image animation
                             return img_array
 
 
-                        def get_imgarr_flip_hor(imgarray):
+                        def get_img_arr_flip_hor(img_array):
                             # get every 5 elements and reverse them in each row
-                            row0 = imgarray[:5]
-                            row1 = imgarray[5:10]
-                            row2 = imgarray[10:15]
-                            row3 = imgarray[15:20]
-                            row4 = imgarray[20:]
+                            row0 = img_array[:5]
+                            row1 = img_array[5:10]
+                            row2 = img_array[10:15]
+                            row3 = img_array[15:20]
+                            row4 = img_array[20:]
                             row0.reverse()
                             row1.reverse()
                             row2.reverse()
@@ -769,46 +769,46 @@ Rotating image animation
                             return output_array
 
 
-                        def get_imgarr_flip_vert(imgarray):
+                        def get_img_arr_flip_vert(img_array):
                             # get every 5 elements as rows and reverse order of rows.
-                            row0 = imgarray[:5]
-                            row1 = imgarray[5:10]
-                            row2 = imgarray[10:15]
-                            row3 = imgarray[15:20]
-                            row4 = imgarray[20:]
+                            row0 = img_array[:5]
+                            row1 = img_array[5:10]
+                            row2 = img_array[10:15]
+                            row3 = img_array[15:20]
+                            row4 = img_array[20:]
                             output_array = row4 + row3 + row2 + row1 + row0
                             return output_array
 
 
-                        def get_imgarr_rotate_270(imgarray):
+                        def get_img_arr_rotate_270(img_array):
                             # 4, 9, 14, 19, 24;; 3, 8, 13, 18, 23.
-                            row0 = [imgarray[x] for x in range(4, 25, 5)]
-                            row1 = [imgarray[x] for x in range(3, 25, 5)]
-                            row2 = [imgarray[x] for x in range(2, 25, 5)]
-                            row3 = [imgarray[x] for x in range(1, 25, 5)]
-                            row4 = [imgarray[x] for x in range(0, 25, 5)]
+                            row0 = [img_array[x] for x in range(4, 25, 5)]
+                            row1 = [img_array[x] for x in range(3, 25, 5)]
+                            row2 = [img_array[x] for x in range(2, 25, 5)]
+                            row3 = [img_array[x] for x in range(1, 25, 5)]
+                            row4 = [img_array[x] for x in range(0, 25, 5)]
                             output_array = row0 + row1 + row2 + row3 + row4
                             return output_array
 
 
-                        def get_imgarr_rotate_90(imgarray):
+                        def get_img_arr_rotate_90(img_array):
                             # 20,15,10,5,0;;21,16,11,6,1...
-                            row0 = [imgarray[x] for x in range(20, -1, -5)]
-                            row1 = [imgarray[x] for x in range(21, -1, -5)]
-                            row2 = [imgarray[x] for x in range(22, -1, -5)]
-                            row3 = [imgarray[x] for x in range(23, -1, -5)]
-                            row4 = [imgarray[x] for x in range(24, -1, -5)]
+                            row0 = [img_array[x] for x in range(20, -1, -5)]
+                            row1 = [img_array[x] for x in range(21, -1, -5)]
+                            row2 = [img_array[x] for x in range(22, -1, -5)]
+                            row3 = [img_array[x] for x in range(23, -1, -5)]
+                            row4 = [img_array[x] for x in range(24, -1, -5)]
                             output_array = row0 + row1 + row2 + row3 + row4
                             return output_array
                             
-                        def get_imgarr_rotate_180(imgarray):
-                            return get_imgarr_flip_vert(get_imgarr_flip_hor(imgarray))
+                        def get_img_arr_rotate_180(img_array):
+                            return get_img_arr_flip_vert(get_img_arr_flip_hor(img_array))
 
 
                         img0 = Image.DUCK
-                        img90 = Image(5, 5, bytearray(get_imgarr_rotate_90(get_image_array(img0))))
-                        img180 = Image(5, 5, bytearray(get_imgarr_rotate_180(get_image_array(img0))))
-                        img270 = Image(5, 5, bytearray(get_imgarr_rotate_270(get_image_array(img0))))
+                        img90 = Image(5, 5, bytearray(get_img_arr_rotate_90(get_image_array(img0))))
+                        img180 = Image(5, 5, bytearray(get_img_arr_rotate_180(get_image_array(img0))))
+                        img270 = Image(5, 5, bytearray(get_img_arr_rotate_270(get_image_array(img0))))
                         
 
                         img_seq = [img0, img270, img180, img90]
@@ -822,12 +822,12 @@ Rotating a list of images
 
 | Here is the list of animals: 
 | [Image.RABBIT, Image.COW, Image.DUCK, Image.TORTOISE, Image.BUTTERFLY, Image.GIRAFFE, Image.SNAKE]
-| Create a function, **rotate_imagelist(image_list, transition_time=500)**, which creates img0, img90, img180 and img270 for each image in the list, then creates a list of these which are then displayed using a transition_time which defaults to 500ms.
+| Create a function, **rotate_image_list(image_list, transition_time=500)**, which creates img0, img90, img180 and img270 for each image in the list, then creates a list of these which are then displayed using a transition_time which defaults to 500ms.
 
 
 .. admonition:: Tasks
 
-    #. Write code to rotate a list of images using rotate_imagelist(image_list, transition_time=500).
+    #. Write code to rotate a list of images using rotate_image_list(image_list, transition_time=500).
 
     .. dropdown::
             :icon: codescan
@@ -838,7 +838,7 @@ Rotating a list of images
 
                 .. tab-item:: Q1
 
-                    Write code to rotate a list of images using rotate_imagelist(image_list, transition_time=500).
+                    Write code to rotate a list of images using rotate_image_list(image_list, transition_time=500).
 
                     .. code-block:: python
 
@@ -853,13 +853,13 @@ Rotating a list of images
                             return img_array
 
 
-                        def get_imgarr_flip_hor(imgarray):
+                        def get_img_arr_flip_hor(img_array):
                             # get every 5 elements and reverse them in each row
-                            row0 = imgarray[:5]
-                            row1 = imgarray[5:10]
-                            row2 = imgarray[10:15]
-                            row3 = imgarray[15:20]
-                            row4 = imgarray[20:]
+                            row0 = img_array[:5]
+                            row1 = img_array[5:10]
+                            row2 = img_array[10:15]
+                            row3 = img_array[15:20]
+                            row4 = img_array[20:]
                             row0.reverse()
                             row1.reverse()
                             row2.reverse()
@@ -869,41 +869,41 @@ Rotating a list of images
                             return output_array
 
 
-                        def get_imgarr_flip_vert(imgarray):
+                        def get_img_arr_flip_vert(img_array):
                             # get every 5 elements as rows and reverse order of rows.
-                            row0 = imgarray[:5]
-                            row1 = imgarray[5:10]
-                            row2 = imgarray[10:15]
-                            row3 = imgarray[15:20]
-                            row4 = imgarray[20:]
+                            row0 = img_array[:5]
+                            row1 = img_array[5:10]
+                            row2 = img_array[10:15]
+                            row3 = img_array[15:20]
+                            row4 = img_array[20:]
                             output_array = row4 + row3 + row2 + row1 + row0
                             return output_array
 
 
-                        def get_imgarr_rotate_270(imgarray):
+                        def get_img_arr_rotate_270(img_array):
                             # 4, 9, 14, 19, 24;; 3, 8, 13, 18, 23.
-                            row0 = [imgarray[x] for x in range(4, 25, 5)]
-                            row1 = [imgarray[x] for x in range(3, 25, 5)]
-                            row2 = [imgarray[x] for x in range(2, 25, 5)]
-                            row3 = [imgarray[x] for x in range(1, 25, 5)]
-                            row4 = [imgarray[x] for x in range(0, 25, 5)]
+                            row0 = [img_array[x] for x in range(4, 25, 5)]
+                            row1 = [img_array[x] for x in range(3, 25, 5)]
+                            row2 = [img_array[x] for x in range(2, 25, 5)]
+                            row3 = [img_array[x] for x in range(1, 25, 5)]
+                            row4 = [img_array[x] for x in range(0, 25, 5)]
                             output_array = row0 + row1 + row2 + row3 + row4
                             return output_array
 
 
-                        def get_imgarr_rotate_90(imgarray):
+                        def get_img_arr_rotate_90(img_array):
                             # 20,15,10,5,0;;21,16,11,6,1...
-                            row0 = [imgarray[x] for x in range(20, -1, -5)]
-                            row1 = [imgarray[x] for x in range(21, -1, -5)]
-                            row2 = [imgarray[x] for x in range(22, -1, -5)]
-                            row3 = [imgarray[x] for x in range(23, -1, -5)]
-                            row4 = [imgarray[x] for x in range(24, -1, -5)]
+                            row0 = [img_array[x] for x in range(20, -1, -5)]
+                            row1 = [img_array[x] for x in range(21, -1, -5)]
+                            row2 = [img_array[x] for x in range(22, -1, -5)]
+                            row3 = [img_array[x] for x in range(23, -1, -5)]
+                            row4 = [img_array[x] for x in range(24, -1, -5)]
                             output_array = row0 + row1 + row2 + row3 + row4
                             return output_array
 
 
-                        def get_imgarr_rotate_180(imgarray):
-                            return get_imgarr_flip_vert(get_imgarr_flip_hor(imgarray))
+                        def get_img_arr_rotate_180(img_array):
+                            return get_img_arr_flip_vert(get_img_arr_flip_hor(img_array))
 
 
                         animal_images = [
@@ -917,16 +917,16 @@ Rotating a list of images
                         ]
 
 
-                        def rotate_imagelist(image_list, transition_time=500):
+                        def rotate_image_list(image_list, transition_time=500):
                             for img in image_list:
                                 img0 = img
-                                img180 = Image(5, 5, bytearray(get_imgarr_rotate_180(get_image_array(img0))))
-                                img270 = Image(5, 5, bytearray(get_imgarr_rotate_270(get_image_array(img0))))
-                                img90 = Image(5, 5, bytearray(get_imgarr_rotate_90(get_image_array(img0))))
+                                img180 = Image(5, 5, bytearray(get_img_arr_rotate_180(get_image_array(img0))))
+                                img270 = Image(5, 5, bytearray(get_img_arr_rotate_270(get_image_array(img0))))
+                                img90 = Image(5, 5, bytearray(get_img_arr_rotate_90(get_image_array(img0))))
                                 img_seq = [img0, img90, img180, img270]
                                 display.show(img_seq, delay=transition_time)
 
 
                         while True:
-                            rotate_imagelist(animal_images)
+                            rotate_image_list(animal_images)
 

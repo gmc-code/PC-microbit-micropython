@@ -32,7 +32,7 @@ Missing space before asterisk
     # missing space before the asterisk
     from microbit import*
 
-| If the space before the askterisk is left out, then an **undefined names** error occurs, as shown below.
+| If the space before the asterisk is left out, then an **undefined names** error occurs, as shown below.
 
 
 .. image:: images/import_error_2.png
@@ -62,7 +62,7 @@ Imported library not used
 | If the microbit library is imported via ``import microbit``, all microbit code needs to start with ``microbit.``.
 | In the code below, the line should be: ``microbit.display.scroll('hello')``.
 | If ``microbit.`` is left out, a red wavy line will be shown where the errors are.
-| ``display`` will not be recognised, (**undefined name**), since python has not been told that it is in microbit library.
+| ``display`` will not be recognized, (**undefined name**), since python has not been told that it is in microbit library.
 | The microbit library will also appear not to be used.
 
 .. code-block:: python

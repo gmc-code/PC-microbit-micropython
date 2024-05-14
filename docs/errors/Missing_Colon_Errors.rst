@@ -11,8 +11,8 @@ If: Missing colon
 
     from microbit import *
 
-    # if button_a.is_presed():
-    if button_a.is_presed()
+    # if button_a.is_pressed():
+    if button_a.is_pressed()
         display.scroll('A')
 
 | A red wavy line shown where the colon should have been. 
@@ -35,7 +35,7 @@ Elif: Missing colon
 
     from microbit import *
 
-    if button_a.is_presed():
+    if button_a.is_pressed():
         display.scroll('A')
     # elif:
     elif
@@ -62,7 +62,7 @@ Else: Missing colon
 
     from microbit import *
 
-    if button_a.is_presed():
+    if button_a.is_pressed():
         display.scroll('A')
     # else:
     else
@@ -90,7 +90,7 @@ While: Missing colon
     while True
         display.scroll("A")
 
-| The Syntax error statement suggests to check for misisng characters. The end colon is missing.
+| The Syntax error statement suggests to check for missing characters. The end colon is missing.
 
 .. image:: images/while_missing_colon.png
     :scale: 50 %
@@ -109,7 +109,7 @@ For: Missing colon
     for num in range(5)
         display.scroll(num)
 
-| The Syntax error statement suggests to check for misisng characters. The end colon is missing.
+| The Syntax error statement suggests to check for missing characters. The end colon is missing.
 
 .. image:: images/for_missing_colon.png
     :scale: 50 %

@@ -42,7 +42,7 @@ Organising blocks into definitions
 | The second example takes each block of code in the various branches of the if block and reallocates them to separate definitions.
 | This makes the main block of code in the ``while True`` loop more compact and more readable.
 | Each definition block can be easily edited and changed.
-| Reorganizing the code is called **refactoring**.
+| Reorganising the code is called **refactoring**.
 
 | Basic unorganised code:
 

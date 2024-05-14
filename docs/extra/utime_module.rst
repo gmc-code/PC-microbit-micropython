@@ -12,7 +12,7 @@ utime
 sleep
 -------------------
 
-| The standard microbit library has its own sleep method (in millisecs).
+| The standard microbit library has its own sleep method (in milli-secs).
 | ``utime.sleep`` may be convenient for micro sleeps or sleeps in seconds.
 
 .. method:: utime.sleep(seconds)
@@ -113,7 +113,7 @@ ticks_diff
     The argument order is the same as for subtraction operator, 
     ``ticks_diff(ticks1, ticks2)`` has the same meaning as ``ticks1 - ticks2``.
 
-| The code below, checks for a change in the pin2 reading for up to 2 seconds, then displays a "TIMEDOUT" message.
+| The code below, checks for a change in the pin2 reading for up to 2 seconds, then displays a "TIMED_OUT" message.
 
 .. code-block:: python
 
@@ -124,5 +124,5 @@ ticks_diff
     start = utime.ticks_ms()
     while pin2.read_digital() == 0:
         if utime.ticks_diff(utime.ticks_ms(), start) > 2000:
-            display.scroll("TIMEDOUT")
+            display.scroll("TIMED_OUT")
 

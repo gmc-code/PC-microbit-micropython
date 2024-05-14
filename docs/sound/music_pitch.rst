@@ -48,7 +48,7 @@ Sound effects using pitch
     #. Modify the code to increase the pitch in steps of 32 with a duration of 40.
     #. Modify the code to decrease the pitch instead.
     #. Modify the code to increase then decrease the pitch.
-    #. Modify the accelerometer code example to incldue B-button pressing for a duration of 100ms.
+    #. Modify the accelerometer code example to include B-button pressing for a duration of 100ms.
 
     .. dropdown::
         :icon: codescan
@@ -97,7 +97,7 @@ Sound effects using pitch
 
             .. tab-item:: Q4
 
-                Modify the accelerometer code example to incldue B-button pressing for a duration of 100ms.
+                Modify the accelerometer code example to include B-button pressing for a duration of 100ms.
 
                 .. code-block:: python
 
@@ -222,8 +222,8 @@ A	    1760
 .. admonition:: Tasks
 
     #. Begin with the scale Am_4 = [440, 494, 523, 587, 659, 698, 784, 880]. Use list comprehension to create a new list, Am_5, in which the frequencies are multiplied by 2, but include the condition that the frequency is not 440. Scroll the octave number, without blocking the sound, when the octave list sounds start. See: https://pc-python.readthedocs.io/en/latest/python_advanced/list_comprehensions.html
-    #. Begin with the scale Am_4= [440, 494, 523, 587, 659, 698, 784, 880]. Use list comprehension to create a new list, Am_5, exluding 440 and a new list, Am_3, in which the frequencies are divided by 2, exluding 880. Scroll the octave number, without blocking the sound, when the octave list sounds start.
-    #. Begin with the scale Am_4= [440, 494, 523, 587, 659, 698, 784, 880]. Use list comprehension to create a new list, Am_54_rev, which is the reverse of Am_4, exluding 880. Show an up arrow when Am_4 is played and a down arrow for Am_54_rev.
+    #. Begin with the scale Am_4= [440, 494, 523, 587, 659, 698, 784, 880]. Use list comprehension to create a new list, Am_5, excluding 440 and a new list, Am_3, in which the frequencies are divided by 2, excluding 880. Scroll the octave number, without blocking the sound, when the octave list sounds start.
+    #. Begin with the scale Am_4= [440, 494, 523, 587, 659, 698, 784, 880]. Use list comprehension to create a new list, Am_54_rev, which is the reverse of Am_4, excluding 880. Show an up arrow when Am_4 is played and a down arrow for Am_54_rev.
     
     .. dropdown::
         :icon: codescan
@@ -258,7 +258,7 @@ A	    1760
 
             .. tab-item:: Q2
 
-               Begin with the scale Am_4= [440, 494, 523, 587, 659, 698, 784, 880]. Use list comprehension to create a new list, Am_5, exluding 440 and a new list, Am_3, in which the frequencies are divided by 2, exluding 880. Scroll the octave number, without blocking the sound, when the octave list sounds start.
+               Begin with the scale Am_4= [440, 494, 523, 587, 659, 698, 784, 880]. Use list comprehension to create a new list, Am_5, excluding 440 and a new list, Am_3, in which the frequencies are divided by 2, excluding 880. Scroll the octave number, without blocking the sound, when the octave list sounds start.
 
                 .. code-block:: python
 
@@ -286,7 +286,7 @@ A	    1760
 
             .. tab-item:: Q3
 
-               Begin with the scale Am_4= [440, 494, 523, 587, 659, 698, 784, 880]. Use list comprehension to create a new list, Am_54_rev, which is the reverse of Am_4, exluding 880. Show an up arrow when Am_4 is played and a down arrow for Am_54_rev.
+               Begin with the scale Am_4= [440, 494, 523, 587, 659, 698, 784, 880]. Use list comprehension to create a new list, Am_54_rev, which is the reverse of Am_4, excluding 880. Show an up arrow when Am_4 is played and a down arrow for Am_54_rev.
 
                 .. code-block:: python
 
@@ -343,11 +343,11 @@ Accelerometer based pitches
         if not play_music:
             continue
         #get accelerometer readings
-        xreading = abs(accelerometer.get_x())
-        yreading = abs(accelerometer.get_y())
-        # use above 1023 incase some micorbits give slightly higher readings
-        scaled_x = scale(xreading, from_=(-1200, 1200), to=(-notelen +1, notelen -1))
-        scaled_y = scale(yreading, from_=(-1200, 1200), to=(-durationlen +1, durationlen -1))
+        x_reading = abs(accelerometer.get_x())
+        y_reading = abs(accelerometer.get_y())
+        # use above 1023 incase some microbits give slightly higher readings
+        scaled_x = scale(x_reading, from_=(-1200, 1200), to=(-notelen +1, notelen -1))
+        scaled_y = scale(y_reading, from_=(-1200, 1200), to=(-durationlen +1, durationlen -1))
         #get a note based on tilt
         pitch = notes[scaled_x]
         duration = durations[scaled_y]

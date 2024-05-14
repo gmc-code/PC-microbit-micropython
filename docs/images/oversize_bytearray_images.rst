@@ -10,7 +10,7 @@ Wide array
 | Each row has the same pixel brightness pattern.
 | The pixel brightness is a gradient from left to right of decreasing brightness then increasing brightness.
 | The last 4 columns match the first 4 columns to make sure that a sideways animation is smooth.
-| After the last 4 columns are displayed, the next image will be the first 5 columns or vica versa.
+| After the last 4 columns are displayed, the next image will be the first 5 columns or vice versa.
 
 .. code-block:: python
 

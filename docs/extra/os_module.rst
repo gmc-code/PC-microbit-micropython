@@ -116,9 +116,9 @@ uname
 Micropython version
 -------------------------
 
-| The micropython that is flashed to the mcirobit by different software can be determined.
+| The micropython that is flashed to the microbit by different software can be determined.
 | **Mu editor v1.1.1**, **micropython online editor v3**  and **Thonny v4** flash their version of micropython to the microbit.
-| **os.uname().version** returns a string with micropyhton version in it.
+| **os.uname().version** returns a string with micropython version in it.
 | The code below uses a custom function to get the version.
 
 | e.g. **v1.18** from  **micro:bit v2.1.0+e4321a8 on 2022-09-26; MicroPython v1.18 on 2022-09-26**
@@ -128,7 +128,7 @@ Micropython version
 | Firstly the string is split at "MicroPython " and the first index is chosen.
 | So this could return the string:  "v1.18 on 2022-09-26".
 | The second split is at the spaces with index 0 being chosen.
-| THe third split is only needed if there is a long version wiht a "-" in it. 
+| THe third split is only needed if there is a long version with a "-" in it. 
 
 
 .. code-block:: python

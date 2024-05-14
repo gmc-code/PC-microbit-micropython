@@ -504,7 +504,7 @@ filter
 Used to filter sequence and filter out unqualified elements, Returns an iterator object. If you want to convert it to a list, you can use list () to convert it.
 
 - ``function`` -- Judgement function.
-- ``iterable`` -- Iteratable objects.
+- ``iterable`` -- Iterable objects.
 
 Filter out all the odd numbers in the list::
  
@@ -512,8 +512,8 @@ Filter out all the odd numbers in the list::
         return n % 2 == 1
     
     tmplist = filter(is_odd, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
-    newlist = list(tmplist)
-    print(newlist)
+    new_list = list(tmplist)
+    print(new_list)
 
 ----
 
@@ -814,7 +814,7 @@ map
 
 map() The specified sequence is mapped according to the provided function. Returns an iterator that applies a function to each item in Iterable and outputs its result.  
 If an additional Iterable parameter is entered, the function must accept the same number of arguments and be applied to items obtained in parallel from all iteratable objects. 
-When there are multiple iteratable objects, the whole iteration will end when the shortest one is exhausted. 
+When there are multiple iterable objects, the whole iteration will end when the shortest one is exhausted. 
 
 ::
 
@@ -1026,7 +1026,7 @@ print
 
 In printout, the most common function. 
 
-    - ``objects`` : Phural, indicating that multiple objects can be output once. When printing multiple objects, separate them.
+    - ``objects`` : Plural, indicating that multiple objects can be output once. When printing multiple objects, separate them.
     - ``sep`` : Use a space as the interval to separate the multiple objects. 
     - ``end`` : Used to set what to end with. The default value is newline \n.
     - ``file`` : The object to write.
@@ -1038,16 +1038,16 @@ In printout, the most common function.
          print("Hello World)
     Hello World
          a = 1
-         b = 'w3cschool'
+         b = 'w3school'
          print(a, b)
-    1 w3cschool
+    1 w3school
          print("aaa""bbb")
     aaabbb
          print("aaa","bbb")
     aaa bbb
         
-         print("www","w3cschool","cn",sep=".") # Set the interval space
-    www.w3cschool.cn
+         print("www","w3school","com",sep=".") # Set the interval space
+    www.w3school.com
 
 ----
 
@@ -1084,7 +1084,7 @@ range
 
 .. function:: range()
 
-range() the function returns an iteratable object (the type is an object), not a list type, so the list will not be printed when printing.
+range() the function returns an iterable object (the type is an object), not a list type, so the list will not be printed when printing.
 
 Function syntax:
 
@@ -1241,7 +1241,7 @@ Assign values to existing properties::
          a = A()
          getattr(a, 'bar')          # get attribute bar value
     1
-         setattr(a, 'bar', 5)       # set attribute设置属性 bar value
+         setattr(a, 'bar', 5)       # set attribute bar value
          a.bar
     5
 
@@ -1272,8 +1272,8 @@ sorted
 
 Sort all objects that can be iterated
 
-- ``iterable`` -- Iteratable object. 
-- ``key`` -- It is mainly used to compare elements with only one parameter. The parameters of specific functions are taken from the iteratable objects, and one element of the iteratable objects is specified for sorting.
+- ``iterable`` -- Iterable object. 
+- ``key`` -- It is mainly used to compare elements with only one parameter. The parameters of specific functions are taken from the iterable objects, and one element of the iterable objects is specified for sorting.
 - ``reverse`` -- collation, reverse=True descending order ,  reverse=False ascending order (default) 。
 
 sorted the easiest way to use::

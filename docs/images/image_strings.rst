@@ -446,32 +446,32 @@ Rotating line animation
 Image gradients using  string definitions
 --------------------------------------------
 
-| The definition below, **horzgrad**, takes  2 arguments, width and height.
+| The definition below, **horz_grad**, takes  2 arguments, width and height.
 | The for-loop creates a string starting with a brightness of 1 and increasing by one to the width given, which should be 5 for the full width of the 5x5 grid.
 | The string is then replicated for each line given by height, which is 5 for the full grid.
-| **Image(horzgrad(5, 5))** results in **Image('12345:12345:12345:12345:12345:')**.
+| **Image(horz_grad(5, 5))** results in **Image('12345:12345:12345:12345:12345:')**.
 
 .. code-block:: python
         
     from microbit import *
 
 
-    def horzgrad(w, h):
+    def horz_grad(w, h):
         string = ""
         for i in range(1, w + 1):
             string += str(i)
         return (string + ":") * h
 
 
-    img_horzgrad = Image(horzgrad(5, 5))
-    display.show(img_horzgrad)
+    img_horz_grad = Image(horz_grad(5, 5))
+    display.show(img_horz_grad)
 
 ----
 
 .. admonition:: Tasks
 
-    #. Write a vertgrad definition to produce: **Image('11111:22222:33333:44444:55555:')**.
-    #. Write a diaggrad definition to produce: **Image('12345:23456:34567:45678:56789:')**.
+    #. Write a vert_grad definition to produce: **Image('11111:22222:33333:44444:55555:')**.
+    #. Write a diag_grad definition to produce: **Image('12345:23456:34567:45678:56789:')**.
 
     .. dropdown::
             :icon: codescan
@@ -482,33 +482,33 @@ Image gradients using  string definitions
 
                 .. tab-item:: Q1
 
-                    Write a vertgrad definition to produce: **Image('11111:22222:33333:44444:55555:')**.
+                    Write a vert_grad definition to produce: **Image('11111:22222:33333:44444:55555:')**.
 
                     .. code-block:: python
 
                         from microbit import *
 
 
-                        def vertgrad(w, h):
+                        def vert_grad(w, h):
                             string = ""
                             for i in range(1, h + 1):
                                 string += (str(i) * w) + ":"
                             return string
 
 
-                        img_vertgrad = Image(vertgrad(5, 5))
-                        display.show(img_vertgrad)
+                        img_vert_grad = Image(vert_grad(5, 5))
+                        display.show(img_vert_grad)
 
                 .. tab-item:: Q2
 
-                    Write a diaggrad definition to produce: **Image('12345:23456:34567:45678:56789:')**.
+                    Write a diag_grad definition to produce: **Image('12345:23456:34567:45678:56789:')**.
 
                     .. code-block:: python
 
                         from microbit import *
 
 
-                        def diaggrad(w, h):
+                        def diag_grad(w, h):
                             string = ""
                             for j in range(1, h + 1):
                                 for i in range(1, w + 1):
@@ -517,6 +517,6 @@ Image gradients using  string definitions
                             return string
 
 
-                        img_diaggrad = Image(diaggrad(5, 5))
-                        display.show(img_diaggrad)
+                        img_diag_grad = Image(diag_grad(5, 5))
+                        display.show(img_diag_grad)
 

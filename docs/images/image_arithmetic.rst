@@ -34,7 +34,7 @@ Fill
     | The fill method applies the fill in-place to the image.
     | Don't use with built-in images since they are read-only and cannot be altered.
 
-| The code below sets all the pixels to a bightness of 6.
+| The code below sets all the pixels to a brightness of 6.
 
 .. code-block:: python
 
@@ -50,7 +50,7 @@ Fill
 
     #. Create a blank image and fill it with brightness of 9.
     #. Create a blank image and use a for-loop to set its brightness from 1 to 9 in less than 2 seconds using the fill method.
-    #. Create an animation using the fill method in which the brighness of all the pixels goes form 0 to 9 and back to 0 in less than 2 seconds.
+    #. Create an animation using the fill method in which the brightness of all the pixels goes form 0 to 9 and back to 0 in less than 2 seconds.
 
     .. dropdown::
             :icon: codescan
@@ -88,7 +88,7 @@ Fill
 
                 .. tab-item:: Q2
 
-                    Create an animation using the fill method in which the brighness of all the pixels goes form 0 to 9 and back to 0 in less than 2 seconds.
+                    Create an animation using the fill method in which the brightness of all the pixels goes form 0 to 9 and back to 0 in less than 2 seconds.
 
                     .. code-block:: python
 
@@ -207,11 +207,11 @@ Invert
 
 
                         square = Image('99999:90009:90009:90009:99999')
-                        invsquare = square.invert()
+                        inv_square = square.invert()
                         while True:
                             display.show(square)
                             sleep(500)
-                            display.show(invsquare)
+                            display.show(inv_square)
                             sleep(500)
 
                 .. tab-item:: Q2
@@ -374,14 +374,14 @@ Adding Image pixels
 
     img_sad = Image.SAD
     img_happy = Image.HAPPY
-    img_sadhappy = img_sad + img_happy
+    img_sad_happy = img_sad + img_happy
 
     while True:
         display.show(img_sad)
         sleep(500)
         display.show(img_happy)
         sleep(500)
-        display.show(img_sadhappy)
+        display.show(img_sad_happy)
         sleep(500)
 
 ----
@@ -430,7 +430,7 @@ Adding Image pixels
 
                         img_m = Image("m")
                         img_m_inv = img_m.invert()
-                        img_mminv = img_m + img_m_inv
+                        img_m_and_m_inv = img_m + img_m_inv
 
                         while True:
                             if button_a.is_pressed():
@@ -438,7 +438,7 @@ Adding Image pixels
                             elif button_b.is_pressed():
                                 display.show(img_m_inv)
                             else:
-                                display.show(img_mminv)
+                                display.show(img_m_and_m_inv)
                             sleep(500)
 
                 .. tab-item:: Q3
@@ -538,14 +538,14 @@ Subtracting Image pixels
 
                         img_sad = Image.SAD
                         img_happy = Image.HAPPY
-                        img_sadlesshappy = img_sad - img_happy
+                        img_sad_less_happy = img_sad - img_happy
 
                         while True:
                             display.show(img_sad)
                             sleep(500)
                             display.show(img_happy)
                             sleep(500)
-                            display.show(img_sadlesshappy)
+                            display.show(img_sad_less_happy)
                             sleep(500)
 
 
@@ -592,7 +592,7 @@ Multiplying and dividing Image pixels
 
     #. Modify the code to create the images of a "w" with brightness of 9, 1 and 4.
     #. Modify the code to create the addition of the images "m" at brightness 6 and "w" at brightness 3.
-    #. Using the pulsing code above as a starting point, add extra code so that it is possible to set the number of pulses per second and use that to calculate the sleeptime.
+    #. Using the pulsing code above as a starting point, add extra code so that it is possible to set the number of pulses per second and use that to calculate the sleep_time.
 
     .. dropdown::
             :icon: codescan
@@ -654,7 +654,7 @@ Pulsing HEART
 
 | In the code below, image **img9** has pixels of brightness 9.
 | An image, **img1**, with brightness 1, is first created from that, then other brightnesses are obtained in for-loops so that the image is pulsed.
-| The sleeptime variable makes it convenient to adjust the pulsing rate.
+| The sleep_time variable makes it convenient to adjust the pulsing rate.
 
 .. code-block:: python
 
@@ -662,22 +662,22 @@ Pulsing HEART
 
     img9 = Image.HEART
     img1 = img9 / 9
-    sleeptime = 50
+    sleep_time = 50
     while True:
         for i in range(10):
             img = img1 * i
             display.show(img)
-            sleep(sleeptime)
+            sleep(sleep_time)
         for i in range(9, -1, -1):
             img = img1 * i
             display.show(img)
-            sleep(sleeptime)
+            sleep(sleep_time)
 
 ----
 
 .. admonition:: Tasks
 
-    #. Using the pulsing code above as a starting point, add extra code so that it is possible to set use the number of pulses per second to calcualte the sleeptime. Set the pulse rate to 100 pulses per minute.
+    #. Using the pulsing code above as a starting point, add extra code so that it is possible to set use the number of pulses per second to calculate the sleep_time. Set the pulse rate to 100 pulses per minute.
 
     .. dropdown::
             :icon: codescan
@@ -688,7 +688,7 @@ Pulsing HEART
 
                 .. tab-item:: Q1
 
-                    Using the pulsing code above as a starting point, add extra code so that it is possible to use the number of pulses per second to calculate the sleeptime.
+                    Using the pulsing code above as a starting point, add extra code so that it is possible to use the number of pulses per second to calculate the sleep_time.
 
                     .. code-block:: python
 
@@ -697,16 +697,16 @@ Pulsing HEART
                         img9 = Image.HEART
                         img1 = img9 / 9
                         pulses_per_min = 100
-                        sleeptime = int(3000 / pulses_per_min)
+                        sleep_time = int(3000 / pulses_per_min)
                         while True:
                             for i in range(10):
                                 img = img1 * i
                                 display.show(img)
-                                sleep(sleeptime)
+                                sleep(sleep_time)
                             for i in range(9, -1, -1):
                                 img = img1 * i
                                 display.show(img)
-                                sleep(sleeptime)
+                                sleep(sleep_time)
 
 ----
 
@@ -716,7 +716,7 @@ List comprehension for a series of images
 
 See: https://www.w3schools.com/python/python_lists_comprehension.asp
 
-.. function:: newlist = [expression for item in iterable]
+.. function:: new_list = [expression for item in iterable]
 
     | Create a list of expressions that take each item in an iterable, such as a list, tuple or string.
 

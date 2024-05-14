@@ -74,10 +74,10 @@ Advanced: Using for-loops  with strings
     welcome_string = 'hqz'
     while True:
         for character in welcome_string:
-            asciinum = ord(character)
-            asciinum -=2
-            newchar = chr(asciinum)
-            display.scroll(newchar, delay=50)
+            ascii_num = ord(character)
+            ascii_num -=2
+            new_char = chr(ascii_num)
+            display.scroll(new_char, delay=50)
         sleep(300)
 
 

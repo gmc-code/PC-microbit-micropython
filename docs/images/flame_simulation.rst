@@ -75,21 +75,21 @@ The Flame simulation
         for y in range(DISPLAY_HEIGHT - 1, 0, -1):
             for x in range(DISPLAY_WIDTH):
                 mask = MASK[y][x]
-                newval = ((100 - pcnt) * grid[y][x] + pcnt * grid[y - 1][x]) / 100.0
-                newval = mask * newval / 100.0
+                new_val = ((100 - pcnt) * grid[y][x] + pcnt * grid[y - 1][x]) / 100.0
+                new_val = mask * new_val / 100.0
                 if INVERT_DISPLAY:
-                    screen.set_pixel(x, DISPLAY_HEIGHT - y - 1, int(newval))
+                    screen.set_pixel(x, DISPLAY_HEIGHT - y - 1, int(new_val))
                 else:
-                    screen.set_pixel(x, y, int(newval))
+                    screen.set_pixel(x, y, int(new_val))
         # first row interpolates with the "next" line; y == 1 from loop above
         for x in range(DISPLAY_WIDTH):
             mask = MASK[y][x]
-            newval = ((100 - pcnt) * grid[0][x] + pcnt * line[x]) / 100.0
-            newval = mask * newval / 100.0
+            new_val = ((100 - pcnt) * grid[0][x] + pcnt * line[x]) / 100.0
+            new_val = mask * new_val / 100.0
             if INVERT_DISPLAY:
-                screen.set_pixel(x, DISPLAY_HEIGHT - 1, int(newval))
+                screen.set_pixel(x, DISPLAY_HEIGHT - 1, int(new_val))
             else:
-                screen.set_pixel(x, 0, int(newval))
+                screen.set_pixel(x, 0, int(new_val))
 
 
     # # Setup
@@ -102,7 +102,7 @@ The Flame simulation
     #        [0,0,0,0,0]]
     SCREEN = microbit.display
     percent = 0  # counter to see when to re-interpolate
-    sleeptime = 0  # delay between updates
+    sleep_time = 0  # delay between updates
     percent_increment = 25  # how fast we interpolate fire
 
 
@@ -122,13 +122,13 @@ The Flame simulation
             print("percent interpolate=", percent_increment)
         # button_b = delay
         if microbit.button_b.was_pressed():
-            sleeptime += INC_SLEEP
-            if sleeptime > MAX_SLEEP:
-                sleeptime = MIN_SLEEP
-            print("sleeptime=", sleeptime)
+            sleep_time += INC_SLEEP
+            if sleep_time > MAX_SLEEP:
+                sleep_time = MIN_SLEEP
+            print("sleep_time=", sleep_time)
         # draw frame and sleep
         interpolate_frame(SCREEN, percent, grid, line)
-        microbit.sleep(sleeptime)
+        microbit.sleep(sleep_time)
         # update main counters
         percent += percent_increment
 

@@ -16,7 +16,7 @@ Missing Indentation after if statement
 
     from microbit import *
 
-    if button_a.is_presed():
+    if button_a.is_pressed():
         display.scroll('A')
 
 
@@ -26,7 +26,7 @@ Missing Indentation after if statement
 
     from microbit import *
 
-    if button_a.is_presed():
+    if button_a.is_pressed():
     display.scroll('A')
 
 
@@ -47,7 +47,7 @@ else statement indented by mistake
 
     from microbit import *
 
-    if button_a.is_presed():
+    if button_a.is_pressed():
         display.scroll('A')
     else:
         display.show(1)
@@ -59,7 +59,7 @@ else statement indented by mistake
 
     from microbit import *
 
-    if button_a.is_presed():
+    if button_a.is_pressed():
         display.scroll('A')
         else:
         display.show(1)

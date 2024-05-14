@@ -12,7 +12,7 @@ The thermometer gets the temperature as an integer in degrees Celsius.
 
     Return the temperature of the microbit in degrees Celsius.
 
-The temp variable below is an integer. It has to be first conveeretd to a string to join it with the unit sysmbol, C..
+The temp variable below is an integer. It has to be first converted to a string to join it with the unit symbol, C..
 
 .. code-block:: python
 

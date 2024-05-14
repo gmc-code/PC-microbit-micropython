@@ -49,9 +49,9 @@ Reverse direction of a list using the reverse method
 
 | The basic syntax to reverse a list **in place** is:
 
-.. py:function:: alist.reverse()
+.. py:function:: a_list.reverse()
 
-    | The list, **alist**, is reversed. No parameters are involved.
+    | The list, **a_list**, is reversed. No parameters are involved.
 
 | A list, **clock_list**, can be reversed using the **reverse** **method**: ``clock_list.reverse()``.
 | The original list has its elements reversed.
@@ -189,12 +189,12 @@ Randomize list
 
     Returns a random floating number between 0 and 1.
 
-| The key function below, **randomkey**,  returns a random floating number between 0 and 1.
+| The key function below, **random_key**,  returns a random floating number between 0 and 1.
 | A parameter is required, since the sorted function will pass in the object from a list that is being sorted. The parameter used below is **element**. It is needed to work. Note that it is not used in the function code itself.
 
 .. code-block:: python
     
-    def randomkey(element):
+    def random_key(element):
         return random.random()
 
 | Code to sort a list of numbers randomly, then scroll them is below.
@@ -205,14 +205,14 @@ Randomize list
     import random
 
 
-    def randomkey(element):
+    def random_key(element):
         return random.random()
 
 
-    origlist = [1, 2, 3, 4]
+    orig_list = [1, 2, 3, 4]
     while True:
-        newlist = sorted(origlist, key=randomkey)
-        for element in newlist:
+        new_list = sorted(orig_list, key=random_key)
+        for element in new_list:
             display.scroll(element, delay=60)
         sleep(1000)
 
@@ -221,9 +221,9 @@ Randomize list
 
 .. admonition:: Tasks
 
-    #. Modify the origlist to be the list of letters "a", "e", "t". Bonus: What do the 6 possible words mean?
-    #. A string can be turned to a list using the list function. Modify the origlist to be list("ate").
-    #. Modify the origlist to be the list of characters from list("ab12")
+    #. Modify the orig_list to be the list of letters "a", "e", "t". Bonus: What do the 6 possible words mean?
+    #. A string can be turned to a list using the list function. Modify the orig_list to be list("ate").
+    #. Modify the orig_list to be the list of characters from list("ab12")
 
     .. dropdown::
             :icon: codescan
@@ -234,7 +234,7 @@ Randomize list
 
                 .. tab-item:: Q1
 
-                    Modify the origlist to be the list of letters "a", "e", "t".
+                    Modify the orig_list to be the list of letters "a", "e", "t".
 
                     .. code-block:: python
                         
@@ -242,20 +242,20 @@ Randomize list
                         import random
 
 
-                        def randomkey(element):
+                        def random_key(element):
                             return random.random()
 
 
-                        origlist = ["a", "e", "t"]
+                        orig_list = ["a", "e", "t"]
                         while True:
-                            newlist = sorted(origlist, key=randomkey)
-                            for element in newlist:
+                            new_list = sorted(orig_list, key=random_key)
+                            for element in new_list:
                                 display.scroll(element, delay=60)
                             sleep(1000)
 
                 .. tab-item:: Q2
 
-                    A string can be turned to a list using the list function. Modify the origlist to be list("ate").
+                    A string can be turned to a list using the list function. Modify the orig_list to be list("ate").
 
                     .. code-block:: python
                         
@@ -263,20 +263,20 @@ Randomize list
                         import random
 
 
-                        def randomkey(element):
+                        def random_key(element):
                             return random.random()
 
 
-                        origlist = list("ate")
+                        orig_list = list("ate")
                         while True:
-                            newlist = sorted(origlist, key=randomkey)
-                            for element in newlist:
+                            new_list = sorted(orig_list, key=random_key)
+                            for element in new_list:
                                 display.scroll(element, delay=60)
                             sleep(1000)
 
                 .. tab-item:: Q3
 
-                    Modify the origlist to be the list of characters from list("ab12")
+                    Modify the orig_list to be the list of characters from list("ab12")
 
                     .. code-block:: python
                         
@@ -284,14 +284,14 @@ Randomize list
                         import random
 
 
-                        def randomkey(element):
+                        def random_key(element):
                             return random.random()
 
 
                         list("ab12")
                         while True:
-                            newlist = sorted(origlist, key=randomkey)
-                            for element in newlist:
+                            new_list = sorted(orig_list, key=random_key)
+                            for element in new_list:
                                 display.scroll(element, delay=60)
                             sleep(1000)
 
@@ -301,7 +301,7 @@ Randomize image list
 ~~~~~~~~~~~~~~~~~~~~~~~
 
 | Use the sorted function to randomly sort **list(Image.ALL_ARROWS)**.
-| Use the same **randomkey** function from above as the sort key.
+| Use the same **random_key** function from above as the sort key.
 | Display the randomly sorted image list with a delay of half a second.
 
 
@@ -311,14 +311,14 @@ Randomize image list
     import random
 
 
-    def randomkey(element):
+    def random_key(element):
         return random.random()
 
 
-    origlist = list(Image.ALL_ARROWS)
+    orig_list = list(Image.ALL_ARROWS)
     while True:
-        newlist = sorted(origlist, key=randomkey)
-        display.show(newlist, delay=500)
+        new_list = sorted(orig_list, key=random_key)
+        display.show(new_list, delay=500)
         sleep(1000)
 
 
@@ -349,14 +349,14 @@ Randomize image list
                         import random
 
 
-                        def randomkey(element):
+                        def random_key(element):
                             return random.random()
 
 
-                        origlist = [Image.ARROW_N, Image.ARROW_E, Image.ARROW_S, Image.ARROW_W]
+                        orig_list = [Image.ARROW_N, Image.ARROW_E, Image.ARROW_S, Image.ARROW_W]
                         while True:
-                            newlist = sorted(origlist, key=randomkey)
-                            display.show(newlist, delay=500)
+                            new_list = sorted(orig_list, key=random_key)
+                            display.show(new_list, delay=500)
                             sleep(1000)
 
                 .. tab-item:: Q2
@@ -369,14 +369,14 @@ Randomize image list
                         import random
 
 
-                        def randomkey(element):
+                        def random_key(element):
                             return random.random()
 
 
-                        origlist = [Image.ARROW_NE, Image.ARROW_SE, Image.ARROW_SW, Image.ARROW_NW]
+                        orig_list = [Image.ARROW_NE, Image.ARROW_SE, Image.ARROW_SW, Image.ARROW_NW]
                         while True:
-                            newlist = sorted(origlist, key=randomkey)
-                            display.show(newlist, delay=500)
+                            new_list = sorted(orig_list, key=random_key)
+                            display.show(new_list, delay=500)
                             sleep(1000)
 
                 .. tab-item:: Q3
@@ -389,14 +389,14 @@ Randomize image list
                         import random
 
 
-                        def randomkey(element):
+                        def random_key(element):
                             return random.random()
 
 
-                        origlist = [Image.CLOCK12, Image.CLOCK9, Image.CLOCK6, Image.CLOCK3]
+                        orig_list = [Image.CLOCK12, Image.CLOCK9, Image.CLOCK6, Image.CLOCK3]
                         while True:
-                            newlist = sorted(origlist, key=randomkey)
-                            display.show(newlist, delay=500)
+                            new_list = sorted(orig_list, key=random_key)
+                            display.show(new_list, delay=500)
                             sleep(1000)
 
                 .. tab-item:: Q4
@@ -409,18 +409,18 @@ Randomize image list
                         import random
 
 
-                        def randomkey(element):
+                        def random_key(element):
                             return random.random()
 
 
-                        origlist = [Image.ARROW_N, Image.ARROW_E, Image.ARROW_S, Image.ARROW_W]
+                        orig_list = [Image.ARROW_N, Image.ARROW_E, Image.ARROW_S, Image.ARROW_W]
                         while True:
-                            newlist = sorted(origlist, key=randomkey)
-                            display.show(newlist, delay=500)
+                            new_list = sorted(orig_list, key=random_key)
+                            display.show(new_list, delay=500)
                             display.clear()
                             sleep(500)
-                            newlist.reverse()
-                            display.show(newlist, delay=500)
+                            new_list.reverse()
+                            display.show(new_list, delay=500)
                             display.clear()
                             sleep(1000)
 
@@ -434,17 +434,17 @@ Randomize image list
                         import random
 
 
-                        def randomkey(element):
+                        def random_key(element):
                             return random.random()
 
 
-                        origlist = [Image.ARROW_NE, Image.ARROW_SE, Image.ARROW_SW, Image.ARROW_NW]
+                        orig_list = [Image.ARROW_NE, Image.ARROW_SE, Image.ARROW_SW, Image.ARROW_NW]
                         while True:
-                            newlist = sorted(origlist, key=randomkey)
-                            display.show(newlist, delay=500)
+                            new_list = sorted(orig_list, key=random_key)
+                            display.show(new_list, delay=500)
                             display.clear()
                             sleep(500)
-                            rev_list = reversed(newlist)
+                            rev_list = reversed(new_list)
                             display.show(rev_list, delay=500)
                             display.clear()
                             sleep(1000)

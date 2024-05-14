@@ -8,7 +8,7 @@ Firefly
 .. code-block:: python
 
     # A micro:bit Firefly.
-    # By Nicholas H.Tollervey. Released to the public domain.
+    # By Nicholas H. Tollervey. Released to the public domain.
     from microbit import *
     import radio
     import random

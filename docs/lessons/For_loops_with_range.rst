@@ -12,9 +12,9 @@ See: https://www.w3schools.com/python/python_for_loops.asp
 Range function starting at 0
 ----------------------------------------
 
-.. py:function:: range(stopvalue)
+.. py:function:: range(stop_value)
 
-    Returns a sequence of numbers, starting from 0 by default, and increments by 1 (by default), and ends before the ``stopvalue`` number. 
+    Returns a sequence of numbers, starting from 0 by default, and increments by 1 (by default), and ends before the ``stop_value`` number. 
 
 | range(3) returns the numbers 0, 1, 2. It starts at 0. It goes up by 1. It stops before 3, at 2.
 
@@ -75,9 +75,9 @@ Range function starting at 0
 Range function with start and stop values
 --------------------------------------------
 
-.. py:function:: range(startvalue, stopvalue)
+.. py:function:: range(start_value, stop_value)
 
-    Returns a sequence of numbers, starting at the ``startvalue`` number, and increments by 1 (by default), and ends before the ``stopvalue`` number. 
+    Returns a sequence of numbers, starting at the ``start_value`` number, and increments by 1 (by default), and ends before the ``stop_value`` number. 
 
 | range(2, 6) returns the numbers 2, 3, 4, 5. It starts at 2. It goes up by 1. It stops before 6, at 5.
 | range(2, 6) can be read as 'range of 2 up to but not including 6'.
@@ -138,9 +138,9 @@ Range function with start and stop values
 Range function with a step size
 --------------------------------------------
 
-.. py:function:: range(startvalue, stopvalue, stepsize)
+.. py:function:: range(start_value, stop_value, step_size)
 
-    Returns a sequence of numbers, starting at the ``startvalue`` number, incremented by ``stepsize``, and ending before the ``stopvalue`` number. 
+    Returns a sequence of numbers, starting at the ``start_value`` number, incremented by ``step_size``, and ending before the ``stop_value`` number. 
 
 | range(1, 6, 2) returns the numbers 1, 3, 5. It starts at 1. It goes up by 2. It stops before 6, at 5.
 | range(1, 6, 2) can be read as 'range of 1 up to but not including 6 in steps of 2'.
@@ -266,8 +266,10 @@ Advanced: nested for loops with range function
     from microbit import *
 
     while True:
-        for startnum in range(4):
-            for n in range(startnum, startnum + 5, 2):
+        for start_num in range(4):
+            for n in range(start_num, start_num + 5, 2):
                 display.scroll(n, delay=40)
+
+
 
 

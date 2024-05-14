@@ -73,7 +73,7 @@ Check the guess
 | The guess number needs to be compared with the secret number.
 | The function, **check_guess(secret_num, guess)**, returns True if the **secret_num** and the **guess** match. It returns False if they don't match.
 | Visual feedback is added via images: YES for correct, arrows to hint at the guess direction.
-| When wrong, the guess number needs to be reshown after the feedback, as a reminder of the last guess.
+| When wrong, the guess number needs to be re-shown after the feedback, as a reminder of the last guess.
 
 | The code is scaffolded below, but needs completion.
 
@@ -426,7 +426,7 @@ Guess the number version 4
 | Add the variables **best_score** and **total_games**.
 
 | Initially, there is no best score value. 
-| Rather than setting at an artibrarily high value such as 98765, it should be set to **None**.
+| Rather than setting at an arbitrarily high value such as 98765, it should be set to **None**.
 
 .. admonition:: Tasks
 

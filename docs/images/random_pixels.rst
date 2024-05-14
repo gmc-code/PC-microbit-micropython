@@ -401,7 +401,7 @@ Random pixel random.choice
 
 .. admonition:: Tasks
 
-    #. Modify the code above to use a fucntion, **rand_pix()**, to restrict the brightness to 1, 3 or 5, and the pixels to columns 0, 3, and 4 and the rows to 1 and 3.
+    #. Modify the code above to use a function, **rand_pix()**, to restrict the brightness to 1, 3 or 5, and the pixels to columns 0, 3, and 4 and the rows to 1 and 3.
 
     .. dropdown::
             :icon: codescan
@@ -412,7 +412,7 @@ Random pixel random.choice
 
                 .. tab-item:: Q1
 
-                     #. Modify the code above to use a fucntion, **rand_pix()**, to restrict the brightness to 1, 3 or 5, and the pixels to columns 0, 3, and 4 and the rows to 1 and 3.
+                     #. Modify the code above to use a function, **rand_pix()**, to restrict the brightness to 1, 3 or 5, and the pixels to columns 0, 3, and 4 and the rows to 1 and 3.
 
                     .. code-block:: python
 
@@ -571,15 +571,15 @@ Random Pixels choice Pixel rows and columns lists
     from microbit import *
     import random
 
-    xvals = [0, 2, 4]
-    yvals = [0, 2, 4]
+    x_vals = [0, 2, 4]
+    y_vals = [0, 2, 4]
 
     def rand_val(vals):
         return random.choice(vals)
 
     while True:
         for _ in range(2):
-            display.set_pixel(rand_val(xvals), rand_val(yvals), 5)
+            display.set_pixel(rand_val(x_vals), rand_val(y_vals), 5)
         sleep(200)
         display.clear()
 
@@ -606,15 +606,15 @@ Random Pixels choice Pixel rows and columns lists
                         from microbit import *
                         import random
 
-                        xvals = [1, 2 ,3]
-                        yvals = [1, 2 ,3]
+                        x_vals = [1, 2 ,3]
+                        y_vals = [1, 2 ,3]
 
                         def rand_val(vals):
                             return random.choice(vals)
 
                         while True:
                             for _ in range(3):
-                                display.set_pixel(rand_val(xvals), rand_val(yvals), 5)
+                                display.set_pixel(rand_val(x_vals), rand_val(y_w), 5)
                             sleep(200)
                             display.clear()
 
@@ -835,15 +835,15 @@ get_pixel and set_pixel
 
                         def fill_screen_with_counter():
                             counter = 0
-                            screenset = set()
+                            screen_set = set()
                             while True:
                                 counter += 1
                                 x = randint(0, 4)
                                 y = randint(0, 4)
                                 brightness = randint(1, 4)
                                 display.set_pixel(x, y, brightness)
-                                screenset.add(x + y*5)
-                                if len(screenset) == 25:
+                                screen_set.add(x + y*5)
+                                if len(screen_set) == 25:
                                     return counter
                                 sleep(1)
 

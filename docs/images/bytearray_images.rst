@@ -17,21 +17,21 @@ bytearray with integer list
 
     from microbit import *
 
-    newimg = Image(5, 5, bytearray([1,1,1,1,1,3,3,3,3,3,5,5,5,5,5,7,7,7,7,7,9,9,9,9,9]))
-    display.show(newimg)
+    new_img = Image(5, 5, bytearray([1,1,1,1,1,3,3,3,3,3,5,5,5,5,5,7,7,7,7,7,9,9,9,9,9]))
+    display.show(new_img)
 
 
 | The advantage of using bytearray is that it allows integer lists to be used instead of strings.
 | Integer lists are easier to manipulate.
 
 
-| The code below uses bytearrays to design  gradient custom images.
+| The code below uses bytearrays to design gradient custom images.
 
 .. code-block:: python
 
     from microbit import *
 
-    my_image_diaggrad = Image(5, 5, bytearray([
+    my_image_diag_grad = Image(5, 5, bytearray([
     1, 2, 3, 4, 5,
     2, 3, 4, 5, 6,
     3, 4, 5, 6, 7,
@@ -39,7 +39,7 @@ bytearray with integer list
     5, 6, 7, 8, 9,
     ]))
 
-    my_image_horzgrad = Image(5, 5, bytearray([
+    my_image_horz_grad = Image(5, 5, bytearray([
     1, 2, 3, 4, 5,
     1, 2, 3, 4, 5,
     1, 2, 3, 4, 5,
@@ -47,7 +47,7 @@ bytearray with integer list
     1, 2, 3, 4, 5,
     ]))
 
-    my_image_vertgrad = Image(5, 5, bytearray([
+    my_image_vert_grad = Image(5, 5, bytearray([
     1, 1, 1, 1, 1,
     2, 2, 2, 2, 2,
     3, 3, 3, 3, 3,
@@ -57,11 +57,11 @@ bytearray with integer list
 
 
     while True:
-        display.show(my_image_horzgrad)
+        display.show(my_image_horz_grad)
         sleep(500)
-        display.show(my_image_vertgrad)
+        display.show(my_image_vert_grad)
         sleep(600)
-        display.show(my_image_diaggrad)
+        display.show(my_image_diag_grad)
         sleep(700)
         display.clear()
         sleep(700)
@@ -241,21 +241,21 @@ Integer-list-producing definitions for bytearray
 | Example code to limit the values and round to an integer is below.
 | **x_val1** is the initial x value.
 | **x** is the x position of a pixel (from 0 to 4)
-| **xstep** is the step size for a gradient.
-| **int(x_val1 + (x * xstep))** makes sure the calculation gives an integer.
+| **x_step** is the step size for a gradient.
+| **int(x_val1 + (x * x_step))** makes sure the calculation gives an integer.
 | **max(0, x)** makes sure the value is at least 0.
 | **min(9, x)** makes sure the value is no more than 9.
 
 .. code-block:: python
 
-    value = x_val1 + (x * xstep)
+    value = x_val1 + (x * x_step)
     # is improved to make sure integers between 0 and 9 are produced
-    value = min(9, max(0, int(x_val1 + (x * xstep))))
+    value = min(9, max(0, int(x_val1 + (x * x_step))))
 
 | The definition, below, produces the integer list to be used for a horizontal gradient from 1 in the left to 9 in the right. [1, 3, 5, 7, 9, 1, 3, 5, 7, 9, 1, 3, 5, 7, 9, 1, 3, 5, 7, 9, 1, 3, 5, 7, 9]
 | It creates an empty list, **grid = []**.
 | It then appends each new value to it, **grid.append(new_val)**.
-| As the code loops through the x values, **for x in range(5)**, new values are calculated by adding steps: **new_val = x_val1 + (x * xstep)**.
+| As the code loops through the x values, **for x in range(5)**, new values are calculated by adding steps: **new_val = x_val1 + (x * x_step)**.
 | The image array is made using **gradient_x(1, 2)**, so that x starts at 1 and increases in steps of 2.
 
 .. code-block:: python
@@ -263,17 +263,17 @@ Integer-list-producing definitions for bytearray
     from microbit import *
 
     
-    def gradient_x(x_val1, xstep):
+    def gradient_x(x_val1, x_step):
         grid = []
         for y in range(5):
             for x in range(5):
-                new_val = min(9, max(0, int(x_val1 + (x * xstep))))
+                new_val = min(9, max(0, int(x_val1 + (x * x_step))))
                 grid.append(new_val)
         return grid
 
     img_array = gradient_x(1, 2)
-    img_horzgrad = Image(5, 5, bytearray(img_array))
-    display.show(img_horzgrad)
+    img_horz_grad = Image(5, 5, bytearray(img_array))
+    display.show(img_horz_grad)
 
 ----
 
@@ -301,18 +301,18 @@ Integer-list-producing definitions for bytearray
                         from microbit import *
 
 
-                        def gradient_x(x_val1, xstep):
+                        def gradient_x(x_val1, x_step):
                             grid = []
                             for y in range(5):
                                 for x in range(5):
-                                    newx = min(9, max(0, int(x_val1 + (x * xstep))))
-                                    grid.append(newx)
+                                    new_x = min(9, max(0, int(x_val1 + (x * x_step))))
+                                    grid.append(new_x)
                             return grid
 
 
                         img_array = gradient_x(7, -1)
-                        img_horzgrad = Image(5, 5, bytearray(img_array))
-                        display.show(img_horzgrad)
+                        img_horz_grad = Image(5, 5, bytearray(img_array))
+                        display.show(img_horz_grad)
 
                 .. tab-item:: Q2
 
@@ -323,18 +323,18 @@ Integer-list-producing definitions for bytearray
                         from microbit import *
 
 
-                        def gradient_y(y_val1, ystep):
+                        def gradient_y(y_val1, y_step):
                             grid = []
                             for y in range(5):
-                                newy = min(9, max(0, int(y_val1 + (y * ystep))))
+                                new_y = min(9, max(0, int(y_val1 + (y * y_step))))
                                 for x in range(5):
-                                    grid.append(newy)
+                                    grid.append(new_y)
                             return grid
 
 
                         img_array = gradient_y(1, 2)
-                        img_vertgrad = Image(5, 5, bytearray(img_array))
-                        display.show(img_vertgrad)
+                        img_vert_grad = Image(5, 5, bytearray(img_array))
+                        display.show(img_vert_grad)
 
                 .. tab-item:: Q3
 
@@ -345,18 +345,18 @@ Integer-list-producing definitions for bytearray
                         from microbit import *
 
 
-                        def gradient_y(y_val1, ystep):
+                        def gradient_y(y_val1, y_step):
                             grid = []
                             for y in range(5):
-                                newy = min(9, max(0, int(y_val1 + (y * ystep))))
+                                new_y = min(9, max(0, int(y_val1 + (y * y_step))))
                                 for x in range(5):
-                                    grid.append(newy)
+                                    grid.append(new_y)
                             return grid
 
 
                         img_array = gradient_y(9, -8 / 5)
-                        img_vertgrad = Image(5, 5, bytearray(img_array))
-                        display.show(img_vertgrad)
+                        img_vert_grad = Image(5, 5, bytearray(img_array))
+                        display.show(img_vert_grad)
 
 
                 .. tab-item:: Q4
@@ -368,20 +368,20 @@ Integer-list-producing definitions for bytearray
                         from microbit import *
 
 
-                        def gradient_xy(xy_val1, xstep, ystep):
+                        def gradient_xy(xy_val1, x_step, y_step):
                             grid = []
                             for y in range(5):
-                                yadd = min(9, max(0, (y * ystep)))
+                                y_add = min(9, max(0, (y * y_step)))
                                 for x in range(5):
-                                    xadd = min(9, max(0, (x * xstep)))
-                                    newxy = min(9, max(0, int(xy_val1 + xadd + yadd)))
-                                    grid.append(newxy)
+                                    x_add = min(9, max(0, (x * x_step)))
+                                    new_xy = min(9, max(0, int(xy_val1 + x_add + y_add)))
+                                    grid.append(new_xy)
                             return grid
 
 
                         img_array = gradient_xy(1, 1, 1)
-                        img_vertgrad = Image(5, 5, bytearray(img_array))
-                        display.show(img_vertgrad)
+                        img_vert_grad = Image(5, 5, bytearray(img_array))
+                        display.show(img_vert_grad)
 
 
 
@@ -398,26 +398,26 @@ Random-integer-producing definitions for bytearray
     from random import randint
 
 
-    def full_screen_fill_bytes(minbrightness=1, maxbrightness=9):
+    def full_screen_fill_bytes(min_brightness=1, max_brightness=9):
         screen_bytes = []
         for y in range(0, 5):
             for x in range(0, 5):
-                brightness = randint(minbrightness, maxbrightness)
+                brightness = randint(min_brightness, max_brightness)
                 screen_bytes.append(brightness)
         return screen_bytes
 
 
     while True:
         screen_bytes = full_screen_fill_bytes(1, 9)
-        newimg = Image(5, 5, bytearray(screen_bytes))
-        display.show(newimg)
+        new_img = Image(5, 5, bytearray(screen_bytes))
+        display.show(new_img)
         sleep(1000)
 
 ----
 
 .. admonition:: Tasks
 
-    #. Modify the code to add 2 nested for-loops for x values so that the left and right edges use the maxbrightness value.
+    #. Modify the code to add 2 nested for-loops for x values so that the left and right edges use the max_brightness value.
 
     .. dropdown::
             :icon: codescan
@@ -428,7 +428,7 @@ Random-integer-producing definitions for bytearray
 
                 .. tab-item:: Q1
 
-                    Modify the code to add 2 nested for-loops for x values so that the left and right edges use the maxbrightness value.
+                    Modify the code to add 2 nested for-loops for x values so that the left and right edges use the max_brightness value.
 
                     .. code-block:: python
                         
@@ -436,25 +436,25 @@ Random-integer-producing definitions for bytearray
                         from random import randint
 
 
-                        def full_screen_fill_bytes(minbrightness=1, maxbrightness=9):
+                        def full_screen_fill_bytes(min_brightness=1, max_brightness=9):
                             screen_bytes = []
                             for y in range(0, 5):
                                 for x in range(0, 1):
-                                    brightness = maxbrightness
+                                    brightness = max_brightness
                                     screen_bytes.append(brightness)
                                 for x in range(1, 4):
-                                    brightness = randint(minbrightness, maxbrightness)
+                                    brightness = randint(min_brightness, max_brightness)
                                     screen_bytes.append(brightness)
                                 for x in range(4, 5):
-                                    brightness = maxbrightness
+                                    brightness = max_brightness
                                     screen_bytes.append(brightness)
                             return screen_bytes
 
 
                         while True:
                             screen_bytes = full_screen_fill_bytes(1, 9)
-                            newimg = Image(5, 5, bytearray(screen_bytes))
-                            display.show(newimg)
+                            new_img = Image(5, 5, bytearray(screen_bytes))
+                            display.show(new_img)
                             sleep(1000)   
           
 ----
@@ -464,7 +464,7 @@ List comprehension for bytearray images
 
 See: https://www.w3schools.com/python/python_lists_comprehension.asp
 
-.. py:function:: newlist = [expression for item in iterable]
+.. py:function:: new_list = [expression for item in iterable]
 
     | Create a list of the results of expressions that take each item in an iterable, such as a list, tuple or string.
 
@@ -478,8 +478,8 @@ See: https://www.w3schools.com/python/python_lists_comprehension.asp
 
 
     brightness_array = [int(i/3 + 1) for i in range(25)]
-    newimg = Image(5, 5, bytearray(brightness_array))
-    display.show(newimg)
+    new_img = Image(5, 5, bytearray(brightness_array))
+    display.show(new_img)
 
 
 | The code below creates 5 by 5 images with random brightness.
@@ -494,8 +494,8 @@ See: https://www.w3schools.com/python/python_lists_comprehension.asp
 
     while True:
         brightness_array = [random.randint(0, 9) for _ in range(25)]
-        newimg = Image(5, 5, bytearray(brightness_array))
-        display.show(newimg)
+        new_img = Image(5, 5, bytearray(brightness_array))
+        display.show(new_img)
         sleep(300)
 
 ----
@@ -523,8 +523,8 @@ See: https://www.w3schools.com/python/python_lists_comprehension.asp
 
 
                         brightness_array = [int(((i % 3) + 1) * 3) for i in range(25)]
-                        newimg = Image(5, 5, bytearray(brightness_array))
-                        display.show(newimg)
+                        new_img = Image(5, 5, bytearray(brightness_array))
+                        display.show(new_img)
 
                 .. tab-item:: Q2
 
@@ -538,8 +538,8 @@ See: https://www.w3schools.com/python/python_lists_comprehension.asp
 
                         while True:
                             brightness_array = [random.choice([1, 5, 9]) for _ in range(25)]
-                            newimg = Image(5, 5, bytearray(brightness_array))
-                            display.show(newimg)
+                            new_img = Image(5, 5, bytearray(brightness_array))
+                            display.show(new_img)
                             sleep(500)
 
 ----
@@ -549,7 +549,7 @@ List comprehension with alternatives for bytearray images
 
 See: https://www.w3schools.com/python/python_lists_comprehension.asp
 
-.. py:function:: newlist = [expression if condition else expression2 for item in iterable]
+.. py:function:: new_list = [expression if condition else expression2 for item in iterable]
 
     | Create a list of expressions that take each item in an iterable, such as a list, tuple or string.
 
@@ -562,8 +562,8 @@ See: https://www.w3schools.com/python/python_lists_comprehension.asp
 
 
     brightness_array = [9 if i % 2 == 0 else 0 for i in range(25)]
-    newimg = Image(5, 5, bytearray(brightness_array))
-    display.show(newimg)
+    new_img = Image(5, 5, bytearray(brightness_array))
+    display.show(new_img)
 
 ----
 
@@ -588,8 +588,8 @@ See: https://www.w3schools.com/python/python_lists_comprehension.asp
                         from microbit import *
 
                         brightness_array = [9 if i % 2 == 1 else 0 for i in range(25)]
-                        newimg = Image(5, 5, bytearray(brightness_array))
-                        display.show(newimg)
+                        new_img = Image(5, 5, bytearray(brightness_array))
+                        display.show(new_img)
 
                 .. tab-item:: Q2
 
@@ -600,6 +600,6 @@ See: https://www.w3schools.com/python/python_lists_comprehension.asp
                         from microbit import *
 
                         brightness_array = [9 if i % 3 == 0 else 0 for i in range(25)]
-                        newimg = Image(5, 5, bytearray(brightness_array))
-                        display.show(newimg)
+                        new_img = Image(5, 5, bytearray(brightness_array))
+                        display.show(new_img)
 

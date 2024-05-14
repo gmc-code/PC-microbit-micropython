@@ -19,7 +19,7 @@ Scaffold for Tasks
     import music
 
 
-    def display_startupmessage():
+    def display_startup_message():
         # replace pass with the code to display some text
         pass
 
@@ -74,7 +74,7 @@ Scaffold for Tasks
         pass
 
 
-    display_startupmessage()
+    display_startup_message()
     while True:
         if button_a.is_pressed():
             display_textA()
@@ -110,7 +110,7 @@ Sample Edited Scaffold
     from microbit import *
 
 
-    def display_startupmessage():
+    def display_startup_message():
         display.scroll('A or B')
 
 
@@ -128,7 +128,8 @@ Sample Edited Scaffold
         pin1.write_digital(0)
 
 
-    display_startupmessage()
+    display_startup_message()
+
     while True:
         if button_a.is_pressed():
             use_motorA()

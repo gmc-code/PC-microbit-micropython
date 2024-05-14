@@ -51,7 +51,7 @@ Functions for integers
     When n = 2, values are 0, 1, 2 or 3.
     When n = 3, values are from 0 to 7.
     The maximum value is found using (n**2 -1). eg. n**3 - 1 = 7
-    This may be useful for specifying random numebrs based on powers of 2.
+    This may be useful for specifying random numbers based on powers of 2.
 
 | The code below scrolls a random number from 0 to 7.
 
@@ -155,8 +155,8 @@ seed
 
 .. function:: urandom.seed(n=None)
 
-    Initialise the urandom number generator module with the seed *n* which should
-    be an integer.  When no argument (or ``None``) is passed in, it will initialise the generator with a hardware generated random number.
+    Initialize the urandom number generator module with the seed *n* which should
+    be an integer.  When no argument (or ``None``) is passed in, it will initialize the generator with a hardware generated random number.
 
 
 .. code-block:: python

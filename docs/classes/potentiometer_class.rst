@@ -14,7 +14,7 @@ Potentiometer Class
 | ``pot = Potentiometer()`` uses the default pin: pin0. 
 | The pin is kept track of via the **self.io_pin** variable.
 | To use **pin1** instead, use ``pot = Potentiometer(pin1)`` instead of ``pot = Potentiometer()``
-| The line ``self.last_val = -1`` sets **last_val** to be a value it cannot be, -1, so that the first reading will be recognised as a change.
+| The line ``self.last_val = -1`` sets **last_val** to be a value it cannot be, -1, so that the first reading will be recognized as a change.
 
 .. code-block:: python
 
@@ -44,7 +44,7 @@ Potentiometer Class
             return int(scaled)
 
     # this defaults to pin0
-    # to use pinl1 instead use pot = Potentiometer(pin1)
+    # to use pin1 instead use pot = Potentiometer(pin1)
     pot = Potentiometer()
     while True:
         if pot.was_changed():
@@ -195,7 +195,7 @@ Potentiometer Class
                         def was_changed(self):
                             curr_val = self.get_val()
                             if self.last_val != curr_val:
-                                self.last_val = curr_val
+                                self.last_val = corr_val
                                 return True
                             else:
                                 return False

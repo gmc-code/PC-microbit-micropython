@@ -225,7 +225,7 @@ Display.show a list of images
 
 | A list of images can be displayed in sequence.
 
-.. py:function:: display.show(imagelist, delay=400)
+.. py:function:: display.show(image_list, delay=400)
 
     | Display images from a list in sequence.
     | Each image in a list of images is shown with ``delay`` milliseconds between them.
@@ -737,14 +737,14 @@ All Images
  
 .. admonition:: Tip
 
-    Advanced code to collect the list of all images is below. teh
+    Advanced code to collect the list of all images is below.
     
     .. code-block:: python
 
         from microbit import *
 
         dir_images = dir(Image)
-        built_in_images = ["Image." + img for img in dir_images if type(getattr(Image, img)) == Image]
+        built_in_images = ["Image." + img for img in dir_images if type(Image, img)) == Image]
         built_in_images_string = ", ".join(built_in_images)
         built_in_images_string.replace('"', '')
         print(built_in_images_string)

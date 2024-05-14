@@ -33,8 +33,8 @@ Read analog
     from microbit import *
 
     while True:
-        potval = pin2.read_analog()
-        display.scroll(potval, delay=80)
+        pot_val = pin2.read_analog()
+        display.scroll(pot_val, delay=80)
         sleep(20)
 
 ----
@@ -60,8 +60,8 @@ Read analog
 
 
                         def display_potentiometer_value(pin=pin2):
-                            potval = pin.read_analog()
-                            display.scroll(potval, delay=80)
+                            pot_val = pin.read_analog()
+                            display.scroll(pot_val, delay=80)
 
 
                         while True:
@@ -85,53 +85,53 @@ Advanced: Power meter simulation
 | The maximum potentiometer reading is 1023, so this can be treated as 1000 for simplicity.
 | This gives 5 levels in steps of 200.
 | Each row step of 200 can be divided into 10 steps of brightness from 0 to 9.
-| 3 variables are used for each section of the display: **yclearlist** for the blank rows, **ylist** for the full brightness rows and **yval** for the row in between that is of partial brightness.
-| **yclearlist** has the rows which are at brightness of 0.
-| **ylist** has the rows which are at brightness of 9.
-| **yval** is the row with variable brightness.
+| 3 variables are used for each section of the display: **y_clear_list** for the blank rows, **y_list** for the full brightness rows and **y_val** for the row in between that is of partial brightness.
+| **y_clear_list** has the rows which are at brightness of 0.
+| **y_list** has the rows which are at brightness of 9.
+| **y_val** is the row with variable brightness.
 | Each of these variables is first checked to see if it is ``None`` before setting the pixels it controls.
 
 
 .. code-block::
      
     def display_level(level):
-        xlist = [0, 1, 2, 3, 4]
+        x_list = [0, 1, 2, 3, 4]
 
         # display
         val = int((level % 200) * 9 / 200)
         if level < 200:
-            yval = 4
-            ylist = None
-            yclearlist = [0, 1, 2, 3]
+            y_val = 4
+            y_list = None
+            y_clear_list = [0, 1, 2, 3]
         elif level < 400:
-            yval = 3
-            ylist = [4]
-            yclearlist = [0, 1, 2]
+            y_val = 3
+            y_list = [4]
+            y_clear_list = [0, 1, 2]
         elif level < 600:
-            yval = 2
-            ylist = [3, 4]
-            yclearlist = [0, 1]
+            y_val = 2
+            y_list = [3, 4]
+            y_clear_list = [0, 1]
         elif level < 800:
-            yval = 1
-            ylist = [2, 3, 4]
-            yclearlist = [0]
+            y_val = 1
+            y_list = [2, 3, 4]
+            y_clear_list = [0]
         elif level < 1000:
-            yval = 0
-            ylist = [1, 2, 3, 4]
-            yclearlist = None
+            y_val = 0
+            y_list = [1, 2, 3, 4]
+            y_clear_list = None
         else:
-            yval = None
-            ylist = [0, 1, 2, 3, 4]
-            yclearlist = None
+            y_val = None
+            y_list = [0, 1, 2, 3, 4]
+            y_clear_list = None
 
-        for x in xlist:
-            if yval is not None:
-                display.set_pixel(x, yval, val)
-            if ylist is not None:
-                for y in ylist:
+        for x in x_list:
+            if y_val is not None:
+                display.set_pixel(x, y_val, val)
+            if y_list is not None:
+                for y in y_list:
                     display.set_pixel(x, y, 9)
-            if yclearlist is not None:
-                for y in yclearlist:
+            if y_clear_list is not None:
+                for y in y_clear_list:
                     display.set_pixel(x, y, 0)
 
 | Try the full code.
@@ -142,49 +142,49 @@ Advanced: Power meter simulation
 
 
     def display_level(level):
-        xlist = [0, 1, 2, 3, 4]
+        x_list = [0, 1, 2, 3, 4]
 
         # display
         val = int((level % 200) * 9 / 200)
         if level < 200:
-            yval = 4
-            ylist = None
-            yclearlist = [0, 1, 2, 3]
+            y_val = 4
+            y_list = None
+            y_clear_list = [0, 1, 2, 3]
         elif level < 400:
-            yval = 3
-            ylist = [4]
-            yclearlist = [0, 1, 2]
+            y_val = 3
+            y_list = [4]
+            y_clear_list = [0, 1, 2]
         elif level < 600:
-            yval = 2
-            ylist = [3, 4]
-            yclearlist = [0, 1]
+            y_val = 2
+            y_list = [3, 4]
+            y_clear_list = [0, 1]
         elif level < 800:
-            yval = 1
-            ylist = [2, 3, 4]
-            yclearlist = [0]
+            y_val = 1
+            y_list = [2, 3, 4]
+            y_clear_list = [0]
         elif level < 1000:
-            yval = 0
-            ylist = [1, 2, 3, 4]
-            yclearlist = None
+            y_val = 0
+            y_list = [1, 2, 3, 4]
+            y_clear_list = None
         else:
-            yval = None
-            ylist = [0, 1, 2, 3, 4]
-            yclearlist = None
+            y_val = None
+            y_list = [0, 1, 2, 3, 4]
+            y_clear_list = None
 
-        for x in xlist:
-            if yval is not None:
-                display.set_pixel(x, yval, val)
-            if ylist is not None:
-                for y in ylist:
+        for x in x_list:
+            if y_val is not None:
+                display.set_pixel(x, y_val, val)
+            if y_list is not None:
+                for y in y_list:
                     display.set_pixel(x, y, 9)
-            if yclearlist is not None:
-                for y in yclearlist:
+            if y_clear_list is not None:
+                for y in y_clear_list:
                     display.set_pixel(x, y, 0)
 
 
     def display_potentiometer_level(pin=pin2):
-        potval = pin.read_analog()
-        display_level(potval)
+        pot_val = pin.read_analog()
+        display_level(pot_val)
 
 
     while True:

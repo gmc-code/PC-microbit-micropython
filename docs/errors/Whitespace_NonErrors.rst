@@ -28,7 +28,7 @@ Proper use of Whitespace improves readability
 Whitespace before parentheses: No Error
 -------------------------------------------
 
-| ``display.scroll ("A", delay=200)`` has an unneeeded space before the parentheses.
+| ``display.scroll ("A", delay=200)`` has an unneeded space before the parentheses.
 | When Check is pressed, it reports that there is Whitespace before the "(".
 | Without fixing this, after flashing to the microbit, it works.
 | Press the **tidy** button to remove the extra whitespace. 
@@ -103,7 +103,7 @@ Whitespace after keyword: no Error
 
 ----
 
-Whitespace missing arouns equals operator: no Error
+Whitespace missing around equals operator: no Error
 -------------------------------------------------------
 
 | ``total=2+5`` lacks spaces around the '=' operator.

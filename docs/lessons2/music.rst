@@ -283,23 +283,23 @@ Scales
     from microbit import *
     import music
 
-    cmajor = ['c', 'd', 'e', 'f', 'g', 'a', 'b', 'c']
-    eminor = ['e', 'f#', 'g', 'a', 'b', 'c', 'd', 'e']
+    c_major = ['c', 'd', 'e', 'f', 'g', 'a', 'b', 'c']
+    e_minor = ['e', 'f#', 'g', 'a', 'b', 'c', 'd', 'e']
 
     while True:
         if button_a.is_pressed():
-            music.play(cmajor)
+            music.play(c_major)
         elif button_b.is_pressed():
-            music.play(eminor)
+            music.play(e_minor)
         sleep(1000)
 
 ----
 
 .. admonition:: Tasks
 
-    #. Play the 8 notes of D major. See: https://www.pianoscales.org/major.html
-    #. Play the 8 notes of F minor. See: https://www.pianoscales.org/minor.html
-    #. Play the D major scale when the A button is pressed and the F minor scale when the B button is pressed.
+    #. Play the 8 notes of D_major. See: https://www.pianoscales.org/_major.html
+    #. Play the 8 notes of F_minor. See: https://www.pianoscales.org/_minor.html
+    #. Play the D_major scale when the A button is pressed and the F_minor scale when the B button is pressed.
 
     .. dropdown::
         :icon: codescan
@@ -310,53 +310,53 @@ Scales
 
             .. tab-item:: Q1
 
-                Play the 8 notes of D major.
+                Play the 8 notes of D_major.
 
                 .. code-block:: python
 
                     from microbit import *
                     import music
 
-                    dmajor = ["D", "E", "F#", "G", "A", "B", "C#", "D"]
+                    d_major = ["D", "E", "F#", "G", "A", "B", "C#", "D"]
 
                     while True:
-                        music.play(dmajor)
+                        music.play(d_major)
                         sleep(1000)
 
 
             .. tab-item:: Q2
 
-                Play the 8 notes of F minor.
+                Play the 8 notes of F_minor.
 
                 .. code-block:: python
 
                     from microbit import *
                     import music
 
-                    fminor = ["F", "G", "Ab", "Bb", "C", "Db", "Eb", "F"]
+                    f_minor = ["F", "G", "Ab", "Bb", "C", "Db", "Eb", "F"]
 
                     while True:
-                        music.play(fminor)
+                        music.play(f_minor)
                         sleep(1000)
 
 
             .. tab-item:: Q3
 
-                Play the D major scale when the A button is pressed and the F minor scale when the B button is pressed.
+                Play the D_major scale when the A button is pressed and the F_minor scale when the B button is pressed.
 
                 .. code-block:: python
 
                     from microbit import *
                     import music
 
-                    dmajor = ["D", "E", "F#", "G", "A", "B", "C#", "D"]
-                    fminor = ["F", "G", "Ab", "Bb", "C", "Db", "Eb", "F"]
+                    d_major = ["D", "E", "F#", "G", "A", "B", "C#", "D"]
+                    f_minor = ["F", "G", "Ab", "Bb", "C", "Db", "Eb", "F"]
 
                     while True:
                         if button_a.is_pressed():
-                            music.play(dmajor)
+                            music.play(d_major)
                         elif button_b.is_pressed():
-                            music.play(fminor)
+                            music.play(f_minor)
                         sleep(1000)
 
 ----
@@ -472,7 +472,7 @@ Sound effects using pitch
     | If wait is set to True, this function is blocking.
 
    
-| The code below inreases the pitch in steps of 16 with playing duration of 20 ms.
+| The code below increases the pitch in steps of 16 with playing duration of 20 ms.
 
 .. code-block:: python
     
@@ -596,8 +596,8 @@ A	    1760
 
 .. admonition:: Tasks
 
-    #. Modify the code to play the pitches of the E minor scale. See: https://www.piano-keyboard-guide.com/e-minor-scale.html.
-    #. Modify the code to play the pitches of the D major scale. See: http://www.piano-keyboard-guide.com/d-major-scale.html.
+    #. Modify the code to play the pitches of the E_minor scale. See: https://www.piano-keyboard-guide.com/e-_minor-scale.html.
+    #. Modify the code to play the pitches of the D_major scale. See: http://www.piano-keyboard-guide.com/d-_major-scale.html.
 
     .. dropdown::
         :icon: codescan
@@ -608,7 +608,7 @@ A	    1760
 
             .. tab-item:: Q1
 
-                Modify the code to play the pitches of the E minor scale. See: https://www.piano-keyboard-guide.com/e-minor-scale.html.
+                Modify the code to play the pitches of the E_minor scale. See: https://www.piano-keyboard-guide.com/e-_minor-scale.html.
 
                 .. code-block:: python
 
@@ -625,7 +625,7 @@ A	    1760
 
             .. tab-item:: Q2
 
-                Modify the code to play the pitches of the D major scale. See: http://www.piano-keyboard-guide.com/d-major-scale.html.
+                Modify the code to play the pitches of the D_major scale. See: http://www.piano-keyboard-guide.com/d-_major-scale.html.
 
                 .. code-block:: python
 
@@ -645,7 +645,7 @@ A	    1760
 Custom tunes
 ------------------
 
-| Guess the nursery rhyme (care of Raph).
+| Guess the nursery rhyme.
 
 .. code-block:: python
 

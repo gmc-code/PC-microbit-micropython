@@ -242,7 +242,7 @@ microbit scale function
 
                     while True:
                         if button_a.is_pressed():
-                            xreading = abs(accelerometer.get_x())
+                            x_reading = abs(accelerometer.get_x())
                             waveform_index = scale(accelerometer.get_x(), from_=(-1023, 1023), to=(0, 4))
                             sound_effect.waveform = waveform_list[waveform_index]
                             audio.play(sound_effect, wait=True)                                           
@@ -418,9 +418,9 @@ Transferring Sound Effects
 
 | ``params = snd_eff_str[start:end]``: This line is slicing the snd_eff_str string from start to end to get the parameters of the SoundEffect. The result is a string of numbers separated by commas, which represent the parameters of the SoundEffect.
 
-| ``mparams = tuple(map(int, incoming_message.split(',')))``: This line is splitting the `incoming_message` string at each comma and converting each resulting string to an integer. The results are then packed into a tuple and assigned to `mparams`.
+| ``m_params = tuple(map(int, incoming_message.split(',')))``: This line is splitting the `incoming_message` string at each comma and converting each resulting string to an integer. The results are then packed into a tuple and assigned to `m_params`.
 
-| ``sound_effect = audio.SoundEffect(*mparams)``: This line is creating a `SoundEffect` object from the `audio` module. The `*mparams` syntax is using tuple unpacking to pass the values in `mparams` as arguments to `SoundEffect`.
+| ``sound_effect = audio.SoundEffect(*m_params)``: This line is creating a `SoundEffect` object from the `audio` module. The `*m_params` syntax is using tuple unpacking to pass the values in `m_params` as arguments to `SoundEffect`.
 
 | In summary, these lines of code are converting a SoundEffect object to a string representation, and then extracting the parameters of the SoundEffect from the string. This allows the parameters to be sent over the radio as a string, and then converted back into a SoundEffect on the receiving microbit.
 
@@ -482,9 +482,9 @@ Transferring Sound Effects
                 display.show(incoming_message)
             else:
                 # Convert the message back to a tuple of integers: 54, 54, 1000, 255, 0, 4, 0, 1)
-                mparams = tuple(map(int, incoming_message.split(',')))
+                m_params = tuple(map(int, incoming_message.split(',')))
                 # Create the sound effect with tuple unpacking: audio.SoundEffect(54, 54, 1000, 255, 0, 4, 0, 1)
-                sound_effect = audio.SoundEffect(*mparams)
+                sound_effect = audio.SoundEffect(*m_params)
                 # Play the sound effect
                 audio.play(sound_effect)
                 sleep(600)
@@ -493,5 +493,5 @@ Transferring Sound Effects
 
 .. admonition:: Exercise
 
-    #. Use A and B-buttons to send diffferent custom sound effects to another microbit.
+    #. Use A and B-buttons to send different custom sound effects to another microbit.
 

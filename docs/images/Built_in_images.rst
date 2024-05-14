@@ -12,9 +12,9 @@ Built-in images
 
 .. admonition:: Tip
 
-    | Variables and functions should only use lower case letetrs.
+    | Variables and functions should only use lower case letters.
     | Classes should use CapWords like **TeamPlayers**.
-    | Constants shoud be in ALLCAPS, like **PIN**.
+    | Constants should be in ALLCAPS, like **PIN**.
     | The use of **Image** with a capital is typical of a class, and **HEART** is a constant within the **Image** class.
 
 ----
@@ -87,7 +87,7 @@ Display.show a built-in Image
 Flashing Image
 ----------------------------------------
 
-| When a sleep is used along wiht clearing the display, an image can be made to flash.
+| When a sleep is used along with clearing the display, an image can be made to flash.
 | The code below flashes a the built-in heart image 
 
 .. code-block:: python
@@ -225,7 +225,7 @@ Display.show a list of images
 
 | A list of images can be displayed in sequence.
 
-.. py:function:: display.show(imagelist, delay=400)
+.. py:function:: display.show(image_list, delay=400)
 
     | Display images from a list in sequence.
     | Each image in a list of images is shown with ``delay`` milliseconds between them.

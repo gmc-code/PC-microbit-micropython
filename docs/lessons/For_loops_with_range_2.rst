@@ -74,14 +74,14 @@ Advanced: nested for-loops with range function
 -------------------------------------------------
 
 | What does this code do?
-| What are the values of startnum in the nested loop?
+| What are the values of start_num in the nested loop?
 
 .. code-block:: python
     
     from microbit import *
 
     while True:
-        for startnum in range(4):
-            for n in range(startnum, startnum + 5, 2):
+        for start_num in range(4):
+            for n in range(start_num, start_num + 5, 2):
                 display.scroll(n, delay=40)
 

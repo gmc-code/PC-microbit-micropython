@@ -44,8 +44,8 @@ Read and Write analog
     from microbit import *
 
     while True:
-        potval = pin2.read_analog()
-        pin0.write_analog(potval)
+        pot_val = pin2.read_analog()
+        pin0.write_analog(pot_val)
         sleep(40)
 
 ----
@@ -72,9 +72,9 @@ Read and Write analog
 
 
                         while True:
-                            potval = pin2.read_analog()
-                            pin0.write_analog(potval)
-                            pin1.write_analog(potval)
+                            pot_val = pin2.read_analog()
+                            pin0.write_analog(pot_val)
+                            pin1.write_analog(pot_val)
                             sleep(40)
 
                 .. tab-item:: Q2
@@ -87,9 +87,9 @@ Read and Write analog
                         from microbit import *
 
                         while True:
-                            potval = pin2.read_analog()
-                            pin0.write_analog(potval)
-                            pin1.write_analog(1023 - potval)
+                            pot_val = pin2.read_analog()
+                            pin0.write_analog(pot_val)
+                            pin1.write_analog(1023 - pot_val)
                             sleep(40)
 
 ----
@@ -98,7 +98,7 @@ Read and Write analog
 
     #. Use a red and yellow led on separate pins. When the potentiometer value is 500 or more, use digital write to turn on the yellow led and turn the red led off. When the potentiometer value is under 500, use digital write to turn on the red led and turn the yellow led off.
     #. Add to the code above to display a yes image when the yellow led is on and a no image when the red led is on.
-    #. Use pin 8 or pin 12 for a third led and control the three leds using if and elif such that each led has atleast a 300 units range for itself from the potentiometer reading.
+    #. Use pin 8 or pin 12 for a third led and control the three leds using if and elif such that each led has at least a 300 units range for itself from the potentiometer reading.
 
     Some starting code to build from:
 
@@ -108,8 +108,8 @@ Read and Write analog
 
 
         while True:
-            potval = pin2.read_analog()
-            if potval >= 500:
+            pot_val = pin2.read_analog()
+            if pot_val >= 500:
                 pin0.write_digital(0)
                 pin1.write_digital(1)
             else:

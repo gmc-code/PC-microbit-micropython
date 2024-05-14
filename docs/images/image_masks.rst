@@ -224,7 +224,7 @@ Example Masks
     .. dropdown::
             :icon: codescan
             :color: primary
-            :class-container: sd-dropdown-containera 
+            :class-container: sd-dropdown-container
 
             .. tab-set::
 
@@ -440,7 +440,7 @@ Mask loops
     .. dropdown::
             :icon: codescan
             :color: primary
-            :class-container: sd-dropdown-containera 
+            :class-container: sd-dropdown-container
 
             .. tab-set::
 

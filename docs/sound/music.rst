@@ -395,7 +395,7 @@ Volume **V2**
 
             .. tab-item:: Q1
 
-                Instead of playing the same note each time, play a different note "c4:2", "e4:2","f#4:2" at a dfifferent volume.
+                Instead of playing the same note each time, play a different note "c4:2", "e4:2","f#4:2" at a different volume.
 
                 .. code-block:: python
 
@@ -503,7 +503,7 @@ Stop background music
 
             .. tab-item:: Q1
 
-                Instead of playing the same note each time, play a different note "c4:2", "e4:2","f#4:2" for a dfifferent volume.
+                Instead of playing the same note each time, play a different note "c4:2", "e4:2","f#4:2" for a different volume.
 
                 .. code-block:: python
 

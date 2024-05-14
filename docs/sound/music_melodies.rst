@@ -36,7 +36,7 @@ Built in music
 All Built in melodies
 ----------------------------------------
 
-| For a list of built-in meodies see: https://microbit-micropython.readthedocs.io/en/v2-docs/music.html
+| For a list of built-in melodies see: https://microbit-micropython.readthedocs.io/en/v2-docs/music.html
 | The code below plays all the melodies.
 | the A-button can be used to stop all sounds by first breaking out of the ``for`` loop, then the ``while True`` loop.
 

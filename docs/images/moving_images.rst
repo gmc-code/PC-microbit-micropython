@@ -51,7 +51,7 @@ Shift left and right
     #.  Use a **for-loop** with the range function to do the same shifts to shift the dice image to the left from off screen on the right to off screen on the left in 5 steps.
     #.  Use a **for-loop** with the list: [0, 1, 2, 3, 4, -4, -3, -2, -1, 0] to shift the dice image to the right from a central position and back from off screen on the left in 10 steps.
     #.  Use a **for-loop** with the list: [0, 2, 4, -4, -2, 0] shift the dice image to the left from a central position and back from off screen on the right in 6 steps.
-    #.  Create a definition, **h_shift_img_directions(img, directions, sleeptime=80)**,  that takes a list of shifts, **directions**,  for the shifts and applies them to move the dice image sideways, using [-4, -3, -2, -1, 0, 1, 2, 3, 4] as the argument for directions.
+    #.  Create a definition, **h_shift_img_directions(img, directions, sleep_time=80)**,  that takes a list of shifts, **directions**,  for the shifts and applies them to move the dice image sideways, using [-4, -3, -2, -1, 0, 1, 2, 3, 4] as the argument for directions.
 
 
     .. dropdown::
@@ -153,25 +153,25 @@ Shift left and right
 
                 .. tab-item:: Q7
 
-                    Create a definition, **h_shift_img_directions(img, directions, sleeptime=80)**,  that takes a list of shifts, **directions**,  for the shifts and applies them to move the dice image sideways, using [-4, -3, -2, -1, 0, 1, 2, 3, 4] as the argument for directions.
+                    Create a definition, **h_shift_img_directions(img, directions, sleep_time=80)**,  that takes a list of shifts, **directions**,  for the shifts and applies them to move the dice image sideways, using [-4, -3, -2, -1, 0, 1, 2, 3, 4] as the argument for directions.
 
                     .. code-block:: python
 
                         from microbit import *
 
 
-                        def h_shift_img_directions(img, directions, sleeptime=80):
+                        def h_shift_img_directions(img, directions, sleep_time=80):
                             for x in directions:
                                 shift_img = img.shift_right(x)
                                 display.show(shift_img)
-                                sleep(sleeptime)
+                                sleep(sleep_time)
 
 
                         img = Image("00000:09090:00900:09090:00000")
-                        sleeptime = 200
+                        sleep_time = 200
                         h_directions = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
                         while True:
-                            h_shift_img_directions(img, h_directions, sleeptime)
+                            h_shift_img_directions(img, h_directions, sleep_time)
 
 
 ----
@@ -221,7 +221,7 @@ Shift up and down
     #.  Use a **for-loop** with the range function to do the same shifts to shift the dice image to the bottom from off screen on the top to off screen on the bottom in 5 steps.
     #.  Use a **for-loop** with the list: [0, 1, 2, 3, 4, -4, -3, -2, -1, 0] to shift the dice image up from a central position and back from off screen on the bottom in 10 steps.
     #.  Use a **for-loop** with the list: [0, 2, 4, -4, -2, 0] shift the dice image to the bottom from a central position and back from off screen on the top in 6 steps.
-    #.  Create a definition, **v_shift_img_directions(img, directions, sleeptime=80)**,  that takes a list of shifts, **directions**,  for the shifts and applies them to move the dice image sideways, using [0, 1, 2, 3, 4, -4, -3, -2, -1, 0] as the argument for directions.
+    #.  Create a definition, **v_shift_img_directions(img, directions, sleep_time=80)**,  that takes a list of shifts, **directions**,  for the shifts and applies them to move the dice image sideways, using [0, 1, 2, 3, 4, -4, -3, -2, -1, 0] as the argument for directions.
 
     .. dropdown::
             :icon: codescan
@@ -322,25 +322,25 @@ Shift up and down
 
                 .. tab-item:: Q7
 
-                    Create a definition, **v_shift_img_directions(img, directions, sleeptime=80)**,  that takes a list of shifts, **directions**,  for the shifts and applies them to move the dice image sideways, using [0, 1, 2, 3, 4, -4, -3, -2, -1, 0] as the argument for directions.
+                    Create a definition, **v_shift_img_directions(img, directions, sleep_time=80)**,  that takes a list of shifts, **directions**,  for the shifts and applies them to move the dice image sideways, using [0, 1, 2, 3, 4, -4, -3, -2, -1, 0] as the argument for directions.
 
                     .. code-block:: python
 
                         from microbit import *
 
 
-                        def v_shift_img_directions(img, directions, sleeptime=80):
+                        def v_shift_img_directions(img, directions, sleep_time=80):
                             for y in directions:
                                 shift_img = img.shift_down(y)
                                 display.show(shift_img)
-                                sleep(sleeptime)
+                                sleep(sleep_time)
 
 
                         img = Image("00000:09090:00900:09090:00000")
-                        sleeptime = 200
+                        sleep_time = 200
                         v_directions = [0, 1, 2, 3, 4, -4, -3, -2, -1, 0]
                         while True:
-                            v_shift_img_directions(img, v_directions, sleeptime)
+                            v_shift_img_directions(img, v_directions, sleep_time)
 
 
 ----
@@ -353,7 +353,7 @@ Shifting vertically and horizontally
 
 .. admonition:: Tasks
 
-    #.  Use both **h_shift_img_directions(img, directions, sleeptime=80)** and **v_shift_img_directions(img, directions, sleeptime=80)**, to make a cross shaped movement pattern for Image("00000:09090:00900:09090:00000").
+    #.  Use both **h_shift_img_directions(img, directions, sleep_time=80)** and **v_shift_img_directions(img, directions, sleep_time=80)**, to make a cross shaped movement pattern for Image("00000:09090:00900:09090:00000").
 
     .. dropdown::
             :icon: codescan
@@ -364,31 +364,31 @@ Shifting vertically and horizontally
 
                 .. tab-item:: Q1
 
-                    Use both **h_shift_img_directions(img, directions, sleeptime=80)** and **v_shift_img_directions(img, directions, sleeptime=80)**, to make a cross shaped movement pattern for Image("00000:09090:00900:09090:00000").
+                    Use both **h_shift_img_directions(img, directions, sleep_time=80)** and **v_shift_img_directions(img, directions, sleep_time=80)**, to make a cross shaped movement pattern for Image("00000:09090:00900:09090:00000").
 
                     .. code-block:: python
 
                         from microbit import *
 
 
-                        def v_shift_img_directions(img, directions, sleeptime=80):
+                        def v_shift_img_directions(img, directions, sleep_time=80):
                             for y in directions:
                                 shift_img = img.shift_down(y)
                                 display.show(shift_img)
-                                sleep(sleeptime)
+                                sleep(sleep_time)
 
-                        def h_shift_img_directions(img, directions, sleeptime=80):
+                        def h_shift_img_directions(img, directions, sleep_time=80):
                             for x in directions:
                                 shift_img = img.shift_right(x)
                                 display.show(shift_img)
-                                sleep(sleeptime)
+                                sleep(sleep_time)
 
                         img = Image("00000:09090:00900:09090:00000")
-                        sleeptime = 80
+                        sleep_time = 80
                         directions = [0, 1, 2, 3, 4, -4, -3, -2, -1, 0]
                         while True:
-                            h_shift_img_directions(img, directions, sleeptime)
-                            v_shift_img_directions(img, directions, sleeptime)
+                            h_shift_img_directions(img, directions, sleep_time)
+                            v_shift_img_directions(img, directions, sleep_time)
 
 
 ----
@@ -400,11 +400,11 @@ Shifting combined
 
 | The custom syntax below combines shifting in the x and y directions:
 
-.. function:: shift_x_y(img, x, y, sleeptime=80)
+.. function:: shift_x_y(img, x, y, sleep_time=80)
 
     | **img** can be a built-in such as **Image.HEART** or a custom image such as **Image("90909:" * 5)** or **Image(5, 5, bytearray([9] * 25))**.
     | x is an integer
-    | **sleeptime** defaults to 80 ms. It is the sleep time after showing the shifted image.
+    | **sleep_time** defaults to 80 ms. It is the sleep time after showing the shifted image.
 
 | The code below shifts a butterfly image clockwise in 4 moves. 
 
@@ -413,29 +413,29 @@ Shifting combined
 
     from microbit import *
 
-    def shift_x_y(img, x, y, sleeptime=80):
+    def shift_x_y(img, x, y, sleep_time=80):
         shift_img = img.shift_right(x)
         shift_img = shift_img.shift_down(y)
         display.show(shift_img)
-        sleep(sleeptime)
+        sleep(sleep_time)
             
 
     img = Image.BUTTERFLY
-    sleeptime = 200
+    sleep_time = 200
     while True:
         display.show(img)
-        sleep(sleeptime)
-        shift_x_y(img, 1, 0, sleeptime)
-        shift_x_y(img, 1, 1, sleeptime)
-        shift_x_y(img, 0, 1, sleeptime)
+        sleep(sleep_time)
+        shift_x_y(img, 1, 0, sleep_time)
+        shift_x_y(img, 1, 1, sleep_time)
+        shift_x_y(img, 0, 1, sleep_time)
 
 ----
 
 .. admonition:: Tasks
 
     #.  Alter the arguments to move the butterfly anticlockwise.
-    #.  Create a definition, **shift_img_directions(img, directions, sleeptime=80)**,  that takes a list of tuples, **directions**,  for the shifts and applies them to move the butterfly anticlockwise.
-    #.  Use the definition, **shift_img_directions(img, directions, sleeptime=80)**, to move the butterfly clockwise.
+    #.  Create a definition, **shift_img_directions(img, directions, sleep_time=80)**,  that takes a list of tuples, **directions**,  for the shifts and applies them to move the butterfly anticlockwise.
+    #.  Use the definition, **shift_img_directions(img, directions, sleep_time=80)**, to move the butterfly clockwise.
     #.  Predict what the following directions might do: **directions =  [(0, 0), (0, -1), (1, -1), (1, 0), (1, 1), (0, 1), (-1, 1), (-1, 0), (-1, -1), (0, 0)]**
 
     .. dropdown::
@@ -453,73 +453,73 @@ Shifting combined
 
                         from microbit import *
 
-                        def shift_x_y(img, x, y, sleeptime=80):
+                        def shift_x_y(img, x, y, sleep_time=80):
                             shift_img = img.shift_right(x)
                             shift_img = shift_img.shift_down(y)
                             display.show(shift_img)
-                            sleep(sleeptime)
+                            sleep(sleep_time)
                                 
 
                         img = Image.BUTTERFLY   
-                        sleeptime = 200
+                        sleep_time = 200
                         while True:
                             display.show(img)
-                            sleep(sleeptime)
-                            shift_x_y(img, 0, 1, sleeptime)
-                            shift_x_y(img, 1, 1, sleeptime)
-                            shift_x_y(img, 1, 0, sleeptime)
+                            sleep(sleep_time)
+                            shift_x_y(img, 0, 1, sleep_time)
+                            shift_x_y(img, 1, 1, sleep_time)
+                            shift_x_y(img, 1, 0, sleep_time)
 
                 .. tab-item:: Q2
 
-                    Create a definition, **shift_img_directions(img, directions, sleeptime=80)**,  that takes a list of tuples, **directions**,  for the shifts and applies them to move the butterfly anticlockwise.
+                    Create a definition, **shift_img_directions(img, directions, sleep_time=80)**,  that takes a list of tuples, **directions**,  for the shifts and applies them to move the butterfly anticlockwise.
 
                     .. code-block:: python
 
                         from microbit import *
 
-                        def shift_x_y(img, x, y, sleeptime=80):
+                        def shift_x_y(img, x, y, sleep_time=80):
                             shift_img = img.shift_right(x)
                             shift_img = shift_img.shift_down(y)
                             display.show(shift_img)
-                            sleep(sleeptime)
+                            sleep(sleep_time)
                                 
                             
-                        def shift_img_directions(img, directions, sleeptime=80):
+                        def shift_img_directions(img, directions, sleep_time=80):
                             for x,y in directions:
-                                shift_x_y(img, x, y, sleeptime)
+                                shift_x_y(img, x, y, sleep_time)
 
 
                         img = Image.BUTTERFLY
-                        sleeptime = 200
+                        sleep_time = 200
                         while True:
                             anticlockwise_directions =  [(0, 0), (0, 1), (1, 1), (1, 0)]
-                            shift_img_directions(img, anticlockwise_directions, sleeptime)
+                            shift_img_directions(img, anticlockwise_directions, sleep_time)
 
                 .. tab-item:: Q3
 
-                    Use the definition, **shift_img_directions(img, directions, sleeptime=80)**, to move the butterfly clockwise.
+                    Use the definition, **shift_img_directions(img, directions, sleep_time=80)**, to move the butterfly clockwise.
 
                     .. code-block:: python
 
                         from microbit import *
 
-                        def shift_x_y(img, x, y, sleeptime=80):
+                        def shift_x_y(img, x, y, sleep_time=80):
                             shift_img = img.shift_right(x)
                             shift_img = shift_img.shift_down(y)
                             display.show(shift_img)
-                            sleep(sleeptime)
+                            sleep(sleep_time)
                                 
                             
-                        def shift_img_directions(img, directions, sleeptime=80):
+                        def shift_img_directions(img, directions, sleep_time=80):
                             for x,y in directions:
-                                shift_x_y(img, x, y, sleeptime)
+                                shift_x_y(img, x, y, sleep_time)
 
 
                         img = Image.BUTTERFLY
-                        sleeptime = 200
+                        sleep_time = 200
                         while True:
                             clockwise_directions =  [(0, 0), (1, 0), (1, 1), (0, 1) ]
-                            shift_img_directions(img, clockwise_directions, sleeptime)
+                            shift_img_directions(img, clockwise_directions, sleep_time)
 
                 .. tab-item:: Q4
 
@@ -780,7 +780,7 @@ Filling images and repositioning with blit
 
     from microbit import *
         
-    def blit_fillrect(w, h, brightness, x, y):
+    def blit_fill_rect(w, h, brightness, x, y):
         src = Image(w, h)
         src.fill(brightness)
         res = Image(5, 5)
@@ -794,7 +794,7 @@ Filling images and repositioning with blit
     from microbit import *
 
 
-    def blit_fillrect(w, h, brightness, x, y):
+    def blit_fill_rect(w, h, brightness, x, y):
         src = Image(w, h)
         src.fill(brightness)
         res = Image(5, 5)
@@ -802,11 +802,11 @@ Filling images and repositioning with blit
         return res
 
 
-    rect1 = blit_fillrect(3, 4, 5, 0, 0)
-    rect2 = blit_fillrect(4, 3, 4, 1, 2)
+    rect1 = blit_fill_rect(3, 4, 5, 0, 0)
+    rect2 = blit_fill_rect(4, 3, 4, 1, 2)
     rects = rect1 + rect2
 
-    display.show(my_image_overlap)
+    display.show(rects)
 
 ----
 
@@ -814,7 +814,7 @@ Filling images and repositioning with blit
 
     #.  Write code to place 4, 2 by 2 squares, of brightness 5, in each corner.
     #.  Write code to place 4, 2 by 2 squares, of brightness 5, in each corner using nested for loops for the x and y values, adding them to the display with a 500ms delay.
-    #.  Write a function, **rect_overlaps(count=2)**, to return a composite image of a given number of rectangles (default 2) of random size and position, of brightness 9. Restrict the width and height to 2 to 4. Restrict the topleft to (0,0) to (3,3). Display a new composite image every 200ms.
+    #.  Write a function, **rect_overlaps(count=2)**, to return a composite image of a given number of rectangles (default 2) of random size and position, of brightness 9. Restrict the width and height to 2 to 4. Restrict the top left to (0,0) to (3,3). Display a new composite image every 200ms.
     
 
     .. dropdown::
@@ -833,7 +833,7 @@ Filling images and repositioning with blit
                         from microbit import *
 
 
-                        def blit_fillrect(w, h, brightness, x, y):
+                        def blit_fill_rect(w, h, brightness, x, y):
                             src = Image(w, h)
                             src.fill(brightness)
                             res = Image(5, 5)
@@ -841,10 +841,10 @@ Filling images and repositioning with blit
                             return res
 
 
-                        rect1 = blit_fillrect(2, 2, 5, 0, 0)
-                        rect2 = blit_fillrect(2, 2, 5, 3, 0)
-                        rect3 = blit_fillrect(2, 2, 5, 0, 3)
-                        rect4 = blit_fillrect(2, 2, 5, 3, 3)
+                        rect1 = blit_fill_rect(2, 2, 5, 0, 0)
+                        rect2 = blit_fill_rect(2, 2, 5, 3, 0)
+                        rect3 = blit_fill_rect(2, 2, 5, 0, 3)
+                        rect4 = blit_fill_rect(2, 2, 5, 3, 3)
                         rects = rect1 + rect2 + rect3 + rect4
 
                         display.show(my_image_overlap)
@@ -858,7 +858,7 @@ Filling images and repositioning with blit
                         from microbit import *
 
 
-                        def blit_fillrect(w, h, brightness, x, y):
+                        def blit_fill_rect(w, h, brightness, x, y):
                             src = Image(w, h)
                             src.fill(brightness)
                             res = Image(5, 5)
@@ -869,14 +869,14 @@ Filling images and repositioning with blit
                         my_image_overlap = Image()
                         for x in [0, 3]:
                             for y in [0, 3]:
-                                rect = blit_fillrect(2, 2, 5, x, y)
+                                rect = blit_fill_rect(2, 2, 5, x, y)
                                 my_image_overlap = my_image_overlap + rect
                                 display.show(my_image_overlap)
                                 sleep(500)
 
                 .. tab-item:: Q3
 
-                    Write a function, **rect_overlaps(count=2)**, to return a composite image of a given number of rectangles (default 2) of random size and position, of brightness 9. Restrict the width and height to 2 to 4. Restrict the topleft to (0,0) to (3,3). Display a new composite image every 200ms.
+                    Write a function, **rect_overlaps(count=2)**, to return a composite image of a given number of rectangles (default 2) of random size and position, of brightness 9. Restrict the width and height to 2 to 4. Restrict the top left to (0,0) to (3,3). Display a new composite image every 200ms.
 
                     .. code-block:: python
 
@@ -884,7 +884,7 @@ Filling images and repositioning with blit
                         import random
 
 
-                        def blit_fillrect(w, h, brightness, x, y):
+                        def blit_fill_rect(w, h, brightness, x, y):
                             src = Image(w, h)
                             src.fill(brightness)
                             res = Image(5, 5)
@@ -900,7 +900,7 @@ Filling images and repositioning with blit
                                 brightness = 9  # random.randint(3, 6)
                                 x = random.randint(0, 3)
                                 y = random.randint(0, 3)
-                                rect = blit_fillrect(w, h, brightness, x, y)
+                                rect = blit_fill_rect(w, h, brightness, x, y)
                                 rect_overlap = rect_overlap + rect
                             return rect_overlap
 

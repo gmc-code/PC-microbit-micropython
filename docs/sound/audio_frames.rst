@@ -15,7 +15,7 @@ Example AudioFrame
 --------------------
 
 | The code below creates an AudioFrame in which the 32 values decrease from 252 in steps of 8: 252, 244, 236, 228, 220, 212, 204, 196, 188, 180, 172, 164, 156, 148, 140, 132, 124, 116, 108, 100, 92, 84, 76, 68, 60, 52, 44, 36, 28, 20, 12, 4.
-| This is a sound profile that satrts high and decreases steadily.
+| This is a sound profile that starts high and decreases steadily.
 
 .. code-block:: python
         
@@ -127,7 +127,7 @@ Common AudioFrame structures
 -----------------------------------
 
 | Sawtooth, square and triangle audioframes are constructed and played below.
-| Each has a base form and a second function at a higher frquency.
+| Each has a base form and a second function at a higher frequency.
 
 .. code-block:: python
         

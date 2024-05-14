@@ -139,4 +139,6 @@ For an introduction to python see:
 
 .. admonition:: Tip
     
-    If you are using a trackpad, navigate to various sections and pages by clicking on the same heading in the left sidebar twice, then use the arrow keys to move up and down.
+    If you are using a track-pad, navigate to various sections and pages by clicking on the same heading in the left sidebar twice, then use the arrow keys to move up and down.
+
+    

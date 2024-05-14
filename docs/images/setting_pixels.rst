@@ -241,10 +241,10 @@ Pixel rows and columns lists
 ------------------------------
 
 | For loops can be used to turn on pixels based on values in lists.
-| Each row will have the same patern of pixels.
-| Each column will have the same patern of pixels.
-| A variable, ``xlist``, can store the columns numbers.
-| A variable, ``ylist``, can store the row numbers.
+| Each row will have the same pattern of pixels.
+| Each column will have the same pattern of pixels.
+| A variable, ``x_list``, can store the columns numbers.
+| A variable, ``y_list``, can store the row numbers.
 | The code below produces an image of a six on a die.
 
 .. image:: images/dice6.png
@@ -255,10 +255,10 @@ Pixel rows and columns lists
 
     from microbit import *
 
-    xlist = [0, 4]
-    ylist = [0, 2, 4]
-    for x in xlist:
-        for y in ylist:
+    x_list = [0, 4]
+    y_list = [0, 2, 4]
+    for x in x_list:
+        for y in y_list:
             display.set_pixel(x, y, 9)
 
 ----
@@ -284,10 +284,10 @@ Pixel rows and columns lists
 
                         from microbit import *
 
-                        xlist = [1, 2, 3]
-                        ylist = [0, 4]
-                        for x in xlist:
-                            for y in ylist:
+                        x_list = [1, 2, 3]
+                        y_list = [0, 4]
+                        for x in x_list:
+                            for y in y_list:
                                 display.set_pixel(x, y, 9)
 
                 .. tab-item:: Q2
@@ -298,10 +298,10 @@ Pixel rows and columns lists
 
                         from microbit import *
 
-                        xlist = [0, 4]
-                        ylist = [1, 2, 3]
-                        for x in xlist:
-                            for y in ylist:
+                        x_list = [0, 4]
+                        y_list = [1, 2, 3]
+                        for x in x_list:
+                            for y in y_list:
                                 display.set_pixel(x, y, 9)
 
                 .. tab-item:: Q3
@@ -312,16 +312,16 @@ Pixel rows and columns lists
 
                         from microbit import *
 
-                        xlist = [1, 2, 3]
-                        ylist = [0, 4]
-                        for x in xlist:
-                            for y in ylist:
+                        x_list = [1, 2, 3]
+                        y_list = [0, 4]
+                        for x in x_list:
+                            for y in y_list:
                                 display.set_pixel(x, y, 9)
                                 
-                        xlist = [0, 4]
-                        ylist = [1, 2, 3]
-                        for x in xlist:
-                            for y in ylist:
+                        x_list = [0, 4]
+                        y_list = [1, 2, 3]
+                        for x in x_list:
+                            for y in y_list:
                                 display.set_pixel(x, y, 9)
 
 

@@ -119,7 +119,7 @@ Random notes Task
 
             def get_random_note(notes, octaves, durations):
                 note = random.choice(......)
-                # convert numbers to strings so they ccan be joined
+                # convert numbers to strings so they can be joined
                 octave = str(random.choice(.......))
                 duration = str(random.choice(.......))
                 full_note = ..... + ...... + ":" + ......
@@ -151,7 +151,7 @@ Random notes Task
 
                         def get_random_note(notes, octaves, durations):
                             note = random.choice(notes)
-                            # convert numbers to strings so they ccan be joined
+                            # convert numbers to strings so they can be joined
                             octave = str(random.choice(octaves))
                             duration = str(random.choice(durations))
                             full_note = note + octave + ":" + duration
@@ -553,8 +553,8 @@ Accelerometer based notes
             "E5", "F#5", "G5", "A5", "B5", 
             "E6", "F#6", "G6", "A6", "B6"]
     play_durations = ["1", "2", "4", "8", "16"]
-    durationlen = len(play_durations)
-    notelen = len(play_notes)
+    duration_len = len(play_durations)
+    note_len = len(play_notes)
 
     play_music = True
     while True:
@@ -564,11 +564,11 @@ Accelerometer based notes
         if not play_music:
             continue
         #get accelerometer readings
-        xreading = abs(accelerometer.get_x())
-        yreading = abs(accelerometer.get_y())
-        # use above 1023 incase some micorbits give slightly higher readings
-        scaled_x = scale(xreading, from_=(-1200, 1200), to=(-notelen +1, notelen -1))
-        scaled_y = scale(yreading, from_=(-1200, 1200), to=(-durationlen +1, durationlen -1))
+        x_reading = abs(accelerometer.get_x())
+        y_reading = abs(accelerometer.get_y())
+        # use above 1023 incase some microbits give slightly higher readings
+        scaled_x = scale(x_reading, from_=(-1200, 1200), to=(-note_len +1, note_len -1))
+        scaled_y = scale(y_reading, from_=(-1200, 1200), to=(-duration_len +1, duration_len -1))
         #get a note based on tilt
         music.play(play_notes[scaled_x] + ":" + play_durations[scaled_y])
 
