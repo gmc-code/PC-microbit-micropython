@@ -288,7 +288,7 @@ To show the float, ``3.14159``, across the display slowly use a medium delay of 
 
                     from microbit import *
 
-                        while True:
+                    while True:
                         display.show(5.64, delay=150)
                         display.clear()
                         sleep(500)
