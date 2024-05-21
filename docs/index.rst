@@ -14,7 +14,12 @@ Index:
     :numbered:
 
     introduction/introduction.rst
+    introduction/Micropython_editor.rst
+    introduction/first_use.rst
     introduction/power_management.rst
+    introduction/Mu_editor.rst
+    introduction/Mu_editor_Errors.rst
+
 
 
 .. toctree::
@@ -50,9 +55,6 @@ Index:
 
 
     lessons/Microbit_library.rst
-    lessons/Mu_editor_Errors.rst
-    lessons/Mu_editor.rst
-    
     lessons/while_True_loops.rst
     lessons/Sleep.rst
 
@@ -123,7 +125,6 @@ Index:
     lessons2/accelerometer_syntax.rst
     lessons2/gestures.rst
     lessons2/movement.rst
-
 
 
 
