@@ -4,7 +4,7 @@ EXT: Mu editor
 
 | Mu editor is the simplest choice of windows apps to use when programming the microbit with micropython.
 | However, it can lag behind the latest version of micropython.
-| For some features it may be better to use the online simulator at https://python.microbit.org/v/3. This uses the latest micropython for the latest version of the microbit.
+| For more recent features it may be better to use the online simulator at https://python.microbit.org/v/3. This uses the latest micropython for the latest version of the microbit.
 
 ----
 
@@ -30,7 +30,7 @@ First use
 Keyboard shortcuts
 --------------------------
 
-Useful keyboard shortcuts are at: https://codewith.mu/en/tutorials/1.1/shortcuts
+Useful keyboard shortcuts are at: https://codewith.mu/en/tutorials/1.2/shortcuts
 
 | **Microbit**
 =============  ======================================================================
