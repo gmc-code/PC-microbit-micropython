@@ -62,7 +62,8 @@ Microbit software using micropython:
 | See: https://core-electronics.com.au/tutorials/how-to-program-a-microbit-using-thonny.html for setting up the microbit to use Thonny.
 
 .. image:: images/thonny_install_micropython.jpg
-    :scale:50 %
+    :scale: 50 %
+
 
 | **Edublocks**, https://app.edublocks.org/#MicroBit, is an online editor with both blocky code and micropython consistent with Mu editor, and can display the block code and micropython code side by side.
 
