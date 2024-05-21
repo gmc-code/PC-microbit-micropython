@@ -48,18 +48,32 @@ Index:
     :caption: Lessons_1
     :numbered:
 
-    lessons/Mu_editor.rst
+
     lessons/Microbit_library.rst
     lessons/Mu_editor_Errors.rst
+    lessons/Mu_editor.rst
+    
     lessons/while_True_loops.rst
-    lessons/Scroll_text.rst
-    lessons/Show_text.rst
     lessons/Sleep.rst
+
+    lessons/Scroll_text.rst
+    lessons/Scroll_text_2.rst
+    lessons/Show_text.rst
+    lessons/Show_text_2.rst
+
+    lessons/Built_in_images_2.rst
     lessons/Built_in_images.rst
+
+    lessons/Buttons_and_selection_2.rst
     lessons/Buttons_and_selection.rst
-    lessons/While_loops.rst
+
     lessons/For_loops.rst
+    lessons/For_loops_2.rst
     lessons/For_loops_with_range.rst
+    lessons/For_loops_with_range_2.rst
+
+    lessons/While_loops.rst
+
 
 
 .. toctree::

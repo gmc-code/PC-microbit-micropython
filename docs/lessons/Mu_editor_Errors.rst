@@ -1,5 +1,5 @@
 ====================================================
-Mu editor Errors
+EXT: Mu editor Errors
 ====================================================
 
 | Working out what has gone wrong and how to fix it is a key part of everyday programming.

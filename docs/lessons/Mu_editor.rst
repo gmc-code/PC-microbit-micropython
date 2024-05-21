@@ -1,5 +1,5 @@
 ====================================================
-Mu editor
+EXT: Mu editor
 ====================================================
 
 Mu editor is the simplest choice of windows apps to use when programming the microbit with micropython.
