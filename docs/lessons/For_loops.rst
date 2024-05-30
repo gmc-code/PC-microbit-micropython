@@ -162,7 +162,6 @@ Advanced: Using for loops with lists
 
 | What does this code do?
 
-
 .. code-block:: python
 
     from microbit import *
@@ -175,7 +174,6 @@ Advanced: Using for loops with lists
 
 
 | What does this code do?
-
 
 .. code-block:: python
 
