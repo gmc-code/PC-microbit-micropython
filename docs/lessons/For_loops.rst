@@ -179,15 +179,15 @@ Advanced: Using for loops with lists
 
 .. code-block:: python
 
-from microbit import *
+    from microbit import *
 
-primes = [2, 3, 5, 7]
-test_num = 42
-while True:
-    for num in primes:
-        if test_num % num == 0:
-            display.scroll(num, delay=50)
-    sleep(300)
+    primes = [2, 3, 5, 7]
+    test_num = 42
+    while True:
+        for num in primes:
+            if test_num % num == 0:
+                display.scroll(num, delay=50)
+        sleep(300)
 
 
 ----
