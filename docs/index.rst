@@ -188,6 +188,7 @@ Index:
 
     radio/radio_syntax.rst
     radio/radio_examples.rst
+    radio/radio_secrets.rst
     radio/radio_advanced.rst
 
 

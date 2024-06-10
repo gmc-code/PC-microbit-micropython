@@ -8,7 +8,7 @@ Unique groups
 | Set up the group with a value 0-255 by changing the group value from 8 in: ``radio.config(group=8)``.
 | Turn on the radio using: ``radio.on()``
 | Use ``button_a.was_pressed()`` to send a message, **"A"**.
-| Scroll any received messages.
+| Scroll classes_for_the_microbit received messages.
 | ``if incoming_message is not None:`` relies on ``radio.receive()`` returning **None** when there is no message received. 
 
 
@@ -151,5 +151,10 @@ Caesar cipher 2
         elif button_b.was_pressed():
             display.scroll(SHIFT)
             
+
+.. admonition:: Exercises
+
+    #. CLass activity: Write code to randomly change the group number, choosing from 11 to 19, after a message is received or on pressing the B-button. Use the A-button to send a message. Keep count of the the number of messages received and pulse the diamond images after every 5 messages received.
+
 
 
