@@ -13,12 +13,14 @@ Firefly
     import radio
     import random
     
+    # Choose the same group 0-255
+    radio.config(group=8)
+    # The radio won't work unless it's switched on.
+    radio.on()
 
     # Create the "flash" animation frames
     flash = [Image().invert()*(i/9) for i in range(9, -1, -1)]
 
-    # The radio won't work unless it's switched on.
-    radio.on()
 
     # Event loop.
     while True:
@@ -49,6 +51,9 @@ Send Drawn Image
     from microbit import *
     import radio
 
+    # Choose the same group 0-255
+    radio.config(group=8)   
+    radio.on()
 
     x = 2
     y = 2
@@ -85,7 +90,6 @@ Send Drawn Image
             s += ":"
         return s
 
-    radio.on()
 
     while True:
         tick +=1
@@ -120,11 +124,15 @@ Send Drawn Image
             radio.send(ImageString())      
         sleep(50)
 
+
 .. code-block:: python
     
     from microbit import *
     import radio
 
+   
+    # Choose the same group 0-255
+    radio.config(group=8)   
     radio.on()
 
     while True:
