@@ -25,33 +25,99 @@ Library
 
 ----
 
-**V2** volume
----------------------
+Play notes
+----------------------------------------
 
-.. py:function:: set_volume(volume)
+.. py:function::  music.play(notes, pin=pin0, wait=True, loop=False)
 
-    | Configure the output volume of the microbit speaker and pins.
-    | **volume** is an integer between 0 and 255.
+    | Play the notes.
+    | The notes can be a string, such as 'c1:4', or a list of notes as strings, such as ['c', 'd', 'e']
+    | The duration and octave values are reset to their defaults before the music is played.
+    | The output pin can be used to override the default pin0. Use pin=None to prevent sounds being played.
+    | If wait is set to True, playing is blocking, and the music will be played to the end.
+    | If loop is set to True, the music repeats until stop is called.
 
-| The code below increases the volume and plays a C note in octave 4 for 2 ticks at each volume.
-| The A button can be pressed to exit the for-loop then the while loop using ``break``.
-| Pressing the reset button on the back of the microbit will restart the code.
+----
+
+Notes
+----------------------------------------
+
+| An individual note is specified thus: ``NOTE[octave][:duration]``.
+| Notes are the letters a to g. Lower case or upper case are the same.
+| If the octave is left out it defaults to 4 (containing middle C).
+| If the duration is left out it defaults to 4 (a crotchet).
+| For example, **a2:4** refers to the note “A” in octave 2 that lasts for four ticks (a tick is an arbitrary length of time defined by a tempo setting function). If the note name **R** is used then it is treated as a rest (silence).
+| Accidentals (flats and sharps) are denoted by the b (flat - a lower case b) and # (sharp - a hash symbol).
+| For example, **Ab** is A-flat and **C#** is C-sharp.
+| The octave and duration parameters are states that carry over to subsequent notes until re-specified. 
+| The tempo can be set using ``music.set_tempo(ticks=4, bpm=120)``
+
+| Use ``music.play(note)`` to play a note in the ``note`` variable.
 
 .. code-block:: python
 
     from microbit import *
     import music
 
+    note = 'c4:8'
+    music.play(note)
 
-    note = "c4:2"
-    while True:
-        for v in range(0, 255, 25):
-            set_volume(v)
-            music.play(note)
-            if button_a.is_pressed():
-                break
-        if button_a.is_pressed():
-            break
+| Use ``music.play(notes)`` to play a list of notes in the ``notes_list`` variable.
+| The code below plays a list of notes that use various forms to specify them.
+
+.. code-block:: python
+
+    from microbit import *
+    import music
+
+    notes_list = ['c4:1', 'e:4', 'g:8', 'c:2', 'e5', 'g4','f#','eb']
+
+    music.set_tempo(ticks=4, bpm=240)
+    music.play(notes_list)
+
+----
+
+.. admonition:: Tasks
+
+    #. Play the 5 notes: c, e, g, e, c.
+    #. Play the 5 notes: e, f#, g, a, b
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Play the 5 notes: c, e, g, e, c.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import music
+
+                    notes_list = ['c', 'e', 'g', 'e', 'c']
+
+                    while True:
+                        music.play(notes_list)
+                        sleep(1000)
+
+            .. tab-item:: Q2
+
+                Play the 5 notes: e, f#, g, a, b.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import music
+
+                    notes_list = ['e', 'f#', 'g', 'a', 'b']
+
+                    while True:
+                        music.play(notes_list)
+                        sleep(1000)
 
 ----
 
@@ -78,14 +144,52 @@ Library
 
 ----
 
-.. py:function::  music.play(music, pin=pin0, wait=True, loop=False)
+**V2** volume
+---------------------
 
-    | Play the music.
-    | If music can be a string, such as 'c1:4', or a list of notes as strings, such as ['c', 'd', 'e']
-    | The duration and octave values are reset to their defaults before the music is played.
-    | The output pin can be used to override the default pin0. Use pin=None to prevent sounds being played.
-    | If wait is set to True, playing is blocking, and the music will be played to the end.
-    | If loop is set to True, the music repeats until stop is called.
+.. py:function:: set_volume(volume)
+
+    | Configure the output volume of the microbit speaker and pins.
+    | **volume** is an integer between 0 and 255.
+
+| The code below increases the volume and plays a C note in octave 4 for 2 ticks at each volume.
+
+.. code-block:: python
+
+    from microbit import *
+    import music
+
+
+    note = "c4:2"
+    for v in range(0, 255, 25):
+        set_volume(v)
+        music.play(note)
+
+
+| The code below increases the volume and plays a C note in octave 4 for 2 ticks at each volume.
+| The A button can be pressed to exit the for-loop then the while loop using ``break``.
+| Pressing the reset button on the back of the microbit will restart the code.
+
+.. code-block:: python
+
+    from microbit import *
+    import music
+
+
+    note = "c4:2"
+    while True:
+        for v in range(0, 255, 25):
+            set_volume(v)
+            music.play(note)
+            if button_a.is_pressed():
+                break
+        if button_a.is_pressed():
+            break
+
+----
+
+Less common music controls
+------------------------------
 
 .. py:function::  music.stop(pin=pin0)
 
@@ -142,65 +246,8 @@ Library
 
 ----
 
-Tuple unpacking for advanced users
--------------------------------------
-
-| For advanced users, tuple unpacking can be used instead of indices: ``bpm, ticks = music.get_tempo()``.
-| See: https://www.w3schools.com/python/python_tuples_unpack.asp
-
-.. code-block:: python
-
-    from microbit import *
-    import music
-
-    music.set_tempo(ticks=2, bpm=120)
-    bpm, ticks = music.get_tempo()
-    display.scroll(bpm)
-    display.scroll(ticks)
-
-----
-
-Notes
-----------------------------------------
-
-| An individual note is specified thus: ``NOTE[octave][:duration]``.
-| Notes are the letters a to g. Lower case or upper case are the same.
-| If the octave is left out it defaults to 4 (containing middle C).
-| If the duration is left out it defaults to 4 (a crotchet).
-| For example, **a2:4** refers to the note “A” in octave 2 that lasts for four ticks (a tick is an arbitrary length of time defined by a tempo setting function). If the note name **R** is used then it is treated as a rest (silence).
-| Accidentals (flats and sharps) are denoted by the b (flat - a lower case b) and # (sharp - a hash symbol).
-| For example, **Ab** is A-flat and **C#** is C-sharp.
-| The octave and duration parameters are states that carry over to subsequent notes until re-specified. 
-| The tempo can be set using ``music.set_tempo(ticks=4, bpm=120)``
-
-| Use ``music.play(note)`` to play a note in the ``note`` variable.
-
-.. code-block:: python
-
-    from microbit import *
-    import music
-
-    note = 'c4:8'
-    music.play(note)
-
-| Use ``music.play(notes)`` to play a list of notes in the ``notes_list`` variable.
-| The code below plays a list of notes that use various forms to specify them.
-
-.. code-block:: python
-
-    from microbit import *
-    import music
-
-    notes_list = ['c4:1', 'e:4', 'g:8', 'c:2', 'e5', 'g4','f#','eb']
-
-    music.set_tempo(ticks=4, bpm=240)
-    music.play(notes_list)
-
-----
-
 .. admonition:: Tasks
 
-    #. Play the 5 notes: c, e, g, e, c.
     #. Play the 5 notes: c, e, g, e, c with a tempo of 120, 180 and 240bpm. 
     #. Design a function that takes the 5 notes: c, e, g, e, c, as one parameter; takes a tempo list of 120, 240, 360 , 480 and 600 bpm as a second parameter and a third parameter: sleep_time with default value 1000. Use a repeat loop to set the tempo and play the notes_list.
 
@@ -212,21 +259,6 @@ Notes
         .. tab-set::
 
             .. tab-item:: Q1
-
-                Play the 5 notes: c, e, g, e, c.
-
-                .. code-block:: python
-
-                    from microbit import *
-                    import music
-
-                    notes_list = ['c4:4', 'e', 'g', 'e', 'c']
-
-                    while True:
-                        music.play(notes_list)
-                        sleep(1000)
-
-            .. tab-item:: Q2
 
                 Play the 5 notes: c, e, g, e, c with a tempo of 120, 180 and 240bpm. 
 
@@ -248,7 +280,7 @@ Notes
                         music.play(notes_list)
                         sleep(1000)
 
-            .. tab-item:: Q3
+            .. tab-item:: Q2
 
                 Design a function that takes the 5 notes: c, e, g, e, c, as one parameter; takes a tempo list of 120, 240, 360 , 480 and 600 bpm as a second parameter and a third parameter: sleep_time with default value 1000. Use a repeat loop to set the tempo and play the notes_list.
  
@@ -268,6 +300,24 @@ Notes
                         
                     while True:
                         tempo_play(notes_list, tempo_list, sleep_time=1000)
+
+----
+
+Tuple unpacking for advanced users
+-------------------------------------
+
+| For advanced users, tuple unpacking can be used instead of indices: ``bpm, ticks = music.get_tempo()``.
+| See: https://www.w3schools.com/python/python_tuples_unpack.asp
+
+.. code-block:: python
+
+    from microbit import *
+    import music
+
+    music.set_tempo(ticks=2, bpm=120)
+    bpm, ticks = music.get_tempo()
+    display.scroll(bpm)
+    display.scroll(ticks)
 
 ----
 
