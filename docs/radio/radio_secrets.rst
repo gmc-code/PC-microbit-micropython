@@ -2,15 +2,14 @@
 Radio secrets
 ====================================================
 
-
-Caesar cipher intro
--------------------------
+Caesar cipher
+-----------------
 
 | The **Caesar cipher**, also known as **Caesar's cipher**, the **shift cipher**, **Caesar's code**, or **Caesar shift**, is one of the simplest and most widely known encryption techniques. 
 | It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet.
 
-| For example, with a left shift of 3, D would be replaced by A, E would become B, and so on.
-| Deciphering is done in reverse, with a right shift of 3.
+| For example, with a right shift of 3, A would be replaced by D, B would become E, and so on.
+| Deciphering is done in reverse, with a left shift of 3.
 
 .. image:: images/shift3.png
     :scale: 75 %
@@ -18,7 +17,7 @@ Caesar cipher intro
 
 | Here's an example of how it works:
 | Plaintext:  THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG
-| Ciphertext: QEB NRFZH YOLTK CLU GRJMP LSBO QEB IXWV ALD
+| Ciphertext: WKH TXLFN EURZQ IRA MXPSV RYHU WKH ODCB GRJ
 
 
 ----
