@@ -60,6 +60,14 @@ Letter tilting
         if incoming_message is not None:
             display.scroll(incoming_message)
 
+----
+
+.. admonition:: Exercises
+
+    #. Send a single word to your partner.
+    #. Send a a 3 to 5 word phrase to your partner.
+
+----
 
 .. admonition:: Tasks
 
