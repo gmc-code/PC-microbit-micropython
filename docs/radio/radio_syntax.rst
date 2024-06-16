@@ -43,6 +43,53 @@ Radio On and Off
 
 ----
 
+Radio send and receive
+------------------------
+
+.. py:function:: send(message)
+
+    Sends a message string. This is the equivalent of
+    ``send_bytes(bytes(message, 'utf8'))`` but with ``b'\x01\x00\x01'``
+    prepended to the front (to make it compatible with other platforms that
+    target the micro:bit).
+
+.. code-block:: python
+
+    from microbit import *
+    import radio
+
+    radio.on()
+    radio.config(group=9, length=251)
+    radio.send('hello')
+
+
+.. py:function:: receive()
+
+    Works in exactly the same way as ``receive_bytes`` but returns  whatever was sent.
+
+    Currently, it's equivalent to ``str(receive_bytes(), 'utf8')`` but with a
+    check that the first three bytes are ``b'\x01\x00\x01'`` (to make it
+    compatible with other platforms that may target the micro:bit). It strips
+    the prepended bytes before converting to a string.
+
+    A ``ValueError`` exception is raised if conversion to a string fails.
+
+.. code-block:: python
+
+    from microbit import *
+    import radio
+
+    radio.on()
+    radio.config(group=9, length=251)
+    radio.send('hello')
+
+    while True:
+        message = radio.receive()
+        if message:
+            display.scroll(message)
+
+----
+
 Radio settings
 -----------------------
 
@@ -100,8 +147,6 @@ Radio settings
     Reset the settings to their default values for the ``config`` function.
 
 
-----
-
 | Those working together should set the group to an integer from 0 to 255 so that only their microbits share messages.
 | Set the length to the maximum value if sending long messages. Lengths greater that the default may be required if sending image strings.
 
@@ -115,64 +160,17 @@ Radio settings
 
 ----
 
-.. py:function:: send(message)
-
-    Sends a message string. This is the equivalent of
-    ``send_bytes(bytes(message, 'utf8'))`` but with ``b'\x01\x00\x01'``
-    prepended to the front (to make it compatible with other platforms that
-    target the micro:bit).
-
-.. code-block:: python
-
-    from microbit import *
-    import radio
-
-    radio.on()
-    radio.config(group=9, length=251)
-    radio.send('hello')
-
-----
-
-.. py:function:: receive()
-
-    Works in exactly the same way as ``receive_bytes`` but returns  whatever was sent.
-
-    Currently, it's equivalent to ``str(receive_bytes(), 'utf8')`` but with a
-    check that the first three bytes are ``b'\x01\x00\x01'`` (to make it
-    compatible with other platforms that may target the micro:bit). It strips
-    the prepended bytes before converting to a string.
-
-    A ``ValueError`` exception is raised if conversion to a string fails.
-
-.. code-block:: python
-
-    from microbit import *
-    import radio
-
-    radio.on()
-    radio.config(group=9, length=251)
-    radio.send('hello')
-
-    while True:
-        message = radio.receive()
-        if message:
-            display.scroll(message)
-
-----
+bytes
+-------------
 
 .. py:function:: send_bytes(message)
 
     Sends a message containing bytes.
 
-
-----
-
 .. py:function:: receive_bytes()
 
     Receive the next incoming message on the message queue. Returns ``None`` if
     there are no pending messages. Messages are returned as bytes.
-
-----
 
 .. py:function:: receive_bytes_into(buffer)
 
@@ -181,8 +179,10 @@ Radio settings
     Returns ``None`` if there are no pending messages, otherwise it returns the length
     of the message (which might be more than the length of the buffer).
 
-
 ----
+
+Msg, Signal strength, timestamps
+----------------------------------
 
 .. py:function:: receive_full()
 
