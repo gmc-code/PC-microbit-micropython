@@ -20,6 +20,7 @@ while True:
     incoming_message = radio.receive()
     if incoming_message is not None:
         display.scroll(incoming_message)
+        sleep(250)
         if incoming_message == "A" and counter_A < 5:
             radio.send("B")
             counter_A += 1
