@@ -131,35 +131,35 @@ Random notes Task
 
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: play random notes
-                    
-                    .. code-block:: python
+            .. tab-item:: play random notes
+                
+                .. code-block:: python
 
-                        from microbit import *
-                        import random
-                        import music
+                    from microbit import *
+                    import random
+                    import music
 
-                        notes = ['c', 'd', 'e', 'f', 'g', 'a', 'b']
-                        octaves = [3, 4, 5]
-                        durations = [1, 2, 4, 8]
+                    notes = ['c', 'd', 'e', 'f', 'g', 'a', 'b']
+                    octaves = [3, 4, 5]
+                    durations = [1, 2, 4, 8]
 
-                        def get_random_note(notes, octaves, durations):
-                            note = random.choice(notes)
-                            # convert numbers to strings so they can be joined
-                            octave = str(random.choice(octaves))
-                            duration = str(random.choice(durations))
-                            full_note = note + octave + ":" + duration
-                            return full_note
+                    def get_random_note(notes, octaves, durations):
+                        note = random.choice(notes)
+                        # convert numbers to strings so they can be joined
+                        octave = str(random.choice(octaves))
+                        duration = str(random.choice(durations))
+                        full_note = note + octave + ":" + duration
+                        return full_note
 
-                        while True:
-                            random_note = get_random_note(notes, octaves, durations)
-                            music.play(random_note)
+                    while True:
+                        random_note = get_random_note(notes, octaves, durations)
+                        music.play(random_note)
 
 ----
 
