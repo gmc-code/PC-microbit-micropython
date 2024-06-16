@@ -27,11 +27,10 @@ Index:
     :numbered:
 
     radio/radio_syntax.rst
-    radio/radio_examples.rst
     radio/radio_AorB.rst
     radio/radio_tilt.rst
     radio/radio_resend.rst
-
+    radio/radio_secrets.rst
     radio/radio_hot_or_cold.rst
 
     radio/radio_messager.rst
