@@ -6,20 +6,20 @@ Firefly
 -------------
 
 | This script essentially simulates a group of fireflies flashing in a random pattern, like you might see in nature. 
-| Each micro:bit running this script acts like a firefly, flashing its LED display and occasionally causing other micro:bits in the same radio group to flash. 
+| Each microbit running this script acts like a firefly, flashing its LED display and occasionally causing other microbits in the same radio group to flash. 
 | The randomness of the delays and re-broadcasts helps to create a natural, organic flashing pattern.
 
 | ``flash = [Image().invert()*(i/9) for i in range(9, -1, -1)]`` creates a list of images that represent different stages of a firefly's flash. 
-| `Image().invert()`: This creates an inverted image of the micro:bit's LED display. Image() produces an image with all 25 LEDS at 0 brightness. The `invert()` function inverts the brightness of the LEDs, so they are all at maximum brightness (9).
+| `Image().invert()`: This creates an inverted image of the microbit's LED display. Image() produces an image with all 25 LEDS at 0 brightness. The `invert()` function inverts the brightness of the LEDs, so they are all at maximum brightness (9).
 | ``*(i/9)`` multiplies the inverted image by a fraction. When i is 9 it gives 1. When i is 0 it gives 0.
 | ``for i in range(9, -1, -1)``: This is a loop that generates the numbers 9 down to 0. For each number `i`, it creates an image with brightness `i/9`, so the first image is at full brightness (9/9 = 1), and the last image is completely off (0/9 = 0).
 | The resulting `flash` list is a sequence of 10 images that represent a firefly's flash fading out, from full brightness to off. 
-| This list is used later in the script to display the flash animation on the micro:bit's LED display. 
+| This list is used later in the script to display the flash animation on the microbit's LED display. 
 | The ``display.show(flash, delay=100, wait=False)`` line in the script displays each image in the `flash` list in sequence, with a delay of 100 milliseconds between each image, creating the flashing effect.
 
 .. code-block:: python
 
-    # A micro:bit Firefly.
+    # A microbit Firefly.
     # By Nicholas H. Tollervey. Released to the public domain.
     from microbit import *
     import radio
@@ -109,7 +109,7 @@ Firefly
                 .. code-block:: python
                     
 
-                    # A micro:bit Firefly.
+                    # A microbit Firefly.
                     # By Nicholas H. Tollervey. Released to the public domain.
                     from microbit import *
                     import radio

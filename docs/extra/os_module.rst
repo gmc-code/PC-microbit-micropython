@@ -103,13 +103,13 @@ uname
     * (sysname='microbit', 
     nodename='microbit', 
     release='2.1.0', 
-    version='micro:bit v2.1.0+e4321a8 on 2022-09-26; MicroPython v1.18 on 2022-09-26', 
-    machine='micro:bit with nRF52833')
+    version='microbit v2.1.0+e4321a8 on 2022-09-26; MicroPython v1.18 on 2022-09-26', 
+    machine='microbit with nRF52833')
     * sysname: microbit
     * nodename: microbit
     * release: 2.1.0
-    * version: micro:bit v2.1.0+e4321a8 on 2022-09-26; MicroPython v1.18 on 2022-09-26
-    * machine: micro:bit with nRF52833
+    * version: microbit v2.1.0+e4321a8 on 2022-09-26; MicroPython v1.18 on 2022-09-26
+    * machine: microbit with nRF52833
 
 ----
 
@@ -121,8 +121,8 @@ Micropython version
 | **os.uname().version** returns a string with micropython version in it.
 | The code below uses a custom function to get the version.
 
-| e.g. **v1.18** from  **micro:bit v2.1.0+e4321a8 on 2022-09-26; MicroPython v1.18 on 2022-09-26**
-| e.g. **v1.15** from  **micro:bit v2.0.0+b51a405 on 2021-06-30; MicroPython v1.15-64-g1e2f0d280 on 2021-06-30**
+| e.g. **v1.18** from  **microbit v2.1.0+e4321a8 on 2022-09-26; MicroPython v1.18 on 2022-09-26**
+| e.g. **v1.15** from  **microbit v2.0.0+b51a405 on 2021-06-30; MicroPython v1.15-64-g1e2f0d280 on 2021-06-30**
 
 | The code uses consecutive splits and list indices.
 | Firstly the string is split at "MicroPython " and the first index is chosen.
@@ -137,7 +137,7 @@ Micropython version
     import os
 
     def micropython_version():
-        # micro:bit v2.1.0+e4321a8 on 2022-09-26; MicroPython v1.18 on 2022-09-26
+        # microbit v2.1.0+e4321a8 on 2022-09-26; MicroPython v1.18 on 2022-09-26
         info = os.uname().version
         # last split "-" in case version has - in it.
         mpv = info.split("MicroPython ")[1].split()[0].split("-",)[0]

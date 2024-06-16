@@ -9,16 +9,16 @@ The reset button can be used to manually control the power modes of the microbit
 Sleep
 ------
 
-When powered by USB, press and hold power/reset for 5 seconds to enter sleep. The micro:bit power LED will dim from bright red to off. It will then flash on/off, showing you that it is still connected to the power source. Press power/reset to wake up. 
+When powered by USB, press and hold power/reset for 5 seconds to enter sleep. The microbit power LED will dim from bright red to off. It will then flash on/off, showing you that it is still connected to the power source. Press power/reset to wake up. 
 
-Removing the USB power cable and re-adding it will also wake the micro:bit.
+Removing the USB power cable and re-adding it will also wake the microbit.
 
 ----
 
 Power off
 ----------
 
-When powered by battery, press and hold power/reset for 5 seconds to power off the micro:bit. The micro:bit power LED will dim from bright red to off. It will then remain off until you press the power/reset to wake up. Disconnecting the USB and battery power supply will also power off the micro:bit.
+When powered by battery, press and hold power/reset for 5 seconds to power off the microbitThe microbit power LED will dim from bright red to off. It will then remain off until you press the power/reset to wake up. Disconnecting the USB and battery power supply will also power off the microbit.
 
 Inserting a USB power lead will also wake the device.
 
@@ -27,9 +27,9 @@ Inserting a USB power lead will also wake the device.
 Wake
 -------------------
 
-Pressing the power/reset again when in sleep/power-off mode will wake the micro:bit and your program will restart.
+Pressing the power/reset again when in sleep/power-off mode will wake the microbit and your program will restart.
 
-Removing the USB power cable and re-adding it will also wake the micro:bit.
+Removing the USB power cable and re-adding it will also wake the microbit.
 
 
 ----
@@ -154,7 +154,7 @@ Deep Sleep
     :param run_every: Set to ``True`` to wake up with each ``microbit.run_every`` scheduled run.
     
     
-    | Set the micro:bit into a low power mode where it can wake up and continue operation.
+    | Set the microbit into a low power mode where it can wake up and continue operation.
     | The programme state is preserved and when it wakes up it will resume operation where it left off.
     | Deep Sleep mode will consume more battery power than Off mode.
     | The wake up sources are configured via arguments.

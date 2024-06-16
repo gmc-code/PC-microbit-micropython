@@ -51,7 +51,7 @@ Radio send and receive
     Sends a message string. This is the equivalent of
     ``send_bytes(bytes(message, 'utf8'))`` but with ``b'\x01\x00\x01'``
     prepended to the front (to make it compatible with other platforms that
-    target the micro:bit).
+    target the microbit).
 
 .. code-block:: python
 
@@ -69,7 +69,7 @@ Radio send and receive
 
     Currently, it's equivalent to ``str(receive_bytes(), 'utf8')`` but with a
     check that the first three bytes are ``b'\x01\x00\x01'`` (to make it
-    compatible with other platforms that may target the micro:bit). It strips
+    compatible with other platforms that may target the microbit). It strips
     the prepended bytes before converting to a string.
 
     A ``ValueError`` exception is raised if conversion to a string fails.
@@ -122,7 +122,7 @@ Radio settings
     The ``address`` (default=0x75626974) is an arbitrary name, expressed as a
     32-bit address, that's used to filter incoming packets at the hardware
     level, keeping only those that match the address you set. The default used
-    by other micro:bit related platforms is the default setting used here.
+    by other microbit related platforms is the default setting used here.
 
     The ``group`` (default=0) is an 8-bit value (0-255) used with the
     ``address`` when filtering messages. Conceptually, "address" is like a
@@ -135,8 +135,8 @@ Radio settings
 
     .. note::
 
-        A lower data rate of of 250kbit/sec is supported in micro:bit V1, and
-        may be possible with micro:bit V2, but it is not guaranteed to work on
+        A lower data rate of of 250kbit/sec is supported in microbit V1, and
+        may be possible with microbit V2, but it is not guaranteed to work on
         all devices. To access this hidden feature for compatibility with V1
         pass ``2`` to the ``data_rate`` argument.
 
@@ -197,7 +197,7 @@ Msg, Signal strength, timestamps
     * a microsecond timestamp: the value returned by ``time.ticks_us()`` when the message was received.
     
     This function is useful for providing information needed for triangulation
-    and/or trilateration (using distances) with other micro:bit devices.
+    and/or trilateration (using distances) with other microbit devices.
 
 .. code-block:: python
 

@@ -2,12 +2,13 @@ from microbit import *
 import radio
 import random
 
+
 # Turn on the radio
 radio.on()
 # Choose own group in pairs 0-255
 radio.config(group=8)
 
-# Caesar cipher letters
+# polybius cipher letters
 ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 # secrets to be chosen from
 SECRETS = [
@@ -22,23 +23,54 @@ SECRETS = [
     "WATCH YOUR BACK",
     "TIME IS KEY",
 ]
-# Caesar cipher shift to be chosen from
-SHIFTS = [-1, 1, -2, 2, -3, 3, -4, 4, -5, 5, -6, 6, -7, 7, -8, 8, -9, 9, -10, 10, -11, 11, -12, 12, -13, 13]
 
 
-def caesar_cipher(message, shift):
-    """
-    Apply a Caesar cipher to a message.
-    """
-    cipher_text = ""
+# Define the Polybius square
+polybius_square = {
+    "A": (0, 0),
+    "B": (1, 0),
+    "C": (2, 0),
+    "D": (3, 0),
+    "E": (4, 0),
+    "F": (0, 1),
+    "G": (1, 1),
+    "H": (2, 1),
+    "I": (3, 1),
+    "J": (4, 1),
+    "K": (0, 2),
+    "L": (1, 2),
+    "M": (2, 2),
+    "N": (3, 2),
+    "O": (4, 2),
+    "P": (0, 3),
+    "Q": (1, 3),
+    "R": (2, 3),
+    "S": (3, 3),
+    "T": (4, 3),
+    "U": (0, 4),
+    "V": (1, 4),
+    "W": (2, 4),
+    "X": (3, 4),
+    "Y": (4, 4),
+    "Z": (0, 0),  # Z is usually replaced with A in a Polybius square
+}
+
+
+def polybius_cipher(message):
+    cipher_img_list = []
     for char in message:
         if char in ALPHABET:
-            # Shift character
-            index = (ALPHABET.index(char) + shift) % len(ALPHABET)
-            cipher_text += ALPHABET[index]
+            # Get the coordinates for the letter
+            x, y = polybius_square[letter.upper()]
+            # Create an empty image
+            img = Image("00000:" * 5)
+            # Set the pixel at the coordinates to 9
+            img.set_pixel(x, y, 9)
+            cipher_img_list.append(img)
         else:
-            cipher_text += char
-    return cipher_text
+            img = Image("00000:" * 5)
+            cipher_img_list.append(img)
+    return cipher_img_list
 
 
 # Initialize timer
@@ -51,7 +83,7 @@ while True:
         shift = random.choice(SHIFTS)
         # Select a random secret message
         secret = random.choice(SECRETS)
-        cipher_text = caesar_cipher(secret, shift)
+        cipher_text = polybius_cipher(secret, shift)
         radio.send(cipher_text)
         # Display the secret message on the sender's microbit
         display.scroll(secret, delay=100)
@@ -64,17 +96,6 @@ while True:
         display.scroll(str(elapsed_time))
         timer = 0
     # Check for incoming messages
-    # Brute force decode and display the message
     incoming = radio.receive()
     if incoming:
-        message = incoming
-        display.scroll(message, delay=100)
-        # Brute force decode and display the message; stop loop with B button
-        for shift_i in SHIFTS:
-            message = caesar_cipher(incoming, shift_i)
-            display.scroll(message, delay=100)
-            if button_b.was_pressed():
-                break
-            sleep(100)
-        display.scroll(message, delay=100)
-
+        display.show(incoming, delay=100)

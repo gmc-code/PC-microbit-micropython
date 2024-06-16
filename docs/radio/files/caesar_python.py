@@ -1,3 +1,6 @@
+# python caesar shift
+
+
 def caesar_shift(text, shift):
     result = ""
     for char in text:
@@ -8,6 +11,9 @@ def caesar_shift(text, shift):
             result += char
     return result
 
-ciphertext = "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG"
-plaintext = caesar_shift(ciphertext.lower(), 3).upper()
-print(f"Plaintext: {plaintext}")
+plaintext = "THE QUICK BROWN FOX JUMPS OVER THE LAZY DOG"
+ciphertext = caesar_shift(plaintext.lower(), 3).upper()
+print(f"plaintext: {plaintext}")
+print(f"ciphertext: {ciphertext}")
+
+# ciphertext: WKH TXLFN EURZQ IRA MXPSV RYHU WKH ODCB GRJ

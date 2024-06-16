@@ -15,17 +15,22 @@ display.show(ALPHABET[index])
 text = ""
 
 while True:
-    # Check the tilt of the micro:bit
-    if accelerometer.get_x() < -300:
-        # If the micro:bit is tilted to the left, move to the previous letter
+    # Check the tilt of the microbit
+    tilt = accelerometer.get_x()
+    if tilt < -200:
+        # If the microbit is tilted to the left, move to the previous letter
         index = (index - 1) % len(ALPHABET)
+        # The more it's tilted, the faster the letter changes
+        sleep_time = max(200, 900 + int(tilt + 200))
         # Short delay to allow the display to update
-        sleep(300)
-    elif accelerometer.get_x() > 300:
-        # If the micro:bit is tilted to the right, move to the next letter
+        sleep(sleep_time)
+    elif tilt > 200:
+        # If the microbit is tilted to the right, move to the next letter
         index = (index + 1) % len(ALPHABET)
+        # The more it's tilted, the faster the letter changes
+        sleep_time = max(200, 900 - int(tilt - 200))
         # Short delay to allow the display to update
-        sleep(300)
+        sleep(sleep_time)
     # Display the current letter
     display.show(ALPHABET[index])
 

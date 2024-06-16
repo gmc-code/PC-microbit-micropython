@@ -2,9 +2,10 @@ from microbit import *
 import radio
 import random
 
-# Set up radio with group from 1 to 25 to reuse it for the shift
-radio.config(group=8)
+# Turn on the radio
 radio.on()
+# Choose own group in pairs 0-255
+radio.config(group=8)
 
 # Caesar cipher letters
 ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"

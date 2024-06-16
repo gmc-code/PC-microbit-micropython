@@ -30,8 +30,7 @@ Index:
     radio/radio_AorB.rst
     radio/radio_tilt.rst
     radio/radio_resend.rst
-    radio/radio_secrets.rst
-    radio/radio_hot_or_cold.rst
+    radio/radio_shift_cipher.rst
 
     radio/radio_messager.rst
 

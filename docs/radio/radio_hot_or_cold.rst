@@ -39,7 +39,7 @@ Beacons
 
 ----
 
-Certainly! Below is the equivalent MicroPython code for the micro:bit based on the provided JavaScript:
+Certainly! Below is the equivalent MicroPython code for the microbit based on the provided JavaScript:
 
 .. code-block:: python
     
