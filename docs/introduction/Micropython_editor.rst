@@ -14,14 +14,14 @@ Saving python files
     :scale: 50 %
 
 | Type in some code.
-| Click on the three vertical dots of the Save button and save as a python file.
+| Click on the three vertical dots of the Save the A buttonnd save as a python file.
 
 ----
 
 Opening python files
 ---------------------------------------
 
-| Click on the Open button and navigate to a saved python file.
+| Click on the Open the A buttonnd navigate to a saved python file.
 
 
 ----

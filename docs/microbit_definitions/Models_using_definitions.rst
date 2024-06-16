@@ -26,7 +26,7 @@ Moving code to definitions
             # turn off device on pin0
             pin0.write_digital(0)
         else:
-            # helpful indication that abutton A or B needs pressing
+            # helpful indication that athe A button or B needs pressing
             display.scroll('A or B', delay=80)
 
 | The restructured code is below.
@@ -45,7 +45,7 @@ Moving code to definitions
         pin0.write_digital(0)
 
     def no_action():
-        # helpful indication that abutton A or B needs pressing
+        # helpful indication that athe A button or B needs pressing
         display.scroll('A or B')
 
     while True:
@@ -81,7 +81,7 @@ Building on each definition
         pin0.write_digital(0)
 
     def no_action():
-        # helpful indication that abutton A or B needs pressing
+        # helpful indication that athe A button or B needs pressing
         display.scroll('A or B')
 
     while True:

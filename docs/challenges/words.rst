@@ -165,7 +165,7 @@ Code design
         if button_a.is_pressed():
             display.clear()
             sleep(1000)
-            # clear button A pressing so it can be checked for being pressed again in get_string
+            # clear the A button pressing so it can be checked for being pressed again in get_string
             a = button_a.was_pressed()
             currentWord = ...........()
             display.scroll(...........)
@@ -231,7 +231,7 @@ Code design
                             if button_a.is_pressed():
                                 display.clear()
                                 sleep(1000)
-                                # clear button A pressing so it can be checked for being pressed again in get_string
+                                # clear the A button pressing so it can be checked for being pressed again in get_string
                                 a = button_a.was_pressed()
                                 currentWord = get_string()
                                 display.scroll(currentWord)
@@ -302,7 +302,7 @@ Code design
                             if button_a.is_pressed():
                                 display.clear()
                                 sleep(1000)
-                                # clear button A pressing so it can be checked for being pressed again in get_string
+                                # clear the A button pressing so it can be checked for being pressed again in get_string
                                 a = button_a.was_pressed()
                                 currentWord = get_string()
                                 display.scroll(currentWord)
@@ -356,7 +356,7 @@ Code design
                             if button_a.is_pressed():
                                 display.clear()
                                 sleep(1000)
-                                # clear button A pressing for checking again in get_string
+                                # clear the A button pressing for checking again in get_string
                                 a = button_a.was_pressed()
                                 currentWord = get_string()
                                 display.scroll(currentWord)

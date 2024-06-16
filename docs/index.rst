@@ -21,38 +21,30 @@ Index:
     introduction/Mu_editor_Errors.rst
 
 
-
 .. toctree::
     :maxdepth: 2
-    :caption: BreadBoards
+    :caption: Radio
     :numbered:
 
-    breadboards/Breadboard_connections.rst
-    breadboards/Edge_Connector.rst
-    breadboards/Motor_with_transistor.rst
-    breadboards/LEDs_with_resistors.rst
-    breadboards/Potentiometer.rst
-    breadboards/Potentiometer_with_LED.rst
-    breadboards/Piezo_Buzzer_and_music.rst
+    radio/radio_syntax.rst
+    radio/radio_examples.rst
+    radio/radio_AorB.rst
+    radio/radio_tilt.rst
+    radio/radio_resend.rst
 
+    radio/radio_hot_or_cold.rst
 
-.. toctree::
-    :maxdepth: 2
-    :caption: BreadBoard_projects
-    :numbered:
+    radio/radio_messager.rst
 
-    breadboard_projects/Combined_models.rst
-    breadboard_projects/Models_using_definitions.rst
-    breadboard_projects/Organising_with_selection_and_definitions.rst
-    breadboard_projects/Combined_iteration_using_zip.rst
- 
+    radio/radio_firefly.rst
+    radio/radio_draw.rst
+
 
  
 .. toctree::
     :maxdepth: 2
     :caption: Lessons_1
     :numbered:
-
 
     lessons/Microbit_library.rst
     lessons/while_True_loops.rst
@@ -109,6 +101,7 @@ Index:
     errors/Whitespace_Errors.rst    
     errors/Whitespace_NonErrors.rst
     errors/Other_Errors.rst
+
 
 
 .. toctree::
@@ -172,6 +165,31 @@ Index:
 
 .. toctree::
     :maxdepth: 2
+    :caption: BreadBoards
+    :numbered:
+
+    breadboards/Breadboard_connections.rst
+    breadboards/Edge_Connector.rst
+    breadboards/Motor_with_transistor.rst
+    breadboards/LEDs_with_resistors.rst
+    breadboards/Potentiometer.rst
+    breadboards/Potentiometer_with_LED.rst
+    breadboards/Piezo_Buzzer_and_music.rst
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: BreadBoard_projects
+    :numbered:
+
+    breadboard_projects/Combined_models.rst
+    breadboard_projects/Models_using_definitions.rst
+    breadboard_projects/Organising_with_selection_and_definitions.rst
+    breadboard_projects/Combined_iteration_using_zip.rst
+ 
+
+.. toctree::
+    :maxdepth: 2
     :caption: Classes
     :numbered:
 
@@ -179,17 +197,6 @@ Index:
     classes/potentiometer_class.rst
     classes/pixel_class.rst
     classes/screen_class.rst
-
-
-.. toctree::
-    :maxdepth: 2
-    :caption: Radio
-    :numbered:
-
-    radio/radio_syntax.rst
-    radio/radio_examples.rst
-    radio/radio_secrets.rst
-    radio/radio_advanced.rst
 
 
 .. toctree::

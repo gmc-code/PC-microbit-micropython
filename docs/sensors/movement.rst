@@ -9,7 +9,7 @@ Mobile phone knows which up to show the images on its screen because it uses an 
 
 | The microbit accelerometer measures movement along three axes in milli-g's. 
 | When the reading is 0 the microbit is "level" along that particular axis. 
-| Titling it in one direction will give a positive reading; in the opposite direction a negative reading is given.
+| tilting it in one direction will give a positive reading; in the opposite direction a negative reading is given.
 
 ``accelerometer.get_x()`` * X - tilting the left edge down (-) and the right edge down (+).
 ``accelerometer.get_y()`` * Y - tilting the top edge down (-) and the bottom edge down (+).
