@@ -102,7 +102,7 @@ Firefly
                             radio.send('flash')
                             sleep(500)
 
-           .. tab-item:: Q5
+            .. tab-item:: Q5
 
                 Replace the flash code with this code to flash an image  of a butterfly ``flash = [Image.BUTTERFLY*(i/9) for i in range(9, -1, -1)]``. Then vary the image used from a list of 4 images.
 

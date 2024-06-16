@@ -97,7 +97,7 @@ Send on button pressing
                                 if incoming_message is not None:
                                     display.scroll(incoming_message)
 
-               .. tab-item:: Q3
+                .. tab-item:: Q3
 
                     Modify the code to send "T" or "F" from button pressing and then show the Image.YES if "T" is received, and the Image.NO if "F" is received.
 
@@ -205,38 +205,40 @@ Back and forth messaging
 
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Modify the code to send back a "B" if "A" is received and "A" if "B" is received, but not until having first displayed the received message.
+                Modify the code to send back a "B" if "A" is received and "A" if "B" is received, but not until having first displayed the received message.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
-                        import radio
+                    from microbit import *
+                    import radio
 
-                        # Turn on the radio
-                        radio.on()
-                        # Choose own group in pairs 0-255
-                        radio.config(group=8)
+                    # Turn on the radio
+                    radio.on()
+                    # Choose own group in pairs 0-255
+                    radio.config(group=8)
 
-                        while True:
-                            if button_a.was_pressed():
-                                radio.send("A")
-                            elif button_b.was_pressed():
+                    while True:
+                        if button_a.was_pressed():
+                            radio.send("A")
+                        elif button_b.was_pressed():
+                            radio.send("B")
+                        incoming_message = radio.receive()
+                        if incoming_message is not None:
+                            display.scroll(incoming_message)
+                            if incoming_message == "A":
                                 radio.send("B")
-                            incoming_message = radio.receive()
-                            if incoming_message is not None:
-                                display.scroll(incoming_message)
-                                if incoming_message == "A":
-                                    radio.send("B")
-                                elif incoming_message == "B":
-                                    radio.send("A")
+                            elif incoming_message == "B":
+                                radio.send("A")
+
+.. code-block:: python
 
     from microbit import *
     import radio
