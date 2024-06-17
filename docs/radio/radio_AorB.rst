@@ -39,6 +39,7 @@ Send on button pressing
     #. Modify the code to send "T" or "F" from button pressing so it can be used to response True or False questions.
     #. Modify the code to send "Y" or "N" from button pressing so it can be used to response Yes or No questions.
     #. Modify the code to send "Y" or "N" from button pressing and then show the Image.YES if "Y" is received, and the Image.NO if "N" is received.
+    #. Modify the code to send "Y" and show the Image.YES, or "N" and show the Image.NO, from button pressing and then show the Image.YES if "Y" is received, and the Image.NO if "N" is received.
 
 
     .. dropdown::
@@ -148,4 +149,32 @@ Send on button pressing
                                 display.show(Image.YES)
                             elif incoming_message == "N":
                                 display.show(Image.NO)
+            .. tab-item:: Q5
+
+                Modify the code to send "Y" and show the Image.YES, or "N" and show the Image.NO, from button pressing and then show the Image.YES if "Y" is received, and the Image.NO if "N" is received.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import radio
+
+                    # Turn on the radio
+                    radio.on()
+                    # Choose own group in pairs 0-255
+                    radio.config(group=8)
+
+                    while True:
+                        if button_a.was_pressed():
+                            radio.send("Y")
+                            display.show(Image.YES)
+                        elif button_b.was_pressed():
+                            radio.send("N")
+                            display.show(Image.NO)
+                        incoming_message = radio.receive()
+                        if incoming_message is not None:
+                            if incoming_message == "Y":
+                                display.show(Image.YES)
+                            elif incoming_message == "N":
+                                display.show(Image.NO)
+
 
