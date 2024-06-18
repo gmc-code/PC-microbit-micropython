@@ -14,12 +14,12 @@ Image()
     | Returns an image object, with each pixel of brightness 0.
     | **Image()** is equivalent to:
     | Image(
-        '00000:'
-        '00000:'
-        '00000:'
-        '00000:'
-        '00000:'
-        )
+    |    '00000:'
+    |    '00000:'
+    |    '00000:'
+    |    '00000:'
+    |    '00000:'
+    |    )
 
 ----
 
