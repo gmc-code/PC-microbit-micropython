@@ -298,7 +298,7 @@ Pixel Classes using accelerometer
 
             .. tab-item:: Q1
 
-                Modify the code to use a **brightness** parameter in the init function and replace the **2** in the **show** method with the parameter variable. Create **my_pix** with a brightness of 6.
+                Modify the code to use a **brightness** parameter in the init function and replace the **2** in the **show** method with the parameter variable. Create **my_pix** with a brightness of 3.
 
                 .. code-block:: python
 
@@ -346,7 +346,7 @@ Pixel Classes using accelerometer
 
 
                     # Create an instance of a pixel object
-                    my_pix = Pixel(brightness=6)
+                    my_pix = Pixel(brightness=3)
                     my_pix.show()
                     while True:
                         my_pix.move(acc_x_change(),acc_y_change())
@@ -408,7 +408,7 @@ Pixel Classes using accelerometer
 
 
                     # Create an instance of a pixel object
-                    my_pix = Pixel(brightness=6)
+                    my_pix = Pixel(brightness=3)
                     my_pix.show()
                     while True:
                         if button_a.was_pressed():
