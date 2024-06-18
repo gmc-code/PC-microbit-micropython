@@ -26,3 +26,4 @@ while True:
             display.show(Image.YES)
         elif incoming_message == "N":
             display.show(Image.NO)
+        sleep(1000)

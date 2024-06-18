@@ -34,5 +34,5 @@ def receive_images():
 test_images = [Image.HEART, Image.HAPPY, Image.SAD]
 send_images(test_images)
 
-# On the receiving Micro:bit
+# On the receiving microbit
 received_images = receive_images()

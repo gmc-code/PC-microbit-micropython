@@ -23,5 +23,5 @@ def receive_image():
 test_img = Image.HEART
 send_image(test_img)
 
-# On the receiving Micro:bit
+# On the receiving microbit
 receive_image()

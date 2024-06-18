@@ -23,5 +23,5 @@ while True:
     incoming_message = radio.receive()
     if incoming_message is not None:
         display.scroll(incoming_message)
-        sleep(500)
+        sleep(1000)
 
