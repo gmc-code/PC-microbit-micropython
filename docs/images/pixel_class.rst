@@ -262,9 +262,9 @@ Pixel Classes using accelerometer
         
 
     def acc_y_change():
-        sensitivity = 300
+        sensitivity = 100
         acc_y = accelerometer.get_y()
-        if acc_y < sensitivity:
+        if acc_y < -sensitivity:
             yd = -1
         elif acc_y > sensitivity:
             yd = 1
@@ -334,9 +334,9 @@ Pixel Classes using accelerometer
                         
 
                     def acc_y_change():
-                        sensitivity = 300
+                        sensitivity = 100
                         acc_y = accelerometer.get_y()
-                        if acc_y < sensitivity:
+                        if acc_y < -sensitivity:
                             yd = -1
                         elif acc_y > sensitivity:
                             yd = 1
@@ -396,9 +396,9 @@ Pixel Classes using accelerometer
 
 
                     def acc_y_change():
-                        sensitivity = 300
+                        sensitivity = 100
                         acc_y = accelerometer.get_y()
-                        if acc_y < sensitivity:
+                        if acc_y < -sensitivity:
                             yd = -1
                         elif acc_y > sensitivity:
                             yd = 1
