@@ -102,83 +102,83 @@ Building on each definition
     #. Modify the A_action() def to play a `c4:8` note 3 tiems with 0.5 sec between them and scroll the play times. Modify the B_action() def to play an `e5:4` note 5 times with 0.5 sec between them and scroll the play times.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Modify the A_action() def to turn on the device for 3sec. Modify the B_action() def to on and off with a delay of 0.5sec 3 times using a for-loop.
+                Modify the A_action() def to turn on the device for 3sec. Modify the B_action() def to on and off with a delay of 0.5sec 3 times using a for-loop.
 
-                    .. code-block:: python 
+                .. code-block:: python 
 
-                        from microbit import *
+                    from microbit import *
 
 
-                        def A_action():
-                            # turn on for 3 seconds
+                    def A_action():
+                        # turn on for 3 seconds
+                        pin0.write_digital(1)
+                        sleep(3000)
+                        pin0.write_digital(0)
+
+                    def B_action():
+                        # turn on and off with 0.5 sec delays, 3 times
+                        for _ in range(3)
                             pin0.write_digital(1)
-                            sleep(3000)
+                            sleep(500)
                             pin0.write_digital(0)
+                            sleep(500)
 
-                        def B_action():
-                            # turn on and off with 0.5 sec delays, 3 times
-                            for _ in range(3)
-                                pin0.write_digital(1)
-                                sleep(500)
-                                pin0.write_digital(0)
-                                sleep(500)
+                    def no_action():
+                        display.scroll('A or B')
 
-                        def no_action():
-                            display.scroll('A or B')
+                    while True:
+                        if button_a.is_pressed():
+                            A_action()
+                        elif button_b.is_pressed():
+                            B_action()
+                        else:
+                            no_action()
 
-                        while True:
-                            if button_a.is_pressed():
-                                A_action()
-                            elif button_b.is_pressed():
-                                B_action()
-                            else:
-                                no_action()
+            .. tab-item:: Q2
 
-                .. tab-item:: Q2
+                Modify the A_action() def to play a `c4:8` note 3 tiems with 0.5 sec between them and scroll the play times. Modify the B_action() def to play an `e5:4` note 5 times with 0.5 sec between them and scroll the play times.
 
-                    Modify the A_action() def to play a `c4:8` note 3 tiems with 0.5 sec between them and scroll the play times. Modify the B_action() def to play an `e5:4` note 5 times with 0.5 sec between them and scroll the play times.
+                .. code-block:: python
 
-                    .. code-block:: python
+                    from microbit import *
+                    import music
 
-                        from microbit import *
-                        import music
+                    speaker.off()
 
+                    def A_action():
+                        speaker.on()
+                        note = 'c4:8'
+                        for n in range(3):
+                            display.scroll(n, wait=False, delay=50)
+                            music.play(note)
+                            sleep(500)
+
+                    def B_action():
                         speaker.off()
+                        note = 'e5:4'
+                        for n in range(5):
+                            display.scroll(n, wait=False, delay=50)
+                            music.play(note)
+                            sleep(500)
 
-                        def A_action():
-                            speaker.on()
-                            note = 'c4:8'
-                            for n in range(3):
-                                display.scroll(n, wait=False, delay=50)
-                                music.play(note)
-                                sleep(500)
+                    def no_action():
+                        display.scroll('A or B')
 
-                        def B_action():
-                            speaker.off()
-                            note = 'e5:4'
-                            for n in range(5):
-                                display.scroll(n, wait=False, delay=50)
-                                music.play(note)
-                                sleep(500)
-
-                        def no_action():
-                            display.scroll('A or B')
-
-                        while True:
-                            if button_a.is_pressed():
-                                A_action()
-                            elif button_b.is_pressed():
-                                B_action()
-                            else:
-                                no_action()
+                    while True:
+                        if button_a.is_pressed():
+                            A_action()
+                        elif button_b.is_pressed():
+                            B_action()
+                        else:
+                            no_action()
 
 ----
 

@@ -121,95 +121,95 @@ Example Masks
 
 
 .. dropdown::
-        :icon: codescan
-        :color: primary
-        :class-container: sd-dropdown-container
+    :icon: codescan
+    :color: primary
+    :class-container: sd-dropdown-container
 
-        .. tab-set::
+    .. tab-set::
 
-            .. tab-item:: right_mask
+        .. tab-item:: right_mask
 
-                .. code-block:: python
+            .. code-block:: python
 
-                    right_mask = [
-                        [9, 7, 5, 3, 1],
-                        [9, 7, 5, 3, 1],
-                        [9, 7, 5, 3, 1],
-                        [9, 7, 5, 3, 1],
-                        [9, 7, 5, 3, 1],
-                    ]
+                right_mask = [
+                    [9, 7, 5, 3, 1],
+                    [9, 7, 5, 3, 1],
+                    [9, 7, 5, 3, 1],
+                    [9, 7, 5, 3, 1],
+                    [9, 7, 5, 3, 1],
+                ]
 
-            .. tab-item:: left_mask
+        .. tab-item:: left_mask
 
-                .. code-block:: python
+            .. code-block:: python
 
-                    left_mask = [
-                        [1, 3, 5, 7, 9],
-                        [1, 3, 5, 7, 9],
-                        [1, 3, 5, 7, 9],
-                        [1, 3, 5, 7, 9],
-                        [1, 3, 5, 7, 9],
-                    ]
+                left_mask = [
+                    [1, 3, 5, 7, 9],
+                    [1, 3, 5, 7, 9],
+                    [1, 3, 5, 7, 9],
+                    [1, 3, 5, 7, 9],
+                    [1, 3, 5, 7, 9],
+                ]
 
-            .. tab-item:: down_mask
+        .. tab-item:: down_mask
 
-                .. code-block:: python
+            .. code-block:: python
 
-                    down_mask = [
-                        [9, 9, 9, 9, 9],
-                        [7, 7, 7, 7, 7],
-                        [5, 5, 5, 5, 5],
-                        [3, 3, 3, 3, 3],
-                        [1, 1, 1, 1, 1],
-                    ]
+                down_mask = [
+                    [9, 9, 9, 9, 9],
+                    [7, 7, 7, 7, 7],
+                    [5, 5, 5, 5, 5],
+                    [3, 3, 3, 3, 3],
+                    [1, 1, 1, 1, 1],
+                ]
 
-            .. tab-item:: up_mask
+        .. tab-item:: up_mask
 
-                .. code-block:: python
+            .. code-block:: python
 
-                    up_mask = [
-                        [1, 1, 1, 1, 1],
-                        [3, 3, 3, 3, 3],
-                        [5, 5, 5, 5, 5],
-                        [7, 7, 7, 7, 7],
-                        [9, 9, 9, 9, 9],
-                    ]
+                up_mask = [
+                    [1, 1, 1, 1, 1],
+                    [3, 3, 3, 3, 3],
+                    [5, 5, 5, 5, 5],
+                    [7, 7, 7, 7, 7],
+                    [9, 9, 9, 9, 9],
+                ]
 
-            .. tab-item:: outwards_mask
+        .. tab-item:: outwards_mask
 
-                .. code-block:: python
+            .. code-block:: python
 
-                    outwards_mask = [
-                        [4, 4, 4, 4, 4],
-                        [4, 7, 7, 7, 4],
-                        [4, 7, 9, 7, 4],
-                        [4, 7, 7, 7, 4],
-                        [4, 4, 4, 4, 4],
-                    ]
+                outwards_mask = [
+                    [4, 4, 4, 4, 4],
+                    [4, 7, 7, 7, 4],
+                    [4, 7, 9, 7, 4],
+                    [4, 7, 7, 7, 4],
+                    [4, 4, 4, 4, 4],
+                ]
 
-            .. tab-item:: duller1_mask
+        .. tab-item:: duller1_mask
 
-                .. code-block:: python
+            .. code-block:: python
 
-                    duller1_mask = [
-                        [1, 1, 1, 1, 1],
-                        [1, 1, 1, 1, 1],
-                        [1, 1, 1, 1, 1],
-                        [1, 1, 1, 1, 1],
-                        [1, 1, 1, 1, 1],
-                    ]
+                duller1_mask = [
+                    [1, 1, 1, 1, 1],
+                    [1, 1, 1, 1, 1],
+                    [1, 1, 1, 1, 1],
+                    [1, 1, 1, 1, 1],
+                    [1, 1, 1, 1, 1],
+                ]
 
-            .. tab-item:: duller5_mask
+        .. tab-item:: duller5_mask
 
-                .. code-block:: python
+            .. code-block:: python
 
-                    duller5_mask = [
-                        [5, 5, 5, 5, 5],
-                        [5, 5, 5, 5, 5],
-                        [5, 5, 5, 5, 5],
-                        [5, 5, 5, 5, 5],
-                        [5, 5, 5, 5, 5],
-                    ]
+                duller5_mask = [
+                    [5, 5, 5, 5, 5],
+                    [5, 5, 5, 5, 5],
+                    [5, 5, 5, 5, 5],
+                    [5, 5, 5, 5, 5],
+                    [5, 5, 5, 5, 5],
+                ]
 
 ----
 
@@ -222,206 +222,206 @@ Example Masks
     
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Write code to apply a right mask to PACMAN.
+                Write code to apply a right mask to PACMAN.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
-
-
-                        def get_image_array(img):
-                            img_repr = repr(img)
-                            img_str = img_repr[7:-3]
-                            img_str = img_str.replace(":", "")
-                            img_array = [int(x) for x in img_str]
-                            return img_array
+                    from microbit import *
 
 
-                        def get_mask_image_array(img, mask):
-                            img_array = get_image_array(img)
-                            masked_img_array = list()
-                            for y in range(5):
-                                for x in range(5):
-                                    mask_val = mask[y][x]
-                                    img_val = img_array[y * 5 + x]
-                                    new_img_val = min(9, int(mask_val * img_val / 9))
-                                    masked_img_array.append(new_img_val)
-                            return masked_img_array
+                    def get_image_array(img):
+                        img_repr = repr(img)
+                        img_str = img_repr[7:-3]
+                        img_str = img_str.replace(":", "")
+                        img_array = [int(x) for x in img_str]
+                        return img_array
 
 
-                        def get_masked_image(img, mask):
-                            masked_img_array = get_mask_image_array(img, mask)
-                            return Image(5, 5, bytearray(masked_img_array))
-
-                        mask = [
-                            [9, 7, 5, 3, 1],
-                            [9, 7, 5, 3, 1],
-                            [9, 7, 5, 3, 1],
-                            [9, 7, 5, 3, 1],
-                            [9, 7, 5, 3, 1],
-                        ]
-                        img = Image.PACMAN
-                        while True:
-                            img_masked = get_masked_image(img, mask)
-                            display.show(img)
-                            sleep(800)
-                            display.show(img_masked)
-                            sleep(800)
+                    def get_mask_image_array(img, mask):
+                        img_array = get_image_array(img)
+                        masked_img_array = list()
+                        for y in range(5):
+                            for x in range(5):
+                                mask_val = mask[y][x]
+                                img_val = img_array[y * 5 + x]
+                                new_img_val = min(9, int(mask_val * img_val / 9))
+                                masked_img_array.append(new_img_val)
+                        return masked_img_array
 
 
-                .. tab-item:: Q2
+                    def get_masked_image(img, mask):
+                        masked_img_array = get_mask_image_array(img, mask)
+                        return Image(5, 5, bytearray(masked_img_array))
 
-                    Write code to apply a left mask to GHOST.
-
-                    .. code-block:: python
-
-                        from microbit import *
-
-
-                        def get_image_array(img):
-                            img_repr = repr(img)
-                            img_str = img_repr[7:-3]
-                            img_str = img_str.replace(":", "")
-                            img_array = [int(x) for x in img_str]
-                            return img_array
-
-
-                        def get_mask_image_array(img, mask):
-                            img_array = get_image_array(img)
-                            masked_img_array = list()
-                            for y in range(5):
-                                for x in range(5):
-                                    mask_val = mask[y][x]
-                                    img_val = img_array[y * 5 + x]
-                                    new_img_val = min(9, int(mask_val * img_val / 9))
-                                    masked_img_array.append(new_img_val)
-                            return masked_img_array
+                    mask = [
+                        [9, 7, 5, 3, 1],
+                        [9, 7, 5, 3, 1],
+                        [9, 7, 5, 3, 1],
+                        [9, 7, 5, 3, 1],
+                        [9, 7, 5, 3, 1],
+                    ]
+                    img = Image.PACMAN
+                    while True:
+                        img_masked = get_masked_image(img, mask)
+                        display.show(img)
+                        sleep(800)
+                        display.show(img_masked)
+                        sleep(800)
 
 
-                        def get_masked_image(img, mask):
-                            masked_img_array = get_mask_image_array(img, mask)
-                            return Image(5, 5, bytearray(masked_img_array))
+            .. tab-item:: Q2
+
+                Write code to apply a left mask to GHOST.
+
+                .. code-block:: python
+
+                    from microbit import *
 
 
-                        mask = [
-                            [1, 3, 5, 7, 9],
-                            [1, 3, 5, 7, 9],
-                            [1, 3, 5, 7, 9],
-                            [1, 3, 5, 7, 9],
-                            [1, 3, 5, 7, 9],
-                        ]
-                        img = Image.GHOST
-                        while True:
-                            img_masked = get_masked_image(img, mask)
-                            display.show(img)
-                            sleep(800)
-                            display.show(img_masked)
-                            sleep(800)
+                    def get_image_array(img):
+                        img_repr = repr(img)
+                        img_str = img_repr[7:-3]
+                        img_str = img_str.replace(":", "")
+                        img_array = [int(x) for x in img_str]
+                        return img_array
 
 
-                .. tab-item:: Q3
-
-                    Write code to apply a up mask to RABBIT.
-
-                    .. code-block:: python
-
-                        from microbit import *
-
-
-                        def get_image_array(img):
-                            img_repr = repr(img)
-                            img_str = img_repr[7:-3]
-                            img_str = img_str.replace(":", "")
-                            img_array = [int(x) for x in img_str]
-                            return img_array
+                    def get_mask_image_array(img, mask):
+                        img_array = get_image_array(img)
+                        masked_img_array = list()
+                        for y in range(5):
+                            for x in range(5):
+                                mask_val = mask[y][x]
+                                img_val = img_array[y * 5 + x]
+                                new_img_val = min(9, int(mask_val * img_val / 9))
+                                masked_img_array.append(new_img_val)
+                        return masked_img_array
 
 
-                        def get_mask_image_array(img, mask):
-                            img_array = get_image_array(img)
-                            masked_img_array = list()
-                            for y in range(5):
-                                for x in range(5):
-                                    mask_val = mask[y][x]
-                                    img_val = img_array[y * 5 + x]
-                                    new_img_val = min(9, int(mask_val * img_val / 9))
-                                    masked_img_array.append(new_img_val)
-                            return masked_img_array
+                    def get_masked_image(img, mask):
+                        masked_img_array = get_mask_image_array(img, mask)
+                        return Image(5, 5, bytearray(masked_img_array))
 
 
-                        def get_masked_image(img, mask):
-                            masked_img_array = get_mask_image_array(img, mask)
-                            return Image(5, 5, bytearray(masked_img_array))
-
-                        mask = [
-                            [1, 1, 1, 1, 1],
-                            [3, 3, 3, 3, 3],
-                            [5, 5, 5, 5, 5],
-                            [7, 7, 7, 7, 7],
-                            [9, 9, 9, 9, 9],
-                        ]
-                        img = Image.RABBIT
-                        while True:
-                            img_masked = get_masked_image(img, mask)
-                            display.show(img)
-                            sleep(800)
-                            display.show(img_masked)
-                            sleep(800)
-
-                .. tab-item:: Q4
-
-                    Write code to apply a down mask to PITCHFORK.
-
-                    .. code-block:: python
-
-                        from microbit import *
+                    mask = [
+                        [1, 3, 5, 7, 9],
+                        [1, 3, 5, 7, 9],
+                        [1, 3, 5, 7, 9],
+                        [1, 3, 5, 7, 9],
+                        [1, 3, 5, 7, 9],
+                    ]
+                    img = Image.GHOST
+                    while True:
+                        img_masked = get_masked_image(img, mask)
+                        display.show(img)
+                        sleep(800)
+                        display.show(img_masked)
+                        sleep(800)
 
 
-                        def get_image_array(img):
-                            img_repr = repr(img)
-                            img_str = img_repr[7:-3]
-                            img_str = img_str.replace(":", "")
-                            img_array = [int(x) for x in img_str]
-                            return img_array
+            .. tab-item:: Q3
+
+                Write code to apply a up mask to RABBIT.
+
+                .. code-block:: python
+
+                    from microbit import *
 
 
-                        def get_mask_image_array(img, mask):
-                            img_array = get_image_array(img)
-                            masked_img_array = list()
-                            for y in range(5):
-                                for x in range(5):
-                                    mask_val = mask[y][x]
-                                    img_val = img_array[y * 5 + x]
-                                    new_img_val = min(9, int(mask_val * img_val / 9))
-                                    masked_img_array.append(new_img_val)
-                            return masked_img_array
+                    def get_image_array(img):
+                        img_repr = repr(img)
+                        img_str = img_repr[7:-3]
+                        img_str = img_str.replace(":", "")
+                        img_array = [int(x) for x in img_str]
+                        return img_array
 
 
-                        def get_masked_image(img, mask):
-                            masked_img_array = get_mask_image_array(img, mask)
-                            return Image(5, 5, bytearray(masked_img_array))
+                    def get_mask_image_array(img, mask):
+                        img_array = get_image_array(img)
+                        masked_img_array = list()
+                        for y in range(5):
+                            for x in range(5):
+                                mask_val = mask[y][x]
+                                img_val = img_array[y * 5 + x]
+                                new_img_val = min(9, int(mask_val * img_val / 9))
+                                masked_img_array.append(new_img_val)
+                        return masked_img_array
 
-                        mask = [
-                            [9, 9, 9, 9, 9],
-                            [7, 7, 7, 7, 7],
-                            [5, 5, 5, 5, 5],
-                            [3, 3, 3, 3, 3],
-                            [1, 1, 1, 1, 1],
-                        ]
-                        img = Image.PITCHFORK
-                        while True:
-                            img_masked = get_masked_image(img, mask)
-                            display.show(img)
-                            sleep(800)
-                            display.show(img_masked)
-                            sleep(800)
+
+                    def get_masked_image(img, mask):
+                        masked_img_array = get_mask_image_array(img, mask)
+                        return Image(5, 5, bytearray(masked_img_array))
+
+                    mask = [
+                        [1, 1, 1, 1, 1],
+                        [3, 3, 3, 3, 3],
+                        [5, 5, 5, 5, 5],
+                        [7, 7, 7, 7, 7],
+                        [9, 9, 9, 9, 9],
+                    ]
+                    img = Image.RABBIT
+                    while True:
+                        img_masked = get_masked_image(img, mask)
+                        display.show(img)
+                        sleep(800)
+                        display.show(img_masked)
+                        sleep(800)
+
+            .. tab-item:: Q4
+
+                Write code to apply a down mask to PITCHFORK.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+
+                    def get_image_array(img):
+                        img_repr = repr(img)
+                        img_str = img_repr[7:-3]
+                        img_str = img_str.replace(":", "")
+                        img_array = [int(x) for x in img_str]
+                        return img_array
+
+
+                    def get_mask_image_array(img, mask):
+                        img_array = get_image_array(img)
+                        masked_img_array = list()
+                        for y in range(5):
+                            for x in range(5):
+                                mask_val = mask[y][x]
+                                img_val = img_array[y * 5 + x]
+                                new_img_val = min(9, int(mask_val * img_val / 9))
+                                masked_img_array.append(new_img_val)
+                        return masked_img_array
+
+
+                    def get_masked_image(img, mask):
+                        masked_img_array = get_mask_image_array(img, mask)
+                        return Image(5, 5, bytearray(masked_img_array))
+
+                    mask = [
+                        [9, 9, 9, 9, 9],
+                        [7, 7, 7, 7, 7],
+                        [5, 5, 5, 5, 5],
+                        [3, 3, 3, 3, 3],
+                        [1, 1, 1, 1, 1],
+                    ]
+                    img = Image.PITCHFORK
+                    while True:
+                        img_masked = get_masked_image(img, mask)
+                        display.show(img)
+                        sleep(800)
+                        display.show(img_masked)
+                        sleep(800)
 
 ----
 
@@ -438,122 +438,122 @@ Mask loops
     #.  Write code to loop though a list of 8 mask names and apply them to a TSHIRT image.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Write code to loop though a list of 8 mask names and apply them to a TSHIRT image.
+                Write code to loop though a list of 8 mask names and apply them to a TSHIRT image.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        down_right_mask = [
-                            [9, 8, 7, 6, 5],
-                            [8, 7, 6, 5, 4],
-                            [7, 6, 5, 4, 3],
-                            [6, 5, 4, 3, 2],
-                            [5, 4, 3, 2, 1],
-                        ]
-                        right_mask = [
-                            [9, 7, 5, 3, 1],
-                            [9, 7, 5, 3, 1],
-                            [9, 7, 5, 3, 1],
-                            [9, 7, 5, 3, 1],
-                            [9, 7, 5, 3, 1],
-                        ]
-                        left_mask = [
-                            [1, 3, 5, 7, 9],
-                            [1, 3, 5, 7, 9],
-                            [1, 3, 5, 7, 9],
-                            [1, 3, 5, 7, 9],
-                            [1, 3, 5, 7, 9],
-                        ]
-                        down_mask = [
-                            [9, 9, 9, 9, 9],
-                            [7, 7, 7, 7, 7],
-                            [5, 5, 5, 5, 5],
-                            [3, 3, 3, 3, 3],
-                            [1, 1, 1, 1, 1],
-                        ]
+                    down_right_mask = [
+                        [9, 8, 7, 6, 5],
+                        [8, 7, 6, 5, 4],
+                        [7, 6, 5, 4, 3],
+                        [6, 5, 4, 3, 2],
+                        [5, 4, 3, 2, 1],
+                    ]
+                    right_mask = [
+                        [9, 7, 5, 3, 1],
+                        [9, 7, 5, 3, 1],
+                        [9, 7, 5, 3, 1],
+                        [9, 7, 5, 3, 1],
+                        [9, 7, 5, 3, 1],
+                    ]
+                    left_mask = [
+                        [1, 3, 5, 7, 9],
+                        [1, 3, 5, 7, 9],
+                        [1, 3, 5, 7, 9],
+                        [1, 3, 5, 7, 9],
+                        [1, 3, 5, 7, 9],
+                    ]
+                    down_mask = [
+                        [9, 9, 9, 9, 9],
+                        [7, 7, 7, 7, 7],
+                        [5, 5, 5, 5, 5],
+                        [3, 3, 3, 3, 3],
+                        [1, 1, 1, 1, 1],
+                    ]
 
-                        up_mask = [
-                            [1, 1, 1, 1, 1],
-                            [3, 3, 3, 3, 3],
-                            [5, 5, 5, 5, 5],
-                            [7, 7, 7, 7, 7],
-                            [9, 9, 9, 9, 9],
-                        ]
+                    up_mask = [
+                        [1, 1, 1, 1, 1],
+                        [3, 3, 3, 3, 3],
+                        [5, 5, 5, 5, 5],
+                        [7, 7, 7, 7, 7],
+                        [9, 9, 9, 9, 9],
+                    ]
 
-                        outwards_mask = [
-                            [4, 4, 4, 4, 4],
-                            [4, 7, 7, 7, 4],
-                            [4, 7, 9, 7, 4],
-                            [4, 7, 7, 7, 4],
-                            [4, 4, 4, 4, 4],
-                        ]
-                        duller5_mask = [
-                            [5, 5, 5, 5, 5],
-                            [5, 5, 5, 5, 5],
-                            [5, 5, 5, 5, 5],
-                            [5, 5, 5, 5, 5],
-                            [5, 5, 5, 5, 5],
-                        ]
-                        duller1_mask = [
-                            [1, 1, 1, 1, 1],
-                            [1, 1, 1, 1, 1],
-                            [1, 1, 1, 1, 1],
-                            [1, 1, 1, 1, 1],
-                            [1, 1, 1, 1, 1],
-                        ]
-
-
-                        def get_image_array(img):
-                            img_repr = repr(img)
-                            img_str = img_repr[7:-3]
-                            img_str = img_str.replace(":", "")
-                            img_array = [int(x) for x in img_str]
-                            return img_array
+                    outwards_mask = [
+                        [4, 4, 4, 4, 4],
+                        [4, 7, 7, 7, 4],
+                        [4, 7, 9, 7, 4],
+                        [4, 7, 7, 7, 4],
+                        [4, 4, 4, 4, 4],
+                    ]
+                    duller5_mask = [
+                        [5, 5, 5, 5, 5],
+                        [5, 5, 5, 5, 5],
+                        [5, 5, 5, 5, 5],
+                        [5, 5, 5, 5, 5],
+                        [5, 5, 5, 5, 5],
+                    ]
+                    duller1_mask = [
+                        [1, 1, 1, 1, 1],
+                        [1, 1, 1, 1, 1],
+                        [1, 1, 1, 1, 1],
+                        [1, 1, 1, 1, 1],
+                        [1, 1, 1, 1, 1],
+                    ]
 
 
-                        def get_mask_image_array(img, mask):
-                            img_array = get_image_array(img)
-                            masked_img_array = list()
-                            for y in range(5):
-                                for x in range(5):
-                                    mask_val = mask[y][x]
-                                    img_val = img_array[y * 5 + x]
-                                    new_img_val = min(9, int(mask_val * img_val / 9))
-                                    masked_img_array.append(new_img_val)
-                            return masked_img_array
+                    def get_image_array(img):
+                        img_repr = repr(img)
+                        img_str = img_repr[7:-3]
+                        img_str = img_str.replace(":", "")
+                        img_array = [int(x) for x in img_str]
+                        return img_array
 
 
-                        def get_masked_image(img, mask):
-                            masked_img_array = get_mask_image_array(img, mask)
-                            return Image(5, 5, bytearray(masked_img_array))
+                    def get_mask_image_array(img, mask):
+                        img_array = get_image_array(img)
+                        masked_img_array = list()
+                        for y in range(5):
+                            for x in range(5):
+                                mask_val = mask[y][x]
+                                img_val = img_array[y * 5 + x]
+                                new_img_val = min(9, int(mask_val * img_val / 9))
+                                masked_img_array.append(new_img_val)
+                        return masked_img_array
 
 
-                        mask_names = [
-                            down_right_mask,
-                            left_mask,
-                            right_mask,
-                            up_mask,
-                            down_mask,
-                            outwards_mask,
-                            duller5_mask,
-                            duller1_mask,
-                        ]
-                        img = Image.TSHIRT
+                    def get_masked_image(img, mask):
+                        masked_img_array = get_mask_image_array(img, mask)
+                        return Image(5, 5, bytearray(masked_img_array))
 
-                        while True:
-                            display.show(img)
-                            sleep(400)
-                            for mask in mask_names:
-                                img_masked = get_masked_image(img, mask)
-                                display.show(img_masked)
-                                sleep(200)
+
+                    mask_names = [
+                        down_right_mask,
+                        left_mask,
+                        right_mask,
+                        up_mask,
+                        down_mask,
+                        outwards_mask,
+                        duller5_mask,
+                        duller1_mask,
+                    ]
+                    img = Image.TSHIRT
+
+                    while True:
+                        display.show(img)
+                        sleep(400)
+                        for mask in mask_names:
+                            img_masked = get_masked_image(img, mask)
+                            display.show(img_masked)
+                            sleep(200)
 

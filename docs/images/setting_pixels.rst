@@ -63,102 +63,102 @@ Set pixel
     #. Write code to turn on the top 5 pixels at brightnesses of 1, 3, 5, 7, 9 from left to right.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Write code to turn on the pixel, 3 columns across and 4 rows down.
+                Write code to turn on the pixel, 3 columns across and 4 rows down.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        display.set_pixel(2, 3, 9)
+                    display.set_pixel(2, 3, 9)
 
-                .. tab-item:: Q2
+            .. tab-item:: Q2
 
-                    Write code to turn on the pixel, 4 columns across and 2 rows down.
+                Write code to turn on the pixel, 4 columns across and 2 rows down.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        display.set_pixel(3, 1, 9)
+                    display.set_pixel(3, 1, 9)
 
-                .. tab-item:: Q3
+            .. tab-item:: Q3
 
-                    Write code to turn on the pixel in the top right.
+                Write code to turn on the pixel in the top right.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        display.set_pixel(4, 0, 9)
+                    display.set_pixel(4, 0, 9)
 
-                .. tab-item:: Q4
+            .. tab-item:: Q4
 
-                    Write code to turn on the pixel in the bottom right.
+                Write code to turn on the pixel in the bottom right.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
-                        
-                        display.set_pixel(4, 4, 9)
+                    from microbit import *
+                    
+                    display.set_pixel(4, 4, 9)
 
-                .. tab-item:: Q5
+            .. tab-item:: Q5
 
-                    Write code to turn on the pixel in the bottom left.
+                Write code to turn on the pixel in the bottom left.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        display.set_pixel(0, 4, 9)
+                    display.set_pixel(0, 4, 9)
 
-                .. tab-item:: Q6
+            .. tab-item:: Q6
 
-                    Write code to turn on the 4 corner pixels.
+                Write code to turn on the 4 corner pixels.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        display.set_pixel(0, 0, 9)
-                        display.set_pixel(0, 4, 9)
-                        display.set_pixel(4, 0, 9)
-                        display.set_pixel(4, 4, 9)
+                    display.set_pixel(0, 0, 9)
+                    display.set_pixel(0, 4, 9)
+                    display.set_pixel(4, 0, 9)
+                    display.set_pixel(4, 4, 9)
 
-                .. tab-item:: Q7
+            .. tab-item:: Q7
 
-                    Write code to turn on the top 5 pixels.
+                Write code to turn on the top 5 pixels.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        display.set_pixel(0, 0, 9)
-                        display.set_pixel(1, 0, 9)
-                        display.set_pixel(2, 0, 9)
-                        display.set_pixel(3, 0, 9)
-                        display.set_pixel(4, 0, 9)
+                    display.set_pixel(0, 0, 9)
+                    display.set_pixel(1, 0, 9)
+                    display.set_pixel(2, 0, 9)
+                    display.set_pixel(3, 0, 9)
+                    display.set_pixel(4, 0, 9)
 
-                .. tab-item:: Q8
+            .. tab-item:: Q8
 
-                    Write code to turn on the top 5 pixels at brightnesses of 1, 3, 5, 7, 9 from left to right.
+                Write code to turn on the top 5 pixels at brightnesses of 1, 3, 5, 7, 9 from left to right.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        display.set_pixel(0, 0, 1)
-                        display.set_pixel(1, 0, 3)
-                        display.set_pixel(2, 0, 5)
-                        display.set_pixel(3, 0, 7)
-                        display.set_pixel(4, 0, 9)
+                    display.set_pixel(0, 0, 1)
+                    display.set_pixel(1, 0, 3)
+                    display.set_pixel(2, 0, 5)
+                    display.set_pixel(3, 0, 7)
+                    display.set_pixel(4, 0, 9)
 
 ----
 
@@ -205,35 +205,35 @@ Pixel rows and columns
     #. Write code to turn on the pixels in row 2.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Write code to turn on the pixels in column 3.
+                Write code to turn on the pixels in column 3.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        x = 3
-                        for y in range(0, 5):
-                            display.set_pixel(x, y, 9)
+                    x = 3
+                    for y in range(0, 5):
+                        display.set_pixel(x, y, 9)
 
-                .. tab-item:: Q2
+            .. tab-item:: Q2
 
-                    Write code to turn on the pixels in row 2.
+                Write code to turn on the pixels in row 2.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        y = 2
-                        for x in range(0, 5):
-                            display.set_pixel(x, y, 9)
+                    y = 2
+                    for x in range(0, 5):
+                        display.set_pixel(x, y, 9)
 
 ----
 
@@ -270,59 +270,59 @@ Pixel rows and columns lists
     #. Combine the two answers to produce a square shape without the corners.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Adjust the code above to turn on pixels that are in both columns 1 to 3 and rows 0 and 4.
+                Adjust the code above to turn on pixels that are in both columns 1 to 3 and rows 0 and 4.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        x_list = [1, 2, 3]
-                        y_list = [0, 4]
-                        for x in x_list:
-                            for y in y_list:
-                                display.set_pixel(x, y, 9)
+                    x_list = [1, 2, 3]
+                    y_list = [0, 4]
+                    for x in x_list:
+                        for y in y_list:
+                            display.set_pixel(x, y, 9)
 
-                .. tab-item:: Q2
+            .. tab-item:: Q2
 
-                    Adjust the code above to turn on pixels that are in both columns 0 and 4 and rows 1 to 3.
+                Adjust the code above to turn on pixels that are in both columns 0 and 4 and rows 1 to 3.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        x_list = [0, 4]
-                        y_list = [1, 2, 3]
-                        for x in x_list:
-                            for y in y_list:
-                                display.set_pixel(x, y, 9)
+                    x_list = [0, 4]
+                    y_list = [1, 2, 3]
+                    for x in x_list:
+                        for y in y_list:
+                            display.set_pixel(x, y, 9)
 
-                .. tab-item:: Q3
+            .. tab-item:: Q3
 
-                    Combine the two answers to produce a square shape without the corners.
+                Combine the two answers to produce a square shape without the corners.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        x_list = [1, 2, 3]
-                        y_list = [0, 4]
-                        for x in x_list:
-                            for y in y_list:
-                                display.set_pixel(x, y, 9)
-                                
-                        x_list = [0, 4]
-                        y_list = [1, 2, 3]
-                        for x in x_list:
-                            for y in y_list:
-                                display.set_pixel(x, y, 9)
+                    x_list = [1, 2, 3]
+                    y_list = [0, 4]
+                    for x in x_list:
+                        for y in y_list:
+                            display.set_pixel(x, y, 9)
+                            
+                    x_list = [0, 4]
+                    y_list = [1, 2, 3]
+                    for x in x_list:
+                        for y in y_list:
+                            display.set_pixel(x, y, 9)
 
 
 

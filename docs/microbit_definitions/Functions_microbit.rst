@@ -29,26 +29,26 @@ Functions with parameters
     #. Write a function called ``ask_play_again`` with a parameter for their player_name, and display an example using it.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Write a function called ``ask_play_again`` with a parameter for their player_name, and display an example using it.
+                Write a function called ``ask_play_again`` with a parameter for their player_name, and display an example using it.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
-
-
-                        def ask_play_again(player_name):
-                            display.scroll("play again " + player_name + "?", delay=80)
+                    from microbit import *
 
 
-                        ask_play_again("champ")
+                    def ask_play_again(player_name):
+                        display.scroll("play again " + player_name + "?", delay=80)
+
+
+                    ask_play_again("champ")
 
 ----
 
@@ -79,27 +79,27 @@ Functions with default parameters
     #. Write a function called ``player_health`` with 2 default parameters for their user_name and their game health status and display an example using the defaults and an example passing values.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Write a function called ``player_health`` with 2 default parameters for their user_name and their game health status and display an example using the defaults and an example passing values.
+                Write a function called ``player_health`` with 2 default parameters for their user_name and their game health status and display an example using the defaults and an example passing values.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
-
-
-                        def player_health(user_name="novice", health=100):
-                            display.scroll(user_name + "has health of " + str(health), delay=80)
+                    from microbit import *
 
 
-                        player_health()
-                        player_health("speedy", 85)
+                    def player_health(user_name="novice", health=100):
+                        display.scroll(user_name + "has health of " + str(health), delay=80)
+
+
+                    player_health()
+                    player_health("speedy", 85)
 
 ----
 
@@ -127,26 +127,26 @@ Order with named parameters
     #. Write a function called ``player_health`` with 2 default parameters for their user_name and their game health status and display an example using it with the parameter order mixed up.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Write a function called ``player_health`` with 2 default parameters for their user_name and their game health status and display an example using it with the parameter order mixed up.
+                Write a function called ``player_health`` with 2 default parameters for their user_name and their game health status and display an example using it with the parameter order mixed up.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
-
-
-                        def player_health(user_name="novice", health=100):
-                            display.scroll(user_name + "has health of " + str(health), delay=80)
+                    from microbit import *
 
 
-                        player_health(health=85, user_name="speedy")
+                    def player_health(user_name="novice", health=100):
+                        display.scroll(user_name + "has health of " + str(health), delay=80)
+
+
+                    player_health(health=85, user_name="speedy")
 
 ----
 
@@ -175,29 +175,29 @@ Parameter order: positional before default
     #. Write a function called ``player_health`` which takes the user_name as the first parameter and their game health status as a default parameter  and display an example using it with and without passing a value to the default parameter.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Write a function called ``player_health`` which takes the user_name as the first parameter and their game health status as a default parameter  and display an example using it with and without passing a value to the default parameter.
+                Write a function called ``player_health`` which takes the user_name as the first parameter and their game health status as a default parameter  and display an example using it with and without passing a value to the default parameter.
 
-                    
-                    .. code-block:: python
+                
+                .. code-block:: python
 
-                        from microbit import *
-
-
-                        def player_health(user_name, health=100):
-                            display.scroll(user_name + "has health of " + str(health), delay=80)
+                    from microbit import *
 
 
-                        player_health("speedy")
-                        player_health("speedy", 85)
-            
+                    def player_health(user_name, health=100):
+                        display.scroll(user_name + "has health of " + str(health), delay=80)
+
+
+                    player_health("speedy")
+                    player_health("speedy", 85)
+        
 ----
 
 .. admonition:: Tasks
@@ -205,27 +205,27 @@ Parameter order: positional before default
     #. Write a function called ``player_info`` with 3 default parameters for their user_name, their number of game lives and their game health status and display an example using it.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Write a function called ``player_info`` with 3 default parameters for their user_name, their number of game lives and their game health status and display an example using it.
+                Write a function called ``player_info`` with 3 default parameters for their user_name, their number of game lives and their game health status and display an example using it.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
-
-
-                        def player_info(name="novice", game_lives=3, health=100):
-                            display.scroll(name + "has" + str(game_lives) + " lives with health of " + str(health), delay=80)
+                    from microbit import *
 
 
-                        player_info()
-                        player_info("speedy", 2, 65)
+                    def player_info(name="novice", game_lives=3, health=100):
+                        display.scroll(name + "has" + str(game_lives) + " lives with health of " + str(health), delay=80)
+
+
+                    player_info()
+                    player_info("speedy", 2, 65)
 
 ----
 
@@ -289,78 +289,78 @@ Functions returning information
     #. Write a function called ``random_greeting`` that returns a random greeting that is randomly chosen from a list of greetings: ``["Hi", "Hello", "G'day"]``. See: https://www.w3schools.com/python/ref_random_choice.asp
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Define a function ``convert_cm_to_m(cm)`` that returns the result of converting a length in cm to metres. 
+                Define a function ``convert_cm_to_m(cm)`` that returns the result of converting a length in cm to metres. 
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
-
-
-                        def convert_cm_to_m(cm):
-                            return cm / 100
+                    from microbit import *
 
 
-                        length_cm = convert_cm_to_m(80)
-                        display.scroll(length_cm)
-
-                .. tab-item:: Q2
-
-                    Define a function ``convert_m_to_cm(m)`` that returns the result of converting a length in metres to cm. 
-
-                    .. code-block:: python
-
-                        from microbit import *
+                    def convert_cm_to_m(cm):
+                        return cm / 100
 
 
-                        def convert_m_to_cm(m):
-                            return m * 100
+                    length_cm = convert_cm_to_m(80)
+                    display.scroll(length_cm)
+
+            .. tab-item:: Q2
+
+                Define a function ``convert_m_to_cm(m)`` that returns the result of converting a length in metres to cm. 
+
+                .. code-block:: python
+
+                    from microbit import *
 
 
-                        length_m = convert_m_to_cm(1.82)
-                        display.scroll(length_m)
-
-                .. tab-item:: Q3
-
-                    Define a function ``area_square(length)`` that returns the area of a square. 
-
-                    .. code-block:: python
-
-                        from microbit import *
+                    def convert_m_to_cm(m):
+                        return m * 100
 
 
-                        def area_square(length):
-                            return length * length
+                    length_m = convert_m_to_cm(1.82)
+                    display.scroll(length_m)
+
+            .. tab-item:: Q3
+
+                Define a function ``area_square(length)`` that returns the area of a square. 
+
+                .. code-block:: python
+
+                    from microbit import *
 
 
-                        area = area_square(5)
-                        display.scroll(area)
-
-                .. tab-item:: Q4
-
-                    Write a function called ``random_greeting`` that returns a random greeting that is randomly chosen from a list of greetings: ``["Hi", "Hello", "G'day"]``.
-
-                    .. code-block:: python
-
-                        from microbit import *
-                        import random
+                    def area_square(length):
+                        return length * length
 
 
-                        def random_greeting(name):
-                            greetings = ["Hi", "Hello", "G'day"]
-                            greet = random.choice(greetings)
-                            return greet + " " + name
+                    area = area_square(5)
+                    display.scroll(area)
+
+            .. tab-item:: Q4
+
+                Write a function called ``random_greeting`` that returns a random greeting that is randomly chosen from a list of greetings: ``["Hi", "Hello", "G'day"]``.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import random
 
 
-                        greeting = random_greeting("Jim")
-                        display.scroll(greeting, delay=70)
+                    def random_greeting(name):
+                        greetings = ["Hi", "Hello", "G'day"]
+                        greet = random.choice(greetings)
+                        return greet + " " + name
+
+
+                    greeting = random_greeting("Jim")
+                    display.scroll(greeting, delay=70)
 
 
 ----
@@ -396,47 +396,47 @@ Allowing for a variable number of arguments
     #. Define a function ``multi_average(*nums)`` that finds the average of the first 4 primes.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Define a function ``multi_product(*nums)`` that finds the product of the first 4 primes.
+                Define a function ``multi_product(*nums)`` that finds the product of the first 4 primes.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
-
-
-                        def multi_product(*nums):
-                            total = 1
-                            for num in nums:
-                                total = total * num
-                            return total
+                    from microbit import *
 
 
-                        display.scroll(multi_product(2, 3, 5, 7), delay=70)
-
-                .. tab-item:: Q2
-
-                    Define a function ``multi_average(*nums)`` that finds the average of the first 4 primes.
-
-                    .. code-block:: python
-
-                        from microbit import *
+                    def multi_product(*nums):
+                        total = 1
+                        for num in nums:
+                            total = total * num
+                        return total
 
 
-                        def multi_average(*nums):
-                            sum = 0
-                            for num in nums:
-                                sum = sum + num
-                            return sum/len(nums)
+                    display.scroll(multi_product(2, 3, 5, 7), delay=70)
+
+            .. tab-item:: Q2
+
+                Define a function ``multi_average(*nums)`` that finds the average of the first 4 primes.
+
+                .. code-block:: python
+
+                    from microbit import *
 
 
-                        display.scroll(multi_average(2, 3, 5, 7), delay=70)
+                    def multi_average(*nums):
+                        sum = 0
+                        for num in nums:
+                            sum = sum + num
+                        return sum/len(nums)
+
+
+                    display.scroll(multi_average(2, 3, 5, 7), delay=70)
 
 ----
 
@@ -546,43 +546,43 @@ Spy codes
     #. Make use of the `get_shift_cipher` function to decode this secret code: 'AMBC PCB. YZMPR KGQQGML!'. Set the shifter to 2.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                   Make use of the `get_shift_cipher` function to decode this secret code: 'AMBC PCB. YZMPR KGQQGML!'. Set the shifter to 2.
+                Make use of the `get_shift_cipher` function to decode this secret code: 'AMBC PCB. YZMPR KGQQGML!'. Set the shifter to 2.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
 
-                        def get_shift_cipher(secret_string, shifter):
-                            shifter = shifter % 26
-                            cipher = ""
-                            secret_string = secret_string.upper()
-                            for character in secret_string:
-                                ascii_num = ord(character)
-                                if ascii_num >= 65 and ascii_num <= 90:
-                                    ascii_num += shifter
-                                    if ascii_num < 65:
-                                        ascii_num += 26
-                                    elif ascii_num > 90:
-                                        ascii_num -= 26
-                                    cipher += chr(ascii_num)
-                                else:
-                                    cipher += character 
-                            return cipher
+                    def get_shift_cipher(secret_string, shifter):
+                        shifter = shifter % 26
+                        cipher = ""
+                        secret_string = secret_string.upper()
+                        for character in secret_string:
+                            ascii_num = ord(character)
+                            if ascii_num >= 65 and ascii_num <= 90:
+                                ascii_num += shifter
+                                if ascii_num < 65:
+                                    ascii_num += 26
+                                elif ascii_num > 90:
+                                    ascii_num -= 26
+                                cipher += chr(ascii_num)
+                            else:
+                                cipher += character 
+                        return cipher
 
-                        secret_string = 'AMBC PCB. YZMPR KGQQGML!'
-                        code_message = get_shift_cipher(secret_string, 2)
-                        while True:
-                            display.scroll(code_message, delay=50)
-                            sleep(300)
+                    secret_string = 'AMBC PCB. YZMPR KGQQGML!'
+                    code_message = get_shift_cipher(secret_string, 2)
+                    while True:
+                        display.scroll(code_message, delay=50)
+                        sleep(300)
 
 .. admonition:: Exercise
 

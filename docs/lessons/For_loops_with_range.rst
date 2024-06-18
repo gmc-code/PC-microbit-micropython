@@ -37,37 +37,37 @@ Range function starting at 0
     #. Using the range function, write a for-loop that displays the numbers from 0 up to but not including 10.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Using the range function, write a for-loop that displays the numbers from 0 to 5.
+                Using the range function, write a for-loop that displays the numbers from 0 to 5.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        while True:
-                            for n in range(6):
-                                display.scroll(n, delay=80)
-                            sleep(500)
+                    while True:
+                        for n in range(6):
+                            display.scroll(n, delay=80)
+                        sleep(500)
 
-                .. tab-item:: Q2
+            .. tab-item:: Q2
 
-                    Using the range function, write a for-loop that displays the numbers from 0 up to but not including 10.
+                Using the range function, write a for-loop that displays the numbers from 0 up to but not including 10.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        while True:
-                            for n in range(10):
-                                display.scroll(n, delay=80)
-                            sleep(500)
+                    while True:
+                        for n in range(10):
+                            display.scroll(n, delay=80)
+                        sleep(500)
 
 
 ----
@@ -101,37 +101,37 @@ Range function with start and stop values
     #. Using the range function, write a for-loop that displays the numbers from 4 up to but not including 9. 
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Using the range function, write a for-loop that displays the numbers 3, 4, 5, 6, 7. 
+                Using the range function, write a for-loop that displays the numbers 3, 4, 5, 6, 7. 
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        while True:
-                            for n in range(3, 8):
-                                display.scroll(n, delay=80)
-                            sleep(500)
+                    while True:
+                        for n in range(3, 8):
+                            display.scroll(n, delay=80)
+                        sleep(500)
 
-                .. tab-item:: Q2
+            .. tab-item:: Q2
 
-                    Using the range function, write a for-loop that displays the numbers from 4 up to but not including 9.
+                Using the range function, write a for-loop that displays the numbers from 4 up to but not including 9.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        while True:
-                            for n in range(4, 9):
-                                display.scroll(n, delay=80)
-                            sleep(500)
+                    while True:
+                        for n in range(4, 9):
+                            display.scroll(n, delay=80)
+                        sleep(500)
 
 ----
 
@@ -164,37 +164,37 @@ Range function with a step size
     #. Using the range function, write a for-loop that displays the numbers 3, 7, 11, 15. 
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Using the range function, write a for-loop that displays the numbers 2, 4, 6, 8. 
+                Using the range function, write a for-loop that displays the numbers 2, 4, 6, 8. 
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        while True:
-                            for n in range(2, 9, 2):
-                                display.scroll(n, delay=50)
-                            sleep(500)
+                    while True:
+                        for n in range(2, 9, 2):
+                            display.scroll(n, delay=50)
+                        sleep(500)
 
-                .. tab-item:: Q2
+            .. tab-item:: Q2
 
-                    Using the range function, write a for-loop that displays the numbers 3, 7, 11, 15.
+                Using the range function, write a for-loop that displays the numbers 3, 7, 11, 15.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        while True:
-                            for n in range(3, 16, 4):
-                                display.scroll(n, delay=50)
-                            sleep(500)
+                    while True:
+                        for n in range(3, 16, 4):
+                            display.scroll(n, delay=50)
+                        sleep(500)
 
 ----
 
@@ -222,37 +222,37 @@ Using range to count down with a negative step size
     #. Using the range function, write a for-loop that displays the numbers 8, 5, 2.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Using the range function, write a for-loop that displays the numbers 9, 7, 5, 3. 
+                Using the range function, write a for-loop that displays the numbers 9, 7, 5, 3. 
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        while True:
-                            for n in range(9, 2, -2):
-                                display.scroll(n, delay=80)
-                            sleep(500)
+                    while True:
+                        for n in range(9, 2, -2):
+                            display.scroll(n, delay=80)
+                        sleep(500)
 
-                .. tab-item:: Q2
+            .. tab-item:: Q2
 
-                    Using the range function, write a for-loop that displays the numbers 8, 5, 2.
+                Using the range function, write a for-loop that displays the numbers 8, 5, 2.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        while True:
-                            for n in range(8, 1, -3):
-                                display.scroll(n, delay=80)
-                            sleep(500)
+                    while True:
+                        for n in range(8, 1, -3):
+                            display.scroll(n, delay=80)
+                        sleep(500)
 
 ----
 

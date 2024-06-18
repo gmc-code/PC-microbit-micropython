@@ -67,83 +67,83 @@ Compass Pointer
     #. What are the readings for 10 o'clock? Write code to test three values at either end of the range.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    What are the readings for 1 o'clock? Write code to test three values at either end of the range.
+                What are the readings for 1 o'clock? Write code to test three values at either end of the range.
 
-                    About 345 to 316
+                About 345 to 316
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        compass_heading_list = [346, 345, 344, 316, 315, 314]
-                        while True:
-                            for compass_heading in compass_heading_list:
-                                display.scroll(compass_heading, delay=60)
-                                needle = ((-compass_heading + 15) // 30) % 12
-                                display.show(Image.ALL_CLOCKS[needle])
-                                sleep(500)
+                    compass_heading_list = [346, 345, 344, 316, 315, 314]
+                    while True:
+                        for compass_heading in compass_heading_list:
+                            display.scroll(compass_heading, delay=60)
+                            needle = ((-compass_heading + 15) // 30) % 12
+                            display.show(Image.ALL_CLOCKS[needle])
+                            sleep(500)
 
-                .. tab-item:: Q2
+            .. tab-item:: Q2
 
-                    What are the readings for 2 o'clock? Write code to test three values at either end of the range.
+                What are the readings for 2 o'clock? Write code to test three values at either end of the range.
 
-                    About 315 to 286
+                About 315 to 286
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        compass_heading_list = [316, 315, 314, 286, 285, 284]
-                        while True:
-                            for compass_heading in compass_heading_list:
-                                display.scroll(compass_heading, delay=60)
-                                needle = ((-compass_heading + 15) // 30) % 12
-                                display.show(Image.ALL_CLOCKS[needle])
-                                sleep(500)
+                    compass_heading_list = [316, 315, 314, 286, 285, 284]
+                    while True:
+                        for compass_heading in compass_heading_list:
+                            display.scroll(compass_heading, delay=60)
+                            needle = ((-compass_heading + 15) // 30) % 12
+                            display.show(Image.ALL_CLOCKS[needle])
+                            sleep(500)
 
-                .. tab-item:: Q3
+            .. tab-item:: Q3
 
-                    What are the readings for 11 o'clock? Write code to test three values at either end of the range.
+                What are the readings for 11 o'clock? Write code to test three values at either end of the range.
 
-                    About 16 to 45
+                About 16 to 45
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        compass_heading_list = [14, 15, 16, 44, 45, 46]
-                        while True:
-                            for compass_heading in compass_heading_list:
-                                display.scroll(compass_heading, delay=60)
-                                needle = ((-compass_heading + 15) // 30) % 12
-                                display.show(Image.ALL_CLOCKS[needle])
-                                sleep(500)
+                    compass_heading_list = [14, 15, 16, 44, 45, 46]
+                    while True:
+                        for compass_heading in compass_heading_list:
+                            display.scroll(compass_heading, delay=60)
+                            needle = ((-compass_heading + 15) // 30) % 12
+                            display.show(Image.ALL_CLOCKS[needle])
+                            sleep(500)
 
-                .. tab-item:: Q4
+            .. tab-item:: Q4
 
-                    What are the readings for 10 o'clock? Write code to test three values at either end of the range.
+                What are the readings for 10 o'clock? Write code to test three values at either end of the range.
 
-                    About 46 to 75
+                About 46 to 75
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        compass_heading_list = [44, 45, 46, 74, 75, 76]
-                        while True:
-                            for compass_heading in compass_heading_list:
-                                display.scroll(compass_heading, delay=60)
-                                needle = ((-compass_heading + 15) // 30) % 12
-                                display.show(Image.ALL_CLOCKS[needle])
-                                sleep(500)
+                    compass_heading_list = [44, 45, 46, 74, 75, 76]
+                    while True:
+                        for compass_heading in compass_heading_list:
+                            display.scroll(compass_heading, delay=60)
+                            needle = ((-compass_heading + 15) // 30) % 12
+                            display.show(Image.ALL_CLOCKS[needle])
+                            sleep(500)
 
 ----
 

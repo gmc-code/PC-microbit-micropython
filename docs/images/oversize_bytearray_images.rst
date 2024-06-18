@@ -86,46 +86,46 @@ Wide array
     #. Modify the code to use a function that returns the **wide_img** from the **wide_arr**.
  
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Modify the code to use a function that returns the **wide_img** from the **wide_arr**.
+                Modify the code to use a function that returns the **wide_img** from the **wide_arr**.
 
-                    .. code-block:: python
-                        
-                        from microbit import *
-
-
-                        wide_arr = [
-                            [9, 8, 7, 6, 5, 4, 3, 2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 8, 7, 6],
-                            [9, 8, 7, 6, 5, 4, 3, 2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 8, 7, 6],
-                            [9, 8, 7, 6, 5, 4, 3, 2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 8, 7, 6],
-                            [9, 8, 7, 6, 5, 4, 3, 2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 8, 7, 6],
-                            [9, 8, 7, 6, 5, 4, 3, 2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 8, 7, 6],
-                        ]
+                .. code-block:: python
+                    
+                    from microbit import *
 
 
-                        def get_wide_img_from_array(wide_arr):
-                            img_array = list()
-                            for y in range(5):
-                                img_array.extend(wide_arr[y])
-                            width = len(wide_arr[0])
-                            wide_img = Image(width, 5, bytearray(img_array))
-                            return wide_img
+                    wide_arr = [
+                        [9, 8, 7, 6, 5, 4, 3, 2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 8, 7, 6],
+                        [9, 8, 7, 6, 5, 4, 3, 2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 8, 7, 6],
+                        [9, 8, 7, 6, 5, 4, 3, 2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 8, 7, 6],
+                        [9, 8, 7, 6, 5, 4, 3, 2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 8, 7, 6],
+                        [9, 8, 7, 6, 5, 4, 3, 2, 1, 2, 3, 4, 5, 6, 7, 8, 9, 8, 7, 6],
+                    ]
 
 
-                        wide_img = get_wide_img_from_array(wide_arr)
+                    def get_wide_img_from_array(wide_arr):
+                        img_array = list()
+                        for y in range(5):
+                            img_array.extend(wide_arr[y])
                         width = len(wide_arr[0])
-                        while True:
-                            for i in range(width - 4):
-                                shown_img = wide_img.shift_left(i)
-                                display.show(shown_img)
-                                sleep(100)
+                        wide_img = Image(width, 5, bytearray(img_array))
+                        return wide_img
+
+
+                    wide_img = get_wide_img_from_array(wide_arr)
+                    width = len(wide_arr[0])
+                    while True:
+                        for i in range(width - 4):
+                            shown_img = wide_img.shift_left(i)
+                            display.show(shown_img)
+                            sleep(100)
 
 
 ----

@@ -114,32 +114,32 @@ Power off
                 sleep(1000)
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Fix the code in 3 places so that it shows the image NO for 1 second before powering off if the B-button is pressed at any time.
+                Fix the code in 3 places so that it shows the image NO for 1 second before powering off if the B-button is pressed at any time.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
-                        import power
+                    from microbit import *
+                    import power
 
 
-                        display.show(Image.YES)
-                        while True:
-                            if button_b.was_pressed():
-                                display.show(Image.NO)
-                                sleep(1000)
-                                power.off()
-                            display.show(Image.HAPPY)
+                    display.show(Image.YES)
+                    while True:
+                        if button_b.was_pressed():
+                            display.show(Image.NO)
                             sleep(1000)
-                            display.show("?")
-                            sleep(1000)
+                            power.off()
+                        display.show(Image.HAPPY)
+                        sleep(1000)
+                        display.show("?")
+                        sleep(1000)
 
 ----
 

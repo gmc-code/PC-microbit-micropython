@@ -286,104 +286,102 @@ Integer-list-producing definitions for bytearray
 
     
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Use the definition for a horizontal gradient to create a gradient horizontally from 7 in the left to 3 in the right.
+                Use the definition for a horizontal gradient to create a gradient horizontally from 7 in the left to 3 in the right.
 
-                    .. code-block:: python
-                        
-                        from microbit import *
-
-
-                        def gradient_x(x_val1, x_step):
-                            grid = []
-                            for y in range(5):
-                                for x in range(5):
-                                    new_x = min(9, max(0, int(x_val1 + (x * x_step))))
-                                    grid.append(new_x)
-                            return grid
+                .. code-block:: python
+                    
+                    from microbit import *
 
 
-                        img_array = gradient_x(7, -1)
-                        img_horz_grad = Image(5, 5, bytearray(img_array))
-                        display.show(img_horz_grad)
-
-                .. tab-item:: Q2
-
-                    Modify the code to create a vertical gradient from 1 in the top to 9 in the bottom using a definition to produce the gradient list: [1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 5, 5, 5, 5, 5, 7, 7, 7, 7, 7, 9, 9, 9, 9, 9]
-
-                    .. code-block:: python
-                        
-                        from microbit import *
+                    def gradient_x(x_val1, x_step):
+                        grid = []
+                        for y in range(5):
+                            for x in range(5):
+                                new_x = min(9, max(0, int(x_val1 + (x * x_step))))
+                                grid.append(new_x)
+                        return grid
 
 
-                        def gradient_y(y_val1, y_step):
-                            grid = []
-                            for y in range(5):
-                                new_y = min(9, max(0, int(y_val1 + (y * y_step))))
-                                for x in range(5):
-                                    grid.append(new_y)
-                            return grid
+                    img_array = gradient_x(7, -1)
+                    img_horz_grad = Image(5, 5, bytearray(img_array))
+                    display.show(img_horz_grad)
+
+            .. tab-item:: Q2
+
+                Modify the code to create a vertical gradient from 1 in the top to 9 in the bottom using a definition to produce the gradient list: [1, 1, 1, 1, 1, 3, 3, 3, 3, 3, 5, 5, 5, 5, 5, 7, 7, 7, 7, 7, 9, 9, 9, 9, 9]
+
+                .. code-block:: python
+                    
+                    from microbit import *
 
 
-                        img_array = gradient_y(1, 2)
-                        img_vert_grad = Image(5, 5, bytearray(img_array))
-                        display.show(img_vert_grad)
-
-                .. tab-item:: Q3
-
-                    Use the definition for a vertical gradient to create one from 9 in the top to 2 in the bottom, [9, 9, 9, 9, 9, 7, 7, 7, 7, 7, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 2, 2, 2, 2, 2], and display it.
-
-                    .. code-block:: python
-                        
-                        from microbit import *
+                    def gradient_y(y_val1, y_step):
+                        grid = []
+                        for y in range(5):
+                            new_y = min(9, max(0, int(y_val1 + (y * y_step))))
+                            for x in range(5):
+                                grid.append(new_y)
+                        return grid
 
 
-                        def gradient_y(y_val1, y_step):
-                            grid = []
-                            for y in range(5):
-                                new_y = min(9, max(0, int(y_val1 + (y * y_step))))
-                                for x in range(5):
-                                    grid.append(new_y)
-                            return grid
+                    img_array = gradient_y(1, 2)
+                    img_vert_grad = Image(5, 5, bytearray(img_array))
+                    display.show(img_vert_grad)
+
+            .. tab-item:: Q3
+
+                Use the definition for a vertical gradient to create one from 9 in the top to 2 in the bottom, [9, 9, 9, 9, 9, 7, 7, 7, 7, 7, 5, 5, 5, 5, 5, 4, 4, 4, 4, 4, 2, 2, 2, 2, 2], and display it.
+
+                .. code-block:: python
+                    
+                    from microbit import *
 
 
-                        img_array = gradient_y(9, -8 / 5)
-                        img_vert_grad = Image(5, 5, bytearray(img_array))
-                        display.show(img_vert_grad)
+                    def gradient_y(y_val1, y_step):
+                        grid = []
+                        for y in range(5):
+                            new_y = min(9, max(0, int(y_val1 + (y * y_step))))
+                            for x in range(5):
+                                grid.append(new_y)
+                        return grid
 
 
-                .. tab-item:: Q4
-
-                    Write a definition to produce the list to be used for a diagonal gradient from 1 in the top left to 9 in the bottom right, [1, 2, 3, 4, 5, 2, 3, 4, 5, 6, 3, 4, 5, 6, 7, 4, 5, 6, 7, 8, 5, 6, 7, 8, 9], and display it.
-
-                    .. code-block:: python
-                        
-                        from microbit import *
+                    img_array = gradient_y(9, -8 / 5)
+                    img_vert_grad = Image(5, 5, bytearray(img_array))
+                    display.show(img_vert_grad)
 
 
-                        def gradient_xy(xy_val1, x_step, y_step):
-                            grid = []
-                            for y in range(5):
-                                y_add = min(9, max(0, (y * y_step)))
-                                for x in range(5):
-                                    x_add = min(9, max(0, (x * x_step)))
-                                    new_xy = min(9, max(0, int(xy_val1 + x_add + y_add)))
-                                    grid.append(new_xy)
-                            return grid
+            .. tab-item:: Q4
+
+                Write a definition to produce the list to be used for a diagonal gradient from 1 in the top left to 9 in the bottom right, [1, 2, 3, 4, 5, 2, 3, 4, 5, 6, 3, 4, 5, 6, 7, 4, 5, 6, 7, 8, 5, 6, 7, 8, 9], and display it.
+
+                .. code-block:: python
+                    
+                    from microbit import *
 
 
-                        img_array = gradient_xy(1, 1, 1)
-                        img_vert_grad = Image(5, 5, bytearray(img_array))
-                        display.show(img_vert_grad)
+                    def gradient_xy(xy_val1, x_step, y_step):
+                        grid = []
+                        for y in range(5):
+                            y_add = min(9, max(0, (y * y_step)))
+                            for x in range(5):
+                                x_add = min(9, max(0, (x * x_step)))
+                                new_xy = min(9, max(0, int(xy_val1 + x_add + y_add)))
+                                grid.append(new_xy)
+                        return grid
 
 
+                    img_array = gradient_xy(1, 1, 1)
+                    img_vert_grad = Image(5, 5, bytearray(img_array))
+                    display.show(img_vert_grad)
 
 ----
 
@@ -420,43 +418,43 @@ Random-integer-producing definitions for bytearray
     #. Modify the code to add 2 nested for-loops for x values so that the left and right edges use the max_brightness value.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Modify the code to add 2 nested for-loops for x values so that the left and right edges use the max_brightness value.
+                Modify the code to add 2 nested for-loops for x values so that the left and right edges use the max_brightness value.
 
-                    .. code-block:: python
-                        
-                        from microbit import *
-                        from random import randint
-
-
-                        def full_screen_fill_bytes(min_brightness=1, max_brightness=9):
-                            screen_bytes = []
-                            for y in range(0, 5):
-                                for x in range(0, 1):
-                                    brightness = max_brightness
-                                    screen_bytes.append(brightness)
-                                for x in range(1, 4):
-                                    brightness = randint(min_brightness, max_brightness)
-                                    screen_bytes.append(brightness)
-                                for x in range(4, 5):
-                                    brightness = max_brightness
-                                    screen_bytes.append(brightness)
-                            return screen_bytes
+                .. code-block:: python
+                    
+                    from microbit import *
+                    from random import randint
 
 
-                        while True:
-                            screen_bytes = full_screen_fill_bytes(1, 9)
-                            new_img = Image(5, 5, bytearray(screen_bytes))
-                            display.show(new_img)
-                            sleep(1000)   
-          
+                    def full_screen_fill_bytes(min_brightness=1, max_brightness=9):
+                        screen_bytes = []
+                        for y in range(0, 5):
+                            for x in range(0, 1):
+                                brightness = max_brightness
+                                screen_bytes.append(brightness)
+                            for x in range(1, 4):
+                                brightness = randint(min_brightness, max_brightness)
+                                screen_bytes.append(brightness)
+                            for x in range(4, 5):
+                                brightness = max_brightness
+                                screen_bytes.append(brightness)
+                        return screen_bytes
+
+
+                    while True:
+                        screen_bytes = full_screen_fill_bytes(1, 9)
+                        new_img = Image(5, 5, bytearray(screen_bytes))
+                        display.show(new_img)
+                        sleep(1000)   
+        
 ----
 
 List comprehension for bytearray images
@@ -507,40 +505,40 @@ See: https://www.w3schools.com/python/python_lists_comprehension.asp
 
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Modify the code to produce an image with pixels at a brightness determined by the formula: **int(((i % 3) + 1) * 3)**. This creates a cyclic pattern of 3.
+                Modify the code to produce an image with pixels at a brightness determined by the formula: **int(((i % 3) + 1) * 3)**. This creates a cyclic pattern of 3.
 
-                    .. code-block:: python
-                        
-                        from microbit import *
+                .. code-block:: python
+                    
+                    from microbit import *
 
 
-                        brightness_array = [int(((i % 3) + 1) * 3) for i in range(25)]
+                    brightness_array = [int(((i % 3) + 1) * 3) for i in range(25)]
+                    new_img = Image(5, 5, bytearray(brightness_array))
+                    display.show(new_img)
+
+            .. tab-item:: Q2
+
+                Modify the code to produce images made up of random brightnesses chosen from the list [1, 5, 9].
+
+                .. code-block:: python
+                    
+                    from microbit import *
+                    import random
+
+
+                    while True:
+                        brightness_array = [random.choice([1, 5, 9]) for _ in range(25)]
                         new_img = Image(5, 5, bytearray(brightness_array))
                         display.show(new_img)
-
-                .. tab-item:: Q2
-
-                    Modify the code to produce images made up of random brightnesses chosen from the list [1, 5, 9].
-
-                    .. code-block:: python
-                        
-                        from microbit import *
-                        import random
-
-
-                        while True:
-                            brightness_array = [random.choice([1, 5, 9]) for _ in range(25)]
-                            new_img = Image(5, 5, bytearray(brightness_array))
-                            display.show(new_img)
-                            sleep(500)
+                        sleep(500)
 
 ----
 
@@ -573,33 +571,33 @@ See: https://www.w3schools.com/python/python_lists_comprehension.asp
     #. Modify the code to use mod 3 instead of mod 2.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Modify the code set the brightness to 9 when i mod 1 is 1 instead of 0.
+                Modify the code set the brightness to 9 when i mod 1 is 1 instead of 0.
 
-                    .. code-block:: python
-                        
-                        from microbit import *
+                .. code-block:: python
+                    
+                    from microbit import *
 
-                        brightness_array = [9 if i % 2 == 1 else 0 for i in range(25)]
-                        new_img = Image(5, 5, bytearray(brightness_array))
-                        display.show(new_img)
+                    brightness_array = [9 if i % 2 == 1 else 0 for i in range(25)]
+                    new_img = Image(5, 5, bytearray(brightness_array))
+                    display.show(new_img)
 
-                .. tab-item:: Q2
+            .. tab-item:: Q2
 
-                    Modify the code to use mod 3 instead of mod 2.
+                Modify the code to use mod 3 instead of mod 2.
 
-                    .. code-block:: python
-                        
-                        from microbit import *
+                .. code-block:: python
+                    
+                    from microbit import *
 
-                        brightness_array = [9 if i % 3 == 0 else 0 for i in range(25)]
-                        new_img = Image(5, 5, bytearray(brightness_array))
-                        display.show(new_img)
+                    brightness_array = [9 if i % 3 == 0 else 0 for i in range(25)]
+                    new_img = Image(5, 5, bytearray(brightness_array))
+                    display.show(new_img)
 

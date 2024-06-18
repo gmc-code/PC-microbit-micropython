@@ -38,39 +38,39 @@ Functions without parameters
     #. Write a function called ``countdown`` that counts down from 5 to 1, showing each number. 
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Write a function called ``scroll_name`` that scrolls your name.
+                Write a function called ``scroll_name`` that scrolls your name.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        def scroll_name():
-                            display.scroll("my name", delay=80)
+                    def scroll_name():
+                        display.scroll("my name", delay=80)
 
-                        scroll_name()
+                    scroll_name()
 
-                .. tab-item:: Q2
+            .. tab-item:: Q2
 
-                    Write a function called ``countdown`` that counts down from 5 to 1, showing each number.
+                Write a function called ``countdown`` that counts down from 5 to 1, showing each number.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        def countdown():
-                            for num in range(5, 0, -1):
-                                display.show(num)
-                                sleep(300)
-                            display.clear()
+                    def countdown():
+                        for num in range(5, 0, -1):
+                            display.show(num)
+                            sleep(300)
+                        display.clear()
 
-                        countdown()
+                    countdown()
 
 

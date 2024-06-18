@@ -87,25 +87,25 @@ Brightness array
     #. Write a function to return and image array from an image.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: get_image_array
+            .. tab-item:: get_image_array
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
 
-                        def get_image_array(img):
-                            img_repr = repr(img)
-                            img_str = img_repr[7:-3]
-                            img_str = img_str.replace(":", "")
-                            img_array = [int(x) for x in img_str]
-                            return img_array
+                    def get_image_array(img):
+                        img_repr = repr(img)
+                        img_str = img_repr[7:-3]
+                        img_str = img_str.replace(":", "")
+                        img_array = [int(x) for x in img_str]
+                        return img_array
 
 ----
 
@@ -151,52 +151,52 @@ Flipping horizontally
     #. Write code to flip the duck horizontally and swap between the display of the duck and the flipped duck.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Write code to flip the duck horizontally and swap between the display of the duck and the flipped duck.
+                Write code to flip the duck horizontally and swap between the display of the duck and the flipped duck.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
 
-                        def get_image_array(img):
-                            img_repr = repr(img)
-                            img_str = img_repr[7:-3]
-                            img_str = img_str.replace(":", "")
-                            img_array = [int(x) for x in img_str]
-                            return img_array
+                    def get_image_array(img):
+                        img_repr = repr(img)
+                        img_str = img_repr[7:-3]
+                        img_str = img_str.replace(":", "")
+                        img_array = [int(x) for x in img_str]
+                        return img_array
 
-                        def get_img_arr_flip_hor(img_array):
-                            # get every 5 elements and reverse them
-                            row0 = img_array[:5]
-                            row1 = img_array[5:10]
-                            row2 = img_array[10:15]
-                            row3 = img_array[15:20]
-                            row4 = img_array[20:]
-                            row0.reverse()
-                            row1.reverse()
-                            row2.reverse()
-                            row3.reverse()
-                            row4.reverse()
-                            output_array = row0 + row1 + row2 + row3 + row4
-                            return output_array
-                            
-                        img0 = Image.DUCK
-                        img_array = get_img_arr_flip_hor(get_image_array(img0))
-                        img0_flip_hor= Image(5, 5, bytearray(img_array))
+                    def get_img_arr_flip_hor(img_array):
+                        # get every 5 elements and reverse them
+                        row0 = img_array[:5]
+                        row1 = img_array[5:10]
+                        row2 = img_array[10:15]
+                        row3 = img_array[15:20]
+                        row4 = img_array[20:]
+                        row0.reverse()
+                        row1.reverse()
+                        row2.reverse()
+                        row3.reverse()
+                        row4.reverse()
+                        output_array = row0 + row1 + row2 + row3 + row4
+                        return output_array
+                        
+                    img0 = Image.DUCK
+                    img_array = get_img_arr_flip_hor(get_image_array(img0))
+                    img0_flip_hor= Image(5, 5, bytearray(img_array))
 
-                        while True:
-                            display.show(img0)
-                            sleep(300)
-                            display.show(img0_flip_hor)
-                            sleep(300)
+                    while True:
+                        display.show(img0)
+                        sleep(300)
+                        display.show(img0_flip_hor)
+                        sleep(300)
 
 ----
 
@@ -223,49 +223,49 @@ Flipping vertically
     #. Write code to flip the duck vertically and swap between the display of the duck and the flipped duck.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Write code to flip the duck vertically and swap between the display of the duck and the flipped duck.
+                Write code to flip the duck vertically and swap between the display of the duck and the flipped duck.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
-
-
-                        def get_image_array(img):
-                            img_repr = repr(img)
-                            img_str = img_repr[7:-3]
-                            img_str = img_str.replace(":", "")
-                            img_array = [int(x) for x in img_str]
-                            return img_array
+                    from microbit import *
 
 
-                        def get_img_arr_flip_vert(img_array):
-                            # get every 5 elements as rows and reverse order of rows.
-                            row0 = img_array[:5]
-                            row1 = img_array[5:10]
-                            row2 = img_array[10:15]
-                            row3 = img_array[15:20]
-                            row4 = img_array[20:]
-                            output_array = row4 + row3 + row2 + row1 + row0
-                            return output_array
+                    def get_image_array(img):
+                        img_repr = repr(img)
+                        img_str = img_repr[7:-3]
+                        img_str = img_str.replace(":", "")
+                        img_array = [int(x) for x in img_str]
+                        return img_array
 
 
-                        img0 = Image.DUCK
-                        img_array = get_img_arr_flip_vert(get_image_array(img0))
-                        img0_flip_vert = Image(5, 5, bytearray(img_array))
+                    def get_img_arr_flip_vert(img_array):
+                        # get every 5 elements as rows and reverse order of rows.
+                        row0 = img_array[:5]
+                        row1 = img_array[5:10]
+                        row2 = img_array[10:15]
+                        row3 = img_array[15:20]
+                        row4 = img_array[20:]
+                        output_array = row4 + row3 + row2 + row1 + row0
+                        return output_array
 
-                        while True:
-                            display.show(img0)
-                            sleep(300)
-                            display.show(img0_flip_vert)
-                            sleep(300)
+
+                    img0 = Image.DUCK
+                    img_array = get_img_arr_flip_vert(get_image_array(img0))
+                    img0_flip_vert = Image(5, 5, bytearray(img_array))
+
+                    while True:
+                        display.show(img0)
+                        sleep(300)
+                        display.show(img0_flip_vert)
+                        sleep(300)
 
 ----
 
@@ -282,79 +282,79 @@ Flipping a list of images
     #. Write code to rotate a list of images using flip_image_list(image_list, transition_time=300).
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Write code to rotate a list of images using rotate_image_list(image_list, transition_time=500).
+                Write code to rotate a list of images using rotate_image_list(image_list, transition_time=500).
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import 
-
-
-                        def get_image_array(img=Image.DUCK):
-                            img_repr = repr(img)
-                            img_str = img_repr[7:-3]
-                            img_str = img_str.replace(":", "")
-                            img_array = [int(x) for x in img_str]
-                            return img_array
+                    from microbit import 
 
 
-                        def get_img_arr_flip_hor(img_array):
-                            # get every 5 elements and reverse them in each row
-                            row0 = img_array[:5]
-                            row1 = img_array[5:10]
-                            row2 = img_array[10:15]
-                            row3 = img_array[15:20]
-                            row4 = img_array[20:]
-                            row0.reverse()
-                            row1.reverse()
-                            row2.reverse()
-                            row3.reverse()
-                            row4.reverse()
-                            output_array = row0 + row1 + row2 + row3 + row4
-                            return output_array
+                    def get_image_array(img=Image.DUCK):
+                        img_repr = repr(img)
+                        img_str = img_repr[7:-3]
+                        img_str = img_str.replace(":", "")
+                        img_array = [int(x) for x in img_str]
+                        return img_array
 
 
-                        def get_img_arr_flip_vert(img_array):
-                            # get every 5 elements as rows and reverse order of rows.
-                            row0 = img_array[:5]
-                            row1 = img_array[5:10]
-                            row2 = img_array[10:15]
-                            row3 = img_array[15:20]
-                            row4 = img_array[20:]
-                            output_array = row4 + row3 + row2 + row1 + row0
-                            return output_array
+                    def get_img_arr_flip_hor(img_array):
+                        # get every 5 elements and reverse them in each row
+                        row0 = img_array[:5]
+                        row1 = img_array[5:10]
+                        row2 = img_array[10:15]
+                        row3 = img_array[15:20]
+                        row4 = img_array[20:]
+                        row0.reverse()
+                        row1.reverse()
+                        row2.reverse()
+                        row3.reverse()
+                        row4.reverse()
+                        output_array = row0 + row1 + row2 + row3 + row4
+                        return output_array
 
 
-                        object_images = [
-                            Image.MUSIC_CROTCHET,
-                            Image.MUSIC_QUAVER,
-                            Image.MUSIC_QUAVERS,
-                            Image.PACMAN,
-                            Image.ROLLERSKATE,
-                            Image.TRIANGLE_LEFT,
-                            Image.UMBRELLA,
-                            Image.YES,
-                        ]
+                    def get_img_arr_flip_vert(img_array):
+                        # get every 5 elements as rows and reverse order of rows.
+                        row0 = img_array[:5]
+                        row1 = img_array[5:10]
+                        row2 = img_array[10:15]
+                        row3 = img_array[15:20]
+                        row4 = img_array[20:]
+                        output_array = row4 + row3 + row2 + row1 + row0
+                        return output_array
 
 
-                        def flip_image_list(image_list, transition_time=500):
-                            for img in image_list:
-                                img0 = img
-                                img_flip_hor = Image(5, 5, bytearray(get_img_arr_flip_hor(get_image_array(img0))))
-                                img_flip_vert = Image(5, 5, bytearray(get_img_arr_flip_vert(get_image_array(img0))))
-                                img_seq = [img0, img_flip_hor, img0, img_flip_vert, img0]
-                                display.show(img_seq, delay=transition_time)
+                    object_images = [
+                        Image.MUSIC_CROTCHET,
+                        Image.MUSIC_QUAVER,
+                        Image.MUSIC_QUAVERS,
+                        Image.PACMAN,
+                        Image.ROLLERSKATE,
+                        Image.TRIANGLE_LEFT,
+                        Image.UMBRELLA,
+                        Image.YES,
+                    ]
 
 
-                        while True:
-                            flip_image_list(object_images)
+                    def flip_image_list(image_list, transition_time=500):
+                        for img in image_list:
+                            img0 = img
+                            img_flip_hor = Image(5, 5, bytearray(get_img_arr_flip_hor(get_image_array(img0))))
+                            img_flip_vert = Image(5, 5, bytearray(get_img_arr_flip_vert(get_image_array(img0))))
+                            img_seq = [img0, img_flip_hor, img0, img_flip_vert, img0]
+                            display.show(img_seq, delay=transition_time)
+
+
+                    while True:
+                        flip_image_list(object_images)
 
 ----
 
@@ -386,19 +386,19 @@ Rotating 270 degrees
         :align: center  
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Complete the grid of the renumbering of the indices in the image array. Observe the pattern and use that to code range functions for each list comprehension for each row of pixels.
+                Complete the grid of the renumbering of the indices in the image array. Observe the pattern and use that to code range functions for each list comprehension for each row of pixels.
 
-                    .. image:: images/rotate_270_array.png
-                        :scale: 100 %
-                        :align: center
+                .. image:: images/rotate_270_array.png
+                    :scale: 100 %
+                    :align: center
 
 ----
 
@@ -407,49 +407,49 @@ Rotating 270 degrees
     #. Write code to rotate the duck 90 degrees anticlockwise and swap between the display of the duck and the flipped duck.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                   Write code to rotate the duck 90 degrees anticlockwise and swap between the display of the duck and the flipped duck.
+                Write code to rotate the duck 90 degrees anticlockwise and swap between the display of the duck and the flipped duck.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
-
-
-                        def get_image_array(img):
-                            img_repr = repr(img)
-                            img_str = img_repr[7:-3]
-                            img_str = img_str.replace(":", "")
-                            img_array = [int(x) for x in img_str]
-                            return img_array
+                    from microbit import *
 
 
-                        def get_img_arr_rotate_270(img_array):
-                            # 4, 9, 14, 19, 24;; 3, 8, 13, 18, 23.
-                            row0 = [img_array[x] for x in range(4, 25, 5)]
-                            row1 = [img_array[x] for x in range(3, 25, 5)]
-                            row2 = [img_array[x] for x in range(2, 25, 5)]
-                            row3 = [img_array[x] for x in range(1, 25, 5)]
-                            row4 = [img_array[x] for x in range(0, 25, 5)]
-                            output_array = row0 + row1 + row2 + row3 + row4
-                            return output_array
+                    def get_image_array(img):
+                        img_repr = repr(img)
+                        img_str = img_repr[7:-3]
+                        img_str = img_str.replace(":", "")
+                        img_array = [int(x) for x in img_str]
+                        return img_array
 
 
-                        img0 = Image.DUCK
-                        img_array = get_img_arr_rotate_270(get_image_array(img0))
-                        img270 = Image(5, 5, bytearray(img_array))
+                    def get_img_arr_rotate_270(img_array):
+                        # 4, 9, 14, 19, 24;; 3, 8, 13, 18, 23.
+                        row0 = [img_array[x] for x in range(4, 25, 5)]
+                        row1 = [img_array[x] for x in range(3, 25, 5)]
+                        row2 = [img_array[x] for x in range(2, 25, 5)]
+                        row3 = [img_array[x] for x in range(1, 25, 5)]
+                        row4 = [img_array[x] for x in range(0, 25, 5)]
+                        output_array = row0 + row1 + row2 + row3 + row4
+                        return output_array
 
-                        while True:
-                            display.show(img0)
-                            sleep(300)
-                            display.show(img270)
-                            sleep(300)
+
+                    img0 = Image.DUCK
+                    img_array = get_img_arr_rotate_270(get_image_array(img0))
+                    img270 = Image(5, 5, bytearray(img_array))
+
+                    while True:
+                        display.show(img0)
+                        sleep(300)
+                        display.show(img270)
+                        sleep(300)
 
 ----
 
@@ -480,19 +480,19 @@ Rotating 90 degrees clockwise
         :align: center  
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Complete the grid of the renumbering of the indices in the image array. Observe the pattern and use that to code range functions for each list comprehension for each row of pixels.
+                Complete the grid of the renumbering of the indices in the image array. Observe the pattern and use that to code range functions for each list comprehension for each row of pixels.
 
-                    .. image:: images/rotate_90_array.png
-                        :scale: 100 %
-                        :align: center
+                .. image:: images/rotate_90_array.png
+                    :scale: 100 %
+                    :align: center
 
 ----
 
@@ -501,49 +501,49 @@ Rotating 90 degrees clockwise
     #. Write code to rotate the duck 90 degrees clockwise and swap between the display of the duck and the flipped duck.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Write code to rotate the duck 90 degrees clockwise and swap between the display of the duck and the flipped duck.
+                Write code to rotate the duck 90 degrees clockwise and swap between the display of the duck and the flipped duck.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
-
-
-                        def get_image_array(img):
-                            img_repr = repr(img)
-                            img_str = img_repr[7:-3]
-                            img_str = img_str.replace(":", "")
-                            img_array = [int(x) for x in img_str]
-                            return img_array
+                    from microbit import *
 
 
-                        def get_img_arr_rotate_90(img_array):
-                            # 20,15,10,5,0;;21,16,11,6,1...
-                            row0 = [img_array[x] for x in range(20, -1, -5)]
-                            row1 = [img_array[x] for x in range(21, -1, -5)]
-                            row2 = [img_array[x] for x in range(22, -1, -5)]
-                            row3 = [img_array[x] for x in range(23, -1, -5)]
-                            row4 = [img_array[x] for x in range(24, -1, -5)]
-                            output_array = row0 + row1 + row2 + row3 + row4
-                            return output_array
+                    def get_image_array(img):
+                        img_repr = repr(img)
+                        img_str = img_repr[7:-3]
+                        img_str = img_str.replace(":", "")
+                        img_array = [int(x) for x in img_str]
+                        return img_array
 
 
-                        img0 = Image.DUCK
-                        img_array = get_img_arr_rotate_90(get_image_array(img0))
-                        img90 = Image(5, 5, bytearray(img_array))
+                    def get_img_arr_rotate_90(img_array):
+                        # 20,15,10,5,0;;21,16,11,6,1...
+                        row0 = [img_array[x] for x in range(20, -1, -5)]
+                        row1 = [img_array[x] for x in range(21, -1, -5)]
+                        row2 = [img_array[x] for x in range(22, -1, -5)]
+                        row3 = [img_array[x] for x in range(23, -1, -5)]
+                        row4 = [img_array[x] for x in range(24, -1, -5)]
+                        output_array = row0 + row1 + row2 + row3 + row4
+                        return output_array
 
-                        while True:
-                            display.show(img0)
-                            sleep(300)
-                            display.show(img90)
-                            sleep(300)
+
+                    img0 = Image.DUCK
+                    img_array = get_img_arr_rotate_90(get_image_array(img0))
+                    img90 = Image(5, 5, bytearray(img_array))
+
+                    while True:
+                        display.show(img0)
+                        sleep(300)
+                        display.show(img90)
+                        sleep(300)
 
 
 ----
@@ -563,76 +563,76 @@ Rotating 180 degrees
     #. Write code to rotate the duck 180 degrees and swap between the display of the duck and the flipped duck. 
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
-
-                            def get_img_arr_rotate_180(img_array):
-                                return get_img_arr_flip_vert(get_img_arr_flip_hor(img_array))
-
-                .. tab-item:: Q2
-
-                    .. code-block:: python
-
-                        from microbit import *
-
-
-                        def get_image_array(img=Image.DUCK):
-                            img_repr = repr(img)
-                            img_str = img_repr[7:-3]
-                            img_str = img_str.replace(":", "")
-                            img_array = [int(x) for x in img_str]
-                            return img_array
-
-
-                        def get_img_arr_flip_hor(img_array):
-                            # get every 5 elements and reverse them in each row
-                            row0 = img_array[:5]
-                            row1 = img_array[5:10]
-                            row2 = img_array[10:15]
-                            row3 = img_array[15:20]
-                            row4 = img_array[20:]
-                            row0.reverse()
-                            row1.reverse()
-                            row2.reverse()
-                            row3.reverse()
-                            row4.reverse()
-                            output_array = row0 + row1 + row2 + row3 + row4
-                            return output_array
-
-
-                        def get_img_arr_flip_vert(img_array):
-                            # get every 5 elements as rows and reverse order of rows.
-                            row0 = img_array[:5]
-                            row1 = img_array[5:10]
-                            row2 = img_array[10:15]
-                            row3 = img_array[15:20]
-                            row4 = img_array[20:]
-                            output_array = row4 + row3 + row2 + row1 + row0
-                            return output_array
-
+                    from microbit import *
 
                         def get_img_arr_rotate_180(img_array):
                             return get_img_arr_flip_vert(get_img_arr_flip_hor(img_array))
 
+            .. tab-item:: Q2
 
-                        img0 = Image.DUCK
-                        img180 = Image(5, 5, bytearray(get_img_arr_rotate_180(get_image_array(img0))))
+                .. code-block:: python
+
+                    from microbit import *
 
 
-                        while True:
-                            display.show(img0)
-                            sleep(800)
-                            display.show(img180)
-                            sleep(800)
+                    def get_image_array(img=Image.DUCK):
+                        img_repr = repr(img)
+                        img_str = img_repr[7:-3]
+                        img_str = img_str.replace(":", "")
+                        img_array = [int(x) for x in img_str]
+                        return img_array
+
+
+                    def get_img_arr_flip_hor(img_array):
+                        # get every 5 elements and reverse them in each row
+                        row0 = img_array[:5]
+                        row1 = img_array[5:10]
+                        row2 = img_array[10:15]
+                        row3 = img_array[15:20]
+                        row4 = img_array[20:]
+                        row0.reverse()
+                        row1.reverse()
+                        row2.reverse()
+                        row3.reverse()
+                        row4.reverse()
+                        output_array = row0 + row1 + row2 + row3 + row4
+                        return output_array
+
+
+                    def get_img_arr_flip_vert(img_array):
+                        # get every 5 elements as rows and reverse order of rows.
+                        row0 = img_array[:5]
+                        row1 = img_array[5:10]
+                        row2 = img_array[10:15]
+                        row3 = img_array[15:20]
+                        row4 = img_array[20:]
+                        output_array = row4 + row3 + row2 + row1 + row0
+                        return output_array
+
+
+                    def get_img_arr_rotate_180(img_array):
+                        return get_img_arr_flip_vert(get_img_arr_flip_hor(img_array))
+
+
+                    img0 = Image.DUCK
+                    img180 = Image(5, 5, bytearray(get_img_arr_rotate_180(get_image_array(img0))))
+
+
+                    while True:
+                        display.show(img0)
+                        sleep(800)
+                        display.show(img180)
+                        sleep(800)
 
 ----
 
@@ -650,170 +650,170 @@ Rotating image animation
     #. Use the functions developed on this page to create an animation of a duck rotating anti clockwise.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Use the functions developed on this page to create an animation of a duck rotating clockwise.
+                Use the functions developed on this page to create an animation of a duck rotating clockwise.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
-
-
-                        def get_image_array(img=Image.DUCK):
-                            img_repr = repr(img)
-                            img_str = img_repr[7:-3]
-                            img_str = img_str.replace(":", "")
-                            img_array = [int(x) for x in img_str]
-                            return img_array
+                    from microbit import *
 
 
-                        def get_img_arr_flip_hor(img_array):
-                            # get every 5 elements and reverse them in each row
-                            row0 = img_array[:5]
-                            row1 = img_array[5:10]
-                            row2 = img_array[10:15]
-                            row3 = img_array[15:20]
-                            row4 = img_array[20:]
-                            row0.reverse()
-                            row1.reverse()
-                            row2.reverse()
-                            row3.reverse()
-                            row4.reverse()
-                            output_array = row0 + row1 + row2 + row3 + row4
-                            return output_array
+                    def get_image_array(img=Image.DUCK):
+                        img_repr = repr(img)
+                        img_str = img_repr[7:-3]
+                        img_str = img_str.replace(":", "")
+                        img_array = [int(x) for x in img_str]
+                        return img_array
 
 
-                        def get_img_arr_flip_vert(img_array):
-                            # get every 5 elements as rows and reverse order of rows.
-                            row0 = img_array[:5]
-                            row1 = img_array[5:10]
-                            row2 = img_array[10:15]
-                            row3 = img_array[15:20]
-                            row4 = img_array[20:]
-                            output_array = row4 + row3 + row2 + row1 + row0
-                            return output_array
+                    def get_img_arr_flip_hor(img_array):
+                        # get every 5 elements and reverse them in each row
+                        row0 = img_array[:5]
+                        row1 = img_array[5:10]
+                        row2 = img_array[10:15]
+                        row3 = img_array[15:20]
+                        row4 = img_array[20:]
+                        row0.reverse()
+                        row1.reverse()
+                        row2.reverse()
+                        row3.reverse()
+                        row4.reverse()
+                        output_array = row0 + row1 + row2 + row3 + row4
+                        return output_array
 
 
-                        def get_img_arr_rotate_270(img_array):
-                            # 4, 9, 14, 19, 24;; 3, 8, 13, 18, 23.
-                            row0 = [img_array[x] for x in range(4, 25, 5)]
-                            row1 = [img_array[x] for x in range(3, 25, 5)]
-                            row2 = [img_array[x] for x in range(2, 25, 5)]
-                            row3 = [img_array[x] for x in range(1, 25, 5)]
-                            row4 = [img_array[x] for x in range(0, 25, 5)]
-                            output_array = row0 + row1 + row2 + row3 + row4
-                            return output_array
+                    def get_img_arr_flip_vert(img_array):
+                        # get every 5 elements as rows and reverse order of rows.
+                        row0 = img_array[:5]
+                        row1 = img_array[5:10]
+                        row2 = img_array[10:15]
+                        row3 = img_array[15:20]
+                        row4 = img_array[20:]
+                        output_array = row4 + row3 + row2 + row1 + row0
+                        return output_array
 
 
-                        def get_img_arr_rotate_90(img_array):
-                            # 20,15,10,5,0;;21,16,11,6,1...
-                            row0 = [img_array[x] for x in range(20, -1, -5)]
-                            row1 = [img_array[x] for x in range(21, -1, -5)]
-                            row2 = [img_array[x] for x in range(22, -1, -5)]
-                            row3 = [img_array[x] for x in range(23, -1, -5)]
-                            row4 = [img_array[x] for x in range(24, -1, -5)]
-                            output_array = row0 + row1 + row2 + row3 + row4
-                            return output_array
-                            
-                        def get_img_arr_rotate_180(img_array):
-                            return get_img_arr_flip_vert(get_img_arr_flip_hor(img_array))
+                    def get_img_arr_rotate_270(img_array):
+                        # 4, 9, 14, 19, 24;; 3, 8, 13, 18, 23.
+                        row0 = [img_array[x] for x in range(4, 25, 5)]
+                        row1 = [img_array[x] for x in range(3, 25, 5)]
+                        row2 = [img_array[x] for x in range(2, 25, 5)]
+                        row3 = [img_array[x] for x in range(1, 25, 5)]
+                        row4 = [img_array[x] for x in range(0, 25, 5)]
+                        output_array = row0 + row1 + row2 + row3 + row4
+                        return output_array
 
 
-                        img0 = Image.DUCK
-                        img90 = Image(5, 5, bytearray(get_img_arr_rotate_90(get_image_array(img0))))
-                        img180 = Image(5, 5, bytearray(get_img_arr_rotate_180(get_image_array(img0))))
-                        img270 = Image(5, 5, bytearray(get_img_arr_rotate_270(get_image_array(img0))))
+                    def get_img_arr_rotate_90(img_array):
+                        # 20,15,10,5,0;;21,16,11,6,1...
+                        row0 = [img_array[x] for x in range(20, -1, -5)]
+                        row1 = [img_array[x] for x in range(21, -1, -5)]
+                        row2 = [img_array[x] for x in range(22, -1, -5)]
+                        row3 = [img_array[x] for x in range(23, -1, -5)]
+                        row4 = [img_array[x] for x in range(24, -1, -5)]
+                        output_array = row0 + row1 + row2 + row3 + row4
+                        return output_array
                         
-
-                        img_seq = [img0, img90, img180, img270]
-                        while True:
-                            display.show(img_seq, delay=400)
+                    def get_img_arr_rotate_180(img_array):
+                        return get_img_arr_flip_vert(get_img_arr_flip_hor(img_array))
 
 
-                .. tab-item:: Q2
+                    img0 = Image.DUCK
+                    img90 = Image(5, 5, bytearray(get_img_arr_rotate_90(get_image_array(img0))))
+                    img180 = Image(5, 5, bytearray(get_img_arr_rotate_180(get_image_array(img0))))
+                    img270 = Image(5, 5, bytearray(get_img_arr_rotate_270(get_image_array(img0))))
+                    
 
-                    Use the functions developed on this page to create an animation of a duck rotating anti clockwise.
-
-                    .. code-block:: python
-
-                        from microbit import *
-
-
-                        def get_image_array(img=Image.DUCK):
-                            img_repr = repr(img)
-                            img_str = img_repr[7:-3]
-                            img_str = img_str.replace(":", "")
-                            img_array = [int(x) for x in img_str]
-                            return img_array
+                    img_seq = [img0, img90, img180, img270]
+                    while True:
+                        display.show(img_seq, delay=400)
 
 
-                        def get_img_arr_flip_hor(img_array):
-                            # get every 5 elements and reverse them in each row
-                            row0 = img_array[:5]
-                            row1 = img_array[5:10]
-                            row2 = img_array[10:15]
-                            row3 = img_array[15:20]
-                            row4 = img_array[20:]
-                            row0.reverse()
-                            row1.reverse()
-                            row2.reverse()
-                            row3.reverse()
-                            row4.reverse()
-                            output_array = row0 + row1 + row2 + row3 + row4
-                            return output_array
+            .. tab-item:: Q2
+
+                Use the functions developed on this page to create an animation of a duck rotating anti clockwise.
+
+                .. code-block:: python
+
+                    from microbit import *
 
 
-                        def get_img_arr_flip_vert(img_array):
-                            # get every 5 elements as rows and reverse order of rows.
-                            row0 = img_array[:5]
-                            row1 = img_array[5:10]
-                            row2 = img_array[10:15]
-                            row3 = img_array[15:20]
-                            row4 = img_array[20:]
-                            output_array = row4 + row3 + row2 + row1 + row0
-                            return output_array
+                    def get_image_array(img=Image.DUCK):
+                        img_repr = repr(img)
+                        img_str = img_repr[7:-3]
+                        img_str = img_str.replace(":", "")
+                        img_array = [int(x) for x in img_str]
+                        return img_array
 
 
-                        def get_img_arr_rotate_270(img_array):
-                            # 4, 9, 14, 19, 24;; 3, 8, 13, 18, 23.
-                            row0 = [img_array[x] for x in range(4, 25, 5)]
-                            row1 = [img_array[x] for x in range(3, 25, 5)]
-                            row2 = [img_array[x] for x in range(2, 25, 5)]
-                            row3 = [img_array[x] for x in range(1, 25, 5)]
-                            row4 = [img_array[x] for x in range(0, 25, 5)]
-                            output_array = row0 + row1 + row2 + row3 + row4
-                            return output_array
+                    def get_img_arr_flip_hor(img_array):
+                        # get every 5 elements and reverse them in each row
+                        row0 = img_array[:5]
+                        row1 = img_array[5:10]
+                        row2 = img_array[10:15]
+                        row3 = img_array[15:20]
+                        row4 = img_array[20:]
+                        row0.reverse()
+                        row1.reverse()
+                        row2.reverse()
+                        row3.reverse()
+                        row4.reverse()
+                        output_array = row0 + row1 + row2 + row3 + row4
+                        return output_array
 
 
-                        def get_img_arr_rotate_90(img_array):
-                            # 20,15,10,5,0;;21,16,11,6,1...
-                            row0 = [img_array[x] for x in range(20, -1, -5)]
-                            row1 = [img_array[x] for x in range(21, -1, -5)]
-                            row2 = [img_array[x] for x in range(22, -1, -5)]
-                            row3 = [img_array[x] for x in range(23, -1, -5)]
-                            row4 = [img_array[x] for x in range(24, -1, -5)]
-                            output_array = row0 + row1 + row2 + row3 + row4
-                            return output_array
-                            
-                        def get_img_arr_rotate_180(img_array):
-                            return get_img_arr_flip_vert(get_img_arr_flip_hor(img_array))
+                    def get_img_arr_flip_vert(img_array):
+                        # get every 5 elements as rows and reverse order of rows.
+                        row0 = img_array[:5]
+                        row1 = img_array[5:10]
+                        row2 = img_array[10:15]
+                        row3 = img_array[15:20]
+                        row4 = img_array[20:]
+                        output_array = row4 + row3 + row2 + row1 + row0
+                        return output_array
 
 
-                        img0 = Image.DUCK
-                        img90 = Image(5, 5, bytearray(get_img_arr_rotate_90(get_image_array(img0))))
-                        img180 = Image(5, 5, bytearray(get_img_arr_rotate_180(get_image_array(img0))))
-                        img270 = Image(5, 5, bytearray(get_img_arr_rotate_270(get_image_array(img0))))
+                    def get_img_arr_rotate_270(img_array):
+                        # 4, 9, 14, 19, 24;; 3, 8, 13, 18, 23.
+                        row0 = [img_array[x] for x in range(4, 25, 5)]
+                        row1 = [img_array[x] for x in range(3, 25, 5)]
+                        row2 = [img_array[x] for x in range(2, 25, 5)]
+                        row3 = [img_array[x] for x in range(1, 25, 5)]
+                        row4 = [img_array[x] for x in range(0, 25, 5)]
+                        output_array = row0 + row1 + row2 + row3 + row4
+                        return output_array
+
+
+                    def get_img_arr_rotate_90(img_array):
+                        # 20,15,10,5,0;;21,16,11,6,1...
+                        row0 = [img_array[x] for x in range(20, -1, -5)]
+                        row1 = [img_array[x] for x in range(21, -1, -5)]
+                        row2 = [img_array[x] for x in range(22, -1, -5)]
+                        row3 = [img_array[x] for x in range(23, -1, -5)]
+                        row4 = [img_array[x] for x in range(24, -1, -5)]
+                        output_array = row0 + row1 + row2 + row3 + row4
+                        return output_array
                         
+                    def get_img_arr_rotate_180(img_array):
+                        return get_img_arr_flip_vert(get_img_arr_flip_hor(img_array))
 
-                        img_seq = [img0, img270, img180, img90]
-                        while True:
-                            display.show(img_seq, delay=400)
+
+                    img0 = Image.DUCK
+                    img90 = Image(5, 5, bytearray(get_img_arr_rotate_90(get_image_array(img0))))
+                    img180 = Image(5, 5, bytearray(get_img_arr_rotate_180(get_image_array(img0))))
+                    img270 = Image(5, 5, bytearray(get_img_arr_rotate_270(get_image_array(img0))))
+                    
+
+                    img_seq = [img0, img270, img180, img90]
+                    while True:
+                        display.show(img_seq, delay=400)
 
 ----
 
@@ -830,103 +830,103 @@ Rotating a list of images
     #. Write code to rotate a list of images using rotate_image_list(image_list, transition_time=500).
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Write code to rotate a list of images using rotate_image_list(image_list, transition_time=500).
+                Write code to rotate a list of images using rotate_image_list(image_list, transition_time=500).
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
-
-
-                        def get_image_array(img=Image.DUCK):
-                            img_repr = repr(img)
-                            img_str = img_repr[7:-3]
-                            img_str = img_str.replace(":", "")
-                            img_array = [int(x) for x in img_str]
-                            return img_array
+                    from microbit import *
 
 
-                        def get_img_arr_flip_hor(img_array):
-                            # get every 5 elements and reverse them in each row
-                            row0 = img_array[:5]
-                            row1 = img_array[5:10]
-                            row2 = img_array[10:15]
-                            row3 = img_array[15:20]
-                            row4 = img_array[20:]
-                            row0.reverse()
-                            row1.reverse()
-                            row2.reverse()
-                            row3.reverse()
-                            row4.reverse()
-                            output_array = row0 + row1 + row2 + row3 + row4
-                            return output_array
+                    def get_image_array(img=Image.DUCK):
+                        img_repr = repr(img)
+                        img_str = img_repr[7:-3]
+                        img_str = img_str.replace(":", "")
+                        img_array = [int(x) for x in img_str]
+                        return img_array
 
 
-                        def get_img_arr_flip_vert(img_array):
-                            # get every 5 elements as rows and reverse order of rows.
-                            row0 = img_array[:5]
-                            row1 = img_array[5:10]
-                            row2 = img_array[10:15]
-                            row3 = img_array[15:20]
-                            row4 = img_array[20:]
-                            output_array = row4 + row3 + row2 + row1 + row0
-                            return output_array
+                    def get_img_arr_flip_hor(img_array):
+                        # get every 5 elements and reverse them in each row
+                        row0 = img_array[:5]
+                        row1 = img_array[5:10]
+                        row2 = img_array[10:15]
+                        row3 = img_array[15:20]
+                        row4 = img_array[20:]
+                        row0.reverse()
+                        row1.reverse()
+                        row2.reverse()
+                        row3.reverse()
+                        row4.reverse()
+                        output_array = row0 + row1 + row2 + row3 + row4
+                        return output_array
 
 
-                        def get_img_arr_rotate_270(img_array):
-                            # 4, 9, 14, 19, 24;; 3, 8, 13, 18, 23.
-                            row0 = [img_array[x] for x in range(4, 25, 5)]
-                            row1 = [img_array[x] for x in range(3, 25, 5)]
-                            row2 = [img_array[x] for x in range(2, 25, 5)]
-                            row3 = [img_array[x] for x in range(1, 25, 5)]
-                            row4 = [img_array[x] for x in range(0, 25, 5)]
-                            output_array = row0 + row1 + row2 + row3 + row4
-                            return output_array
+                    def get_img_arr_flip_vert(img_array):
+                        # get every 5 elements as rows and reverse order of rows.
+                        row0 = img_array[:5]
+                        row1 = img_array[5:10]
+                        row2 = img_array[10:15]
+                        row3 = img_array[15:20]
+                        row4 = img_array[20:]
+                        output_array = row4 + row3 + row2 + row1 + row0
+                        return output_array
 
 
-                        def get_img_arr_rotate_90(img_array):
-                            # 20,15,10,5,0;;21,16,11,6,1...
-                            row0 = [img_array[x] for x in range(20, -1, -5)]
-                            row1 = [img_array[x] for x in range(21, -1, -5)]
-                            row2 = [img_array[x] for x in range(22, -1, -5)]
-                            row3 = [img_array[x] for x in range(23, -1, -5)]
-                            row4 = [img_array[x] for x in range(24, -1, -5)]
-                            output_array = row0 + row1 + row2 + row3 + row4
-                            return output_array
+                    def get_img_arr_rotate_270(img_array):
+                        # 4, 9, 14, 19, 24;; 3, 8, 13, 18, 23.
+                        row0 = [img_array[x] for x in range(4, 25, 5)]
+                        row1 = [img_array[x] for x in range(3, 25, 5)]
+                        row2 = [img_array[x] for x in range(2, 25, 5)]
+                        row3 = [img_array[x] for x in range(1, 25, 5)]
+                        row4 = [img_array[x] for x in range(0, 25, 5)]
+                        output_array = row0 + row1 + row2 + row3 + row4
+                        return output_array
 
 
-                        def get_img_arr_rotate_180(img_array):
-                            return get_img_arr_flip_vert(get_img_arr_flip_hor(img_array))
+                    def get_img_arr_rotate_90(img_array):
+                        # 20,15,10,5,0;;21,16,11,6,1...
+                        row0 = [img_array[x] for x in range(20, -1, -5)]
+                        row1 = [img_array[x] for x in range(21, -1, -5)]
+                        row2 = [img_array[x] for x in range(22, -1, -5)]
+                        row3 = [img_array[x] for x in range(23, -1, -5)]
+                        row4 = [img_array[x] for x in range(24, -1, -5)]
+                        output_array = row0 + row1 + row2 + row3 + row4
+                        return output_array
 
 
-                        animal_images = [
-                            Image.RABBIT,
-                            Image.COW,
-                            Image.DUCK,
-                            Image.TORTOISE,
-                            Image.BUTTERFLY,
-                            Image.GIRAFFE,
-                            Image.SNAKE,
-                        ]
+                    def get_img_arr_rotate_180(img_array):
+                        return get_img_arr_flip_vert(get_img_arr_flip_hor(img_array))
 
 
-                        def rotate_image_list(image_list, transition_time=500):
-                            for img in image_list:
-                                img0 = img
-                                img180 = Image(5, 5, bytearray(get_img_arr_rotate_180(get_image_array(img0))))
-                                img270 = Image(5, 5, bytearray(get_img_arr_rotate_270(get_image_array(img0))))
-                                img90 = Image(5, 5, bytearray(get_img_arr_rotate_90(get_image_array(img0))))
-                                img_seq = [img0, img90, img180, img270]
-                                display.show(img_seq, delay=transition_time)
+                    animal_images = [
+                        Image.RABBIT,
+                        Image.COW,
+                        Image.DUCK,
+                        Image.TORTOISE,
+                        Image.BUTTERFLY,
+                        Image.GIRAFFE,
+                        Image.SNAKE,
+                    ]
 
 
-                        while True:
-                            rotate_image_list(animal_images)
+                    def rotate_image_list(image_list, transition_time=500):
+                        for img in image_list:
+                            img0 = img
+                            img180 = Image(5, 5, bytearray(get_img_arr_rotate_180(get_image_array(img0))))
+                            img270 = Image(5, 5, bytearray(get_img_arr_rotate_270(get_image_array(img0))))
+                            img90 = Image(5, 5, bytearray(get_img_arr_rotate_90(get_image_array(img0))))
+                            img_seq = [img0, img90, img180, img270]
+                            display.show(img_seq, delay=transition_time)
+
+
+                    while True:
+                        rotate_image_list(animal_images)
 

@@ -223,31 +223,31 @@ Random pixel randrange(stop)
     #. Modify the function, **rand_pix()**, to restrict the brightness to 3 to 6, and the pixels to the left 3 columns.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Modify the function, **rand_pix()**, to restrict the brightness to 3 to 6, and the pixels to the left 3 columns.
+                Modify the function, **rand_pix()**, to restrict the brightness to 3 to 6, and the pixels to the left 3 columns.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
-                        import random
+                    from microbit import *
+                    import random
 
-                        def rand_pix():
-                            random_brightness = random.randint(3, 6)
-                            random_x = random.randrange(3)
-                            random_y = random.randrange(5)
-                            return (random_x, random_y, random_brightness)
+                    def rand_pix():
+                        random_brightness = random.randint(3, 6)
+                        random_x = random.randrange(3)
+                        random_y = random.randrange(5)
+                        return (random_x, random_y, random_brightness)
 
-                        while True:
-                            display.set_pixel(*rand_pix())
-                            sleep(50)
-                            display.clear()
+                    while True:
+                        display.set_pixel(*rand_pix())
+                        sleep(50)
+                        display.clear()
 
 
 ----
@@ -285,31 +285,31 @@ Random pixel randrange(start, stop)
     #. Modify the function, **rand_pix()**, to restrict the brightness to 1 to 3, and the pixels to the right 3 columns in the bottom 4 rows.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                     #. Modify the function, **rand_pix()**, to restrict the brightness to 1 to 3, and the pixels to the right 3 columns in the bottom 4 rows.
+                    #. Modify the function, **rand_pix()**, to restrict the brightness to 1 to 3, and the pixels to the right 3 columns in the bottom 4 rows.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
-                        import random
+                    from microbit import *
+                    import random
 
-                        def rand_pix():
-                            random_brightness = random.randint(1, 3)
-                            random_x = random.randrange(2, 5)
-                            random_y = random.randrange(1, 5)
-                            return (random_x, random_y, random_brightness)
+                    def rand_pix():
+                        random_brightness = random.randint(1, 3)
+                        random_x = random.randrange(2, 5)
+                        random_y = random.randrange(1, 5)
+                        return (random_x, random_y, random_brightness)
 
-                        while True:
-                            display.set_pixel(*rand_pix())
-                            sleep(50)
-                            display.clear()
+                    while True:
+                        display.set_pixel(*rand_pix())
+                        sleep(50)
+                        display.clear()
 
 ----
 
@@ -346,30 +346,30 @@ Random pixel randrange(start, stop, step)
     #. Modify the function, **rand_pix()**, to restrict the brightness to 1 to 3, and the pixels to columns 1 and 3 and the rows to 1 and 3.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                     #. Modify the function, **rand_pix()**, to restrict the brightness to 1 to 3, and the pixels to columns 1 and 3 and the rows to 1 and 3.
-                    .. code-block:: python
+                    #. Modify the function, **rand_pix()**, to restrict the brightness to 1 to 3, and the pixels to columns 1 and 3 and the rows to 1 and 3.
+                .. code-block:: python
 
-                        from microbit import *
-                        import random
+                    from microbit import *
+                    import random
 
-                        def rand_pix():
-                            random_brightness = random.randint(1, 3)
-                            random_x = random.randrange(1, 4, 2)
-                            random_y = random.randrange(1, 4, 2)
-                            return (random_x, random_y, random_brightness)
+                    def rand_pix():
+                        random_brightness = random.randint(1, 3)
+                        random_x = random.randrange(1, 4, 2)
+                        random_y = random.randrange(1, 4, 2)
+                        return (random_x, random_y, random_brightness)
 
-                        while True:
-                            display.set_pixel(*rand_pix())
-                            sleep(50)
-                            display.clear()
+                    while True:
+                        display.set_pixel(*rand_pix())
+                        sleep(50)
+                        display.clear()
 
 ----
 
@@ -404,31 +404,31 @@ Random pixel random.choice
     #. Modify the code above to use a function, **rand_pix()**, to restrict the brightness to 1, 3 or 5, and the pixels to columns 0, 3, and 4 and the rows to 1 and 3.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                     #. Modify the code above to use a function, **rand_pix()**, to restrict the brightness to 1, 3 or 5, and the pixels to columns 0, 3, and 4 and the rows to 1 and 3.
+                    #. Modify the code above to use a function, **rand_pix()**, to restrict the brightness to 1, 3 or 5, and the pixels to columns 0, 3, and 4 and the rows to 1 and 3.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
-                        import random
-                        
-                        def rand_pix():
-                            random_brightness = random.choice((1, 3, 5))
-                            random_x = random.choice((0, 3, 4))
-                            random_y = random.choice((1, 3))
-                            return (random_x, random_y, random_brightness)
+                    from microbit import *
+                    import random
+                    
+                    def rand_pix():
+                        random_brightness = random.choice((1, 3, 5))
+                        random_x = random.choice((0, 3, 4))
+                        random_y = random.choice((1, 3))
+                        return (random_x, random_y, random_brightness)
 
-                        while True:
-                            random_x, random_y, random_brightness = rand_pix()
-                            display.set_pixel(random_x, random_y, random_brightness)
-                            sleep(50)
+                    while True:
+                        random_x, random_y, random_brightness = rand_pix()
+                        display.set_pixel(random_x, random_y, random_brightness)
+                        sleep(50)
 
 ----
 
@@ -458,29 +458,29 @@ Random Pixel rows and columns
     #. Write code to set the brightness to 9 for a pixel in each column, with the row being random for each pixel.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Write code to set the brightness to 9 for a pixel in each column, with the row being random for each pixel.
-                    
-                    .. code-block:: python
+                Write code to set the brightness to 9 for a pixel in each column, with the row being random for each pixel.
+                
+                .. code-block:: python
 
-                        from microbit import *
-                        import random
+                    from microbit import *
+                    import random
 
-                        def rand_y():
-                            return random.randint(0, 4)
+                    def rand_y():
+                        return random.randint(0, 4)
 
-                        while True:
-                            for x in range(0, 5):
-                                display.set_pixel(x, rand_y(), 9)
-                            sleep(200)
-                            display.clear() 
+                    while True:
+                        for x in range(0, 5):
+                            display.set_pixel(x, rand_y(), 9)
+                        sleep(200)
+                        display.clear() 
 
 ----
 
@@ -513,49 +513,49 @@ Random Pixels
     #. Change the brightness to 5, and explore how many random pixels are needed so that only 1 to 3 pixels are left turned off. 
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Modify the code above to produce 10 random pixels at a time.
+                Modify the code above to produce 10 random pixels at a time.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
-                        import random
+                    from microbit import *
+                    import random
 
-                        def rand_val():
-                            return random.randint(0, 4)
+                    def rand_val():
+                        return random.randint(0, 4)
 
-                        while True:
-                            for _ in range(10):
-                                display.set_pixel(rand_val(), rand_val(), 9)
-                            sleep(200)
-                            display.clear()
+                    while True:
+                        for _ in range(10):
+                            display.set_pixel(rand_val(), rand_val(), 9)
+                        sleep(200)
+                        display.clear()
 
-                .. tab-item:: Q2
+            .. tab-item:: Q2
 
-                    Change the brightness to 5, and explore how many random pixels are needed so that only 1 to 3 pixels are left turned off. 
+                Change the brightness to 5, and explore how many random pixels are needed so that only 1 to 3 pixels are left turned off. 
 
-                    About 60 to 75 are needed since the same pixel may be generated more than once.
+                About 60 to 75 are needed since the same pixel may be generated more than once.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
-                        import random
+                    from microbit import *
+                    import random
 
-                        def rand_val():
-                            return random.randint(0, 4)
+                    def rand_val():
+                        return random.randint(0, 4)
 
-                        while True:
-                            for _ in range(75):
-                                display.set_pixel(rand_val(), rand_val(), 9)
-                            sleep(200)
-                            display.clear()
+                    while True:
+                        for _ in range(75):
+                            display.set_pixel(rand_val(), rand_val(), 9)
+                        sleep(200)
+                        display.clear()
 
 ----
 
@@ -591,32 +591,32 @@ Random Pixels choice Pixel rows and columns lists
     #. Adjust the code to restrict the possible x and y values to the central 3 x 3 square, while showing 3 random pixels at a time.
     
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Adjust the code to restrict the possible x and y values to the central 3 x 3 square, while showing 3 random pixels at a time.
+                Adjust the code to restrict the possible x and y values to the central 3 x 3 square, while showing 3 random pixels at a time.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
-                        import random
+                    from microbit import *
+                    import random
 
-                        x_vals = [1, 2 ,3]
-                        y_vals = [1, 2 ,3]
+                    x_vals = [1, 2 ,3]
+                    y_vals = [1, 2 ,3]
 
-                        def rand_val(vals):
-                            return random.choice(vals)
+                    def rand_val(vals):
+                        return random.choice(vals)
 
-                        while True:
-                            for _ in range(3):
-                                display.set_pixel(rand_val(x_vals), rand_val(y_w), 5)
-                            sleep(200)
-                            display.clear()
+                    while True:
+                        for _ in range(3):
+                            display.set_pixel(rand_val(x_vals), rand_val(y_w), 5)
+                        sleep(200)
+                        display.clear()
 
 ----
 
@@ -700,184 +700,184 @@ get_pixel and set_pixel
                 display.clear()
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Add code to display the min and max counts obtained in the code above.
+                Add code to display the min and max counts obtained in the code above.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
-                        from random import randint
+                    from microbit import *
+                    from random import randint
 
-                        def full_screen_check():
-                            for y in range(0, 5):
-                                for x in range(0, 5):
-                                    if display.get_pixel(x, y) == 0:
-                                        return False
-                            return True
+                    def full_screen_check():
+                        for y in range(0, 5):
+                            for x in range(0, 5):
+                                if display.get_pixel(x, y) == 0:
+                                    return False
+                        return True
 
-                        def fill_screen_with_counter():
-                            counter = 0
-                            while True:
-                                counter += 1
-                                x = randint(0, 4)
-                                y = randint(0, 4)
-                                brightness = randint(1, 4)
-                                display.set_pixel(x, y, brightness)
-                                if full_screen_check():
-                                    return counter
-                                sleep(30)
-
-                        min_fill_count = None
-                        max_fill_count = None
-
+                    def fill_screen_with_counter():
+                        counter = 0
                         while True:
-                            new_fill_count = fill_screen_with_counter()
+                            counter += 1
+                            x = randint(0, 4)
+                            y = randint(0, 4)
+                            brightness = randint(1, 4)
+                            display.set_pixel(x, y, brightness)
+                            if full_screen_check():
+                                return counter
+                            sleep(30)
+
+                    min_fill_count = None
+                    max_fill_count = None
+
+                    while True:
+                        new_fill_count = fill_screen_with_counter()
+                        display.scroll(new_fill_count, delay=60)
+                        if min_fill_count is not None:
+                            min_fill_count = min(min_fill_count, new_fill_count)
+                        else:
+                            min_fill_count = new_fill_count
+                        if max_fill_count is not None:
+                            max_fill_count = max(max_fill_count, new_fill_count)
+                        else:
+                            max_fill_count = new_fill_count
+                        display.scroll(min_fill_count, delay=60)
+                        display.scroll(max_fill_count, delay=60)
+                        sleep(1000)
+
+            .. tab-item:: Q2
+
+                Improve the code in answer to task 1, by creating definitions to update the min and max counts, and to display the counts on button pressing.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    from random import randint
+
+
+                    def full_screen_check():
+                        for y in range(0, 5):
+                            for x in range(0, 5):
+                                if display.get_pixel(x, y) == 0:
+                                    return False
+                        return True
+
+
+                    def fill_screen_with_counter():
+                        counter = 0
+                        while True:
+                            counter += 1
+                            x = randint(0, 4)
+                            y = randint(0, 4)
+                            brightness = randint(1, 4)
+                            display.set_pixel(x, y, brightness)
+                            if full_screen_check():
+                                return counter
+                            sleep(10)
+
+
+                    def update_counts(counts, count):
+                        min_fill_count = counts[0]
+                        if min_fill_count is not None:
+                            min_fill_count = min(min_fill_count, count)
+                        else:
+                            min_fill_count = count
+                        max_fill_count = counts[1]
+                        if max_fill_count is not None:
+                            max_fill_count = max(max_fill_count, count)
+                        else:
+                            max_fill_count = count
+                        return (min_fill_count, max_fill_count)
+
+
+                    def display_counts(counts, new_fill_count):
+                        if button_a.was_pressed():
                             display.scroll(new_fill_count, delay=60)
-                            if min_fill_count is not None:
-                                min_fill_count = min(min_fill_count, new_fill_count)
-                            else:
-                                min_fill_count = new_fill_count
-                            if max_fill_count is not None:
-                                max_fill_count = max(max_fill_count, new_fill_count)
-                            else:
-                                max_fill_count = new_fill_count
-                            display.scroll(min_fill_count, delay=60)
-                            display.scroll(max_fill_count, delay=60)
-                            sleep(1000)
-
-                .. tab-item:: Q2
-
-                    Improve the code in answer to task 1, by creating definitions to update the min and max counts, and to display the counts on button pressing.
-
-                    .. code-block:: python
-
-                        from microbit import *
-                        from random import randint
+                        if button_b.was_pressed():
+                            display.scroll(counts[0], delay=60)
+                            display.scroll(counts[1], delay=60)
 
 
-                        def full_screen_check():
-                            for y in range(0, 5):
-                                for x in range(0, 5):
-                                    if display.get_pixel(x, y) == 0:
-                                        return False
-                            return True
+                    counts = [None, None]
+
+                    while True:
+                        new_fill_count = fill_screen_with_counter()
+                        counts = update_counts(counts, new_fill_count)
+                        display_counts(counts, new_fill_count)
+                        sleep(1000)
+                        display.clear()
+
+            .. tab-item:: Q3
+
+                Improve the code in answer to task 2, by adding a set to keep track of displayed pixels in the function, **fill_screen_with_counter()**. Number the pixels 0 to 4 in the top row, 5 to 9 in the next row. etc. Check to see if the length of the set is 25 to tell that the screen is full.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    from random import randint
+                    import utime
 
 
-                        def fill_screen_with_counter():
-                            counter = 0
-                            while True:
-                                counter += 1
-                                x = randint(0, 4)
-                                y = randint(0, 4)
-                                brightness = randint(1, 4)
-                                display.set_pixel(x, y, brightness)
-                                if full_screen_check():
-                                    return counter
-                                sleep(10)
+                    def full_screen_check():
+                        for y in range(0, 5):
+                            for x in range(0, 5):
+                                if display.get_pixel(x, y) == 0:
+                                    return False
+                        return True
 
 
-                        def update_counts(counts, count):
-                            min_fill_count = counts[0]
-                            if min_fill_count is not None:
-                                min_fill_count = min(min_fill_count, count)
-                            else:
-                                min_fill_count = count
-                            max_fill_count = counts[1]
-                            if max_fill_count is not None:
-                                max_fill_count = max(max_fill_count, count)
-                            else:
-                                max_fill_count = count
-                            return (min_fill_count, max_fill_count)
-
-
-                        def display_counts(counts, new_fill_count):
-                            if button_a.was_pressed():
-                                display.scroll(new_fill_count, delay=60)
-                            if button_b.was_pressed():
-                                display.scroll(counts[0], delay=60)
-                                display.scroll(counts[1], delay=60)
-
-
-                        counts = [None, None]
-
+                    def fill_screen_with_counter():
+                        counter = 0
+                        screen_set = set()
                         while True:
-                            new_fill_count = fill_screen_with_counter()
-                            counts = update_counts(counts, new_fill_count)
-                            display_counts(counts, new_fill_count)
-                            sleep(1000)
-                            display.clear()
-
-                .. tab-item:: Q3
-
-                    Improve the code in answer to task 2, by adding a set to keep track of displayed pixels in the function, **fill_screen_with_counter()**. Number the pixels 0 to 4 in the top row, 5 to 9 in the next row. etc. Check to see if the length of the set is 25 to tell that the screen is full.
-
-                    .. code-block:: python
-
-                        from microbit import *
-                        from random import randint
-                        import utime
-
-
-                        def full_screen_check():
-                            for y in range(0, 5):
-                                for x in range(0, 5):
-                                    if display.get_pixel(x, y) == 0:
-                                        return False
-                            return True
-
-
-                        def fill_screen_with_counter():
-                            counter = 0
-                            screen_set = set()
-                            while True:
-                                counter += 1
-                                x = randint(0, 4)
-                                y = randint(0, 4)
-                                brightness = randint(1, 4)
-                                display.set_pixel(x, y, brightness)
-                                screen_set.add(x + y*5)
-                                if len(screen_set) == 25:
-                                    return counter
-                                sleep(1)
-
-
-                        def update_counts(counts, count):
-                            min_fill_count = counts[0]
-                            if min_fill_count is not None:
-                                min_fill_count = min(min_fill_count, count)
-                            else:
-                                min_fill_count = count
-                            max_fill_count = counts[1]
-                            if max_fill_count is not None:
-                                max_fill_count = max(max_fill_count, count)
-                            else:
-                                max_fill_count = count
-                            return (min_fill_count, max_fill_count)
-
-
-                        def display_counts(counts, new_fill_count):
-                            if button_a.was_pressed():
-                                display.scroll(new_fill_count, delay=60)
-                            if button_b.was_pressed():
-                                display.scroll(counts[0], delay=60)
-                                display.scroll(counts[1], delay=60)
-
-
-                        counts = [None, None]
-
-                        while True:
-                            new_fill_count = fill_screen_with_counter()
-                            counts = update_counts(counts, new_fill_count)
-                            display_counts(counts, new_fill_count)
+                            counter += 1
+                            x = randint(0, 4)
+                            y = randint(0, 4)
+                            brightness = randint(1, 4)
+                            display.set_pixel(x, y, brightness)
+                            screen_set.add(x + y*5)
+                            if len(screen_set) == 25:
+                                return counter
                             sleep(1)
-                            display.clear()
+
+
+                    def update_counts(counts, count):
+                        min_fill_count = counts[0]
+                        if min_fill_count is not None:
+                            min_fill_count = min(min_fill_count, count)
+                        else:
+                            min_fill_count = count
+                        max_fill_count = counts[1]
+                        if max_fill_count is not None:
+                            max_fill_count = max(max_fill_count, count)
+                        else:
+                            max_fill_count = count
+                        return (min_fill_count, max_fill_count)
+
+
+                    def display_counts(counts, new_fill_count):
+                        if button_a.was_pressed():
+                            display.scroll(new_fill_count, delay=60)
+                        if button_b.was_pressed():
+                            display.scroll(counts[0], delay=60)
+                            display.scroll(counts[1], delay=60)
+
+
+                    counts = [None, None]
+
+                    while True:
+                        new_fill_count = fill_screen_with_counter()
+                        counts = update_counts(counts, new_fill_count)
+                        display_counts(counts, new_fill_count)
+                        sleep(1)
+                        display.clear()
 
 
 .. admonition:: Note

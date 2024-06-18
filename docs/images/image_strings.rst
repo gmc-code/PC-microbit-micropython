@@ -89,52 +89,52 @@ Image strings
     #. Write code for a diagonal brightness gradient of dull to bright from the bottom left to the top right.   
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Write code for a large square of brightness 2.
+                Write code for a large square of brightness 2.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        display.show(Image('22222:20002:20002:20002:22222'))
+                    display.show(Image('22222:20002:20002:20002:22222'))
 
-                .. tab-item:: Q2
+            .. tab-item:: Q2
 
-                    Write code for a vertical brightness gradient of bright to dull from the top down to the bottom.
+                Write code for a vertical brightness gradient of bright to dull from the top down to the bottom.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        display.show(Image('99999:77777:55555:33333:11111'))
+                    display.show(Image('99999:77777:55555:33333:11111'))
 
-                .. tab-item:: Q3
+            .. tab-item:: Q3
 
-                    Write code for a horizontal brightness gradient of dull to bright from the left to right.
+                Write code for a horizontal brightness gradient of dull to bright from the left to right.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        display.show(Image('13579:13579:13579:13579:13579'))
+                    display.show(Image('13579:13579:13579:13579:13579'))
 
-                .. tab-item:: Q4
+            .. tab-item:: Q4
 
-                    Write code for a diagonal brightness gradient of dull to bright from the bottom left to the top right. 
+                Write code for a diagonal brightness gradient of dull to bright from the bottom left to the top right. 
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        display.show(Image('56789:45678:34567:23456:12345'))
-                    
+                    display.show(Image('56789:45678:34567:23456:12345'))
+                
 
 ----
 
@@ -177,49 +177,49 @@ Image strings: Multiplication of a line
     #. Write code to cycle between bright on the left edge to bight on the right edge.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Modify the code above to go from dim on the left edge to bright in the middle to dim on the right edge.
+                Modify the code above to go from dim on the left edge to bright in the middle to dim on the right edge.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        img = Image("15951:" * 5)
-                        display.show(img)
+                    img = Image("15951:" * 5)
+                    display.show(img)
 
-                .. tab-item:: Q2
+            .. tab-item:: Q2
 
-                    Modify the code above to go from bright on the left edge to dim on the right edge.
+                Modify the code above to go from bright on the left edge to dim on the right edge.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        img = Image("97531:" * 5)
-                        display.show(img)
+                    img = Image("97531:" * 5)
+                    display.show(img)
 
-                .. tab-item:: Q3
+            .. tab-item:: Q3
 
-                    Write code to cycle between bright on the left edge to bight on the right edge.
+                Write code to cycle between bright on the left edge to bight on the right edge.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        while True:
-                            img1 = Image("97531:" * 5)
-                            display.show(img1)
-                            sleep(300)
-                            img2 = Image("13579:" * 5)
-                            display.show(img2)
-                            sleep(300)
+                    while True:
+                        img1 = Image("97531:" * 5)
+                        display.show(img1)
+                        sleep(300)
+                        img2 = Image("13579:" * 5)
+                        display.show(img2)
+                        sleep(300)
 
 ----
 
@@ -250,72 +250,72 @@ Image strings: line by line
     #. Write code for 2 symmetrically spaced central vertical lines of brightness 5 by lining up the 5 rows of the image under each other.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Write code for a large square of brightness 3 by lining up the 5 rows of the image under each other.
+                Write code for a large square of brightness 3 by lining up the 5 rows of the image under each other.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        large_square = Image('33333:'
-                                             '30003:'
-                                             '30003:'
-                                             '30003:'
-                                             '33333')
-                        display.show(large_square)
+                    large_square = Image('33333:'
+                                            '30003:'
+                                            '30003:'
+                                            '30003:'
+                                            '33333')
+                    display.show(large_square)
 
-                .. tab-item:: Q2
+            .. tab-item:: Q2
 
-                    Write code for a small central square of brightness 9 by lining up the 5 rows of the image under each other.
+                Write code for a small central square of brightness 9 by lining up the 5 rows of the image under each other.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        small_square = Image('00000:'
-                                             '09990:'
-                                             '09090:'
-                                             '09990:'
-                                             '00000')
-                        display.show(small_square)
+                    small_square = Image('00000:'
+                                            '09990:'
+                                            '09090:'
+                                            '09990:'
+                                            '00000')
+                    display.show(small_square)
 
 
-                .. tab-item:: Q3
+            .. tab-item:: Q3
 
-                    Write code for 2 symmetrically spaced central horizontal lines of brightness 5 by lining up the 5 rows of the image under each other.
+                Write code for 2 symmetrically spaced central horizontal lines of brightness 5 by lining up the 5 rows of the image under each other.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        hor_lines = Image('00000:'
-                                          '55555:'
-                                          '00000:'
-                                          '55555:'
-                                          '00000')
-                        display.show(hor_lines)
+                    hor_lines = Image('00000:'
+                                        '55555:'
+                                        '00000:'
+                                        '55555:'
+                                        '00000')
+                    display.show(hor_lines)
 
-                .. tab-item:: Q4
+            .. tab-item:: Q4
 
-                    Write code for 2 symmetrically spaced central vertical lines of brightness 5 by lining up the 5 rows of the image under each other.
+                Write code for 2 symmetrically spaced central vertical lines of brightness 5 by lining up the 5 rows of the image under each other.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        vert_lines = Image('05050:'
-                                           '05050:'
-                                           '05050:'
-                                           '05050:'
-                                           '05050')
-                        display.show(vert_lines)
+                    vert_lines = Image('05050:'
+                                        '05050:'
+                                        '05050:'
+                                        '05050:'
+                                        '05050')
+                    display.show(vert_lines)
 
 ----
 
@@ -378,55 +378,55 @@ Boat sinking animation
     #. Combine the 2 animations to show a boat sinking and rising over and over again.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Write a list variable, ``rising_boats``, that lists the boats in reverse order and animates a rising boat. Rather than manually listing the order, use ``list(reversed(sinking_boats))``. 
+                Write a list variable, ``rising_boats``, that lists the boats in reverse order and animates a rising boat. Rather than manually listing the order, use ``list(reversed(sinking_boats))``. 
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        boat1 = Image("05050:" "05050:" "05050:" "99999:" "09990")
-                        boat2 = Image("00000:" "05050:" "05050:" "05050:" "99999")
-                        boat3 = Image("00000:" "00000:" "05050:" "05050:" "05050")
-                        boat4 = Image("00000:" "00000:" "00000:" "05050:" "05050")
-                        boat5 = Image("00000:" "00000:" "00000:" "00000:" "05050")
-                        boat6 = Image("00000:" "00000:" "00000:" "00000:" "00000")
+                    boat1 = Image("05050:" "05050:" "05050:" "99999:" "09990")
+                    boat2 = Image("00000:" "05050:" "05050:" "05050:" "99999")
+                    boat3 = Image("00000:" "00000:" "05050:" "05050:" "05050")
+                    boat4 = Image("00000:" "00000:" "00000:" "05050:" "05050")
+                    boat5 = Image("00000:" "00000:" "00000:" "00000:" "05050")
+                    boat6 = Image("00000:" "00000:" "00000:" "00000:" "00000")
 
-                        sinking_boats = [boat1, boat2, boat3, boat4, boat5, boat6]
-                        rising_boats = list(reversed(sinking_boats))
+                    sinking_boats = [boat1, boat2, boat3, boat4, boat5, boat6]
+                    rising_boats = list(reversed(sinking_boats))
 
-                        while True:
-                            display.show(rising_boats, delay=500)
+                    while True:
+                        display.show(rising_boats, delay=500)
 
 
-                .. tab-item:: Q2
+            .. tab-item:: Q2
 
-                    Combine the 2 animations to show a boat sinking and rising over and over again.
+                Combine the 2 animations to show a boat sinking and rising over and over again.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        boat1 = Image("05050:" "05050:" "05050:" "99999:" "09990")
-                        boat2 = Image("00000:" "05050:" "05050:" "05050:" "99999")
-                        boat3 = Image("00000:" "00000:" "05050:" "05050:" "05050")
-                        boat4 = Image("00000:" "00000:" "00000:" "05050:" "05050")
-                        boat5 = Image("00000:" "00000:" "00000:" "00000:" "05050")
-                        boat6 = Image("00000:" "00000:" "00000:" "00000:" "00000")
+                    boat1 = Image("05050:" "05050:" "05050:" "99999:" "09990")
+                    boat2 = Image("00000:" "05050:" "05050:" "05050:" "99999")
+                    boat3 = Image("00000:" "00000:" "05050:" "05050:" "05050")
+                    boat4 = Image("00000:" "00000:" "00000:" "05050:" "05050")
+                    boat5 = Image("00000:" "00000:" "00000:" "00000:" "05050")
+                    boat6 = Image("00000:" "00000:" "00000:" "00000:" "00000")
 
-                        sinking_boats = [boat1, boat2, boat3, boat4, boat5, boat6]
-                        rising_boats = list(reversed(sinking_boats))
+                    sinking_boats = [boat1, boat2, boat3, boat4, boat5, boat6]
+                    rising_boats = list(reversed(sinking_boats))
 
-                        while True:
-                            display.show(sinking_boats, delay=500)
-                            display.show(rising_boats, delay=500)
+                    while True:
+                        display.show(sinking_boats, delay=500)
+                        display.show(rising_boats, delay=500)
 
 ----
 
@@ -474,49 +474,49 @@ Image gradients using  string definitions
     #. Write a diag_grad definition to produce: **Image('12345:23456:34567:45678:56789:')**.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Write a vert_grad definition to produce: **Image('11111:22222:33333:44444:55555:')**.
+                Write a vert_grad definition to produce: **Image('11111:22222:33333:44444:55555:')**.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
-
-
-                        def vert_grad(w, h):
-                            string = ""
-                            for i in range(1, h + 1):
-                                string += (str(i) * w) + ":"
-                            return string
+                    from microbit import *
 
 
-                        img_vert_grad = Image(vert_grad(5, 5))
-                        display.show(img_vert_grad)
-
-                .. tab-item:: Q2
-
-                    Write a diag_grad definition to produce: **Image('12345:23456:34567:45678:56789:')**.
-
-                    .. code-block:: python
-
-                        from microbit import *
+                    def vert_grad(w, h):
+                        string = ""
+                        for i in range(1, h + 1):
+                            string += (str(i) * w) + ":"
+                        return string
 
 
-                        def diag_grad(w, h):
-                            string = ""
-                            for j in range(1, h + 1):
-                                for i in range(1, w + 1):
-                                    string += str(i + j - 1)
-                                string += ":"
-                            return string
+                    img_vert_grad = Image(vert_grad(5, 5))
+                    display.show(img_vert_grad)
+
+            .. tab-item:: Q2
+
+                Write a diag_grad definition to produce: **Image('12345:23456:34567:45678:56789:')**.
+
+                .. code-block:: python
+
+                    from microbit import *
 
 
-                        img_diag_grad = Image(diag_grad(5, 5))
-                        display.show(img_diag_grad)
+                    def diag_grad(w, h):
+                        string = ""
+                        for j in range(1, h + 1):
+                            for i in range(1, w + 1):
+                                string += str(i + j - 1)
+                            string += ":"
+                        return string
+
+
+                    img_diag_grad = Image(diag_grad(5, 5))
+                    display.show(img_diag_grad)
 

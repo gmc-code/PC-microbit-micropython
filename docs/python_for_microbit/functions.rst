@@ -38,41 +38,41 @@ Functions without parameters
     #. Write a function called ``countdown`` that counts down from 5 to 1, showing each number. 
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Write a function called ``scroll_name`` that scrolls your name.
+                Write a function called ``scroll_name`` that scrolls your name.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        def scroll_name():
-                            display.scroll("my name", delay=80)
+                    def scroll_name():
+                        display.scroll("my name", delay=80)
 
-                        scroll_name()
+                    scroll_name()
 
-                .. tab-item:: Q2
+            .. tab-item:: Q2
 
-                    Write a function called ``countdown`` that counts down from 5 to 1, showing each number.
+                Write a function called ``countdown`` that counts down from 5 to 1, showing each number.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        def countdown():
-                            for num in range(5, 0, -1):
-                                display.show(num)
-                                sleep(300)
-                            display.clear()
+                    def countdown():
+                        for num in range(5, 0, -1):
+                            display.show(num)
+                            sleep(300)
+                        display.clear()
 
-                        countdown()
-                            
+                    countdown()
+                        
 
 ----
 
@@ -166,27 +166,27 @@ Parameter order: positional before default
     #. Write a function called ``player_info`` with 3 default parameters for their user_name, their number of game lives and their game health status and display an example using it.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Write a function called ``player_info`` with 3 default parameters for their user_name, their number of game lives and their game health status and display an example using it.
+                Write a function called ``player_info`` with 3 default parameters for their user_name, their number of game lives and their game health status and display an example using it.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
-
-
-                        def player_info(name="novice", game_lives=3, health=100):
-                            display.scroll(name + "has" + str(game_lives) + " lives with health of " + str(health), delay=80)
+                    from microbit import *
 
 
-                        player_info()
-                        player_info("speedy", 2, 65)
+                    def player_info(name="novice", game_lives=3, health=100):
+                        display.scroll(name + "has" + str(game_lives) + " lives with health of " + str(health), delay=80)
+
+
+                    player_info()
+                    player_info("speedy", 2, 65)
 
 ----
 
@@ -250,78 +250,78 @@ Functions returning information
     #. Write a function called ``random_greeting`` that returns a random greeting that is randomly chosen from a list of greetings: ``["Hi", "Hello", "G'day"]``. See: https://www.w3schools.com/python/ref_random_choice.asp
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Define a function ``convert_cm_to_m(cm)`` that returns the result of converting a length in cm to metres. 
+                Define a function ``convert_cm_to_m(cm)`` that returns the result of converting a length in cm to metres. 
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
-
-
-                        def convert_cm_to_m(cm):
-                            return cm / 100
+                    from microbit import *
 
 
-                        length_cm = convert_cm_to_m(80)
-                        display.scroll(length_cm)
-
-                .. tab-item:: Q2
-
-                    Define a function ``convert_m_to_cm(m)`` that returns the result of converting a length in metres to cm. 
-
-                    .. code-block:: python
-
-                        from microbit import *
+                    def convert_cm_to_m(cm):
+                        return cm / 100
 
 
-                        def convert_m_to_cm(m):
-                            return m * 100
+                    length_cm = convert_cm_to_m(80)
+                    display.scroll(length_cm)
+
+            .. tab-item:: Q2
+
+                Define a function ``convert_m_to_cm(m)`` that returns the result of converting a length in metres to cm. 
+
+                .. code-block:: python
+
+                    from microbit import *
 
 
-                        length_m = convert_m_to_cm(1.82)
-                        display.scroll(length_m)
-
-                .. tab-item:: Q3
-
-                    Define a function ``area_square(length)`` that returns the area of a square. 
-
-                    .. code-block:: python
-
-                        from microbit import *
+                    def convert_m_to_cm(m):
+                        return m * 100
 
 
-                        def area_square(length):
-                            return length * length
+                    length_m = convert_m_to_cm(1.82)
+                    display.scroll(length_m)
+
+            .. tab-item:: Q3
+
+                Define a function ``area_square(length)`` that returns the area of a square. 
+
+                .. code-block:: python
+
+                    from microbit import *
 
 
-                        area = area_square(5)
-                        display.scroll(area)
-
-                .. tab-item:: Q4
-
-                    Write a function called ``random_greeting`` that returns a random greeting that is randomly chosen from a list of greetings: ``["Hi", "Hello", "G'day"]``.
-
-                    .. code-block:: python
-
-                        from microbit import *
-                        import random
+                    def area_square(length):
+                        return length * length
 
 
-                        def random_greeting(name):
-                            greetings = ["Hi", "Hello", "G'day"]
-                            greet = random.choice(greetings)
-                            return greet + name
+                    area = area_square(5)
+                    display.scroll(area)
+
+            .. tab-item:: Q4
+
+                Write a function called ``random_greeting`` that returns a random greeting that is randomly chosen from a list of greetings: ``["Hi", "Hello", "G'day"]``.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import random
 
 
-                        greeting = random_greeting("Jim")
-                        display.scroll(greeting, delay=70)
+                    def random_greeting(name):
+                        greetings = ["Hi", "Hello", "G'day"]
+                        greet = random.choice(greetings)
+                        return greet + name
+
+
+                    greeting = random_greeting("Jim")
+                    display.scroll(greeting, delay=70)
 
 
 ----
@@ -356,27 +356,27 @@ Allowing for a variable number of arguments
     #. Define a function ``multi_product(*nums)`` that finds the product of the arguments.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Define a function ``multi_product(*nums)`` that finds the product of the first 4 primes.
+                Define a function ``multi_product(*nums)`` that finds the product of the first 4 primes.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
-
-
-                        def multi_product(*nums):
-                            total = 1
-                            for num in nums:
-                                total = total * num
-                            return total
+                    from microbit import *
 
 
-                        display.scroll(multi_product(2, 3, 5, 7), delay=70)
+                    def multi_product(*nums):
+                        total = 1
+                        for num in nums:
+                            total = total * num
+                        return total
+
+
+                    display.scroll(multi_product(2, 3, 5, 7), delay=70)
 

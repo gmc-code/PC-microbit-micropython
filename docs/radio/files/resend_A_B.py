@@ -15,7 +15,8 @@ while True:
     # receive
     incoming_message = radio.receive()
     if incoming_message is not None:
-        display.scroll(incoming_message)
+        display.show(incoming_message)
+        sleep(250)
         if incoming_message == "A":
             radio.send("B")
         elif incoming_message == "B":

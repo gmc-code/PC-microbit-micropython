@@ -55,123 +55,123 @@ Shift left and right
 
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Use a **for-loop** with the list: [-4, -3, -2, -1, 0, 1, 2, 3, 4] to shift the dice image to the right from off screen on the left to off screen on the right in 9 steps.
+                Use a **for-loop** with the list: [-4, -3, -2, -1, 0, 1, 2, 3, 4] to shift the dice image to the right from off screen on the left to off screen on the right in 9 steps.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        img1 = Image("00000:09090:00900:09090:00000")
+                    img1 = Image("00000:09090:00900:09090:00000")
 
-                        for i in [-4, -3, -2, -1, 0, 1, 2, 3, 4]:
-                            img = img1.shift_right(i)
-                            display.show(img)
-                            sleep(500)
+                    for i in [-4, -3, -2, -1, 0, 1, 2, 3, 4]:
+                        img = img1.shift_right(i)
+                        display.show(img)
+                        sleep(500)
 
-                .. tab-item:: Q2
+            .. tab-item:: Q2
 
-                    Use a **for-loop** with the range function to do the same shifts to shift the dice image to the right from off screen on the left to off screen on the right in 9 steps.
+                Use a **for-loop** with the range function to do the same shifts to shift the dice image to the right from off screen on the left to off screen on the right in 9 steps.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        img1 = Image("00000:09090:00900:09090:00000")
+                    img1 = Image("00000:09090:00900:09090:00000")
 
-                        for i in range(-4, 5, 1):
-                            img = img1.shift_right(i)
-                            display.show(img)
-                            sleep(500)
+                    for i in range(-4, 5, 1):
+                        img = img1.shift_right(i)
+                        display.show(img)
+                        sleep(500)
 
-                .. tab-item:: Q3
+            .. tab-item:: Q3
 
-                    Use a **for-loop** with the list: [-4, -2, 0, 2, 4] to shift the dice image to the left from off screen on the right to off screen on the left in 5 steps.
+                Use a **for-loop** with the list: [-4, -2, 0, 2, 4] to shift the dice image to the left from off screen on the right to off screen on the left in 5 steps.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        img1 = Image("00000:09090:00900:09090:00000")
+                    img1 = Image("00000:09090:00900:09090:00000")
 
-                        for i in [-4, -2, 0, 2, 4]:
-                            img = img1.shift_left(i)
-                            display.show(img)
-                            sleep(500)
+                    for i in [-4, -2, 0, 2, 4]:
+                        img = img1.shift_left(i)
+                        display.show(img)
+                        sleep(500)
 
-                .. tab-item:: Q4
+            .. tab-item:: Q4
 
-                    Use a **for-loop** with the range function to do the same shifts to shift the dice image to the left from off screen on the right to off screen on the left in 5 steps.
+                Use a **for-loop** with the range function to do the same shifts to shift the dice image to the left from off screen on the right to off screen on the left in 5 steps.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        img1 = Image("00000:09090:00900:09090:00000")
+                    img1 = Image("00000:09090:00900:09090:00000")
 
-                        for i in range(-4, 5, 2):
-                            img = img1.shift_left(i)
-                            display.show(img)
-                            sleep(500)
+                    for i in range(-4, 5, 2):
+                        img = img1.shift_left(i)
+                        display.show(img)
+                        sleep(500)
 
-                .. tab-item:: Q5
+            .. tab-item:: Q5
 
-                    Use a **for-loop** with the list: [0, 1, 2, 3, 4, -4, -3, -2, -1, 0] to shift the dice image to the right from a central position and back from off screen on the left in 10 steps.
+                Use a **for-loop** with the list: [0, 1, 2, 3, 4, -4, -3, -2, -1, 0] to shift the dice image to the right from a central position and back from off screen on the left in 10 steps.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        img1 = Image("00000:09090:00900:09090:00000")
+                    img1 = Image("00000:09090:00900:09090:00000")
 
-                        for i in [0, 1, 2, 3, 4, -4, -3, -2, -1, 0]:
-                            img = img1.shift_right(i)
-                            display.show(img)
-                            sleep(500)
+                    for i in [0, 1, 2, 3, 4, -4, -3, -2, -1, 0]:
+                        img = img1.shift_right(i)
+                        display.show(img)
+                        sleep(500)
 
-                .. tab-item:: Q6
+            .. tab-item:: Q6
 
-                    Use a **for-loop** with the list: [0, 2, 4, -4, -2, 0] shift the dice image to the left from a central position and back from off screen on the right in 6 steps.
+                Use a **for-loop** with the list: [0, 2, 4, -4, -2, 0] shift the dice image to the left from a central position and back from off screen on the right in 6 steps.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        img1 = Image("00000:09090:00900:09090:00000")
+                    img1 = Image("00000:09090:00900:09090:00000")
 
-                        for i in [0, 2, 4, -4, -2, 0]:
-                            img = img1.shift_left(i)
-                            display.show(img)
-                            sleep(500)
+                    for i in [0, 2, 4, -4, -2, 0]:
+                        img = img1.shift_left(i)
+                        display.show(img)
+                        sleep(500)
 
-                .. tab-item:: Q7
+            .. tab-item:: Q7
 
-                    Create a definition, **h_shift_img_directions(img, directions, sleep_time=80)**,  that takes a list of shifts, **directions**,  for the shifts and applies them to move the dice image sideways, using [-4, -3, -2, -1, 0, 1, 2, 3, 4] as the argument for directions.
+                Create a definition, **h_shift_img_directions(img, directions, sleep_time=80)**,  that takes a list of shifts, **directions**,  for the shifts and applies them to move the dice image sideways, using [-4, -3, -2, -1, 0, 1, 2, 3, 4] as the argument for directions.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
-
-
-                        def h_shift_img_directions(img, directions, sleep_time=80):
-                            for x in directions:
-                                shift_img = img.shift_right(x)
-                                display.show(shift_img)
-                                sleep(sleep_time)
+                    from microbit import *
 
 
-                        img = Image("00000:09090:00900:09090:00000")
-                        sleep_time = 200
-                        h_directions = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
-                        while True:
-                            h_shift_img_directions(img, h_directions, sleep_time)
+                    def h_shift_img_directions(img, directions, sleep_time=80):
+                        for x in directions:
+                            shift_img = img.shift_right(x)
+                            display.show(shift_img)
+                            sleep(sleep_time)
+
+
+                    img = Image("00000:09090:00900:09090:00000")
+                    sleep_time = 200
+                    h_directions = [-4, -3, -2, -1, 0, 1, 2, 3, 4]
+                    while True:
+                        h_shift_img_directions(img, h_directions, sleep_time)
 
 
 ----
@@ -224,123 +224,123 @@ Shift up and down
     #.  Create a definition, **v_shift_img_directions(img, directions, sleep_time=80)**,  that takes a list of shifts, **directions**,  for the shifts and applies them to move the dice image sideways, using [0, 1, 2, 3, 4, -4, -3, -2, -1, 0] as the argument for directions.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Use a **for-loop** with the list: [-4, -3, -2, -1, 0, 1, 2, 3, 4] to shift the dice image up from off screen on the bottom to off screen on the top in 9 steps.
+                Use a **for-loop** with the list: [-4, -3, -2, -1, 0, 1, 2, 3, 4] to shift the dice image up from off screen on the bottom to off screen on the top in 9 steps.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        img1 = Image("00000:09090:00900:09090:00000")
+                    img1 = Image("00000:09090:00900:09090:00000")
 
-                        for i in [-4, -3, -2, -1, 0, 1, 2, 3, 4]:
-                            img = img1.shift_up(i)
-                            display.show(img)
-                            sleep(500)
+                    for i in [-4, -3, -2, -1, 0, 1, 2, 3, 4]:
+                        img = img1.shift_up(i)
+                        display.show(img)
+                        sleep(500)
 
-                .. tab-item:: Q2
+            .. tab-item:: Q2
 
-                    Use a **for-loop** with the range function to do the same shifts to shift the dice image up from off screen on the bottom to off screen on the top in 9 steps.
+                Use a **for-loop** with the range function to do the same shifts to shift the dice image up from off screen on the bottom to off screen on the top in 9 steps.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        img1 = Image("00000:09090:00900:09090:00000")
+                    img1 = Image("00000:09090:00900:09090:00000")
 
-                        for i in range(-4, 5, 1):
-                            img = img1.shift_up(i)
-                            display.show(img)
-                            sleep(500)
+                    for i in range(-4, 5, 1):
+                        img = img1.shift_up(i)
+                        display.show(img)
+                        sleep(500)
 
-                .. tab-item:: Q3
+            .. tab-item:: Q3
 
-                    Use a **for-loop** with the list: [-4, -2, 0, 2, 4] to shift the dice image to the bottom from off screen on the top to off screen on the bottom in 5 steps.
+                Use a **for-loop** with the list: [-4, -2, 0, 2, 4] to shift the dice image to the bottom from off screen on the top to off screen on the bottom in 5 steps.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        img1 = Image("00000:09090:00900:09090:00000")
+                    img1 = Image("00000:09090:00900:09090:00000")
 
-                        for i in [-4, -2, 0, 2, 4]:
-                            img = img1.shift_down(i)
-                            display.show(img)
-                            sleep(500)
+                    for i in [-4, -2, 0, 2, 4]:
+                        img = img1.shift_down(i)
+                        display.show(img)
+                        sleep(500)
 
-                .. tab-item:: Q4
+            .. tab-item:: Q4
 
-                    Use a **for-loop** with the range function to do the same shifts to shift the dice image to the bottom from off screen on the top to off screen on the bottom in 5 steps.
+                Use a **for-loop** with the range function to do the same shifts to shift the dice image to the bottom from off screen on the top to off screen on the bottom in 5 steps.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        img1 = Image("00000:09090:00900:09090:00000")
+                    img1 = Image("00000:09090:00900:09090:00000")
 
-                        for i in range(-4, 5, 2):
-                            img = img1.shift_down(i)
-                            display.show(img)
-                            sleep(500)
+                    for i in range(-4, 5, 2):
+                        img = img1.shift_down(i)
+                        display.show(img)
+                        sleep(500)
 
-                .. tab-item:: Q5
+            .. tab-item:: Q5
 
-                    Use a **for-loop** with the list: [0, 1, 2, 3, 4, -4, -3, -2, -1, 0] to shift the dice image up from a central position and back from off screen on the bottom in 10 steps.
+                Use a **for-loop** with the list: [0, 1, 2, 3, 4, -4, -3, -2, -1, 0] to shift the dice image up from a central position and back from off screen on the bottom in 10 steps.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        img1 = Image("00000:09090:00900:09090:00000")
+                    img1 = Image("00000:09090:00900:09090:00000")
 
-                        for i in [0, 1, 2, 3, 4, -4, -3, -2, -1, 0]:
-                            img = img1.shift_up(i)
-                            display.show(img)
-                            sleep(500)
+                    for i in [0, 1, 2, 3, 4, -4, -3, -2, -1, 0]:
+                        img = img1.shift_up(i)
+                        display.show(img)
+                        sleep(500)
 
-                .. tab-item:: Q6
+            .. tab-item:: Q6
 
-                    Use a **for-loop** with the list: [0, 2, 4, -4, -2, 0] shift the dice image to the bottom from a central position and back from off screen on the top in 6 steps.
+                Use a **for-loop** with the list: [0, 2, 4, -4, -2, 0] shift the dice image to the bottom from a central position and back from off screen on the top in 6 steps.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        img1 = Image("00000:09090:00900:09090:00000")
+                    img1 = Image("00000:09090:00900:09090:00000")
 
-                        for i in [0, 2, 4, -4, -2, 0]:
-                            img = img1.shift_down(i)
-                            display.show(img)
-                            sleep(500)
+                    for i in [0, 2, 4, -4, -2, 0]:
+                        img = img1.shift_down(i)
+                        display.show(img)
+                        sleep(500)
 
-                .. tab-item:: Q7
+            .. tab-item:: Q7
 
-                    Create a definition, **v_shift_img_directions(img, directions, sleep_time=80)**,  that takes a list of shifts, **directions**,  for the shifts and applies them to move the dice image sideways, using [0, 1, 2, 3, 4, -4, -3, -2, -1, 0] as the argument for directions.
+                Create a definition, **v_shift_img_directions(img, directions, sleep_time=80)**,  that takes a list of shifts, **directions**,  for the shifts and applies them to move the dice image sideways, using [0, 1, 2, 3, 4, -4, -3, -2, -1, 0] as the argument for directions.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
-
-
-                        def v_shift_img_directions(img, directions, sleep_time=80):
-                            for y in directions:
-                                shift_img = img.shift_down(y)
-                                display.show(shift_img)
-                                sleep(sleep_time)
+                    from microbit import *
 
 
-                        img = Image("00000:09090:00900:09090:00000")
-                        sleep_time = 200
-                        v_directions = [0, 1, 2, 3, 4, -4, -3, -2, -1, 0]
-                        while True:
-                            v_shift_img_directions(img, v_directions, sleep_time)
+                    def v_shift_img_directions(img, directions, sleep_time=80):
+                        for y in directions:
+                            shift_img = img.shift_down(y)
+                            display.show(shift_img)
+                            sleep(sleep_time)
+
+
+                    img = Image("00000:09090:00900:09090:00000")
+                    sleep_time = 200
+                    v_directions = [0, 1, 2, 3, 4, -4, -3, -2, -1, 0]
+                    while True:
+                        v_shift_img_directions(img, v_directions, sleep_time)
 
 
 ----
@@ -356,39 +356,39 @@ Shifting vertically and horizontally
     #.  Use both **h_shift_img_directions(img, directions, sleep_time=80)** and **v_shift_img_directions(img, directions, sleep_time=80)**, to make a cross shaped movement pattern for Image("00000:09090:00900:09090:00000").
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Use both **h_shift_img_directions(img, directions, sleep_time=80)** and **v_shift_img_directions(img, directions, sleep_time=80)**, to make a cross shaped movement pattern for Image("00000:09090:00900:09090:00000").
+                Use both **h_shift_img_directions(img, directions, sleep_time=80)** and **v_shift_img_directions(img, directions, sleep_time=80)**, to make a cross shaped movement pattern for Image("00000:09090:00900:09090:00000").
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
 
-                        def v_shift_img_directions(img, directions, sleep_time=80):
-                            for y in directions:
-                                shift_img = img.shift_down(y)
-                                display.show(shift_img)
-                                sleep(sleep_time)
+                    def v_shift_img_directions(img, directions, sleep_time=80):
+                        for y in directions:
+                            shift_img = img.shift_down(y)
+                            display.show(shift_img)
+                            sleep(sleep_time)
 
-                        def h_shift_img_directions(img, directions, sleep_time=80):
-                            for x in directions:
-                                shift_img = img.shift_right(x)
-                                display.show(shift_img)
-                                sleep(sleep_time)
+                    def h_shift_img_directions(img, directions, sleep_time=80):
+                        for x in directions:
+                            shift_img = img.shift_right(x)
+                            display.show(shift_img)
+                            sleep(sleep_time)
 
-                        img = Image("00000:09090:00900:09090:00000")
-                        sleep_time = 80
-                        directions = [0, 1, 2, 3, 4, -4, -3, -2, -1, 0]
-                        while True:
-                            h_shift_img_directions(img, directions, sleep_time)
-                            v_shift_img_directions(img, directions, sleep_time)
+                    img = Image("00000:09090:00900:09090:00000")
+                    sleep_time = 80
+                    directions = [0, 1, 2, 3, 4, -4, -3, -2, -1, 0]
+                    while True:
+                        h_shift_img_directions(img, directions, sleep_time)
+                        v_shift_img_directions(img, directions, sleep_time)
 
 
 ----
@@ -439,93 +439,93 @@ Shifting combined
     #.  Predict what the following directions might do: **directions =  [(0, 0), (0, -1), (1, -1), (1, 0), (1, 1), (0, 1), (-1, 1), (-1, 0), (-1, -1), (0, 0)]**
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Alter the arguments to move the butterfly anticlockwise.
+                Alter the arguments to move the butterfly anticlockwise.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
+                    from microbit import *
 
-                        def shift_x_y(img, x, y, sleep_time=80):
-                            shift_img = img.shift_right(x)
-                            shift_img = shift_img.shift_down(y)
-                            display.show(shift_img)
-                            sleep(sleep_time)
-                                
-
-                        img = Image.BUTTERFLY   
-                        sleep_time = 200
-                        while True:
-                            display.show(img)
-                            sleep(sleep_time)
-                            shift_x_y(img, 0, 1, sleep_time)
-                            shift_x_y(img, 1, 1, sleep_time)
-                            shift_x_y(img, 1, 0, sleep_time)
-
-                .. tab-item:: Q2
-
-                    Create a definition, **shift_img_directions(img, directions, sleep_time=80)**,  that takes a list of tuples, **directions**,  for the shifts and applies them to move the butterfly anticlockwise.
-
-                    .. code-block:: python
-
-                        from microbit import *
-
-                        def shift_x_y(img, x, y, sleep_time=80):
-                            shift_img = img.shift_right(x)
-                            shift_img = shift_img.shift_down(y)
-                            display.show(shift_img)
-                            sleep(sleep_time)
-                                
+                    def shift_x_y(img, x, y, sleep_time=80):
+                        shift_img = img.shift_right(x)
+                        shift_img = shift_img.shift_down(y)
+                        display.show(shift_img)
+                        sleep(sleep_time)
                             
-                        def shift_img_directions(img, directions, sleep_time=80):
-                            for x,y in directions:
-                                shift_x_y(img, x, y, sleep_time)
 
+                    img = Image.BUTTERFLY   
+                    sleep_time = 200
+                    while True:
+                        display.show(img)
+                        sleep(sleep_time)
+                        shift_x_y(img, 0, 1, sleep_time)
+                        shift_x_y(img, 1, 1, sleep_time)
+                        shift_x_y(img, 1, 0, sleep_time)
 
-                        img = Image.BUTTERFLY
-                        sleep_time = 200
-                        while True:
-                            anticlockwise_directions =  [(0, 0), (0, 1), (1, 1), (1, 0)]
-                            shift_img_directions(img, anticlockwise_directions, sleep_time)
+            .. tab-item:: Q2
 
-                .. tab-item:: Q3
+                Create a definition, **shift_img_directions(img, directions, sleep_time=80)**,  that takes a list of tuples, **directions**,  for the shifts and applies them to move the butterfly anticlockwise.
 
-                    Use the definition, **shift_img_directions(img, directions, sleep_time=80)**, to move the butterfly clockwise.
+                .. code-block:: python
 
-                    .. code-block:: python
+                    from microbit import *
 
-                        from microbit import *
-
-                        def shift_x_y(img, x, y, sleep_time=80):
-                            shift_img = img.shift_right(x)
-                            shift_img = shift_img.shift_down(y)
-                            display.show(shift_img)
-                            sleep(sleep_time)
-                                
+                    def shift_x_y(img, x, y, sleep_time=80):
+                        shift_img = img.shift_right(x)
+                        shift_img = shift_img.shift_down(y)
+                        display.show(shift_img)
+                        sleep(sleep_time)
                             
-                        def shift_img_directions(img, directions, sleep_time=80):
-                            for x,y in directions:
-                                shift_x_y(img, x, y, sleep_time)
+                        
+                    def shift_img_directions(img, directions, sleep_time=80):
+                        for x,y in directions:
+                            shift_x_y(img, x, y, sleep_time)
 
 
-                        img = Image.BUTTERFLY
-                        sleep_time = 200
-                        while True:
-                            clockwise_directions =  [(0, 0), (1, 0), (1, 1), (0, 1) ]
-                            shift_img_directions(img, clockwise_directions, sleep_time)
+                    img = Image.BUTTERFLY
+                    sleep_time = 200
+                    while True:
+                        anticlockwise_directions =  [(0, 0), (0, 1), (1, 1), (1, 0)]
+                        shift_img_directions(img, anticlockwise_directions, sleep_time)
 
-                .. tab-item:: Q4
+            .. tab-item:: Q3
 
-                    Predict what the following directions might do: **directions =  [(0, 0), (0, -1), (1, -1), (1, 0), (1, 1), (0, 1), (-1, 1), (-1, 0), (-1, -1), (0, 0)]**
+                Use the definition, **shift_img_directions(img, directions, sleep_time=80)**, to move the butterfly clockwise.
 
-                    They move the image clockwise in a 2 by 2 square ranging from (-1, -1) to (1, 1).
+                .. code-block:: python
+
+                    from microbit import *
+
+                    def shift_x_y(img, x, y, sleep_time=80):
+                        shift_img = img.shift_right(x)
+                        shift_img = shift_img.shift_down(y)
+                        display.show(shift_img)
+                        sleep(sleep_time)
+                            
+                        
+                    def shift_img_directions(img, directions, sleep_time=80):
+                        for x,y in directions:
+                            shift_x_y(img, x, y, sleep_time)
+
+
+                    img = Image.BUTTERFLY
+                    sleep_time = 200
+                    while True:
+                        clockwise_directions =  [(0, 0), (1, 0), (1, 1), (0, 1) ]
+                        shift_img_directions(img, clockwise_directions, sleep_time)
+
+            .. tab-item:: Q4
+
+                Predict what the following directions might do: **directions =  [(0, 0), (0, -1), (1, -1), (1, 0), (1, 1), (0, 1), (-1, 1), (-1, 0), (-1, -1), (0, 0)]**
+
+                They move the image clockwise in a 2 by 2 square ranging from (-1, -1) to (1, 1).
 
 ----
 
@@ -617,62 +617,62 @@ Cropping images and repositioning with blit
     #.  Modify the code further to use nested for loops by adding **for y in [0, 1, 2]** to display the cropped image in 9 positions.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Rewrite the code above to achieve the same result, but by using a for-loop, **for x in [0, 1, 2]**, to create the 3 cropped images above and display them.
+                Rewrite the code above to achieve the same result, but by using a for-loop, **for x in [0, 1, 2]**, to create the 3 cropped images above and display them.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
-
-
-                        def crop_to(source_img, x, y, w, h, i, j):
-                            res = Image(5, 5)
-                            res.blit(source_img, x, y, w, h, i, j)
-                            return res
+                    from microbit import *
 
 
-                        img = Image.SQUARE_SMALL
+                    def crop_to(source_img, x, y, w, h, i, j):
+                        res = Image(5, 5)
+                        res.blit(source_img, x, y, w, h, i, j)
+                        return res
 
-                        while True:
-                            display.show(img)
-                            sleep(500)
+
+                    img = Image.SQUARE_SMALL
+
+                    while True:
+                        display.show(img)
+                        sleep(500)
+                        for x in [0, 1, 2]:
+                            img_x = crop_to(img, 1, 1, 3, 3, x, 0)
+                            display.show(img_x)
+                            sleep(200)
+
+            .. tab-item:: Q2
+
+                Modify the code further to use nested for loops by adding **for y in [0, 1, 2]** to display the cropped image in 9 positions.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+
+                    def crop_to(source_img, x, y, w, h, i, j):
+                        res = Image(5, 5)
+                        res.blit(source_img, x, y, w, h, i, j)
+                        return res
+
+
+                    img = Image.SQUARE_SMALL
+
+                    while True:
+                        display.show(img)
+                        sleep(500)
+                        for y in [0, 1, 2]:
                             for x in [0, 1, 2]:
-                                img_x = crop_to(img, 1, 1, 3, 3, x, 0)
-                                display.show(img_x)
+                                img_xy = crop_to(img, 1, 1, 3, 3, x, y)
+                                display.show(img_xy)
                                 sleep(200)
-
-                .. tab-item:: Q2
-
-                    Modify the code further to use nested for loops by adding **for y in [0, 1, 2]** to display the cropped image in 9 positions.
-
-                    .. code-block:: python
-
-                        from microbit import *
-
-
-                        def crop_to(source_img, x, y, w, h, i, j):
-                            res = Image(5, 5)
-                            res.blit(source_img, x, y, w, h, i, j)
-                            return res
-
-
-                        img = Image.SQUARE_SMALL
-
-                        while True:
-                            display.show(img)
-                            sleep(500)
-                            for y in [0, 1, 2]:
-                                for x in [0, 1, 2]:
-                                    img_xy = crop_to(img, 1, 1, 3, 3, x, y)
-                                    display.show(img_xy)
-                                    sleep(200)
 
 ----
 
@@ -718,53 +718,53 @@ Repositioning a 3by3 image via accelerometer
     #.  Complete the code required to move a number 5 dice around the screen using the functions above.
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Complete the code required to move a number 5 dice around the screen using the functions above.
+                Complete the code required to move a number 5 dice around the screen using the functions above.
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
-
-
-                        def place_3by3(source_img, x, y):
-                            res = Image(5, 5)
-                            res.blit(source_img, 1, 1, 3, 3, x, y)
-                            return res
+                    from microbit import *
 
 
-                        def get_3by3_pos(x, y):
-                            dx = accelerometer.get_x()
-                            dy = accelerometer.get_y()
-                            sensitivity = 200
-                            if dx > sensitivity:
-                                x += 1
-                            if dx < -sensitivity:
-                                x -= 1
-                            if dy > sensitivity:
-                                y += 1
-                            if dy < -sensitivity:
-                                y -= 1
-                            # keep on grid
-                            x = max(0, min(x, 2))
-                            y = max(0, min(y, 2))
-                            return x, y
+                    def place_3by3(source_img, x, y):
+                        res = Image(5, 5)
+                        res.blit(source_img, 1, 1, 3, 3, x, y)
+                        return res
 
 
-                        img1 = Image("00000:09090:00900:09090:00000")
-                        x, y = 2, 2
+                    def get_3by3_pos(x, y):
+                        dx = accelerometer.get_x()
+                        dy = accelerometer.get_y()
+                        sensitivity = 200
+                        if dx > sensitivity:
+                            x += 1
+                        if dx < -sensitivity:
+                            x -= 1
+                        if dy > sensitivity:
+                            y += 1
+                        if dy < -sensitivity:
+                            y -= 1
+                        # keep on grid
+                        x = max(0, min(x, 2))
+                        y = max(0, min(y, 2))
+                        return x, y
 
-                        while True:
-                            x, y = get_3by3_pos(x, y)
-                            img = place_3by3(img1, x, y)
-                            display.show(img)
-                            sleep(200)
+
+                    img1 = Image("00000:09090:00900:09090:00000")
+                    x, y = 2, 2
+
+                    while True:
+                        x, y = get_3by3_pos(x, y)
+                        img = place_3by3(img1, x, y)
+                        display.show(img)
+                        sleep(200)
 
 
 ----
@@ -818,94 +818,94 @@ Filling images and repositioning with blit
     
 
     .. dropdown::
-            :icon: codescan
-            :color: primary
-            :class-container: sd-dropdown-container
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
 
-            .. tab-set::
+        .. tab-set::
 
-                .. tab-item:: Q1
+            .. tab-item:: Q1
 
-                    Write code to place 4, 2 by 2 squares, of brightness 5, in each corner. 
+                Write code to place 4, 2 by 2 squares, of brightness 5, in each corner. 
 
-                    .. code-block:: python
+                .. code-block:: python
 
-                        from microbit import *
-
-
-                        def blit_fill_rect(w, h, brightness, x, y):
-                            src = Image(w, h)
-                            src.fill(brightness)
-                            res = Image(5, 5)
-                            res.blit(src, 0, 0, 5, 5, x, y)
-                            return res
+                    from microbit import *
 
 
-                        rect1 = blit_fill_rect(2, 2, 5, 0, 0)
-                        rect2 = blit_fill_rect(2, 2, 5, 3, 0)
-                        rect3 = blit_fill_rect(2, 2, 5, 0, 3)
-                        rect4 = blit_fill_rect(2, 2, 5, 3, 3)
-                        rects = rect1 + rect2 + rect3 + rect4
-
-                        display.show(my_image_overlap)
-
-                .. tab-item:: Q2
-
-                    Write code to place 4, 2 by 2 squares, of brightness 5, in each corner. 
-
-                    .. code-block:: python
-
-                        from microbit import *
+                    def blit_fill_rect(w, h, brightness, x, y):
+                        src = Image(w, h)
+                        src.fill(brightness)
+                        res = Image(5, 5)
+                        res.blit(src, 0, 0, 5, 5, x, y)
+                        return res
 
 
-                        def blit_fill_rect(w, h, brightness, x, y):
-                            src = Image(w, h)
-                            src.fill(brightness)
-                            res = Image(5, 5)
-                            res.blit(src, 0, 0, 5, 5, x, y)
-                            return res
+                    rect1 = blit_fill_rect(2, 2, 5, 0, 0)
+                    rect2 = blit_fill_rect(2, 2, 5, 3, 0)
+                    rect3 = blit_fill_rect(2, 2, 5, 0, 3)
+                    rect4 = blit_fill_rect(2, 2, 5, 3, 3)
+                    rects = rect1 + rect2 + rect3 + rect4
+
+                    display.show(my_image_overlap)
+
+            .. tab-item:: Q2
+
+                Write code to place 4, 2 by 2 squares, of brightness 5, in each corner. 
+
+                .. code-block:: python
+
+                    from microbit import *
 
 
-                        my_image_overlap = Image()
-                        for x in [0, 3]:
-                            for y in [0, 3]:
-                                rect = blit_fill_rect(2, 2, 5, x, y)
-                                my_image_overlap = my_image_overlap + rect
-                                display.show(my_image_overlap)
-                                sleep(500)
-
-                .. tab-item:: Q3
-
-                    Write a function, **rect_overlaps(count=2)**, to return a composite image of a given number of rectangles (default 2) of random size and position, of brightness 9. Restrict the width and height to 2 to 4. Restrict the top left to (0,0) to (3,3). Display a new composite image every 200ms.
-
-                    .. code-block:: python
-
-                        from microbit import *
-                        import random
+                    def blit_fill_rect(w, h, brightness, x, y):
+                        src = Image(w, h)
+                        src.fill(brightness)
+                        res = Image(5, 5)
+                        res.blit(src, 0, 0, 5, 5, x, y)
+                        return res
 
 
-                        def blit_fill_rect(w, h, brightness, x, y):
-                            src = Image(w, h)
-                            src.fill(brightness)
-                            res = Image(5, 5)
-                            res.blit(src, 0, 0, 5, 5, x, y)
-                            return res
+                    my_image_overlap = Image()
+                    for x in [0, 3]:
+                        for y in [0, 3]:
+                            rect = blit_fill_rect(2, 2, 5, x, y)
+                            my_image_overlap = my_image_overlap + rect
+                            display.show(my_image_overlap)
+                            sleep(500)
+
+            .. tab-item:: Q3
+
+                Write a function, **rect_overlaps(count=2)**, to return a composite image of a given number of rectangles (default 2) of random size and position, of brightness 9. Restrict the width and height to 2 to 4. Restrict the top left to (0,0) to (3,3). Display a new composite image every 200ms.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import random
 
 
-                        def rect_overlaps(count=2):
-                            rect_overlap = Image()
-                            for _ in range(3):
-                                w = random.randint(2, 4)
-                                h = random.randint(2, 4)
-                                brightness = 9  # random.randint(3, 6)
-                                x = random.randint(0, 3)
-                                y = random.randint(0, 3)
-                                rect = blit_fill_rect(w, h, brightness, x, y)
-                                rect_overlap = rect_overlap + rect
-                            return rect_overlap
+                    def blit_fill_rect(w, h, brightness, x, y):
+                        src = Image(w, h)
+                        src.fill(brightness)
+                        res = Image(5, 5)
+                        res.blit(src, 0, 0, 5, 5, x, y)
+                        return res
 
 
-                        while True:
-                            display.show(rect_overlaps(count=2))
-                            sleep(200)
+                    def rect_overlaps(count=2):
+                        rect_overlap = Image()
+                        for _ in range(3):
+                            w = random.randint(2, 4)
+                            h = random.randint(2, 4)
+                            brightness = 9  # random.randint(3, 6)
+                            x = random.randint(0, 3)
+                            y = random.randint(0, 3)
+                            rect = blit_fill_rect(w, h, brightness, x, y)
+                            rect_overlap = rect_overlap + rect
+                        return rect_overlap
+
+
+                    while True:
+                        display.show(rect_overlaps(count=2))
+                        sleep(200)
 
