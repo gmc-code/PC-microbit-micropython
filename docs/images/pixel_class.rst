@@ -50,7 +50,7 @@ Pixel animation using classes
 
     #. Modify the code to use a default **brightness** of 6.    
     #. Modify the code to use a **brightness** of 3 when the led is turned on in the **for-loop**. 
-    #. Modify the code to use a **brightness** of 1, 3, 5, 7, 9 for each led from left to right. DO this by incrementing a counter called **brightness_val**.   
+    #. Modify the code to use a **brightness** of 1, 3, 5, 7, 9 for each led from left to right. Do this by incrementing a counter called **brightness_val**.   
     #. Modify the code to use ``brightness_val_list = [9, 7, 5, 3, 1]`` to store the led brightnesses for the 5 leds from left to right. Use the zip function to zip the led list and the brightness list. Then loop though the zipped list to display the leds with decreasing brightness.   
 
     .. dropdown::
@@ -202,9 +202,12 @@ Pixel animation using classes
 
                     led_list = [led02, led12, led22, led32, led42]
                     brightness_val_list = [9, 7, 5, 3, 1]
-                    leds_brightness_list = zip(led_list, brightness_val_list)
+                    # Convert zip object to list since the zip object would be used up in a for loop
+                    leds_brightness_list = list(zip(led_list, brightness_val_list))  
+                    
 
                     while True:
+
                         for led_xy, brightness_val in leds_brightness_list:
                             led_xy.on(brightness=brightness_val)
                             sleep(100)
