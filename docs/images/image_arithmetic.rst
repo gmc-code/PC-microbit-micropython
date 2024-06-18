@@ -13,6 +13,7 @@ Image()
 
     | Returns an image object, with each pixel of brightness 0.
     | **Image()** is equivalent to:
+
     | Image(
     |    '00000:'
     |    '00000:'
@@ -26,7 +27,6 @@ Image()
 
 Fill
 -----------------------------
-
 
 .. py:method:: fill(value)
 
@@ -48,7 +48,7 @@ Fill
 
 .. admonition:: Tasks
 
-    #. Create a blank image and fill it with brightness of 9.
+    #. Create a blank image and fill it with brightness of 7.
     #. Create a blank image and use a for-loop to set its brightness from 1 to 9 in less than 2 seconds using the fill method.
     #. Create an animation using the fill method in which the brightness of all the pixels goes form 0 to 9 and back to 0 in less than 2 seconds.
 
@@ -61,14 +61,14 @@ Fill
 
             .. tab-item:: Q1
 
-                Create a blank image and fill it with brightness of 9.
+                Create a blank image and fill it with brightness of 7.
 
                 .. code-block:: python
 
                     from microbit import *
 
                     img = Image()
-                    img.fill(6)
+                    img.fill(7)
                     display.show(img)
 
             .. tab-item:: Q2
