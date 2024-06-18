@@ -127,6 +127,31 @@ Example Masks
 
     .. tab-set::
 
+        .. tab-item:: down_right_mask
+
+            .. code-block:: python
+
+                down_right_mask = [
+                    [9, 8, 7, 6, 5],
+                    [8, 7, 6, 5, 4],
+                    [7, 6, 5, 4, 3],
+                    [6, 5, 4, 3, 2],
+                    [5, 4, 3, 2, 1],
+                ]
+                
+
+        .. tab-item:: up_left_mask
+
+            .. code-block:: python
+
+                up_left_mask = [
+                    [1, 2, 3, 4, 5],
+                    [2, 3, 4, 5, 6],
+                    [3, 4, 5, 6, 7],
+                    [4, 5, 6, 7, 8],
+                    [5, 6, 7, 8, 9],
+                ]
+
         .. tab-item:: right_mask
 
             .. code-block:: python
@@ -172,6 +197,18 @@ Example Masks
                     [3, 3, 3, 3, 3],
                     [5, 5, 5, 5, 5],
                     [7, 7, 7, 7, 7],
+                    [9, 9, 9, 9, 9],
+                ]
+
+        .. tab-item:: inwards_mask
+
+            .. code-block:: python
+
+                inwards_mask = [
+                    [9, 9, 9, 9, 9],
+                    [9, 7, 7, 7, 9],
+                    [9, 7, 4, 7, 9],
+                    [9, 7, 7, 7, 9],
                     [9, 9, 9, 9, 9],
                 ]
 
@@ -446,7 +483,7 @@ Mask loops
 
             .. tab-item:: Q1
 
-                Write code to loop though a list of 8 mask names and apply them to a TSHIRT image.
+                Write code to loop though a list of 10 mask names and apply them to a TSHIRT image.
 
                 .. code-block:: python
 
@@ -458,6 +495,13 @@ Mask loops
                         [7, 6, 5, 4, 3],
                         [6, 5, 4, 3, 2],
                         [5, 4, 3, 2, 1],
+                    ]
+                    up_left_mask = [
+                        [1, 2, 3, 4, 5],
+                        [2, 3, 4, 5, 6],
+                        [3, 4, 5, 6, 7],
+                        [4, 5, 6, 7, 8],
+                        [5, 6, 7, 8, 9],
                     ]
                     right_mask = [
                         [9, 7, 5, 3, 1],
@@ -480,7 +524,6 @@ Mask loops
                         [3, 3, 3, 3, 3],
                         [1, 1, 1, 1, 1],
                     ]
-
                     up_mask = [
                         [1, 1, 1, 1, 1],
                         [3, 3, 3, 3, 3],
@@ -488,7 +531,13 @@ Mask loops
                         [7, 7, 7, 7, 7],
                         [9, 9, 9, 9, 9],
                     ]
-
+                    inwards_mask = [
+                        [9, 9, 9, 9, 9],
+                        [9, 7, 7, 7, 9],
+                        [9, 7, 4, 7, 9],
+                        [9, 7, 7, 7, 9],
+                        [9, 9, 9, 9, 9],
+                    ]
                     outwards_mask = [
                         [4, 4, 4, 4, 4],
                         [4, 7, 7, 7, 4],
@@ -539,10 +588,12 @@ Mask loops
 
                     mask_names = [
                         down_right_mask,
+                        up_left_mask,
                         left_mask,
                         right_mask,
                         up_mask,
                         down_mask,
+                        inwards_mask,
                         outwards_mask,
                         duller5_mask,
                         duller1_mask,
@@ -555,5 +606,4 @@ Mask loops
                         for mask in mask_names:
                             img_masked = get_masked_image(img, mask)
                             display.show(img_masked)
-                            sleep(200)
-
+                            sleep(1500)
