@@ -179,7 +179,7 @@ Manual image lists
                         receive_image()
 
 
-           .. tab-item:: Q2
+            .. tab-item:: Q2
 
                 Modify the code above send three random images from the rps_images image list as an animation affect.
 
