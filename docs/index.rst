@@ -31,7 +31,8 @@ Index:
     radio/radio_tilt.rst
     radio/radio_resend.rst
     radio/radio_shift_cipher.rst
-
+    radio/radio_polybius_square.rst
+    
     radio/radio_messager.rst
 
     radio/radio_images.rst
