@@ -2,10 +2,10 @@ from microbit import *
 import radio
 import random
 
-# Turn on the radio
-radio.on()
 # Choose own group in pairs 0-255
 radio.config(group=8)
+# Turn on the radio
+radio.on()
 
 # Caesar cipher letters
 ALPHABET = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"

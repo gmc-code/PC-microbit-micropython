@@ -65,7 +65,7 @@ Letter tilting
 .. admonition:: Exercises
 
     #. Send a single word to your partner.
-    #. Send a a 3 to 5 word phrase to your partner.
+    #. Send a 3 to 5 word phrase to your partner.
 
 ----
 

@@ -17,23 +17,23 @@ def extract_image_string(image):
     return image_string
 
 
-images = [Image.HAPPY, Image.SMILE, Image.SAD, Image.CONFUSED, Image.ANGRY, Image.ASLEEP, Image.SURPRISED, Image.SILLY, Image.FABULOUS, Image.MEH]
+# Define images for Rock, Paper and Scissors
+rock = Image('00000:09990:99999:09990:00000:')
+paper = Image('99999:90009:90009:90009:99999:')
+scissors = Image('99009:99090:00900:99090:99009:')
+
+# Put the images in a list
+images = [rock, paper, scissors]
 
 
-def get_rand_images(num):
-    # num must be less than len(images)
-    new_images = []
-    while len(new_images) < num:
-        image = random.choice(images)
-        if image not in new_images:
-            new_images.append(image)
-    return new_images
+def get_rps_image():
+    image = random.choice(images)
+    return image
 
 
 def send_image():
-    for img in get_rand_images(5):  # Send 5 images
-        radio.send(extract_image_string(img))
-        sleep(500)  # Delay between each image
+    img = get_rps_image()
+    radio.send(extract_image_string(img))
 
 
 def receive_image():

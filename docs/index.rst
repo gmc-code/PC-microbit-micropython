@@ -34,6 +34,7 @@ Index:
 
     radio/radio_messager.rst
 
+    radio/radio_images.rst
     radio/radio_firefly.rst
     radio/radio_draw.rst
 

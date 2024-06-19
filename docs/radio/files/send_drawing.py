@@ -1,8 +1,9 @@
 from microbit import *
 import radio
 
-# Choose the same group 0-255
+# Choose own group in pairs 0-255
 radio.config(group=8)
+# Turn on the radio
 radio.on()
 
 x = 2
