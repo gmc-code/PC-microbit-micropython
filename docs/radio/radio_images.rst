@@ -113,7 +113,7 @@ Manual image lists
     scissors = '99009:99090:00900:99090:99009:'
 
     # Put the image strings in a list
-    rps_images = [rock, paper, scissors]
+    image_strings = [rock, paper, scissors]
 
 
 .. admonition:: Tasks
