@@ -28,7 +28,7 @@ Boats
     sinking_boats = [boat1, boat2, boat3, boat4, boat5, boat6]
 
     while True:
-        if button_a.is_pressed():
+        if button_a.was_pressed():
             # Send each boat image over radio
             for boat in sinking_boats:
                 radio.send(boat)
@@ -76,14 +76,15 @@ Boats
 
                     sinking_boats = [boat1, boat2, boat3, boat4, boat5, boat6]
                     rising_boats = sinking_boats[::-1]
+                    # rising_boats = [boat6, boat5, boat4, boat3, boat2, boat1]
 
                     while True:
-                        if button_a.is_pressed():
+                        if button_a.was_pressed():
                             # Send each boat image over radio
                             for boat in sinking_boats:
                                 radio.send(boat)
                                 sleep(500)  # Delay between each image
-                        elif button_b.is_pressed():
+                        elif button_b.was_pressed():
                             # Send each boat image over radio
                             for boat in rising_boats:
                                 radio.send(boat)
@@ -94,6 +95,142 @@ Boats
                             if received in sinking_boats:
                                 # Convert the received string back to an image and display it
                                 display.show(Image(received))
+
+----
+
+Manual image lists
+------------------------
+
+| Below is code for the rock paper scissors images.
+
+.. code-block:: python
+
+    from microbit import *
+
+    # Define images strings for Rock, Paper and Scissors
+    rock = '00000:09990:99999:09990:00000:'
+    paper = '99999:90009:90009:90009:99999:'
+    scissors = '99009:99090:00900:99090:99009:'
+
+    # Put the image strings in a list
+    rps_images = [rock, paper, scissors]
+
+
+.. admonition:: Tasks
+
+    #. Modify the code above send one random image from the rps_images image list.
+    #. Modify the code above send three random images from the rps_images image list as an animation affect.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Modify the code above send one random image from the rps_images image list.
+
+                .. code-block:: python
+                
+                    from microbit import *
+                    import radio
+                    import random
+
+                    # Choose own group in pairs 0-255
+                    radio.config(group=8)
+                    # Turn on the radio
+                    radio.on()
+
+                    # Define image_strings for Rock, Paper and Scissors
+                    rock = '00000:09990:99999:09990:00000:'
+                    paper = '99999:90009:90009:90009:99999:'
+                    scissors = '99009:99090:00900:99090:99009:'
+
+                    # Put the image_strings in a list
+                    image_strings = [rock, paper, scissors]
+
+
+                    def get_rps_image():
+                        image_string = random.choice(image_strings)
+                        return image_string
+
+
+                    def send_image():
+                        image_string = get_rps_image()
+                        radio.send(image_string)
+
+
+                    def receive_image():
+                        # Receive a message from the radio
+                        incoming = radio.receive()
+                        if incoming:
+                            try:
+                                display.show(Image(incoming))
+                            except:
+                                display.show(incoming, delay=100)
+
+
+                    while True:
+                        if button_a.was_pressed():
+                            send_image()
+                        # Receive the image
+                        receive_image()
+
+
+           .. tab-item:: Q2
+
+                Modify the code above send three random images from the rps_images image list as an animation affect.
+
+                .. code-block:: python
+                
+                    from microbit import *
+                    import radio
+                    import random
+
+                    # Choose own group in pairs 0-255
+                    radio.config(group=8)
+                    # Turn on the radio
+                    radio.on()
+
+                    # Define image_strings for Rock, Paper and Scissors
+                    rock = '00000:09990:99999:09990:00000:'
+                    paper = '99999:90009:90009:90009:99999:'
+                    scissors = '99009:99090:00900:99090:99009:'
+
+                    # Put the image_strings in a list
+                    image_strings = [rock, paper, scissors]
+
+
+                    def get_rps_image():
+                        image_string = random.choice(image_strings)
+                        return image_string
+
+
+                    def send_image():
+                        image_string = get_rps_image()
+                        radio.send(image_string)
+
+
+                    def receive_image():
+                        # Receive a message from the radio
+                        incoming = radio.receive()
+                        if incoming:
+                            try:
+                                display.show(Image(incoming))
+                            except:
+                                display.show(incoming, delay=100)
+
+
+                    while True:
+                        if button_a.was_pressed():
+                            for _ in range(3):
+                                send_image()
+                                sleep(200)
+                            # sleep(500)
+                        # Receive the image
+                        receive_image()
 
 
 ----
@@ -121,11 +258,13 @@ Built in images
         # Convert the image to a string
         full_image_string = str(image)
         # Replace the colon and newline characters with an empty string
-        image_string = full_image_string.replace("'", "").replace("\n", "").replace(" ", "").replace("(", "").replace(")", "").replace("Image", "")
+        image_string = full_image_string.replace("'", "").replace("\n", "").replace(" ", "")
+        image_string = image_string.replace("(", "").replace(")", "").replace("Image", "")
         return image_string
 
 
-    images = [Image.HAPPY, Image.SMILE, Image.SAD, Image.CONFUSED, Image.ANGRY, Image.ASLEEP, Image.SURPRISED, Image.SILLY, Image.FABULOUS, Image.MEH]
+    images = [Image.HAPPY, Image.SMILE, Image.SAD, Image.CONFUSED, Image.ANGRY, Image.ASLEEP, 
+                Image.SURPRISED, Image.SILLY, Image.FABULOUS, Image.MEH]
 
 
     def get_rand_images(num):
@@ -155,98 +294,13 @@ Built in images
 
 
     while True:
-        if button_a.is_pressed():
+        if button_a.was_pressed():
             send_image()
         # Receive the image
         receive_image()
 
-----
+.. admonition:: Exercise
 
-Manual image lists
-------------------------
-
-| Below is code for the rock paper scissors images.
-
-.. code-block:: python
-
-    from microbit import *
-
-    # Define images for Rock, Paper and Scissors
-    rock = Image('00000:09990:99999:09990:00000:')
-    paper = Image('99999:90009:90009:90009:99999:')
-    scissors = Image('99009:99090:00900:99090:99009:')
-
-    # Put the images in a list
-    rps_images = [rock, paper, scissors]
+    #. Modify the code above to send 3 random images from a list of animal images.
 
 
-.. admonition:: Tasks
-
-    #. Modify the code above send one random image from the rps_images image list.
-
-    .. dropdown::
-        :icon: codescan
-        :color: primary
-        :class-container: sd-dropdown-container
-
-        .. tab-set::
-
-            .. tab-item:: Q1
-
-                Modify the code above send one random image from the rps_images image list.
-
-                .. code-block:: python
-                
-                    from microbit import *
-                    import radio
-                    import random
-
-                    # Choose own group in pairs 0-255
-                    radio.config(group=8)
-                    # Turn on the radio
-                    radio.on()
-
-
-                    # Function to extract numbers from the image string
-                    def extract_image_string(image):
-                        # Convert the image to a string
-                        full_image_string = str(image)
-                        # Replace the colon and newline characters with an empty string
-                        image_string = full_image_string.replace("'", "").replace("\n", "").replace(" ", "").replace("(", "").replace(")", "").replace("Image", "")
-                        return image_string
-
-
-                    # Define images for Rock, Paper and Scissors
-                    rock = Image('00000:09990:99999:09990:00000:')
-                    paper = Image('99999:90009:90009:90009:99999:')
-                    scissors = Image('99009:99090:00900:99090:99009:')
-
-                    # Put the images in a list
-                    images = [rock, paper, scissors]
-
-
-                    def get_rps_image():
-                        image = random.choice(images)
-                        return image
-
-
-                    def send_image():
-                        img = get_rps_image()
-                        radio.send(extract_image_string(img))
-
-
-                    def receive_image():
-                        # Receive a message from the radio
-                        incoming = radio.receive()
-                        if incoming:
-                            try:
-                                display.show(Image(incoming))
-                            except:
-                                display.show(incoming, delay=100)
-
-
-                    while True:
-                        if button_a.is_pressed():
-                            send_image()
-                        # Receive the image
-                        receive_image()

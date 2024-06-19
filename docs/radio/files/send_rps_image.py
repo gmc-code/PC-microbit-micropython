@@ -47,7 +47,7 @@ def receive_image():
 
 
 while True:
-    if button_a.is_pressed():
+    if button_a.was_pressed():
         send_image()
     # Receive the image
     receive_image()
