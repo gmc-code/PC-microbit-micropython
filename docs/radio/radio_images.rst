@@ -5,6 +5,10 @@ Radio images
 Boats
 -------------
 
+.. image:: images/boat_sinking.gif
+    :scale: 60 %
+    :align: center
+
 | The code below sends multiple image strings then converts those to images on the receiving microbit.
 
 .. code-block:: python
@@ -100,6 +104,11 @@ Boats
 
 Manual image lists
 ------------------------
+
+.. image:: images/rps.gif
+    :scale: 60 %
+    :align: center
+
 
 | Below is code for the rock paper scissors images.
 
@@ -238,8 +247,12 @@ Manual image lists
 Built in images
 ---------------------
 
-| The code below chooses 5 random built in images from a list and sends them one at a time as strings by radio.
+.. image:: images/faces.gif
+    :scale: 60 %
+    :align: center
 
+
+| The code below chooses 5 random built in images from a list and sends them one at a time as strings by radio.
 
 .. code-block:: python
 
