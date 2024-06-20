@@ -25,6 +25,10 @@ Caesar cipher
 Break the code
 -------------------------
 
+.. image:: images/caesar_shift_time_is_key.gif
+    :scale: 80 %
+    :align: center
+    
 | This script uses radio communication for sending and receiving encrypted messages. 
 | The script sets up a radio group, defines a list of secret phrases, and implements a Caesar shift cipher function for encryption. 
 | When the A button is pressed, it selects a random secret message, applies the Caesar cipher with a small random shift, sends the encrypted message via radio, and starts a timer. 
@@ -104,9 +108,7 @@ Break the code
             # Display the shifted secret message
             display.scroll(incoming, delay=100)
 
-.. image:: files/polybius_time_is_key.gif
-    :scale: 80 %
-    :align: center
+
 
 ----
 

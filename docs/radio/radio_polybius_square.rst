@@ -24,6 +24,16 @@ Polybius cipher
 Break the code
 -------------------------
 
+.. list-table:: 
+    :class: table_images
+
+    * - .. image:: images/polybius.png
+            :scale: 75 %
+
+      - .. image:: images/polybius_time_is_key.gif
+            :scale: 80 %
+
+
 | This script uses radio communication for sending and receiving encrypted messages. 
 | The script sets up a radio group, defines a list of secret phrases, and implements a polybius square function for encryption. 
 | When the A button is pressed, it selects a random secret message, applies the polybius square, sends the image strings via radio for display on the receiver's microbit, and starts a timer. 
@@ -153,15 +163,6 @@ Break the code
             timer = 0
         # Check for incoming messages
         receive_image()
-
-.. list-table:: 
-    :class: table_images
-
-    * - .. image:: images/polybius.png
-            :scale: 75 %
-
-      - .. image:: files/polybius_time_is_key.gif
-            :scale: 80 %
 
 
 
