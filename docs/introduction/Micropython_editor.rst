@@ -23,7 +23,6 @@ Opening python files
 
 | Click on the Open button to navigate to a saved python file.
 
-
 ----
 
 Uploading modules to the microbit
@@ -41,3 +40,17 @@ Uploading modules to the microbit
 
 .. image:: images/online_editor_open_file.png
     :scale: 50 %
+
+----
+
+Saving hex files
+---------------------------------------
+
+| Using hex files has the advantage that saving and opening files with modules is done automatically.
+| This is the recommended approach for projects with a main file and a module so that both are saved and opened with one hex file.
+
+.. image:: images/save_hex_file.png
+    :scale: 50 %
+
+| Type in some code.
+| Click on the Save button to save as a hex file.
