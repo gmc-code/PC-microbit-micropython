@@ -168,13 +168,8 @@ Break the code
         Your browser does not support the video tag.
     </video>
 
-.. raw:: html
-
-    <center>
-        <video controls src="files/polybius_time_is_key.mp4"></video>
-    </center>
-
 You can download the movie :download:`here <files/polybius_time_is_key.mp4>`
+
 ----
 
 .. admonition:: Exercises
