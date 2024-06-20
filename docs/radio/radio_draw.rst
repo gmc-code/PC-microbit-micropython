@@ -45,8 +45,9 @@ Send Drawn Image
     from microbit import *
     import radio
 
-    # Choose the same group 0-255
-    radio.config(group=8)   
+    # Choose own group in pairs 0-255
+    radio.config(group=8)
+    # Turn on the radio
     radio.on()
 
     x = 2
@@ -127,8 +128,9 @@ Send Drawn Image
     import radio
 
    
-    # Choose the same group 0-255
-    radio.config(group=8)   
+    # Choose own group in pairs 0-255
+    radio.config(group=8)
+    # Turn on the radio
     radio.on()
 
     while True:
@@ -142,5 +144,5 @@ Send Drawn Image
 
 .. admonition:: Exercise
 
-    #. Modify the power level to 2, 3, 4 or 5.
+    #. Design a game room with 25 desks in a 5 by 5 grid. On each of these desks, place cards different values according to a drawn map. A copy of the card value maps is given to each controller in each pair. The controllers take it in turns to draws the places to go to on their microbit, directing their playing partner to cards of the highest value. Limit the time for each player to 30 seconds. After all the cards are collected declare the winner with the highest score.
         
