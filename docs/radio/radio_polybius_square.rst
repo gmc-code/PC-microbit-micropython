@@ -156,9 +156,13 @@ Break the code
     :scale: 80 %
     :align: center
 
-.. image:: files/polybius_time_is_key.mp4
-    :scale: 80 %
-    :align: center
+.. raw:: html
+
+   <video width="404" height="317" controls>
+     <source src="files/polybius_time_is_key.mp4" type="video/mp4">
+   Your browser does not support the video tag.
+   </video>
+
 
 ----
 
