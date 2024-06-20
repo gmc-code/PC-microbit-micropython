@@ -144,8 +144,11 @@ Send Drawn Image
 
 .. admonition:: Exercise
 
-    #. Design a game room with 25 desks in a 5 by 5 grid. On each of these desks, place cards different values according to a drawn map. A copy of the card value maps is given to each controller in each pair. The controllers take it in turns to draws the places to go to on their microbit, directing their playing partner to cards of the highest value. Limit the time for each player to 30 seconds. After all the cards are collected declare the winner with the highest score.
+    #. Design a game room with 25 desks in a 5 by 5 grid. On each of these desks, place cards of different values face down according to a drawn map. A copy of the card value maps is given to each controller in each pair. The controllers take it in turns to draw the desk location the grid to go to on their microbit, directing their playing partner to cards of the highest value. Limit the time for each player to 30 seconds. After all the cards are collected declare the winner with the highest score.
     
+    An example of a 5 by 5 grid with card values is below.
+
     .. image:: images/card_draw.png
             :scale: 60 %
+            :align: center
     
