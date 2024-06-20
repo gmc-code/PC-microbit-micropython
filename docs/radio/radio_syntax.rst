@@ -43,6 +43,27 @@ Radio On and Off
 
 ----
 
+Radio group
+------------------------
+
+.. py:function:: config(group=0)
+
+    The ``group`` (default=0) is an 8-bit value (0-255) used with the
+    ``address`` when filtering messages. Conceptually, "address" is like a
+    house/office address and "group" is like the person at that address to
+    which you want to send your message.
+
+.. code-block:: python
+
+    from microbit import *
+    import radio
+
+    radio.config(group=8)
+    radio.on()
+    radio.send('hello')
+
+----
+
 Radio send and receive
 ------------------------
 
@@ -59,7 +80,7 @@ Radio send and receive
     import radio
 
     radio.on()
-    radio.config(group=9, length=251)
+    radio.config(group=8, length=251)
     radio.send('hello')
 
 
@@ -80,7 +101,7 @@ Radio send and receive
     import radio
 
     radio.on()
-    radio.config(group=9, length=251)
+    radio.config(group=8, length=251)
     
 
     while True:
@@ -92,11 +113,118 @@ Radio send and receive
         if message:
             display.scroll(message)
 
+
+
+| Those working together should set the group to an integer from 0 to 255 so that only their microbits share messages.
+| Set the length to the maximum value if sending long messages. Lengths greater that the default may be required if sending image strings.
+
+.. code-block:: python
+
+    from microbit import *
+    import radio
+
+    radio.on()
+    radio.config(group=8, length=251)
+
+----
+
+bytes
+-------------
+
+| There are two methods for sending data: `send()` and `send_bytes()`.
+| `send()`: This method is used to send a string. The string is converted to bytes before it is transmitted. It's useful when you want to send text messages or commands that can be represented as strings. If you send a string with `send()`, you should use `receive()` to get the data as a string on the other end.
+| `send_bytes()`: This method is used to send raw bytes. This is useful when you want to send data that can't be easily represented as a string, such as sensor data or binary data.
+| If you send bytes with `send_bytes()`, you should use `receive_bytes()` to get the data as bytes on the other end. 
+
+
+.. py:function:: send_bytes(message)
+
+    Sends a message containing bytes.
+
+.. py:function:: receive_bytes()
+
+    Receive the next incoming message on the message queue. Returns ``None`` if
+    there are no pending messages. Messages are returned as bytes.
+
+.. py:function:: receive_bytes_into(buffer)
+
+    Receive the next incoming message on the message queue. Copies the message
+    into ``buffer``, trimming the end of the message if necessary.
+    Returns ``None`` if there are no pending messages, otherwise it returns the length
+    of the message (which might be more than the length of the buffer).
+
+.. code-block:: python
+
+    from microbit import *
+    import radio
+
+    radio.on()
+    radio.config(group=8, length=251)
+    
+
+    while True:
+        # send
+        if button_a.was_pressed():
+            radio.send_bytes(b'LATER')
+        # receive
+        message = radio.receive_bytes()
+        if message:
+            display.scroll(message)
+
+----
+
+Msg, Signal strength, timestamps
+----------------------------------
+
+.. py:function:: receive_full()
+
+    Returns a tuple containing three values representing the next incoming
+    message on the message queue. If there are no pending messages then
+    ``None`` is returned.
+
+    The three values in the tuple represent:
+
+    * the next incoming message on the message queue as bytes.
+    * the RSSI (signal strength): a value between 0 (strongest) and -255 (weakest) as measured in dBm.
+    * a microsecond timestamp: the value returned by ``time.ticks_us()`` when the message was received.
+    
+    This function is useful for providing information needed for triangulation
+    and/or trilateration (using distances) with other microbit devices.
+
+| The code below uses receive_full which expects byte strings such as that from ``radio.send_bytes(b'later')``.
+| B button pressing uses ``radio.send_bytes(b'later')``. This sends the string as bytes and is then received by ``radio.receive_full()`` as bytes as expected.
+| A button pressing uses  ``radio.send('hello')``. Sending a string results in the bytes prefix being added ``b'\x01\x00\x01'``. This needs to be removed, otherwise "???" will appear before the string when received.
+
+
+.. code-block:: python
+
+    from microbit import *
+    import radio
+
+    radio.config(group=8, length=251)
+    radio.on()
+
+    while True:
+        # send
+        if button_a.was_pressed():
+            radio.send('hello')
+        elif button_b.was_pressed():
+            radio.send_bytes(b'later')
+        # receive
+        details = radio.receive_full()
+        if details:
+            msg, rssi, timestamp = details
+            decoded_msg = msg.replace(b'\x01\x00\x01', b'').decode()
+            display.scroll(decoded_msg)
+            display.scroll(rssi)
+            display.scroll(timestamp)
+
 ----
 
 Radio settings
 -----------------------
 
+| The full list of config settings are below. 
 | If ``config`` is not called then the defaults are used.
 
 .. py:function:: config(length=32, queue=3, channel=7, power=6, address=0x75626974, group=0, data_rate=radio.RATE_1MBIT)
@@ -105,7 +233,7 @@ Radio settings
 
     The ``length`` (default=32) defines the maximum length, in bytes, of a
     message sent via the radio. 1 character = 1 byte. It can be up to 251 bytes long (254 - 3 bytes
-    for S0, LENGTH and S1 preamble). 
+    for S0, LENGTH and S1 preamble; the S0, LENGTH, and S1 are parts of the packet structure used in radio communication and are used to indicate the start of a packet, the length of the packet, and for error checking, respectively). 
 
     The ``queue`` (default=3) specifies the number of messages that can be
     stored on the incoming message queue. If there are no spaces left on the
@@ -149,111 +277,5 @@ Radio settings
 .. py:function:: reset()
 
     Reset the settings to their default values for the ``config`` function.
-
-
-| Those working together should set the group to an integer from 0 to 255 so that only their microbits share messages.
-| Set the length to the maximum value if sending long messages. Lengths greater that the default may be required if sending image strings.
-
-.. code-block:: python
-
-    from microbit import *
-    import radio
-
-    radio.on()
-    radio.config(group=9, length=251)
-
-----
-
-bytes
--------------
-
-| There are two methods for sending data: `send()` and `send_bytes()`.
-| `send()`: This method is used to send a string. The string is converted to bytes before it is transmitted. It's useful when you want to send text messages or commands that can be represented as strings. If you send a string with `send()`, you should use `receive()` to get the data as a string on the other end.
-| `send_bytes()`: This method is used to send raw bytes. This is useful when you want to send data that can't be easily represented as a string, such as sensor data or binary data.
-| If you send bytes with `send_bytes()`, you should use `receive_bytes()` to get the data as bytes on the other end. 
-
-
-.. py:function:: send_bytes(message)
-
-    Sends a message containing bytes.
-
-.. py:function:: receive_bytes()
-
-    Receive the next incoming message on the message queue. Returns ``None`` if
-    there are no pending messages. Messages are returned as bytes.
-
-.. py:function:: receive_bytes_into(buffer)
-
-    Receive the next incoming message on the message queue. Copies the message
-    into ``buffer``, trimming the end of the message if necessary.
-    Returns ``None`` if there are no pending messages, otherwise it returns the length
-    of the message (which might be more than the length of the buffer).
-
-.. code-block:: python
-
-    from microbit import *
-    import radio
-
-    radio.on()
-    radio.config(group=9, length=251)
-    
-
-    while True:
-        # send
-        if button_a.was_pressed():
-            radio.send_bytes(b'LATER')
-        # receive
-        message = radio.receive_bytes()
-        if message:
-            display.scroll(message)
-
-----
-
-Msg, Signal strength, timestamps
-----------------------------------
-
-.. py:function:: receive_full()
-
-    Returns a tuple containing three values representing the next incoming
-    message on the message queue. If there are no pending messages then
-    ``None`` is returned.
-
-    The three values in the tuple represent:
-
-    * the next incoming message on the message queue as bytes.
-    * the RSSI (signal strength): a value between 0 (strongest) and -255 (weakest) as measured in dBm.
-    * a microsecond timestamp: the value returned by ``time.ticks_us()`` when the message was received.
-    
-    This function is useful for providing information needed for triangulation
-    and/or trilateration (using distances) with other microbit devices.
-
-| The code below uses receive_full which expects byte strings such as that from ``radio.send_bytes(b'later')``.
-| B button pressing uses ``radio.send_bytes(b'later')``. This sends the string as bytes and is then received by ``radio.receive_full()`` as bytes as expected.
-| A button pressing uses  ``radio.send('hello')``. Sending a string results in the bytes prefix being added ``b'\x01\x00\x01'``. This needs to be removed, otherwise "???" will appear before the string when received.
-
-
-.. code-block:: python
-
-    from microbit import *
-    import radio
-
-    radio.config(group=9, length=251)
-    radio.on()
-
-    while True:
-        # send
-        if button_a.was_pressed():
-            radio.send('hello')
-        elif button_b.was_pressed():
-            radio.send_bytes(b'later')
-        # receive
-        details = radio.receive_full()
-        if details:
-            msg, rssi, timestamp = details
-            decoded_msg = msg.replace(b'\x01\x00\x01', b'').decode()
-            display.scroll(decoded_msg)
-            display.scroll(rssi)
-            display.scroll(timestamp)
-
 
 

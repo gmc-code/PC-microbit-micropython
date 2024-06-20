@@ -2,7 +2,7 @@ from microbit import *
 import radio
 
 radio.on()
-radio.config(group=9, length=251)
+radio.config(group=8, length=251)
 
 
 while True:
