@@ -30,10 +30,6 @@ Radio On and Off
 
     Turns the radio on.
 
-.. py:function:: off()
-
-    Turns off the radio, thus saving power and memory.
-
 .. code-block:: python
 
     from microbit import *
@@ -41,10 +37,19 @@ Radio On and Off
 
     radio.on()
 
+| Turn off the radio to saving power and memory.
+
+.. py:function:: off()
+
+    Turns off the radio, thus saving power and memory.
+
 ----
 
 Radio group
 ------------------------
+
+| Set the microbits to the same group number so they communicate with each other and only with those in the same group.
+| Without setting the group number, all nearby microbits would be in group 0 and so would be able to communicate with each other by default.
 
 .. py:function:: config(group=0)
 
