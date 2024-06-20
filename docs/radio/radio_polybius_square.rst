@@ -14,7 +14,7 @@ Polybius cipher
 
 .. image:: files/polybius_time_is_key.gif
     :scale: 60 %
-    :align: right
+
 
 
 | **Grid Creation**: A 5x5 grid is created, and each cell is filled with a letter of the alphabet. To fit the 26 letters of the alphabet into the 25 cells created by the table, the letters I and J are usually combined into a single cell.
@@ -163,10 +163,10 @@ Break the code
     :class: borderless
 
     * - .. image:: images/polybius.png
-        :scale: 75 %
+            :scale: 75 %
 
       - .. image:: files/polybius_time_is_key.gif
-        :scale: 80 %
+            :scale: 80 %
 
 
 
