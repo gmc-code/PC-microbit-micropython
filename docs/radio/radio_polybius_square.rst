@@ -161,13 +161,12 @@ Break the code
 
 .. list-table:: 
     :class: borderless
-    :align: center
 
     * - .. image:: images/polybius.png
-        :scale: 60 %
+        :scale: 75 %
 
-    - .. image:: files/polybius_time_is_key.gif
-        :scale: 60 %
+      - .. image:: files/polybius_time_is_key.gif
+        :scale: 80 %
 
 
 
