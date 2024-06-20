@@ -2,6 +2,15 @@
 Radio Firefly
 ====================================================
 
+.. list-table:: 
+    :class: table_images
+
+    * - .. image:: images/happy.gif
+            :scale: 60 %
+
+      - .. image:: images/butterfly.gif
+            :scale: 60 %
+
 Firefly
 -------------
 
@@ -50,6 +59,7 @@ Firefly
             if random.randint(0, 9) == 0:
                 sleep(500)
                 radio.send('flash')
+
 
 
 .. admonition:: Tasks
