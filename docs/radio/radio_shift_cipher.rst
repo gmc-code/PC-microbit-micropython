@@ -104,6 +104,9 @@ Break the code
             # Display the shifted secret message
             display.scroll(incoming, delay=100)
 
+.. image:: files/polybius_time_is_key.gif
+    :scale: 80 %
+    :align: center
 
 ----
 
