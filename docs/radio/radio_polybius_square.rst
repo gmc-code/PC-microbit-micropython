@@ -152,6 +152,13 @@ Break the code
         # Check for incoming messages
         receive_image()
 
+.. image:: files/polybius_time_is_key.gif
+    :scale: 80 %
+    :align: center
+
+.. image:: files/polybius_time_is_key.mp4
+    :scale: 80 %
+    :align: center
 
 ----
 
