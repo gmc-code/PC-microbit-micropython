@@ -269,3 +269,12 @@ div.highlight-default div.highlight {
 .wy-table-responsive th p { 
     margin-bottom: unset; 
 } 
+
+/* ========================================== */
+/**  for side by side images in table 
+/* ========================================== */
+
+
+.borderless {
+    border: none;
+}
