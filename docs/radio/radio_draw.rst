@@ -132,10 +132,10 @@ Send Drawn Image
     radio.on()
 
     while True:
-        s = radio.receive()
-        if s is not None:
-            print(s)
-            i = Image(s)
+        incoming_message = radio.receive()
+        if incoming_message:
+            # print(incoming_message)
+            i = Image(incoming_message)
             display.show(i)
 
 ----

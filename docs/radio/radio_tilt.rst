@@ -34,7 +34,7 @@ Choose response by tilting
             radio.send(response)
         # receiver
         incoming_message = radio.receive()
-        if incoming_message is not None:
+        if incoming_message:
             display.scroll(incoming_message)
             sleep(1000)
             
@@ -82,7 +82,7 @@ Choose response by tilting
                             sleep(100)
                         # receive
                         incoming_message = radio.receive()
-                        if incoming_message is not None:
+                        if incoming_message:
                             display.scroll(incoming_message)
                             sleep(1000)
 
@@ -117,7 +117,7 @@ Choose response by tilting
                                 sleep(100)
                             # receive
                             incoming_message = radio.receive()
-                            if incoming_message is not None:
+                            if incoming_message:
                                 if incoming_message == "Y":
                                     display.show(Image.YES)
                                 elif incoming_message == "N":

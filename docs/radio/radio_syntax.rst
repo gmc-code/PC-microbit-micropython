@@ -119,6 +119,10 @@ Radio send and receive
 
     A ``ValueError`` exception is raised if conversion to a string fails.
 
+
+| In the code below ``if incoming_message:`` is True when the incoming_message in anything other than None.
+| this could have been written as ``if incoming_message is not None:``.
+
 .. code-block:: python
 
     from microbit import *
@@ -133,9 +137,9 @@ Radio send and receive
         if button_a.was_pressed():
             radio.send('hello')
         # receive
-        message = radio.receive()
-        if message:
-            display.scroll(message)
+        incoming_message = radio.receive()
+        if incoming_message:
+            display.scroll(incoming_message)
 
 
 ----

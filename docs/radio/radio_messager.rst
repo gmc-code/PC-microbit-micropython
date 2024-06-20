@@ -57,7 +57,7 @@ Letter tilting
 
         # receive
         incoming_message = radio.receive()
-        if incoming_message is not None:
+        if incoming_message:
             display.scroll(incoming_message)
 
 ----
@@ -138,5 +138,5 @@ Letter tilting
 
                         # receive
                         incoming_message = radio.receive()
-                        if incoming_message is not None:
+                        if incoming_message:
                             display.scroll(incoming_message)

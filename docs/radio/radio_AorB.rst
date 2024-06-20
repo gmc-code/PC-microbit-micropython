@@ -9,7 +9,7 @@ Send on button pressing
 | Turn on the radio using: ``radio.on()``
 | Use ``button_a.was_pressed()`` to send a message, **"A"**.
 | Scroll any received messages.
-| ``if incoming_message is not None:`` relies on ``radio.receive()`` returning **None** when there is no message received. 
+| ``if incoming_message:`` is True is a message is received. It is False if ``radio.receive()`` returns **None** when there is no message received. 
 
 
 .. code-block:: python
@@ -28,7 +28,7 @@ Send on button pressing
             radio.send("A")
         # receive
         incoming_message = radio.receive()
-        if incoming_message is not None:
+        if incoming_message:
             display.scroll(incoming_message)
 
 ----
@@ -71,7 +71,7 @@ Send on button pressing
                             radio.send("B")
                         # receive
                         incoming_message = radio.receive()
-                        if incoming_message is not None:
+                        if incoming_message:
                             display.scroll(incoming_message)
 
             .. tab-item:: Q2
@@ -96,7 +96,7 @@ Send on button pressing
                             radio.send("F")
                         # receive
                         incoming_message = radio.receive()
-                        if incoming_message is not None:
+                        if incoming_message:
                             display.scroll(incoming_message)
 
             .. tab-item:: Q3
@@ -121,7 +121,7 @@ Send on button pressing
                             radio.send("N")
                         # receive
                         incoming_message = radio.receive()
-                        if incoming_message is not None:
+                        if incoming_message:
                             display.scroll(incoming_message)
 
             .. tab-item:: Q4
@@ -144,7 +144,7 @@ Send on button pressing
                         elif button_b.was_pressed():
                             radio.send("N")
                         incoming_message = radio.receive()
-                        if incoming_message is not None:
+                        if incoming_message:
                             if incoming_message == "Y":
                                 display.show(Image.YES)
                             elif incoming_message == "N":
@@ -171,7 +171,7 @@ Send on button pressing
                             radio.send("N")
                             display.show(Image.NO)
                         incoming_message = radio.receive()
-                        if incoming_message is not None:
+                        if incoming_message:
                             if incoming_message == "Y":
                                 display.show(Image.YES)
                             elif incoming_message == "N":

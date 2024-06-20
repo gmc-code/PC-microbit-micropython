@@ -29,7 +29,7 @@ Back and forth messaging
             radio.send("B")
         # receive
         incoming_message = radio.receive()
-        if incoming_message is not None:
+        if incoming_message:
             display.show(incoming_message)
             sleep(250)
             if incoming_message == "A":
@@ -77,7 +77,7 @@ Back and forth messaging
                             counter_B = 0
                         # receive
                         incoming_message = radio.receive()
-                        if incoming_message is not None:
+                        if incoming_message:
                             if incoming_message == "A" and counter_A < 5:
                                 radio.send("A")
                                 counter_A += 1
