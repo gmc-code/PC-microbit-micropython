@@ -157,7 +157,6 @@ Break the code
     :align: center
 
 .. raw:: html
-
    <video width="404" height="317" controls>
      <source src="_static/polybius_time_is_key.mp4" type="video/mp4">
    Your browser does not support the video tag.
