@@ -65,12 +65,32 @@ Radio group
 
     radio.config(group=8)
     radio.on()
-    radio.send('hello')
+
+
+| Those working together should set the group to an integer from 0 to 255 so that only their microbits share messages.
+| Set the length to the maximum value if sending long messages. Lengths greater that the default of 32 may be required if sending long strings.
+
+.. code-block:: python
+
+    from microbit import *
+    import radio
+
+    radio.on()
+    radio.config(group=8, length=251)
+
 
 ----
 
 Radio send and receive
 ------------------------
+
+| `send()`: This method is used to send a string. The string is converted to bytes before it is transmitted. It's useful when you want to send text messages or commands that can be represented as strings. If you send a string with `send()`, you should use `receive()` to get the data as a string on the other end.
+
+| When sending messages via the radio on the microbit, each character in the message will be converted to its ASCII representation, then to binary, and sent as a series of bytes. 
+| In ASCII, A is represented by the number 65. In binary, 65 is 01000001. This is 8 bits of information, or 1 byte. 
+| The length parameter in the radio configuration determines how many bytes (or characters) that can be sent in a single message.
+| A byte is a unit of digital information that consists of 8 bits. A bit is the most basic unit of information in computing and can have only one of two values, 0 or 1.
+
 
 .. py:function:: send(message)
 
@@ -91,8 +111,7 @@ Radio send and receive
 
 .. py:function:: receive()
 
-    Works in exactly the same way as ``receive_bytes`` but returns  whatever was sent.
-
+    Works in exactly the same way as ``receive_bytes`` but returns whatever was sent.
     Currently, it's equivalent to ``str(receive_bytes(), 'utf8')`` but with a
     check that the first three bytes are ``b'\x01\x00\x01'`` (to make it
     compatible with other platforms that may target the microbit). It strips
@@ -119,26 +138,12 @@ Radio send and receive
             display.scroll(message)
 
 
-
-| Those working together should set the group to an integer from 0 to 255 so that only their microbits share messages.
-| Set the length to the maximum value if sending long messages. Lengths greater that the default may be required if sending image strings.
-
-.. code-block:: python
-
-    from microbit import *
-    import radio
-
-    radio.on()
-    radio.config(group=8, length=251)
-
 ----
 
 bytes
 -------------
 
-| There are two methods for sending data: `send()` and `send_bytes()`.
-| `send()`: This method is used to send a string. The string is converted to bytes before it is transmitted. It's useful when you want to send text messages or commands that can be represented as strings. If you send a string with `send()`, you should use `receive()` to get the data as a string on the other end.
-| `send_bytes()`: This method is used to send raw bytes. This is useful when you want to send data that can't be easily represented as a string, such as sensor data or binary data.
+| `send_bytes()`: This method is used to send bytes. This is useful when you want to send data that can't be easily represented as a string, such as sensor data or binary data.
 | If you send bytes with `send_bytes()`, you should use `receive_bytes()` to get the data as bytes on the other end. 
 
 
