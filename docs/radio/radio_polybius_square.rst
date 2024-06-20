@@ -11,9 +11,11 @@ Polybius cipher
     :scale: 60 %
     :align: center
 
+
 | **Grid Creation**: A 5x5 grid is created, and each cell is filled with a letter of the alphabet. To fit the 26 letters of the alphabet into the 25 cells created by the table, the letters I and J are usually combined into a single cell.
 | **Encryption**: Each letter in the plaintext is replaced by its corresponding coordinates on the grid. For example, if B is in the cell at row 0 column 1. An image with the LED turned on at position (0, 1) represents the B.
 | **Decryption**: The process is reversed to decrypt the message. The LED turned on at position (0, 1) is converted to a B.
+
 
 .. image:: images/polybius_B.png
     :scale: 60 %
