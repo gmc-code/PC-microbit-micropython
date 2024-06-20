@@ -7,15 +7,9 @@ Polybius cipher
 
 | The **Polybius Cipher**, also known as the **Polybius Square**, is a substitution cipher that maps each letter of the alphabet to a pair of coordinates in a grid.
 
-
 .. image:: images/polybius.png
     :scale: 60 %
-    :align: left
-
-.. image:: files/polybius_time_is_key.gif
-    :scale: 60 %
-
-
+    :align: center
 
 | **Grid Creation**: A 5x5 grid is created, and each cell is filled with a letter of the alphabet. To fit the 26 letters of the alphabet into the 25 cells created by the table, the letters I and J are usually combined into a single cell.
 | **Encryption**: Each letter in the plaintext is replaced by its corresponding coordinates on the grid. For example, if B is in the cell at row 0 column 1. An image with the LED turned on at position (0, 1) represents the B.
@@ -23,6 +17,7 @@ Polybius cipher
 
 .. image:: images/polybius_B.png
     :scale: 60 %
+    :align: center
 
 ----
 
@@ -160,7 +155,7 @@ Break the code
         receive_image()
 
 .. list-table:: 
-    :class: borderless
+    :class: table_images
 
     * - .. image:: images/polybius.png
             :scale: 75 %

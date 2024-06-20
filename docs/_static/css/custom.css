@@ -275,6 +275,9 @@ div.highlight-default div.highlight {
 /* ========================================== */
 
 
-.borderless {
+.table_images {
     border: none;
+    margin-left: auto;
+    margin-right: auto;
 }
+    
