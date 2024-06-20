@@ -7,7 +7,7 @@ Changing values with A and B-buttons
 
 | Use the A-button to increase a variable.
 | Use the B-button to decrease a variable.
-| In the code below, the ``delay_time`` variable is increased in steps of 10 by the A-the A buttonnd decreased in steps of 10 by the B-button. 
+| In the code below, the ``delay_time`` variable is increased in steps of 10 by the A-button admonition decreased in steps of 10 by the B-button. 
 | Finally, text is scrolled with a delay of ``delay_time``.
 
 .. code-block:: python

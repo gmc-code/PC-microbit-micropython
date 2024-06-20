@@ -191,7 +191,7 @@ is_gesture counts
     #. Modify the code to reset the count back to 0 when the A-button is pressed.
     #. Modify the code to reset the count to a number 2 less than the current count when the B-button is pressed. Hint: use the max function.
     #. Modify the code to reset the count to a number 2 less than the current count, but not lower than 0, when the B-button is pressed.
-    #. Modify the code to include both the A-the A buttonnd B-the A buttonctions.
+    #. Modify the code to include both the A-button and B-button actions.
 
     .. dropdown::
         :icon: codescan
@@ -262,7 +262,7 @@ is_gesture counts
 
             .. tab-item:: Q4
 
-                Modify the code to include both the A-the A buttonnd B-the A buttonctions.
+                Modify the code to include both the A-button to B-button actions.
 
                 .. code-block:: python
 
