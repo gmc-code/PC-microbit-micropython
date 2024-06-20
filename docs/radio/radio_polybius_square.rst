@@ -163,10 +163,10 @@ Break the code
    :class: borderless
 
    * - .. image:: images/polybius.png
-         :scale: 75 %
+         :scale: 60 %
 
      - .. image:: files/polybius_time_is_key.gif
-         :scale: 80 %
+         :scale: 60 %
          :align: center
 
 
