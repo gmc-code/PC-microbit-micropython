@@ -25,7 +25,7 @@ Caesar cipher
 Break the code
 -------------------------
 
-| This gif below has a caesar cipher shift of 1 place. Can you decode it? 
+| The gif below has a caesar cipher shift of 1 place. Can you decode it? 
 
 .. image:: images/caesar_shift_time_is_key.gif
     :scale: 80 %
