@@ -29,6 +29,7 @@ Index:
     radio/radio_syntax.rst
     radio/radio_AorB.rst
     radio/radio_tilt.rst
+    radio/radio_gestures.rst
     radio/radio_resend.rst
     radio/radio_shift_cipher.rst
     radio/radio_polybius_square.rst
