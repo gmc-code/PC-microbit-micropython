@@ -2,6 +2,8 @@
 Radio gestures
 ====================================================
 
+| Gestures on the microbit refer to the way you hold or move the device. 
+
 Gestures
 --------------------------------
 
@@ -42,10 +44,11 @@ Gestures
         sleep(200)
 
 
-
 .. admonition:: Tasks
     
     #. Modify the code to scroll "L" for a 'left' gesture.
+    #. Modify the code to scroll "U" for an 'up' gesture.
+    #. Modify the code to scroll "D" for a 'down' gesture.
 
     .. dropdown::
         :icon: codescan
@@ -68,6 +71,93 @@ Gestures
                         if was_left:
                             display.scroll('L', delay=80)
                         sleep(200)
+
+            .. tab-item:: Q2
+
+                Modify the code to scroll "U" for an 'up' gesture.
+
+                .. code-block:: python
+                    
+                    from microbit import *
+
+
+                    while True:
+                        was_up = accelerometer.was_gesture('up')
+                        if was_up:
+                            display.scroll('U', delay=80)
+                        sleep(200)
+
+            .. tab-item:: Q3
+
+                Modify the code to scroll "D" for a 'down' gesture.
+
+                .. code-block:: python
+                    
+                    from microbit import *
+
+
+                    while True:
+                        was_down = accelerometer.was_gesture('down')
+                        if was_down:
+                            display.scroll('D', delay=80)
+                        sleep(200)
+
+
+Advanced gesture usage
+-----------------------------
+
+| The code below uses a dictionary of key:value pairs to store the response for each gesture.
+| THe code loops through the items in the dictionary assigning each key: value pair to the variables gesture and char.
+| If the gesture has occurred, the corresponding character is scrolled. 
+
+.. code-block:: python
+                    
+    from microbit import *
+
+    # Define a dictionary to map gestures to display characters
+    gesture_map = {
+        'right': 'R',
+        'left': 'L',
+        'up': 'U',
+        'down': 'D'
+    }
+
+    while True:
+        for gesture, char in gesture_map.items():
+            if accelerometer.was_gesture(gesture):
+                display.scroll(char, delay=80)
+
+.. admonition:: Challenges
+    
+    #. Modify the code so that arrows pointing to the ground are shown instead of letters scrolled.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Modify the code so that arrows pointing to the ground are shown instead of letters scrolled.
+
+                .. code-block:: python
+                    
+                    from microbit import *
+
+                    # Define a dictionary to map gestures to arrows
+                    gesture_map = {
+                        'right': Image.ARROW_E,
+                        'left': Image.ARROW_W,
+                        'up': Image.ARROW_S,
+                        'down': Image.ARROW_N,
+                    }
+
+                    while True:
+                        for gesture, img in gesture_map.items():
+                            if accelerometer.was_gesture(gesture):
+                                display.show(img)
 
 
 ----
