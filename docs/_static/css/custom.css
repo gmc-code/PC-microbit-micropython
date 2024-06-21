@@ -87,7 +87,7 @@ div.admonition-exercises p.admonition-title {
 div.admonition-project,
 div.admonition-projects {
     color: blue;
-    border: 2px solid gold;
+    border: 2px solid rgb(0, 255, 0);
     background-color: lightyellow!important;
 }
 
@@ -95,9 +95,22 @@ div.admonition-project p.admonition-title,
 div.admonition-projects p.admonition-title {
     text-transform: capitalize;
     color: black!important;
-    background-color: gold!important;
+    background-color: rgb(0, 255, 0)!important;
 }
 
+div.admonition-challenge,
+div.admonition-challenges {
+    color: blue;
+    border: 2px solid rgb(255, 0, 255);
+    background-color: lightyellow!important;
+}
+
+div.admonition-challenge p.admonition-title,
+div.admonition-challenges p.admonition-title {
+    text-transform: capitalize;
+    color: black!important;
+    background-color: rgb(255, 0, 255)!important;
+}
 
 /* ========================================== */
 /* Custom dropdown light primary D4D4F7 F7F7FF */

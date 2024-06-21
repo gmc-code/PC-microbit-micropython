@@ -107,7 +107,7 @@ Advanced gesture usage
 -----------------------------
 
 | The code below uses a dictionary of key:value pairs to store the response for each gesture.
-| THe code loops through the items in the dictionary assigning each key: value pair to the variables gesture and char.
+| The code loops through the items in the dictionary assigning each key:value pair to the variables gesture and char.
 | If the gesture has occurred, the corresponding character is scrolled. 
 
 .. code-block:: python
