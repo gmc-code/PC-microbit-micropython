@@ -10,6 +10,9 @@ Gestures
 .. py:function::  accelerometer.current_gesture()
 
     Returns one of the following gesture names as a string: "up", "down", "left", "right", "face up", "face down", "freefall", "3g", "6g", "8g", "shake".
+    This gives you the most recent gesture that was detected, which can be useful if you want your program to react differently depending on the gesture made. 
+    However, it might miss gestures if your program is busy doing other things when the gesture occurs.
+
 
 | Use the code below to test gestures. 
 | Shake with a quick flick sideways. 
@@ -29,6 +32,8 @@ Gestures
 .. py:function::  accelerometer.was_gesture(gesture)
 
     Returns True if the gesture occurred since the last call, otherwise False.
+    This is useful in scenarios where you don't want to miss any gestures, even when your program is busy doing other things.
+
 
 | Use the code below to test for the 'right' gesture by tilting it vertically on its right edge.
 

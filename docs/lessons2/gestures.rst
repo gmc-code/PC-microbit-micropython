@@ -2,8 +2,7 @@
 Gestures
 ====================================================
 
-| The accelerometer returns the following gestures when tilting and moving the microbit: ``up``, ``down``, ``left``, ``right``, ``face up``, ``face down``, ``freefall``, ``3g``, ``6g``,
-``8g``, ``shake``. 
+| The accelerometer returns the following gestures when tilting and moving the microbit: ``up``, ``down``, ``left``, ``right``, ``face up``, ``face down``, ``freefall``, ``3g``, ``6g``, ``8g``, ``shake``. 
 | Gestures are always represented as strings. 
 | ``3g``, ``6g`` and ``8g`` gestures occur if the microbit experiences large levels of g-force as when the microbit is moved accelerated very rapidly.
 | ``face up`` occurs when the microbit is flat with the front facing upwards.
