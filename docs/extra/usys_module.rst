@@ -31,7 +31,7 @@ usys modules
 
 .. py:function::  usys.implementation
 
-    | Returns a a tuple with information about the current MicroPython implementation with following attributes:
+    | Returns a tuple with information about the current MicroPython implementation with following attributes:
     | name - string e.g. micropython. Also returned directly by: usys.implementation.name
     | version - tuple (major, minor, micro), e.g. (1, 15, 0) Also returned by: usys.implementation.version
     

@@ -21,7 +21,7 @@ ucollections.namedtuple
 
 .. function:: ucollections.namedtuple(name, fields)
 
-    Create a new namedtuple type with a specific name and set of fields. A namedtuple is a subclass of tuple which allows access to its fields not just by numeric index, but also with an attribute access syntax using field names. Fields is a sequence of strings specifying field names. It can also be a a string with space-separated field named (but this is less efficient).
+    Create a new namedtuple type with a specific name and set of fields. A namedtuple is a subclass of tuple which allows access to its fields not just by numeric index, but also with an attribute access syntax using field names. Fields is a sequence of strings specifying field names. It can also be a string with space-separated field named (but this is less efficient).
 
 
 .. code-block:: python

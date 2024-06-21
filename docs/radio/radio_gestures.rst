@@ -166,7 +166,7 @@ Send on gesture
 --------------------------------
 
 | Set up the group in pairs with a value 0-255.
-| Use ``shake()`` to send a a "duck" string.
+| Use ``shake()`` to send a "duck" string.
 | The code below displays a duck image on receiving any message.
 
 
