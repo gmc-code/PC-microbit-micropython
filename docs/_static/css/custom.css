@@ -101,7 +101,7 @@ div.admonition-projects p.admonition-title {
 div.admonition-challenge,
 div.admonition-challenges {
     color: blue;
-    border: 2px solid rgb(255, 0, 255);
+    border: 2px solid rgb(255, 209, 255);
     background-color: lightyellow!important;
 }
 
@@ -109,7 +109,7 @@ div.admonition-challenge p.admonition-title,
 div.admonition-challenges p.admonition-title {
     text-transform: capitalize;
     color: black!important;
-    background-color: rgb(255, 0, 255)!important;
+    background-color: rgb(255, 209, 255)!important;
 }
 
 /* ========================================== */
