@@ -162,7 +162,7 @@ Advanced gesture usage
 
 ----
 
-Send on shake
+Send on gesture
 --------------------------------
 
 | Set up the group in pairs with a value 0-255.
@@ -182,22 +182,22 @@ Send on shake
 
     while True:
         # sender
-        if accelerometer.was_gesture('shake'):
+        gesture = accelerometer.current_gesture()
+        if gesture == 'shake':
             display.clear()
             radio.send("duck")
         # receiver
         incoming_message = radio.receive()
         if incoming_message:
             display.show(Image.DUCK)
-
-                
+          
 ----
-
 
 .. admonition:: Tasks
     
-    #. Modify the code to send a giraffe and butterfly on left and right gestures.
-    #. Modify the code to send a giraffe and butterfly on left and right gestures.
+    #. Modify the code so the duck is only shown if the incoming_message is "duck".
+    #. Modify the code to send a cow and butterfly on left and right gestures.
+    #. Modify the receiver code so different notes are also played (non-blocking) for each different incoming_message.
 
     .. dropdown::
         :icon: codescan
@@ -208,7 +208,7 @@ Send on shake
 
             .. tab-item:: Q1
 
-                Modify the code to send a giraffe and butterfly on left and right gestures.
+                Modify the code so the duck is only shown if the incoming_message is "duck".
 
                 .. code-block:: python
                     
@@ -221,22 +221,96 @@ Send on shake
                     radio.on()
 
                     while True:
-                        # send
-                        x_reading = accelerometer.get_x()
-                        if x_reading < -200:
-                            response = "Y"
-                        elif x_reading > 200:
-                            response = "N"
-                        else:
-                            response = "-"
-                        display.show(response)
-                        if button_a.was_pressed():
-                            radio.send(response)
-                            sleep(100)
-                        # receive
+                        # sender
+                        gesture = accelerometer.current_gesture()
+                        if gesture == 'shake':
+                            display.clear()
+                            radio.send("duck")
+
+                        # receiver
                         incoming_message = radio.receive()
                         if incoming_message:
-                            display.scroll(incoming_message)
-                            sleep(1000)
+                            if incoming_message == "duck":
+                                display.show(Image.DUCK)
+                  
 
+            .. tab-item:: Q2
 
+                Modify the code to send a cow and butterfly on left and right gestures.
+
+                .. code-block:: python
+                    
+                    from microbit import *
+                    import radio
+
+                    # Choose own group in pairs 0-255
+                    radio.config(group=8)
+                    # Turn on the radio
+                    radio.on()
+
+                    while True:
+                        # sender
+                        gesture = accelerometer.current_gesture()
+                        if gesture == 'shake':
+                            display.clear()
+                            radio.send("duck")
+                        elif gesture == 'left':
+                            display.clear()
+                            radio.send("cow")
+                        elif gesture == 'right':
+                            display.clear()
+                            radio.send("butterfly")
+                        
+                        # receiver
+                        incoming_message = radio.receive()
+                        if incoming_message:
+                            if incoming_message == "duck":
+                                display.show(Image.DUCK)
+                            elif incoming_message == "cow":
+                                display.show(Image.COW)
+                            elif incoming_message == "butterfly":
+                                display.show(Image.BUTTERFLY)
+                            
+
+            .. tab-item:: Q3
+
+                Modify the receiver code so different notes are also played (non-blocking) for each different incoming_message.
+
+                .. code-block:: python
+                                        
+                    from microbit import *
+                    import radio
+                    import music
+
+                    # Choose own group in pairs 0-255
+                    radio.config(group=8)
+                    # Turn on the radio
+                    radio.on()
+
+                    while True:
+                        # sender
+                        gesture = accelerometer.current_gesture()
+                        if gesture == 'shake':
+                            display.clear()
+                            radio.send("duck")
+                        elif gesture == 'left':
+                            display.clear()
+                            radio.send("cow")
+                        elif gesture == 'right':
+                            display.clear()
+                            radio.send("butterfly")
+                    
+                        # receiver
+                        incoming_message = radio.receive()
+                        if incoming_message:
+                            if incoming_message == "duck":
+                                display.show(Image.DUCK)
+                                music.play("d", wait=False)
+                            elif incoming_message == "cow":
+                                display.show(Image.COW)
+                                music.play("c", wait=False)
+                            elif incoming_message == "butterfly":
+                                display.show(Image.BUTTERFLY)
+                                music.play("b", wait=False)
+
+                        sleep(100)
