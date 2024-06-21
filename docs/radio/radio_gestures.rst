@@ -42,6 +42,34 @@ Gestures
         sleep(200)
 
 
+
+.. admonition:: Tasks
+    
+    #. Modify the code to scroll "L" for a 'left' gesture.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Modify the code to scroll "L" for a 'left' gesture.
+
+                .. code-block:: python
+                    
+                    from microbit import *
+
+
+                    while True:
+                        was_left = accelerometer.was_gesture('left')
+                        if was_left:
+                            display.scroll('L', delay=80)
+                        sleep(200)
+
+
 ----
 
 Send on shake
