@@ -167,3 +167,4 @@ Functions that return a value
                     while True:
                         display.scroll(get_fahrenheit())
                         sleep(500)
+
