@@ -32,7 +32,7 @@ Missing Indentation after if statement
 
 | The error check shows that an indented block was expected to follow the if statement.
 
-.. image:: images/if_no_indentation.png
+.. image:: images/if_indent_missing.png
     :scale: 50 %
 
 
@@ -98,7 +98,7 @@ for-loop not indented
 
 | The error check shows a syntax error and an expected indentation after the for statement.
 
-.. image:: images/for_loop_not_indented.png
+.. image:: images/for_indent_missing.png
     :scale: 50 %
 
 
