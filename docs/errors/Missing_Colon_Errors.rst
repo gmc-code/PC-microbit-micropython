@@ -76,7 +76,7 @@ While: Missing colon
     while True
         display.scroll("A")
 
-.. image:: images/while_missing_colon.png
+.. image:: images/while_colon_missing.png
     :scale: 50 %
 
 ----
@@ -96,7 +96,7 @@ For: Missing colon
 
 | The Syntax error statement suggests to check for missing characters. The end colon is missing.
 
-.. image:: images/for_missing_colon.png
+.. image:: images/for_colon_missing.png
     :scale: 50 %
 
     
