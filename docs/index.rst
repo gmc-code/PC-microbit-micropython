@@ -17,29 +17,9 @@ Index:
     introduction/Micropython_editor.rst
     introduction/first_use.rst
     introduction/power_management.rst
-    introduction/Mu_editor.rst
-    introduction/Mu_editor_Errors.rst
 
-
-.. toctree::
-    :maxdepth: 2
-    :caption: Radio
-    :numbered:
-
-    radio/radio_syntax.rst
-    radio/radio_AorB.rst
-    radio/radio_tilt.rst
-    radio/radio_gestures.rst
-    radio/radio_resend.rst
-    radio/radio_shift_cipher.rst
-    radio/radio_polybius_square.rst
-    
-    radio/radio_messager.rst
-
-    radio/radio_images.rst
-    radio/radio_firefly.rst
-    radio/radio_draw.rst
-
+    ..introduction/Mu_editor.rst
+    ..introduction/Mu_editor_Errors.rst
 
  
 .. toctree::
@@ -123,13 +103,13 @@ Index:
     lessons2/movement.rst
 
 
-
 .. toctree::
     :maxdepth: 2
-    :caption: Python for microbit
+    :caption: Functions
     :numbered:
 
-    python_for_microbit/functions.rst
+    python_for_microbit/Functions_without_parameters.rst
+    python_for_microbit/Functions_with_parameters.rst
 
 
 .. toctree::
@@ -164,6 +144,26 @@ Index:
     images/pixel_class.rst
     images/screen_class.rst
     images/other_image_methods.rst
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Radio
+    :numbered:
+
+    radio/radio_syntax.rst
+    radio/radio_AorB.rst
+    radio/radio_tilt.rst
+    radio/radio_gestures.rst
+    radio/radio_resend.rst
+    radio/radio_shift_cipher.rst
+    radio/radio_polybius_square.rst
+    
+    radio/radio_messager.rst
+
+    radio/radio_images.rst
+    radio/radio_firefly.rst
+    radio/radio_draw.rst
 
 
 .. toctree::
