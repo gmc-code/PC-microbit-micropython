@@ -103,7 +103,8 @@ Functions that return a value
 .. admonition:: Tasks
 
     #. Write a function called ``is_left_tilt`` that returns True or False.
-    #. Write a function called ``is_cold`` that returns True when the temperature is below 20 Celsius, otherwise False. 
+    #. Write a function called ``is_cold`` that returns True when the temperature is below 20 Celsius, otherwise False.
+    #. Write a function called ``get_fahrenheit`` that returns the temperature in degress Fahrenheit.
 
     .. dropdown::
         :icon: codescan
@@ -149,3 +150,20 @@ Functions that return a value
                         display.scroll(is_cold())
                         sleep(500)
 
+
+            .. tab-item:: Q3
+
+                Write a function called ``get_fahrenheit`` that returns the temperature in degress Fahrenheit.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    def get_fahrenheit():
+                        celsius = temperature()
+                        fahrenheit = (celsius * 1.8) + 32
+                        return fahrenheit
+
+                    while True:
+                        display.scroll(get_fahrenheit())
+                        sleep(500)
