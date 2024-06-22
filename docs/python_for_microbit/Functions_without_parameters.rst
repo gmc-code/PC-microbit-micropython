@@ -1,5 +1,5 @@
 ===================================
-Simple Functions for the microbit
+Functions without parameters
 ===================================
 
 | See: https://www.w3schools.com/python/python_functions.asp
@@ -7,13 +7,13 @@ Simple Functions for the microbit
 
 | Functions are blocks of code that can be used many times in a program. 
 | They avoid code repetition.
-| Functions can do something or return values.
+| Functions can **do something** or **return values**.
 | Functions are defined using the ``def`` keyword.
 | To use the function, it is *called* using its name with parentheses.
 
 ----
 
-Functions without parameters
+Functions that do something
 ---------------------------------
 
 | The function below does something. It scrolls text.
@@ -73,4 +73,79 @@ Functions without parameters
 
                     countdown()
 
+----
+
+
+Functions that return a value
+---------------------------------
+
+| The function below returns a value.
+| It returns True when the microbit is tilted to the right enough, otherwise it returns False.
+
+
+.. code-block:: python
+
+    from microbit import *
+
+    def is_right_tilt():
+        if accelerometer.get_x() > 300:
+            return True
+        else:
+            return False
+
+    while True:
+        display.scroll(is_right_tilt())
+        sleep(500)
+
+
+----
+
+.. admonition:: Tasks
+
+    #. Write a function called ``is_left_tilt`` that returns True or False.
+    #. Write a function called ``is_cold`` that returns True when the temperature is below 20 Celsius, otherwise False. 
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Write a function called ``is_left_tilt`` that returns True or False.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    def is_left_tilt():
+                        if accelerometer.get_x() < -300:
+                            return True
+                        else:
+                            return False
+
+                    while True:
+                        display.scroll(is_left_tilt())
+                        sleep(500)
+
+
+            .. tab-item:: Q2
+
+                Write a function called ``is_cold`` that returns True when the temperature is below 20 Celsius, otherwise False.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    def is_cold():
+                        if temperature() < 20:
+                            return True
+                        else:
+                            return False
+
+                    while True:
+                        display.scroll(is_cold())
+                        sleep(500)
 
