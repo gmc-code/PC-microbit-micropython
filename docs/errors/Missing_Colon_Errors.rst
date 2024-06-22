@@ -6,7 +6,7 @@ If: Missing colon
 -----------------------------------
 
 | If the colon is left out from the end of the ``if`` line, an error occurs.
-| A red triangle shown where the colon should have been. 
+| A red triangle shows where the colon should have been. 
 
 .. code-block:: python
 
@@ -25,7 +25,7 @@ Elif: Missing colon
 -----------------------------------
 
 | If the colon is left out from the end of the ``elif`` line, an error occurs.
-| A red triangle shown where the colon should have been. 
+| A red triangle shows where the colon should have been. 
 
 .. code-block:: python
 
@@ -46,7 +46,7 @@ Else: Missing colon
 -----------------------------------       
 
 | If the colon is left out from the end of the ``else`` line, an error occurs.
-| A red triangle shown where the colon should have been. 
+| A red triangle shows where the colon should have been. 
 
 .. code-block:: python
 
@@ -67,7 +67,7 @@ While: Missing colon
 -----------------------------------
 
 | If the colon is left out from the end of the ``while`` line, an error occurs.
-| A red triangle shown where the colon should have been. 
+| A red triangle shows where the colon should have been. 
 
 .. code-block:: python
 
@@ -85,7 +85,7 @@ For: Missing colon
 -----------------------------------
 
 | If the colon is left out from the end of the ``for`` line, an error occurs.
-| A red triangle shown where the colon should have been. 
+| A red triangle shows where the colon should have been. 
 
 .. code-block:: python
 
@@ -93,8 +93,6 @@ For: Missing colon
 
     for num in range(5)
         display.scroll(num)
-
-| The Syntax error statement suggests to check for missing characters. The end colon is missing.
 
 .. image:: images/for_colon_missing.png
     :scale: 50 %
