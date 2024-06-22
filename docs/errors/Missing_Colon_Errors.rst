@@ -5,7 +5,8 @@ Missing colon Errors
 If: Missing colon
 -----------------------------------
 
-| If the colon is left out from the end of the ``if`` line, a **Syntax error** occurs.
+| If the colon is left out from the end of the ``if`` line, an error occurs.
+| A red triangle shown where the colon should have been. 
 
 .. code-block:: python
 
@@ -15,13 +16,7 @@ If: Missing colon
     if button_a.is_pressed()
         display.scroll('A')
 
-| A red wavy line shown where the colon should have been. 
-| A blue wavy line shows where the unexpected indentation occurred.
-| The indentation is only needed after a colon.
-| But, it is not the indentation that needs fixing; the colon just need adding.
-| This shows that it is important to fix code from the top of a python script.
-
-.. image:: images/if_colon_error.png
+.. image:: images/if_colon_missing.png
     :scale: 50 %
 
 ----
@@ -29,7 +24,8 @@ If: Missing colon
 Elif: Missing colon
 -----------------------------------
 
-| If the colon is left out from the end of the ``if`` line, a **Syntax error** occurs.
+| If the colon is left out from the end of the ``elif`` line, an error occurs.
+| A red triangle shown where the colon should have been. 
 
 .. code-block:: python
 
@@ -41,14 +37,7 @@ Elif: Missing colon
     elif
         display.scroll('X')  
 
-| A red wavy line shown where the colon should have been. 
-| A blue wavy line shows where the unexpected indentation occurred.
-| The indentation is only needed after a colon.
-| But, it is not the indentation that needs fixing; the colon just need adding.
-| This shows that it is important to fix code from the top of a python script.
-
-
-.. image:: images/elif_colon_error.png
+.. image:: images/elif_colon_missing.png
     :scale: 50 %
 
 ----
@@ -56,7 +45,8 @@ Elif: Missing colon
 Else: Missing colon
 -----------------------------------       
 
-| If the colon is left out from the end of the ``else`` line, a **Syntax error** occurs.
+| If the colon is left out from the end of the ``else`` line, an error occurs.
+| A red triangle shown where the colon should have been. 
 
 .. code-block:: python
 
@@ -68,12 +58,7 @@ Else: Missing colon
     else
         display.scroll('X')   
 
-| A red wavy line shown where the colon should have been. 
-| A blue wavy line shows where the unexpected indentation occurred.
-| The indentation is only needed after a colon.
-
-
-.. image:: images/else_colon_error.png
+.. image:: images/else_colon_missing.png
     :scale: 50 %
 
 ----
@@ -81,7 +66,8 @@ Else: Missing colon
 While: Missing colon
 -----------------------------------
 
-| If the colon is left out from the end of the ``while`` line, a **Syntax error** occurs.
+| If the colon is left out from the end of the ``while`` line, an error occurs.
+| A red triangle shown where the colon should have been. 
 
 .. code-block:: python
 
@@ -89,8 +75,6 @@ While: Missing colon
 
     while True
         display.scroll("A")
-
-| The Syntax error statement suggests to check for missing characters. The end colon is missing.
 
 .. image:: images/while_missing_colon.png
     :scale: 50 %
@@ -100,7 +84,8 @@ While: Missing colon
 For: Missing colon
 -----------------------------------
 
-| If the colon is left out from the end of the ``for`` line, a **Syntax error** occurs.
+| If the colon is left out from the end of the ``for`` line, an error occurs.
+| A red triangle shown where the colon should have been. 
 
 .. code-block:: python
 

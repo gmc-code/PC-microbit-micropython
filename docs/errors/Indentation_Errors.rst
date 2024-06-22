@@ -65,10 +65,9 @@ else statement indented by mistake
         display.show(1)
 
 
-| The error check shows a syntax error for the else statement.
-| This needs to be fixed first, and once it's indentation is removed, the error in the last line will disappear.
+| The error message doesn't identify specifically that ``else`` should not be indented.
 
-.. image:: images/indented_else.png
+.. image:: images/else_indented.png
     :scale: 50 %
 
 ----
