@@ -276,7 +276,6 @@ Send on gesture
                             elif incoming_message == "butterfly":
                                 display.show(Image.BUTTERFLY)
                             
-
             .. tab-item:: Q3
 
                 Modify the receiver code so different notes are also played (non-blocking) for each different incoming_message.
@@ -319,3 +318,63 @@ Send on gesture
                                 music.play("b", wait=False)
 
                         sleep(100)
+
+
+----
+
+Happy group
+---------------------
+
+| Set all players with the same group number.
+| Set ``players`` to the number of players.
+| Set the ``player_id`` for each player from 1 to the number of players.
+
+| In the code below, player 1 starts by shaking their microbit.
+| The image is cleared and then is sent to another random player.
+
+
+.. code-block:: python
+        
+    from microbit import *
+    import radio
+    import random
+
+    # Choose own group in pairs 0-255
+    radio.config(group=8)
+    # Turn on the radio
+    radio.on()
+
+    # set for number of players in game
+    players = 2
+    # change for each player
+    player_id = 1
+
+    # show player ids at the start
+    display.show(player_id)
+    if player_id == 1:
+        has_img = True
+    else:
+        has_img = False
+
+
+    while True:
+        if accelerometer.was_gesture('shake'):
+            # only the player with the img can send it to another
+            if has_img:
+                player_to_send_to = random.randint(1, players)
+                if player_to_send_to != player_id:
+                    display.clear()
+                    radio.send(str(player_to_send_to))
+        incoming_message = radio.receive()
+        if incoming_message:
+            if incoming_message == str(player_id):
+                has_img = True
+                display.show(Image.HAPPY)
+            else:
+                has_img = False
+
+
+.. admonition:: Challenges
+    
+    #. Modify the code so that the image is not cleared and incoming messages don't set the has_img to False. Now all players with the happy image can keep shaking it to pass it on to another player. How quickly can the group get everyone with a happy face?
+
