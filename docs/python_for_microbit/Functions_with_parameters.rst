@@ -2,7 +2,7 @@
 Functions with parameters
 ====================================
 
-Functions with parameters
+Using parameters
 -----------------------------
 
 | Functions can be more flexible when they use `parameters`. 
