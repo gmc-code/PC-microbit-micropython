@@ -12,9 +12,8 @@ Whitespace before parentheses in button method: Error
 -------------------------------------------------------
 
 | In the if statement below an unneeded space has been placed before the parentheses.
-| When Check is pressed, it reports that there is Whitespace before the "(".
-| Without fixing this, after flashing to the microbit, it reports a line 5 error.
-| Press the **tidy** button to remove the extra whitespace. 
+| Python's interpreter ignores the extra whitespace. 
+| However, it's considered good practice to follow the convention and not include spaces, as it enhances readability and consistency in your code.
 
 .. code-block:: python
     
@@ -24,7 +23,7 @@ Whitespace before parentheses in button method: Error
         display.scroll('A')
 
 
-.. image:: images/whitespace_before_parentheses_error1.png
+.. image:: images/space_before_parentheses.png
     :scale: 50 %
 
 ----
@@ -33,9 +32,8 @@ Whitespace in parentheses: Error
 -------------------------------------------------------
 
 | In the if statement below an unneeded space has been placed in the parentheses.
-| When Check is pressed, it reports that there is Whitespace after the "(".
-| Without fixing this, after flashing to the microbit, it reports a line 4 error.
-| Press the **tidy** button to remove the extra whitespace. 
+| Python's interpreter ignores the extra whitespace. 
+| However, it's considered good practice to follow the convention and not include spaces, as it enhances readability and consistency in your code.
 
 .. code-block:: python
     
@@ -44,8 +42,7 @@ Whitespace in parentheses: Error
     if button_a.is_pressed( ):
         display.scroll('A')
 
-
-.. image:: images/whitespace_in_parentheses_error.png
+.. image:: images/space_in_parentheses.png
     :scale: 50 %
 
 

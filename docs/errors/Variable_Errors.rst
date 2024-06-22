@@ -2,13 +2,12 @@
 Variable Errors
 ====================================================
 
-
 Variable used which has no value
 -----------------------------------
 
-| ``display.scroll('hello')`` will scroll 'hello' across the microbit.
+| ``display.scroll('hello')`` scrolls 'hello' across the microbit.
 | If 'hello' is not in quotes, it will be treated as a variable.
-| If ``display.scroll(hello)`` is used by accident, leaving out the quotes, an **undefined name** error occurs. 
+| If ``display.scroll(hello)`` is used by accident, leaving out the quotes, a **variable not defined** error occurs. 
 
 .. code-block:: python
 
@@ -17,11 +16,11 @@ Variable used which has no value
     display.scroll(hello)
 
 
-.. image:: images/undefined_name_1.png
+.. image:: images/variable_not_defined.png
     :scale: 50 %
 
 
-This can also be fixed by giving the variable a value, as shown below:
+This can be fixed by giving the variable a value, as shown below:
 
 .. code-block:: python
     

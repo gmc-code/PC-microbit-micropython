@@ -81,8 +81,6 @@ Index:
     errors/Variable_Errors.rst
     errors/Whitespace_Errors.rst    
     errors/Whitespace_NonErrors.rst
-    errors/Other_Errors.rst
-
 
 
 .. toctree::
