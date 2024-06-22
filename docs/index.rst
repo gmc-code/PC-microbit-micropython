@@ -79,8 +79,8 @@ Index:
     errors/Indentation_Errors.rst    
     errors/Missing_Colon_Errors.rst
     errors/Variable_Errors.rst
-    errors/Whitespace_Errors.rst    
-    errors/Whitespace_NonErrors.rst
+    errors/Unwanted_Whitespace.rst    
+    errors/Whitespace_for_readability.rst
 
 
 .. toctree::
