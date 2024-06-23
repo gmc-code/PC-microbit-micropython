@@ -330,11 +330,12 @@ Adding Image pixels
 
     | Create a new image by adding the brightness values from the two images for each pixel.
 
+
+| The code below adds the images made from an "m" and a "w".
+
 .. image:: images/mw.png
     :scale: 50 %
     :align: right
-
-| The code below adds the images made from an "m" and a "w".
 
 .. code-block:: python
 
@@ -353,6 +354,10 @@ Adding Image pixels
             display.show(img_mw)
         sleep(500)
 
+
+
+| The code below adds the SAD image and the HAPPY image.
+
 .. list-table:: 
     :widths: 33 33 33
     :header-rows: 0
@@ -366,24 +371,6 @@ Adding Image pixels
 
       - .. image:: images/SAD_HAPPY.png
             :scale: 50 %
-
-.. sidebar::
-
-    .. list-table:: 
-        :widths: 33 33 33
-        :header-rows: 0
-        :class: table_images
-
-        * - .. image:: images/SAD.png
-                :scale: 50 %
-
-          - .. image:: images/HAPPY.png
-                :scale: 50 %
-
-          - .. image:: images/SAD_HAPPY.png
-                :scale: 50 %
-
-| The code below adds the SAD image and the HAPPY image.
 
 .. code-block:: python
 
