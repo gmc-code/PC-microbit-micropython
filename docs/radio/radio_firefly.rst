@@ -3,6 +3,8 @@ Radio Firefly
 ====================================================
 
 .. list-table:: 
+    :widths: 50 50
+    :header-rows: 0
     :class: table_images
 
     * - .. image:: images/happy.gif

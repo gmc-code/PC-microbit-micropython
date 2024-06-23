@@ -138,6 +138,18 @@ Invert
 
 | When inverted, a pixel of brightness 0 becomes 9, 1 becomes 8, 2 becomes 7,....8 becomes 1, 9 becomes 0.
 
+.. list-table:: 
+    :widths: 50 50
+    :header-rows: 0
+    :class: table_images
+
+    * - .. image:: images/vertical_gradient.png
+            :scale: 50 %
+
+      - .. image:: images/vertical_gradient_inverted.gif
+            :scale: 50 %
+
+
 .. sidebar::
 
     .. image:: images/vertical_gradient.png
@@ -159,6 +171,17 @@ Invert
     
     img1 = Image('11111:33333:55555:77777:99999')
     img1_inverted = img1.invert()
+
+.. list-table:: 
+    :widths: 50 50
+    :header-rows: 0
+    :class: table_images
+
+    * - .. image:: images/HAPPY.png
+            :scale: 50 %
+
+      - .. image:: images/happy_inverted.gif
+            :scale: 50 %
 
 
 .. sidebar::
@@ -327,9 +350,9 @@ Adding Image pixels
 
     | Create a new image by adding the brightness values from the two images for each pixel.
 
-    .. image:: images/mw.png
-        :scale: 50 %
-        :align: right
+.. image:: images/mw.png
+    :scale: 50 %
+    :align: right
 
 | The code below adds the images made from an "m" and a "w".
 
@@ -350,6 +373,19 @@ Adding Image pixels
             display.show(img_mw)
         sleep(500)
 
+.. list-table:: 
+    :widths: 33 33 33
+    :header-rows: 0
+    :class: table_images
+
+    * - .. image:: images/SAD.png
+            :scale: 50 %
+
+      - .. image:: images/HAPPY.gif
+            :scale: 50 %
+
+      - .. image:: images/SAD_HAPPY.gif
+            :scale: 50 %
 
 .. sidebar::
 

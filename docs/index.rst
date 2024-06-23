@@ -150,18 +150,20 @@ Index:
     :numbered:
 
     radio/radio_syntax.rst
-    radio/radio_AorB.rst
+    radio/radio_A_or_B.rst
     radio/radio_tilt.rst
     radio/radio_gestures.rst
     radio/radio_resend.rst
     radio/radio_shift_cipher.rst
     radio/radio_polybius_square.rst
     
-    radio/radio_messager.rst
+    radio/radio_manual_messages.rst
 
     radio/radio_images.rst
     radio/radio_firefly.rst
     radio/radio_draw.rst
+
+    radio/radio_hot_or_cold.rst
 
 
 .. toctree::
