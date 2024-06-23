@@ -150,16 +150,6 @@ Invert
             :scale: 50 %
 
 
-.. sidebar::
-
-    .. image:: images/vertical_gradient.png
-        :scale: 50 %
-        :align: left
-    
-    .. image:: images/vertical_gradient_inverted.png
-        :scale: 50 %
-        :align: right
-
 | An image may be stored in a variable then inverted.
 | In the code below, the image is inverted, and so:
 | **Image('11111:33333:55555:77777:99999')** is inverted to:
@@ -183,16 +173,6 @@ Invert
       - .. image:: images/happy_inverted.png
             :scale: 50 %
 
-
-.. sidebar::
-
-    .. image:: images/HAPPY.png
-        :scale: 50 %
-        :align: left
-    
-    .. image:: images/happy_inverted.png
-        :scale: 50 %
-        :align: right
 
 | A built-in image can be stored in a variable, then inverted.
 | The inverted HAPPY face is shown.
@@ -389,17 +369,19 @@ Adding Image pixels
 
 .. sidebar::
 
-    .. image:: images/SAD.png
-        :scale: 50 %
-        :align: left
+    .. list-table:: 
+        :widths: 33 33 33
+        :header-rows: 0
+        :class: table_images
 
-    .. image:: images/HAPPY.png
-        :scale: 50 %
-        :align: right
+        * - .. image:: images/SAD.png
+                :scale: 50 %
 
-    .. image:: images/SAD_HAPPY.png
-        :scale: 50 %
-        :align: center
+          - .. image:: images/HAPPY.png
+                :scale: 50 %
+
+          - .. image:: images/SAD_HAPPY.png
+                :scale: 50 %
 
 | The code below adds the SAD image and the HAPPY image.
 
