@@ -146,7 +146,7 @@ Invert
     * - .. image:: images/vertical_gradient.png
             :scale: 50 %
 
-      - .. image:: images/vertical_gradient_inverted.gif
+      - .. image:: images/vertical_gradient_inverted.png
             :scale: 50 %
 
 
@@ -180,7 +180,7 @@ Invert
     * - .. image:: images/HAPPY.png
             :scale: 50 %
 
-      - .. image:: images/happy_inverted.gif
+      - .. image:: images/happy_inverted.png
             :scale: 50 %
 
 
@@ -381,10 +381,10 @@ Adding Image pixels
     * - .. image:: images/SAD.png
             :scale: 50 %
 
-      - .. image:: images/HAPPY.gif
+      - .. image:: images/HAPPY.png
             :scale: 50 %
 
-      - .. image:: images/SAD_HAPPY.gif
+      - .. image:: images/SAD_HAPPY.png
             :scale: 50 %
 
 .. sidebar::
