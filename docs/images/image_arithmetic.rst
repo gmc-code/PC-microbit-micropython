@@ -335,7 +335,7 @@ Adding Image pixels
 
 .. image:: images/mw.png
     :scale: 50 %
-    :align: right
+    :align: left
 
 .. code-block:: python
 
