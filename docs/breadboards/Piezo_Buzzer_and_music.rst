@@ -468,7 +468,7 @@ All Built in melodies
 .. admonition:: Tasks
 
     #. Play any 3 melodies using a list.
-    #. Use the choice function to randomly pick melodies from a melody list. See: https://www.w3schools.com/python/ref_random_choice.asp. Use https://python.microbit.org/v/3 instead of Mu editor.
+    #. Use the choice function to randomly pick melodies from a melody list. See: https://www.w3schools.com/python/ref_random_choice.asp. Use https://python.microbit.org/v/3.
 
     .. dropdown::
         :icon: codescan

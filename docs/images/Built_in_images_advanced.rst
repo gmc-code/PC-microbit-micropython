@@ -31,7 +31,6 @@ Reverse direction of list using list slicing
 
 | A list, ``arrow_list``, can be reversed using the slicing technique: ``arrow_list[::-1]``.
 | ``arrow_list_anticlockwise = arrow_list[::-1]`` reverses the list and places it in a the variable ``arrow_list_anticlockwise``.
-| Note that reversing a tuple by slicing in Mu editor is not supported as of 2022. Thus, conversion to a list is needed.
 
 .. code-block:: python
 
@@ -172,7 +171,8 @@ Randomize list
 ~~~~~~~~~~~~~~~~~~
 
 | A list can be randomly sorted using random.shuffle in python 3.10.
-| This is not available in Mu editor in 2022, so the sorted function with a sort key can be used instead.
+| But this is not available in the random module in micropython.
+| The sorted function can be used instead.
 
 | The basic syntax is:
 

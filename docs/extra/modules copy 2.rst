@@ -7,8 +7,7 @@ Module list
 
 | To get a list of built-in modules for the microbit:
 
-| In Mu editor:
-| Open the REPL
+| Open the REPL (3 white vertical dots drop down below simulator)
 | Type: help('modules')
 
 The output is:

@@ -6,7 +6,7 @@ Import the microbit library
 ----------------------------------------
 
 | The microbit requires a library or module for it to work.
-| To use that library, always start the microbit code in Mu editor with:
+| To use that library, always start the microbit code with:
 
 .. code-block:: python
 
@@ -97,7 +97,7 @@ Blank Lines
         while True:
             display.scroll(char, delay=80)
 
-    2.  How could the layout of the code be improved?
+    1.  How could the layout of the code be improved?
 
     .. code-block:: python
 

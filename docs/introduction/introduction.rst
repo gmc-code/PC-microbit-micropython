@@ -47,7 +47,9 @@ Microbit software using micropython:
 
 | Comparison of microbit programming options:
 
-| The **Mu** editor for laptops, https://codewith.mu/en/tutorials/1.1/microbit, is the first choice for coding on the microbit.
+| The standard online **micropython** editor: https://python.microbit.org/v3.
+
+| The **Mu** editor for laptops, https://codewith.mu/en/tutorials/1.1/microbit, is a simple editor but is out of date and behind the standard online editor .
 
 .. admonition:: Warning
 
@@ -56,7 +58,6 @@ Microbit software using micropython:
     | **Thonny v4** uses micropython 1.18.
     | When flashing from the online editor the micropython will be flashed as well.
 
-| The standard online **micropython** editor: https://python.microbit.org/v/3 is an online editor consistent with Mu editor.
 
 | **Thonny** for laptops, can be downloaded from https://thonny.org/.
 | See: https://core-electronics.com.au/tutorials/how-to-program-a-microbit-using-thonny.html for setting up the microbit to use Thonny.
@@ -65,7 +66,7 @@ Microbit software using micropython:
     :scale: 50 %
 
 
-| **Edublocks**, https://app.edublocks.org/#MicroBit, is an online editor with both blocky code and micropython consistent with Mu editor, and can display the block code and micropython code side by side.
+| **Edublocks**, https://app.edublocks.org/#MicroBit, is an online editor with both blocky code and micropython, and can display the block code and micropython code side by side.
 
 
 ----
@@ -83,7 +84,7 @@ Micropython simulator:
 Blocky code simulator:
 ----------------------------------------
 
-The Makecode website https://makecode.microbit.org/ allows blocky code use, but it has its own unique version of micropython based on its own translation of the typescript code that it uses, and so it will not work with Mu editor or the standard online micropython editor. It has an excellent simulator and vast extensions library for exploring other devices that can be connected to the microbit.
+The Makecode website https://makecode.microbit.org/ allows blocky code use, but it has its own unique version of micropython based on its own translation of the typescript code that it uses, and so it will not work with the standard online micropython editor. It has an excellent simulator and vast extensions library for exploring other devices that can be connected to the microbit.
 
 ----
 

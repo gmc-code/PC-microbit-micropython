@@ -2,7 +2,7 @@
 EXT: Mu editor
 ====================================================
 
-| Mu editor is the simplest choice of windows apps to use when programming the microbit with micropython.
+| Mu editor is a simple windows apps to use when programming the microbit with micropython.
 | However, it can lag behind the latest version of micropython.
 | For more recent features it may be better to use the online simulator at https://python.microbit.org/v/3. This uses the latest micropython for the latest version of the microbit.
 

@@ -8,7 +8,7 @@ Built-in images
 | The built-in image name must be in capitals. e.g **HEART** not **heart**.
 | No quotation marks are used. e.g ``Image.HEART`` not ``**'Image.HEART'**``.
 | The same syntax that was used to show text can be used for images.
-| In Mu editor, when typing ``Image.``, as soon as the stop is typed, a drop list of images will be displayed to allow selection of an image.
+| When typing ``Image.``, as soon as the stop is typed, a drop list of images will be displayed to allow selection of an image.
 
 .. admonition:: Tip
 
@@ -311,7 +311,6 @@ Image lists
 | The code below displays a list of shapes, so the variable name chosen is ``shape_list``.
 | Whitespace (tabs, spaces, line endings) are ignored within a list, so a long list can be set out like that below, with all the Images lined up for easy reading.
 | Trailing commas are preferred in such lists, making it easy to extend the list with new lines.
-| In Mu Editor, the Tidy button will format a long list like that below.
 
 .. code-block:: python
 
@@ -597,8 +596,6 @@ All Images
 ----------------------------------------
 
 | The code below displays all the built-in images.
-| Image.SCISSORS is not yet available in Mu Editor but is online at:
-| https://python.microbit.org/v/3
 
 .. code-block:: python
 
@@ -615,7 +612,7 @@ All Images
         Image.HEART, Image.HEART_SMALL, Image.HOUSE, Image.MEH,
         Image.MUSIC_CROTCHET, Image.MUSIC_QUAVER, Image.MUSIC_QUAVERS,
         Image.NO, Image.PACMAN, Image.PITCHFORK, Image.RABBIT, Image.ROLLERSKATE,
-        Image.SAD, Image.SILLY, Image.SKULL, Image.SMILE,
+        Image.SAD, Image.SCISSORS, Image.SILLY, Image.SKULL, Image.SMILE,
         Image.SNAKE, Image.SQUARE, Image.SQUARE_SMALL, Image.STICKFIGURE,
         Image.SURPRISED, Image.SWORD, Image.TARGET, Image.TORTOISE,
         Image.TRIANGLE, Image.TRIANGLE_LEFT, Image.TSHIRT, Image.UMBRELLA,
