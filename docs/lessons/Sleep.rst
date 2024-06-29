@@ -5,6 +5,9 @@ Sleep
 
 | The microbit can be paused using ``sleep``.
 
+Sleep in milliseconds
+----------------------
+
 .. py:function:: sleep(n)
 
     | Wait for n milliseconds. 
