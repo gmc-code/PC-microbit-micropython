@@ -2,6 +2,8 @@
 Moving images
 ====================================================
 
+| The following methods are described below: shift_left, shift_right, shift_up, shift_down, crop and blit.
+
 .. py:class:: Image
 
 Shift left and right

@@ -4,7 +4,7 @@ Image arithmetic
 
 See: https://microbit-micropython.readthedocs.io/en/v2-docs/image.html
 
-Image()
+Image objects
 -----------------------------
 
 | The basic syntax for showing creating an Image object is:

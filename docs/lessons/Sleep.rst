@@ -11,7 +11,7 @@ Sleep
     | n can be an integer or a decimal (floating point number). 
     | 1000 milliseconds is one second.
 
-| ``sleep(1000)`` will pause the program for one second. 
+| Use: ``sleep(1000)`` will pause the program for one second. 
 
 .. code-block:: python
 
