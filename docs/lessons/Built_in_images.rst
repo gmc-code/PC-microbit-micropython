@@ -6,7 +6,7 @@ Built-in images
 | e.g ``Image.HEART``
 | The **Image** object must have a capital **I**.
 | The built-in image name must be in capitals. e.g **HEART** not **heart**.
-| No quotation marks are used. e.g ``Image.HEART`` not ``**'Image.HEART'**``.
+| No quotation marks are used. e.g ``Image.HEART`` not ``'Image.HEART'``.
 | The same syntax that was used to show text can be used for images.
 | When typing ``Image.``, as soon as the stop is typed, a drop list of images will be displayed to allow selection of an image.
 
@@ -334,6 +334,7 @@ Image lists
     #. Write code to use a variable, ``animal_list``, to show a list of 3 different animals with an 0.5 sec delay between them.
     #. Write code to use a variable, ``arrow_list``,  to show a list of 4 different arrows with an 0.4 sec delay between them.
     #. Write code to use a variable to show a list of 3 different music images with an 0.3 sec delay between them.
+    #. Write code to use a variable to show a list of 4 different clock images with an 0.2 sec delay between them.
 
     .. dropdown::
         :icon: codescan
@@ -378,6 +379,17 @@ Image lists
                     while True:
                         display.show(music_list, delay=300)
 
+            .. tab-item:: Q4
+
+                Write code to use a variable to show a list of 4 different clock images with a 0.2 sec delay between them.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    clock_list = [Image.CLOCK12, Image.CLOCK3, Image.CLOCK6, Image.CLOCK9]
+                    while True:
+                        display.show(clock_list, delay=200)
 
 ----
 
