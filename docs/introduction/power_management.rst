@@ -190,15 +190,14 @@ Deep sleep wake via run_every
 .. py:function:: run_every(callback, days=None, h=None, min=None, s=None, ms=None)
 
     :param callback: Function to call at the provided interval.
-    :param days : Sets the days mark for the scheduling.
-    :param h : Sets the hour mark for the scheduling.
-    :param min : Sets the minute mark for the scheduling.
-    :param s : Sets the second mark for the scheduling.
-    :param ms : Sets the millisecond mark for the scheduling.
+    :param days: Sets the days mark for the scheduling.
+    :param h: Sets the hour mark for the scheduling.
+    :param min: Sets the minute mark for the scheduling.
+    :param s: Sets the second mark for the scheduling.
+    :param ms: Sets the millisecond mark for the scheduling.
 
     | Schedule to run a function at the interval specified by the time arguments.
-    | 
-    Each argument corresponds to a different time unit and they are additive. So run_every(min=1, s=30) schedules the callback every minute and a half.
+    | Each argument corresponds to a different time unit and they are additive. So run_every(min=1, s=30) schedules the callback every minute and a half.
 
 | run_every can be used in two ways:
 | As a Decorator - placed on top of the function to schedule. For example:
@@ -225,7 +224,7 @@ Deep sleep wake via run_every
     
 
 | The code below renews a deep sleep every 24 hours.
-| THe microbit scrolls the temperature every 60 seconds
+| The microbit scrolls the temperature every 60 seconds
 | **wake_on=None** prevents button pressing from waking it.
 | **day_ms = 24*60*60*1000** and **ms=day_ms** is a day long deep sleep.
 | **run_every=True** allows run_every events to wake it.
