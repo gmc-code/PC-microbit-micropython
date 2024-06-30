@@ -128,7 +128,7 @@ Micropython version
 | Firstly the string is split at "MicroPython " and the first index is chosen.
 | So this could return the string:  "v1.18 on 2022-09-26".
 | The second split is at the spaces with index 0 being chosen.
-| THe third split is only needed if there is a long version with a "-" in it. 
+| The third split is only needed if there is a long version with a "-" in it. 
 
 
 .. code-block:: python
