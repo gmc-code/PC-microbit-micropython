@@ -6,7 +6,7 @@ Send Drawn Image
 ------------------
 
 | This script acts like a simple drawing program on the microbit.
-| You can move around the grid by tilting the microbit, toggle LEDs on and off with A button, and send your drawing to another microbit with the B button.
+| You can move around the grid by tilting the microbit, toggle LEDs on and off with A-button, and send your drawing to another microbit with the B-button.
 
 | The `x` and `y` variables represent the current position on the microbit's LED display. 
 | The `tick` variable is used to control the blinking of the current position. 
@@ -35,9 +35,9 @@ Send Drawn Image
 | The accelerometer is used to change the position `(x, y)`. 
 | If the microbit is tilted to the left or right, `x` is decreased or increased. 
 | If the microbit is tilted forward or backward, `y` is decreased or increased.
-| If the A button is pressed, the state of the LED at the current position `(x, y)` is toggled.
+| If the A-button is pressed, the state of the LED at the current position `(x, y)` is toggled.
 | The display is updated to show the current state of the grid and the position `(x, y)`.
-| If the B button is pressed, the current state of the grid is sent over the radio.
+| If the B-button is pressed, the current state of the grid is sent over the radio.
 
 
 .. code-block:: python

@@ -34,7 +34,7 @@ zip 2 lists
 | In the code below, a pitch frequency and an image are combined into a tuple.
 | This allows a different pitch to be played while each image is displayed.
 | ``freqs = range(1760, 880, -128)`` produces a list like object containing 7 frequencies.
-| The A button can be pressed to exit the while loop using ``break`` so that the sounds can be easily stopped.
+| The A-button can be pressed to exit the while-loop using ``break`` so that the sounds can be easily stopped.
 | Pressing the reset button on the back of the microbit will restart the code.
 
 .. code-block:: python
@@ -64,7 +64,7 @@ zip 2 lists
 
 | The code below zips the list of images and the list of frequencies in the A minor scale.
 | ``for freq, img in zip(Am_freqs, animal_images)`` iterates over the zipped object, placing each frequency and each Image into the ``freq`` and ``img`` variables for use. 
-| The A button can be pressed to exit the while loop using ``break`` so that the sounds can be easily stopped.
+| The A-button can be pressed to exit the while-loop using ``break`` so that the sounds can be easily stopped.
 | Pressing the reset button on the back of the microbit will restart the code.
 
 .. code-block:: python
@@ -132,7 +132,7 @@ zip 3 lists
 | The code below zips the list of images, the list of frequencies in the A minor scale as well as a list of pins to use.
 | ``for freq, img, pin_x in zip(freqs, animal_images, pins)`` iterates over the zipped object, placing each frequency, each Image, and each pin into the ``freq``, ``img`` and ``pins`` variables for use. 
 | This allows a sound, an image and an LED to be used in the same for-loop.
-| The A button can be pressed to exit the while loop using ``break`` so that the actions can be easily stopped.
+| The A-button can be pressed to exit the while-loop using ``break`` so that the actions can be easily stopped.
 | Pressing the reset button on the back of the microbit will restart the code.
 
 .. code-block:: python

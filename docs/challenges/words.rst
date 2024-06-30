@@ -109,12 +109,12 @@ Producing character lists via list comprehension
 Code design
 --------------
 
-| Show an arrow to the A button, suggesting to press the A button to start.
-| The special use of ``a = button_a.was_pressed()`` clears the A button presses so it can be checked again in the other functions.
-| ``get_string()`` calls ``get_char()`` to add characters to the word string as long as the B button hasn't been pressed, otherwise it returns the word string, **user_text**.
+| Show an arrow to the A-button, suggesting to press the A-button to start.
+| The special use of ``a = button_a.was_pressed()`` clears the A-button presses so it can be checked again in the other functions.
+| ``get_string()`` calls ``get_char()`` to add characters to the word string as long as the B-button hasn't been pressed, otherwise it returns the word string, **user_text**.
 | get_char() starts at the middle character.
-| get_char() loops until the A button is pressed, and when it is, it returns the current character.
-| Tilting left or right changes the character available to be chosen. Press the A button to add it to the word.
+| get_char() loops until the A-button is pressed, and when it is, it returns the current character.
+| Tilting left or right changes the character available to be chosen. Press the A-button to add it to the word.
 
 | The code below is scaffolded, but incomplete.
 | Press A to start
@@ -152,10 +152,10 @@ Code design
 
     def get_string():
         user_text = ""
-        # continue adding characters if B button has not been pressed
+        # continue adding characters if B-button has not been pressed
         while button_b.was_pressed() is False:
             user_text ...... get_char()
-        # B button was pressed, return final word so it can be scrolled
+        # B-button was pressed, return final word so it can be scrolled
         return user_text
 
 
@@ -165,7 +165,7 @@ Code design
         if button_a.is_pressed():
             display.clear()
             sleep(1000)
-            # clear the A button pressing so it can be checked for being pressed again in get_string
+            # clear the A-button pressing so it can be checked for being pressed again in get_string
             a = button_a.was_pressed()
             currentWord = ...........()
             display.scroll(...........)
@@ -218,10 +218,10 @@ Code design
 
                         def get_string():
                             user_text = ""
-                            # continue adding characters if B button has not been pressed
+                            # continue adding characters if B-button has not been pressed
                             while button_b.was_pressed() is False:
                                 user_text += get_char()
-                            # B button was pressed, return final word so it can be scrolled
+                            # B-button was pressed, return final word so it can be scrolled
                             return user_text
 
 
@@ -231,7 +231,7 @@ Code design
                             if button_a.is_pressed():
                                 display.clear()
                                 sleep(1000)
-                                # clear the A button pressing so it can be checked for being pressed again in get_string
+                                # clear the A-button pressing so it can be checked for being pressed again in get_string
                                 a = button_a.was_pressed()
                                 currentWord = get_string()
                                 display.scroll(currentWord)
@@ -289,10 +289,10 @@ Code design
 
                         def get_string():
                             user_text = ""
-                            # continue adding letters if B button has not been pressed
+                            # continue adding letters if B-button has not been pressed
                             while button_b.was_pressed() is False:
                                 user_text += get_char()
-                            # B button was pressed, return final word so it can be scrolled
+                            # B-button was pressed, return final word so it can be scrolled
                             return user_text
 
 
@@ -302,7 +302,7 @@ Code design
                             if button_a.is_pressed():
                                 display.clear()
                                 sleep(1000)
-                                # clear the A button pressing so it can be checked for being pressed again in get_string
+                                # clear the A-button pressing so it can be checked for being pressed again in get_string
                                 a = button_a.was_pressed()
                                 currentWord = get_string()
                                 display.scroll(currentWord)
@@ -343,10 +343,10 @@ Code design
 
                         def get_string():
                             user_text = ""
-                            # continue adding letters if B button has not been pressed
+                            # continue adding letters if B-button has not been pressed
                             while button_b.was_pressed() is False:
                                 user_text += get_char()
-                            # B button was pressed, return final word so it can be scrolled
+                            # B-button was pressed, return final word so it can be scrolled
                             return user_text
 
 
@@ -356,7 +356,7 @@ Code design
                             if button_a.is_pressed():
                                 display.clear()
                                 sleep(1000)
-                                # clear the A button pressing for checking again in get_string
+                                # clear the A-button pressing for checking again in get_string
                                 a = button_a.was_pressed()
                                 currentWord = get_string()
                                 display.scroll(currentWord)

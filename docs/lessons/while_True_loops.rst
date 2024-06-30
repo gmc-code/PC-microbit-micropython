@@ -14,9 +14,9 @@ While true
     :align: center
 
 | ``while True:`` loops run forever.
-| Instead of using a condition that returns True or False, ``True`` is used in place of the condition to make the condition always True. As a result, the while loop runs forever.
+| Instead of using a condition that returns True or False, ``True`` is used in place of the condition to make the condition always True. As a result, the while-loop runs forever.
 
-| The statements within the loop are indented with the tab key (which is equivalent to 4 spaces) to make those lines part of the while loop.
+| The statements within the loop are indented with the tab key (which is equivalent to 4 spaces) to make those lines part of the while-loop.
 
 | The ``while True`` loop below scrolls the text ``I never stop`` across the LED display, over and over again.
 

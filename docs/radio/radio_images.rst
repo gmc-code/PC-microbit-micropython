@@ -47,7 +47,7 @@ Boats
 
 .. admonition:: Tasks
 
-    #. Modify the code above to add an animation of the boat rising when the B button is pressed.
+    #. Modify the code above to add an animation of the boat rising when the B-button is pressed.
 
     .. dropdown::
         :icon: codescan
@@ -58,7 +58,7 @@ Boats
 
             .. tab-item:: Q1
 
-                Modify the code above to add an animation of the boat rising when the B button is pressed.
+                Modify the code above to add an animation of the boat rising when the B-button is pressed.
 
                 .. code-block:: python
                 

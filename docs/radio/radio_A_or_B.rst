@@ -35,7 +35,7 @@ Send on button pressing
 
 .. admonition:: Tasks
 
-    #. Modify the code to add sending "B" if the B button was pressed.
+    #. Modify the code to add sending "B" if the B-button was pressed.
     #. Modify the code to send "T" or "F" from button pressing so it can be used to respond to True or False questions.
     #. Modify the code to send "Y" or "N" from button pressing so it can be used to respond to Yes or No questions.
     #. Modify the code to send "Y" or "N" from button pressing and then show the Image.YES if "Y" is received, and the Image.NO if "N" is received.
@@ -51,7 +51,7 @@ Send on button pressing
 
             .. tab-item:: Q1
 
-                Modify the code to add sending "B" if the B button was pressed.
+                Modify the code to add sending "B" if the B-button was pressed.
 
                 .. code-block:: python
                     
@@ -184,7 +184,7 @@ Defs for repeated code patterns
 ------------------------------------
 
 | The code below uses a definition for the sender.
-| The pattern for A and B button pressing is the same.
+| The pattern for A and B-button pressing is the same.
 | Both send text: "A" or "B".
 | Both display an image: Image.YES or Image.NO.
 | ``sender(text, image)`` can be used to reproduce the pattern for both button presses.

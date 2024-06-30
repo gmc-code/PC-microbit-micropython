@@ -40,7 +40,7 @@ Break the code
 
 | This script uses radio communication for sending and receiving encrypted messages. 
 | The script sets up a radio group, defines a list of secret phrases, and implements a polybius square function for encryption. 
-| When the A button is pressed, it selects a random secret message, applies the polybius square, sends the image strings via radio for display on the receiver's microbit, and starts a timer. 
+| When the A-button is pressed, it selects a random secret message, applies the polybius square, sends the image strings via radio for display on the receiver's microbit, and starts a timer. 
 | If button B is pressed, it stops the timer and displays the elapsed time. 
 | For the receiver, the script also checks for incoming radio messages and displays them on the microbit's LED display.
 
@@ -160,7 +160,7 @@ Break the code
             # Start the timer
             timer = running_time()
         elif button_b.was_pressed() and timer:
-            # time must be not 0; so A button must be pressed first
+            # time must be not 0; so A-button must be pressed first
             # Stop the timer and display the elapsed time in seconds
             elapsed_time = int((running_time() - timer) / 1000)
             display.scroll(str(elapsed_time))

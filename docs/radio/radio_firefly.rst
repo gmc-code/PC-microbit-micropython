@@ -47,7 +47,7 @@ Firefly
 
     # Event loop.
     while True:
-        # the A button sends a "flash" message.
+        # the A-button sends a "flash" message.
         if button_a.was_pressed():
             radio.send('flash')
         # Read any incoming messages.
@@ -69,7 +69,7 @@ Firefly
     #. Modify the code above so that the re-broadcast occurs with a 1 in 5 chance by changing the randint arguments.
     #. Modify the code above so that the re-broadcast occurs with a 1 in 2 chance by changing the randint arguments.
     #. Modify the code above so that the flash lasts twice as long by changing the value of the delay.
-    #. Modify the code above so when the B button is pressed, a series of 5 flash messages are sent over 2 seconds.
+    #. Modify the code above so when the B-button is pressed, a series of 5 flash messages are sent over 2 seconds.
     #. Replace the flash code with this code to flash an image  of a butterfly ``flash = [Image.BUTTERFLY*(i/9) for i in range(9, -1, -1)]``. Then vary the image used from a list of 4 images.
 
     .. dropdown::
@@ -144,7 +144,7 @@ Firefly
 
                     # Event loop.
                     while True:
-                        # the A button sends a "flash" message.
+                        # the A-button sends a "flash" message.
                         if button_a.was_pressed():
                             radio.send('flash')
                         # Read any incoming messages.

@@ -12,8 +12,8 @@ Letter chooser: simple version
 
 | The code below, sets a variable, **char_index**, to a starting number, 2.
 | It then displays the character with index 2 in the list, **chars**.
-| When the A button is pressed, **char_index** is increased by 1. 
-| To make sure **char_index** doesn't just keep increasing without limit, if it has reached 4 when the A button is pressed, it is reset to 0.
+| When the A-button is pressed, **char_index** is increased by 1. 
+| To make sure **char_index** doesn't just keep increasing without limit, if it has reached 4 when the A-button is pressed, it is reset to 0.
 
 .. code-block:: python
     
@@ -38,10 +38,10 @@ Letter chooser: by function
 -------------------------------
 
 | The code below chooses a letter from a list of letters.
-| In the main while loop, **select_char** is called to choose a letter, **letter**, which is then displayed.
+| In the main while-loop, **select_char** is called to choose a letter, **letter**, which is then displayed.
 | The function, **select_char(** starts the variable, **char_index**, at the middle index position of the **chars** list. The **middle_index** is previously calculated by halving the length of the **chars** list. **middle_index = int(max_char_index / 2)**
-| The while loop keeps running until the B button is pressed, then **chars[char_index]** is returned.
-| In the while loop, button-A pressing is used to increase the variable, **char_index**, until it gets to its biggest allowed value, **max_char_index**, then it restarts at 0. 
+| The while-loop keeps running until the B-button is pressed, then **chars[char_index]** is returned.
+| In the while-loop, button-A pressing is used to increase the variable, **char_index**, until it gets to its biggest allowed value, **max_char_index**, then it restarts at 0. 
 
 .. code-block:: python
     

@@ -33,7 +33,7 @@ Break the code
 
 | This script uses radio communication for sending and receiving encrypted messages. 
 | The script sets up a radio group, defines a list of secret phrases, and implements a Caesar shift cipher function for encryption. 
-| When the A button is pressed, it selects a random secret message, applies the Caesar cipher with a small random shift, sends the encrypted message via radio, and starts a timer. 
+| When the A-button is pressed, it selects a random secret message, applies the Caesar cipher with a small random shift, sends the encrypted message via radio, and starts a timer. 
 | If button B is pressed, it stops the timer and displays the elapsed time. 
 | For the receiver, the script also checks for incoming radio messages and displays them on the microbit's LED display.
 
@@ -99,7 +99,7 @@ Break the code
             # Start the timer
             timer = running_time()
         elif button_b.was_pressed() and timer:
-            # time must be not 0; so A button must be pressed first
+            # time must be not 0; so A-button must be pressed first
             # Stop the timer and display the elapsed time in seconds
             elapsed_time = int((running_time() - timer) / 1000)
             display.scroll(str(elapsed_time))
@@ -199,7 +199,7 @@ Code breaker: brute force
             # Start the timer
             timer = running_time()
         elif button_b.was_pressed() and timer:
-            # time must be not 0; so A button must be pressed first
+            # time must be not 0; so A-button must be pressed first
             # Stop the timer and display the elapsed time in seconds
             elapsed_time = int((running_time() - timer) / 1000)
             display.scroll(str(elapsed_time))
@@ -210,7 +210,7 @@ Code breaker: brute force
         if incoming:
             message = incoming
             display.scroll(message, delay=100)
-            # Brute force decode and display the message; stop loop with B button
+            # Brute force decode and display the message; stop loop with B-button
             for shift_i in SHIFTS:
                 message = caesar_cipher(incoming, shift_i)
                 display.scroll(message, delay=100)

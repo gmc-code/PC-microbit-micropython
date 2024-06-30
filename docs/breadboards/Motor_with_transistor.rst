@@ -74,8 +74,8 @@ Turn on and off pin0
     Use the turn on and turn off functions to complete these tasks.
 
     #. Write code to turn on the motor for 6 seconds then turn it off for 2 seconds before repeating.
-    #. Write code to turn on the motor for 6 seconds then turn it off for 2 seconds when the A button is pressed, and on for 2 seconds then off for 6 seconds when the B button is pressed, and off when nothing is pressed.
-    #. Write code to turn on the motor for 6 seconds then turn it off for 2 seconds when the A button is pressed, and on for 2 seconds then off for 6 seconds when the B button is pressed, and on for 4 seconds then off for 4 seconds when nothing is pressed.
+    #. Write code to turn on the motor for 6 seconds then turn it off for 2 seconds when the A-button is pressed, and on for 2 seconds then off for 6 seconds when the B-button is pressed, and off when nothing is pressed.
+    #. Write code to turn on the motor for 6 seconds then turn it off for 2 seconds when the A-button is pressed, and on for 2 seconds then off for 6 seconds when the B-button is pressed, and on for 4 seconds then off for 4 seconds when nothing is pressed.
 
     .. dropdown::
         :icon: codescan
@@ -109,7 +109,7 @@ Turn on and off pin0
 
             .. tab-item:: Q2
 
-                Write code to turn on the motor for 6 seconds then turn it off for 2 seconds when the A button is pressed, and on for 2 seconds then off for 6 seconds when the B button is pressed, and leave it off when nothing is pressed.
+                Write code to turn on the motor for 6 seconds then turn it off for 2 seconds when the A-button is pressed, and on for 2 seconds then off for 6 seconds when the B-button is pressed, and leave it off when nothing is pressed.
 
                 .. code-block:: python
 
@@ -138,7 +138,7 @@ Turn on and off pin0
 
             .. tab-item:: Q3
 
-                Write code to turn on the motor for 6 seconds then turn it off for 2 seconds when the A button is pressed, and on for 2 seconds then off for 6 seconds when the B button is pressed, and on for 4 seconds then off for 4 seconds when nothing is pressed.
+                Write code to turn on the motor for 6 seconds then turn it off for 2 seconds when the A-button is pressed, and on for 2 seconds then off for 6 seconds when the B-button is pressed, and on for 4 seconds then off for 4 seconds when nothing is pressed.
 
                 .. code-block:: python
 
@@ -175,7 +175,7 @@ Turn on and off pin0
 .. admonition:: Tasks
 
     #. Write a new function that uses the turn_on and turn-off functions and has parameters for the length of time to turn it on and the length of time to turn it off. Set both of these parameters to a default value of 4000.
-    #. Write code, using this new function, to turn on the motor for 6 seconds then turn it off for 2 seconds when the A button is pressed, and on for 2 seconds then off for 6 seconds when the B button is pressed, and on for 4 seconds then off for 4 seconds when nothing is pressed.
+    #. Write code, using this new function, to turn on the motor for 6 seconds then turn it off for 2 seconds when the A-button is pressed, and on for 2 seconds then off for 6 seconds when the B-button is pressed, and on for 4 seconds then off for 4 seconds when nothing is pressed.
 
     .. dropdown::
         :icon: codescan
@@ -201,7 +201,7 @@ Turn on and off pin0
 
             .. tab-item:: Q2
 
-                Write code, using this new function, to turn on the motor for 6 seconds then turn it off for 2 seconds when the A button is pressed, and on for 2 seconds then off for 6 seconds when the B button is pressed, and on for 4 seconds then off for 4 seconds when nothing is pressed.
+                Write code, using this new function, to turn on the motor for 6 seconds then turn it off for 2 seconds when the A-button is pressed, and on for 2 seconds then off for 6 seconds when the B-button is pressed, and on for 4 seconds then off for 4 seconds when nothing is pressed.
 
                 .. code-block:: python
 

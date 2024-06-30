@@ -118,7 +118,7 @@ A	    1760
 ----
 
 | The code uses a for-loop to play each frequency.
-| The A button can be pressed to exit the while loop using ``break``.
+| The A-button can be pressed to exit the while-loop using ``break``.
 | Pressing the reset button on the back of the microbit will restart the code.
 
 .. code-block:: python

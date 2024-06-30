@@ -197,7 +197,7 @@ Back and forth messaging
 Speed ups
 --------------
 
-| Below is code to speed up the resending with each new start via the A button.
+| Below is code to speed up the resending with each new start via the A-button.
 
 .. code-block:: python
 

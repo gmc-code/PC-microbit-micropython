@@ -2,7 +2,7 @@
 Buttons and selection
 ====================================================
 
-| The A and B buttons can be used to carry out various actions on the microbit.
+| The A and B-buttons can be used to carry out various actions on the microbit.
 | See https://microbit-micropython.readthedocs.io/en/latest/tutorials/buttons.html
 
 ----
@@ -14,11 +14,11 @@ Button is pressed
 
 .. py:function:: button_a.is_pressed()
 
-    | returns ``True`` if the A button is being pressed or ``False`` if not.
+    | returns ``True`` if the A-button is being pressed or ``False`` if not.
 
 .. py:function:: button_b.is_pressed()
 
-    | returns ``True`` if the B button is being pressed or ``False`` if not.
+    | returns ``True`` if the B-button is being pressed or ``False`` if not.
 
 
 ----
@@ -31,11 +31,11 @@ Button was pressed
 
 .. py:function:: button_a.was_pressed()
 
-    | returns ``True`` if the A button was pressed since the last check, or ``False`` if not.
+    | returns ``True`` if the A-button was pressed since the last check, or ``False`` if not.
 
 .. py:function:: button_b.was_pressed()
 
-    | returns ``True`` if the B button was pressed since the last check, or ``False`` if not.
+    | returns ``True`` if the B-button was pressed since the last check, or ``False`` if not.
 
 | The code examples below use **is_pressed** rather than was_pressed since **is_pressed** works better when the button is **held down.**
 | IN contrast, **was_pressed** requires **separate pressing** for it to return True.
@@ -64,7 +64,7 @@ if
     :align: center
 
 | ``if`` requires a condition that returns ``True`` or ``False``.
-| The code below checks if the A button is pressed and displays "A" if it is.
+| The code below checks if the A-button is pressed and displays "A" if it is.
 | A short sleep pauses the code between presses.
 
 .. code-block:: python
@@ -80,10 +80,10 @@ if
 
 .. admonition:: Tasks
 
-    #. Edit the code to scroll your name when the A button is pressed.
-    #. Edit the code to display a happy face when the A button is pressed.
-    #. Edit the code to scroll your age when the B button is pressed.
-    #. Edit the code to display a sad face when the B button is pressed.
+    #. Edit the code to scroll your name when the A-button is pressed.
+    #. Edit the code to display a happy face when the A-button is pressed.
+    #. Edit the code to scroll your age when the B-button is pressed.
+    #. Edit the code to display a sad face when the B-button is pressed.
 
     .. dropdown::
         :icon: codescan
@@ -94,7 +94,7 @@ if
 
             .. tab-item:: Q1
 
-                Edit the code to scroll your name when the A button is pressed.
+                Edit the code to scroll your name when the A-button is pressed.
 
                 .. code-block:: python
 
@@ -107,7 +107,7 @@ if
 
             .. tab-item:: Q2
 
-                Edit the code to display a happy face when the A button is pressed.
+                Edit the code to display a happy face when the A-button is pressed.
 
                 .. code-block:: python
 
@@ -120,7 +120,7 @@ if
 
             .. tab-item:: Q3
 
-                Edit the code to scroll your age when the B button is pressed.
+                Edit the code to scroll your age when the B-button is pressed.
 
                 .. code-block:: python
 
@@ -133,7 +133,7 @@ if
 
             .. tab-item:: Q4
 
-                Edit the code to display a sad face when the B button is pressed.
+                Edit the code to display a sad face when the B-button is pressed.
 
                 .. code-block:: python
 
@@ -156,7 +156,7 @@ if - else
 
 | The ``else`` block does not have a condition.
 | The ``else`` block only runs if all the previous conditions were ``False``.
-| The code below checks if the A button is pressed and displays "A" if it is or "X" if not.
+| The code below checks if the A-button is pressed and displays "A" if it is or "X" if not.
 
 .. code-block:: python
 
@@ -173,9 +173,9 @@ if - else
 
 .. admonition:: Tasks
 
-    #. Edit the code to scroll your name when the A button is pressed and to show "?" when nothing is pressed.
-    #. Edit the code to display a happy face when the A button is pressed and a sad face when nothing is pressed.
-    #. Edit the code to display a sad face when the B button is pressed and a confused face when nothing is pressed.
+    #. Edit the code to scroll your name when the A-button is pressed and to show "?" when nothing is pressed.
+    #. Edit the code to display a happy face when the A-button is pressed and a sad face when nothing is pressed.
+    #. Edit the code to display a sad face when the B-button is pressed and a confused face when nothing is pressed.
     
     .. dropdown::
         :icon: codescan
@@ -186,7 +186,7 @@ if - else
 
             .. tab-item:: Q1
 
-                Edit the code to scroll your name when the A button is pressed and to show "?" when nothing is pressed.
+                Edit the code to scroll your name when the A-button is pressed and to show "?" when nothing is pressed.
 
                 .. code-block:: python
 
@@ -201,7 +201,7 @@ if - else
 
             .. tab-item:: Q2
 
-                Edit the code to display a happy face when the A button is pressed and a sad face when nothing is pressed.
+                Edit the code to display a happy face when the A-button is pressed and a sad face when nothing is pressed.
 
                 .. code-block:: python
 
@@ -216,7 +216,7 @@ if - else
 
             .. tab-item:: Q3
 
-                Edit the code to display a sad face when the B button is pressed and a confused face when nothing is pressed.
+                Edit the code to display a sad face when the B-button is pressed and a confused face when nothing is pressed.
 
                 .. code-block:: python
 
@@ -239,8 +239,8 @@ if - elif
     :align: center
 
 | ``elif`` can be used to provide another choice by testing to see if its condition is True.
-| The code below checks if the A button is pressed and displays "A" if it is.
-| If A is not pressed, the code then checks if the B button is pressed and displays "B" if it is.
+| The code below checks if the A-button is pressed and displays "A" if it is.
+| If A is not pressed, the code then checks if the B-button is pressed and displays "B" if it is.
 
 .. code-block:: python
 
@@ -257,8 +257,8 @@ if - elif
 
 .. admonition:: Tasks
 
-    #. Edit the code to scroll your name when the A button is pressed and your tutor group when the B button is pressed.
-    #. Edit the code to display a happy face when the A button is pressed and a sad face when the B button is pressed.
+    #. Edit the code to scroll your name when the A-button is pressed and your tutor group when the B-button is pressed.
+    #. Edit the code to display a happy face when the A-button is pressed and a sad face when the B-button is pressed.
     
     .. dropdown::
         :icon: codescan
@@ -269,7 +269,7 @@ if - elif
 
             .. tab-item:: Q1
 
-                Edit the code to scroll your name when the A button is pressed and your tutor group when the B button is pressed.
+                Edit the code to scroll your name when the A-button is pressed and your tutor group when the B-button is pressed.
 
                 .. code-block:: python
 
@@ -284,7 +284,7 @@ if - elif
 
             .. tab-item:: Q2
 
-                Edit the code to display a happy face when the A button is pressed and a sad face when the B button is pressed.
+                Edit the code to display a happy face when the A-button is pressed and a sad face when the B-button is pressed.
 
                 .. code-block:: python
 
@@ -308,8 +308,8 @@ If - elif - else
     :align: center
 
 | Using ``if``, ``elif`` and ``else`` together provides 3 branches in the code.
-| The code below checks if the A button is pressed and displays "A" if it is.
-| If A is not pressed, the code then checks if the B button is pressed and displays "B" if it is.
+| The code below checks if the A-button is pressed and displays "A" if it is.
+| If A is not pressed, the code then checks if the B-button is pressed and displays "B" if it is.
 | If neither A nor B is pressed, "X" is displayed.
 
 .. code-block:: python
@@ -330,8 +330,8 @@ If - elif - else
 
 .. admonition:: Tasks
 
-    #. Edit the code to scroll your name when the A button is pressed and your school house when the B button is pressed and your Tutor group when nothing is pressed.
-    #. Edit the code to display a happy face when the A button is pressed and a sad face when the B button is pressed and a confused face when nothing is pressed.
+    #. Edit the code to scroll your name when the A-button is pressed and your school house when the B-button is pressed and your Tutor group when nothing is pressed.
+    #. Edit the code to display a happy face when the A-button is pressed and a sad face when the B-button is pressed and a confused face when nothing is pressed.
 
     .. dropdown::
         :icon: codescan
@@ -342,7 +342,7 @@ If - elif - else
 
             .. tab-item:: Q1
 
-                Edit the code to scroll your name when the A button is pressed and your school house when the B button is pressed and your Tutor group when nothing is pressed.
+                Edit the code to scroll your name when the A-button is pressed and your school house when the B-button is pressed and your Tutor group when nothing is pressed.
 
                 .. code-block:: python
 
@@ -359,7 +359,7 @@ If - elif - else
 
             .. tab-item:: Q2
 
-                Edit the code to display a happy face when the A button is pressed and a sad face when the B button is pressed and a confused face when nothing is pressed.
+                Edit the code to display a happy face when the A-button is pressed and a sad face when the B-button is pressed and a confused face when nothing is pressed.
 
                 .. code-block:: python
 
@@ -409,8 +409,8 @@ If - elif - elif - else
 
 .. admonition:: Tasks
 
-    #. Edit the code to scroll your favourite subject when both buttons are pressed together, your best subject when the A button is pressed, your favourite sport when the B button is pressed, and your favourite food when nothing is pressed.
-    #. Edit the code to display a giraffe when both buttons are pressed, a duck when the A button is pressed, a rabbit when the B button is pressed and a snake when nothing is pressed.
+    #. Edit the code to scroll your favourite subject when both buttons are pressed together, your best subject when the A-button is pressed, your favourite sport when the B-button is pressed, and your favourite food when nothing is pressed.
+    #. Edit the code to display a giraffe when both buttons are pressed, a duck when the A-button is pressed, a rabbit when the B-button is pressed and a snake when nothing is pressed.
 
     .. dropdown::
         :icon: codescan
@@ -421,7 +421,7 @@ If - elif - elif - else
 
             .. tab-item:: Q1
 
-                Edit the code to scroll your favourite subject when both buttons are pressed together, your best subject when the A button is pressed, your favourite sport when the B button is pressed, and your favourite food when nothing is pressed.
+                Edit the code to scroll your favourite subject when both buttons are pressed together, your best subject when the A-button is pressed, your favourite sport when the B-button is pressed, and your favourite food when nothing is pressed.
 
                 .. code-block:: python
 
@@ -440,7 +440,7 @@ If - elif - elif - else
 
             .. tab-item:: Q2
 
-                Edit the code to display a giraffe when both buttons are pressed, a duck when the A button is pressed, a rabbit when the B button is pressed and a snake when nothing is pressed.
+                Edit the code to display a giraffe when both buttons are pressed, a duck when the A-button is pressed, a rabbit when the B-button is pressed and a snake when nothing is pressed.
 
                 .. code-block:: python
 
@@ -459,12 +459,12 @@ If - elif - elif - else
 
 ----
 
-Changing values with A and B buttons
+Changing values with A and B-buttons
 ----------------------------------------
 
-| Use the A button to increase a variable.
-| Use the B button to decrease a variable.
-| In the code below, the ``delay_time`` variable is increased in steps of 10 by the A button and decreased in steps of 10 by the B button. Finally, text is scrolled with a delay of ``delay_time``.
+| Use the A-button to increase a variable.
+| Use the B-button to decrease a variable.
+| In the code below, the ``delay_time`` variable is increased in steps of 10 by the A-button and decreased in steps of 10 by the B-button. Finally, text is scrolled with a delay of ``delay_time``.
 
 .. code-block:: python
 

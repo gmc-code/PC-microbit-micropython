@@ -44,24 +44,28 @@ Acceleration Functions
 
 .. py:function:: get_x()
 
-    Get the acceleration measurement in the ``x`` axis, as a positive or
+    Return the acceleration measurement in the ``x`` axis, as a positive or
     negative integer, depending on the direction. The measurement is given in
     milli-g within the range of +/- 2000mg, registered on a scale of values from 0 to 1024.
 
 .. py:function:: get_y()
 
-    Get the acceleration measurement in the ``y`` axis, as a positive or
+    Return the acceleration measurement in the ``y`` axis, as a positive or
     negative integer, depending on the direction. The measurement is given in
     milli-g within the range of +/- 2000mg, registered on a scale of values from 0 to 1024.
 
 .. py:function:: get_z()
 
-    Get the acceleration measurement in the ``z`` axis, as a positive or
+    Return the acceleration measurement in the ``z`` axis, as a positive or
     negative integer, depending on the direction. The measurement is given in
     milli-g within the range of +/- 2000mg, registered on a scale of values from 0 to 1024.
 
 .. py:function:: get_values()
 
-    Get the acceleration measurements in all axes at once, as a three-element
+    Return the acceleration measurements in all axes at once, as a three-element
     tuple of integers ordered as X, Y, Z, each within the range of +/-2000mg, registered on a scale of values from 0 to 1024.
+
+.. py:function:: get_strength()
+
+    Return the combined acceleration strength of all the axes, in milli-g, as a positive integer using pythagorean addition. 
 

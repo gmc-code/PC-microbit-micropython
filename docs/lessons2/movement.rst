@@ -242,7 +242,7 @@ Z axis.
 
 .. admonition:: Tasks
 
-    #. Combine the two tasks which displayed output for the 9 different tilts and use text if the A button **is** pressed and use arrows if the B button **is** pressed. Clear the screen if no button is pressed.
+    #. Combine the two tasks which displayed output for the 9 different tilts and use text if the A-button **is** pressed and use arrows if the B-button **is** pressed. Clear the screen if no button is pressed.
 
     .. dropdown::
         :icon: codescan
@@ -253,7 +253,7 @@ Z axis.
 
             .. tab-item:: Q1
 
-                Combine the two tasks which displayed output for the 9 different tilts and use text if the A button **is** pressed and use arrows if the B button **is** pressed. Clear the screen if no button is pressed.
+                Combine the two tasks which displayed output for the 9 different tilts and use text if the A-button **is** pressed and use arrows if the B-button **is** pressed. Clear the screen if no button is pressed.
 
                 .. code-block:: python
 

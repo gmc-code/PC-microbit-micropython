@@ -34,7 +34,7 @@ All Built in melodies
 ----------------------------------------
 
 | This code plays all the melodies.
-| The A button can be used to stop all sounds by first breaking out of the ``for`` loop, then the ``while True`` loop.
+| The A-button can be used to stop all sounds by first breaking out of the ``for`` loop, then the ``while True`` loop.
 
 .. code-block:: python
 

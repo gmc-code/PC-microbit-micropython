@@ -34,7 +34,7 @@ while True:
     # Display the current letter
     display.show(ALPHABET[index])
 
-    # Check if the A button was pressed
+    # Check if the A-button was pressed
     if button_a.was_pressed():
         # Add the current letter to the text string
         text += ALPHABET[index]

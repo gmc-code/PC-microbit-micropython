@@ -39,12 +39,12 @@ then change its attribute for duration: ``my_effect.duration = 500``.
 Vary frequencies
 ---------------------
 
-| The code below plays different sound effects by pressing the A or B button on the microbit. 
-| The sound effect's frequency sweep goes from low to high when the A button is pressed, and from high to low when the B button is pressed.
+| The code below plays different sound effects by pressing the A or B-button on the microbit. 
+| The sound effect's frequency sweep goes from low to high when the A-button is pressed, and from high to low when the B-button is pressed.
 
 ----
 
-| When the A button is pressed, the start frequency is increased in steps while the end frequency is kept the same.
+| When the A-button is pressed, the start frequency is increased in steps while the end frequency is kept the same.
 
 .. code-block:: python
     
@@ -66,7 +66,7 @@ Vary frequencies
 
 .. admonition:: Tasks
 
-    #. Modify the code above to so that when the B button is pressed, the start frequency is kept the same while the end frequency is increased in steps.
+    #. Modify the code above to so that when the B-button is pressed, the start frequency is kept the same while the end frequency is increased in steps.
     #. Use both the A and B-button pressing code and replace all values with variables: ``base_freq``, ``step_size``, ``steps``.
     #. Modify the code above to use definitions with parameters. Name the def block, ``increase_freq``, for A-buuton pressing and  ``decrease_freq``, for B-buuton pressing.
 
@@ -79,7 +79,7 @@ Vary frequencies
 
             .. tab-item:: Q1
 
-                Modify the code above to so that when the B button is pressed, the start frequency is kept the same while the end frequency is increased in steps.
+                Modify the code above to so that when the B-button is pressed, the start frequency is kept the same while the end frequency is increased in steps.
 
                 .. code-block:: python
                     
@@ -174,7 +174,7 @@ Vary the waveform
 --------------------
 
 | The code below plays sounds based on the default sound effect.
-| When the A button is pressed, each of the different waveforms is tried.
+| When the A-button is pressed, each of the different waveforms is tried.
 | Which waveforms sound similar?
 
 .. code-block:: python
@@ -255,7 +255,7 @@ Vary the fx
 ----------------
 
 | The code below plays sounds based on the default sound effect.
-| When the A button is pressed, each of the different add on effects is tried.
+| When the A-button is pressed, each of the different add on effects is tried.
 
 .. code-block:: python
     

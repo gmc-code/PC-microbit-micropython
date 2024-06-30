@@ -4,13 +4,13 @@ Practice tasks 2 Answers
 
 .. admonition:: Tasks
 
-    1.  Write code to repetitively scroll (quickly) each character in 'go team' using a for-loop, when the A button is pressed.
-    2.  Write code to repetitively scroll (quickly) each sport in the list ``['swimming', 'rowing', 'canoeing']`` using a for-loop, when the B button is pressed.
+    1.  Write code to repetitively scroll (quickly) each character in 'go team' using a for-loop, when the A-button is pressed.
+    2.  Write code to repetitively scroll (quickly) each sport in the list ``['swimming', 'rowing', 'canoeing']`` using a for-loop, when the B-button is pressed.
     3.  Write code in a ``while True`` loop to respond to button pressing such that when A is pressed each character in 'go team' is scrolled quickly using a for-loop, when B is pressed each sport in the list ``['swimming', 'rowing', 'canoeing']`` is scrolled quickly using a for-loop, and when no button is pressed the screen is cleared.
     
 
 
-1.  Write code to repetitively scroll (quickly) each character in 'go team' using a for-loop, when the A button is pressed.
+1.  Write code to repetitively scroll (quickly) each character in 'go team' using a for-loop, when the A-button is pressed.
 
 .. code-block:: python
 
@@ -24,7 +24,7 @@ Practice tasks 2 Answers
 
 ----
 
-2.  Write code to repetitively scroll (quickly) each sport in the list ``['swimming', 'rowing', 'canoeing']`` using a for-loop, when the B button is pressed.
+2.  Write code to repetitively scroll (quickly) each sport in the list ``['swimming', 'rowing', 'canoeing']`` using a for-loop, when the B-button is pressed.
 
 .. code-block:: python
 

@@ -112,7 +112,7 @@ while True:
         # Start the timer
         timer = running_time()
     elif button_b.was_pressed() and timer:
-        # time must be not 0; so A button must be pressed first
+        # time must be not 0; so A-button must be pressed first
         # Stop the timer and display the elapsed time in seconds
         elapsed_time = int((running_time() - timer) / 1000)
         display.scroll(str(elapsed_time))

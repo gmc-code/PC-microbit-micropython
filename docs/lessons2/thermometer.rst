@@ -38,7 +38,7 @@ The temperature the thermometer measures will typically be higher than the true 
 .. admonition:: Tasks
 
     * Use an if block so that one image is shown when it is below 20 degrees and another image is shown when it is above 20 degrees.
-    * Use the A button to store the temperature in the variable ``tempA``. Use the B button to store the temperature in the variable ``tempB``. Calculate the difference between them using ``tempA - tempB`` and scroll this difference.
+    * Use the A-button to store the temperature in the variable ``tempA``. Use the B-button to store the temperature in the variable ``tempB``. Calculate the difference between them using ``tempA - tempB`` and scroll this difference.
 
     .. dropdown::
         :icon: codescan
@@ -65,7 +65,7 @@ The temperature the thermometer measures will typically be higher than the true 
 
             .. tab-item:: Q2
 
-                Use the A button to store the temperature in the variable ``tempA``. Use the B button to store the temperature in the variable ``tempB``. Calculate the difference between them using ``tempA - tempB`` and scroll this difference. To make sure that both temperature variables have a value, set them both before the ``while True`` loop.
+                Use the A-button to store the temperature in the variable ``tempA``. Use the B-button to store the temperature in the variable ``tempB``. Calculate the difference between them using ``tempA - tempB`` and scroll this difference. To make sure that both temperature variables have a value, set them both before the ``while True`` loop.
 
                 .. code-block:: python
 
@@ -87,12 +87,12 @@ The temperature the thermometer measures will typically be higher than the true 
 .. admonition:: Project
 
     | Keep track of the lowest and highest temperatures recorded by using 3 variables: current_temp is the current temperature reading, max_temp is the maximum temperature and min_temp is the minimum temperature. 
-    | At the start, set all 3 variables to the same value and scroll that value. Then use a while loop to take a reading every second and put it in current_temp, then update the max_temp or min_temp depending on the new reading. 
+    | At the start, set all 3 variables to the same value and scroll that value. Then use a while-loop to take a reading every second and put it in current_temp, then update the max_temp or min_temp depending on the new reading. 
     | If current_temp is less than (<) min_temp, update min_temp. 
     | If the current_temp is greater than (>) max_temp, update max_temp. 
-    | Use the A button to scroll min_temp. 
-    | Use the B button to scroll max_temp. 
-    | Press down both A and B buttons together to scroll the difference between the max and min temperatures.
+    | Use the A-button to scroll min_temp. 
+    | Use the B-button to scroll max_temp. 
+    | Press down both A and B-buttons together to scroll the difference between the max and min temperatures.
 
     .. dropdown::
         :icon: codescan

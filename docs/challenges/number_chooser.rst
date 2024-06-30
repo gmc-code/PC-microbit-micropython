@@ -10,8 +10,8 @@ Number chooser: simple version
 -------------------------------
 
 | The code below, sets a variable, **num**, to a starting number, 5.
-| When the A button is pressed, **num** is increased by 1. 
-| To make sure **num** doesn't just keep increasing without limit, if it is reaches 9 when the A button is pressed, it is reset to 0.
+| When the A-button is pressed, **num** is increased by 1. 
+| To make sure **num** doesn't just keep increasing without limit, if it is reaches 9 when the A-button is pressed, it is reset to 0.
 
 .. code-block:: python
     
@@ -34,10 +34,10 @@ Number chooser: by function
 -------------------------------
 
 | The code below chooses a number from 0 to 9. These limits are set in the **select_number** function.
-| In the main while loop, the function, **select_number**, is called to choose a number, **num**, which is then displayed.
+| In the main while-loop, the function, **select_number**, is called to choose a number, **num**, which is then displayed.
 | The function, **select_number**, starts the variable, **counter**, at 5.
-| The while loop keeps running until the B button is pressed, then the variable, **counter**, is returned.
-| In the while loop, button-A pressing is used to increase the variable, **counter**, until it gets to its biggest allowed value, 9, then it restarts at 0. 
+| The while-loop keeps running until the B-button is pressed, then the variable, **counter**, is returned.
+| In the while-loop, button-A pressing is used to increase the variable, **counter**, until it gets to its biggest allowed value, 9, then it restarts at 0. 
 
 .. code-block:: python
     

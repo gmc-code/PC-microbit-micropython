@@ -167,7 +167,7 @@ Notes
 
 
 | The code below increases the volume and plays a C note in octave 4 for 2 ticks at each volume.
-| The A button can be pressed to exit the for-loop then the while loop using ``break``.
+| The A-button can be pressed to exit the for-loop then the while-loop using ``break``.
 | Pressing the reset button on the back of the microbit will restart the code.
 
 .. code-block:: python
@@ -349,7 +349,7 @@ Scales
 
     #. Play the 8 notes of D_major. See: https://www.pianoscales.org/_major.html
     #. Play the 8 notes of F_minor. See: https://www.pianoscales.org/_minor.html
-    #. Play the D_major scale when the A button is pressed and the F_minor scale when the B button is pressed.
+    #. Play the D_major scale when the A-button is pressed and the F_minor scale when the B-button is pressed.
 
     .. dropdown::
         :icon: codescan
@@ -392,7 +392,7 @@ Scales
 
             .. tab-item:: Q3
 
-                Play the D_major scale when the A button is pressed and the F_minor scale when the B button is pressed.
+                Play the D_major scale when the A-button is pressed and the F_minor scale when the B-button is pressed.
 
                 .. code-block:: python
 

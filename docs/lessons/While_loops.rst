@@ -17,8 +17,8 @@ Events as conditions
 | The condition must be True for the loop to run.
 | If the condition is False, the loop is exited.
 
-| Button pressing can be used as the condition in a while loop.
-| In the code below, the code within the while loop runs only while the A button is being held down.
+| Button pressing can be used as the condition in a while-loop.
+| In the code below, the code within the while-loop runs only while the A-button is being held down.
 
 .. code-block:: python
 
@@ -34,8 +34,8 @@ Events as conditions
 
 .. admonition:: Tasks
 
-    #. Write a while loop that displays a happy face while the A button is pressed, and when it is not, Image.ALL_CLOCKS is used to display a rotating clock hand.
-    #. Write a while loop that displays a sad face while the B button is pressed, and when it is not, Image.ALL_CLOCKS is used to display a rotating clock hand.
+    #. Write a while-loop that displays a happy face while the A-button is pressed, and when it is not, Image.ALL_CLOCKS is used to display a rotating clock hand.
+    #. Write a while-loop that displays a sad face while the B-button is pressed, and when it is not, Image.ALL_CLOCKS is used to display a rotating clock hand.
 
     .. dropdown::
         :icon: codescan
@@ -46,7 +46,7 @@ Events as conditions
 
             .. tab-item:: Q1
 
-                Write a while loop that displays a happy face while the A button is pressed, and when it is not, Image.ALL_CLOCKS is used to display a rotating clock hand.
+                Write a while-loop that displays a happy face while the A-button is pressed, and when it is not, Image.ALL_CLOCKS is used to display a rotating clock hand.
 
                 .. code-block:: python
 
@@ -60,7 +60,7 @@ Events as conditions
 
             .. tab-item:: Q2
 
-                Write a while loop that displays a sad face while the B button is pressed, and when it is not, Image.ALL_CLOCKS is used to display a rotating clock hand.
+                Write a while-loop that displays a sad face while the B-button is pressed, and when it is not, Image.ALL_CLOCKS is used to display a rotating clock hand.
 
                 .. code-block:: python
 
@@ -81,9 +81,9 @@ Counters
 | The condition must be True for the loop to run.
 | If the condition is False, the loop is exited.
 
-| A counter can be used in the while loop condition.
-| The counter is set before the while loop.
-| The counter is incremented (increased by a constant amount) in a while loop. 
+| A counter can be used in the while-loop condition.
+| The counter is set before the while-loop.
+| The counter is incremented (increased by a constant amount) in a while-loop. 
 
 ----
 
@@ -95,11 +95,11 @@ Counting up
     :align: center
 
 | In the example below, ``i`` is the counter.
-| ``i`` starts off at 0 and is increased by 1 in the while loop line: ``i += 1``.
+| ``i`` starts off at 0 and is increased by 1 in the while-loop line: ``i += 1``.
 | ``i += 1`` is the same as ``i = i + 1``
-| While the condition, ``i < 10``, is True the while loop runs.
+| While the condition, ``i < 10``, is True the while-loop runs.
 | ``i += 1`` causes ``i`` to increase from 0 to 9.
-| The while loop exits when ``i`` is 10 since ``i < 10`` will be False when ``i = 10``.
+| The while-loop exits when ``i`` is 10 since ``i < 10`` will be False when ``i = 10``.
 
 .. code-block:: python
 
@@ -116,7 +116,7 @@ Counting up
 Counting down
 ----------------------------------------
 
-| In the code below, ``i`` starts off at 5 and is decreased by 1 in the while loop line: ``i -= 1``.
+| In the code below, ``i`` starts off at 5 and is decreased by 1 in the while-loop line: ``i -= 1``.
 | ``i -+= 1`` is the same as ``i = i - 1``
 | The test uses a ``>`` sign when counting down.
 | The loop below stops when ``i`` is no longer greater than 1, i.e. when it is 1.
@@ -153,10 +153,10 @@ Step size
 
 .. admonition:: Tasks
 
-    #. Write a while loop that counts up from 1 to 5, showing the numbers 1, 2, 3, 4, 5.
-    #. Write a while loop that counts up from 3 to 12 in steps of 3, scrolling the numbers 3, 6, 9, 12.
-    #. Write a while loop that counts down from 9 to 1, showing the numbers 9, 8, 7, 6, 5, 4, 3, 2, 1.
-    #. Write a while loop that counts down from 24 to 18 in steps of 2, scrolling the numbers 24, 22, 20, 18.
+    #. Write a while-loop that counts up from 1 to 5, showing the numbers 1, 2, 3, 4, 5.
+    #. Write a while-loop that counts up from 3 to 12 in steps of 3, scrolling the numbers 3, 6, 9, 12.
+    #. Write a while-loop that counts down from 9 to 1, showing the numbers 9, 8, 7, 6, 5, 4, 3, 2, 1.
+    #. Write a while-loop that counts down from 24 to 18 in steps of 2, scrolling the numbers 24, 22, 20, 18.
     #. Write 2 while loops to scroll 0 to 8 going up in 2s then 9 down to 1 going down in 2s.
  
     .. dropdown::
@@ -168,7 +168,7 @@ Step size
 
             .. tab-item:: Q1
 
-                Write a while loop that counts up from 1 to 5, showing the numbers 1, 2, 3, 4, 5.
+                Write a while-loop that counts up from 1 to 5, showing the numbers 1, 2, 3, 4, 5.
 
                 .. code-block:: python
 
@@ -182,7 +182,7 @@ Step size
 
             .. tab-item:: Q2
 
-                Write a while loop that counts up from 3 to 12 in steps of 3, scrolling the numbers 3, 6, 9, 12.
+                Write a while-loop that counts up from 3 to 12 in steps of 3, scrolling the numbers 3, 6, 9, 12.
 
                 .. code-block:: python
 
@@ -197,7 +197,7 @@ Step size
 
             .. tab-item:: Q3
 
-                Write a while loop that counts down from 9 to 1, showing the numbers 9, 8, 7, 6, 5, 4, 3, 2, 1.
+                Write a while-loop that counts down from 9 to 1, showing the numbers 9, 8, 7, 6, 5, 4, 3, 2, 1.
 
                 .. code-block:: python
 
@@ -212,7 +212,7 @@ Step size
 
             .. tab-item:: Q4
 
-                Write a while loop that counts down from 24 to 18 in steps of 2, scrolling the numbers 24, 22, 20, 18.
+                Write a while-loop that counts down from 24 to 18 in steps of 2, scrolling the numbers 24, 22, 20, 18.
 
                 .. code-block:: python
 

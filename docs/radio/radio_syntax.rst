@@ -206,8 +206,8 @@ Msg, Signal strength, timestamps
     and/or trilateration (using distances) with other microbit devices.
 
 | The code below uses receive_full which expects byte strings such as that from ``radio.send_bytes(b'later')``.
-| B button pressing uses ``radio.send_bytes(b'later')``. This sends the string as bytes and is then received by ``radio.receive_full()`` as bytes as expected.
-| A button pressing uses  ``radio.send('hello')``. Sending a string results in the bytes prefix being added ``b'\x01\x00\x01'``. This needs to be removed, otherwise "???" will appear before the string when received.
+| B-button pressing uses ``radio.send_bytes(b'later')``. This sends the string as bytes and is then received by ``radio.receive_full()`` as bytes as expected.
+| A-button pressing uses  ``radio.send('hello')``. Sending a string results in the bytes prefix being added ``b'\x01\x00\x01'``. This needs to be removed, otherwise "???" will appear before the string when received.
 
 
 .. code-block:: python

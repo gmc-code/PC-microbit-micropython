@@ -283,7 +283,7 @@ Pixel Classes using accelerometer
 .. admonition:: Tasks
 
     #. Modify the code to use a **brightness** parameter in the init function and replace the **2** in the **show** method with the parameter variable. Create **my_pix** with a brightness of 6.   
-    #. Add a **clear** method to the class, and use it to clear the display if the A button was pressed.
+    #. Add a **clear** method to the class, and use it to clear the display if the A-button was pressed.
 
     .. dropdown::
         :icon: codescan
@@ -351,7 +351,7 @@ Pixel Classes using accelerometer
 
             .. tab-item:: Q2
 
-                Add a **clear** method to the class, and use it to clear the display if the A button was pressed.
+                Add a **clear** method to the class, and use it to clear the display if the A-button was pressed.
 
                 .. code-block:: python
 
