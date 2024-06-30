@@ -197,10 +197,11 @@ Deep sleep wake via run_every
     :param ms: Sets the millisecond mark for the scheduling.
 
     | Schedule to run a function at the interval specified by the time arguments.
-    | Each argument corresponds to a different time unit and they are additive. So run_every(min=1, s=30) schedules the callback every minute and a half.
+    | Each argument corresponds to a different time unit and they are additive. 
+    | So run_every(min=1, s=30) schedules the callback every minute and a half.
 
-| run_every can be used in two ways:
-| As a Decorator - placed on top of the function to schedule. For example:
+| **run_every** can be used in two ways:
+| As a **Decorator** - placed on top of the function to schedule. For example:
 
 .. code-block:: python
     
@@ -210,7 +211,7 @@ Deep sleep wake via run_every
     def my_function():
         display.scroll("running decorator")
 
-| As a Function - passing the callback as a positional argument. For example:
+| As a **Function** - passing the callback as a positional argument. For example:
 
 .. code-block:: python
     
