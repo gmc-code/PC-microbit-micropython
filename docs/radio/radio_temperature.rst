@@ -133,3 +133,45 @@ Indoor and outdoor temperature
                         radio.send(str(outdoor_temp))
                         display.scroll(outdoor_temp)
                         sleep(sleep_time)
+
+----
+
+
+.. admonition:: Tasks
+
+    #. See: https://pc-microbit-micropython.readthedocs.io/en/latest/introduction/power_management.html#deep-sleep-wake-via-run-every
+    Modify the code of the outdoor microbit so that it uses deep sleep which is is renewed every 24 hours, along with run_every to send the temperature every 60 seconds.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Modify the code of the outdoor microbit so that it uses deep sleep which is is renewed every 24 hours, along with run_every to send the temperature every 60 seconds.
+
+                .. code-block:: python
+                                        
+                    from microbit import *
+                    import power
+                    import radio
+
+                    # Choose own group in pairs 0-255
+                    radio.config(group=8)
+                    # Turn on the radio
+                    radio.on()
+
+                    @run_every(s=60)
+                    def wakeup_call():
+                        outdoor_temp = temperature()
+                        radio.send(str(outdoor_temp))
+                        display.scroll(outdoor_temp)
+
+                    day_ms = 24*60*60*1000
+                    while True:
+                        # renew deep sleep every day
+                        power.deep_sleep(wake_on=None,ms=day_ms,run_every=True)
+
