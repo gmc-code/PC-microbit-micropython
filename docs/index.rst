@@ -151,6 +151,7 @@ Index:
 
     radio/radio_syntax.rst
     radio/radio_A_or_B.rst
+    radio/radio_temperature.rst
     radio/radio_tilt.rst
     radio/radio_gestures.rst
     radio/radio_resend.rst
