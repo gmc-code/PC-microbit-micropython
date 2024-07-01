@@ -103,6 +103,8 @@ Index:
 
     sound/music.rst
     sound/music_melodies.rst
+    sound/music_rhymes.rst
+    sound/music_xmas.rst
     sound/music_pitch.rst
     sound/music_advanced.rst
     sound/audio.rst

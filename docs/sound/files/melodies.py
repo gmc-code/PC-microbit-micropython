@@ -83,9 +83,9 @@ power_up = ["g4:1", "c5", "e", "g:2", "e:1", "g:3"]
 power_down = ["g5:1", "d#", "c", "g4:2", "b:1", "c5:3"]
 
 
-melodies = [dadadadum, entertainer, prelude, ode, nyan, 
-            ringtone, funk, blues, birthday, wedding, 
-            funeral, punchline, python, baddy, chase, 
+melodies = [dadadadum, entertainer, prelude, ode, nyan,
+            ringtone, funk, blues, birthday, wedding,
+            funeral, punchline, python, baddy, chase,
             ba_ding, wawawawaa, jump_up, jump_down, power_up, power_down]
 
 # Loop over each

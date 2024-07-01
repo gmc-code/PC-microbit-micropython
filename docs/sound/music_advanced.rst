@@ -85,7 +85,7 @@ Christmas tunes
 Christmas tunes
 ------------------
 
-| Download the python file :download:`merry.py module <files/merry.py>`.
+| Download the python file :download:`christmas.py module <files/christmas.py>`.
 
 ----
 
