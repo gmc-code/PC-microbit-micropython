@@ -16,17 +16,17 @@ Music
 Speaker **V2** 
 ---------------------
 
-| By default sound output will be via the edge connector on pin0 and the **V2** built-in speaker. 
+| By default sound output will be via both pin0 and the **V2** built-in speaker. 
 | The **V2** built-in speaker can be turned off or on without affecting playing via pin0.
 | When flashing a new script to the microbit, the **V2** built-in speaker will be on, unless the code sets it to off.
 
 .. py:function::  speaker.off()
 
-    Use off() to turn off the speaker. This does not disable sound output to an edge connector pin.
+    Use speaker.off() to turn off the speaker. This does not disable sound output to pin0.
 
 .. py:function::  speaker.on()
 
-    Use on() to turn on the speaker.
+    Use speaker.on() to turn on the speaker.
 
 ----
 
@@ -56,7 +56,8 @@ Play notes
     | If loop is set to True, the music repeats until stop is called. Set wait to False to use this.
 
 | Use ``music.play(note)`` to play a note given by the ``note`` variable.
-| The note is written as a string with quotes: 'c4:8'. This is a c note in octave 4 with a duration of 8 ticks (a minim or 2 crotchet beats).
+| The note is written as a string with quotes: 'c4:8'. 
+| This is a c note in octave 4 with a duration of 8 ticks (a minim or 2 crotchet beats).
 
 .. code-block:: python
 
@@ -127,18 +128,18 @@ Notes
 
 | An individual note is specified as: ``NOTE[octave][:duration]``.
 
-| Notes are the letters a to g with or without an accidental (`#` for a sharp, `b` for a flat). 
-| Lower case or upper case notes are the same. eg. `A` and `a` are the same. 
+| Notes are the letters a to g with or without an accidental (**#** for a sharp, **b** for a flat). 
+| Lower case or upper case notes are the same. eg. **A** and **a** are the same. 
 | **Ab** is A-flat and **C#** is C-sharp.
 | Use **r** or **R** for a rest (silence).
 
 | If the octave is left out it defaults to 4 (containing middle C).
 | Octaves start on the note "C".
 | If the duration is left out it defaults to 4 (a crotchet).
-| For example, **a2:4** refers to the note "A" in octave 2 that lasts for four ticks (a tick is an arbitrary length of time defined by a tempo setting function). 
+| For example, **a5:4** refers to the note "A" in octave 5 that lasts for four ticks (4 ticks is usually a crotchet beat). 
 
 | The octave and duration parameters are states that carry over to subsequent notes until re-specified. 
-| e.g. ['c4:1', 'e', 'g:8'] The `e` is octave 4 for 1 tick. The `g` is octave 4 for 8 ticks.
+| e.g. ['c4:1', 'e', 'g5:8'] The `e` is octave 4 for 1 tick. The `g` is octave 5 for 8 ticks.
 
 ----
 
@@ -388,7 +389,7 @@ Volume **V2**
 
 .. admonition:: Tasks
 
-    #. Instead of playing the same note each time, play each different note "c4:2", "e4:2","f#4:2" at a different volume.
+    #. Instead of playing the same note each time, play a different note "c4:2", "e4:2", "f#4:2" at a different volume.
     #. Put the 3 sound levels in a list and use a for-loop to set the volume and play the note "c4:2".
     #. To the previous task, add the ability to stop the playing by exiting the ``while True`` loop on pressing the A-button via the use of ``break``. Pressing the reset button on the back of the microbit will restart the code.
 
@@ -401,7 +402,7 @@ Volume **V2**
 
             .. tab-item:: Q1
 
-                Instead of playing the same note each time, play a different note "c4:2", "e4:2","f#4:2" at a different volume.
+                Instead of playing the same note each time, play a different note "c4:2", "e4:2", "f#4:2" at a different volume.
 
                 .. code-block:: python
 
@@ -484,11 +485,13 @@ Stop background music
     music.play(melody1, wait=False, loop=True)
 
     display.scroll("A", wait=False, loop=True)
-    while True: # Allow 2 seconds to choose to press the A-button
+    while True: 
+        # Allow 2 seconds to choose to press the A-button
         sleep(2000)
         if button_a.was_pressed():
             # Stop the melody
             music.stop()
+            # exit the while loop
             break
 
     display.scroll("THE END")
@@ -617,7 +620,7 @@ Custom tunes
     sitka = {"name": "Sitka", "notes": "C5 G B A F A C5 B", "tempo": 120}
 
 
-.. admonition:: Challenege
+.. admonition:: Challenge
 
     #. Play each of the custom dictionaries notes.
 

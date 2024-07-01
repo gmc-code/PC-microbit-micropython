@@ -274,23 +274,21 @@ while True:
         # Move to the next song
         current_song_index = advance_song_counter(current_song_index)
         music.stop()
-        # Get the current song
-        do_tune(current_song_index)
+        # loop the current song
+        do_tune(current_song_index, play_loop=True, play_wait=False)
     elif button_b.was_pressed():
         # Stop any currently playing song
         while True:
             # Move to the next song
             current_song_index = advance_song_counter(current_song_index)
             music.stop()
-            # Get the current song
+            # play the current song
             do_tune(current_song_index, play_loop=False, play_wait=True)
             if button_b.was_pressed():
                 break
     elif pin_logo.is_touched():
-        # Stop any currently playing song
+        # Stop any currently playing song from A button pressing
         music.stop()
-        # again
-        # do_tune(current_song_index)
     sleep(10)
 
 

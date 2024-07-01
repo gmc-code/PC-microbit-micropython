@@ -1,11 +1,13 @@
 ==========================
-Music Christams
+Music Christmas
 ==========================
 
 Custom tunes
 ------------------
 
 | Try out these Christmas tunes. Can you identify them?
+| Use the A button to play a new song, and loop it. Use the Logo to stop it.
+| Use the B button to play all the songs. Pressing the B button again will stop the playin at the end of the current song.
 
 .. code-block:: python
         
@@ -285,23 +287,20 @@ Custom tunes
             # Move to the next song
             current_song_index = advance_song_counter(current_song_index)
             music.stop()
-            # Get the current song
-            do_tune(current_song_index)
+            # loop the current song
+            do_tune(current_song_index, play_loop=True, play_wait=False)
         elif button_b.was_pressed():
             # Stop any currently playing song
             while True:
                 # Move to the next song
                 current_song_index = advance_song_counter(current_song_index)
                 music.stop()
-                # Get the current song
+                # play the current song
                 do_tune(current_song_index, play_loop=False, play_wait=True)
                 if button_b.was_pressed():
                     break
         elif pin_logo.is_touched():
-            # Stop any currently playing song
+            # Stop any currently playing song from A button pressing
             music.stop()
-            # again
-            # do_tune(current_song_index)
         sleep(10)
-
 
