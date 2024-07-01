@@ -11,6 +11,8 @@ Music
     | For use of the inbuilt speaker on the **V2 microbit**, set the speaker to **on**.
     | For use of an external buzzer on a **breadboard**, set the speaker to **off** so that the in-built speaker does not also play sounds.
 
+----
+
 Speaker **V2** 
 ---------------------
 
@@ -45,8 +47,8 @@ Play notes
 
 .. py:function:: music.play(notes, pin=pin0, wait=True, loop=False)
 
-    | Play the music.
-    | Music can be a string, such as 'c1:4', or a list of notes as strings, such as ['c', 'd', 'e']
+    | Play the notes.
+    | Notes can be a string, such as 'c1:4', or a list of notes as strings, such as ['c', 'd', 'e']
     | The duration and octave values are reset to their defaults (of 4 each) before the music is played.
     | Octaves start on the note "C".
     | The output pin can be used to override the default pin0. pin=None prevents sounds from being played.
@@ -590,96 +592,6 @@ Reset music
 
     | Resets the state of the following attributes as listed:
     | ticks = 4; bpm = 120; duration = 4; octave = 4
-
-----
-
-Scales
-----------------------------------------
-
-| The lists below are the notes of scales.
-| Press A or B to play a different scale.
-
-
-.. code-block:: python
-
-    from microbit import *
-    import music
-
-    c_major = ['c', 'd', 'e', 'f', 'g', 'a', 'b', 'c']
-    e_minor = ['e', 'f#', 'g', 'a', 'b', 'c', 'd', 'e']
-
-    while True:
-        if button_a.is_pressed():
-            music.play(c_major)
-        elif button_b.is_pressed():
-            music.play(e_minor)
-        sleep(1000)
-
-----
-
-.. admonition:: Tasks
-
-    #. Play the 8 notes of D major. See: https://www.pianoscales.org/major.html
-    #. Play the 8 notes of F minor. See: https://www.pianoscales.org/minor.html
-    #. Play the D major scale when the A-button is pressed and the F minor scale when the B-button is pressed.
-
-    .. dropdown::
-        :icon: codescan
-        :color: primary
-        :class-container: sd-dropdown-container
-
-        .. tab-set::
-
-            .. tab-item:: Q1
-
-                Play the 8 notes of D major.
-
-                .. code-block:: python
-
-                    from microbit import *
-                    import music
-
-                    d_major = ["D", "E", "F#", "G", "A", "B", "C#", "D"]
-
-                    while True:
-                        music.play(d_major)
-                        sleep(1000)
-
-
-            .. tab-item:: Q2
-
-                Play the 8 notes of F minor.
-
-                .. code-block:: python
-
-                    from microbit import *
-                    import music
-
-                    f_minor = ["F", "G", "Ab", "Bb", "C", "Db", "Eb", "F"]
-
-                    while True:
-                        music.play(f_minor)
-                        sleep(1000)
-
-
-            .. tab-item:: Q3
-
-                Play the D major scale when the A-button is pressed and the F minor scale when the B-button is pressed.
-
-                .. code-block:: python
-
-                    from microbit import *
-                    import music
-
-                    d_major = ["D", "E", "F#", "G", "A", "B", "C#", "D"]
-                    f_minor = ["F", "G", "Ab", "Bb", "C", "Db", "Eb", "F"]
-
-                    while True:
-                        if button_a.is_pressed():
-                            music.play(d_major)
-                        elif button_b.is_pressed():
-                            music.play(f_minor)
-                        sleep(1000)
 
 ----
 
