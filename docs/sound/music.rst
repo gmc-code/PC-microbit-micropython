@@ -581,7 +581,7 @@ Stop background music
 
 ----
 
-Other music methods
+Reset music
 -----------------------------------
 
 .. py:function::  music.reset()
@@ -589,6 +589,7 @@ Other music methods
     | Resets the state of the following attributes as listed:
     | ticks = 4; bpm = 120; duration = 4; octave = 4
 
+----
 
 Scales
 ----------------------------------------
@@ -700,6 +701,50 @@ Custom tunes
     paris = {"name": "Paris", "notes": "G F G A - F E D", "tempo": 120}
     rising = {"name": "Rising", "notes": "E D G F B A C5 B", "tempo": 120}
     sitka = {"name": "Sitka", "notes": "C5 G B A F A C5 B", "tempo": 120}
+
+
+.. admonition:: Challenege
+
+    #. Play each of the custom dictionaries notes.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Play each of the custom dictionaries notes.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import music
+
+                    scale = {"name": "Scale", "notes": "C5 B A G F E D C", "tempo": 240}
+                    reverse = {"name": "Reverse", "notes": "C D E F G A B C5", "tempo": 240}
+                    mystery = {"name": "Mystery", "notes": "E B C5 A B G A F", "tempo": 120}
+                    gilroy = {"name": "Gilroy", "notes": "A F E F D G E F", "tempo": 120}
+                    falling = {"name": "Falling", "notes": "C5 A B G A F G E", "tempo": 180}
+                    hopeful = {"name": "Hopeful", "notes": "G B A G C5 B A B", "tempo": 180}
+                    tokyo = {"name": "Tokyo", "notes": "B A G A G F A C5", "tempo": 180}
+                    paris = {"name": "Paris", "notes": "G F G A r F E D", "tempo": 180}
+                    rising = {"name": "Rising", "notes": "E D G F B A C5 B", "tempo": 180}
+                    sitka = {"name": "Sitka", "notes": "C5 G B A F A C5 B", "tempo": 180}
+
+                    # List of scales
+                    scales = [scale, reverse, mystery, gilroy, falling, hopeful, tokyo, paris, rising, sitka]
+
+                    # Loop over each scale
+                    for selected_scale in scales:
+                        # Parse the notes and tempo from the selected scale
+                        notes = selected_scale["notes"].split(" ")
+                        tempo = selected_scale["tempo"]
+                        music.set_tempo(ticks=8, bpm=tempo)
+                        music.play(notes, wait=True)
+                        sleep(1000)
 
 ----
 
