@@ -9,6 +9,7 @@ Row your boat
 
 .. code-block:: python
     
+    '''incorrect code'''
     from microbit import *
     import music
 
@@ -48,11 +49,14 @@ Nursery Rhyme tunes
 ---------------------
 
 | Play the tunes and see if you can identify them.
+| Use the A button to play a new song, and loop it. Use the Logo to stop it.
+| Use the B button to play all the songs. Pressing the B button again will stop the playin at the end of the current song.
 
 .. code-block:: python
     
     from microbit import *
     import music
+    import random
 
 
     twinkle_twinkle = ['c4:4', 'c:4', 'g:4', 'g:4', 'a:4', 'a:4', 'g:8',
@@ -116,7 +120,7 @@ Nursery Rhyme tunes
     ]
 
     # dictionary with details for each song
-    nursery_rhymes_dict = {
+    songs_dict = {
         "twinkle_twinkle": {"ticks": 4, "bpm": 140, "notes": twinkle_twinkle},
         "baa_baa_black_sheep": {"ticks": 4, "bpm": 140, "notes": baa_baa_black_sheep},
         "row_your_boat": {"ticks": 12, "bpm": 140, "notes": row_your_boat},
@@ -128,26 +132,60 @@ Nursery Rhyme tunes
         "humpty_dumpty": {"ticks": 4, "bpm": 120, "notes": humpty_dumpty},
     }
 
-    nursery_rhymes_list = [
-        "baa_baa_black_sheep",
-        "hickory_dickory_dock",
-        "humpty_dumpty",
-        "itsy_bitsy_spider",
-        "jack_and_jill",
-        "mary_had_a_little_lamb",
-        "old_macdonald",
-        "row_your_boat",
-        "twinkle_twinkle",
-    ]
 
+    # Put the song names into a list
+    songs = list(songs_dict.keys())
+
+    def get_song_from_not_playing(songs, current_song):
+        choices = [song for song in songs if song != current_song]
+        return random.choice(choices)
+        
+    # Function to shuffle a list
+    def shuffle_list(lst):
+        for i in range(len(lst)-1, 0, -1):
+            j = random.randint(0, i)
+            lst[i], lst[j] = lst[j], lst[i]
+        return lst
+        
+    # Randomly sort the song list  
+    songs = shuffle_list(songs)
+
+    # Index to keep track of the current song
+    current_song_index = -1
+
+    def advance_song_counter(current_song_index):
+        current_song_index = (current_song_index + 1) % len(songs)
+        return current_song_index
+
+    def do_tune(current_song_index, play_loop=True, play_wait=False):
+        sleep(200)
+        song_name = songs[current_song_index]
+        song = songs_dict[song_name]
+        # Set the tempo
+        music.set_tempo(ticks=song["ticks"], bpm=song['bpm'])
+        # Play the current song
+        display.scroll(song_name.upper().replace("_", " "), delay=60, loop=play_loop, wait=False)
+        music.play(song['notes'], loop=play_loop, wait=play_wait)
+        
     while True:
-        # Play each nursery rhyme in the dictionary
-        for rhyme_name in nursery_rhymes_list:
-            rhyme_dict = nursery_rhymes_dict[rhyme_name]
-            rhyme_notes_var = rhyme_dict["notes"]
-            tickspeed = rhyme_dict["ticks"]
-            tempo = rhyme_dict["bpm"]
-            display.scroll(rhyme_name, wait=False, delay=60)
-            music.set_tempo(ticks=tickspeed, bpm=tempo)
-            music.play(rhyme_notes_var, wait=True)
-            sleep(1000)
+        if button_a.was_pressed():
+            # Move to the next song
+            current_song_index = advance_song_counter(current_song_index)
+            music.stop()
+            # loop the current song
+            do_tune(current_song_index, play_loop=True, play_wait=False)
+        elif button_b.was_pressed():
+            # Stop any currently playing song
+            while True:
+                # Move to the next song
+                current_song_index = advance_song_counter(current_song_index)
+                music.stop()
+                # play the current song
+                do_tune(current_song_index, play_loop=False, play_wait=True)
+                if button_b.was_pressed():
+                    break
+        elif pin_logo.is_touched():
+            # Stop any currently playing song from A button pressing
+            music.stop()
+        sleep(10)
+

@@ -2,7 +2,7 @@
 Music Christmas
 ==========================
 
-Custom tunes
+Christmas tunes
 ------------------
 
 | Try out these Christmas tunes. Can you identify them?
