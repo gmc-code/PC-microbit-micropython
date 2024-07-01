@@ -40,9 +40,8 @@ def show_waves(name, frames, duration=60):
 
 
 # Generate a waveform that goes from one wave to another wave, reasonably smoothly.
-def generate_frames(wave_1, wave_2):
+def generate_frames(wave_1, wave_2, frame_count=10):
     frames = []
-    frame_count = 10
     for i in range(frame_count):
         frame = audio.AudioFrame()
         for j in range(len(wave_1)):
@@ -100,6 +99,6 @@ while True:
     ##
     square = sq_wave()
     show_wave("Square", square)
-    ## Generate frames
+    ##
     tri_squares = generate_frames(tri, square)
-    show_waves("tri_squ", tri_squares)
+    show_waves("Tri_Squares", tri_squares)

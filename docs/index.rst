@@ -88,18 +88,20 @@ Index:
     :caption: Lessons_2
     :numbered:
 
-    lessons2/music.rst
-    lessons2/music_melodies.rst
-    lessons2/music_pitch.rst
-    lessons2/music_advanced.rst
-    lessons2/audio.rst
-    lessons2/audio_frames.rst
-    lessons2/compass_syntax.rst
-    lessons2/compass.rst
-    lessons2/thermometer.rst
-    lessons2/accelerometer_syntax.rst
-    lessons2/gestures.rst
-    lessons2/movement.rst
+    sensors/compass_syntax.rst
+    sensors/compass.rst
+    sensors/thermometer.rst
+    sensors/accelerometer_syntax.rst
+    sensors/gestures.rst
+    sensors/movement.rst
+    
+    sound/music.rst
+    sound/music_melodies.rst
+    sound/music_pitch.rst
+    sound/music_advanced.rst
+    sound/audio.rst
+    sound/audio_frames.rst
+    
 
 
 .. toctree::

@@ -8,14 +8,17 @@ AudioFrames
 | An AudioFrame object is a list of 32 samples each of which is an unsigned byte (whole number between 0 and 255).
 | Use ``frame = audio.AudioFrame()`` to create the audioframe object. 
 | Use ``frame[i] = ...`` to fill all 32 samples as i changes from 0 to 31.
+| It takes just over 4 ms to play a single frame.
 
 ----
 
-Example AudioFrame
+Sawtooth AudioFrame
 --------------------
 
+| The sawtooth wave is a type of waveform known for its linear rise and sudden fall. 
 | The code below creates an AudioFrame in which the 32 values decrease from 252 in steps of 8: 252, 244, 236, 228, 220, 212, 204, 196, 188, 180, 172, 164, 156, 148, 140, 132, 124, 116, 108, 100, 92, 84, 76, 68, 60, 52, 44, 36, 28, 20, 12, 4.
 | This is a sound profile that starts high and decreases steadily.
+| This doesn't play any sounds yet.
 
 .. code-block:: python
         
@@ -30,13 +33,15 @@ Example AudioFrame
             frame[i] = int(252 - i * 8)
         return frame
 
+
+
 ----
 
 Generators to avoid memory limits
 -----------------------------------
 
-| Since an audio frame only goes for (4ms to) 6ms, it needs to be repeated about 160 times to last for 1 second.
-| ``audio.play`` plays an iterable (a list or generator) of **AudioFrame** instances.
+| Since an audio frame only goes for 4ms to 6ms, it needs to be repeated about 160 times to last for 1 second.
+| ``audio.play`` plays an iterable (a list or generator) of AudioFrame instances.
 | If the AudioFrame is repeated in a list, as in ``repeated_frame1`` below, the list size is limited to about 8000 iterations (about 50 seconds) as it takes up memory.
 | This may be fine for short sounds; but is not good practice.
 
@@ -51,7 +56,7 @@ Generators to avoid memory limits
 
 | Generators are used in this case to avoid memory issues.
 | Use ``yield`` in the for-loop to create a generator that releases each repeat of the ``frame`` as it is needed in the calling code.
-| The function, ``repeated_frame``, uses a generator (via the **yield** keyword) to create an iterable object. 
+| The function, ``repeated_frame``, uses a generator (via the yield keyword) to create an iterable object. 
 | This means it generates each repetition on-the-fly each time you iterate over it.
 | This is more memory-efficient than creating a large list or other collection. 
 | This is especially useful if count is a large number.
@@ -80,12 +85,15 @@ Generators to avoid memory limits
         frame (AudioFrame): The audio frame to be repeated.
         count (int): The number of times the frame is to be repeated.
         """
-        wave = repeated_frame(frame, count)  # Generate the repeated audio frame
-        while audio.is_playing():  # If an audio is already playing
-            sleep(4)  # Wait for 4 milliseconds
-            audio.stop()  # Stop the currently playing audio
-        display.scroll(name, wait=False, delay=60)  # Display the name of the audio frame on the microbit LED display
-        audio.play(wave, wait=False)  # Play the new audio frame
+        # Generate the repeated audio frame
+        wave = repeated_frame(frame, count)  
+        # If an audio is already playing
+        while audio.is_playing():  
+            sleep(4)
+            audio.stop()
+        display.scroll(name, wait=False, delay=60)  
+        # Display the name of the audio frame
+        audio.play(wave, wait=False)
 
     def repeated_frame(frame, count):
         """
@@ -402,4 +410,190 @@ More complex AudioFrames
             # If the logo pin is touched, play the sequence of chords
             audio.play(play_sequence())
             sleep(10)
+
+----
+
+Advanced Technical Details
+-----------------------------------
+
+The ``audio`` module can consume an iterable (sequence, like list or tuple, or generator) of ``AudioFrame`` instances, each 32 samples at 7812.5 Hz, and uses linear interpolation to output a PWM signal at 32.5 kHz, which gives tolerable sound quality.
+
+The function ``play`` fully copies all data from each ``AudioFrame`` before it calls ``next()`` for the next frame, so a sound source can use the same ``AudioFrame`` repeatedly.
+
+----
+
+Advanced Example
+-----------------
+
+
+| Here's a breakdown of what each part of the code does:
+
+1. **Defining functions for generating and playing waves**:
+    - `repeated_frame(frame, count)`: This function takes a frame (a single cycle of a waveform) and a count, and yields the same frame for the given count. This is used to repeat a waveform.
+    - `show_wave(name, frame, duration=1000)`: This function takes a name, a frame, and a duration. It scrolls the name of the wave on the micro:bit's display, plays the audio of the wave for the given duration, and stops if button A is pressed.
+    - `repeated_frames(frames, count)`: Similar to `repeated_frame`, but this function takes multiple frames and yields each frame for the given count. This is used to repeat a sequence of waveforms.
+    - `show_waves(name, frames, duration=60)`: Similar to `show_wave`, but this function takes multiple frames. It scrolls the name of the wave on the micro:bit's display, plays the audio of the sequence of waves for the given duration, and stops if button A is pressed.
+    - `generate_frames(wave_1, wave_2)`: This function takes two waves and generates a sequence of frames that transition smoothly from the first wave to the second.
+
+2. **Defining functions for different waveforms**:
+    - `sin_wave()`: This function generates a sine wave.
+    - `tri_wave()`: This function generates a triangle wave.
+    - `sq_wave()`: This function generates a square wave.
+    - `saw_wave()`: This function generates a sawtooth wave.
+
+3. **Main loop**: The main loop of the script continuously generates each type of wave and plays it using the `show_wave` function. It also generates a sequence of frames that transition from a triangle wave to a square wave and plays it using the `show_waves` function.
+
+
+
+.. code-block:: python
+
+    from microbit import *
+    import audio
+    import math
+
+
+    def repeated_frame(frame, count):
+        for _ in range(count):
+            yield frame
+    
+    def show_wave(name, frame, duration=1000):
+        display.scroll(name + " wave", wait=False, delay=80)
+        audio.play(repeated_frame(frame, duration), wait=False)
+        for _ in range(75):
+            sleep(100)
+            # Press button-A to skip to next wave.
+            if button_a.was_pressed():
+                display.clear()
+                audio.stop()
+                break
+
+    ####
+
+    def repeated_frames(frames, count):
+        for frame in frames:
+            for _ in range(count):
+                yield frame
+                
+    def show_waves(name, frames, duration=60):
+        display.scroll(name + " wave", wait=False, delay=80)
+        audio.play(repeated_frames(frames, duration), wait=False)
+        for _ in range(75):
+            sleep(1000)
+            # Press button-A to skip to next wave.
+            if button_a.was_pressed():
+                display.clear()
+                audio.stop()
+                break
+                
+    #Generate a waveform that goes from one wave to another wave, reasonably smoothly.
+    def generate_frames(wave_1, wave_2, frame_count=10):
+        frames = []
+        for i in range(frame_count):
+            frame = audio.AudioFrame()
+            for j in range(len(wave_1)):
+                frame[j] = (wave_1[j]*(frame_count-i) + wave_2[j]*i) //frame_count
+            frames.append(frame)
+        return frames
+        
+    #####
+
+    def sin_wave():
+        frame = audio.AudioFrame()
+        for i in range(len(frame)):
+            frame[i] = int(math.sin(math.pi*i/16)*124+128.5)
+        return frame
+        
+
+    def tri_wave():
+        frame = audio.AudioFrame()
+        # QUARTER = 8; len(frame) = 32
+        QUARTER = len(frame)//4
+        for i in range(QUARTER):
+            frame[i] = i*15
+            frame[i+QUARTER] = 248-i*15
+            frame[i+QUARTER*2] = 128-i*15
+            frame[i+QUARTER*3] = i*15+8
+        return frame
+        
+
+    def sq_wave():
+        frame = audio.AudioFrame()
+        # HALF = 16; len(frame) = 32
+        HALF = len(frame)//2
+        for i in range(HALF):
+            frame[i] = 8
+            frame[i+HALF] = 248
+        return frame
+
+
+    def saw_wave():
+        frame = audio.AudioFrame()
+        for i in range(len(frame)):
+            frame[i] = 252-i*8
+        return frame
+        
+
+
+    while True:
+        sin = sin_wave()
+        show_wave("Sine", sin)
+        ##
+        saw = saw_wave()
+        show_wave("Sawtooth", saw)
+        ##
+        tri = tri_wave()
+        show_wave("Triangle", tri)
+        ##   
+        square = sq_wave() 
+        show_wave("Square", square)
+        ##
+        tri_squares = generate_frames(tri, square)
+        show_waves("Tri_Squares", tri_squares)
+
+
+----
+
+The code below uses a sin wave generator.
+Short sounds are made by looping through increasing frequency values.
+
+.. code-block:: python
+
+    from microbit import *
+    import audio
+    import math
+
+
+    def repeated_frame(frame, count):
+        for _ in range(count):
+            yield frame
+
+
+    def show_wave(name, frame, duration=1000):
+        display.scroll(name, wait=False, delay=50)
+        audio.play(repeated_frame(frame, duration), wait=False)
+        for _ in range(20):
+            sleep(50)
+            # Press button-A to skip to next wave.
+            if button_a.was_pressed():
+                display.clear()
+                audio.stop()
+                break
+
+
+    def sin_wave(frequency):
+        frame = audio.AudioFrame()
+        length = len(frame)
+        for i in range(length):
+            frame[i] = int(math.sin(2 * math.pi * frequency / 128 * i / length) * 124 + 128.5)
+        return frame
+
+
+    while True:
+        # frequency = accelerometer.get_x()
+        for frequency in range(20, 1024, 50):
+            sin = sin_wave(frequency)
+            show_wave(frequency, sin, duration=50)
+
+
+
 

@@ -40,17 +40,17 @@ Music Library
 
 ----
 
-Play music
+Play notes
 ----------------
 
-.. py:function:: music.play(music, pin=pin0, wait=True, loop=False)
+.. py:function:: music.play(notes, pin=pin0, wait=True, loop=False)
 
     | Play the music.
     | Music can be a string, such as 'c1:4', or a list of notes as strings, such as ['c', 'd', 'e']
     | The duration and octave values are reset to their defaults (of 4 each) before the music is played.
     | The output pin can be used to override the default pin0. pin=None prevents sounds from being played.
     | If wait is set to True, playing is blocking, and the music will be played to the end.
-    | If loop is set to True, the music repeats until stop is called. Set wait to False to sue this.
+    | If loop is set to True, the music repeats until stop is called. Set wait to False to use this.
 
 | Use ``music.play(note)`` to play a note given by the ``note`` variable.
 | The note is written as a string with quotes: 'c4:8'. This is a c note in octave 4 with a duration of 8 ticks (a minim or 2 crotchet beats).
@@ -63,7 +63,7 @@ Play music
     note = 'c4:8'
     music.play(note)
 
-| Use ``music.play(notes)`` to play a list of notes in the ``notes_list`` variable.
+| Use ``music.play(notes_list)`` to play a list of notes in the ``notes_list`` variable.
 | The code below plays a list of notes. The octave changes from 4 to 5.
 
 
@@ -124,12 +124,14 @@ Notes
 
 | An individual note is specified as: ``NOTE[octave][:duration]``.
 
-| Notes are the letters a to g with or without an accidental (`#` for a sharp, `b` for a flat). Lower case or upper case notes are the same. eg. `A` and `a` are the same. **Ab** is A-flat and **C#** is C-sharp.
+| Notes are the letters a to g with or without an accidental (`#` for a sharp, `b` for a flat). 
+| Lower case or upper case notes are the same. eg. `A` and `a` are the same. 
+| **Ab** is A-flat and **C#** is C-sharp.
 | Use **r** or **R** for a rest (silence).
 
 | If the octave is left out it defaults to 4 (containing middle C).
 | If the duration is left out it defaults to 4 (a crotchet).
-| For example, **a2:4** refers to the note “A” in octave 2 that lasts for four ticks (a tick is an arbitrary length of time defined by a tempo setting function). 
+| For example, **a2:4** refers to the note "A" in octave 2 that lasts for four ticks (a tick is an arbitrary length of time defined by a tempo setting function). 
 
 | The octave and duration parameters are states that carry over to subsequent notes until re-specified. 
 | e.g. ['c4:1', 'e', 'g:8'] The `e` is octave 4 for 1 tick. The `g` is octave 4 for 8 ticks.
@@ -600,14 +602,14 @@ Scales
     from microbit import *
     import music
 
-    cmajor = ['c', 'd', 'e', 'f', 'g', 'a', 'b', 'c']
-    eminor = ['e', 'f#', 'g', 'a', 'b', 'c', 'd', 'e']
+    c_major = ['c', 'd', 'e', 'f', 'g', 'a', 'b', 'c']
+    e_minor = ['e', 'f#', 'g', 'a', 'b', 'c', 'd', 'e']
 
     while True:
         if button_a.is_pressed():
-            music.play(cmajor)
+            music.play(c_major)
         elif button_b.is_pressed():
-            music.play(eminor)
+            music.play(e_minor)
         sleep(1000)
 
 ----
@@ -634,10 +636,10 @@ Scales
                     from microbit import *
                     import music
 
-                    dmajor = ["D", "E", "F#", "G", "A", "B", "C#", "D"]
+                    d_major = ["D", "E", "F#", "G", "A", "B", "C#", "D"]
 
                     while True:
-                        music.play(dmajor)
+                        music.play(d_major)
                         sleep(1000)
 
 
@@ -650,10 +652,10 @@ Scales
                     from microbit import *
                     import music
 
-                    fminor = ["F", "G", "Ab", "Bb", "C", "Db", "Eb", "F"]
+                    f_minor = ["F", "G", "Ab", "Bb", "C", "Db", "Eb", "F"]
 
                     while True:
-                        music.play(fminor)
+                        music.play(f_minor)
                         sleep(1000)
 
 
@@ -666,14 +668,14 @@ Scales
                     from microbit import *
                     import music
 
-                    dmajor = ["D", "E", "F#", "G", "A", "B", "C#", "D"]
-                    fminor = ["F", "G", "Ab", "Bb", "C", "Db", "Eb", "F"]
+                    d_major = ["D", "E", "F#", "G", "A", "B", "C#", "D"]
+                    f_minor = ["F", "G", "Ab", "Bb", "C", "Db", "Eb", "F"]
 
                     while True:
                         if button_a.is_pressed():
-                            music.play(dmajor)
+                            music.play(d_major)
                         elif button_b.is_pressed():
-                            music.play(fminor)
+                            music.play(f_minor)
                         sleep(1000)
 
 ----
@@ -698,3 +700,325 @@ Custom tunes
     paris = {"name": "Paris", "notes": "G F G A - F E D", "tempo": 120}
     rising = {"name": "Rising", "notes": "E D G F B A C5 B", "tempo": 120}
     sitka = {"name": "Sitka", "notes": "C5 G B A F A C5 B", "tempo": 120}
+
+----
+
+Custom tunes
+------------------
+
+| Guess the nursery rhyme.
+
+.. code-block:: python
+
+    from microbit import *
+    import music
+
+    speaker.off()
+    music.set_tempo(ticks=4, bpm=240)
+    notes_list = ['e', 'd', 'c', 'd', 'e', 'e','e','d','d','d','e','g','g','e','d','c','d','e','e','e','d','d','e','d','c']
+    
+
+    while True:
+        music.play(notes_list)
+        sleep(1000)
+
+| Try out these Christmas tunes.
+
+.. code-block:: python
+        
+    '''
+    Press A to get a new song; it loops by default.
+    Touch the logo to stop a song.
+    Press B to play all; press again to stop when a song finishes.
+    based on https://www.christmasmusicsongs.com
+    '''
+    from microbit import *
+    import music
+    import random
+
+    jingle_bells = [
+        'E4:4', 'E4:4', 'E4:8',
+        'E4:4', 'E4:4', 'E4:8',
+        'E4:4', 'G4:4', 'C4:6', 'D4:2',
+        'E4:12', 'R:4',
+        'F4:4', 'F4:4', 'F4:6', 'F4:2',
+        'F4:4', 'E4:4', 'E4:4', 'E4:2', 'E4:2',
+        'E4:4', 'D4:4', 'D4:4', 'E4:4',
+        'D4:8', 'G4:8',
+        'E4:4', 'E4:4', 'E4:8',
+        'E4:4', 'E4:4', 'E4:8',
+        'E4:4', 'G4:4', 'C4:6', 'D4:2',
+        'E4:12', 'R:4',
+        'F4:4', 'F4:4', 'F4:6', 'F4:2',
+        'F4:4', 'E4:4', 'E4:4', 'E4:2', 'E4:2',
+        'G4:4', 'G4:4', 'F4:4', 'D4:4',
+        'C4:16'
+    ]
+
+    we_wish_you_a_merry_christmas = [
+        'R:4','R:4','D4:4',
+        'G4:4','G4:2','A4:2','G4:2','F#4:2',
+        'E4:4','E4:4','E4:4',
+        'A4:4','A4:2','B4:2','A4:2','G4:2',
+        'F#4:4','D4:4','D4:4',
+        
+        'B4:4','B4:2','C5:2','B4:2','A4:2',
+        'G4:4','E4:4','D4:2','D4:2',
+        'E4:4','A4:4','F#4:4',
+        'G4:8','D4:4',
+        'G4:4','G4:4','G4:4',
+        
+        'F#4:8','F#4:4',
+        'G4:4','F#4:4','E4:4',
+        'D4:8','A4:4',
+        'B4:4','A4:4','G4:4',
+        'D5:4','D4:4','D4:2','D4:2',
+        'E4:4','A4:4','F#4:4',
+        'G4:8',
+        
+        'D4:4',
+        'G4:4','G4:2','A4:2','G4:2','F#4:2',
+        'E4:4','E4:4','E4:4',
+        'A4:4','A4:2','B4:2','A4:2','G4:2',
+        'F#4:4','D4:4','D4:4',
+        
+        'B4:4','B4:2','C5:2','B4:2','A4:2',
+        'G4:4','E4:4','D4:2','D4:2',
+        'E4:4','A4:4','F#4:4',
+        'G4:8','R:4'
+    ]
+
+    silent_night = [
+        'G4:6','A4:4','G4:4','E4:12',
+        'G4:6','A4:4','G4:4','E4:12',
+        'D5:8','D5:4','B4:12',
+        'C5:8','C5:4','G4:12',
+
+        'A4:8','A4:4','C5:6','B4:2','A4:4',
+        'G4:6','A4:4','G4:4','E4:12',
+
+        'A4:8','A4:4','C5:6','B4:2','A4:4',
+        'G4:6','A4:4','G4:4','E4:12',
+
+        'D5:8','D5:4','F5:5','D5:2','B4:4',
+        'C5:12','E5:12',
+        'C5:6','G4:2','E4:4','G4:6','F4:2','D4:4',
+        'C4:16','R:4','R:4'
+    ]
+
+    we_three_kings = [
+        'E4:4','D4:2','C4:4','A3:2',
+        'B3:2','C4:2','C4:2','A3:6',
+        'E4:4','D4:2','C4:4','A3:2',
+        'B3:2','C4:2','C4:2','A3:6',
+
+        'C4:4','C4:2','D4:4','D4:2',
+        'E4:4','E4:2','G4:2','F4:2','E4:2',
+        'D4:2','E4:2','D4:2','C4:4','B3:2',
+        'A3:6','B3:4','D4:2',
+
+        'C4:4','C4:2','C4:4','G3:2',
+        'C4:4','A3:2','C4:6',
+        'C4:4','C4:2','C4:4','G3:2',
+        'C4:4','A3:2','C4:6',
+
+        'C4:4','C4:2','D4:4','E4:2',
+        'F4:4','E4:2','D4:4','E4:2',
+        'C4:4','C4:2','C4:4','G3:2',
+        'C4:4','A3:2','C4:6',
+    ]
+
+    god_rest_ye_merry_gentlemen = [
+        'E4:4',
+        'E4:4','B4:4','B4:4','A4:4',
+        'G4:4','F#4:4','E4:4','D4:4',
+        'E4:4','F#4:4','G4:4','A4:4',
+        'B4:12','E4:4',
+
+        'E4:4','B4:4','B4:4','A4:4',
+        'G4:4','F#4:4','E4:4','D4:4',
+        'E4:4','F#4:4','G4:4','A4:4',
+        'B4:12','B4:4',
+
+        'C5:4','A4:4','B4:4','C5:4',
+        'D5:4','E5:4','B4:4','A4:4',
+        'G4:4','E4:4','F#4:4','G4:4',
+        'A4:8','G4:4','A4:4',
+
+        'B4:8','C5:4','B4:4',
+        'B4:4','A4:4','G4:4','F#4:4',
+        'E4:8','G4:2','F#4:2','E4:4',
+        'A4:8','G4:4','A4:4',
+        
+        'B4:4','C5:4','D5:4','E5:4',
+        'B4:4','A4:4','G4:4','F#4:4',
+        'E4:28',
+    ]
+
+    o_come_o_come_emmanuel = [
+        'A4:4',
+        'C5:4','E5:4','E5:4','E5:4',
+        'D5:4','F5:4','E5:4','D5:4',
+        'C5:12','D5:4',
+        
+        'E5:4','C5:4','A4:4','C5:4',
+        'D5:4','B4:4','A4:4','G4:4',
+        'A4:12','D5:4',
+        
+        'D5:4','A4:4','A4:4','B4:4',
+        'C5:8','B4:4','A4:4',
+        'G4:12','C5:4', 
+        
+        'D5:4','E5:4','E5:4','E5:4',
+        'D5:4','F5:4','E5:4','D5:4',
+        'C5:12','G5:4',
+            
+        'G5:12','E5:4', 
+        'E5:12','E5:4',
+        'D5:4','F5:4','E5:4','D5:4',
+        
+        'C5:12','D5:4',
+        'E5:4','C5:4','A4:4','C5:4',
+        'D5:4','B4:4','A4:4','G4:4',
+        'A4:28' 
+    ]
+
+    good_king_wenceslas = [
+        'C5:4','C5:4','C5:4','D5:4',
+        'C5:4','C5:4','G4:8',
+        'A4:4','G4:4','A4:4','B4:4',
+        'C5:8','C5:8',
+
+        'C5:4','C5:4','C5:4','D5:4',
+        'C5:4','C5:4','G4:8',
+        'A4:4','G4:4','A4:4','B4:4',
+        'C5:8','C5:8',
+
+        'G5:4','F5:4','E5:4','D5:4',
+        'E5:4','D5:4','C5:8',
+        'A4:4','G4:4','A4:4','B4:4',
+        'C5:8','C5:8',
+
+        'G4:4','G4:4','A4:4','B4:4',
+        'C5:4','C5:4','D5:8',
+        'G5:4','F5:4','E5:4','D5:4',
+        'C5:8','F5:8','C5:16'
+    ]
+
+    away_in_a_manger = [
+        'G4:4',
+        'G4:6','F4:2','E4:4',
+        'E4:4','D4:4','C4:4',
+        'C4:4','B3:4','A3:4',
+        'G3:8','G3:4',
+        
+        'G3:6','A3:2','G3:4',
+        'G3:4','D4:4','B3:4',
+        'A3:4','G3:4','C4:4',
+        'E4:8','G4:4',
+
+        'G4:6','F4:2','E4:4',
+        'E4:4','D4:4','C4:4',
+        'C4:4','B3:4','A3:4',
+        'G3:8','G3:4',
+        
+        'F4:6','E4:2','D4:4',
+        'E4:4','D4:4','C4:4',
+        'D4:4','A3:4','B3:4',
+        'C4:16',
+    ]
+
+    ding_dong_merrily_on_high = [
+        'G4:4','G4:4','A4:2','G4:2','F#4:2','E4:2',
+        'D4:12','D4:4',
+        'E4:4','G4:4','G4:4','F#4:4',
+        'G4:8','G4:8',
+
+        'G4:4','G4:4','A4:2','G4:2','F#4:2','E4:2',
+        'D4:12','D4:4',
+        'E4:4','G4:4','G4:4','F#4:4',
+        'G4:8','G4:8',
+
+        'D5:6','C5:2','B4:2','C5:2','D5:2','B4:2',
+        'C5:6','B4:2','A4:2','B4:2','C5:2','A4:2',
+        'B4:6','A4:2','G4:2','A4:2','B4:2','G4:2',
+        'A4:6','G4:2','F#4:2','G4:2','A4:2','F#4:2',
+    
+        'G4:6','F#4:2','E4:2','F#4:2','G4:2','E4:2',
+        'F#4:6','E4:2','D:4','D:4',
+        'E4:4','G4:4','G4:4','F#4:4',
+        'G4:8','G:8'
+    ]
+
+    # Create a dictionary with the BPM and notes for each song
+    songs_dict = {
+        'good_king_wenceslas': {'bpm': 140, 'notes': good_king_wenceslas},   
+        'away_in_a_manger': {'bpm': 120, 'notes': away_in_a_manger},
+        'ding_dong_merrily_on_high': {'bpm': 160, 'notes': ding_dong_merrily_on_high},
+        'o_come_o_come_emmanuel': {'bpm': 140, 'notes': o_come_o_come_emmanuel},   
+        'jingle_bells': {'bpm': 180, 'notes': jingle_bells},
+        'we_wish_you_a_merry_christmas': {'bpm': 140, 'notes': we_wish_you_a_merry_christmas},
+        'silent_night': {'bpm': 100, 'notes': silent_night},
+        'we_three_kings': {'bpm': 120, 'notes': we_three_kings},
+        'god_rest_ye_merry_gentlemen': {'bpm': 180, 'notes': god_rest_ye_merry_gentlemen}
+    }
+
+    # Put the song names into a list
+    songs = list(songs_dict.keys())
+
+    def get_song_from_not_playing(songs, current_song):
+        choices = [song for song in songs if song != current_song]
+        return random.choice(choices)
+        
+    # Function to shuffle a list
+    def shuffle_list(lst):
+        for i in range(len(lst)-1, 0, -1):
+            j = random.randint(0, i)
+            lst[i], lst[j] = lst[j], lst[i]
+        return lst
+        
+    # Randomly sort the song list  
+    songs = shuffle_list(songs)
+
+    # Index to keep track of the current song
+    current_song_index = -1
+
+    def advance_song_counter(current_song_index):
+        current_song_index = (current_song_index + 1) % len(songs)
+        return current_song_index
+
+    def do_tune(current_song_index, play_loop=True, play_wait=False):
+        sleep(200)
+        song_name = songs[current_song_index]
+        song = songs_dict[song_name]
+        # Set the tempo
+        music.set_tempo(ticks=4, bpm=song['bpm'])
+        # Play the current song
+        display.scroll(song_name.upper().replace("_", " "), delay=60, loop=play_loop, wait=False)
+        music.play(song['notes'], loop=play_loop, wait=play_wait)
+        
+    while True:
+        if button_a.was_pressed():
+            # Move to the next song
+            current_song_index = advance_song_counter(current_song_index)
+            music.stop()
+            # Get the current song
+            do_tune(current_song_index)
+        elif button_b.was_pressed():
+            # Stop any currently playing song
+            while True:
+                # Move to the next song
+                current_song_index = advance_song_counter(current_song_index)
+                music.stop()
+                # Get the current song
+                do_tune(current_song_index, play_loop=False, play_wait=True)
+                if button_b.was_pressed():
+                    break
+        elif pin_logo.is_touched():
+            # Stop any currently playing song
+            music.stop()
+            # again
+            # do_tune(current_song_index)
+        sleep(10)
+
+
