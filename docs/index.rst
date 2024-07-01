@@ -85,7 +85,7 @@ Index:
 
 .. toctree::
     :maxdepth: 2
-    :caption: Lessons_2
+    :caption: Sensors
     :numbered:
 
     sensors/compass_syntax.rst
@@ -94,14 +94,21 @@ Index:
     sensors/accelerometer_syntax.rst
     sensors/gestures.rst
     sensors/movement.rst
-    
+
+
+ .. toctree::
+    :maxdepth: 2
+    :caption: Sounds
+    :numbered:
+
     sound/music.rst
     sound/music_melodies.rst
     sound/music_pitch.rst
     sound/music_advanced.rst
     sound/audio.rst
+    sound/audio_sounds.rst
     sound/audio_frames.rst
-    
+    sound/audio_soundeffects.rst
 
 
 .. toctree::
