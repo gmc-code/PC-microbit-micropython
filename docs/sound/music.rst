@@ -66,7 +66,7 @@ Play notes
 
 | Use ``music.play(notes_list)`` to play a list of notes in the ``notes_list`` variable.
 | The code below plays a list of notes. The octave changes from 4 to 5.
-
+| Octaves start on the note "C".
 
 .. code-block:: python
 
@@ -131,6 +131,7 @@ Notes
 | Use **r** or **R** for a rest (silence).
 
 | If the octave is left out it defaults to 4 (containing middle C).
+| Octaves start on the note "C".
 | If the duration is left out it defaults to 4 (a crotchet).
 | For example, **a2:4** refers to the note "A" in octave 2 that lasts for four ticks (a tick is an arbitrary length of time defined by a tempo setting function). 
 

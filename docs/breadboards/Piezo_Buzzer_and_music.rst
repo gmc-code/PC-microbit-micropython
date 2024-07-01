@@ -54,25 +54,23 @@ Library
     
     :param volume: An integer between 0 and 255 to set the volume.
 
-| The code below increases the volume and plays a C note in octave 4 for 2 ticks at each volume.
-| The A-button can be pressed to exit the for-loop then the while-loop using ``break``.
-| Pressing the reset button on the back of the microbit will restart the code.
+| The code below plays 3 different notes at different volumes.
 
 .. code-block:: python
 
     from microbit import *
     import music
 
-
-    note = "c4:2"
+    note0 = "c4:4"
+    note1 = "e4:4"
+    note2 = "f#4:4"
     while True:
-        for v in range(0, 255, 25):
-            set_volume(v)
-            music.play(note)
-            if button_a.is_pressed():
-                break
-        if button_a.is_pressed():
-            break
+        set_volume(255)
+        music.play(note0)
+        set_volume(128)
+        music.play(note1)
+        set_volume(64)
+        music.play(note2)
 
 ----
 
@@ -420,7 +418,7 @@ Built in music
 
 
 | The code below uses a for-loop to loop through each melody in the ``melodies_list`` and play it.
-| For a list of built-in meodies see: https://microbit-micropython.readthedocs.io/en/v2-docs/music.html
+| For a list of built-in melodies see: https://microbit-micropython.readthedocs.io/en/v2-docs/music.html
 
 .. code-block:: python
 
@@ -702,23 +700,3 @@ A	    1760
                             break
 
 
-----
-
-Custom tunes
-------------------
-
-| Guess the nursery rhyme (care of Ralph).
-
-.. code-block:: python
-
-    from microbit import *
-    import music
-
-    speaker.off()
-    music.set_tempo(ticks=4, bpm=240)
-    notes_list = ['e', 'd', 'c', 'd', 'e', 'e','e','d','d','d','e','g','g','e','d','c','d','e','e','e','d','d','e','d','c']
-    
-
-    while True:
-        music.play(notes_list)
-        sleep(1000)
