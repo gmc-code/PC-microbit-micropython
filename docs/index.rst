@@ -24,7 +24,7 @@ Index:
  
 .. toctree::
     :maxdepth: 2
-    :caption: Lessons_1
+    :caption: Lessons
     :numbered:
 
     lessons/Microbit_library.rst
@@ -53,7 +53,7 @@ Index:
 
 .. toctree::
     :maxdepth: 2
-    :caption: Lessons_1_Practice
+    :caption: Lessons_Practice
     :numbered:
 
     lessons/Practice_tasks_1.rst
@@ -62,7 +62,7 @@ Index:
 
 .. toctree::
     :maxdepth: 2
-    :caption: Lessons_1_Practice_Answers
+    :caption: Lessons_Practice_Answers
     :numbered:
 
     lessons/Practice_tasks_1_Answers.rst
