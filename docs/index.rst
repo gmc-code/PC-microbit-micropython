@@ -96,7 +96,7 @@ Index:
     sensors/movement.rst
 
 
- .. toctree::
+.. toctree::
     :maxdepth: 2
     :caption: Sounds
     :numbered:
