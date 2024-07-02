@@ -3,25 +3,25 @@ import music
 
 # Octaves start on the note C.
 # major scales
-C_major = {"name": "CM", "notes": "C4 D E F G A B C5", "tempo": 120}
-D_major = {"name": "DM", "notes": "D4 E F# G A B C#5 D", "tempo": 120}
-E_major = {"name": "EM", "notes": "E4 F# G# A B C#5 D# E", "tempo": 120}
-F_major = {"name": "FM", "notes": "F4 G A Bb C5 D E F", "tempo": 120}
-G_major = {"name": "GM", "notes": "G4 A B C5 D E F# G", "tempo": 120}
-A_major = {"name": "AM", "notes": "A4 B C#5 D E F# G# A", "tempo": 120}
-B_major = {"name": "bM", "notes": "B4 C#5 D# E F# G# A# B", "tempo": 120}
+C_major = {"name": "C", "notes": "C4 D E F G A B C5", "tempo": 120}
+D_major = {"name": "D", "notes": "D4 E F# G A B C#5 D", "tempo": 120}
+E_major = {"name": "E", "notes": "E4 F# G# A B C#5 D# E", "tempo": 120}
+F_major = {"name": "F", "notes": "F4 G A Bb C5 D E F", "tempo": 120}
+G_major = {"name": "G", "notes": "G4 A B C5 D E F# G", "tempo": 120}
+A_major = {"name": "A", "notes": "A4 B C#5 D E F# G# A", "tempo": 120}
+B_major = {"name": "B", "notes": "B4 C#5 D# E F# G# A# B", "tempo": 120}
 # sharp major scales
-C_sharp_major = {"name": "C#M", "notes": "C# D# F F# G# A# C5 C#", "tempo": 120}
-D_sharp_major = {"name": "D#M", "notes": "D# F G G# A# C5 D D#", "tempo": 120}
-F_sharp_major = {"name": "F#M", "notes": "F# G# A# B C#5 D# F F#", "tempo": 120}
-G_sharp_major = {"name": "G#M", "notes": "G# A# C5 C# D# F G G#", "tempo": 120}
-A_sharp_major = {"name": "A#M", "notes": "A# C5 D D# F G A A#", "tempo": 120}
+C_sharp_major = {"name": "C#", "notes": "C# D# F F# G# A# C5 C#", "tempo": 120}
+D_sharp_major = {"name": "D#", "notes": "D# F G G# A# C5 D D#", "tempo": 120}
+F_sharp_major = {"name": "F#", "notes": "F# G# A# B C#5 D# F F#", "tempo": 120}
+G_sharp_major = {"name": "G#", "notes": "G# A# C5 C# D# F G G#", "tempo": 120}
+A_sharp_major = {"name": "A#", "notes": "A# C5 D D# F G A A#", "tempo": 120}
 # flat major scales
-D_flat_major = {"name": "DbM", "notes": "Db4 Eb F Gb Ab Bb C5 Db", "tempo": 120}
-E_flat_major = {"name": "EbM", "notes": "Eb4 F G Ab Bb C5 D Eb", "tempo": 120}
-G_flat_major = {"name": "GbM", "notes": "Gb4 Ab Bb B Db5 Eb F Gb", "tempo": 120}
-A_flat_major = {"name": "AbM", "notes": "Ab4 Bb C5 Db Eb F G Ab", "tempo": 120}
-B_flat_major = {"name": "BbM", "notes": "Bb4 C5 D Eb F G A Bb", "tempo": 120}
+D_flat_major = {"name": "Db", "notes": "Db4 Eb F Gb Ab Bb C5 Db", "tempo": 120}
+E_flat_major = {"name": "Eb", "notes": "Eb4 F G Ab Bb C5 D Eb", "tempo": 120}
+G_flat_major = {"name": "Gb", "notes": "Gb4 Ab Bb B Db5 Eb F Gb", "tempo": 120}
+A_flat_major = {"name": "Ab", "notes": "Ab4 Bb C5 Db Eb F G Ab", "tempo": 120}
+B_flat_major = {"name": "Bb", "notes": "Bb4 C5 D Eb F G A Bb", "tempo": 120}
 
 # minor scales
 C_minor = {"name": "Cm", "notes": "C4 D D# F G G# A# C5", "tempo": 120}
@@ -30,7 +30,7 @@ E_minor = {"name": "Em", "notes": "E4 F# G A B C5 D E", "tempo": 120}
 F_minor = {"name": "Fm", "notes": "F4 G G# A# C5 C# D# F", "tempo": 120}
 G_minor = {"name": "Gm", "notes": "G4 A A# C5 D D# F G", "tempo": 120}
 A_minor = {"name": "Am", "notes": "A4 B C5 D E F G A", "tempo": 120}
-B_minor = {"name": "bm", "notes": "B4 C#5 D E F# G A B", "tempo": 120}
+B_minor = {"name": "Bm", "notes": "B4 C#5 D E F# G A B", "tempo": 120}
 # sharp Minor scales
 C_sharp_minor = {"name": "C#m", "notes": "C# D# E F# G# A B C#5", "tempo": 120}
 D_sharp_minor = {"name": "D#m", "notes": "D# F F# G# A# B C#5 D#", "tempo": 120}

@@ -18,7 +18,7 @@ F_sharp_major = {"name": "F#", "notes": "F# G# A# B C#5 D# F F#"}
 C_sharp_major = {"name": "C#", "notes": "C# D# F F# G# A# C5 C#"}
 
 # flat major scales; Cb = B; Fb = E
-F_major = {"name": "FM", "notes": "F4 G A Bb C5 D E F"}
+F_major = {"name": "F", "notes": "F4 G A Bb C5 D E F"}
 B_flat_major = {"name": "Bb", "notes": "Bb4 C5 D Eb F G A Bb"}
 E_flat_major = {"name": "Eb", "notes": "Eb4 F G Ab Bb C5 D Eb"}
 A_flat_major = {"name": "Ab", "notes": "Ab4 Bb C5 Db Eb F G Ab"}

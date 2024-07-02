@@ -8,7 +8,7 @@ import music
 # sharp Minor scales; B# = C; E# = F
 A_minor = {"name": "Am", "notes": "A4 B C5 D E F G A"}
 E_minor = {"name": "Em", "notes": "E4 F# G A B C5 D E"}
-B_minor = {"name": "bm", "notes": "B4 C#5 D E F# G A B"}
+B_minor = {"name": "Bm", "notes": "B4 C#5 D E F# G A B"}
 F_sharp_minor = {"name": "F#m", "notes": "F# G# A B C#5 D E F#"}
 C_sharp_minor = {"name": "C#m", "notes": "C# D# E F# G# A B C#5"}
 G_sharp_minor = {"name": "G#m", "notes": "G# A# B C#5 D# E F# G#"}
@@ -46,3 +46,4 @@ for scale in circle_of_fifths_flat_minor_scales:
     display.scroll(name, wait=False, delay=60)
     music.play(notes, wait=True)
     sleep(1000)
+

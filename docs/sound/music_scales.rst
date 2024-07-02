@@ -14,23 +14,24 @@ Scales
     from microbit import *
     import music
 
-    c_major = ['c', 'd', 'e', 'f', 'g', 'a', 'b', 'c5']
-    e_minor = ['e', 'f#', 'g', 'a', 'b', 'c5', 'd', 'e']
+    c_major = ['c4', 'd', 'e', 'f', 'g', 'a', 'b', 'c5']
+    a_minor = ['a4', 'b', 'c5', 'd', 'e', 'f', 'g', 'a']
 
     while True:
         if button_a.is_pressed():
             music.play(c_major)
         elif button_b.is_pressed():
-            music.play(e_minor)
+            music.play(a_minor)
         sleep(1000)
 
 ----
 
 .. admonition:: Tasks
 
-    #. Play the 8 notes of D major. See: https://www.pianoscales.org/major.html
-    #. Play the 8 notes of F minor. See: https://www.pianoscales.org/minor.html
-    #. Play the D major scale when the A-button is pressed and the F minor scale when the B-button is pressed.
+    #. Play the 8 notes of G major. See: https://www.pianoscales.org/major.html
+    #. Play the 8 notes of E minor. See: https://www.pianoscales.org/minor.html
+    #. Play the G major scale when the A-button is pressed and the E minor scale when the B-button is pressed.
+    #. Play the F major scale when the A-button is pressed and the D minor scale when the B-button is pressed.
 
     .. dropdown::
         :icon: codescan
@@ -41,54 +42,76 @@ Scales
 
             .. tab-item:: Q1
 
-                Play the 8 notes of D major.
+                Play the 8 notes of G major.
 
                 .. code-block:: python
 
                     from microbit import *
                     import music
 
-                    d_major = ["D", "E", "F#", "G", "A", "B", "C#5", "D"]
+                    g_major = ["G4", "A", "B", "C5", "D", "E", "F#", "G"]
 
                     while True:
-                        music.play(d_major)
+                        music.play(g_major)
                         sleep(1000)
 
 
             .. tab-item:: Q2
 
-                Play the 8 notes of F minor.
+                Play the 8 notes of E minor.
 
                 .. code-block:: python
 
                     from microbit import *
                     import music
 
-                    f_minor = ["F", "G", "Ab", "Bb", "C5", "Db", "Eb", "F"]
+                    e_minor = ["E4", "F#", "G", "A", "B", "C5", "D", "E"]
 
                     while True:
-                        music.play(f_minor)
+                        music.play(e_minor)
                         sleep(1000)
 
 
             .. tab-item:: Q3
 
-                Play the D major scale when the A-button is pressed and the F minor scale when the B-button is pressed.
+                Play the G major scale when the A-button is pressed and the E minor scale when the B-button is pressed.
 
                 .. code-block:: python
 
                     from microbit import *
                     import music
 
-                    d_major = ["D", "E", "F#", "G", "A", "B", "C#5", "D"]
-                    f_minor = ["F", "G", "Ab", "Bb", "C5", "Db", "Eb", "F"]
+                    g_major = ["G4", "A", "B", "C5", "D", "E", "F#", "G"]
+                    e_minor = ["E4", "F#", "G", "A", "B", "C5", "D", "E"]
 
                     while True:
                         if button_a.is_pressed():
-                            music.play(d_major)
+                            music.play(g_major)
                         elif button_b.is_pressed():
-                            music.play(f_minor)
+                            music.play(e_minor)
                         sleep(1000)
+
+           .. tab-item:: Q4
+
+                Play the F major scale when the A-button is pressed and the D minor scale when the B-button is pressed.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import music
+
+                    g_major = ["F4", "G", "A", "Bb", "C5", "D", "E", "F"]
+                    e_minor = ["D4", "E", "F", "G", "A", "Bb", "C5", "D"]
+
+                    while True:
+                        if button_a.is_pressed():
+                            music.play(g_major)
+                        elif button_b.is_pressed():
+                            music.play(e_minor)
+                        sleep(1000)
+
+    #. Play the F major scale when the A-button is pressed and the D minor scale when the B-button is pressed.
+
 
 ----
 
@@ -98,8 +121,8 @@ Major Scales
 | See: https://musictheory.pugetsound.edu/mt21c/MajorKeySignatures.html
 
 | The code below plays the Major scales.
-| For sharp major scales; B# = C; E# = F
-| For flat major scales; Cb = B; Fb = E
+| Replacements for sharp major scales; B# = C; E# = F
+| Replacements for flat major scales; Cb = B; Fb = E
 
 .. code-block:: python
 
@@ -120,7 +143,7 @@ Major Scales
     C_sharp_major = {"name": "C#", "notes": "C# D# F F# G# A# C5 C#"}
 
     # flat major scales; Cb = B; Fb = E
-    F_major = {"name": "FM", "notes": "F4 G A Bb C5 D E F"}
+    F_major = {"name": "F", "notes": "F4 G A Bb C5 D E F"}
     B_flat_major = {"name": "Bb", "notes": "Bb4 C5 D Eb F G A Bb"}
     E_flat_major = {"name": "Eb", "notes": "Eb4 F G Ab Bb C5 D Eb"}
     A_flat_major = {"name": "Ab", "notes": "Ab4 Bb C5 Db Eb F G Ab"}
@@ -159,8 +182,8 @@ Minor Scales
 | See: https://musictheory.pugetsound.edu/mt21c/MinorKeySignatures.html
 
 | The code below plays the minor scales.
-| For sharp minor scales; B# = C; E# = F
-| For flat minor scales; Cb = B; Fb = E
+| Replacements for sharp minor scales; B# = C; E# = F
+| Replacements for flat minor scales; Cb = B; Fb = E
 
 .. code-block:: python
 
@@ -171,7 +194,7 @@ Minor Scales
     # sharp Minor scales; B# = C; E# = F
     A_minor = {"name": "Am", "notes": "A4 B C5 D E F G A"}
     E_minor = {"name": "Em", "notes": "E4 F# G A B C5 D E"}
-    B_minor = {"name": "bm", "notes": "B4 C#5 D E F# G A B"}
+    B_minor = {"name": "Bm", "notes": "B4 C#5 D E F# G A B"}
     F_sharp_minor = {"name": "F#m", "notes": "F# G# A B C#5 D E F#"}
     C_sharp_minor = {"name": "C#m", "notes": "C# D# E F# G# A B C#5"}
     G_sharp_minor = {"name": "G#m", "notes": "G# A# B C#5 D# E F# G#"}
@@ -186,7 +209,6 @@ Minor Scales
     B_flat_minor = {"name": "Bbm", "notes": "Bb C5 Db Eb F Gb Ab Bb"}
     E_flat_minor = {"name": "Ebm", "notes": "Eb F Gb Ab Bb B Db5 Eb"}
     A_flat_minor = {"name": "Abm", "notes": "Ab Bb B Db5 Eb E Gb Ab"}
-
 
     circle_of_fifths_sharp_minor_scales = [A_minor, E_minor, B_minor, F_sharp_minor,
                                         C_sharp_minor, G_sharp_minor, D_sharp_minor, A_sharp_minor]
@@ -209,3 +231,4 @@ Minor Scales
         display.scroll(name, wait=False, delay=60)
         music.play(notes, wait=True)
         sleep(1000)
+

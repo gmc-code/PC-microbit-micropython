@@ -155,6 +155,7 @@ Library
     music.set_tempo(ticks=4, bpm=240)
     tempo_data = str(music.get_tempo())
     display.scroll(tempo_data)
+    # (240, 4)
 
 | Each value in the tuple can be accessed using its index as shown below:
 
