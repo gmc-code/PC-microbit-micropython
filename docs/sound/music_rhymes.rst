@@ -5,7 +5,7 @@ Music Nursery Rhymes
 Row your boat
 ------------------
 
-| The notes are below, but are not usable due to marking the duration of 1.34 for notes in a triplet. This is interpreted as 134 instead of 1.34.
+| The notes are below, but are not usable due to marking the duration of 1.34 for notes in a triplet (3 notes played in the time of 4 ticks). This is interpreted as 134 instead of 1.34.
 
 .. code-block:: python
     

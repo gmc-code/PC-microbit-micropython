@@ -232,3 +232,109 @@ Minor Scales
         music.play(notes, wait=True)
         sleep(1000)
 
+----
+
+Triads
+--------------
+
+| The code below has a list of notes in the 7 triads in the key of C major.
+| The tempo is set to play the notes quickly: ticks=8, bpm=240.
+| Each of the three notes in a triad are played, with a short sleep to the next triad.
+
+.. code-block:: python
+
+    from microbit import *
+    import music
+
+    music.set_tempo(ticks=8, bpm=240)
+    triads = [["C4", "E4", "G4"], ["D4", "F4", "A4"], ["E4", "G4", "B4"], 
+            ["F4", "A4", "C5"], ["G4", "B4", "D5"], ["A4", "C5", "E5"], ["B4", "D5", "F5"]]
+
+    while True:
+            for triad in triads:
+                music.play(triad, wait=True)
+                sleep(100)
+            sleep(500)
+
+----
+
+.. admonition:: Tasks
+
+    #. Modify the code to only play the triads if the A button has been pressed.
+    #. Modify the code to play each triad with their notes in reverse order using triad[::-1].
+    #. Modify the code to play the triads if the A button has been pressed and to play them with their notes in reverse order if the B button has been pressed.
+
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Modify the code to only play the triads if the A button has been pressed.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import music
+
+                    music.set_tempo(ticks=8, bpm=240)
+                    triads = [["C4", "E4", "G4"], ["D4", "F4", "A4"], ["E4", "G4", "B4"], 
+                            ["F4", "A4", "C5"], ["G4", "B4", "D5"], ["A4", "C5", "E5"], ["B4", "D5", "F5"]]
+
+                    while True:
+                        if button_a.was_pressed():
+                            for triad in triads:
+                                music.play(triad, wait=True)
+                                sleep(100)
+                            sleep(500)
+
+
+            .. tab-item:: Q2
+
+                Modify the code to play each triad with their notes in reverse order using triad[::-1].
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import music
+
+                    music.set_tempo(ticks=8, bpm=240)
+                    triads = [["C4", "E4", "G4"], ["D4", "F4", "A4"], ["E4", "G4", "B4"], 
+                            ["F4", "A4", "C5"], ["G4", "B4", "D5"], ["A4", "C5", "E5"], ["B4", "D5", "F5"]]
+
+                    while True:
+                        for triad in triads:
+                            music.play(triad[::-1], wait=True)
+                            sleep(100)
+                        sleep(500)
+
+            .. tab-item:: Q2
+
+                Modify the code to play the triads if the A button has been pressed and to play them with their notes in reverse order if the B button has been pressed.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import music
+
+                    music.set_tempo(ticks=8, bpm=240)
+                    triads = [["C4", "E4", "G4"], ["D4", "F4", "A4"], ["E4", "G4", "B4"], 
+                            ["F4", "A4", "C5"], ["G4", "B4", "D5"], ["A4", "C5", "E5"], ["B4", "D5", "F5"]]
+
+                    while True:
+                        if button_a.was_pressed():
+                            for triad in triads:
+                                music.play(triad, wait=True)
+                                sleep(100)
+                            sleep(500)
+                        elif button_b.was_pressed():
+                            for triad in triads:
+                                music.play(triad[::-1], wait=True)
+                                sleep(100)
+                            sleep(500)
+
+
