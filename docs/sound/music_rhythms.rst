@@ -20,7 +20,6 @@ Rhythm: Shave and a hair cut: two bits
 
     while True:
         music.play(rhythm)
-        sleep(1000)
 
 ----
 
@@ -53,7 +52,6 @@ Rhythm: Shave and a hair cut: two bits
 
                     while True:
                         music.play(rhythm)
-                        sleep(1000)
 
             .. tab-item:: Q2
 
@@ -69,12 +67,12 @@ Rhythm: Shave and a hair cut: two bits
 
                     while True:
                         music.play(rhythm)
-                        sleep(1000)
+
 
 ----
 
-Rhythm: Famous movie series
------------------------------
+Rhythm: Famous movie series 1
+--------------------------------
 
 | Play this rhythm.
 | Can you identify the movie theme?
@@ -89,7 +87,7 @@ Rhythm: Famous movie series
 
     while True:
         music.play(rhythm)
-        sleep(1000)
+
 
 ----
 
@@ -118,6 +116,59 @@ Rhythm: Famous movie series
 
                     while True:
                         music.play(rhythm)
-                        sleep(1000)
+
+
+----
+
+Rhythm: Famous movie series 2
+--------------------------------
+
+| Play this rhythm.
+| Can you identify the movie theme?
+
+.. code-block:: python
+    
+    from microbit import *
+    import music
+
+    music.set_tempo(ticks=4, bpm=116)
+    rhythm = ["R2", "C5:1", "C5:1", "C5:2", "C5:2", "C5:2", "C5:2", "R:4",
+                "R:4", "C5:2", "C5:1", "C5:1", "C5:2", "C5:2", "R:4"]
+
+    while True:
+        music.play(rhythm)
+
+
+----
+
+.. admonition:: Tasks
+
+    #. Replace the notes with: C, C, E, C, D, Bb, C, C, C, Bb, C.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Replace the notes with: C, C, E, C, D, Bb, C, C, C, Bb, C.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import music
+
+                    music.set_tempo(ticks=4, bpm=90)
+                    rhythm = ["R2", "C5:1", "C5:1", "E5:2", "C5:2", "D5:2", "Bb4:2", "R:4", "R:4", "C5:2", "C5:1", "C5:1", "Bb4:2", "C5:2", "R:4"]
+
+                    while True:
+                        music.play(rhythm)
+
+
+
+
 
 

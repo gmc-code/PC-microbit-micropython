@@ -603,6 +603,7 @@ Custom tunes
 -----------------
 
 | Make use of these custom dictionaries that store notes and tempos for some short tunes.
+| The notes are a string with a space as a separator. Use the split method to convert the string to a list of notes. See: https://www.w3schools.com/python/ref_string_split.asp
 
 .. code-block:: python
 
