@@ -91,7 +91,7 @@ Scales
                             music.play(e_minor)
                         sleep(1000)
 
-           .. tab-item:: Q4
+            .. tab-item:: Q4
 
                 Play the F major scale when the A-button is pressed and the D minor scale when the B-button is pressed.
 
@@ -312,7 +312,7 @@ Triads
                             sleep(100)
                         sleep(500)
 
-            .. tab-item:: Q2
+            .. tab-item:: Q3
 
                 Modify the code to play the triads if the A button has been pressed and to play them with their notes in reverse order if the B button has been pressed.
 
