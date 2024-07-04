@@ -234,6 +234,12 @@ Minor Scales
 
 ----
 
+.. admonition:: Challenges
+    
+    #. Modify the code to play the major scales when the A button is pressed and the minor scales when the B button is pressed. Check for a second pressing of each button to stop the playing.
+
+----
+
 Triads
 --------------
 
