@@ -227,7 +227,7 @@ Deep sleep wake via run_every
 | The code below renews a deep sleep every 24 hours.
 | The microbit scrolls the temperature every 60 seconds
 | **wake_on=None** prevents button pressing from waking it.
-| **day_ms = 24*60*60*1000** and **ms=day_ms** is a day long deep sleep.
+| **day_ms = 24 * 60 * 60 * 1000** and **ms=day_ms** is a day long deep sleep.
 | **run_every=True** allows run_every events to wake it.
 | The decorator, **@run_every(s=60)**, causes the wakeup_call() to run every 60 seconds.
 
@@ -247,7 +247,7 @@ Deep sleep wake via run_every
         temp = temperature()
         display.scroll(temp)
 
-    day_ms = 24*60*60*1000
+    day_ms = 24 * 60 * 60 * 1000
     while True:
         # renew deep sleep every day
         power.deep_sleep(wake_on=None,ms=day_ms,run_every=True)

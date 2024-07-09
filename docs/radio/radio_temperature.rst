@@ -170,7 +170,7 @@ Indoor and outdoor temperature
                         radio.send(str(outdoor_temp))
                         display.scroll(outdoor_temp)
 
-                    day_ms = 24*60*60*1000
+                    day_ms = 24 * 60 * 60 * 1000
                     while True:
                         # renew deep sleep every day
                         power.deep_sleep(wake_on=None,ms=day_ms,run_every=True)

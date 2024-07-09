@@ -121,7 +121,7 @@ Buried Treasure
         radio.send(treasure_id)
         display.scroll(treasure_id)
 
-    min_ms = 60*1000
+    min_ms = 60 * 1000
     while True:
         # renew deep sleep every minute
         power.deep_sleep(wake_on=button_a, ms=min_ms, run_every=True)
@@ -168,7 +168,7 @@ Buried Treasure
                         radio.send(treasure_id)
                         display.scroll(treasure_id)
 
-                    min_ms = 60*1000
+                    min_ms = 60 * 1000
                     while True:
                         # renew deep sleep every minute
                         power.deep_sleep(wake_on=(button_a, button_b), ms=min_ms, run_every=True)
@@ -318,7 +318,7 @@ Find all the treasure
                         display.scroll(treasure_id)
 
 
-                    min_ms = 60*1000
+                    min_ms = 60 * 1000
                     while True:
                         # renew deep sleep every minute
                         power.deep_sleep(wake_on=(button_a, button_b), ms=min_ms, run_every=True)
