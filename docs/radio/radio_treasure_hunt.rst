@@ -230,11 +230,18 @@ Treasure collectors
 Sorting a list using a function as a sort key
 ---------------------------------------------------
 
+.. py:function:: list.sort(reverse=True|False, key=myFunc)
+
+    Sorts the list, ascending by default.
+    
+    :param reverse	Optional: reverse=True will sort the list descending. Default is reverse=False
+    :param key	Optional: A function to specify the sorting criteria.
+
 See: https://www.w3schools.com/python/ref_list_sort.asp
 
 .. admonition:: Tasks
 
-    #. Modify the code to scroll the treasure ids in ascending order. 
+    #. Modify the treasure collector code to scroll the treasure ids in ascending order. 
 
     .. dropdown::
         :icon: codescan
