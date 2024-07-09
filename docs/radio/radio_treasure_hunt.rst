@@ -96,6 +96,12 @@ Treasure hunters
 
 ----
 
+.. admonition:: Challenges
+    
+    #. See who can find the treasure first.
+
+----
+
 Buried Treasure
 -------------------------
 
@@ -220,6 +226,11 @@ Treasure collectors
             display.scroll("-")
 
 ----
+
+Sorting a list using a function as a sort key
+---------------------------------------------------
+
+See: https://www.w3schools.com/python/ref_list_sort.asp
 
 .. admonition:: Tasks
 
