@@ -7,15 +7,15 @@ radio.config(group=8)
 # Set the received message handler
 radio.on()
 
-# Create a list to store unique ids
-unique_ids = list()
 
-
-def sort_integer_strings(lst):
+def sort_string_numbers(lst):
     # Convert the strings to integers and sort the list
     sorted_list = sorted(lst, key=int)
     return sorted_list
 
+
+# Create a set to store unique messages
+unique_ids = list()
 
 while True:
     incoming_message = radio.receive()
@@ -27,6 +27,11 @@ while True:
         sleep(200)
     if button_a.was_pressed():
         display.scroll("-")
-        for treasure_id in sort_integer_strings(unique_ids):
+        for treasure_id in sort_string_numbers(unique_ids):
             display.scroll(treasure_id)
         display.scroll("-")
+    elif button_b.was_pressed():
+        treasure_count = len(unique_ids)
+        display.scroll("*")
+        display.scroll(treasure_count)
+        display.scroll("*")

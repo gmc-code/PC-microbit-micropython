@@ -8,6 +8,7 @@ radio.config(group=8, power=0)
 # Set the received message handler
 radio.on()
 
+# start at random id, not always 1.
 treasure_id = str(random.randint(1, 9))
 display.show(treasure_id)
 sleep(2000)
@@ -40,7 +41,4 @@ while True:
         display.scroll(treasure_id)
     # change treasure_id
     elif button_b.was_pressed():
-        treasure_id = str(random.randint(1, 9))
-        display.show(treasure_id)
-        sleep(2000)
-        display.clear()
+        change_id()
