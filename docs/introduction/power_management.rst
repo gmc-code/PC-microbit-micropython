@@ -95,7 +95,7 @@ Power off
 
 .. admonition:: Tasks
 
-    #. Fix the code in 3 places so that it shows the image NO for 1 second before powering off if the B-button is pressed at any time.
+    #. Fix the code in 2 places so that it shows the image NO for 1 second before powering off if the B-button is pressed at any time.
 
         .. code-block:: python
 
@@ -122,7 +122,7 @@ Power off
 
             .. tab-item:: Q1
 
-                Fix the code in 3 places so that it shows the image NO for 1 second before powering off if the B-button is pressed at any time.
+                Fix the code in 2 places so that it shows the image NO for 1 second before powering off if the B-button is pressed at any time.
 
                 .. code-block:: python
 

@@ -18,7 +18,6 @@ Beacons
     radio.config(group=8)
     # Set transmit power
     radio.config(power=1)
-    # Set the received message handler
     radio.on()
 
     while True:
@@ -57,7 +56,6 @@ Seekers
 
     # Set radio group
     radio.config(group=8)
-    # Set the received message handler
     radio.on()
 
     # Function to handle received messages

@@ -41,9 +41,9 @@ Indoor and outdoor temperature
     outdoorTemp = '-'
 
     while True:
-        message = radio.receive()
-        if message:
-            outdoorTemp = message
+        incoming_message = radio.receive()
+        if incoming_message:
+            outdoorTemp = incoming_message
         if button_a.was_pressed():
             display.scroll(str(temperature()))
         elif button_b.was_pressed():
@@ -96,9 +96,9 @@ Indoor and outdoor temperature
                     outdoor_temp = '-'
 
                     while True:
-                        message = radio.receive()
-                        if message:
-                            outdoor_temp = message
+                        incoming_message = radio.receive()
+                        if incoming_message:
+                            outdoor_temp = incoming_message
                             display.scroll(outdoor_temp)
                         if button_a.was_pressed():
                             display.scroll(str(temperature()))

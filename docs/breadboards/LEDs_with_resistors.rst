@@ -457,7 +457,7 @@ Write analog
                         sleep(100)
 
 
-            .. tab-item:: Q2
+            .. tab-item:: Q3
 
                 .. code-block:: python
 
