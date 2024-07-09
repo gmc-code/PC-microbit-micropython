@@ -179,6 +179,7 @@ Index:
     radio/radio_draw.rst
 
     radio/radio_hot_or_cold.rst
+    radio/radio_treasure_hunt.rst
 
 
 .. toctree::
