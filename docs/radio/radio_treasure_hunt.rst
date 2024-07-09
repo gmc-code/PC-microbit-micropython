@@ -242,6 +242,11 @@ See: https://www.w3schools.com/python/ref_list_sort.asp
 | The list below has strings of integers.
 | A sort key is required to sort them numerically.
 | The sort_int_strings function is used as the key. It returns the integer from each string.
+| For each item in int_strings, the sort_int_strings function uses the item as an argument (which becomes the list_value in the function).
+| The sort_int_strings function converts the string to an integer and returns it.
+| The sort method then sorts the items in the list based on these integer values returned by the sort_int_strings function.
+| So, in essence, list_value is a placeholder for each item in the list as the sort method goes through the list.
+
 
 .. code-block:: python
 
