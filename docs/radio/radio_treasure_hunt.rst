@@ -2,12 +2,16 @@
 Radio Treasure Hunt
 ====================================================
 
+| For a treasure hunt, have some microbits to act as hidden treasure beacons; some as treasure hunters.
+
+----
+ 
 Treasure
 -------------------------
 
 | Set multiple devices to act as treasure beacons each with their own id as a string. ``treasure_id = '1'``
-| Set up the group value in: ``radio.config(group=8)``.
-| Set the radio power to 0 so it can only be detected from close range.``radio.config(power=0)``. Power level 0 usually has a range of 1 metre.
+| Set up the group value in ``radio.config(group=8)``.
+| Set the radio power to 0 so it can only be detected from close range ``radio.config(power=0)``. Power level 0 usually has a range of 1 metre.
 | Hide the treasure beacons.
 
 .. code-block:: python
