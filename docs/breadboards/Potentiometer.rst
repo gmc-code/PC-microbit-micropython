@@ -74,11 +74,9 @@ Read analog
 Advanced: Power meter simulation
 ----------------------------------------
 
-.. sidebar::
-
-    .. image:: images/potentiometer_level.png
-        :scale: 50 %
-        :align: center
+.. image:: images/potentiometer_level.png
+    :scale: 50 %
+    :align: center
 
 | The code below takes an analog value from the potentiometer and displays it on the microbit LEDs.
 | See the custom images lesson for more on ``display.set_pixel``.
