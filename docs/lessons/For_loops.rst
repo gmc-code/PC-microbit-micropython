@@ -12,10 +12,10 @@ For loops with strings
 
     from microbit import *
 
-    welcome_string = 'Hi Mb user'
+    string = 'Welcome'
     while True:
-        for character in welcome_string:
-            display.show(character)
+        for character in string:
+            display.scroll(character)
         sleep(300)
 
 ----
