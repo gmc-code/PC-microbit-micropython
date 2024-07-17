@@ -36,11 +36,11 @@ Index:
     lessons/Show_text.rst
     lessons/Show_text_2.rst
 
-    lessons/Built_in_images_2.rst
     lessons/Built_in_images.rst
+    lessons/Built_in_images_2.rst
 
-    lessons/Buttons_and_selection_2.rst
     lessons/Buttons_and_selection.rst
+    lessons/Buttons_and_selection_2.rst
 
     lessons/For_loops.rst
     lessons/For_loops_2.rst
