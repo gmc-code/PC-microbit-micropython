@@ -135,8 +135,9 @@ if
 
 | ``if`` requires a condition that returns ``True`` or ``False``.
 
-| The code below checks if the variable, num, is 5 and scrolls it if it is.
-| num is set to 0 then 1 is added to it each time through the while loop.
+| In the code below, num is set to 0 then 1 is added to it each time through the while loop.
+| THe if line checks the variable, num, and scrolls it if it is 5.
+
 
 .. code-block:: python
 
@@ -163,6 +164,7 @@ if
 
 | Since ``button_a.is_pressed()`` returns a boolean, there is no need to use ``== True``.
 | ``if button_a.is_pressed():`` becomes ``if True:`` when the A-button is pressed.
+| ``if button_a.is_pressed():`` becomes ``if False:`` when the A-button is not pressed.
 
 .. code-block:: python
 
