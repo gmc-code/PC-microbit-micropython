@@ -20,7 +20,7 @@ Button is pressed
 
     | returns ``True`` if the B-button is being pressed or ``False`` if not.
 
-| The code below scrolls True or False.
+| The code below scrolls True or False to indicate whether the A-button is being pressed or not.
 
 .. code-block:: python
 
@@ -29,6 +29,30 @@ Button is pressed
     while True:
         display.scroll(button_a.is_pressed(), delay=60)
         sleep(1000)
+
+
+.. admonition:: Tasks
+
+    #. Edit the code to indicate whether the B-button is being pressed or not.
+    
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Edit the code to indicate whether the B-button is being pressed or not.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        display.scroll(button_b.is_pressed(), delay=60)
+                        sleep(1000)
 
 
 ----
@@ -56,6 +80,31 @@ Button was pressed
     while True:
         display.scroll(button_b.was_pressed(), delay=60)
         sleep(1000)
+
+
+
+.. admonition:: Tasks
+
+    #. Edit the code to indicate whether the A-button was pressed or not.
+    
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Edit the code to indicate whether the A-button was pressed or not.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        display.scroll(button_a.was_pressed(), delay=60)
+                        sleep(1000)
 
 
 | The code examples below use **is_pressed** rather than was_pressed since **is_pressed** works better when the button is **held down.**
