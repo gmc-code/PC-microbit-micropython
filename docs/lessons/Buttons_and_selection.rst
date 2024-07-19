@@ -119,7 +119,7 @@ Selection
 
 | ``if``, ``elif`` and ``else`` provide choices or branches in the code.
 | They all are used in lines of code which end with a colon, ``:``.
-| Both ``if`` and ``elif`` test a condition that returns ``True`` or ``False``. Their indented code block runs if the condition is True. e.g ``if button_a.is_pressed():``.
+| Both ``if`` and ``elif`` test a condition that returns ``True`` or ``False``. Their indented code block runs if the condition is True.
 | Multiple ``elif`` can be used to provide more choices.
 | The ``else`` block does not have a condition.
 | The ``else`` block only runs if all the previous conditions were ``False``.
@@ -136,7 +136,7 @@ if
 | ``if`` requires a condition that returns ``True`` or ``False``.
 
 | In the code below, num is set to 0 then 1 is added to it each time through the while loop.
-| THe if line checks the variable, num, and scrolls it if it is 5.
+| The if-line checks the variable, num, and scrolls it if it is 5.
 
 
 .. code-block:: python
@@ -151,7 +151,7 @@ if
         sleep(200)
 
 | The code below checks if the A-button is pressed and displays "A" if it is.
-| A short sleep pauses the code between presses.
+| A short sleep pauses the code between checks by the if-line.
 
 .. code-block:: python
 
