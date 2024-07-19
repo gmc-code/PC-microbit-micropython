@@ -2,6 +2,34 @@
 EXT: Buttons and selection
 ====================================================
 
+String slices
+-----------------
+
+.. py:function:: string[start_value:stop_value]
+
+    | returns character at index (position) start_value to the character at the index before the stop_value character.
+    | "Hello"[0:3] returns characters 1 to 2, "Hel", with "H: being index 0.
+
+----
+
+Converting a Boolean to a string to take a slice
+---------------------------------------------------
+
+| The Booleans True and False are not strings.
+| The code below, ``str(button_a.is_pressed())``, coverts the boolean values of True or False to a string. True becomes "True" and False becomes "False".
+| Then ``[0:1]`` takes a string slice giving the first letter only.
+| So True becomes "T" and False becomes "F".
+
+.. code-block:: python
+
+    from microbit import *
+
+    while True:
+        display.show(str(button_a.is_pressed())[0:1])
+        sleep(1000)
+
+----
+
 Changing values with A and B-buttons
 ----------------------------------------
 

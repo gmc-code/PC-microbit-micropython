@@ -20,6 +20,16 @@ Button is pressed
 
     | returns ``True`` if the B-button is being pressed or ``False`` if not.
 
+| The code below scrolls True or False.
+
+.. code-block:: python
+
+    from microbit import *
+
+    while True:
+        display.scroll(button_a.is_pressed(), delay=60)
+        sleep(1000)
+
 
 ----
 
@@ -37,8 +47,19 @@ Button was pressed
 
     | returns ``True`` if the B-button was pressed since the last check, or ``False`` if not.
 
+| The code below scrolls True or False.
+
+.. code-block:: python
+
+    from microbit import *
+
+    while True:
+        display.scroll(button_b.was_pressed(), delay=60)
+        sleep(1000)
+
+
 | The code examples below use **is_pressed** rather than was_pressed since **is_pressed** works better when the button is **held down.**
-| IN contrast, **was_pressed** requires **separate pressing** for it to return True.
+| In contrast, **was_pressed** requires **separate pressing** for it to return True.
 
 ----
 
@@ -64,6 +85,21 @@ if
     :align: center
 
 | ``if`` requires a condition that returns ``True`` or ``False``.
+
+| The code below checks if the variable, num, is 5 and scrolls it if it is.
+| num is set to 0 then 1 is added to it each time through the while loop.
+
+.. code-block:: python
+
+    from microbit import *
+
+    num = 0
+    while True:
+        if num == 5:
+            display.scroll(num)
+        num = num + 1
+        sleep(200)
+
 | The code below checks if the A-button is pressed and displays "A" if it is.
 | A short sleep pauses the code between presses.
 
@@ -72,8 +108,20 @@ if
     from microbit import *
 
     while True:
+        if button_a.is_pressed() == True:
+            display.scroll("A")
+        sleep(200)
+
+| Since ``button_a.is_pressed()`` returns a boolean, there is no need to use ``== True``.
+| ``if button_a.is_pressed():`` becomes ``if True:`` when the A-button is pressed.
+
+.. code-block:: python
+
+    from microbit import *
+
+    while True:
         if button_a.is_pressed():
-            display.show("A")
+            display.scroll("A")
         sleep(200)
 
 ----
@@ -156,6 +204,45 @@ if - else
 
 | The ``else`` block does not have a condition.
 | The ``else`` block only runs if all the previous conditions were ``False``.
+
+
+| The code below counts up in steps of 1 from 0 to a target number, but does not display the number till the target number is reached after which program breaks out of the loop and displays the message "target reached". 
+
+.. code-block:: python
+
+    from microbit import *
+
+    num = 0
+    target = 5
+    while True:
+        if num == target:
+            display.scroll(num)
+            break
+        else:
+            num = num + 1
+        sleep(200)
+    display.scroll("target reached", delay=50)
+
+| The code below counts up in steps of 1 from 0 to a target number, displaying the number till the target number is reached after which program breaks out of the loop and displays the message "target reached".
+| Notice that the condition uses "less than" rather than "equal".
+
+.. code-block:: python
+
+    from microbit import *
+
+    num = 0
+    target = 5
+    while True:
+        if num < target:
+            display.scroll(num, delay=50)
+            num = num + 1
+        else:
+            break
+        sleep(200)
+    display.scroll(target, delay=50)
+    display.scroll("target reached", delay=50)
+
+
 | The code below checks if the A-button is pressed and displays "A" if it is or "X" if not.
 
 .. code-block:: python
