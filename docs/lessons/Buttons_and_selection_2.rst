@@ -28,7 +28,7 @@ Converting a Boolean to a string to take a slice
         display.show(str(button_a.is_pressed())[0:1])
         sleep(1000)
 
-----
+----ww
 
 Changing values with A and B-buttons
 ----------------------------------------
