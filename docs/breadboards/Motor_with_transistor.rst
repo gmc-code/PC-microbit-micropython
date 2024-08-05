@@ -36,8 +36,8 @@ Model
 Write digital
 ----------------------------------------
 
-| To turn the motor on fully use ``pin0.write_digital(1)``.
-| To turn the motor off use ``pin0.write_digital(0)``.
+| To turn the motor on fully, use ``pin0.write_digital(1)``.
+| To turn the motor off, use ``pin0.write_digital(0)``.
 
 ----
 
