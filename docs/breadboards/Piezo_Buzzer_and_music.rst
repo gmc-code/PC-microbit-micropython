@@ -321,8 +321,8 @@ Scales
     import music
 
     speaker.off()
-    c_major = ['c', 'd', 'e', 'f', 'g', 'a', 'b', 'c']
-    e_minor = ['e', 'f#', 'g', 'a', 'b', 'c', 'd', 'e']
+    c_major = ['c', 'd', 'e', 'f', 'g', 'a', 'b', 'c5']
+    e_minor = ['e', 'f#', 'g', 'a', 'b', 'c', 'd', 'e5']
 
     while True:
         if button_a.is_pressed():
@@ -339,6 +339,7 @@ Scales
     #. Play the 8 notes of D major. See: https://www.pianoscales.org/major.html
     #. Play the 8 notes of F minor. See: https://www.pianoscales.org/minor.html
     #. Play the D major scale when the A-button is pressed and the F minor scale when the B-button is pressed.
+    #. Play the C major scale combined with an animation of the heart beating.
 
     .. dropdown::
         :icon: codescan
@@ -400,6 +401,26 @@ Scales
                         elif button_b.is_pressed():
                             music.play(f_minor)
                         sleep(1000)
+
+            .. tab-item:: Q4
+
+                Play the C major scale combined with an animation of the heart beating.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import music
+
+                    c_major = ['c', 'd', 'e', 'f', 'g', 'a', 'b', 'c5']
+                    # 1 beat every 500ms
+                    while True:
+                        music.play(c_major, wait=False)
+                        for i in range(8):
+                            display.show(Image.HEART_SMALL)
+                            sleep(250)
+                            display.show(Image.HEART)
+                            sleep(250)
+                        sleep(200)
 
 ----
 
