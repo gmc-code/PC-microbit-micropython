@@ -118,7 +118,7 @@ Prime factors
 Abbreviations
 --------------------------------------
 
-.. py:function:: string[start:stop]
+.. py:attribute:: string[start:stop]
 
     | returns character `start` up to but not including character `stop` of the string.
 
