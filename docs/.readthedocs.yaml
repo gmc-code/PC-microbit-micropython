@@ -18,7 +18,7 @@ sphinx:
   fail_on_warning: false
 
 # If using Sphinx, optionally build your docs in additional formats such as PDF
-# gif cuase pdf production to fail
+# gif cause pdf production to fail
 # formats:
 #  - pdf
 
