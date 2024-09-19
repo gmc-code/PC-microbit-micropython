@@ -29,7 +29,6 @@ Using pixels in nested for-loops
 
 ----
 
-
 .. admonition:: Tasks
 
     #. Write code that turns on the pixels one row at a time from the top.
@@ -84,4 +83,44 @@ Advanced: nested for-loops with range function
         for start_num in range(4):
             for n in range(start_num, start_num + 5, 2):
                 display.scroll(n, delay=40)
+
+----
+
+.. admonition:: Tasks
+
+    #. Write code using nested range functions to scroll 0, 3, 6, 9, 1, 4, 7, 10.
+    #. Write code using nested range functions to scroll 0, 5, 1, 6, 2, 7, 3, 8.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Write code using nested range functions to scroll 0, 3, 6, 9, 1, 4, 7, 10.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        for start_num in range(2):
+                            for n in range(start_num, start_num + 10, 3):
+                                display.scroll(n, delay=40)
+
+            .. tab-item:: Q2
+
+                Write code using nested range functions to scroll 0, 5, 1, 6, 2, 7, 3, 8.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        for start_num in range(5):
+                            for n in range(start_num, start_num + 6, 5):
+                                display.scroll(n, delay=40)
 
