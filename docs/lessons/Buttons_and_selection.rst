@@ -256,44 +256,6 @@ if - else
 | The ``else`` block does not have a condition.
 | The ``else`` block only runs if all the previous conditions were ``False``.
 
-
-| The code below counts up in steps of 1 from 0 to a target number, but does not display the number till the target number is reached after which program breaks out of the loop and displays the message "target reached". 
-
-.. code-block:: python
-
-    from microbit import *
-
-    num = 0
-    target = 5
-    while True:
-        if num == target:
-            display.scroll(num)
-            break
-        else:
-            num = num + 1
-        sleep(200)
-    display.scroll("target reached", delay=50)
-
-| The code below counts up in steps of 1 from 0 to a target number, displaying the number till the target number is reached after which program breaks out of the loop and displays the message "target reached".
-| Notice that the condition uses "less than" rather than "equal".
-
-.. code-block:: python
-
-    from microbit import *
-
-    num = 0
-    target = 5
-    while True:
-        if num < target:
-            display.scroll(num, delay=50)
-            num = num + 1
-        else:
-            break
-        sleep(200)
-    display.scroll(target, delay=50)
-    display.scroll("target reached", delay=50)
-
-
 | The code below checks if the A-button is pressed and displays "A" if it is or "X" if not.
 
 .. code-block:: python
