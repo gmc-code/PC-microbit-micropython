@@ -49,14 +49,14 @@ if - else with break
 String slices
 -----------------
 
-.. py:function:: string[start_value:stop_value]
+.. py:attribute:: string[start_value:stop_value]
 
     | returns character at index (position) start_value to the character at the index before the stop_value character.
-    | "Hello"[0:3] returns characters 1 to 2, "Hel", with "H: being index 0.
+    | "Hello"[0:3] returns characters 0 to 2, "Hel", with "H" being index 0.
 
 ----
 
-Converting a Boolean to a string to take a slice
+Converting a Boolean to a string initial
 ---------------------------------------------------
 
 | The Booleans True and False are not strings.
@@ -69,10 +69,12 @@ Converting a Boolean to a string to take a slice
     from microbit import *
 
     while True:
-        display.show(str(button_a.is_pressed())[0:1])
-        sleep(1000)
+        true_or_false = str(button_a.is_pressed())
+        t_or_f = true_or_false[0:1]
+        display.show(t_or_f)
+        sleep(500)
 
-----ww
+----
 
 Changing values with A and B-buttons
 ----------------------------------------
@@ -173,3 +175,5 @@ Changing values with A and B-buttons
                             sleep(100)
                         display.show(guess_number, delay=80)
                         sleep(200)
+
+
