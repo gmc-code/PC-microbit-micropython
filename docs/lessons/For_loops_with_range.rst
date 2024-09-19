@@ -256,7 +256,7 @@ Using range to count down with a negative step size
 
 ----
 
-Advanced: nested for loops with range function
+Advanced: nested for-loops with range function
 -------------------------------------------------
 
 | What does this code do?

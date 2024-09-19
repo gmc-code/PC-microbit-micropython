@@ -62,11 +62,11 @@ For loops with strings
 
 ----
 
-Add actions to for loop
+Add actions to a for-loop
 ----------------------------------------
 
-| Apart from simply scrolling the character in a string, as in the examples above, other actions can be added to the for loop.
-| The code below adds an underscore, "_", between each character."
+| Apart from simply scrolling the character in a string, as in the examples above, other actions can be added to the for-loop.
+| The code below adds an underscore, '_', between each character.'
 
 .. code-block:: python
 
@@ -76,15 +76,15 @@ Add actions to for loop
     while True:
         for welcome_character in welcome_string:
             display.scroll(welcome_character)
-            display.scroll("_")
+            display.scroll('_')
         sleep(300)
 
 
 
 .. admonition:: Tasks
 
-    #. Write a for-loop to scroll each letter in 'ace' individually with an "*" between them.
-    #. Write a for-loop to scroll each digit in '8850' individually with a "-" between them.
+    #. Write a for-loop to scroll each letter in 'ace' individually with an '*' between them.
+    #. Write a for-loop to scroll each digit in '8850' individually with a '-' between them.
 
     .. dropdown::
         :icon: codescan
@@ -95,7 +95,7 @@ Add actions to for loop
 
             .. tab-item:: Q1
 
-                Write a for-loop to scroll each letter in 'ace' individually with an "*" between them.
+                Write a for-loop to scroll each letter in 'ace' individually with an '*' between them.
 
                 .. code-block:: python
 
@@ -105,12 +105,12 @@ Add actions to for loop
                     while True:
                         for character in string:
                             display.scroll(character)
-                            display.scroll("*")
+                            display.scroll('*')
                         sleep(300)
 
             .. tab-item:: Q2
 
-                Write a for-loop to scroll each digit in '8850' individually with a "-" between them.
+                Write a for-loop to scroll each digit in '8850' individually with a '-' between them.
 
                 .. code-block:: python
 
@@ -120,7 +120,7 @@ Add actions to for loop
                     while True:
                         for character in string:
                             display.scroll(character)
-                            display.scroll("-")
+                            display.scroll('-')
                         sleep(300)
 
 ----
@@ -345,7 +345,7 @@ For loops with mixed lists
 
                     from microbit import *
 
-                    mixed_list = ["#1", Image.RABBIT, "#2", Image.DUCK, "#3", Image.TORTOISE]
+                    mixed_list = ['#1', Image.RABBIT, '#2', Image.DUCK, '#3', Image.TORTOISE]
                     while True:
                         for element in mixed_list:
                             display.show(element, delay=200)

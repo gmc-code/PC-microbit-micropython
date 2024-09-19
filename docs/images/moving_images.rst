@@ -615,7 +615,7 @@ Cropping images and repositioning with blit
 .. admonition:: Tasks
 
     #.  Rewrite the code above to achieve the same result, but by using a for-loop, **for x in [0, 1, 2]**, to create the 3 cropped images above and display them.
-    #.  Modify the code further to use nested for loops by adding **for y in [0, 1, 2]** to display the cropped image in 9 positions.
+    #.  Modify the code further to use nested for-loops by adding **for y in [0, 1, 2]** to display the cropped image in 9 positions.
 
     .. dropdown::
         :icon: codescan
@@ -651,7 +651,7 @@ Cropping images and repositioning with blit
 
             .. tab-item:: Q2
 
-                Modify the code further to use nested for loops by adding **for y in [0, 1, 2]** to display the cropped image in 9 positions.
+                Modify the code further to use nested for-loops by adding **for y in [0, 1, 2]** to display the cropped image in 9 positions.
 
                 .. code-block:: python
 
@@ -814,7 +814,7 @@ Filling images and repositioning with blit
 .. admonition:: Tasks
 
     #.  Write code to place 4, 2 by 2 squares, of brightness 5, in each corner.
-    #.  Write code to place 4, 2 by 2 squares, of brightness 5, in each corner using nested for loops for the x and y values, adding them to the display with a 500ms delay.
+    #.  Write code to place 4, 2 by 2 squares, of brightness 5, in each corner using nested for-loops for the x and y values, adding them to the display with a 500ms delay.
     #.  Write a function, **rect_overlaps(count=2)**, to return a composite image of a given number of rectangles (default 2) of random size and position, of brightness 9. Restrict the width and height to 2 to 4. Restrict the top left to (0,0) to (3,3). Display a new composite image every 200ms.
     
 
