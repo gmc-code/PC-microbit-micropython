@@ -644,6 +644,7 @@ Changing values with A and B-buttons
 .. admonition:: Tasks
 
     #. Edit the code to adjust the scroll delay in steps of 25.
+    #. Write code to alter a ``guess_number`` variable in steps of 1 by the buttons. Start the number at 5 and limit it to a minimum of 1 and a maximum of 9. Use was_pressed.
     #. Write code to alter a ``guess_number`` variable in steps of 1 by the buttons. Use both buttons to set the number and show it. Start the number at 5 and limit it to a minimum of 1 and a maximum of 9.
 
     .. dropdown::
@@ -675,6 +676,30 @@ Changing values with A and B-buttons
 
             .. tab-item:: Q2
 
+                Write code to alter a ``guess_number`` variable in steps of 1 by the buttons. Start the number at 5 and limit it to a minimum of 1 and a maximum of 9. Use was_pressed.  
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    guess_number = 5
+                    step = 1
+
+                    while True:
+                        if button_a.was_pressed():
+                            # limit max to 9
+                            guess_number = min(9, guess_number + step)
+                        elif button_b.was_pressed():
+                            # limit minimum to 1
+                            guess_number = max(1, guess_number - step)
+                        else:
+                            sleep(100)
+                        display.show(guess_number)
+
+
+
+            .. tab-item:: Q3
+
                 Write code to alter a ``guess_number`` variable in steps of 1 by the buttons. Use both buttons to set the number and scroll it. Start the number at 5 and limit it to a minimum of 1 and a maximum of 9.
 
                 .. code-block:: python
@@ -687,9 +712,9 @@ Changing values with A and B-buttons
                             display.show(guess_number, delay=80)
                             # now start again
                             guess_number = 5
-                        if button_a.is_pressed():
+                        if button_a.was_pressed():
                             guess_number = min(9, guess_number + 1)
-                        elif button_b.is_pressed():
+                        elif button_b.was_pressed():
                             guess_number = max(1, guess_number - 1)
                         else:
                             sleep(100)

@@ -46,7 +46,7 @@ Break the code
 
 .. code-block:: python
     
-   from microbit import *
+    from microbit import *
     import radio
     import random
 
