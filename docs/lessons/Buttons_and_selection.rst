@@ -486,7 +486,7 @@ If - elif - elif - else
 | Using ``if``, two ``elif`` and ``else`` together provides 4 branches in the code.
 | The code below first checks whether both buttons are pressed. 
 | The logical keyword ``and`` requires both conditions to be True for the combined condition to be True.
-| If either button is not pressed the combined condition with be False.
+| If either button is not pressed the combined condition, ``button_a.is_pressed() and button_b.is_pressed()``, will be False.
 
 
 .. code-block:: python
