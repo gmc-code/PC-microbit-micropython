@@ -5,9 +5,9 @@ EXT: for-loops
 Spacing characters
 ----------------------------
 
-| The code scrolls each character in "a*c*e", but does so by starting with 'ace' and "*".
+| The code below scrolls each character in "a*c*e", but does so by starting with 'ace' and "*" and uses them in a for-loop.
 | It uses indexing to get each character in the string 'ace' which is stored in the variable card_name. e.g. card_name[0] gets 'a'.
-| It uses an if statement to check whether the loop is up ot the last character so that it doesn't add another '*' after it.
+| It uses an if statement to check whether the loop is up to the last character so that it only adds '*' if it is not the last character.
 
 .. code-block:: python
 
@@ -26,8 +26,8 @@ Spacing characters
 
 .. admonition:: Tasks
 
-    #. Write a for-loop to scroll each letter in 'ace' individually with an '*' between them.
-    #. Write a for-loop to scroll each digit in '8850' individually with a '-' between them.
+    #. Write a for-loop to scroll each letter in 'bot' individually with a '|' between them.
+    #. Write a for-loop to scroll each digit in '8850' individually with a '+' between them.
 
     .. dropdown::
         :icon: codescan
@@ -38,14 +38,14 @@ Spacing characters
 
             .. tab-item:: Q1
 
-                Write a for-loop to scroll each letter in 'ace' individually with an '*' between them.
+                Write a for-loop to scroll each letter in 'bot' individually with an '|' between them.
 
                 .. code-block:: python
 
                     from microbit import *
 
-                    string = 'ace'
-                    spacing_character = "*"
+                    string = 'bot'
+                    spacing_character = "|"
                     while True:
                         for character in string:
                             display.scroll(character)
@@ -54,14 +54,14 @@ Spacing characters
 
             .. tab-item:: Q2
 
-                Write a for-loop to scroll each digit in '8850' individually with a '-' between them.
+                Write a for-loop to scroll each digit in '8850' individually with a '+' between them.
 
                 .. code-block:: python
 
                     from microbit import *
 
                     string = '2023'
-                    spacing_character = "-"
+                    spacing_character = "+"
                     while True:
                         for character in string:
                             display.scroll(character)
