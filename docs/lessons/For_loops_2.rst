@@ -2,6 +2,24 @@
 EXT: for-loops
 ====================================================
 
+Spacing characters
+----------------------------
+
+.. code-block:: python
+
+    from microbit import *
+
+    welcome_string = 'Hello'
+    string_length = len(welcome_string)
+    spacing_character = "_"
+    while True:
+        for i in range(string_length):
+            display.scroll(welcome_string[i])
+            if i < string_length - 1:
+                display.scroll(spacing_character)
+        sleep(300)
+
+
 Code shifts
 -----------------------------------------
 

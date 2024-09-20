@@ -7,6 +7,7 @@ For loops with strings
 
 | The code below loops through each character in a string and does something with it.
 | ``for welcome_character in welcome_string`` takes each character in the string ``welcome_string`` and puts it in the variable ``welcome_character``.
+| ``display.scroll(welcome_character)`` then scrolls the character.
 
 .. code-block:: python
 
@@ -81,8 +82,6 @@ Add actions to a for-loop
         sleep(300)
 
 
-| The disadvantage of this approach is that the spacing character is also added to the end, after the last character.
-
 .. admonition:: Tasks
 
     #. Write a for-loop to scroll each letter in 'ace' individually with an '*' between them.
@@ -126,6 +125,9 @@ Add actions to a for-loop
                             display.scroll(character)
                             display.scroll(spacing_character)
                         sleep(300)
+
+| The disadvantage of this approach is that the spacing character is also added to the end, after the last character.
+| See the EXT: for-loops page for ideas.
 
 ----
 
