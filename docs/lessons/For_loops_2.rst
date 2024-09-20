@@ -114,7 +114,7 @@ Code shifts
 
 .. admonition:: Tasks
 
-    #. Write a for-loop that converts the code word "ald" to the secret word "dog".
+    #. Write a for-loop that converts the code word "ald", then scrolls the converted secret word "dog".
 
     .. dropdown::
         :icon: codescan
@@ -125,7 +125,7 @@ Code shifts
 
             .. tab-item:: Q1
 
-                Write a for-loop that converts the code word "ald" to the secret word "dog".
+                Write a for-loop that converts the code word "ald", then scrolls the converted secret word "dog".
 
                 .. code-block:: python
 
@@ -147,10 +147,19 @@ Prime factors
 ----------------
 
 | The modulo operator % returns the remainder of a division operation.
-| ``test_num % num`` gets the remainder from division.
+
+Sure! Let's use more descriptive variable names:
+
+.. py:attribute:: dividend % divisor
+
+    | returns the remainder when `dividend` is divided by `divisor`.
+    | e.g 14 % 3 returns 2, because 14 divided by 3 is 4 with a remainder of 2.
+
+| e.g. ``5 % 2`` returns the remainder 1.
+| ``test_num % num`` returns the remainder from division.
 | ``if test_num % num == 0`` checks whether the remainder is zero or not.
 
-| The code below finds the prime factors of 15.
+| The code below scrolls the prime factors of 15.
 
 .. code-block:: python
 
