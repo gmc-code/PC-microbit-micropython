@@ -127,7 +127,8 @@ Add actions to a for-loop
                         sleep(300)
 
 | The disadvantage of this approach is that the spacing character is also added to the end, after the last character.
-| See the EXT: for-loops page for ideas.
+| e.g "a*c*e*"
+| See the EXT: for-loops page for ideas to get "a*c*e" instead of "a*c*e*".
 
 ----
 
@@ -136,6 +137,7 @@ For loops with lists
 
 | Python can loop through each element in a list and do something with it.
 | In the code below, each element in the list is displayed.
+| The sleep is placed after the for-loop to create a short delay before looping through the list again.
 
 .. code-block:: python
 
@@ -148,7 +150,8 @@ For loops with lists
         sleep(300)
 
 
-| In the code below, each number in the list is displayed.
+| In the code below, each number in the list is displayed via a for-loop.
+| The sleep is placed within the for-loop to create a short delay before the next number is shown.
 
 .. code-block:: python
 
@@ -289,6 +292,11 @@ Nested For loops
                             for num_2 in nums_2_list:
                                 display.scroll(num_1 + num_2, delay=80)
 
+
+| For examples of using nested for-loops specific to the microbit display see the Setting Pixels page under Images: 
+| https://pc-microbit-micropython.readthedocs.io/en/latest/images/setting_pixels.html#pixel-rows-and-columns-lists
+
+| For examples of using nested for-loops specific to the microbit display see the `Setting Pixels page under Images <https://pc-microbit-micropython.readthedocs.io/en/latest/images/setting_pixels.html#pixel-rows-and-columns-lists>`_.
 
 ----
 
