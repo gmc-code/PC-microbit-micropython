@@ -5,25 +5,87 @@ EXT: for-loops
 Spacing characters
 ----------------------------
 
+| The code scrolls each character in "a*c*e", but does so by starting with 'ace' and "*".
+| It uses indexing to get each character in the string 'ace' which is stored in the variable card_name. e.g. card_name[0] gets 'a'.
+| It uses an if statement to check whether the loop is up ot the last character so that it doesn't add another '*' after it.
+
 .. code-block:: python
 
     from microbit import *
 
-    welcome_string = 'Hello'
-    string_length = len(welcome_string)
-    spacing_character = "_"
+    card_name = 'ace'
+    string_length = len(card_name)
+    spacing_character = "*"
     while True:
         for i in range(string_length):
-            display.scroll(welcome_string[i])
+            display.scroll(card_name[i])
             if i < string_length - 1:
                 display.scroll(spacing_character)
         sleep(300)
 
 
+.. admonition:: Tasks
+
+    #. Write a for-loop to scroll each letter in 'ace' individually with an '*' between them.
+    #. Write a for-loop to scroll each digit in '8850' individually with a '-' between them.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Write a for-loop to scroll each letter in 'ace' individually with an '*' between them.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    string = 'ace'
+                    spacing_character = "*"
+                    while True:
+                        for character in string:
+                            display.scroll(character)
+                            display.scroll(spacing_character)
+                        sleep(300)
+
+            .. tab-item:: Q2
+
+                Write a for-loop to scroll each digit in '8850' individually with a '-' between them.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    string = '2023'
+                    spacing_character = "-"
+                    while True:
+                        for character in string:
+                            display.scroll(character)
+                            display.scroll(spacing_character)
+                        sleep(300)
+
+----
+
 Code shifts
 -----------------------------------------
 
-| Characters can be converted to ASCII numbers. and back.
+| ASCII stands for American Standard Code for Information Interchange. 
+| ASCII is a character encoding standard used in electronic communication to represent text. Each character (like letters, numbers, and symbols) is assigned a unique numeric value.
+| Characters can be converted to ASCII numbers, and back.
+
+.. py:function:: ord(character)
+
+    | returns the ASCII value for character.
+    | e.g display.scroll(ord('a')) scrolls 97.
+
+.. py:function:: chr(number)
+
+    | returns the character for the ASCII number.
+    | e.g display.scroll(chr(97)) scrolls 'a'.
 
 | e.g `h` is converted to ascii_num `104`, then ascii_num `102` is converted to `f`. 
 | `'h'` (ASCII 104) becomes `'f'` (ASCII 102)
