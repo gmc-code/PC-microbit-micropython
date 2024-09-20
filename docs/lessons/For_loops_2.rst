@@ -256,6 +256,8 @@ Abbreviations
 Vowels
 -----------------------------------------------
 
+| The keyword, ``in``, can be used to test whether a character is in a string.
+
 .. py:attribute:: element in collection
 
     | returns `True` if `element` is found in `collection`, otherwise `False`.
