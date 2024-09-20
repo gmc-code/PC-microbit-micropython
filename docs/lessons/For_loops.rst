@@ -73,13 +73,15 @@ Add actions to a for-loop
     from microbit import *
 
     welcome_string = 'Hello'
+    spacing_character = "_"
     while True:
         for welcome_character in welcome_string:
             display.scroll(welcome_character)
-            display.scroll('_')
+            display.scroll(spacing_character)
         sleep(300)
 
 
+| The disadvantage of this approach is that the spacing character is also added to the end, after the last character.
 
 .. admonition:: Tasks
 
@@ -102,10 +104,11 @@ Add actions to a for-loop
                     from microbit import *
 
                     string = 'ace'
+                    spacing_character = "*"
                     while True:
                         for character in string:
                             display.scroll(character)
-                            display.scroll('*')
+                            display.scroll(spacing_character)
                         sleep(300)
 
             .. tab-item:: Q2
@@ -117,10 +120,11 @@ Add actions to a for-loop
                     from microbit import *
 
                     string = '2023'
+                    spacing_character = "-"
                     while True:
                         for character in string:
                             display.scroll(character)
-                            display.scroll('-')
+                            display.scroll(spacing_character)
                         sleep(300)
 
 ----
