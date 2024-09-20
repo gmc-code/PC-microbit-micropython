@@ -65,8 +65,8 @@ Index:
     :caption: Lessons_Practice_Answers
     :numbered:
 
-    lessons/Practice_tasks_1_Answers.rst
-    lessons/Practice_tasks_2_Answers.rst
+    ..lessons/Practice_tasks_1_Answers.rst
+    ..lessons/Practice_tasks_2_Answers.rst
 
 
 .. toctree::
