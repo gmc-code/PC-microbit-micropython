@@ -4,7 +4,7 @@ Practice_tasks_1
 
 .. admonition:: Tasks
 
-    1.  Write code to repetitively display 'Hello' one character at a time.
+    1.  Write code to repetitively show 'Hello', one character at a time.
     2.  Write code to repetitively scroll 'microbit'.
     3.  Write code to repetitively display a heart and a giraffe.
     4.  Write code to repetitively display 3 different shapes using a **list**.

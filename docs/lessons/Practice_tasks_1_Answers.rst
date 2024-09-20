@@ -4,7 +4,7 @@ Practice tasks 1 Answers
 
 .. admonition:: Tasks
 
-    1.  Write code to repetitively display 'Hello' one character at a time.
+    1.  Write code to repetitively show 'Hello', one character at a time.
     2.  Write code to repetitively scroll 'microbit'.
     3.  Write code to repetitively display a heart and a giraffe.
     4.  Write code to repetitively display 3 different shapes using a list.
@@ -14,7 +14,7 @@ Practice tasks 1 Answers
     8.  Write code to repetitively scroll the numbers 1 to 9 using a for-loop using the range function.
 
 
-1.  Write code to repetitively display 'Hello' one character at a time.
+1.  Write code to repetitively show 'Hello', one character at a time.
 
 .. code-block:: python
 
@@ -33,7 +33,7 @@ Practice tasks 1 Answers
     from microbit import *
 
     while True:
-        display.scroll('microbit ')
+        display.scroll('microbit')
 
 ----
 
