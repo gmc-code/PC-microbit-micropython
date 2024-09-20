@@ -148,8 +148,6 @@ Prime factors
 
 | The modulo operator % returns the remainder of a division operation.
 
-Sure! Let's use more descriptive variable names:
-
 .. py:attribute:: dividend % divisor
 
     | returns the remainder when `dividend` is divided by `divisor`.
@@ -159,7 +157,7 @@ Sure! Let's use more descriptive variable names:
 | ``test_num % num`` returns the remainder from division.
 | ``if test_num % num == 0`` checks whether the remainder is zero or not.
 
-| The code below scrolls the prime factors of 15.
+| The code below scrolls the prime factors of 15, by only scrolling the divisor when the remainder is 0.
 
 .. code-block:: python
 
@@ -211,9 +209,9 @@ Abbreviations
 .. py:attribute:: string[start:stop]
 
     | returns character `start` up to but not including character `stop` of the string.
+    | ``'January'[0:3]`` returns characters 0 to 2 which is 'Jan'.
 
-| ``month[0:3]`` is a string slice in which characters 0 to 2 are returned.
-| The code below gets the first three letters of each month.
+| The code below gets the first three letters of each month by using the slice ``month[0:3]``.
 
 .. code-block:: python
 
@@ -258,14 +256,29 @@ Abbreviations
 Vowels
 -----------------------------------------------
 
+.. py:attribute:: element in collection
+
+    | returns `True` if `element` is found in `collection`, otherwise `False`.
+    | ``"A" in "AEIOU"`` returns True.
+
+.. py:attribute:: element not in collection
+
+    | returns `True` if `element` is not found in `collection`, otherwise `False`.
+    | ``"B" not in "AEIOU"`` returns True.
+
+
 | What does this code do?
 | ``name[0] in "AEIOU"`` returns **True** if character 0 in the name string is in the string of vowels.
 | ``name[0] not in "AEIOU"`` returns **True** if character 0 in the name string is **not** in the string of vowels.
 
-| A string can be changed to upper case using ``.upper()``.
-| e.g. ``anna.upper()`` returns "ANNA"
 
-The code below scrolls the name in upper case only if the name starts with a vowel.
+.. py:function:: string.upper()
+
+    | returns a new string with all characters converted to uppercase.
+    | ``"hello world".upper()`` returns "HELLO WORLD".
+    | e.g. ``anna.upper()`` returns "ANNA"
+
+| The code below scrolls the name in upper case only if the name starts with a vowel.
 
 .. code-block:: python
 
@@ -291,8 +304,11 @@ The code below scrolls the name in upper case only if the name **does not** star
                 display.scroll(name.upper(), delay=50)
         sleep(300)
 
-| A list can be sorted alphabetically using the ``sorted()`` function.
-| e.g. ``sorted_name_list = sorted(name_list)`` stores the sorted list in a new list, sorted_name_list.
+
+.. py:function:: sorted_list = sorted(original_list)
+
+    | returns a new list with the elements of `original_list` sorted in ascending order by default.
+    | sorted_name_list = sorted(["Charlie", "Alice", "Bob"])  returns the list sorted_name_list which is ["Alice", "Bob", "Charlie"].
 
 The code below sorts the list first then scrolls the name in uppercase.
 
