@@ -1,3 +1,18 @@
+/* remove read the docs fly out menu */
+
+.your-floating-element-class {
+    display: none !important;
+}
+
+.switch-menus {
+    display: none !important;
+}
+
+/* ========================================== */
+
+
+
+
 /* inline literals; change colour from built-in red to blue */
 
 .rst-content tt.literal, .rst-content tt.literal, .rst-content code.literal {
@@ -115,7 +130,7 @@ div.admonition-challenges p.admonition-title {
 /* ========================================== */
 /* Custom dropdown light primary D4D4F7 F7F7FF */
 .sd-dropdown-container {
-    background-color: #F7F7FF; 
+    background-color: #F7F7FF;
 }
 
 /* Custom dropdown reduce padding of dropdown */
@@ -197,7 +212,7 @@ button.copybtn {
     border: #1b1f2426 1px solid;
     background-color: #f6f8fa;
     color: blue
-    /* The colors that GitHub uses 
+    /* The colors that GitHub uses
     border: #1b1f2426 1px solid;
     background-color: #f6f8fa;
     color: #57606a; */
@@ -206,7 +221,7 @@ button.copybtn {
 /* w,h orig 1.5 em */
 button.copybtn svg {
     stroke: currentColor;
-    width: 1.4em;   
+    width: 1.4em;
     height: 1.4em;
     padding: 0.1em;
 }
@@ -268,23 +283,23 @@ div.highlight-default div.highlight {
     padding: 4px 8px;
 }
 
-/* override table width restrictions */ 
-.wy-table-responsive table td, .wy-table-responsive table th { 
-    white-space: normal; 
-} 
- 
-.wy-table-responsive { 
-    margin-bottom: 24px; 
-    max-width: 100%; 
-    overflow: visible; 
-} 
- 
-.wy-table-responsive th p { 
-    margin-bottom: unset; 
-} 
+/* override table width restrictions */
+.wy-table-responsive table td, .wy-table-responsive table th {
+    white-space: normal;
+}
+
+.wy-table-responsive {
+    margin-bottom: 24px;
+    max-width: 100%;
+    overflow: visible;
+}
+
+.wy-table-responsive th p {
+    margin-bottom: unset;
+}
 
 /* ========================================== */
-/**  for side by side images in table 
+/**  for side by side images in table
 /* ========================================== */
 
 
@@ -293,4 +308,4 @@ div.highlight-default div.highlight {
     margin-left: auto;
     margin-right: auto;
 }
-    
+
