@@ -21,7 +21,23 @@ Index:
     ..introduction/Mu_editor.rst
     ..introduction/Mu_editor_Errors.rst
 
- 
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: BreadBoards
+    :numbered:
+
+    breadboards/Breadboard_connections.rst
+    breadboards/Edge_Connector.rst
+    breadboards/Motor_with_transistor.rst
+    breadboards/LEDs_with_resistors.rst
+    breadboards/Potentiometer.rst
+    breadboards/Potentiometer_with_LED.rst
+    breadboards/Piezo_Buzzer_and_music.rst
+
+
+
 .. toctree::
     :maxdepth: 2
     :caption: Lessons
@@ -76,25 +92,12 @@ Index:
 
     errors/Types_of_Errors.rst
     errors/Library_Errors.rst
-    errors/Indentation_Errors.rst    
+    errors/Indentation_Errors.rst
     errors/Missing_Colon_Errors.rst
     errors/Variable_Errors.rst
-    errors/Unwanted_Whitespace.rst    
+    errors/Unwanted_Whitespace.rst
     errors/Whitespace_for_readability.rst
 
- 
-.. toctree::
-    :maxdepth: 2
-    :caption: BreadBoards
-    :numbered:
-
-    breadboards/Breadboard_connections.rst
-    breadboards/Edge_Connector.rst
-    breadboards/Motor_with_transistor.rst
-    breadboards/LEDs_with_resistors.rst
-    breadboards/Potentiometer.rst
-    breadboards/Potentiometer_with_LED.rst
-    breadboards/Piezo_Buzzer_and_music.rst
 
 
 .. toctree::
@@ -106,7 +109,7 @@ Index:
     breadboard_projects/Models_using_definitions.rst
     breadboard_projects/Organising_with_selection_and_definitions.rst
     breadboard_projects/Combined_iteration_using_zip.rst
- 
+
 
 .. toctree::
     :maxdepth: 2
@@ -196,7 +199,7 @@ Index:
     radio/radio_resend.rst
     radio/radio_shift_cipher.rst
     radio/radio_polybius_square.rst
-    
+
     radio/radio_manual_messages.rst
 
     radio/radio_images.rst
