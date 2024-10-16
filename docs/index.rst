@@ -30,11 +30,12 @@ Index:
 
     breadboards/Breadboard_connections.rst
     breadboards/Edge_Connector.rst
-    breadboards/Motor_with_transistor.rst
     breadboards/LEDs_with_resistors.rst
+    breadboards/Motor_with_transistor.rst
+    breadboards/Piezo_Buzzer_and_music.rst
     breadboards/Potentiometer.rst
     breadboards/Potentiometer_with_LED.rst
-    breadboards/Piezo_Buzzer_and_music.rst
+
 
 
 
