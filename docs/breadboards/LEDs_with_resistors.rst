@@ -2,6 +2,10 @@
 LEDs_with_resistors
 ==========================
 
+| The examples below use sequence without definition blocks which are preferred to better organize the code.
+| See https://pc-microbit-micropython.readthedocs.io/en/latest/breadboards/LEDs_with_resistors_2.html
+
+----
 Connections
 --------------------------
 

@@ -2,7 +2,10 @@
 Motor_with_transistor
 ==========================
 
+| The examples below use sequence without definition blocks which are preferred to better organize the code.
+| See https://pc-microbit-micropython.readthedocs.io/en/latest/breadboards/Motor_with_transistor_2.html
 
+----
 Connections
 --------------------------
 
@@ -11,7 +14,7 @@ Connections
 
 .. image:: images/2.2kohm.png
     :scale: 50 %
-    
+
 ----
 
 Model
@@ -168,7 +171,7 @@ Turn on and off pin0
                             turn_on()
                             sleep(4000)
                             turn_off()
-                            sleep(4000)  
+                            sleep(4000)
 
 ----
 
@@ -280,7 +283,7 @@ Write analog
 
     #. Modify the pulse_on and pulse_off functions to use the sleep_time and step_size variables as parameters with the default values in the example code above.
     #. Modify the pulse_on and pulse_off functions further to show the motor speed as a value from 0 to 9. Hint: write a new function, ``motor_speed_display``, that uses the int function to round down the value obtained from dividing the motor speed by 100. Then use the min function to make sure the highest possible value returned is 9.
-    
+
     .. dropdown::
         :icon: codescan
         :color: primary
@@ -293,7 +296,7 @@ Write analog
                 Modify the pulse_on and pulse_off functions to use the sleep_time and step_size variables as parameters with the default values in the example code above.
 
                 .. code-block:: python
-                    
+
                     from microbit import *
 
 
@@ -319,10 +322,10 @@ Write analog
                         sleep(500)
 
             .. tab-item:: Q2
-                                    
+
                 Modify the pulse_on and pulse_off functions further to show the motor speed as a value from 0 to 9.
                 Hint: write a new function, ``motor_speed_display``, that uses the int function to round down the value obtained from dividing the motor speed by 100. Then use the min function to make sure the highest possible value returned is 9.
-                
+
                 .. code-block:: python
 
                     from microbit import *
@@ -339,7 +342,7 @@ Write analog
                             display.show(motor_speed_display(i))
                             sleep(sleep_time)
                         pin0.write_analog(1023)
-                        display.show(motor_speed_display(1023)) 
+                        display.show(motor_speed_display(1023))
 
 
                     def pulse_off(sleep_time=500, step_size=200):
@@ -348,7 +351,7 @@ Write analog
                             display.show(motor_speed_display(i))
                             sleep(sleep_time)
                         pin0.write_analog(0)
-                        display.show(motor_speed_display(0)) 
+                        display.show(motor_speed_display(0))
 
 
                     while True:
