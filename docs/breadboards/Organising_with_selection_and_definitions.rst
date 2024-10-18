@@ -1,11 +1,11 @@
 ====================================================
-Organising with selection and definitions
+DEFS: Organising with selection and definitions
 ====================================================
 
 Definitions
 ----------------------------------------
 
-| Use definitions for one purpose. 
+| Use definitions for one purpose.
 | Definitions help break up lengthy code into smaller well defined blocks.
 | Definitions use the same naming conventions as for variables. (See variables in the python section)
 | Definitions start with the ``def`` keyword.
@@ -30,7 +30,7 @@ Definitions
 Organising blocks into definitions
 ----------------------------------------
 
-| Compare the two code examples below. 
+| Compare the two code examples below.
 | The first example does not have any definitions.
 | The second example takes each block of code in the various branches of the if block and reallocates them to separate definitions.
 | This makes the main block of code in the ``while True`` loop more compact and more readable.
@@ -97,7 +97,7 @@ Organising blocks into definitions
     1.  Reorganise the code below to follow the structure of the examples above.
 
         .. code-block:: python
-            
+
             from microbit import *
 
             while True:
@@ -113,7 +113,7 @@ Organising blocks into definitions
     2.  Reorganise the code below to follow the structure of the examples above.
 
         .. code-block:: python
-            
+
             from microbit import *
 
             while True:
@@ -154,7 +154,7 @@ Organising blocks into definitions
 
                     def doC():
                         display.clear()
-                        
+
 
                     while True:
                         if button_a.is_pressed():
@@ -185,7 +185,7 @@ Organising blocks into definitions
 
                     def doC():
                         display.clear()
-                        
+
 
                     while True:
                         if button_a.is_pressed():

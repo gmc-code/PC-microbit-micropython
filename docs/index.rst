@@ -32,17 +32,18 @@ Index:
     breadboards/Edge_Connector.rst
 
     breadboards/LEDs_with_resistors.rst
-    breadboards/LEDs_with_resistors_2.rst
 
     breadboards/Piezo_Buzzer_and_music.rst
 
     breadboards/Motor_with_transistor.rst
-    breadboards/Motor_with_transistor_2.rst
 
     breadboards/Potentiometer.rst
     breadboards/Potentiometer_with_LED.rst
 
-
+    breadboards/Organising_code_with_definitions.rst
+    breadboards/Organising_with_selection_and_definitions.rst
+    breadboards/LEDs_with_resistors_2.rst
+    breadboards/Motor_with_transistor_2.rst
 
 
 .. toctree::
