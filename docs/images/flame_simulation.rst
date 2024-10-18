@@ -19,7 +19,7 @@ The Flame simulation
     import microbit
     import random
 
-    # User adjustable values for speed of animation; use b button
+    # User adjustable values for speed of animation; use B-button
     MIN_SLEEP = 0
     MAX_SLEEP = 100
     # set button-B value to adjust sleep times in increments
@@ -38,7 +38,7 @@ The Flame simulation
     DISPLAY_HEIGHT = 5
 
     # flame can be oriented in either direction; True has top of flame at top of microbit
-    INVERT_DISPLAY = True 
+    INVERT_DISPLAY = True
 
     # MASK to create fire shape. multiplies values %
     MASK = [

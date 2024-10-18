@@ -236,7 +236,7 @@ Write analog
 | ``write_analog`` can have values from 0 to 1023.
 | ``write_analog`` can be used to dim the LED.
 
-| Here is some sample code making use of ``write_analog`` on pin0.
+| Here is some sample code that cycles through a brightness list using ``write_analog`` on pin0.
 
 .. code-block:: python
 
@@ -367,7 +367,6 @@ Write analog
 
     #. Investigate the use of the randrange function for creating random light displays. See: https://www.w3schools.com/python/ref_random_randrange.asp
     #. Investigate the use of the choice function for creating random light displays. Use ``pin_list = [pin0, pin1, pin2]`` to make a list of pins to choose from. See: https://www.w3schools.com/python/ref_random_choice.asp.
-    #. V2 microbit: Use power module so that the b button puts the microbit into a deep sleep for 10 minutes. Wake it on pressing the A-button. Turn on random LEDS at random brightness every 3 seconds, then off.
 
     .. dropdown::
         :icon: codescan
@@ -413,40 +412,5 @@ Write analog
                         sleep(100)
 
 
-            .. tab-item:: Q3
-
-                .. code-block:: python
-
-                    from microbit import *
-                    import random
-                    import power
-
-
-                    pin_list = [pin0, pin1, pin2]
-
-
-                    def random_pin_brightness():
-                        rand_val = random.randrange(0, 1024)
-                        rand_pin = random.choice(pin_list)
-                        rand_pin.write_analog(rand_val)
-
-
-                    def turnoff():
-                        pin0.write_digital(0)
-                        pin1.write_digital(0)
-                        pin2.write_digital(0)
-
-                    @run_every(s=3)
-                    def wakeup_call():
-                        random_pin_brightness()
-                        sleep(2000)
-                        turnoff()
-
-
-                    while True:
-                        if button_b.was_pressed():
-                            sleep(300)
-                            power.deep_sleep(wake_on=button_a,ms=600 * 1000,run_every=False)
-                        sleep(1000)
 
 

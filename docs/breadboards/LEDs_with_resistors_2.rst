@@ -284,7 +284,7 @@ Write analog
 | ``write_analog`` can have values from 0 to 1023.
 | ``write_analog`` can be used to dim the LED.
 
-| Here is some sample code making use of ``write_analog`` on pin0.
+| Here is some sample code that cycles through a brightness list using ``write_analog`` on pin0.
 
 .. code-block:: python
 
@@ -416,7 +416,6 @@ Write analog
                             sleep(sleep_time)
 
 
-
                     def pulse_all_diff_off():
                         sleep_time = 50
                         step_size = 30
@@ -441,7 +440,6 @@ Write analog
 
     #. Investigate the use of the randrange function for creating random light displays. See: https://www.w3schools.com/python/ref_random_randrange.asp
     #. Investigate the use of the choice function for creating random light displays. Use ``pin_list = [pin0, pin1, pin2]`` to make a list of pins to choose from. See: https://www.w3schools.com/python/ref_random_choice.asp.
-    #. V2 microbit: Use power module so that the b button puts the microbit into a deep sleep for 10 minutes. Wake it on pressing the A-button. Turn on random LEDS at random brightness every 3 seconds, then off.
 
     .. dropdown::
         :icon: codescan
@@ -494,7 +492,23 @@ Write analog
                         sleep(100)
 
 
-            .. tab-item:: Q3
+----
+
+Advanced: deep sleep
+-----------------------
+
+.. admonition:: Exercises
+
+    #. V2 microbit: Use power module so that the B-button puts the microbit into a deep sleep for 10 minutes. Wake it on pressing the A-button. Turn on random LEDS at random brightness every 3 seconds, then off.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
 
                 .. code-block:: python
 
@@ -529,5 +543,6 @@ Write analog
                             sleep(300)
                             power.deep_sleep(wake_on=button_a,ms=600 * 1000,run_every=False)
                         sleep(1000)
+
 
 
