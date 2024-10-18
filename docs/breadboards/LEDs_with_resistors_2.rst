@@ -1,6 +1,10 @@
 ==========================
-LEDs_with_resistors
+EXT: LEDs_with_resistors
 ==========================
+
+The examples below use definition blocks to better organize the code.
+
+----
 
 Connections
 --------------------------
@@ -67,11 +71,19 @@ Turn on and off pin0
     from microbit import *
 
 
+    def turnon_0():
+        pin0.write_digital(1)
+
+
+    def turnoff_0():
+        pin0.write_digital(0)
+
+
     while True:
         if button_a.is_pressed():
-            pin0.write_digital(1)
+            turnon_0()
         elif button_b.is_pressed():
-            pin0.write_digital(0)
+            turnoff_0()
         sleep(500)
 
 ----
@@ -87,25 +99,33 @@ Blink All
     from microbit import *
 
 
+    def blink_all_in_sequence():
+        pin0.write_digital(1)
+        sleep(1000)
+        pin0.write_digital(0)
+        pin1.write_digital(1)
+        sleep(300)
+        pin1.write_digital(0)
+        pin2.write_digital(1)
+        sleep(1000)
+        pin2.write_digital(0)
+
+
+    def blink_all():
+        pin0.write_digital(1)
+        pin1.write_digital(1)
+        pin2.write_digital(1)
+        sleep(1000)
+        pin0.write_digital(0)
+        pin1.write_digital(0)
+        pin2.write_digital(0)
+
+
     while True:
         if button_a.is_pressed():
-            pin0.write_digital(1)
-            sleep(1000)
-            pin0.write_digital(0)
-            pin1.write_digital(1)
-            sleep(300)
-            pin1.write_digital(0)
-            pin2.write_digital(1)
-            sleep(1000)
-            pin2.write_digital(0)
+            blink_all_in_sequence()
         elif button_b.is_pressed():
-            pin0.write_digital(1)
-            pin1.write_digital(1)
-            pin2.write_digital(1)
-            sleep(1000)
-            pin0.write_digital(0)
-            pin1.write_digital(0)
-            pin2.write_digital(0)
+            blink_all()
         sleep(500)
 
 ----
@@ -121,13 +141,15 @@ Blink using for i in range
     from microbit import *
 
 
-    while True:
+    def blink0():
         for i in range(3):
             pin0.write_digital(1)
             sleep(1000)
             pin0.write_digital(0)
             sleep(1000)
-        sleep(10000)
+
+
+    blink0()
 
 
 ----
@@ -156,18 +178,26 @@ Blink using for i in range
                     from microbit import *
 
 
+                    def do_A():
+                        pin0.write_digital(0)
+                        pin1.write_digital(0)
+                        pin2.write_digital(1)
+
+
+                    def do_B():
+                        pin0.write_digital(0)
+                        pin1.write_digital(1)
+                        pin2.write_digital(0)
+                        sleep(3000)
+                        pin0.write_digital(1)
+                        pin1.write_digital(0)
+
+
                     while True:
                         if button_a.is_pressed():
-                            pin0.write_digital(0)
-                            pin1.write_digital(0)
-                            pin2.write_digital(1)
+                            do_A()
                         elif button_b.is_pressed():
-                            pin0.write_digital(0)
-                            pin1.write_digital(1)
-                            pin2.write_digital(0)
-                            sleep(3000)
-                            pin0.write_digital(1)
-                            pin1.write_digital(0)
+                            do_B()
                         sleep(500)
 
             .. tab-item:: Q2
@@ -179,23 +209,31 @@ Blink using for i in range
                     from microbit import *
 
 
+                    def blink_A():
+                        for i in range(3):
+                            pin0.write_digital(1)
+                            pin1.write_digital(1)
+                            sleep(1000)
+                            pin0.write_digital(0)
+                            pin1.write_digital(0)
+                            sleep(1000)
+
+
+                    def blink_B():
+                        for i in range(3):
+                            pin1.write_digital(1)
+                            pin2.write_digital(1)
+                            sleep(1000)
+                            pin1.write_digital(0)
+                            pin2.write_digital(0)
+                            sleep(1000)
+
+
                     while True:
                         if button_a.is_pressed():
-                            for i in range(3):
-                                pin0.write_digital(1)
-                                pin1.write_digital(1)
-                                sleep(1000)
-                                pin0.write_digital(0)
-                                pin1.write_digital(0)
-                                sleep(1000)
+                            blink_A()
                         elif button_b.is_pressed():
-                            for i in range(3):
-                                pin1.write_digital(1)
-                                pin2.write_digital(1)
-                                sleep(1000)
-                                pin1.write_digital(0)
-                                pin2.write_digital(0)
-                                sleep(1000)
+                            blink_B()
                         sleep(500)
 
             .. tab-item:: Q3
@@ -207,19 +245,31 @@ Blink using for i in range
                     from microbit import *
 
 
+                    def red_on():
+                        pin0.write_digital(1)
+                        pin1.write_digital(0)
+                        pin2.write_digital(0)
+
+
+                    def yellow_on():
+                        pin0.write_digital(0)
+                        pin1.write_digital(1)
+                        pin2.write_digital(0)
+
+
+                    def green_on():
+                        pin0.write_digital(0)
+                        pin1.write_digital(0)
+                        pin2.write_digital(1)
+
+
                     while True:
                         if button_a.is_pressed() and button_b.is_pressed():
-                            pin0.write_digital(1)
-                            pin1.write_digital(0)
-                            pin2.write_digital(0)
+                            red_on()
                         elif button_a.is_pressed():
-                            pin0.write_digital(0)
-                            pin1.write_digital(1)
-                            pin2.write_digital(0)
+                            yellow_on()
                         elif button_b.is_pressed():
-                            pin0.write_digital(0)
-                            pin1.write_digital(0)
-                            pin2.write_digital(1)
+                            green_on()
                         sleep(500)
 
 ----
@@ -239,23 +289,29 @@ Write analog
     from microbit import *
 
 
+    def pulse_on():
+        sleep_time = 40
+        step_size = 30
+        for i in range(0, 1024, step_size):
+            pin0.write_analog(i)
+            sleep(sleep_time)
+        pin0.write_analog(0)
+
+
+    def pulse_off():
+        sleep_time = 40
+        step_size = 30
+        for i in range(1023, -1, -step_size):
+            pin0.write_analog(i)
+            sleep(sleep_time)
+        pin0.write_analog(0)
+
+
     while True:
         if button_a.is_pressed():
-            # pulse_on
-            sleep_time = 40
-            step_size = 30
-            for i in range(0, 1024, step_size):
-                pin0.write_analog(i)
-                sleep(sleep_time)
-            pin0.write_analog(0)
+            pulse_on()
         elif button_b.is_pressed():
-            # pulse_off
-            sleep_time = 40
-            step_size = 30
-            for i in range(1023, -1, -step_size):
-                pin0.write_analog(i)
-                sleep(sleep_time)
-            pin0.write_analog(0)
+            pulse_off()
         sleep(500)
 
 ----
@@ -281,25 +337,31 @@ Write analog
                     from microbit import *
 
 
+                    def pulse_all_on():
+                        sleep_time = 40
+                        step_size = 30
+                        for i in range(0, 1024, step_size):
+                            pin0.write_analog(i)
+                            pin1.write_analog(i)
+                            pin2.write_analog(i)
+                            sleep(sleep_time)
+
+
+                    def pulse_all_off():
+                        sleep_time = 40
+                        step_size = 30
+                        for i in range(1023, -1, -step_size):
+                            pin0.write_analog(i)
+                            pin1.write_analog(i)
+                            pin2.write_analog(i)
+                            sleep(sleep_time)
+
+
                     while True:
                         if button_a.is_pressed():
-                            # pulse_all_on
-                            sleep_time = 40
-                            step_size = 30
-                            for i in range(0, 1024, step_size):
-                                pin0.write_analog(i)
-                                pin1.write_analog(i)
-                                pin2.write_analog(i)
-                                sleep(sleep_time)
+                            pulse_all_on()
                         elif button_b.is_pressed():
-                            # pulse_all_off
-                            sleep_time = 40
-                            step_size = 30
-                            for i in range(1023, -1, -step_size):
-                                pin0.write_analog(i)
-                                pin1.write_analog(i)
-                                pin2.write_analog(i)
-                                sleep(sleep_time)
+                            pulse_all_off()
                         sleep(500)
 
             .. tab-item:: Q2
@@ -311,26 +373,33 @@ Write analog
                     from microbit import *
 
 
+                    def pulse_all_diff_on():
+                        sleep_time = 50
+                        step_size = 30
+                        for i in range(0, 1704, step_size):
+                            pin0.write_analog(min(1023, i))
+                            pin1.write_analog(max(0, min(1023, i - 340)))
+                            pin2.write_analog(max(0, min(1023, i - 680)))
+                            sleep(sleep_time)
+
+
+
+                    def pulse_all_diff_off():
+                        sleep_time = 50
+                        step_size = 30
+                        for i in range(1704, -1, -step_size):
+                            pin0.write_analog(min(1023, i))
+                            pin1.write_analog(max(0, min(1023, i - 340)))
+                            pin2.write_analog(max(0, min(1023, i - 680)))
+                            sleep(sleep_time)
+                        pin0.write_analog(0)
+
+
                     while True:
                         if button_a.is_pressed():
-                            # pulse_all_diff_on
-                            sleep_time = 50
-                            step_size = 30
-                            for i in range(0, 1704, step_size):
-                                pin0.write_analog(min(1023, i))
-                                pin1.write_analog(max(0, min(1023, i - 340)))
-                                pin2.write_analog(max(0, min(1023, i - 680)))
-                                sleep(sleep_time)
+                            pulse_all_diff_on()
                         elif button_b.is_pressed():
-                            # pulse_all_diff_off
-                            sleep_time = 50
-                            step_size = 30
-                            for i in range(1704, -1, -step_size):
-                                pin0.write_analog(min(1023, i))
-                                pin1.write_analog(max(0, min(1023, i - 340)))
-                                pin2.write_analog(max(0, min(1023, i - 680)))
-                                sleep(sleep_time)
-                            pin0.write_analog(0)
+                            pulse_all_diff_off()
                         sleep(500)
 
  ----
@@ -356,8 +425,7 @@ Write analog
                     import random
 
 
-                    while True:
-                        # random_colors
+                    def random_colors():
                         rand_val = random.randrange(0, 1024)
                         rand_pin = random.randrange(0, 3)
                         if rand_pin = 0:
@@ -366,6 +434,10 @@ Write analog
                             pin1.write_analog(rand_val)
                         elif rand_pin = 2:
                             pin2.write_analog(rand_val)
+
+
+                    while True:
+                        random_colors()
                         sleep(100)
 
             .. tab-item:: Q2
@@ -377,11 +449,15 @@ Write analog
 
                     pin_list = [pin0, pin1, pin2]
 
-                    while True:
-                        # random_pin_brightness
+
+                    def random_pin_brightness():
                         rand_val = random.randrange(0, 1024)
                         rand_pin = random.choice(pin_list)
                         rand_pin.write_analog(rand_val)
+
+
+                    while True:
+                        random_pin_brightness()
                         sleep(100)
 
 
