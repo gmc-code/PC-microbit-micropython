@@ -2,8 +2,8 @@
 LEDs_with_resistors
 ==========================
 
-| The examples below use sequence without definition blocks which are preferred to better organize the code.
-| See https://pc-microbit-micropython.readthedocs.io/en/latest/breadboards/LEDs_with_resistors_2.html
+| The examples below use sequence only. No definition blocks are used.
+| For better organising code into def blocks see: https://pc-microbit-micropython.readthedocs.io/en/latest/breadboards/LEDs_with_resistors_2.html
 
 ----
 Connections
@@ -83,7 +83,7 @@ Turn on and off pin0
 Blink All
 ----------------------------------------
 
-| Pressing A blinks all 3 LEDS in order.
+| Pressing A blinks all 3 LEDS in order, one after the other.
 | Pressing B blinks all 3 LEDS together.
 
 .. code-block:: python
@@ -118,7 +118,7 @@ Blink using for i in range
 ----------------------------------------
 
 | Repeated blinking can be done with a for-loop.
-| The for-loop below runs 3 times, with i values of 0, 1, and 2.
+| The for-loop below runs 3 times.
 
 .. code-block:: python
 
@@ -131,7 +131,7 @@ Blink using for i in range
             sleep(1000)
             pin0.write_digital(0)
             sleep(1000)
-        sleep(10000)
+        sleep(3000)
 
 
 ----
@@ -237,6 +237,30 @@ Write analog
 | ``write_analog`` can be used to dim the LED.
 
 | Here is some sample code making use of ``write_analog`` on pin0.
+
+.. code-block:: python
+
+    from microbit import *
+
+    brightness = [0, 205, 511, 716, 1023]
+    sleep_time = 250
+    while True:
+        if button_a.is_pressed():
+            # pulse_on
+            for i in brightness:
+                pin0.write_analog(i)
+                sleep(sleep_time)
+            pin0.write_analog(0)
+        elif button_b.is_pressed():
+            # pulse_off
+            for i in brightness
+                pin0.write_analog(1023-i)
+                sleep(sleep_time)
+            pin0.write_analog(0)
+        sleep(500)
+
+
+| Here is some sample code which pulses the LED on and off.
 
 .. code-block:: python
 

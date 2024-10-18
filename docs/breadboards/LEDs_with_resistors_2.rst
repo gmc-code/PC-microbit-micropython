@@ -91,7 +91,7 @@ Turn on and off pin0
 Blink All
 ----------------------------------------
 
-| Pressing A blinks all 3 LEDS in order.
+| Pressing A blinks all 3 LEDS in order, one after the other.
 | Pressing B blinks all 3 LEDS together.
 
 .. code-block:: python
@@ -134,7 +134,7 @@ Blink using for i in range
 ----------------------------------------
 
 | Repeated blinking can be done with a for-loop.
-| The for-loop below runs 3 times, with i values of 0, 1, and 2.
+| The for-loop below runs 3 times.
 
 .. code-block:: python
 
@@ -149,7 +149,9 @@ Blink using for i in range
             sleep(1000)
 
 
-    blink0()
+    while True:
+        blink0()
+        sleep(3000)
 
 
 ----
@@ -283,6 +285,37 @@ Write analog
 | ``write_analog`` can be used to dim the LED.
 
 | Here is some sample code making use of ``write_analog`` on pin0.
+
+.. code-block:: python
+
+    from microbit import *
+
+    brightness = [0, 205, 511, 716, 1023]
+    sleep_time = 250
+
+    def pulse_on():
+        for i in brightness:
+            pin0.write_analog(i)
+            sleep(sleep_time)
+        pin0.write_analog(0)
+
+
+    def pulse_off():
+        for i in brightness
+            pin0.write_analog(1023-i)
+            sleep(sleep_time)
+        pin0.write_analog(0)
+
+
+    while True:
+        if button_a.is_pressed():
+            pulse_on()
+        elif button_b.is_pressed():
+            pulse_off()
+        sleep(500)
+
+
+| Here is some sample code which pulses the LED on and off.
 
 .. code-block:: python
 
