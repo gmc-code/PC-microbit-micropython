@@ -61,7 +61,6 @@ Library
 
 | For use of the buzzer on the breadboard, set the speaker to off so that the in-built speaker does not also play sounds.
 
-
 ----
 
 Playing music notes
@@ -70,12 +69,11 @@ Playing music notes
 .. py:function::  music.play(music, pin=pin0, wait=True, loop=False)
 
     | Play the music.
-    | If music can be a string, such as 'c1:4', or a list of notes as strings, such as ['c', 'd', 'e']
+    | If music can be a string, such as 'c4:4', or a list of notes as strings, such as ['c', 'd', 'e']
     | The duration and octave values are reset to their defaults before the music is played.
     | The output pin can be used to override the default pin0. Use pin=None to prevent sounds being played.
     | If wait is set to True, playing is blocking, and the music will be played to the end.
     | If loop is set to True, the music repeats until stop is called.
-
 
 ----
 
@@ -83,12 +81,12 @@ Notes
 ----------------------------------------
 
 | An individual note is specified thus: ``NOTE[octave][:duration]``.
-| Notes are the letters a to g. Lower case or upper case are the same.
-| If the octave is left out it defaults to 4 (containing middle C).
-| If the duration is left out it defaults to 4 (a crotchet).
-| For example, ``a2:4`` refers to the note “A” in octave 2 that lasts for four ticks (a tick is an arbitrary length of time defined by a tempo setting function). If the note name R is used then it is treated as a rest (silence).
+| Notes are the letters "a" to "g". "R" is a rest. Lower case or upper case are the same. eg. "a" and "A"
 | Accidentals (flats and sharps) are denoted by the b (flat - a lower case b) and # (sharp - a hash symbol).
 | For example, ``Ab`` is A-flat and ``C#`` is C-sharp.
+| If the octave is left out it defaults to 4 (containing middle C).
+| If the duration is left out it defaults to 4 (a crotchet).
+| For example, ``a4:8`` refers to the note "A" in octave 4 that lasts for eight ticks (a tick is an arbitrary length of time defined by a tempo setting function). If the note name R is used then it is treated as a rest (silence).
 | The octave and duration parameters are states that carry over to subsequent notes until re-specified.
 | The tempo can be set using ``music.set_tempo(ticks=4, bpm=120)``
 
@@ -119,11 +117,11 @@ Notes
 
 ----
 
+
 .. admonition:: Tasks
 
     #. Play the 5 notes: c, e, g, e, c.
-    #. Play the 5 notes: c, e, g, e, c with a tempo of 120, 180 and 240bpm.
-    #. Design a function that takes a tempo list of 120, 240, 360 , 480 and 600 bpm as one parameter and a sleep_time with default value 1000. Use a repeat loop to set the tempo and play the notes_list.
+    #. Play the 3 notes: 'e4:4', 'f#', 'g'
 
     .. dropdown::
         :icon: codescan
@@ -150,6 +148,57 @@ Notes
 
             .. tab-item:: Q2
 
+                Play the 3 notes: 'e4:4', 'f#', 'g'
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import music
+
+                    speaker.off()
+                    notes_list = ['e4:4', 'f#', 'g']
+
+                    while True:
+                        music.play(notes_list)
+                        sleep(1000)
+
+----
+
+Tempo
+-----------
+
+.. py:function::  music.set_tempo(ticks=4, bpm=120)
+
+    Sets the tempo for playback.
+
+    A number of ticks, expressed as an integer, make a beat. The default is 4 ticks per beat.
+
+    Each beat is to be played at a certain frequency, beats per minute, expressed as an integer. The default is 120 bpm.
+
+| Examples of use:
+| music.set_tempo() - reset the tempo to default of ticks = 4, bpm = 120
+| music.set_tempo(ticks=8) - change the beat to 8 ticks
+| music.set_tempo(bpm=240) - just change the tempo to 240 beats per minute
+
+| The length of a beat in milliseconds is (60 sec * 1000 / bpm).
+| For the default value of 120 bpm, that's 60000/120 or 1 beat in 500 milliseconds.
+
+----
+
+.. admonition:: Tasks
+
+    #. Play the 5 notes: c, e, g, e, c with a tempo of 120, 180 and 240bpm.
+    #. Design a function that takes a tempo list of 120, 240, 360 , 480 and 600 bpm as one parameter and a sleep_time with default value 1000. Use a repeat loop to set the tempo and play the notes_list.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
                 Play the 5 notes: c, e, g, e, c with a tempo of 120, 180 and 240bpm.
 
                 .. code-block:: python
@@ -171,7 +220,7 @@ Notes
                         music.play(notes_list)
                         sleep(1000)
 
-            .. tab-item:: Q3
+            .. tab-item:: Q2
 
                 Design a function that takes a tempo list of 120, 240, 360, 480 and 600 bpm as one parameter and a sleep_time with default value 1000. Use a repeat loop to set the tempo and play the notes_list.
 
@@ -195,6 +244,8 @@ Notes
 
 ----
 
+Other music methods
+-----------------------
 
 .. py:function::  music.stop(pin=pin0)
 
@@ -208,21 +259,6 @@ Notes
 
     ticks = 4; bpm = 120; duration = 4; octave = 4
 
-.. py:function::  music.set_tempo(ticks=4, bpm=120)
-
-    Sets the tempo for playback.
-
-    A number of ticks, expressed as an integer, make a beat. The default is 4 ticks per beat.
-
-    Each beat is to be played at a certain frequency, beats per minute, expressed as an integer. The default is 120 bpm.
-
-| Examples of use:
-| music.set_tempo() - reset the tempo to default of ticks = 4, bpm = 120
-| music.set_tempo(ticks=8) - change the beat to 8 ticks
-| music.set_tempo(bpm=240) - just change the tempo to 240 beats per minute
-
-| The length of a beat in milliseconds is (60 sec * 1000 / bpm).
-| For the default value of 120 bpm, that's 60000/120 or 1 beat in 500 milliseconds.
 
 .. py:function::  music.get_tempo()
 
@@ -256,7 +292,7 @@ Notes
 
 ----
 
-Tuple unpacking for advanced users
+Tuple unpacking of get_tempo()
 -------------------------------------
 
 | For advanced users, tuple unpacking can be used instead of indices:
@@ -496,7 +532,6 @@ All Built in melodies
                         music.play(random.choice(melodies_list))
                         sleep(1000)
 
-----
 ----
 
 **V2** volume

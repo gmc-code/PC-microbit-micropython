@@ -5,7 +5,7 @@ Radio shift cipher
 Caesar cipher
 -----------------
 
-| The **Caesar cipher**, also known as **Caesar's cipher**, the **shift cipher**, **Caesar's code**, or **Caesar shift**, is one of the simplest and most widely known encryption techniques. 
+| The **Caesar cipher**, also known as **Caesar's cipher**, the **shift cipher**, **Caesar's code**, or **Caesar shift**, is one of the simplest and most widely known encryption techniques.
 | It is a type of substitution cipher in which each letter in the plaintext is replaced by a letter some fixed number of positions down the alphabet.
 
 | For example, with a right shift of 3, A would be replaced by D, B would become E, and so on.
@@ -25,20 +25,20 @@ Caesar cipher
 Break the code
 -------------------------
 
-| The gif below has a caesar cipher shift of 1 place. Can you decode it? 
+| The gif below has a caesar cipher shift of 1 place. Can you decode it?
 
 .. image:: images/caesar_shift_time_is_key.gif
     :scale: 80 %
     :align: center
 
-| This script uses radio communication for sending and receiving encrypted messages. 
-| The script sets up a radio group, defines a list of secret phrases, and implements a Caesar shift cipher function for encryption. 
-| When the A-button is pressed, it selects a random secret message, applies the Caesar cipher with a small random shift, sends the encrypted message via radio, and starts a timer. 
-| If button B is pressed, it stops the timer and displays the elapsed time. 
+| This script uses radio communication for sending and receiving encrypted messages.
+| The script sets up a radio group, defines a list of secret phrases, and implements a Caesar shift cipher function for encryption.
+| When the A-button is pressed, it selects a random secret message, applies the Caesar cipher with a small random shift, sends the encrypted message via radio, and starts a timer.
+| If button B is pressed, it stops the timer and displays the elapsed time.
 | For the receiver, the script also checks for incoming radio messages and displays them on the microbit's LED display.
 
 .. code-block:: python
-    
+
     from microbit import *
     import radio
     import random
@@ -123,22 +123,22 @@ Break the code
 Code breaker: brute force
 -------------------------
 
-| The term “brute force” in the context of decryption refers to the method of trying all possible keys until the correct one is found. 
+| The term "brute force" in the context of decryption refers to the method of trying all possible keys until the correct one is found.
 | In the case of a Caesar cipher, which is used in the code below, the key is the shift value used to encrypt the original message.
-| Since there are only 25 possible shifts (for the 26 letters of the alphabet), it's feasible to try all of them to decrypt the message. 
-| This is exactly what the code does when it receives an encrypted message: it applies each possible shift and displays the result, effectively “brute forcing” the decryption.
+| Since there are only 25 possible shifts (for the 26 letters of the alphabet), it's feasible to try all of them to decrypt the message.
+| This is exactly what the code does when it receives an encrypted message: it applies each possible shift and displays the result, effectively "brute forcing" the decryption.
 
 | Sender:
-| If button A is pressed, a random secret message is selected, encrypted using the Caesar cipher with a random shift, and then sent via the radio. 
-| The original message is also scrolled on the microbit's LED display. 
+| If button A is pressed, a random secret message is selected, encrypted using the Caesar cipher with a random shift, and then sent via the radio.
+| The original message is also scrolled on the microbit's LED display.
 | If button B is pressed, the elapsed time since button A was pressed is calculated and displayed.
 | Receiver:
-| The program continuously checks for incoming radio messages. 
-| If a message is received, it attempts to decrypt it by applying all possible shifts in the Caesar cipher and scrolling each attempt on the display. 
+| The program continuously checks for incoming radio messages.
+| If a message is received, it attempts to decrypt it by applying all possible shifts in the Caesar cipher and scrolling each attempt on the display.
 | If button B is pressed during this process, the decryption attempts stop and the current decrypted message is displayed.
 
 .. code-block:: python
-        
+
     from microbit import *
     import radio
     import random

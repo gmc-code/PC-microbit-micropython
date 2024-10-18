@@ -1,5 +1,5 @@
 ==========================
-EXT: LEDs_with_resistors
+DEFS: LEDs_with_resistors
 ==========================
 
 The examples below use definition blocks to better organize the code.

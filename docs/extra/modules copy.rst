@@ -14,7 +14,7 @@ The output is:
 
 .. table:: Microbit modules
    :widths: auto
-=============     =============     =============     ============= 
+=============     =============     =============     =============
 __main__          machine           power             urandom
 antigravity       math              radio             ustruct
 audio             microbit          speech            usys
@@ -22,12 +22,12 @@ builtins          micropython       this              utime
 gc                music             uarray
 log               neopixel          ucollections
 love              os                uerrno
-=============     =============     =============     ============= 
+=============     =============     =============     =============
 
 | Use the REPL and the reset button (or command D) to see the output from the print function after flashing to the microbit.
 
 .. code-block:: python
-    
+
     from microbit import *
 
     print(help('modules'))
@@ -151,13 +151,13 @@ usys
 
 .. py:function::  usys.platform()
 
-    The platform that MicroPython is running on. 
+    The platform that MicroPython is running on.
 
 .. py:function::  usys.implementation()
 
     Object with information about the current MicroPython implementation with following attributes:
 
-    name - string “micropython”
+    name - string "micropython"
 
     version - tuple (major, minor, micro), e.g. (1, 15, 0)
 

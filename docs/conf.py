@@ -57,7 +57,7 @@ pygments_style = 'sphinx'
 # The theme to use for HTML and HTML Help pages.
 # See the documentation for a list of builtin themes.
 
-html_theme = 'sphinx_rtd_theme' 
+html_theme = 'sphinx_rtd_theme'
 
 # The name for this set of Sphinx documents.  If None, it defaults to
 # "<project> v<release> documentation".
@@ -84,7 +84,7 @@ html_theme_options = {
     'style_external_links': True,  # True to Add an icon next to external links
     # 'style_nav_header_background': 'blue',
     'style_nav_header_background': 'linear-gradient(to right, blueviolet 15%, limegreen 50%, royalblue 80%)',
-    # Toc options; 
+    # Toc options;
     'collapse_navigation': True,  # False so nav entries have the [+] icons
     'sticky_navigation': False,  # True so the nav scrolls with main page
     'navigation_depth': 2,  # -1 for no limit, slow to build
@@ -226,7 +226,7 @@ latex_elements['maketitle'] = r'''
 # sphinx latex see https://www.sphinx-doc.org/en/master/latex.html
 # InnerLinkColor default {rgb}{0.208, 0.374, 0.486}. linkcolor and citecolor.
 # OuterLinkColor default {rgb}{0.216, 0.439, 0.388}. filecolor, menucolor, and urlcolor.
-# TitleColor default {rgb}{0.126, 0.263, 0.361}. titles(as configured via use of package “titlesec”.)
+# TitleColor default {rgb}{0.126, 0.263, 0.361}. titles(as configured via use of package "titlesec".)
 
 # do not use r' string for latex_elements['sphinxsetup'].
 

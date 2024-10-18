@@ -13,8 +13,8 @@ abs
 
 .. function:: abs(number)
 
-    Returns the absolute value of a number. 
-    Arguments can be integers or floating-point numbers. 
+    Returns the absolute value of a number.
+    Arguments can be integers or floating-point numbers.
 
 | The code deletes the file at index 1 in the list.
 
@@ -25,7 +25,7 @@ abs
 
     while True:
         display.scroll(abs(-2.3))
- 
+
 ----
 
 all
@@ -46,7 +46,7 @@ all
         display.scroll(all(all_list1))
         display.scroll("_")
         display.scroll(all(all_list2))
- 
+
 ----
 
 any
@@ -68,7 +68,7 @@ any
         display.scroll(any(all_list1))
         display.scroll("_")
         display.scroll(any(all_list2))
- 
+
 ----
 
 bin
@@ -76,7 +76,7 @@ bin
 
 .. function:: bin()
 
-    Convert an integer to a binary string prefixed with “0b”.
+    Convert an integer to a binary string prefixed with "0b".
 
 .. code-block:: python
 
@@ -130,7 +130,7 @@ bytearray
 
 .. class:: bytearray()
 
-    | Returns a new bytes array. 
+    | Returns a new bytes array.
     | From a given length, e.g. bytearray(1) is zero-filled (\x00)
     | From an iterable of integers, e.g. bytearray(range(4))
     | From text given the encoding, e.g. bytearray("mb", 'utf-8')
@@ -178,7 +178,7 @@ bytes
     print(val2)
     print(val3)
     print(val4)
-    
+
 ----
 
 callable
@@ -195,7 +195,7 @@ callable
 
     def add2(a, b):
         return a + b
-        
+
     print(callable(add2))
     print(callable(0))
     print(callable("mb"))
@@ -231,10 +231,10 @@ See: https://www.programiz.com/python-programming/methods/built-in/classmethod
     | Class methods can be called on a class or on an instance.
 
 .. code-block:: python
-    
+
     from microbit import *
     # import builtins
-    
+
     class Person:
         age = 15
 
@@ -251,10 +251,10 @@ See: https://www.programiz.com/python-programming/methods/built-in/classmethod
 | Using a decorator instead:
 
 .. code-block:: python
-    
+
     from microbit import *
     # import builtins
-    
+
     class Person:
         age = 15
 
@@ -273,18 +273,18 @@ complex
 
 .. class:: complex([real[, imag]])
 
-    | Returns a complex number with a value of real + imag * 1J, or converts a string or number to a complex number. 
-    |  If the first parameter is a character string, it is interpreted as a complex number and must be called without a second parameter. 
-    | The second parameter cannot be a character string. 
+    | Returns a complex number with a value of real + imag * 1J, or converts a string or number to a complex number.
+    |  If the first parameter is a character string, it is interpreted as a complex number and must be called without a second parameter.
+    | The second parameter cannot be a character string.
     | Each argument can be of any numeric type (including complex numbers).
-    | If imag is omitted, the default value is zero, and the constructor performs numerical conversion like int and float. 
+    | If imag is omitted, the default value is zero, and the constructor performs numerical conversion like int and float.
     | If both arguments are omitted, 0j is returned.
 
 .. code-block:: python
-    
+
     from microbit import *
     # import builtins
-    
+
     print(complex(1, 2))
     print(complex(1))
     print(complex("1"))
@@ -297,13 +297,13 @@ delattr
 
 .. function:: delattr(obj, name)
 
-    | An argument is an object and a string. 
-    | The string must be a property of the object. 
+    | An argument is an object and a string.
+    | The string must be a property of the object.
     | If the object allows it, the function deletes the specified property.
     | Such as delattr(x, 'foobar') equivalent to del x.foobar.
 
 .. code-block:: python
-    
+
     from microbit import *
     # import builtins
 
@@ -312,7 +312,7 @@ delattr
         y = -5
         z = 0
 
-    point1 = Coordinate() 
+    point1 = Coordinate()
 
     print('x = ',point1.x)
     print('y = ',point1.y)
@@ -327,7 +327,7 @@ delattr
     # Trigger error
     print('z = ',point1.z)
 
-    
+
 ----
 
 dict
@@ -350,12 +350,12 @@ dict() Function to create a dictionary
     dict(a='a', b='b', t='t')     # enter keyword
     {'a': 'a', 'b': 'b', 't': 't'}
     dict(zip(['one', 'two', 'three'], [1, 2, 3]))   # Mapping function mode to construct dictionary
-    {'three': 3, 'two': 2, 'one': 1} 
+    {'three': 3, 'two': 2, 'one': 1}
     dict([('one', 1), ('two', 2), ('three', 3)])    # Iterative object method to construct the dictionary
     {'three': 3, 'two': 2, 'one': 1}
-        
 
-    
+
+
 ----
 
 dir
@@ -367,7 +367,7 @@ dir() When a function has no parameters, it returns the list of variables, metho
 If the parameter contains  __dir__(), if it doesn't contains __dir__(), This method will maximize the collection of parameter information.
 - ``object`` -- object, variable, type.
 
-    
+
 ----
 
 divmod
@@ -375,7 +375,7 @@ divmod
 
 .. function:: divmod()
 
-It takes two (non complex) numbers as arguments and returns a pair of quotients and remainder when integer division is performed. Mixed operand type, applicable to the rules of higher arithmetic operators. 
+It takes two (non complex) numbers as arguments and returns a pair of quotients and remainder when integer division is performed. Mixed operand type, applicable to the rules of higher arithmetic operators.
 For integers, results are consistent with (a // b, a % b). For floating-point numbers, the result is (q, a % b) , q is usually math.floor(a / b) but it might be smaller than 1.
 In any case, Q * B + a% B and a are basically equal; if a% B is not zero, Its symbol is the same as B, and 0 < = ABS (a% B) < ABS (b).
 
@@ -406,7 +406,7 @@ Ellipsis
 
     def test_def():
         ...
-        
+
     while True:
         if test_def() is None:
             display.scroll("...")
@@ -431,7 +431,7 @@ enumerate() Function is used to combine a traversable data object (such as a lis
         seq = ['one', 'two', 'three']
          for i, element in enumerate(seq):
    ...     print i, element
-   ... 
+   ...
     0 one
     1 two
     2 three
@@ -483,7 +483,7 @@ exec Execute Python statements stored in strings or files, Exec can execute more
     # Single line statement string
          exec("print ('runoob.com')")
     runoob.com
-    
+
     #  Single line statement string
          exec ("""for i in range(5):
    ...     print ("iter time: %d" % i)
@@ -493,7 +493,7 @@ exec Execute Python statements stored in strings or files, Exec can execute more
     iter time: 2
     iter time: 3
     iter time: 4
-    
+
 ----
 
 filter
@@ -507,10 +507,10 @@ Used to filter sequence and filter out unqualified elements, Returns an iterator
 - ``iterable`` -- Iterable objects.
 
 Filter out all the odd numbers in the list::
- 
+
     def is_odd(n):
         return n % 2 == 1
-    
+
     tmplist = filter(is_odd, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
     new_list = list(tmplist)
     print(new_list)
@@ -548,10 +548,10 @@ Functions for formatting strings str.format(), It enhances string formatting. fo
 
         "{} {}".format("hello", "world")    # Do not set the specified location, in the default order.
     'hello world'
-    
+
          "{0} {1}".format("hello", "world")  # Set specified location
     'hello world'
-    
+
          "{1} {0} {1}".format("hello", "world")  # Set specified location
     'world hello world
 
@@ -568,7 +568,7 @@ Used to return an object property value.
 
         class A(object):
    ...     bar = 1
-   ... 
+   ...
          a = A()
          getattr(a, 'bar')        # Get property bar value
     1
@@ -606,8 +606,8 @@ Judgement object if it contains corresponding attributes.
         x = 10
         y = -5
         z = 0
-    
-    point1 = Coordinate() 
+
+    point1 = Coordinate()
     print(hasattr(point1, 'x'))
     print(hasattr(point1, 'y'))
     print(hasattr(point1, 'z'))
@@ -627,7 +627,7 @@ hash
 
 .. function:: hash(object)
 
-Returns the hash value of the object, (if any). Hash value is an integer. The quick key  use to compare elements in the dictionary. Numeric variables of the same size have the same hash value. 
+Returns the hash value of the object, (if any). Hash value is an integer. The quick key  use to compare elements in the dictionary. Numeric variables of the same size have the same hash value.
 
 ----
 
@@ -636,7 +636,7 @@ help
 
 .. function:: help([object])
 
-Check the detail description for purpose of the function or module. 
+Check the detail description for purpose of the function or module.
 
 ----
 
@@ -645,7 +645,7 @@ hex
 
 .. function:: hex(x)
 
-Converts an integer to a lowercase hexadecimal string prefixed with “0x”.
+Converts an integer to a lowercase hexadecimal string prefixed with "0x".
 
 ::
 
@@ -661,7 +661,7 @@ id
 
 .. function:: id([object])
 
-Get the id of the object. 
+Get the id of the object.
 
 ----
 
@@ -680,10 +680,10 @@ int
 .. class:: int([x])
 .. class:: int(x,base=10)
 
-Converts a string or number to an integer. 
+Converts a string or number to an integer.
 
-- ``x`` -- String or number. 
-- ``base`` -- Decimal number, default decimal 
+- ``x`` -- String or number.
+- ``base`` -- Decimal number, default decimal
 
 ----
 
@@ -693,14 +693,14 @@ isinstance
 .. function:: isinstance(object, classinfo)
 
 Returns true if the object argument is an instance of the classInfo argument, or an instance of a (direct, indirect, or virtual) subclass.
-If the object is not an object of the given type, the function always returns false. Returns true if classInfo is a tuple of object type (or multiple recursion element groups), and if object is an instance of any of them.  
+If the object is not an object of the given type, the function always returns false. Returns true if classInfo is a tuple of object type (or multiple recursion element groups), and if object is an instance of any of them.
 If classInfo is neither a type nor a type tuple or a recursive tuple of type, a typeError exception will be triggered.
 
 
 .. admonition:: isinstance() and type() differences
 
     - `type()` does not consider a subclass as a parent type, and does not consider inheritance.
-    - `isinstance()` Consider that the subclass is a parent type, and consider inheritance relationship. 
+    - `isinstance()` Consider that the subclass is a parent type, and consider inheritance relationship.
 
     *to judge whether two types are the same, recommended to use isinstance()。*
 
@@ -720,10 +720,10 @@ In other cases, a typeError exception will be triggered.
         pass
     class B(A):
         pass
-        
+
     print(issubclass(B,A))    # return True
 
-    
+
 ----
 
 iter
@@ -731,8 +731,8 @@ iter
 
 .. function:: iter(object[, sentinel])
 
-Used to generate iterators. 
-- ``object`` -- Object gather that support iterations. 
+Used to generate iterators.
+- ``object`` -- Object gather that support iterations.
 - ``sentinel`` -- If the second parameter is sent, the parameter object must be a callable object (such as a function). At this time, ITER creates an iterator object, which will be called every time the iterator object's __next__() method, object is called.
 
 ::
@@ -740,7 +740,7 @@ Used to generate iterators.
         lst = [1, 2, 3]
          for i in iter(lst):
    ...     print(i)
-   ... 
+   ...
     1
     2
     3
@@ -752,14 +752,14 @@ len
 
 .. function:: len()
 
-Returns the length of an object (character, list, tuple, etc.) or the number of items. 
+Returns the length of an object (character, list, tuple, etc.) or the number of items.
 ::
 
         str = "runoob"
-         len(str)             # String length 
+         len(str)             # String length
     6
          l = [1,2,3,4,5]
-         len(l)               # Number of list elements 
+         len(l)               # Number of list elements
     5
 
 ----
@@ -769,7 +769,7 @@ list
 
 .. class:: list()
 
-Used to convert a tuple or string to a list. 
+Used to convert a tuple or string to a list.
 
 ::
 
@@ -793,17 +793,17 @@ locals
 
 .. function:: locals()
 
-Returns all local variables in the current location as dictionary type. 
+Returns all local variables in the current location as dictionary type.
 
 ::
 
         def runoob(arg):    # Two local variables: arg、z
    ...     z = 1
    ...     print (locals())
-   ... 
+   ...
          runoob(4)
     {'z': 1, 'arg': 4}      # Returns a dictionary of name / value pairs
-        
+
 
 ----
 
@@ -812,21 +812,21 @@ map
 
 .. function:: map(function, iterable,...)
 
-map() The specified sequence is mapped according to the provided function. Returns an iterator that applies a function to each item in Iterable and outputs its result.  
-If an additional Iterable parameter is entered, the function must accept the same number of arguments and be applied to items obtained in parallel from all iteratable objects. 
-When there are multiple iterable objects, the whole iteration will end when the shortest one is exhausted. 
+map() The specified sequence is mapped according to the provided function. Returns an iterator that applies a function to each item in Iterable and outputs its result.
+If an additional Iterable parameter is entered, the function must accept the same number of arguments and be applied to items obtained in parallel from all iteratable objects.
+When there are multiple iterable objects, the whole iteration will end when the shortest one is exhausted.
 
 ::
 
-        def square(x) :            # compute square sum 
+        def square(x) :            # compute square sum
    ...     return x ** 2
-   ... 
+   ...
          map(square, [1,2,3,4,5])   # compute the square sum of each element list
     [1, 4, 9, 16, 25]
          map(lambda x: x ** 2, [1, 2, 3, 4, 5])  # use lambda anonymous function
     [1, 4, 9, 16, 25]
-    
-    # Two lists are provided to add the list data in the same location 
+
+    # Two lists are provided to add the list data in the same location
          map(lambda x, y: x + y, [1, 3, 5, 7, 9], [2, 4, 6, 8, 10])
     [3, 7, 11, 15, 19]
 
@@ -837,7 +837,7 @@ max
 
 .. function:: max()
 
-Returns the maximum value of the given parameter, which can be a sequence 
+Returns the maximum value of the given parameter, which can be a sequence
 
 ::
 
@@ -873,7 +873,7 @@ Returns the memory view object for the given parameter. The so-called memory vie
     <memoryview>
          bytes(v[1:4)
     b'bce'
-        
+
 
 ----
 
@@ -882,7 +882,7 @@ min
 
 .. function:: min()
 
-Returns the minimum value of a given parameter, which can be a sequence. 
+Returns the minimum value of a given parameter, which can be a sequence.
 ::
 
     print ("min(80, 100, 1000) : ", min(80, 100, 1000))
@@ -945,7 +945,7 @@ Convert an integer to an octal string.
     '024'
          oct(15)
     '017'
-        
+
 
 ----
 
@@ -961,7 +961,7 @@ open() The common form of a function is to receive two parameters: file name and
 
     open(file, mode='r')
 
-mode Is an optional string that specifies the mode of opening the file. The default value is ' r ' , which means it opens in text mode and reads. Other common modes are: write 'w' (Truncate existing files)  ; 
+mode Is an optional string that specifies the mode of opening the file. The default value is ' r ' , which means it opens in text mode and reads. Other common modes are: write 'w' (Truncate existing files)  ;
 Exclusive creation 'x'  ; write to add 'a'  (On some UNIX systems, no matter where the current file pointer is, all writes are appended to the end of the file) 。Available modes are:
 
 =========  =================================
@@ -992,7 +992,7 @@ This is the inverse function of chr(). It takes a string (Unicode character) as 
     97
          ord('€')
     8364
-        
+
 
 ----
 
@@ -1001,7 +1001,7 @@ pow
 
 .. function:: pow(x, y[, z])
 
-Returns the value of X Y (Y power of x). 
+Returns the value of X Y (Y power of x).
 
 ::
 
@@ -1024,10 +1024,10 @@ print
 
 .. function:: print(*objects, sep=' ', end='\n', file=sys.stdout)
 
-In printout, the most common function. 
+In printout, the most common function.
 
     - ``objects`` : Plural, indicating that multiple objects can be output once. When printing multiple objects, separate them.
-    - ``sep`` : Use a space as the interval to separate the multiple objects. 
+    - ``sep`` : Use a space as the interval to separate the multiple objects.
     - ``end`` : Used to set what to end with. The default value is newline \n.
     - ``file`` : The object to write.
 
@@ -1045,7 +1045,7 @@ In printout, the most common function.
     aaabbb
          print("aaa","bbb")
     aaa bbb
-        
+
          print("www","w3school","com",sep=".") # Set the interval space
     www.w3school.com
 
@@ -1056,23 +1056,23 @@ property
 
 .. decorator:: property()
 
-property() Function to return property values in a new class. Using the 'property' function as a decorator can easily create read-only properties: 
+property() Function to return property values in a new class. Using the 'property' function as a decorator can easily create read-only properties:
 
 Property's getter, setter and delete methods can also be used as decorators::
 
     class C(object):
         def __init__(self):
             self._x = None
-    
+
         @property
         def x(self):
             """I'm the 'x' property."""
             return self._x
-    
+
         @x.setter
         def x(self, value):
             self._x = value
-    
+
         @x.deleter
         def x(self):
             del self._x
@@ -1097,7 +1097,7 @@ Function syntax:
     range(0, 5)
          for i in range(5):
    ...     print(i)
-   ... 
+   ...
     0
     1
     2
@@ -1107,7 +1107,7 @@ Function syntax:
     [0, 1, 2, 3, 4]
     list(range(0))
     []
-        
+
 
 For case with two or three parameters (second construction method)::
 
@@ -1119,8 +1119,8 @@ For case with two or three parameters (second construction method)::
     [0, -1, -2, -3, -4, -5, -6, -7, -8, -9]
          list(range(1, 0))
     []
-        
-        
+
+
 
 
 ----
@@ -1139,7 +1139,7 @@ Returns a string containing a printable representation of an object.
          dict = {'baidu': 'baidu.com', 'google': 'google.com'}
          repr(dict)
     "{'google': 'google.com', 'baidu': 'baidu.com'}"
-        
+
 
 ----
 
@@ -1148,22 +1148,22 @@ reversed
 
 .. function:: reversed(seq)
 
-Returns an inverted iterator. 
+Returns an inverted iterator.
 
 ::
 
     # string
     seqString = 'Runoob'
     print(list(reversed(seqString)))
-    
+
     # tuple
     seqTuple = ('R', 'u', 'n', 'o', 'o', 'b')
     print(list(reversed(seqTuple)))
-    
+
     # range
     seqRange = range(5, 9)
     print(list(reversed(seqRange)))
-    
+
     # list
     seqList = [1, 2, 4, 3, 5]
     print(list(reversed(seqList)))
@@ -1237,7 +1237,7 @@ Assign values to existing properties::
 
         class A(object):
    ...     bar = 1
-   ... 
+   ...
          a = A()
          getattr(a, 'bar')          # get attribute bar value
     1
@@ -1249,12 +1249,12 @@ If the property does not exist, a new object property will be created and assign
 
         class A():
    ...     name = "runoob"
-   ... 
+   ...
          a = A()
          setattr(a, "age", 28)
          print(a.age)
     28
-        
+
 
 ----
 
@@ -1272,7 +1272,7 @@ sorted
 
 Sort all objects that can be iterated
 
-- ``iterable`` -- Iterable object. 
+- ``iterable`` -- Iterable object.
 - ``key`` -- It is mainly used to compare elements with only one parameter. The parameters of specific functions are taken from the iterable objects, and one element of the iterable objects is specified for sorting.
 - ``reverse`` -- collation, reverse=True descending order ,  reverse=False ascending order (default) 。
 
@@ -1287,14 +1287,14 @@ Using key to sort in reverse order::
          result_list = sorted(example_list, key=lambda x: x*-1)
          print(result_list)
     [7, 6, 5, 4, 3, 2, 1, 0]
-        
+
 
 To reverse sorting, also by passing into the third parameter::
 
         example_list = [5, 0, 6, 1, 2, 7, 3, 4]
          sorted(example_list, reverse=True)
     [7, 6, 5, 4, 3, 2, 1, 0]
-    
+
 ----
 
 staticmethod
@@ -1329,7 +1329,7 @@ Function to convert an object to a str object。
          dict = {'w3cschool': 'w3cschool', 'google': 'google.com'};
          str(dict)
     "{'google': 'google.com', 'w3cschool': 'w3cschool.cn'}"
-        
+
 
 ----
 
@@ -1375,7 +1375,7 @@ tuple
 
 .. class:: tuple()
 
-To convert list to tuple. 
+To convert list to tuple.
 
 ::
 
@@ -1391,13 +1391,13 @@ type
 
 .. function:: type()
 
-type() Function returns the type of object if ave only the first argument, Three parameters return the new type object. 
+type() Function returns the type of object if ave only the first argument, Three parameters return the new type object.
 
 - ``type(object)``
 - ``type(name, bases, dict)``
 
-    - ``name`` -- Name of the class. 
-    - ``bases`` -- Tuple of base class. 
+    - ``name`` -- Name of the class.
+    - ``bases`` -- Tuple of base class.
     - ``dict`` -- Dictionaries, namespace changes defined within classes.
 
 .. Hint:: isinstance() 与 type() differences
@@ -1417,10 +1417,10 @@ type() Function returns the type of object if ave only the first argument, Three
     <type 'list'>
          type({0:'zero'})
     <type 'dict'>
-         x = 1          
+         x = 1
          type( x ) == int    # Judge whether the types are equal
     True
-    
+
     # Three parameters
          class X(object):
    ...     a = 1
@@ -1436,7 +1436,7 @@ type() and isinstance() differences::
     s
     class B(A):
         pass
-    
+
     isinstance(A(), A)    # returns True
     type(A()) == A        # returns True
     isinstance(B(), A)    # returns True
@@ -1465,13 +1465,13 @@ We can use the list() transformation to output the list. If the number of elemen
     [(1, 4), (2, 5), (3, 6)]
          list(zip(a,c))              # The number of elements is consistent with the shortest list
     [(1, 4), (2, 5), (3, 6)]
-    
+
          a1, a2 = zip(*zip(a,b))          # 与 zip 相反, zip(*) It can be understood as decompression, returning to two-dimensional matrix
          list(a1)
     [1, 2, 3]
          list(a2)
     [4, 5, 6]
-        
+
 
 ----
 
@@ -1480,19 +1480,19 @@ Exceptions
 
 See: https://docs.python.org/3/library/exceptions.html
 
-.. exception:: ArithmeticError 
+.. exception:: ArithmeticError
 
 .. exception:: AssertionError
 
 .. exception:: AttributeError
 
-.. exception:: BaseException 
+.. exception:: BaseException
 
 .. exception:: EOFError
 
-.. exception:: Exception 
+.. exception:: Exception
 
-.. exception:: GeneratorExit 
+.. exception:: GeneratorExit
 
 .. exception:: ImportError
 
@@ -1504,7 +1504,7 @@ See: https://docs.python.org/3/library/exceptions.html
 
 .. exception:: KeyError
 
-.. exception:: LookupError 
+.. exception:: LookupError
 
 .. exception:: MemoryError
 
@@ -1514,11 +1514,11 @@ See: https://docs.python.org/3/library/exceptions.html
 
 .. exception:: OSError
 
-.. exception:: OverflowError 
+.. exception:: OverflowError
 
 .. exception:: RuntimeError
 
-.. exception:: StopAsyncIteration 
+.. exception:: StopAsyncIteration
 
 .. exception:: StopIteration
 
