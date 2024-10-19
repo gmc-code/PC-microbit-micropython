@@ -2,7 +2,7 @@
 Music
 ==========================
 
-| See: https://microbit-micropython.readthedocs.io/en/v2-docs/music.html
+| See: https://microbit-micropython.readthedocs.io/en/stable/music.html
 
 .. py:module:: music
 
@@ -13,10 +13,10 @@ Music
 
 ----
 
-Speaker **V2** 
+Speaker **V2**
 ---------------------
 
-| By default sound output will be via both pin0 and the **V2** built-in speaker. 
+| By default sound output will be via both pin0 and the **V2** built-in speaker.
 | The **V2** built-in speaker can be turned off or on without affecting playing via pin0.
 | When flashing a new script to the microbit, the **V2** built-in speaker will be on, unless the code sets it to off.
 
@@ -56,7 +56,7 @@ Play notes
     | If loop is set to True, the music repeats until stop is called. Set wait to False to use this.
 
 | Use ``music.play(note)`` to play a note given by the ``note`` variable.
-| The note is written as a string with quotes: 'c4:8'. 
+| The note is written as a string with quotes: 'c4:8'.
 | This is a c note in octave 4 with a duration of 8 ticks (a minim or 2 crotchet beats).
 
 .. code-block:: python
@@ -108,7 +108,7 @@ Play notes
 
             .. tab-item:: Q2
 
-                Play the notes c, e, g over and over again with 1 second between replays. 
+                Play the notes c, e, g over and over again with 1 second between replays.
 
                 .. code-block:: python
 
@@ -128,17 +128,17 @@ Notes
 
 | An individual note is specified as: ``NOTE[octave][:duration]``.
 
-| Notes are the letters a to g with or without an accidental (**#** for a sharp, **b** for a flat). 
-| Lower case or upper case notes are the same. eg. **A** and **a** are the same. 
+| Notes are the letters a to g with or without an accidental (**#** for a sharp, **b** for a flat).
+| Lower case or upper case notes are the same. eg. **A** and **a** are the same.
 | **Ab** is A-flat and **C#** is C-sharp.
 | Use **r** or **R** for a rest (silence).
 
 | If the octave is left out it defaults to 4 (containing middle C).
 | Octaves start on the note "C".
 | If the duration is left out it defaults to 4 (a crotchet).
-| For example, **a5:4** refers to the note "A" in octave 5 that lasts for four ticks (4 ticks is usually a crotchet beat). 
+| For example, **a5:4** refers to the note "A" in octave 5 that lasts for four ticks (4 ticks is usually a crotchet beat).
 
-| The octave and duration parameters are states that carry over to subsequent notes until re-specified. 
+| The octave and duration parameters are states that carry over to subsequent notes until re-specified.
 | e.g. ['c4:1', 'e', 'g5:8'] The `e` is octave 4 for 1 tick. The `g` is octave 5 for 8 ticks.
 
 ----
@@ -147,7 +147,7 @@ Notes
 
     #. Play the 5 notes: c, e, g, e, c in octave 4.
     #. Starting with C in octave 4, play the next 6 notes that are each one semitone higher than the previous note. Use sharps as needed.
-    #. Starting with G flat in octave 5, play the next 6 notes that are each one semitone lower than the previous note. Use flats as needed. 
+    #. Starting with G flat in octave 5, play the next 6 notes that are each one semitone lower than the previous note. Use flats as needed.
 
     .. dropdown::
         :icon: codescan
@@ -173,7 +173,7 @@ Notes
 
             .. tab-item:: Q2
 
-                Starting with C in octave 4, play the next 6 notes that are each one semitone higher than the previous note. Use sharps as needed. 
+                Starting with C in octave 4, play the next 6 notes that are each one semitone higher than the previous note. Use sharps as needed.
 
                 .. code-block:: python
 
@@ -188,7 +188,7 @@ Notes
 
             .. tab-item:: Q3
 
-                Starting with G flat in octave 5, play the next 6 notes that are each one semitone lower than the previous note. Use flats as needed. 
+                Starting with G flat in octave 5, play the next 6 notes that are each one semitone lower than the previous note. Use flats as needed.
 
                 .. code-block:: python
 
@@ -217,7 +217,7 @@ Tempo
 | music.set_tempo(ticks=8) - change the beat to 8 ticks
 | music.set_tempo(bpm=240) - just change the tempo to 240 beats per minute
 
-| The length of a beat in milliseconds is (60 sec * 1000 / bpm). 
+| The length of a beat in milliseconds is (60 sec * 1000 / bpm).
 | For the default value of 120 bpm, that's 60000/120 or 1 beat in 500 milliseconds, which is 2 beats per second.
 
 | The code below plays a list of notes.
@@ -288,7 +288,7 @@ Tempo
 .. admonition:: Tasks
 
     #. Play the 5 notes: c, e, g, e, c with a tempo of 120, 180 and 240bpm without a for-loop.
-    #. Play the 3 notes: 'e4:4', 'f#', 'g' with a tempo of 120, 180 and 240bpm using a for-loop for the tempos. 
+    #. Play the 3 notes: 'e4:4', 'f#', 'g' with a tempo of 120, 180 and 240bpm using a for-loop for the tempos.
     #. Design a function that takes the list of 3 notes ['e4:4', 'f#', 'g'] as one parameter; takes a tempo list of 120, 240, 360 , 480 and 600 bpm as a second parameter and a third parameter sleep_time with default value 1000. Use a repeat loop to set the tempo and play the notes_list.
 
     .. dropdown::
@@ -300,7 +300,7 @@ Tempo
 
             .. tab-item:: Q1
 
-                Play the 5 notes: c, e, g, e, c with a tempo of 120, 180 and 240bpm without a for-loop. 
+                Play the 5 notes: c, e, g, e, c with a tempo of 120, 180 and 240bpm without a for-loop.
 
                 .. code-block:: python
 
@@ -310,19 +310,19 @@ Tempo
                     notes_list = ['c4:4', 'e', 'g', 'e', 'c']
 
                     while True:
-                        music.set_tempo(bpm=120) 
+                        music.set_tempo(bpm=120)
                         music.play(notes_list)
                         sleep(1000)
-                        music.set_tempo(bpm=180) 
+                        music.set_tempo(bpm=180)
                         music.play(notes_list)
                         sleep(1000)
-                        music.set_tempo(bpm=240) 
+                        music.set_tempo(bpm=240)
                         music.play(notes_list)
                         sleep(1000)
 
             .. tab-item:: Q2
 
-                Play the 3 notes: 'e4:4', 'f#', 'g' with a tempo of 120, 180 and 240bpm using a for-loop for the tempos. 
+                Play the 3 notes: 'e4:4', 'f#', 'g' with a tempo of 120, 180 and 240bpm using a for-loop for the tempos.
 
                 .. code-block:: python
 
@@ -333,15 +333,15 @@ Tempo
 
                     while True:
                         for tempo in [120, 180, 240]:
-                            music.set_tempo(bpm=tempo) 
+                            music.set_tempo(bpm=tempo)
                             music.play(notes_list)
                             sleep(1000)
-        
+
 
             .. tab-item:: Q3
 
                 Design a function that takes the list of 3 notes ['e4:4', 'f#', 'g'] as one parameter; takes a tempo list of 120, 240, 360 , 480 and 600 bpm as a second parameter and a third parameter sleep_time with default value 1000. Use a repeat loop to set the tempo and play the notes_list.
- 
+
                 .. code-block:: python
 
                     from microbit import *
@@ -355,13 +355,13 @@ Tempo
                             music.set_tempo(bpm=tempo)
                             music.play(notes_list)
                             sleep(sleep_time)
-                        
+
                     while True:
                         tempo_play(notes_list, tempo_list, sleep_time=1000)
 
 ----
 
-Volume **V2** 
+Volume **V2**
 ---------------------
 
 .. py:function:: set_volume(volume)
@@ -463,7 +463,7 @@ Stop background music
 
 .. py:function::  music.stop(pin=pin0)
 
-    | Stops all music playback on the built-in speaker and any pin outputting sound. 
+    | Stops all music playback on the built-in speaker and any pin outputting sound.
     | An optional argument can be provided to specify a pin, eg. music.stop(pin=pin1).
 
 
@@ -477,8 +477,8 @@ Stop background music
     import music
 
     # Define the melody
-    melody1 = ['C4:4', 'C4:4', 'G4:4', 'G4:4', 
-                'A4:4', 'A4:4', 'G4:8', 
+    melody1 = ['C4:4', 'C4:4', 'G4:4', 'G4:4',
+                'A4:4', 'A4:4', 'G4:8',
                 'F4:4', 'F4:4', 'E4:4', 'E4:4',
                 'D4:4', 'D4:4', 'C4:8']
 
@@ -486,7 +486,7 @@ Stop background music
     music.play(melody1, wait=False, loop=True)
 
     display.scroll("A", wait=False, loop=True)
-    while True: 
+    while True:
         # Allow 2 seconds to choose to press the A-button
         sleep(2000)
         if button_a.was_pressed():
@@ -521,8 +521,8 @@ Stop background music
                     import music
 
                     # Define the melody
-                        melody1 = ['C4:4', 'C4:4', 'G4:4', 'G4:4', 
-                                    'A4:4', 'A4:4', 'G4:8', 
+                        melody1 = ['C4:4', 'C4:4', 'G4:4', 'G4:4',
+                                    'A4:4', 'A4:4', 'G4:8',
                                     'F4:4', 'F4:4', 'E4:4', 'E4:4',
                                     'D4:4', 'D4:4', 'C4:8',
                                     'R:16']
@@ -550,16 +550,16 @@ Stop background music
                     import music
 
                     # Define the first melody
-                    melody1 = ['E4:4', 'D:4', 'C:4', 'D:4', 
-                            'E:4', 'E:4', 'E:8', 
-                            'D:4', 'D:4', 'D:8', 
+                    melody1 = ['E4:4', 'D:4', 'C:4', 'D:4',
+                            'E:4', 'E:4', 'E:8',
+                            'D:4', 'D:4', 'D:8',
                             'E:4', 'G:4', 'G:8']
 
 
                     # Define the second melody
-                    melody2 = ['E4:4', 'D:4', 'C:4', 'D:4', 
+                    melody2 = ['E4:4', 'D:4', 'C:4', 'D:4',
                             'E:4', 'E:4', 'E:4', 'E:4',
-                            'D:4', 'D:4', 'E:4', 'D:4', 
+                            'D:4', 'D:4', 'E:4', 'D:4',
                             'C:16']
 
                     # Play the first melody
@@ -666,4 +666,3 @@ Custom tunes
                         sleep(1000)
 
 
-        

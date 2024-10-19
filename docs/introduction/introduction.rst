@@ -35,7 +35,7 @@ Key microbit references:
 
 | **microbit**:
 | latest:  https://microbit-micropython.readthedocs.io/en/latest/index.html
-| v2 from 2022: https://microbit-micropython.readthedocs.io/en/v2-docs/index.html
+| v2 from 2022: https://microbit-micropython.readthedocs.io/en/stable/index.html
 | v1 in 2021: https://microbit-micropython.readthedocs.io/en/v1.0.1/index.html
 | Features: https://microbit.org/get-started/user-guide/features-in-depth/
 | Microbit website: https://microbit.org/
@@ -140,7 +140,6 @@ For an introduction to python see:
 ----
 
 .. admonition:: Tip
-    
+
     If you are using a track-pad, navigate to various sections and pages by clicking on the same heading in the left sidebar twice, then use the arrow keys to move up and down.
 
-    

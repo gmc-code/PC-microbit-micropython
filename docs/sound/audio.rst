@@ -2,8 +2,8 @@
 Audio
 ==========================
 
-| See: https://microbit-micropython.readthedocs.io/en/v2-docs/audio.html
-| For control of the speaker and volume in V2 see: 
+| See: https://microbit-micropython.readthedocs.io/en/stable/audio.html
+| For control of the speaker and volume in V2 see:
 | https://pc-microbit-micropython.readthedocs.io/en/latest/lessons2/music.html#v2-volume
 
 ----
@@ -45,7 +45,7 @@ main controls
 
 ----
 
-**V2** Built-in sounds 
+**V2** Built-in sounds
 ------------------------
 
 The built-in sounds can be called using ``audio.play(Sound.NAME)``.

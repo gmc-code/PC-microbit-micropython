@@ -9,7 +9,7 @@ The reset button can be used to manually control the power modes of the microbit
 Sleep
 ------
 
-When powered by USB, press and hold power/reset for 5 seconds to enter sleep. The microbit power LED will dim from bright red to off. It will then flash on/off, showing you that it is still connected to the power source. Press power/reset to wake up. 
+When powered by USB, press and hold power/reset for 5 seconds to enter sleep. The microbit power LED will dim from bright red to off. It will then flash on/off, showing you that it is still connected to the power source. Press power/reset to wake up.
 
 Removing the USB power cable and re-adding it will also wake the microbit.
 
@@ -46,7 +46,7 @@ Power module
 --------------------------
 
 | This module lets you manage the power modes of the microbit V2.
-| See: https://microbit-micropython.readthedocs.io/en/v2-docs/power.html
+| See: https://microbit-micropython.readthedocs.io/en/stable/power.html
 
 ----
 
@@ -151,14 +151,14 @@ Deep Sleep
     :param ms: A time in milliseconds to wait before it wakes up.
     :param wake_on: A single instance or a tuple of pins and/or buttons to wake up the board, e.g. ``deep_sleep(wake_on=button_a)`` or ``deep_sleep(wake_on=(pin0, pin2, button_b))``.
     :param run_every: Set to ``True`` to wake up with each ``microbit.run_every`` scheduled run.
-    
-    
+
+
     | Set the microbit into a low power mode where it can wake up and continue operation.
     | The program state is preserved and when it wakes up it will resume operation where it left off.
     | Deep Sleep mode will consume more battery power than Off mode.
     | The wake up sources are configured via arguments.
     | If no wake up sources have been configured it will sleep until the reset button is pressed (which resets the board) or, if on battery power, when the USB cable is inserted.
-    | See: https://microbit-micropython.readthedocs.io/en/v2-docs/microbit.html
+    | See: https://microbit-micropython.readthedocs.io/en/stable/microbit.html
 
 
 | The code below uses button-B pressing to go into a deep sleep.
@@ -197,16 +197,16 @@ Deep sleep wake via run_every
     :param ms: Sets the millisecond mark for the scheduling.
 
     | Schedule to run a function at the interval specified by the time arguments.
-    | Each argument corresponds to a different time unit and they are additive. 
+    | Each argument corresponds to a different time unit and they are additive.
     | So run_every(min=1, s=30) schedules the callback every minute and a half.
 
 | **run_every** can be used in two ways:
 | As a **Decorator** - placed on top of the function to schedule. For example:
 
 .. code-block:: python
-    
+
     from microbit import *
-    
+
     @run_every(days=1, h=1, min=20, s=30, ms=50)
     def my_function():
         display.scroll("running decorator")
@@ -214,15 +214,15 @@ Deep sleep wake via run_every
 | As a **Function** - passing the callback as a positional argument. For example:
 
 .. code-block:: python
-    
+
     from microbit import *
-        
+
     def my_function():
         display.scroll("running function")
 
     run_every(my_function, s=30)
 
-    
+
 
 | The code below renews a deep sleep every 24 hours.
 | The microbit scrolls the temperature every 60 seconds
@@ -232,7 +232,7 @@ Deep sleep wake via run_every
 | The decorator, **@run_every(s=60)**, causes the wakeup_call() to run every 60 seconds.
 
 .. code-block:: python
-    
+
     from microbit import *
     import power
     import radio

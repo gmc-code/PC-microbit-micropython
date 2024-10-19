@@ -2,7 +2,7 @@
 Piezo_Buzzer_and_music
 ==========================
 
-| See: https://microbit-micropython.readthedocs.io/en/v2-docs/music.html
+| See: https://microbit-micropython.readthedocs.io/en/stable/music.html
 
 .. admonition:: Warning
 
@@ -444,7 +444,7 @@ Built in music
 
 
 | The code below uses a for-loop to loop through each melody in the ``melodies_list`` and play it.
-| For a list of built-in melodies see: https://microbit-micropython.readthedocs.io/en/v2-docs/music.html
+| For a list of built-in melodies see: https://microbit-micropython.readthedocs.io/en/stable/music.html
 
 .. code-block:: python
 

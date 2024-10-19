@@ -2,7 +2,7 @@
 Music built in melodies
 ==========================
 
-| See: https://microbit-micropython.readthedocs.io/en/v2-docs/music.html
+| See: https://microbit-micropython.readthedocs.io/en/stable/music.html
 
 .. py:module:: music
 
@@ -36,7 +36,7 @@ Built in music
 All Built in melodies
 ----------------------------------------
 
-| For a list of built-in melodies see: https://microbit-micropython.readthedocs.io/en/v2-docs/music.html
+| For a list of built-in melodies see: https://microbit-micropython.readthedocs.io/en/stable/music.html
 | The code below plays all the melodies.
 | the A-button can be used to stop all sounds by first breaking out of the ``for`` loop, then the ``while True`` loop.
 
@@ -116,7 +116,7 @@ Melody notes
     import music
 
     dadadadum = [
-        "r4:2", "g", "g", "g", "eb:8", 
+        "r4:2", "g", "g", "g", "eb:8",
         "r:2", "f", "f", "f", "d:8"
     ]
 
@@ -197,9 +197,9 @@ Melody notes
     power_down = ["g5:1", "d#", "c", "g4:2", "b:1", "c5:3"]
 
 
-    melodies = [dadadadum, entertainer, prelude, ode, nyan, 
-                ringtone, funk, blues, birthday, wedding, 
-                funeral, punchline, python, baddy, chase, 
+    melodies = [dadadadum, entertainer, prelude, ode, nyan,
+                ringtone, funk, blues, birthday, wedding,
+                funeral, punchline, python, baddy, chase,
                 ba_ding, wawawawaa, jump_up, jump_down, power_up, power_down]
 
     # Loop over each

@@ -5,6 +5,8 @@ gc module
 | Garbage Collector: A background process that runs in MicroPython to reclaim unused memory in the heap.
 | See: https://docs.micropython.org/en/latest/library/gc.html
 | Normally, a collection is triggered only when a new allocation cannot be satisfied, i.e. on an out-of-memory condition.
+| In most cases, the microbit handles memory management efficiently on its own.
+| However, if you are working on a memory-intensive application or notice memory issues, you can manually trigger the garbage collector using the gc module.
 
 ----
 
@@ -18,7 +20,7 @@ gc module
     import gc
 
     gc.enable()
-    
+
 ----
 
 .. py:function::  gc.disable()
@@ -61,7 +63,7 @@ gc module
     import gc
 
     gc.collect()
-    
+
 ----
 
 .. py:function::  gc.mem_alloc()
@@ -92,10 +94,10 @@ gc module
 
 .. py:function::  gc.threshold([amount])
 
-    | Set or query the additional GC allocation threshold.  
-    | A garbage collection will be triggered each time after the amount bytes have been allocated, since the previous time such an amount of bytes have been allocated. 
+    | Set or query the additional GC allocation threshold.
+    | A garbage collection will be triggered each time after the amount bytes have been allocated, since the previous time such an amount of bytes have been allocated.
     | **amount** is specified as less than the full heap size, (usually 64512), with the intention to trigger a collection earlier than when the heap becomes exhausted, and in the hope that an early collection will prevent excessive memory fragmentation.
-    | Calling the function without argument will return the current value of the threshold. 
+    | Calling the function without argument will return the current value of the threshold.
     | A value of -1 means a disabled allocation threshold.
 
 .. code-block:: python

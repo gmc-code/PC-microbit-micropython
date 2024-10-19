@@ -497,6 +497,34 @@ Write analog
 Advanced: deep sleep
 -----------------------
 
+1. **Imports**:
+    - `from microbit import *`: Imports all functions and classes from the micro:bit module.
+    - `import random`: Imports the random module for generating random numbers.
+    - `import power`: Imports the power module for managing power states.
+
+2. **Pin List**:
+    - Creates a list of pins (`pin0`, `pin1`, `pin2`) that will be used to control the micro:bit's pins.
+
+3. **Function: `random_pin_brightness`**:
+    - Generates a random value between 0 and 1023 (`rand_val`).
+    - Selects a random pin from `pin_list` (`rand_pin`).
+    - Writes the random value to the selected pin using analog output.
+
+4. **Function: `turnoff`**:
+    - Turns off all pins (`pin0`, `pin1`, `pin2`) by setting their digital output to 0.
+
+5. **Decorator and Function: `wakeup_call`**:
+    - The `@run_every(s=3)` decorator schedules the `wakeup_call` function to run every 3 seconds.
+    - `wakeup_call` calls `random_pin_brightness` to set a random pin to a random brightness.
+    - Sleeps for 2 seconds (`sleep(2000)`).
+    - Calls `turnoff` to turn off all pins.
+
+6. **Main Loop**:
+    - Continuously checks if button B is pressed.
+    - If button B is pressed, it sleeps for 300 milliseconds, then puts the micro:bit into deep sleep mode for 10 minutes (`600 * 1000` milliseconds), waking up on button A press.
+    - Sleeps for 1 second before checking again.
+
+
 .. admonition:: Exercises
 
     #. V2 microbit: Use power module so that the B-button puts the microbit into a deep sleep for 10 minutes. Wake it on pressing the A-button. Turn on random LEDS at random brightness every 3 seconds, then off.

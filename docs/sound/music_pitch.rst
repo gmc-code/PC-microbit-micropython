@@ -2,7 +2,7 @@
 Music pitch
 ==========================
 
-| See: https://microbit-micropython.readthedocs.io/en/v2-docs/music.html
+| See: https://microbit-micropython.readthedocs.io/en/stable/music.html
 
 .. py:module:: music
 
@@ -17,11 +17,11 @@ Sound effects using pitch
     | An optional argument to specify the output pin can be used to override the default of pin0. pin=None causes no sound to play.
     | If wait is set to True, this function is blocking.
 
-   
+
 | The code below increases the pitch in steps of 16 with playing duration of 20 ms.
 
 .. code-block:: python
-    
+
     from microbit import *
     import music
 
@@ -33,7 +33,7 @@ Sound effects using pitch
 | A-button pressing is required to make the sound.
 
 .. code-block:: python
-    
+
     from microbit import *
     import music
 
@@ -109,7 +109,7 @@ Sound effects using pitch
                             music.pitch(abs(accelerometer.get_x()) * 4, 25)
                         elif button_b.is_pressed():
                             music.pitch(abs(accelerometer.get_x()) * 4, 100)
-                    
+
 
 ----
 
@@ -121,7 +121,7 @@ Note frequencies
 
 ======= =========
 Note    Frequency
-======= =========                
+======= =========
 A4	    440
 B flat	466
 B	    494
@@ -147,7 +147,7 @@ F sharp	1480
 G	    1568
 A6 flat	1662
 A	    1760
-======= ========= 
+======= =========
 
 ----
 
@@ -224,7 +224,7 @@ A	    1760
     #. Begin with the scale Am_4 = [440, 494, 523, 587, 659, 698, 784, 880]. Use list comprehension to create a new list, Am_5, in which the frequencies are multiplied by 2, but include the condition that the frequency is not 440. Scroll the octave number, without blocking the sound, when the octave list sounds start. See: https://pc-python.readthedocs.io/en/latest/python_advanced/list_comprehensions.html
     #. Begin with the scale Am_4= [440, 494, 523, 587, 659, 698, 784, 880]. Use list comprehension to create a new list, Am_5, excluding 440 and a new list, Am_3, in which the frequencies are divided by 2, excluding 880. Scroll the octave number, without blocking the sound, when the octave list sounds start.
     #. Begin with the scale Am_4= [440, 494, 523, 587, 659, 698, 784, 880]. Use list comprehension to create a new list, Am_54_rev, which is the reverse of Am_4, excluding 880. Show an up arrow when Am_4 is played and a down arrow for Am_54_rev.
-    
+
     .. dropdown::
         :icon: codescan
         :color: primary
@@ -264,7 +264,7 @@ A	    1760
 
                     from microbit import *
                     import music
-                
+
 
                     Am_4 = [440, 494, 523, 587, 659, 698, 784, 880]
                     Am_5 = [freq * 2 for freq in Am_4 if freq != 440]
@@ -291,7 +291,7 @@ A	    1760
                 .. code-block:: python
 
                     from microbit import *
-                    import music                            
+                    import music
 
                     Am_4 = [440, 494, 523, 587, 659, 698, 784, 880]
                     Am_4_rev = [freq for freq in Am_4[::-1] if freq != 880]

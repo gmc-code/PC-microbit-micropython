@@ -5,7 +5,7 @@ EXT: First Use **V2**
 Firmware
 ------------
 
-| Some Microbits can have their firmware updated depending on the microbit version. 
+| Some Microbits can have their firmware updated depending on the microbit version.
 | See: https://microbit.org/get-started/user-guide/firmware/
 | See: https://tech.microbit.org/software/daplink-interface/#daplink-software
 
@@ -41,15 +41,15 @@ Out of Box hex file v2
 
     def on_logo_touched():
         while pin_logo.is_touched():
-            display.show(Image("99999:"*int(microphone.sound_level()/51)))  
+            display.show(Image("99999:"*int(microphone.sound_level()/51)))
             # Display a bar graph with a height proportional to the sound level; 255 is max level
             sleep(5)
         display.clear()
 
     def on_gesture_screen_down():
-        # https://microbit-micropython.readthedocs.io/en/v2-docs/audio.html#built-in-sounds-v2
+        # https://microbit-micropython.readthedocs.io/en/stable/audio.html#built-in-sounds-v2
         display.show(Image.ASLEEP)
-        sound_effect = audio.SoundEffect(freq_start=5849, freq_end=1, vol_start=255, vol_end=0, duration=1000, 
+        sound_effect = audio.SoundEffect(freq_start=5849, freq_end=1, vol_start=255, vol_end=0, duration=1000,
                     waveform=audio.SoundEffect.WAVEFORM_SINE,shape=audio.SoundEffect.SHAPE_LINEAR)
         audio.play(sound_effect, wait=False)
 
@@ -82,4 +82,4 @@ Out of Box hex file v2
             display.show("")
         sleep(500)
 
-    
+

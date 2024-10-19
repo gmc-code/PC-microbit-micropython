@@ -70,7 +70,7 @@ Import the microbit library
 
 Blank Lines
 ------------------------------------------
-    
+
 | All microbit libraries or modules are imported at the top of the file.
 | Place **1 blank line** following the the importing of libraries to separate those lines from the rest of the code.
 | The PEP8 guide states that there should be 1 blank line after the library imports. In more advanced code, classes or definitions should have 2 blank lines before and after them. So 2 blank lines after importing is used when followed by a class or definition.
@@ -149,7 +149,7 @@ Blank Lines
 | Importing using ``from module_name import *`` is not recommended for general python use.
 | It is used here to keep the microbit syntax shorter.
 
-| On other websites, references to the microbit library syntax may have ``microbit.`` before the function or method. 
+| On other websites, references to the microbit library syntax may have ``microbit.`` before the function or method.
 | e.g ``microbit.display.scroll("Hi")``
 | This is because it assumes that the microbit library has been imported using ``import microbit``.
 | When importing the microbit library using: ``from microbit import *``, the ``microbit.`` prefix is omitted.
@@ -163,11 +163,11 @@ Micropython API
 | The main reference for using micropython with the microbit is at:
 | https://microbit-micropython.readthedocs.io/en/v1.0.1/index.html
 | For new microbits (v2) from 2022 see:
-| https://microbit-micropython.readthedocs.io/en/v2-docs/index.html
+| https://microbit-micropython.readthedocs.io/en/stable/index.html
 
 | For a list of what is available in the microbit library see:
 | https://microbit-micropython.readthedocs.io/en/v1.0.1/microbit_micropython_api.html
 | For new microbits (v2) from 2022 see:
-| https://microbit-micropython.readthedocs.io/en/v2-docs/microbit_micropython_api.html
+| https://microbit-micropython.readthedocs.io/en/stable/microbit_micropython_api.html
 
 

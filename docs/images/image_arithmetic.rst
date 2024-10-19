@@ -2,7 +2,7 @@
 Image arithmetic
 ====================================================
 
-See: https://microbit-micropython.readthedocs.io/en/v2-docs/image.html
+See: https://microbit-micropython.readthedocs.io/en/stable/image.html
 
 Image objects
 -----------------------------
@@ -118,7 +118,7 @@ Invert
 .. code-block:: python
 
     from microbit import *
-    
+
     img1 = Image()
     img1_inverted = img1.invert()
     display.show(img1_inverted)
@@ -138,7 +138,7 @@ Invert
 
 | When inverted, a pixel of brightness 0 becomes 9, 1 becomes 8, 2 becomes 7,....8 becomes 1, 9 becomes 0.
 
-.. list-table:: 
+.. list-table::
     :widths: 50 50
     :header-rows: 0
     :class: table_images
@@ -158,11 +158,11 @@ Invert
 .. code-block:: python
 
     from microbit import *
-    
+
     img1 = Image('11111:33333:55555:77777:99999')
     img1_inverted = img1.invert()
 
-.. list-table:: 
+.. list-table::
     :widths: 50 50
     :header-rows: 0
     :class: table_images
@@ -180,7 +180,7 @@ Invert
 .. code-block:: python
 
     from microbit import *
-    
+
     img1 = Image.HAPPY
     img1_inverted = img1.invert()
     display.show(img1_inverted)
@@ -304,7 +304,7 @@ Image of a single string character
                         sleep(200)
 
             .. tab-item:: Q2
-                
+
                 Modify the code to create images of "m" and an inverted "m".
 
                 .. code-block:: python
@@ -358,7 +358,7 @@ Adding Image pixels
 
 | The code below adds the SAD image and the HAPPY image.
 
-.. list-table:: 
+.. list-table::
     :widths: 33 33 33
     :header-rows: 0
     :class: table_images
@@ -579,7 +579,7 @@ Multiplying and dividing Image pixels
     from microbit import *
 
     img_m9 = Image("m")
-    img_m1 = img_m9 / 9 
+    img_m1 = img_m9 / 9
     img_m6 = img_m1 * 6
 
     while True:
@@ -615,7 +615,7 @@ Multiplying and dividing Image pixels
                     from microbit import *
 
                     img_w9 = Image("w")
-                    img_w1 = img_w9 / 9 
+                    img_w1 = img_w9 / 9
                     img_w4 = img_w1 * 4
 
                     while True:
@@ -636,10 +636,10 @@ Multiplying and dividing Image pixels
                     from microbit import *
 
                     img_m9 = Image("m")
-                    img_m1 = img_m9  / 9 
+                    img_m1 = img_m9  / 9
                     img_m6 = img_m1 * 6
                     img_w9 = Image("w")
-                    img_w1 = img_w9  / 9 
+                    img_w1 = img_w9  / 9
                     img_w3 = img_w1 * 3
                     img_m6_w3 = img_m6 + img_w3
 
@@ -698,7 +698,7 @@ Pulsing HEART
                 .. code-block:: python
 
                     from microbit import *
-                    
+
                     img9 = Image.HEART
                     img1 = img9 / 9
                     pulses_per_min = 100
@@ -731,7 +731,7 @@ See: https://www.w3schools.com/python/python_lists_comprehension.asp
 .. code-block:: python
 
     from microbit import *
-    
+
     square_9to0_list = [Image().invert()*(i/9) for i in range(9, -1, -1)]
 
     while True:
@@ -746,7 +746,7 @@ See: https://www.w3schools.com/python/python_lists_comprehension.asp
 .. code-block:: python
 
     from microbit import *
-    
+
     img0 = Image()
     img0.fill(1)
     square_9to0_list = [img0 * i for i in range(9, -1, -1)]
@@ -764,7 +764,7 @@ See: https://www.w3schools.com/python/python_lists_comprehension.asp
     #. Modify the code to create a simple square brightness animation from 0 to 9 at different speeds set by the delay value.
     #. Modify the code to create a series of images of a sad face with brightness of 9, 7, 5, 3, 1 using list comprehension.
     #. Modify the code to create a series of images of a sad face with brightness of 1, 3, 5, 7, 9 using list comprehension.
-    
+
     .. dropdown::
         :icon: codescan
         :color: primary
@@ -836,7 +836,7 @@ Pulsing Images
     | Pulse_delay defaults to 100 ms. It is the time between each image.
 
 | Pulse_image uses the image_brightness function to produce an image with the given brightness.
-| Pixels in the original image with a brightness of 5 or more are included; other pixels will be off. 
+| Pixels in the original image with a brightness of 5 or more are included; other pixels will be off.
 
 .. code-block:: python
 
@@ -851,7 +851,7 @@ Pulsing Images
     def pulse_image(img, pulse_delay=100):
         img_list1 = [image_brightness(img, i) for i in range(0, 10, 1)]
         img_list2 = [image_brightness(img, i) for i in range(9, -1, -1)]
-        display.show(img_list1 + img_list2, delay=pulse_delay, wait=True) 
+        display.show(img_list1 + img_list2, delay=pulse_delay, wait=True)
 
 
     while True:
@@ -865,7 +865,7 @@ Pulsing Images
     #. Modify the code to pulse a series of faces.
     #. Add a for-loop to pulse each face 3 times before changing to the next face.
     #. Replace the image_brightness function with **image_brightness_with_inverted** to create a combined image that has the inverted image of complimentary brightness. e.g. original image of brightness 2 added to inverted image of brightness 7. Rename pulse_image to **pulse_image_inverted** to include the new **image_brightness_with_inverted**.
-    
+
     .. dropdown::
         :icon: codescan
         :color: primary
@@ -890,7 +890,7 @@ Pulsing Images
                     def pulse_image(img, pulse_delay=100):
                         img_list1 = [image_brightness(img, i) for i in range(0, 10, 1)]
                         img_list2 = [image_brightness(img, i) for i in range(9, -1, -1)]
-                        display.show(img_list1 + img_list2, delay=pulse_delay, wait=True) 
+                        display.show(img_list1 + img_list2, delay=pulse_delay, wait=True)
 
 
                     animal_images = [
@@ -902,8 +902,8 @@ Pulsing Images
                                         Image.GIRAFFE,
                                         Image.SNAKE,
                                     ]
-                                    
-                        
+
+
                     while True:
                         for img in animal_images:
                             pulse_image(img, 50)
@@ -926,13 +926,13 @@ Pulsing Images
                     def pulse_image(img, pulse_delay=100):
                         img_list1 = [image_brightness(img, i) for i in range(0, 10, 1)]
                         img_list2 = [image_brightness(img, i) for i in range(9, -1, -1)]
-                        display.show(img_list1 + img_list2, delay=pulse_delay, wait=True) 
+                        display.show(img_list1 + img_list2, delay=pulse_delay, wait=True)
 
 
                     images = [Image.HAPPY, Image.SMILE, Image.SAD, Image.CONFUSED,
                         Image.ANGRY, Image.ASLEEP, Image.SURPRISED, Image.SILLY,
-                        Image.FABULOUS, Image.MEH]    
-                        
+                        Image.FABULOUS, Image.MEH]
+
                     while True:
                         for img in images:
                             pulse_image(img, 50)
@@ -953,13 +953,13 @@ Pulsing Images
                     def pulse_image(img, pulse_delay=100):
                         img_list1 = [image_brightness(img, i) for i in range(0, 10, 1)]
                         img_list2 = [image_brightness(img, i) for i in range(9, -1, -1)]
-                        display.show(img_list1 + img_list2, delay=pulse_delay, wait=True) 
+                        display.show(img_list1 + img_list2, delay=pulse_delay, wait=True)
 
 
                     images = [Image.HAPPY, Image.SMILE, Image.SAD, Image.CONFUSED,
                         Image.ANGRY, Image.ASLEEP, Image.SURPRISED, Image.SILLY,
-                        Image.FABULOUS, Image.MEH]    
-                        
+                        Image.FABULOUS, Image.MEH]
+
                     while True:
                         for img in images:
                             for _ in range(3):
@@ -982,13 +982,13 @@ Pulsing Images
                     def pulse_image_inverted(img, pulse_delay=100):
                         img_list1 = [image_brightness_with_inverted(img, i) for i in range(0, 10, 1)]
                         img_list2 = [image_brightness_with_inverted(img, i) for i in range(9, -1, -1)]
-                        display.show(img_list1 + img_list2, delay=pulse_delay, wait=True) 
+                        display.show(img_list1 + img_list2, delay=pulse_delay, wait=True)
 
 
                     images = [Image.HAPPY, Image.SMILE, Image.SAD, Image.CONFUSED,
                         Image.ANGRY, Image.ASLEEP, Image.SURPRISED, Image.SILLY,
-                        Image.FABULOUS, Image.MEH]    
-                        
+                        Image.FABULOUS, Image.MEH]
+
                     while True:
                         for img in images:
                             for _ in range(3):

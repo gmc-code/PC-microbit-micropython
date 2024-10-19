@@ -235,11 +235,14 @@ Index:
     :numbered:
 
     extra/modules.rst
-    extra/builtins_module.rst
+    extra/microbit_module.rst
+    extra/power_module.rst
     extra/os_module.rst
     extra/machine_module.rst
+    extra/builtins_module.rst
+
     extra/gc_module.rst
-    extra/antigravity love this.rst
+    extra/antigravity_love_this.rst
 
 
     ..extra/utime_module.rst

@@ -54,7 +54,7 @@ any
 
 .. function:: any(iterable)
 
-    If any element of `iterable` is true, return `True` . If the iterator is empty, return to `False`.
+    If any element of `iterable` is true, return `True`. If the iterator is empty, return `False`.
 
 
 .. code-block:: python
