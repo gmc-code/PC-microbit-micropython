@@ -1,5 +1,5 @@
 ====================================================
-def: Organising with selection and definitions
+def: Organising code with definitions
 ====================================================
 
 Definitions
