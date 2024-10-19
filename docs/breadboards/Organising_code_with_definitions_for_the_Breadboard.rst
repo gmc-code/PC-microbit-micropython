@@ -15,8 +15,8 @@ Code comparison
    :header-rows: 1
    :width: 100%
 
-   * - without definitions
-     - with definitions
+   * - code in sequence without definitions
+     - code organised with definitions
    * - .. code-block:: python
 
            from microbit import *

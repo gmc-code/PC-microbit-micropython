@@ -46,8 +46,8 @@ Organising blocks into definitions
    :header-rows: 1
    :width: 100%
 
-   * - without definitions; unorganised code
-     - with definitions; organised code
+   * - code in sequence without definitions
+     - code organised with definitions
    * - .. code-block:: python
 
            from microbit import *
