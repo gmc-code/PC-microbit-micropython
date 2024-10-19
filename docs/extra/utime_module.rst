@@ -45,24 +45,14 @@ ticks
 
 .. method:: utime.ticks_ms()
 
-    Returns an increasing millisecond counter with an arbitrary reference point, 
+    Returns an increasing millisecond counter with an arbitrary reference point,
     that wraps around after some value.
-
+    This counter is useful for measuring time intervals and implementing delays.
 
 .. method:: utime.ticks_us()
 
-    Returns an increasing microsecond counter with an arbitrary reference point, 
+    Returns an increasing microsecond counter with an arbitrary reference point,
     that wraps around after some value.
-
-| To find out wrap value use:
-
-.. code-block:: python
-
-    from microbit import *
-    import utime
-
-    # Find out TICKS_MAX used by this port
-    print(utime.ticks_add(0, -1))
 
 ----
 
@@ -71,33 +61,28 @@ ticks_add
 
 .. method:: utime.ticks_add(ticks, delta)
 
-    Offset ticks value by a given number, which can be either positive or 
-    negative. Given a ticks value, this function allows to calculate a ticks 
+    Offset ticks value by a given number, which can be either positive or
+    negative. Given a ticks value, this function allows to calculate a ticks
     value, delta ticks before or after it.
 
-| Find out TICKS_MAX for the wrapping.
 
-.. code-block:: python
-
-        from microbit import *
-        import utime
-
-        # Find out TICKS_MAX
-        tick_max = utime.ticks_add(0, -1)
-        print(tick_max)
-        
-| Use for a deadline:
+| To find out wrap value use the code below which compares it with usys.maxsize.
+| Typically it is half of the max integer that the microbit can handle.
 
 .. code-block:: python
 
     from microbit import *
     import utime
+    import usys
 
-    timer = 3000
-    deadline = utime.ticks_add(utime.ticks_ms(), timer)
-    while utime.ticks_diff(deadline, utime.ticks_ms()) > 0:
-        utime.sleep_ms(200)
-    display.show(Image.SKULL)
+    # Find out TICKS_MAX used .e.g 1073741823
+    print(utime.ticks_add(0, -1))
+    val = utime.ticks_add(0, -1)
+    print(val)
+    max_sys = usys.maxsize
+    print(max_sys/val)
+
+
 
 ----
 
@@ -106,11 +91,11 @@ ticks_diff
 
 .. method:: utime.ticks_diff(ticks1, ticks2)
 
-    Measure ticks difference between values returned from 
+    Measure ticks difference between values returned from
     :func:`utime.ticks_ms()` or :func:`ticks_us()` functions, as a signed value
     which may wrap around.
 
-    The argument order is the same as for subtraction operator, 
+    The argument order is the same as for subtraction operator,
     ``ticks_diff(ticks1, ticks2)`` has the same meaning as ``ticks1 - ticks2``.
 
 | The code below, checks for a change in the pin2 reading for up to 2 seconds, then displays a "TIMED_OUT" message.
@@ -126,3 +111,15 @@ ticks_diff
         if utime.ticks_diff(utime.ticks_ms(), start) > 2000:
             display.scroll("TIMED_OUT")
 
+| Use for a deadline:
+
+.. code-block:: python
+
+    from microbit import *
+    import utime
+
+    timer = 3000
+    deadline = utime.ticks_add(utime.ticks_ms(), timer)
+    while utime.ticks_diff(deadline, utime.ticks_ms()) > 0:
+        utime.sleep_ms(200)
+    display.show(Image.SKULL)

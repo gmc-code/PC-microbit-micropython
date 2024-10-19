@@ -87,7 +87,6 @@ low power example
 
 .. code-block:: python
 
-    from microbit import *
     """
     Shows a silly face on the display every 5 seconds.
     When button A is pressed it goes into Deep Sleep mode, and wakes 20 seconds later,

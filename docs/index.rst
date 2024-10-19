@@ -239,13 +239,16 @@ Index:
     extra/power_module.rst
     extra/os_module.rst
     extra/machine_module.rst
+    extra/log_module.rst
     extra/builtins_module.rst
 
+    extra/utime_module.rst
+    extra/usys_module.rst
     extra/gc_module.rst
     extra/antigravity_love_this.rst
 
 
-    ..extra/utime_module.rst
+    ..
     ..extra/urandom_module.rst
     ..extra/uarray_module.rst
     ..extra/ucollections_module.rst
