@@ -247,8 +247,10 @@ Index:
     extra/gc_module.rst
     extra/antigravity_love_this.rst
 
-
-    ..
+    ..extra/math_module.rst
+    ..extra/neopixel_module.rst
+    ..extra/ustruct_module.rst
+    ..extra/uerrno_module.rst
     ..extra/urandom_module.rst
     ..extra/uarray_module.rst
     ..extra/ucollections_module.rst

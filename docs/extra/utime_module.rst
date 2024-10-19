@@ -82,8 +82,6 @@ ticks_add
     max_sys = usys.maxsize
     print(max_sys/val)
 
-
-
 ----
 
 ticks_diff
@@ -98,7 +96,9 @@ ticks_diff
     The argument order is the same as for subtraction operator,
     ``ticks_diff(ticks1, ticks2)`` has the same meaning as ``ticks1 - ticks2``.
 
-| The code below, checks for a change in the pin2 reading for up to 2 seconds, then displays a "TIMED_OUT" message.
+
+TIMED_OUT
+----------------------
 
 .. code-block:: python
 
@@ -111,7 +111,8 @@ ticks_diff
         if utime.ticks_diff(utime.ticks_ms(), start) > 2000:
             display.scroll("TIMED_OUT")
 
-| Use for a deadline:
+Deadline
+-----------------
 
 .. code-block:: python
 
@@ -123,3 +124,28 @@ ticks_diff
     while utime.ticks_diff(deadline, utime.ticks_ms()) > 0:
         utime.sleep_ms(200)
     display.show(Image.SKULL)
+
+countdown timer
+-----------------------
+
+.. code-block:: python
+
+    from microbit import *
+    import utime
+
+    # Set the countdown timer to 10 seconds (10000 milliseconds)
+    countdown_time = 10000
+    deadline = utime.ticks_add(utime.ticks_ms(), countdown_time)
+
+    while utime.ticks_diff(deadline, utime.ticks_ms()) > 0:
+        # Calculate the remaining time
+        remaining_time = utime.ticks_diff(deadline, utime.ticks_ms())
+
+        # Convert remaining time to seconds by integer division and display it
+        display.show(str(remaining_time // 1000), delay=200))
+
+        # Sleep for a short period to update the display
+        utime.sleep_ms(200)
+
+    # Display a smiley face when the countdown is complete
+    display.show(Image.HAPPY)
