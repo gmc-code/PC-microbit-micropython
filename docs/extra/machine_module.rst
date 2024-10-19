@@ -40,4 +40,5 @@ reset
 
 .. method:: machine.reset()
 
-    Resets the device in a manner similar to pushing the external RESET button.
+   Resets the microbit like pushing the external reset button and starts the program from the beginning.
+

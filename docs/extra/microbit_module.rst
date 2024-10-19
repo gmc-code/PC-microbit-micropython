@@ -66,7 +66,7 @@ reset
 
 .. py:function:: reset()
 
-    Restart the board.
+    Resets the microbit like pushing the external reset button and starts the program from the beginning.
 
 
 panic
