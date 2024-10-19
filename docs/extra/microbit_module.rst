@@ -28,32 +28,6 @@ temperature
     :returns: An integer with the temperature of the micro:bit in degrees
         Celcius.
 
-panic
--------------
-
-.. py:function:: panic(n)
-
-    Enter a panic mode that stops all execution, scrolls an error code in
-    the micro:bit display and requires restart. Used when debugging to stop code at a point.
-
-    :param n: An arbitrary integer between 0 and 255 to indicate an error code.
-
-
-reset
--------------
-
-.. py:function:: reset()
-
-    Restart the board.
-
-
-running_time
--------------
-
-.. py:function:: running_time()
-
-    :returns: The number of milliseconds since the board was switched on or
-        restarted.
 
 scale
 -------------
@@ -85,4 +59,32 @@ scale
     Negative scaling is also supported, for example
     ``scale(25, from_=(0, 100), to=(0, -200))`` will return ``-50``.
 
+
+
+reset
+-------------
+
+.. py:function:: reset()
+
+    Restart the board.
+
+
+panic
+-------------
+
+.. py:function:: panic(n)
+
+    Enter a panic mode that stops all execution, scrolls an error code in
+    the micro:bit display and requires restart. Used when debugging to stop code at a point.
+
+    :param n: An arbitrary integer between 0 and 255 to indicate an error code.
+
+
+running_time
+-------------
+
+.. py:function:: running_time()
+
+    :returns: The number of milliseconds since the board was switched on or
+        restarted.
 
