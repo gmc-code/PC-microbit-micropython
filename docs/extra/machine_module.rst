@@ -33,3 +33,11 @@ time_pulse_us
 #. It then times the duration that the pin is equal to *pulse_level*. If the pin is already equal to *pulse_level* then timing starts straight away. The function will return -1 if there was timeout waiting for this condition.
 #. The timeout is the same for both cases and given by *timeout_us* in microseconds.
 
+----
+
+reset
+---------
+
+.. method:: machine.reset()
+
+    Resets the device in a manner similar to pushing the external RESET button.
