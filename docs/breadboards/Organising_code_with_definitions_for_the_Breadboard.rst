@@ -15,10 +15,9 @@ Code comparison
     :header-rows: 1
     :width: 600px
 
-   * - without defs
-     - with defs
-
-   * - .. code-block:: python
+    * - without defs
+        - with defs
+    * - .. code-block:: python
 
         from microbit import *
 
