@@ -1,5 +1,5 @@
 ==========================
-DEFS: Motor_with_transistor
+def: Motor_with_transistor
 ==========================
 
 The examples below use definition blocks to better organize the code.

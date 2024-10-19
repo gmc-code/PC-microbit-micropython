@@ -1,5 +1,5 @@
 ========================================
-DEFS: Organising code with definitions
+def: Organising code with definitions
 ========================================
 
 Code using def blocks

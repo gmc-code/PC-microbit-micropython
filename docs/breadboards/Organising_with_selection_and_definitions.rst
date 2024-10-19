@@ -1,5 +1,5 @@
 ====================================================
-DEFS: Organising with selection and definitions
+def: Organising with selection and definitions
 ====================================================
 
 Definitions
