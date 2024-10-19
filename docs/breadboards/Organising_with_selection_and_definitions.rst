@@ -5,11 +5,16 @@ def: Organising with selection and definitions
 Definitions
 ----------------------------------------
 
-| Use definitions for one purpose.
 | Definitions help break up lengthy code into smaller well defined blocks.
-| Definitions use the same naming conventions as for variables. (See variables in the python section)
+
+| Definitions use the same naming conventions as for variables.
+| Variable names should be in lowercase, with words separated by underscores (this is known as snake_case)
+| Variable names can only contain alphanumeric characters and underscores.
+| Variable cannot start with a number.
+
 | Definitions start with the ``def`` keyword.
 | All the code for a definition is indented.
+
 | Below is an example of a definition that scrolls some text and displays an image.
 | The definition is run by calling it via ``doA()``.
 
@@ -51,7 +56,7 @@ Organising blocks into definitions
             display.scroll('B')
             display.show(Image.SAD)
         else:
-            display.scroll('')
+            display.scroll('C')
         sleep(1000)
 
 | Organised code using definitions:
@@ -102,10 +107,10 @@ Organising blocks into definitions
 
             while True:
                 if button_a.is_pressed():
-                    for char in 'go team':
+                    for char in 'ABC':
                         display.scroll(char, delay=80)
                 elif button_b.is_pressed():
-                    for sport in ['swimming', 'rowing', 'canoeing']:
+                    for sport in ['123']:
                         display.scroll(sport, delay=80)
                 else:
                     display.clear()
@@ -121,7 +126,7 @@ Organising blocks into definitions
                     for num in range(1, 10, 2):
                         display.scroll(num, delay=80)
                 elif button_b.is_pressed():
-                    for num in range(8, -1, -2):
+                    for num in range(10, -1, -2):
                         display.scroll(num, delay=80)
                 else:
                     display.clear()
@@ -143,12 +148,12 @@ Organising blocks into definitions
 
 
                     def doA():
-                        for char in 'go team':
+                        for char in 'ABC':
                             display.scroll(char, delay=80)
 
 
                     def doB():
-                        for sport in ['swimming', 'rowing', 'canoeing']:
+                        for sport in ['123']:
                                 display.scroll(sport, delay=80)
 
 
@@ -179,7 +184,7 @@ Organising blocks into definitions
 
 
                     def doB():
-                        for num in range(8, -1, -2):
+                        for num in range(10, -1, -2):
                             display.scroll(num, delay=80)
 
 

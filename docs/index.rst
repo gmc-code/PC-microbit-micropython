@@ -40,8 +40,8 @@ Index:
     breadboards/Potentiometer.rst
     breadboards/Potentiometer_with_LED.rst
 
-    breadboards/Organising_code_with_definitions.rst
     breadboards/Organising_with_selection_and_definitions.rst
+    breadboards/Organising_code_with_definitions_for_the_Breadboard.rst
     breadboards/LEDs_with_resistors_2.rst
     breadboards/Motor_with_transistor_2.rst
 
