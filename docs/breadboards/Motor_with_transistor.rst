@@ -54,20 +54,11 @@ Turn on and off pin0
 
     from microbit import *
 
-
-    def turn_on():
-        pin0.write_digital(1)
-
-
-    def turn_off():
-        pin0.write_digital(0)
-
-
     while True:
         if button_a.is_pressed():
-            turn_on()
+            pin0.write_digital(1)
         elif button_b.is_pressed():
-            turn_off()
+            pin0.write_digital(0)
         sleep(500)
 
 ----
@@ -95,19 +86,10 @@ Turn on and off pin0
 
                     from microbit import *
 
-
-                    def turn_on():
-                        pin0.write_digital(1)
-
-
-                    def turn_off():
-                        pin0.write_digital(0)
-
-
                     while True:
-                        turn_on()
+                        pin0.write_digital(1)
                         sleep(6000)
-                        turn_off()
+                        pin0.write_digital(0)
                         sleep(2000)
 
             .. tab-item:: Q2
@@ -118,25 +100,16 @@ Turn on and off pin0
 
                     from microbit import *
 
-
-                    def turn_on():
-                        pin0.write_digital(1)
-
-
-                    def turn_off():
-                        pin0.write_digital(0)
-
-
                     while True:
                         if button_a.is_pressed():
-                            turn_on()
+                            pin0.write_digital(1)
                             sleep(6000)
-                            turn_off()
+                            pin0.write_digital(0)
                             sleep(2000)
                         elif button_b.is_pressed():
-                            turn_on()
+                            pin0.write_digital(1)
                             sleep(2000)
-                            turn_off()
+                            pin0.write_digital(0)
                             sleep(6000)
 
             .. tab-item:: Q3
@@ -147,30 +120,21 @@ Turn on and off pin0
 
                     from microbit import *
 
-
-                    def turn_on():
-                        pin0.write_digital(1)
-
-
-                    def turn_off():
-                        pin0.write_digital(0)
-
-
                     while True:
                         if button_a.is_pressed():
-                            turn_on()
+                            pin0.write_digital(1)
                             sleep(6000)
-                            turn_off()
+                            pin0.write_digital(0)
                             sleep(2000)
                         elif button_b.is_pressed():
-                            turn_on()
+                            pin0.write_digital(1)
                             sleep(2000)
-                            turn_off()
+                            pin0.write_digital(0)
                             sleep(6000)
                         else:
-                            turn_on()
+                            pin0.write_digital(1)
                             sleep(4000)
-                            turn_off()
+                            pin0.write_digital(0)
                             sleep(4000)
 
 ----
@@ -197,9 +161,9 @@ Turn on and off pin0
 
 
                     def turn_on_off(time_on=4000, time_off=4000):
-                        turn_on()
+                        pin0.write_digital(1)
                         sleep(time_on)
-                        turn_off()
+                        pin0.write_digital(0)
                         sleep(time_off)
 
             .. tab-item:: Q2
@@ -210,19 +174,10 @@ Turn on and off pin0
 
                     from microbit import *
 
-
-                    def turn_on():
-                        pin0.write_digital(1)
-
-
-                    def turn_off():
-                        pin0.write_digital(0)
-
-
                     def turn_on_off(time_on=4000, time_off=4000):
-                        turn_on()
+                        pin0.write_digital(1)
                         sleep(time_on)
-                        turn_off()
+                        pin0.write_digital(0)
                         sleep(time_off)
 
 
@@ -251,30 +206,21 @@ Write analog
     from microbit import *
     import random
 
-
-    def pulse_on():
-        sleep_time = 500
-        step_size = 200
-        for i in range(200, 1023, step_size):
-            pin0.write_analog(i)
-            sleep(sleep_time)
-        pin0.write_analog(1023)
-
-
-    def pulse_off():
-        sleep_time = 500
-        step_size = 200
-        for i in range(1023, 200, -step_size):
-            pin0.write_analog(i)
-            sleep(sleep_time)
-        pin0.write_analog(0)
-
-
     while True:
         if button_a.is_pressed():
-            pulse_on()
+            sleep_time = 500
+            step_size = 200
+            for i in range(200, 1023, step_size):
+                pin0.write_analog(i)
+                sleep(sleep_time)
+            pin0.write_analog(1023)
         elif button_b.is_pressed():
-            pulse_off()
+            sleep_time = 500
+            step_size = 200
+            for i in range(1023, 200, -step_size):
+                pin0.write_analog(i)
+                sleep(sleep_time)
+            pin0.write_analog(0)
         sleep(500)
 
 ----
@@ -308,17 +254,20 @@ Write analog
 
 
                     def pulse_off(sleep_time=500, step_size=200):
-                        for i in range(1023, 200, -step_size):
-                            pin0.write_analog(i)
-                            sleep(sleep_time)
-                        pin0.write_analog(0)
+
 
 
                     while True:
                         if button_a.is_pressed():
-                            pulse_on()
+                            for i in range(200, 1023, step_size):
+                                pin0.write_analog(i)
+                                sleep(sleep_time)
+                                pin0.write_analog(1023)
                         elif button_b.is_pressed():
-                            pulse_off()
+                            for i in range(1023, 200, -step_size):
+                                pin0.write_analog(i)
+                                sleep(sleep_time)
+                            pin0.write_analog(0)
                         sleep(500)
 
             .. tab-item:: Q2

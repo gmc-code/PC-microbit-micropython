@@ -44,7 +44,7 @@ Organising blocks into definitions
 .. list-table::
    :widths: 50 50
    :header-rows: 1
-   :width: 800px
+   :width: 100%
 
    * - without definitions; unorganised code
      - with definitions; organised code

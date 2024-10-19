@@ -13,7 +13,7 @@ Code comparison
 .. list-table::
    :widths: 50 50
    :header-rows: 1
-   :width: 800px
+   :width: 100%
 
    * - without definitions
      - with definitions
