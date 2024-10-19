@@ -62,8 +62,7 @@ Organising blocks into definitions
                else:
                    display.scroll('C')
                sleep(1000)
-
-   * - .. code-block:: python
+     - .. code-block:: python
 
            from microbit import *
 
