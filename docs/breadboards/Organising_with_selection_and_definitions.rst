@@ -41,53 +41,55 @@ Organising blocks into definitions
 | This makes the main block of code in the ``while True`` loop more compact and more readable.
 | Each definition block can be easily edited and changed.
 
+.. list-table::
+   :widths: 50 50
+   :header-rows: 1
+   :width: 800px
 
-| Basic unorganised code:
+   * - without definitions; unorganised code
+     - with definitions; organised code
+   * - .. code-block:: python
 
-.. code-block:: python
+           from microbit import *
 
-    from microbit import *
+           while True:
+               if button_a.is_pressed():
+                   display.scroll('A')
+                   display.show(Image.HAPPY)
+               elif button_b.is_pressed():
+                   display.scroll('B')
+                   display.show(Image.SAD)
+               else:
+                   display.scroll('C')
+               sleep(1000)
 
-    while True:
-        if button_a.is_pressed():
-            display.scroll('A')
-            display.show(Image.HAPPY)
-        elif button_b.is_pressed():
-            display.scroll('B')
-            display.show(Image.SAD)
-        else:
-            display.scroll('C')
-        sleep(1000)
+   * - .. code-block:: python
 
-| Organised code using definitions:
-
-.. code-block:: python
-
-    from microbit import *
-
-
-    def doA():
-        display.scroll('A')
-        display.show(Image.HAPPY)
+           from microbit import *
 
 
-    def doB():
-        display.scroll('B')
-        display.show(Image.SAD)
+           def doA():
+               display.scroll('A')
+               display.show(Image.HAPPY)
 
 
-    def doC():
-        display.scroll('C')
+           def doB():
+               display.scroll('B')
+               display.show(Image.SAD)
 
 
-    while True:
-        if button_a.is_pressed():
-            doA()
-        elif button_b.is_pressed():
-            doB()
-        else:
-            doC()
-        sleep(1000)
+           def doC():
+               display.scroll('C')
+
+
+           while True:
+               if button_a.is_pressed():
+                   doA()
+               elif button_b.is_pressed():
+                   doB()
+               else:
+                   doC()
+               sleep(1000)
 
 | Side by side comparison:
 

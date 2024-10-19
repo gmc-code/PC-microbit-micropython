@@ -6,17 +6,17 @@ Code comparison
 ----------------------------------
 
 | Write code that displays a message "A or B".
-| When A is pressed, turn on the motor for 3 sec.
+| When A is pressed, turn on the motor on pin 0 for 3 sec.
 | When B is pressed, turn on the LED on pin 1 for 1 sec at full brightness,
 | then 1 sec at half brightness.
 
 .. list-table::
    :widths: 50 50
    :header-rows: 1
-   :width: 600px
+   :width: 800px
 
-   * - without defs
-     - with defs
+   * - without definitions
+     - with definitions
    * - .. code-block:: python
 
            from microbit import *
