@@ -91,7 +91,7 @@ Organising blocks into definitions
 
 | Side by side comparison:
 
-.. image:: images/def_reorganised.png
+.. image:: images_defs/def_reorganised.png
     :scale: 80 %
     :align: center
 
