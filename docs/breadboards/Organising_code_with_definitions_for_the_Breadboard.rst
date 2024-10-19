@@ -50,9 +50,13 @@ Code using def blocks
 Comparison with sequence only
 ----------------------------------
 
-.. list-table:: with and without defs
-   :widths: 50 50
-   :header-rows: 0
+.. list-table::
+    :widths: 50 50
+    :header-rows: 1
+    :width: 600px
+
+   * - without defs
+     - with defs
 
    * - .. code-block:: python
 
@@ -75,7 +79,7 @@ Comparison with sequence only
                 pin1.write_digital(0)
             sleep(100)
 
-     - .. code-block:: python
+    - .. code-block:: python
 
         from microbit import *
 
