@@ -251,8 +251,7 @@ Index:
     extra/urandom_module.rst
     extra/uarray_module.rst
     extra/ucollections_module.rst
-
-    ..extra/math_module.rst
+    extra/math_module.rst
 
 
 

@@ -1,5 +1,5 @@
 ==========================
-neopixel
+neopixel module
 ==========================
 
 .. py:module:: neopixel
