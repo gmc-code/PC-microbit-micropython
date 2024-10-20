@@ -5,8 +5,8 @@ Functions with parameters
 Using parameters
 -----------------------------
 
-| Functions can be more flexible when they use `parameters`. 
-| A parameter is the variable in the parentheses of the function which allows information to be passed to the function.
+| Functions can be more flexible when they use `parameters`.
+| A parameter is the variable in the parentheses of the function definition which allows information to be passed to the function.
 | An argument is the value in the parentheses that is sent to the function when it is called.
 | In the code below, ``name`` is the parameter, and ``"beginner"`` and ``"user"`` are the arguments.
 | Text joins are carried out with a ``+`` between the text strings.
@@ -185,7 +185,7 @@ Parameter order: positional before default
 
                 Write a function called ``player_health`` which takes the user_name as the first parameter and their game health status as a default parameter  and display an example using it with and without passing a value to the default parameter.
 
-                
+
                 .. code-block:: python
 
                     from microbit import *
@@ -197,7 +197,7 @@ Parameter order: positional before default
 
                     player_health("speedy")
                     player_health("speedy", 85)
-        
+
 ----
 
 .. admonition:: Tasks
@@ -232,14 +232,14 @@ Parameter order: positional before default
 Functions returning information
 ----------------------------------------
 
-| Functions can be more powerful by `returning values`. 
-| The return value is what the function passes back to the code that called it. 
+| Functions can be more powerful by `returning values`.
+| The return value is what the function passes back to the code that called it.
 | Below is an example of a function that takes one parameter, the number of inches, and returns the number of centimetres.
 
 .. code-block:: python
 
     from microbit import *
-    
+
 
     def convert_inches_to_centimetres(inches):
         return inches * 2.54
@@ -254,7 +254,7 @@ Functions returning information
 .. code-block:: python
 
     from microbit import *
-    
+
 
     def area_of_rectangle(length, width):
         return length * width
@@ -273,7 +273,7 @@ Functions returning information
 
 
     def player_goals(name, goals):
-        return name + " scored " + str(goals) + " goals."   
+        return name + " scored " + str(goals) + " goals."
 
     display.scroll(player_goals("Cristiano Ronaldo", 838), delay=70)
     display.scroll(player_goals("Messi", 803), delay=70)
@@ -297,7 +297,7 @@ Functions returning information
 
             .. tab-item:: Q1
 
-                Define a function ``convert_cm_to_m(cm)`` that returns the result of converting a length in cm to metres. 
+                Define a function ``convert_cm_to_m(cm)`` that returns the result of converting a length in cm to metres.
 
                 .. code-block:: python
 
@@ -313,7 +313,7 @@ Functions returning information
 
             .. tab-item:: Q2
 
-                Define a function ``convert_m_to_cm(m)`` that returns the result of converting a length in metres to cm. 
+                Define a function ``convert_m_to_cm(m)`` that returns the result of converting a length in metres to cm.
 
                 .. code-block:: python
 
@@ -329,7 +329,7 @@ Functions returning information
 
             .. tab-item:: Q3
 
-                Define a function ``area_square(length)`` that returns the area of a square. 
+                Define a function ``area_square(length)`` that returns the area of a square.
 
                 .. code-block:: python
 
@@ -526,7 +526,7 @@ Spy codes
                 cipher += chr(ascii_num)
             # If the ascii number is not between 65 and 90, keep it unchanged and append it to the cipher
             else:
-                cipher += character 
+                cipher += character
         # Return the cipher
         return cipher
 
@@ -575,7 +575,7 @@ Spy codes
                                     ascii_num -= 26
                                 cipher += chr(ascii_num)
                             else:
-                                cipher += character 
+                                cipher += character
                         return cipher
 
                     secret_string = 'AMBC PCB. YZMPR KGQQGML!'
