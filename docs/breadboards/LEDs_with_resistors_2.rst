@@ -1,5 +1,5 @@
 ==========================
-def: LEDs_with_resistors
+LEDs_with_resistors
 ==========================
 
 The examples below use definition blocks to better organize the code.
