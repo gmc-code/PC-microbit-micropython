@@ -48,6 +48,24 @@ Index:
 
 .. toctree::
     :maxdepth: 2
+    :caption: Functions
+    :numbered:
+
+    functions/Functions_without_parameters.rst
+    functions/Functions_with_parameters.rst
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: BreadBoard_projects
+    :numbered:
+
+    breadboard_projects/Combined_models.rst
+    breadboard_projects/Combined_iteration_using_zip.rst
+
+
+.. toctree::
+    :maxdepth: 2
     :caption: Lessons
     :numbered:
 
@@ -107,18 +125,6 @@ Index:
     errors/Whitespace_for_readability.rst
 
 
-
-.. toctree::
-    :maxdepth: 2
-    :caption: BreadBoard_projects
-    :numbered:
-
-    breadboard_projects/Combined_models.rst
-    breadboard_projects/Models_using_definitions.rst
-    breadboard_projects/Organising_with_selection_and_definitions.rst
-    breadboard_projects/Combined_iteration_using_zip.rst
-
-
 .. toctree::
     :maxdepth: 2
     :caption: Sensors
@@ -153,15 +159,6 @@ Index:
 
 .. toctree::
     :maxdepth: 2
-    :caption: Functions
-    :numbered:
-
-    python_for_microbit/Functions_without_parameters.rst
-    python_for_microbit/Functions_with_parameters.rst
-
-
-.. toctree::
-    :maxdepth: 2
     :caption: Challenges
     :numbered:
 
@@ -179,6 +176,7 @@ Index:
     images/Built_in_images.rst
     images/Built_in_images_advanced.rst
     images/image_strings.rst
+    images/sequential_images.rst
     images/heart_beat_simulation.rst
     images/setting_pixels.rst
     images/random_pixels.rst
@@ -246,6 +244,7 @@ Index:
     extra/usys_module.rst
     extra/gc_module.rst
     extra/uerrno_module.rst
+    extra/ustruct_module.rs
     extra/antigravity_love_this.rst
 
     extra/neopixel_module.rst
@@ -254,7 +253,7 @@ Index:
     extra/ucollections_module.rst
 
     ..extra/math_module.rst
-    ..extra/ustruct_module.rst
+
 
 
 
