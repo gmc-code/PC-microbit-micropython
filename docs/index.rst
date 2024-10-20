@@ -30,20 +30,25 @@ Index:
 
     breadboards/Breadboard_connections.rst
     breadboards/Edge_Connector.rst
-
     breadboards/LEDs_with_resistors.rst
-
     breadboards/Piezo_Buzzer_and_music.rst
-
     breadboards/Motor_with_transistor.rst
-
     breadboards/Potentiometer.rst
     breadboards/Potentiometer_with_LED.rst
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: BreadBoards using functions
+    :numbered:
 
     breadboards/Organising_code_with_definitions.rst
     breadboards/Organising_code_with_definitions_for_the_Breadboard.rst
     breadboards/LEDs_with_resistors_2.rst
+    breadboards/Piezo_Buzzer_and_music_2.rst
     breadboards/Motor_with_transistor_2.rst
+    breadboards/Potentiometer_2.rst
+    breadboards/Potentiometer_with_LED_2.rst
 
 
 .. toctree::

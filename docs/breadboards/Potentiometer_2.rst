@@ -2,8 +2,7 @@
 Potentiometer
 ==========================
 
-| The examples below use sequence without definition blocks which are preferred to better organize the code.
-| See https://pc-microbit-micropython.readthedocs.io/en/latest/breadboards/Potentiometer_2.html
+The examples below use definition blocks to better organize the code.
 
 ----
 
@@ -44,6 +43,9 @@ Read analog
 
 ----
 
+Scaling the readings
+----------------------------------------
+
 .. py:function:: scale(value, from_, to)
 
     Converts a value from a range to another range.
@@ -83,7 +85,6 @@ Read analog
 
 ----
 
-
 Advanced: Power meter simulation
 ----------------------------------------
 
@@ -107,8 +108,8 @@ Advanced: Power meter simulation
 
     from microbit import *
 
-    while True:
-        level = pin.read_analog()
+
+    def display_level(level):
         x_list = [0, 1, 2, 3, 4]
 
         # display
@@ -147,4 +148,13 @@ Advanced: Power meter simulation
             if y_clear_list is not None:
                 for y in y_clear_list:
                     display.set_pixel(x, y, 0)
+
+
+    def display_potentiometer_level(pin=pin2):
+        pot_val = pin.read_analog()
+        display_level(pot_val)
+
+
+    while True:
+        display_potentiometer_level()
         sleep(20)

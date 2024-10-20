@@ -2,8 +2,7 @@
 Piezo_Buzzer_and_music
 ==========================
 
-| The examples below use sequence without definition blocks which are preferred to better organize the code.
-| See https://pc-microbit-micropython.readthedocs.io/en/latest/breadboards/Piezo_Buzzer_and_music_2.html
+The examples below use definition blocks to better organize the code.
 
 ----
 
@@ -237,14 +236,15 @@ Tempo
                     speaker.off()
                     notes_list = ['c4:4', 'e', 'g', 'e', 'c']
                     tempo_list = [120, 240, 360, 480, 600]
-                    sleep_time=1000
 
-                    while True:
+                    def tempo_play(tempo_list, sleep_time=1000):
                         for tempo in tempo_list:
                             music.set_tempo(bpm=tempo)
                             music.play(notes_list)
                             sleep(sleep_time)
 
+                    while True:
+                        tempo_play(tempo_list, sleep_time=1000)
 
 ----
 

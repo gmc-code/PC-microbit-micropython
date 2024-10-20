@@ -249,7 +249,6 @@ Write analog
 .. code-block:: python
 
     from microbit import *
-    import random
 
 
     def pulse_on():
@@ -281,7 +280,7 @@ Write analog
 
 .. admonition:: Tasks
 
-    #. Modify the pulse_on and pulse_off functions to use the sleep_time and step_size variables as parameters with the default values in the example code above.
+    #. Modify the pulse_on code so it has twice as many steps. Modify the pulse_off code so each step is half as long.
     #. Modify the pulse_on and pulse_off functions further to show the motor speed as a value from 0 to 9. Hint: write a new function, ``motor_speed_display``, that uses the int function to round down the value obtained from dividing the motor speed by 100. Then use the min function to make sure the highest possible value returned is 9.
 
     .. dropdown::
@@ -293,21 +292,25 @@ Write analog
 
             .. tab-item:: Q1
 
-                Modify the pulse_on and pulse_off functions to use the sleep_time and step_size variables as parameters with the default values in the example code above.
+                Modify the pulse_on code so it has twice as many steps. Modify the pulse_off code so each step is half as long.
 
                 .. code-block:: python
 
                     from microbit import *
 
 
-                    def pulse_on(sleep_time=500, step_size=200):
+                    def pulse_on():
+                        sleep_time = 500
+                        step_size = 100
                         for i in range(200, 1023, step_size):
                             pin0.write_analog(i)
                             sleep(sleep_time)
                         pin0.write_analog(1023)
 
 
-                    def pulse_off(sleep_time=500, step_size=200):
+                    def pulse_off():
+                        sleep_time = 250
+                        step_size = 200
                         for i in range(1023, 200, -step_size):
                             pin0.write_analog(i)
                             sleep(sleep_time)
@@ -321,10 +324,34 @@ Write analog
                             pulse_off()
                         sleep(500)
 
-            .. tab-item:: Q2
 
-                Modify the pulse_on and pulse_off functions further to show the motor speed as a value from 0 to 9.
-                Hint: write a new function, ``motor_speed_display``, that uses the int function to round down the value obtained from dividing the motor speed by 100. Then use the min function to make sure the highest possible value returned is 9.
+Scaling the readings
+----------------------------------------
+
+| The analog range, from 0 to 1023, can roughly be converted to a scaled range of 0 to 9 by dividing by 100.
+| The expression below uses `int` to round down to an integer and `min` to keep the maximum value at 9.
+
+.. py:function:: min(9, int(analog_val / 100))
+
+    Converts an analog value from a range of 0 to 1023 to 0 to 9.
+
+    e.g. scaled_value = min(9, int(analog_val / 100))
+
+
+.. admonition:: Tasks
+
+    #. Modify the pulse_on and pulse_off code to show the motor speed as a value from 0 to 9.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Modify the pulse_on and pulse_off code to show the motor speed as a value from 0 to 9.
 
                 .. code-block:: python
 
@@ -332,26 +359,29 @@ Write analog
 
 
                     def motor_speed_display(analog_val):
-                        '''0 = 0-99, 1 = 100-199, 9 = 900+'''
-                        return min(9, int(analog_val / 100))
+                        display.show(min(9, int(analog_val / 100)))
 
 
-                    def pulse_on(sleep_time=500, step_size=200):
+                    def pulse_on():
+                        sleep_time = 500
+                        step_size = 100
                         for i in range(200, 1023, step_size):
                             pin0.write_analog(i)
-                            display.show(motor_speed_display(i))
+                            motor_speed_display(i)
                             sleep(sleep_time)
                         pin0.write_analog(1023)
-                        display.show(motor_speed_display(1023))
+                        motor_speed_display(1023)
 
 
-                    def pulse_off(sleep_time=500, step_size=200):
+                    def pulse_off():
+                        sleep_time = 250
+                        step_size = 200
                         for i in range(1023, 200, -step_size):
                             pin0.write_analog(i)
-                            display.show(motor_speed_display(i))
+                            motor_speed_display(i)
                             sleep(sleep_time)
                         pin0.write_analog(0)
-                        display.show(motor_speed_display(0))
+                        motor_speed_display(0)
 
 
                     while True:
@@ -360,6 +390,5 @@ Write analog
                         elif button_b.is_pressed():
                             pulse_off()
                         sleep(500)
-                        display.clear()
 
 
