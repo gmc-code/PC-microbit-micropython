@@ -1,5 +1,5 @@
 ====================================================
-def: Organising code with definitions
+Organising code with definitions
 ====================================================
 
 Definitions

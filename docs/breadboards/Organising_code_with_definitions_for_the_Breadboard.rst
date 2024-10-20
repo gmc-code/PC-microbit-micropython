@@ -1,5 +1,5 @@
 ================================================================
-def: Organising code with definitions for the Breadboard
+Organising code with definitions for the Breadboard
 ================================================================
 
 Code comparison
