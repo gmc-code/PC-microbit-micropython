@@ -1,5 +1,6 @@
 ==========================
-uerrno
+ustruct
 ==========================
 
-.. py:module:: uerrno
+.. py:module:: ustruct
+

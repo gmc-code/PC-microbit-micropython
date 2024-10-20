@@ -5,11 +5,11 @@ uarray
 .. py:module:: uarray
 
 | MicroPython contains an ``uarray`` module based upon the ``array`` module in the
-Python standard library. 
+Python standard library.
 | See: https://docs.python.org/3.9/library/array.html#module-array
 | See: https://www.dummies.com/article/technology/programming-web-design/c/determining-types-of-numbers-in-c-199399/
 
-| An array is an object type which can compactly contain integers or floating point numbers. Arrays are sequence types and behave like lists, except that the type of objects stored in them is constrained. The type is specified at object creation time by using a type code, which is a single character.    
+| An array is an object type which can compactly contain integers or floating point numbers. Arrays are sequence types and behave like lists, except that the type of objects stored in them is constrained. The type is specified at object creation time by using a type code, which is a single character.
 
 ----
 
@@ -22,6 +22,7 @@ arrays
     Return an array of type **typecode**.
     Initial contents can be specified by **iterable**. If it is not provided, an empty array is created.
     Supported format codes: b, B, h, H, i, I, l, L, q, Q, f, d
+    Use i for integers.
 
 | The code below creates an array of integers.
 
@@ -69,3 +70,84 @@ arrays
     while True:
         for i in array_val:
             display.scroll(i)
+
+----
+
+Average temperatures using an array
+---------------------------------------
+
+.. code-block:: python
+
+    from microbit import *
+    import uarray
+
+    # Create an array to store 10 temperature readings, setting all to current temp initially
+    temp0 = temperature()
+    temperature_readings = uarray.array('i', [temp0] * 10)
+
+    while True:
+        # Shift all readings to the left
+        for i in range(len(temperature_readings) - 1):
+            temperature_readings[i] = temperature_readings[i + 1]
+
+        # Add the latest temperature reading to the end of the array
+        temperature_readings[-1] = temperature()
+
+        # Calculate the average temperature
+        avg_temp = sum(temperature_readings) // len(temperature_readings)
+
+        # Display the average temperature
+        display.scroll(str(avg_temp) + "C")
+
+        sleep(1000)
+
+----
+
+Breadboard LED brightness via array
+-----------------------------------------
+
+.. code-block:: python
+
+    from microbit import *
+    import uarray
+
+    # Define brightness levels
+    brightness_levels = uarray.array('i', [0, 128, 255])
+
+    while True:
+        for brightness in brightness_levels:
+            pin0.write_analog(brightness)
+            sleep(1000)
+
+
+----
+
+Max light levels
+-----------------------------------------
+
+| This example uses an array to store light level readings and displays the maximum light level detected.
+
+.. code-block:: python
+
+    from microbit import *
+    import uarray
+
+    # Create an array to store light level readings
+    light_levels = uarray.array('i', [0] * 10)
+
+    while True:
+        # Shift all readings to the left
+        for i in range(len(light_levels) - 1):
+            light_levels[i] = light_levels[i + 1]
+
+        # Add the latest light level reading to the end of the array
+        light_levels[-1] = display.read_light_level()
+
+        # Find the maximum light level
+        max_light = max(light_levels)
+
+        # Display the maximum light level
+        display.scroll(str(max_light))
+
+        sleep(1000)
+
