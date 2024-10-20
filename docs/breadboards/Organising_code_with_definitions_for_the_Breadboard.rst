@@ -8,7 +8,7 @@ Code comparison
 | Write code that displays a message "A or B".
 | When A is pressed, turn on the motor on pin 0 for 3 sec.
 | When B is pressed, turn on the LED on pin 1 for 1 sec at full brightness,
-| then 1 sec at half brightness.
+| then 1 sec at half brightness, then off.
 
 .. list-table::
    :widths: 50 50
@@ -22,7 +22,6 @@ Code comparison
            from microbit import *
 
            display.scroll('A or B')
-
            while True:
                if button_a.is_pressed():
                    # on pin 0
@@ -60,7 +59,6 @@ Code comparison
                pin1.write_digital(0)
 
            display_startup_message()
-
            while True:
                if button_a.is_pressed():
                    use_motor_A()

@@ -44,20 +44,14 @@ Index:
 
     breadboards/Organising_code_with_definitions.rst
     breadboards/Organising_code_with_definitions_for_the_Breadboard.rst
+    functions/Functions_without_parameters.rst
+    functions/Functions_with_parameters.rst
+
     breadboards/LEDs_with_resistors_2.rst
     breadboards/Piezo_Buzzer_and_music_2.rst
     breadboards/Motor_with_transistor_2.rst
     breadboards/Potentiometer_2.rst
     breadboards/Potentiometer_with_LED_2.rst
-
-
-.. toctree::
-    :maxdepth: 2
-    :caption: Functions
-    :numbered:
-
-    functions/Functions_without_parameters.rst
-    functions/Functions_with_parameters.rst
 
 
 .. toctree::

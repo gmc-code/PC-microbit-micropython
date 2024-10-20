@@ -7,16 +7,18 @@ Definitions
 
 | Definitions help break up lengthy code into smaller well defined blocks.
 
+| Definitions start with the ``def`` keyword.
+| All the code for a definition is indented.
+| The def line ends with a colon.
+
 | Definitions use the same naming conventions as for variables.
-| Variable names should be in lowercase, with words separated by underscores (this is known as snake_case)
+| Variable names should be in lowercase, with words separated by underscores (known as snake_case).
 | Variable names can only contain alphanumeric characters and underscores.
 | Variable cannot start with a number.
 
-| Definitions start with the ``def`` keyword.
-| All the code for a definition is indented.
-
 | Below is an example of a definition that scrolls some text and displays an image.
 | The definition is run by calling it via ``doA()``.
+| The general rule of only using lowercase is broken here for better readability.
 
 .. code-block:: python
 
