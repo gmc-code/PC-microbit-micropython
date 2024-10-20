@@ -55,9 +55,10 @@ Using parameters
 Functions with default parameters
 -----------------------------------------------
 
-| Default values can be added to parameters. e.g. name="Novice"
+| Default values can be added to parameters. e.g. name="Novice".
+| Default values will be used when a value is not passed in.
 
-| Text joins are carried out with a ``+`` between the text strings.
+| In the sample code belwo, text joins are carried out with a ``+`` between the text strings.
 | ``str()`` is used to turn ``score``, which is a integer, into a string.
 
 .. code-block:: python
@@ -107,6 +108,7 @@ Order with named parameters
 -----------------------------------------------
 
 | When named parameters are used, their order is not important.
+| The code below calls player_info with name and score in different orders without affecting what is displayed.
 
 .. code-block:: python
 
@@ -370,9 +372,8 @@ Allowing for a variable number of arguments
 
 | ``*args`` allow a function to take any number of positional arguments (non keyword arguments).
 
-| ``*nums`` allows a variable number of arguments to be passed in to be added in the ``multi_add`` function.
-| In the function, ``nums`` is a tuple of the arguments.
-| For ``multi_add(1, 3, 5, 7, 9)``, nums is the tuple ``(1, 3, 5, 7, 9)``.
+| In the code below, ``*nums`` allows a variable number of arguments to be passed in to be added in the ``multi_add`` function.
+| In the function below, ``nums`` has five arguments: 1, 3, 5, 7, 9.
 
 .. code-block:: python
 
@@ -437,157 +438,4 @@ Allowing for a variable number of arguments
 
 
                     display.scroll(multi_average(2, 3, 5, 7), delay=70)
-
-----
-
-Spy codes
----------------
-
-| The code below converts a code string into a message string.
-| This can be refactored to use a definition block with parameters that might make it more useful.
-
-.. code-block:: python
-
-    from microbit import *
-
-    secret_string = 'hqz'
-    while True:
-        for character in secret_string:
-            # convert the string character to an ascii number
-            ascii_num = ord(character)
-            # subtract 2 from the ascii number
-            ascii_num +=2
-            # convert the ascii number to a string character
-            new_char = chr(ascii_num)
-            # scroll the secret character
-            display.scroll(new_char, delay=50)
-        sleep(300)
-
-
-| Refactored code:
-
-.. code-block:: python
-
-    from microbit import *
-
-
-    def get_code_message(secret_string, shifter):
-        code_message = ''
-        for character in secret_string:
-            # convert the string character to an ascii number
-            ascii_num = ord(character)
-            # subtract shifter from the ascii number
-            ascii_num +=shifter
-            # convert the ascii number to a string character
-            new_char = chr(ascii_num)
-            # add the new_char
-            code_message += new_char
-        return code_message
-
-    secret_string = 'hqz'
-    code_message = get_code_message(secret_string, -2)
-    while True:
-        display.scroll(code_message, delay=50)
-        sleep(300)
-
-| Further modifications can be made.
-| The text can be converted to upper case so all code messages are in upper case.
-| The shifter value can be restricted to a number between 0 and 25 by getting the remainder after dividing it by 26.
-| All characters that are not standard letters are unchanged, including spaces and punctuation and numbers.
-
-.. code-block:: python
-
-
-    from microbit import *
-
-
-    # A function to encrypt a message using a shift cipher with a given shifter
-    def get_shift_cipher(secret_string, shifter):
-        # Use mod 26 to keep the shifter within the range of the alphabet
-        shifter = shifter % 26
-        # Initialize an empty string for the cipher
-        cipher = ""
-        # Convert the secret string to uppercase
-        secret_string = secret_string.upper()
-        # Loop through each character in the secret string
-        for character in secret_string:
-            # Convert the character to an ascii number
-            ascii_num = ord(character)
-            # If the ascii number is between 65 and 90 (A-Z), apply the shift
-            if ascii_num>=65 and ascii_num<=90:
-                ascii_num += shifter
-                # If the ascii number is less than 65, cycle it back to the range 65-90
-                if ascii_num<65:
-                    ascii_num += 26
-                # If the ascii number is greater than 90, cycle it back to the range 65-90
-                elif ascii_num>90:
-                    ascii_num -= 26
-                # Convert the ascii number back to a character and append it to the cipher
-                cipher += chr(ascii_num)
-            # If the ascii number is not between 65 and 90, keep it unchanged and append it to the cipher
-            else:
-                cipher += character
-        # Return the cipher
-        return cipher
-
-    # A sample secret string and shifter to test the function
-    secret_string = 'hqz'
-    code_message = get_shift_cipher(secret_string, 2)
-    # Loop forever
-    while True:
-        # Scroll the code message on the display with a delay of 50 ms
-        display.scroll(code_message, delay=50)
-        # Pause for 300 ms
-        sleep(300)
-
-
-.. admonition:: Tasks
-
-    #. Make use of the `get_shift_cipher` function to decode this secret code: 'AMBC PCB. YZMPR KGQQGML!'. Set the shifter to 2.
-
-    .. dropdown::
-        :icon: codescan
-        :color: primary
-        :class-container: sd-dropdown-container
-
-        .. tab-set::
-
-            .. tab-item:: Q1
-
-                Make use of the `get_shift_cipher` function to decode this secret code: 'AMBC PCB. YZMPR KGQQGML!'. Set the shifter to 2.
-
-                .. code-block:: python
-
-                    from microbit import *
-
-
-                    def get_shift_cipher(secret_string, shifter):
-                        shifter = shifter % 26
-                        cipher = ""
-                        secret_string = secret_string.upper()
-                        for character in secret_string:
-                            ascii_num = ord(character)
-                            if ascii_num >= 65 and ascii_num <= 90:
-                                ascii_num += shifter
-                                if ascii_num < 65:
-                                    ascii_num += 26
-                                elif ascii_num > 90:
-                                    ascii_num -= 26
-                                cipher += chr(ascii_num)
-                            else:
-                                cipher += character
-                        return cipher
-
-                    secret_string = 'AMBC PCB. YZMPR KGQQGML!'
-                    code_message = get_shift_cipher(secret_string, 2)
-                    while True:
-                        display.scroll(code_message, delay=50)
-                        sleep(300)
-
-.. admonition:: Exercise
-
-    #. Here is a code message. "EWWL SL LZW KSXWZGMKW. TJAFY LZW HSUCSYW. OSLUZ QGMJ TSUC." The shifter value has been lost. Can you try out all shifter values to read the message? Can you find the value of the shifter and use it to decode this second message: "LZW KLGJE AK UGEAFY."
-
-
-
 
