@@ -151,7 +151,7 @@ Advanced: Power meter simulation
 
 
     def display_potentiometer_level(pin=pin2):
-        pot_val = pin.read_analog()
+        pot_val = pin2.read_analog()
         display_level(pot_val)
 
 

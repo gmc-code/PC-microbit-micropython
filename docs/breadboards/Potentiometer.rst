@@ -108,7 +108,7 @@ Advanced: Power meter simulation
     from microbit import *
 
     while True:
-        level = pin.read_analog()
+        level = pin2.read_analog()
         x_list = [0, 1, 2, 3, 4]
 
         # display
