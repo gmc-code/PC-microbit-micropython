@@ -617,8 +617,8 @@ All Images
         Image.ARROW_NW, Image.ARROW_S, Image.ARROW_SE, Image.ARROW_SW,
         Image.ARROW_W, Image.ASLEEP, Image.BUTTERFLY, Image.CHESSBOARD,
         Image.CLOCK1, Image.CLOCK10, Image.CLOCK11, Image.CLOCK12,
-        Image.CLOCK2, Image.CLOCK3, Image.CLOCK4, Image.CLOCK5, Image
-        .CLOCK6, Image.CLOCK7, Image.CLOCK8, Image.CLOCK9, Image.CONFUSED,
+        Image.CLOCK2, Image.CLOCK3, Image.CLOCK4, Image.CLOCK5,
+        Image.CLOCK6, Image.CLOCK7, Image.CLOCK8, Image.CLOCK9, Image.CONFUSED,
         Image.COW, Image.DIAMOND, Image.DIAMOND_SMALL, Image.DUCK,
         Image.FABULOUS, Image.GHOST, Image.GIRAFFE, Image.HAPPY,
         Image.HEART, Image.HEART_SMALL, Image.HOUSE, Image.MEH,
