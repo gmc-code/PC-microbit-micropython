@@ -144,8 +144,8 @@ Flashing Image
 
 ----
 
-Random times for flashing an image
------------------------------------
+EXT: Random times for flashing an image
+----------------------------------------
 
 | Import the random library. Then use randint to get a random times for flashing an image.
 
@@ -434,7 +434,7 @@ Built-in Image lists
 
 ----
 
-Random images
+EXT: Random images
 -----------------------------------
 
 | Import the random library. Then use random.choice to show a random image from a list.
