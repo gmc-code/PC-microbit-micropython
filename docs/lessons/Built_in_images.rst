@@ -41,7 +41,7 @@ Display.show a built-in Image
     #. Write code to show an ARROW_N.
     #. Write code to show a GIRAFFE.
     #. Write code to show a SMILE.
-    
+
     .. dropdown::
         :icon: codescan
         :color: primary
@@ -106,7 +106,7 @@ Flashing Image
 
     #. Modify the code to have the heart appear for 1/3 of the time.
     #. Modify the code to have the heart appear for 2/3 of the time.
-    
+
     .. dropdown::
         :icon: codescan
         :color: primary
@@ -151,7 +151,7 @@ Random times for flashing an image
 
 .. py:function:: random.randint(a, b)
 
-    Return a random integer from a to b, including both. 
+    Return a random integer from a to b, including both.
 
 | The code below gets a random integer from 600 to 900 and uses that for the sleep time during which the image is shown.
 | Then it is used to calculate sleep time during which the display is cleared.
@@ -176,7 +176,7 @@ Random times for flashing an image
 
     #. Write the code to have the heart appear for 500ms, but clear the screen for a random time ranging from 100 to 500ms.
     #. Write the code to have the heart appear for a random time ranging from 100 to 500ms, but clear the screen for 500ms.
-    
+
     .. dropdown::
         :icon: codescan
         :color: primary
@@ -366,7 +366,7 @@ Image lists
                     arrow_list = [Image.ARROW_N, Image.ARROW_E, Image.ARROW_S, Image.ARROW_W]
                     while True:
                         display.show(arrow_list, delay=400)
- 
+
             .. tab-item:: Q3
 
                 Write code to use a variable to show a list of 3 different music images with an 0.3 sec delay between them.
@@ -413,7 +413,7 @@ Built-in Image lists
 .. admonition:: Tasks
 
     #. Write code to display the images in the built-in image collection: ``Image.ALL_ARROWS``, with a delay of 200ms.
-    
+
     .. dropdown::
         :icon: codescan
         :color: primary
@@ -441,7 +441,7 @@ Random images
 
 .. py:function:: random.choice(image_list)
 
-    Return a random image from the list of images: image_list. 
+    Return a random image from the list of images: image_list.
 
 | The code below shows a random image from a list every 500ms.
 
@@ -449,7 +449,7 @@ Random images
 
     from microbit import *
     import random
-    
+
     shape_list = [
         Image.TRIANGLE,
         Image.TRIANGLE_LEFT,
@@ -491,7 +491,7 @@ Image sentences
         sleep(300)
 
 ----
- 
+
 .. admonition:: Tasks
 
     #. Write an image sentence combining words and images.
@@ -529,7 +529,7 @@ Image sentences using "mixed" lists
 | The text images must be one character in quotes.
 | Normally, a text image requires **Image** as in Image("U").
 | But the list input for **display.show** automatically treats "U" as Image("U").
-| Single quoted digits, e.g. "4", work in a similar way. 
+| Single quoted digits, e.g. "4", work in a similar way.
 | Multiple digits in an image, as in Image("12345"), set the pixel brightness for those pixels.
 | Strings, such as "1234" or "abcd", will be ignored.
 
@@ -539,11 +539,11 @@ Image sentences using "mixed" lists
 
     from microbit import *
 
-    while True:
         # snake ate rabbit
         mixed_list = [Image.SNAKE, "8", Image.RABBIT]
-        display.show(mixed_list, delay=300, clear=True)
-        sleep(300)
+        while True:
+            display.show(mixed_list, delay=300, clear=True)
+            sleep(300)
 
 
 ----
@@ -570,8 +570,8 @@ Image sentences using "mixed" lists
 
                     from microbit import *
 
+                    mixed_list = ["R", "U", Image.SAD]
                     while True:
-                        mixed_list = ["R", "U", Image.SAD]
                         display.show(mixed_list, delay=700, clear=True)
                         sleep(1000)
 
@@ -583,8 +583,8 @@ Image sentences using "mixed" lists
 
                     from microbit import *
 
+                    mixed_list = ["B", Image.HAPPY]
                     while True:
-                        mixed_list = ["B", Image.HAPPY]
                         display.show(mixed_list, delay=700, clear=True)
                         sleep(1000)
 
@@ -596,9 +596,9 @@ Image sentences using "mixed" lists
 
                     from microbit import *
 
+                    mixed_list = ["R", "U", Image.SURPRISED, "2", "B", Image.CONFUSED, "?"]
                     while True:
-                        mixed_list = ["R", "U", Image.SURPRISED, "2", "B", Image.CONFUSED, "?"]
-                        display.show(mixed_list, delay=700, clear=True)
+                         display.show(mixed_list, delay=700, clear=True)
                         sleep(1000)
 
 
@@ -636,7 +636,7 @@ All Images
 
 .. image:: images/built_in_images.png
     :scale: 50 %
-    
+
 ----
 
 .. admonition:: Tasks
@@ -645,7 +645,7 @@ All Images
     #. Edit the built-in images list from above to just include faces.
     #. Edit the built-in images list from above to just include objects.
     #. Edit the built-in images list from above to just include shapes.
-    
+
     .. dropdown::
         :icon: codescan
         :color: primary
@@ -708,11 +708,11 @@ All Images
                     object_images = [
                                     Image.CHESSBOARD,
                                     Image.PITCHFORK,
-                                    Image.TARGET, 
+                                    Image.TARGET,
                                     Image.TSHIRT,
-                                    Image.ROLLERSKATE, 
+                                    Image.ROLLERSKATE,
                                     Image.HOUSE,
-                                    Image.STICKFIGURE, 
+                                    Image.STICKFIGURE,
                                     Image.GHOST,
                                     Image.SWORD,
                                     Image.SKULL,
@@ -743,11 +743,11 @@ All Images
                     while True:
                         display.show(shape_images, delay=250)
 
- 
+
 .. admonition:: Tip
 
     Advanced code to collect the list of all images is below.
-    
+
     .. code-block:: python
 
         from microbit import *
