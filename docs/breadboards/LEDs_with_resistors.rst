@@ -253,7 +253,7 @@ Write analog
             pin0.write_analog(0)
         elif button_b.is_pressed():
             # pulse_off
-            for i in brightness
+            for i in brightness:
                 pin0.write_analog(1023-i)
                 sleep(sleep_time)
             pin0.write_analog(0)
