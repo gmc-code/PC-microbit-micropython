@@ -80,11 +80,12 @@ Turn on and off pin0
 
 ----
 
-Blink All
+
+Turn all on and off
 ----------------------------------------
 
-| Pressing A blinks all 3 LEDS in order, one after the other.
-| Pressing B blinks all 3 LEDS together.
+| Pressing A turns **on** the LED on pin0, pin1 and pin2.
+| Pressing B turns **off** the LED on pin0, pin1 and pin2.
 
 .. code-block:: python
 
@@ -94,23 +95,105 @@ Blink All
     while True:
         if button_a.is_pressed():
             pin0.write_digital(1)
-            sleep(1000)
+            pin1.write_digital(1)
+            pin2.write_digital(1)
+        elif button_b.is_pressed():
+            pin0.write_digital(0)
+            pin1.write_digital(0)
+            pin2.write_digital(0)
+        sleep(500)
+
+----
+
+
+.. admonition:: Tasks
+
+    Remember that the red LED is on pin0, yellow on pin1, and green on pin2.
+
+    #. Write code so that pressing A turns on the red LED only and pressing B turns on the yellow and green LEDs only.
+    #. Write code so that pressing A turns on the green LED only and pressing B turns on the yellow and red LEDs only.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Write code so that pressing A turns on the red LED only and pressing B turns on the yellow and green LEDs only.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+
+                    while True:
+                        if button_a.is_pressed():
+                            pin0.write_digital(1)
+                            pin1.write_digital(0)
+                            pin2.write_digital(0)
+                        elif button_b.is_pressed():
+                            pin0.write_digital(0)
+                            pin1.write_digital(0)
+                            pin2.write_digital(1)
+                        sleep(500)
+
+            .. tab-item:: Q2
+
+                Write code so that pressing A turns on the green LED only and pressing B turns on the yellow and red LEDs only.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+
+                    while True:
+                        if button_a.is_pressed():
+                            pin0.write_digital(0)
+                            pin1.write_digital(0)
+                            pin2.write_digital(1)
+                        elif button_b.is_pressed():
+                            pin0.write_digital(1)
+                            pin1.write_digital(1)
+                            pin2.write_digital(0)
+                        sleep(500)
+
+
+----
+
+Blink All
+----------------------------------------
+
+| Pressing A blinks all 3 LEDS in order, one after the other every one and a half seconds.
+| Pressing B blinks all 3 LEDS together every one and a half seconds.
+
+.. code-block:: python
+
+    from microbit import *
+
+
+    while True:
+        if button_a.is_pressed():
+            pin0.write_digital(1)
+            sleep(500)
             pin0.write_digital(0)
             pin1.write_digital(1)
-            sleep(300)
+            sleep(500)
             pin1.write_digital(0)
             pin2.write_digital(1)
-            sleep(1000)
+            sleep(500)
             pin2.write_digital(0)
         elif button_b.is_pressed():
             pin0.write_digital(1)
             pin1.write_digital(1)
             pin2.write_digital(1)
-            sleep(1000)
+            sleep(750)
             pin0.write_digital(0)
             pin1.write_digital(0)
             pin2.write_digital(0)
-        sleep(500)
+            sleep(750)
 
 ----
 
