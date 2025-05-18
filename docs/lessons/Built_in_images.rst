@@ -752,9 +752,16 @@ All Images
 
         from microbit import *
 
+        # Get a list of built-in images
         dir_images = dir(Image)
-        built_in_images = ["Image." + img for img in dir_images if type(Image, img)) == Image]
-        built_in_images_string = ", ".join(built_in_images)
-        built_in_images_string.replace('"', '')
-        print(built_in_images_string)
+        built_in_images = ["Image." + img for img in dir_images if isinstance(getattr(Image, img, None), Image)]
 
+        # Convert list to a string and clean it up
+        built_in_images_string = ", ".join(built_in_images)
+        built_in_images_string = built_in_images_string.replace('"', '')
+        built_in_images_list = (list(built_in_images_string))
+        # Print the result
+        print(built_in_images_list)
+
+        while True:
+            display.show(built_in_images_list, delay=250)

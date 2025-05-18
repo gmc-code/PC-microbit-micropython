@@ -468,3 +468,39 @@ EXT: storing values in a list
 
                         sleep(500)
 
+            .. tab-item:: Q3
+
+                Here is some fun code that displays a heart image as a series of shown pixels, then clears it by choosing random pixels from the stored list of pixels. Modify it to dim the pixels instead of turning them off.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import random  # Import random module
+
+                    heart = [
+                        [0, 1, 1, 1, 0],
+                        [1, 1, 1, 1, 1],
+                        [1, 1, 1, 1, 1],
+                        [0, 1, 1, 1, 0],
+                        [0, 0, 1, 0, 0]
+                    ]
+
+                    lit_pixels = []  # Keep track of active pixels
+
+                    while True:
+                        # Light up pixels one by one
+                        for y in range(5):
+                            for x in range(5):
+                                if heart[y][x]:  # Only process active parts of the heart shape
+                                    display.set_pixel(x, y, 9)
+                                    lit_pixels.append((x, y))  # Store pixel coordinates
+                                    sleep(100)
+
+                        # Remove pixels randomly instead of sequentially
+                        while lit_pixels:
+                            random_index = random.randint(0, len(lit_pixels) - 1)  # Get a random pixel index
+                            old_x, old_y = lit_pixels.pop(random_index)  # Remove a random pixel
+                            display.set_pixel(old_x, old_y, 0)
+                            sleep(50)
+
+                        sleep(500)
