@@ -129,28 +129,59 @@ any
 .. code-block:: python
 
     from microbit import *
-    # import builtins
 
-    list1 = [1, 0, 1]
-    list2 = [0, 0, 0]
+    # Lists with suffixes A to H
+    listA = [1, 2, 3]  # True (at least one nonzero)
+    listB = [0, 0, 0]  # False (only zeros)
+
+    listC = [True, False, True]  # True (at least one True)
+    listD = [False, False, False]  # False (only False)
+
+    listE = ["Hello", "", "World"]  # True (at least one non-empty string)
+    listF = ["", "", ""]  # False (only empty strings)
+
+    listG = [Image.HEART, None, Image.HAPPY]  # True (at least one valid image)
+    listH = [None, None, None]  # False (only None values)
+
     while True:
-        display.scroll(any(all_list1))
-        display.scroll("_")
-        display.scroll(any(all_list2))
+        # Numbers
+        display.scroll("A", 60)
+        display.scroll(any(listA), 60)
+        display.scroll("B", 60)
+        display.scroll(any(listB), 60)
+
+        # Booleans
+        display.scroll("C", 60)
+        display.scroll(any(listC), 60)
+        display.scroll("D", 60)
+        display.scroll(any(listD), 60)
+
+        # Strings
+        display.scroll("E", 60)
+        display.scroll(any(listE), 60)
+        display.scroll("F", 60)
+        display.scroll(any(listF), 60)
+
+        # Image Objects
+        display.scroll("G", 60)
+        display.scroll(any(listG), 60)
+        display.scroll("H", 60)
+        display.scroll(any(listH), 60)
+
 
 ----
 
 bin
 -------------------
 
-.. function:: bin()
+.. function:: bin(value)
 
-    Convert an integer to a binary string prefixed with "0b".
+    | Convert an integer to a binary string prefixed with "0b".
+    | Value is an integer.
 
 .. code-block:: python
 
     from microbit import *
-    # import builtins
 
     val1 = bin(3)
     val2 = bin(-1)
@@ -158,6 +189,7 @@ bin
         display.scroll(val1)
         display.scroll("_")
         display.scroll(val2)
+        display.scroll("__")
 
 ----
 
@@ -177,12 +209,12 @@ bool
 .. code-block:: python
 
     from microbit import *
-    # import builtins
 
     val1 = bool()
     val2 = bool(0)
-    val3 = bool(1)
+    val3 = bool("")
     val4 = bool(None)
+    val5 = bool([])
     while True:
         display.scroll(val1)
         display.scroll("_")
@@ -191,6 +223,32 @@ bool
         display.scroll(val3)
         display.scroll("|")
         display.scroll(val4)
+        display.scroll("+")
+        display.scroll(val5)
+
+| These return True.
+
+.. code-block:: python
+
+    from microbit import *
+
+    val1 = bool(1)  # True (nonzero number)
+    val2 = bool(-5)  # True (negative number)
+    val3 = bool("hello")  # True (non-empty string)
+    val4 = bool(Image.YES)  # True (image)
+    val5 = bool([1, 2, 3])  # True (non-empty list)
+
+    while True:
+        display.scroll(val1)
+        display.scroll("_")
+        display.scroll(val2)
+        display.scroll("/")
+        display.scroll(val3)
+        display.scroll("|")
+        display.scroll(val4)
+        display.scroll("+")
+        display.scroll(val5)
+
 
 ----
 
@@ -209,7 +267,6 @@ See: https://www.programiz.com/python-programming/methods/built-in/bytearray
 .. code-block:: python
 
     from microbit import *
-    # import builtins
 
     val1 = bytearray()
     val2 = bytearray(3)
@@ -219,6 +276,13 @@ See: https://www.programiz.com/python-programming/methods/built-in/bytearray
     print(val2)
     print(val3)
     print(val4)
+
+    '''
+    bytearray(b'')
+    bytearray(b'\x00\x00\x00')
+    bytearray(b'\x02\x04\x06')
+    bytearray(b'mb')
+    '''
 
 ----
 
@@ -237,7 +301,6 @@ bytes
 .. code-block:: python
 
     from microbit import *
-    # import builtins
 
     val1 = bytes()
     val2 = bytes(2)
@@ -247,6 +310,13 @@ bytes
     print(val2)
     print(val3)
     print(val4)
+
+    '''
+    b''
+    b'\x00\x00'
+    b'\x02\x04\x06'
+    b'mb'
+    '''
 
 ----
 
@@ -260,14 +330,13 @@ callable
 .. code-block:: python
 
     from microbit import *
-    # import builtins
 
     def add2(a, b):
         return a + b
 
-    print(callable(add2))
-    print(callable(0))
-    print(callable("mb"))
+    print(callable(add2))  # True
+    print(callable(callable))  # True
+    print(callable("callable"))  # False
 
 ----
 
@@ -281,16 +350,26 @@ chr
 .. code-block:: python
 
     from microbit import *
-    # import builtins
 
     print(chr(0x30))
     print(chr(97))
     print(chr(8364))
+    display.scroll(chr(0x30))
+    display.scroll(chr(97))
+    display.scroll(chr(8364))  #--can't display so ? instead
+
+    '''
+    0
+    a
+    €
+    '''
 
 ----
 
 classmethod
 -------------------
+
+| Think of a normal method as specific to an object, while a class method is shared across all objects of the class.
 
 See: https://www.programiz.com/python-programming/methods/built-in/classmethod
 
@@ -302,7 +381,6 @@ See: https://www.programiz.com/python-programming/methods/built-in/classmethod
 .. code-block:: python
 
     from microbit import *
-    # import builtins
 
     class Person:
         age = 15
@@ -322,18 +400,37 @@ See: https://www.programiz.com/python-programming/methods/built-in/classmethod
 .. code-block:: python
 
     from microbit import *
-    # import builtins
 
     class Person:
-        age = 15
+        age = 15  # Class attribute
+
+        def print_age(self, name):
+            # Instance method (prints the object's name and its specific age)
+            print(name + " Age: " + str(self.age))
 
         @classmethod
-        def printAge(cls):
-            print('The age is:', cls.age)
+        def print_class_age(cls):
+            # Class method (applies to all instances)
+            print("Class Age: " + str(cls.age))
 
-    Person.printAge()
-    Person.age = 20
-    Person.printAge()
+    # Create instances and call methods
+    person1 = Person()
+    person1.print_age("Person1")  # Displays "Person1 Age: 15"
+    Person.print_class_age()  # Displays "Class Age: 15"
+
+    # Modify the instance attribute and call method again
+    person1.age = 16  # Changes only this object's age
+    person1.print_age("Person1")  # Displays "Person1 Age: 16"
+    Person.print_class_age()  # Displays "Class Age: 15" (unchanged)
+
+    # Modify the class attribute and call class method again
+    Person.age = 20  # Changes the class-wide age (affects future instances)
+    Person.print_class_age()  # Displays "Class Age: 20"
+    person1.print_age("Person1")  # Displays "Person1 Age: 16" (instance keeps its own value)
+    # Create a second instance and call methods
+    person2 = Person()
+    person2.print_age("Person2")  # Displays "Person2 Age: 20" (inherits class value)
+
 
 ----
 
@@ -352,12 +449,18 @@ complex
 .. code-block:: python
 
     from microbit import *
-    # import builtins
 
     print(complex(1, 2))
-    print(complex(1))
+    print(complex(0, 4))
     print(complex("1"))
-    print(complex(1+2j))
+    print(complex(1-3j))
+
+    '''
+    (1+2j)
+    4j
+    (1+0j)
+    (1-3j)
+    '''
 
 ----
 
@@ -374,7 +477,6 @@ delattr
 .. code-block:: python
 
     from microbit import *
-    # import builtins
 
     class Coordinate:
         x = 10
@@ -383,15 +485,15 @@ delattr
 
     point1 = Coordinate()
 
-    print('x = ',point1.x)
-    print('y = ',point1.y)
-    print('z = ',point1.z)
+    print('x =',point1.x)
+    print('y =',point1.y)
+    print('z =',point1.z)
 
     delattr(Coordinate, 'z')
     print('--deleted z attribute--')
 
-    print('x = ',point1.x)
-    print('y = ',point1.y)
+    print('x =',point1.x)
+    print('y =',point1.y)
 
     # Trigger error
     print('z = ',point1.z)
@@ -410,18 +512,32 @@ dict
 - ``mapping`` -- element container.
 - ``iterable`` -- iteratable object.
 
-dict() Function to create a dictionary
+.. function:: dict()
 
-::
+    | create a dictionary
 
-    dict()                        # Create an empty dictionary
-    {}
-    dict(a='a', b='b', t='t')     # enter keyword
-    {'a': 'a', 'b': 'b', 't': 't'}
-    dict(zip(['one', 'two', 'three'], [1, 2, 3]))   # Mapping function mode to construct dictionary
-    {'three': 3, 'two': 2, 'one': 1}
-    dict([('one', 1), ('two', 2), ('three', 3)])    # Iterative object method to construct the dictionary
-    {'three': 3, 'two': 2, 'one': 1}
+
+.. code-block:: python
+
+    from microbit import *
+
+    # Creating dictionaries using different methods
+    dictA = {}  # Empty dictionary
+    dictB = dict(a='a', b='b', c='c')  # Using keyword arguments
+    dictC = dict(zip(['one', 'two', 'three'], [1, 2, 3]))  # Using zip() mapping
+    dictD = dict([('one', 1), ('two', 2), ('three', 3)])  # Using an iterable object
+
+    # Function to scroll dictionary contents
+    def scroll_dict(dictionary, name):
+        display.scroll(name + ": ")
+        for key, value in dictionary.items():
+            display.scroll(str(key) + "=" + str(value) + " ")
+
+    while True:
+        scroll_dict(dictA, "A")  # Empty dictionary
+        scroll_dict(dictB, "B")  # Keyword-based dictionary
+        scroll_dict(dictC, "C")  # Zip mapping dictionary
+        scroll_dict(dictD, "D")  # Iterable-based dictionary
 
 
 
@@ -438,32 +554,178 @@ dir
     - ``object`` -- object, variable, type.
 
 
+.. code-block:: python
+
+    from microbit import *
+    import music
+
+
+    # List of valid micro:bit objects to inspect
+    objects_to_check = [
+        ("Button A", button_a),
+        ("Display", display),
+        ("Accelerometer", accelerometer),
+        ("Temperature", temperature()),
+        ("Compass", compass),
+        ("Pins", pin0),
+        ("music", music)
+    ]
+
+    # Function to print attributes while skipping dunder methods
+    def display_attributes(obj_name, obj):
+        print(obj_name + ": ")
+        for attribute in dir(obj):
+            if not attribute.startswith("__"):  # Skip dunder methods
+                print(attribute)
+        print("____________")
+
+    # Loop through objects and print attributes
+    for name, obj in objects_to_check:
+        display_attributes(name, obj)
+
+    '''
+    Button A:
+    get_presses
+    is_pressed
+    was_pressed
+    ____________
+    Display:
+    clear
+    get_pixel
+    is_on
+    off
+    on
+    read_light_level
+    scroll
+    set_pixel
+    show
+    ____________
+    Accelerometer:
+    current_gesture
+    get_gestures
+    get_strength
+    get_values
+    get_x
+    get_y
+    get_z
+    is_gesture
+    set_range
+    was_gesture
+    ____________
+    Temperature:
+    from_bytes
+    to_bytes
+    ____________
+    Compass:
+    calibrate
+    clear_calibration
+    get_field_strength
+    get_x
+    get_y
+    get_z
+    heading
+    is_calibrated
+    ____________
+    Pins:
+    CAPACITIVE
+    NO_PULL
+    PULL_DOWN
+    PULL_UP
+    RESISTIVE
+    get_analog_period_microseconds
+    get_mode
+    get_pull
+    is_touched
+    read_analog
+    read_digital
+    set_analog_period
+    set_analog_period_microseconds
+    set_pull
+    set_touch_mode
+    write_analog
+    write_digital
+    ____________
+    music:
+    stop
+    BADDY
+    BA_DING
+    BIRTHDAY
+    BLUES
+    CHASE
+    DADADADUM
+    ENTERTAINER
+    FUNERAL
+    FUNK
+    JUMP_DOWN
+    JUMP_UP
+    NYAN
+    ODE
+    POWER_DOWN
+    POWER_UP
+    PRELUDE
+    PUNCHLINE
+    PYTHON
+    RINGTONE
+    WAWAWAWAA
+    WEDDING
+    get_tempo
+    pitch
+    play
+    reset
+    set_tempo
+    __________
+
+    '''
+
 ----
 
 divmod
 -------------------
 
-.. function:: divmod()
+.. function:: divmod(a, b)
 
-It takes two (non complex) numbers as arguments and returns a pair of quotients and remainder when integer division is performed. Mixed operand type, applicable to the rules of higher arithmetic operators.
-For integers, results are consistent with (a // b, a % b). For floating-point numbers, the result is (q, a % b) , q is usually math.floor(a / b) but it might be smaller than 1.
-In any case, Q * B + a% B and a are basically equal; if a% B is not zero, Its symbol is the same as B, and 0 < = ABS (a% B) < ABS (b).
+    | Perform integer division and return the quotient and remainder as a tuple.
+    | `a` and `b` are non-complex numbers.
+    | For integers, the result is `(a // b, a % b)`, following standard division rules.
+    | For floating-point numbers, the result is `(q, a % b)`, where `q` is usually `math.floor(a / b)`, but may be smaller than 1.
+    | The relationship `q * b + a % b == a` holds, ensuring consistency.
+    | If `a % b` is not zero, it has the same sign as `b`, with `0 <= abs(a % b) < abs(b)`.
 
-::
 
-    divmod(7, 2)
-    (3, 1)
-    divmod(8, 2)
-    (4, 0)
-    divmod(8, -2)
-    (-4, 0)
-    divmod(3, 1.3)
-    (2.0, 0.4000001)
+.. code-block:: python
+
+    from microbit import *
+
+    # List of divmod calculations
+    calculations = [
+        ("7//2", divmod(7, 2)),
+        ("8//2", divmod(8, 2)),
+        ("8//-2", divmod(8, -2)),
+        ("3//1.3", divmod(3, 1.3))
+    ]
+
+    # Scroll results on micro:bit
+    for label, result in calculations:
+        print(label + " = " + str(result))
+
+    '''
+    7//2 = (3, 1)
+    8//2 = (4, 0)
+    8//-2 = (-4, 0)
+    3//1.3 = (2.0, 0.4000001)
+    '''
 
 ----
 
 Ellipsis
 -------------------
+
+.. function:: ...
+
+    | Represents an **ellipsis** (three dots) used as a placeholder.
+    | Commonly used inside functions to indicate future implementation.
+    | Equivalent to `pass`, meaning it does nothing when executed.
+
 
 | See: https://docs.python.org/3/library/constants.html
 | The ellipsis can be uses instead of pass as a placeholder in functions.
@@ -472,7 +734,6 @@ Ellipsis
 .. code-block:: python
 
     from microbit import *
-    # import builtins
 
     def test_def():
         ...
@@ -489,22 +750,27 @@ Ellipsis
 enumerate
 -------------------
 
-.. function:: enumerate(sequence, [start=0])
+.. function:: enumerate(sequence, start=0)
 
-enumerate() Function is used to combine a traversable data object (such as a list, tuple or string) into an index sequence, and list data and data subscripts. It is generally used in for-loop.
+    | Converts a traversable object (list, tuple, string, etc.) into an indexed sequence.
+    | Commonly used in for-loops to iterate with index values.
 
-- ``sequence`` -- A sequence, iterator, or other object that supports iteration.
-- ``start`` -- Subscript start position.
+    :param sequence: A sequence, iterator, or other object that supports iteration.
+    :param start: (Optional) The starting index (default is 0).
 
-::
 
-        seq = ['one', 'two', 'three']
-         for i, element in enumerate(seq):
-   ...     print i, element
-   ...
-    0 one
-    1 two
-    2 three
+.. code-block:: python
+
+    from microbit import *
+
+    # Sample list of strings
+    strings = ["A", "B", "C"]
+
+    while True:
+        for index, string in enumerate(strings, start=1):  # Start index at 1
+            display.scroll(str(index) + ": " + string)
+
+
 
 ----
 
