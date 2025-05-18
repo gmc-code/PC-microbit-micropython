@@ -759,9 +759,24 @@ All Images
         # Convert list to a string and clean it up
         built_in_images_string = ", ".join(built_in_images)
         built_in_images_string = built_in_images_string.replace('"', '')
-        built_in_images_list = (list(built_in_images_string))
-        # Print the result
-        print(built_in_images_list)
+        # Print the result to the terminal
+        print(built_in_images_string)
 
+
+
+    Advanced code to print the list of all image objects using their pixel data is below.
+
+    .. code-block:: python
+
+        from microbit import *
+
+        # Get a list of built-in image objects
+        dir_images = dir(Image)
+        built_in_images = [getattr(Image, img) for img in dir_images if isinstance(getattr(Image, img, None), Image)]
+
+        # Print the result to check the built-in images
+        print(built_in_images)
+
+        # Display each built-in image
         while True:
-            display.show(built_in_images_list, delay=250)
+            display.show(built_in_images, delay=100)
