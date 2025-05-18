@@ -263,8 +263,8 @@ Nested For loops
 
 .. admonition:: Tasks
 
-    #. Write a for-loop that shows the result from multiplying each number in the list, ``[3, 5, 7]`` by 5, using a variable for each part of the multiplication.
-    #. Write a nested for-loop that finds the sum of every different combination of two numbers from the two lists: ``[2, 4, 6]`` and ``[3, 5, 7]``.
+    #. Write a for-loop that scrolls all the letter pairings from the 2 lists: ["A", "B", "C"] and ["X", "Y", "Z"] taking one letter from each with the first letter always beng form the first list given.
+    #. Write a nested for-loop that tuns on and off pixels at points (x,y) using the lists:   ``x_positions = [0, 1, 2, 3, 4]`` and ``y_positions = [4, 3, 2, 1, 0]``. Use ``display.set_pixel(x, y, 9)`` to turn on the pixel and ``display.set_pixel(x, y, 0)`` to turn it off after a short sleep.
 
     .. dropdown::
         :icon: codescan
@@ -275,32 +275,38 @@ Nested For loops
 
             .. tab-item:: Q1
 
-                Write a for-loop that shows the result from **multiplying** each number in the list, ``[3, 5, 7]`` by 5, using a variable for each part of the multiplication.
+                Write a for-loop that scrolls all the letter pairings from the 2 lists: ["A", "B", "C"] and ["X", "Y", "Z"] taking one letter from each with the first letter always beng form the first list given.
 
                 .. code-block:: python
 
                     from microbit import *
 
-                    nums_1_list = [3, 5, 7]
-                    num_2 = 5
+                    letters_1 = ["A", "B", "C"]
+                    letters_2 = ["X", "Y", "Z"]
+
                     while True:
-                        for num_1 in nums_1_list:
-                            display.scroll(num_1 * num_2, delay=80)
+                        for letter1 in letters_1:
+                            for letter2 in letters_2:
+                                display.scroll(letter1 + letter2, delay=100)
 
             .. tab-item:: Q2
 
-                Write a nested for-loop that finds the **sum** of every different combination of two numbers from the two lists: ``[2, 4, 6]`` and ``[3, 5, 7]``.
+                Write a nested for-loop that tuns on and off pixels at points (x,y) using the lists:   ``x_positions = [0, 1, 2, 3, 4]`` and ``y_positions = [4, 3, 2, 1, 0]``. Use ``display.set_pixel(x, y, 9)`` to turn on the pixel and ``display.set_pixel(x, y, 0)`` to turn it off after a short sleep.
 
                 .. code-block:: python
 
                     from microbit import *
 
-                    nums_1_list = [2, 4, 6]
-                    nums_2_list = [3, 5, 7]
+                    x_positions = [0, 1, 2, 3, 4]
+                    y_positions = [4, 3, 2, 1, 0]
+
                     while True:
-                        for num_1 in nums_1_list:
-                            for num_2 in nums_2_list:
-                                display.scroll(num_1 + num_2, delay=80)
+                        for x in x_positions:
+                            for y in y_positions:
+                                display.set_pixel(x, y, 9)
+                                sleep(200)
+                                display.set_pixel(x, y, 0)
+
 
 
 | For examples of using nested for-loops specific to the microbit display see the `Setting Pixels page under Images <https://pc-microbit-micropython.readthedocs.io/en/latest/images/setting_pixels.html#pixel-rows-and-columns-lists>`_.
