@@ -702,7 +702,7 @@ If classInfo is neither a type nor a type tuple or a recursive tuple of type, a 
     - `type()` does not consider a subclass as a parent type, and does not consider inheritance.
     - `isinstance()` Consider that the subclass is a parent type, and consider inheritance relationship.
 
-    *to judge whether two types are the same, recommended to use isinstance()。*
+    To judge whether two types are the same, it is recommended to use isinstance().
 
 ----
 

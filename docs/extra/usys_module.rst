@@ -75,3 +75,17 @@ usys module
     print('byteorder:', usys.byteorder)
     print('argv:', usys.argv)
 
+    '''
+    version_info: (3, 4, 0)
+    version: 3.4.0
+    platform: microbit
+    implementation name: micropython
+    implementation version: (1, 18, 0)
+    maxsize: 2147483647
+    32-bit
+    path: ['', '.frozen']
+    modules: {}
+    byteorder: little
+    argv: []
+    '''
+

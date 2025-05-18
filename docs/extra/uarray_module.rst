@@ -24,6 +24,20 @@ arrays
     Supported format codes: b, B, h, H, i, I, l, L, q, Q, f, d
     Use i for integers.
 
+| The typecode specifies the type of elements stored in the array:
+| b — Signed 8-bit integer (int8_t)
+| B — Unsigned 8-bit integer (uint8_t)
+| h — Signed 16-bit integer (int16_t)
+| H — Unsigned 16-bit integer (uint16_t)
+| i — Signed 32-bit integer (int32_t) (Recommended for general integers)
+| I — Unsigned 32-bit integer (uint32_t)
+| l — Signed 32-bit integer (Same as i, but used in some variations)
+| L — Unsigned 32-bit integer (Same as I)
+| q — Signed 64-bit integer (int64_t)
+| Q — Unsigned 64-bit integer (uint64_t)
+| f — Floating-point (single precision, 32-bit)
+| d — Floating-point (double precision, 64-bit)
+
 | The code below creates an array of integers.
 
 .. code-block:: python
