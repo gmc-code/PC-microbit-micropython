@@ -378,3 +378,93 @@ For loops with mixed lists
                             display.show(element, delay=200)
                             sleep(700)
                         sleep(1000)
+
+
+EXT: storing values in a list
+---------------------------------
+
+|
+
+.. admonition:: Exercises
+
+    #. Here is some fun code that displays a heart image as a series of 3 pixels. Change it form 3 to 5 pixels.
+    #. Here is some fun code that displays a heart image as a series of shown pixels. Change the pop parameter to pop the last item via -1 to clear the image in reverse.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Here is some fun code that displays a heart image as a series of 3 pixels. Change it form 3 to 5 pixels.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    heart = [
+                        [0, 1, 1, 1, 0],
+                        [1, 1, 1, 1, 1],
+                        [1, 1, 1, 1, 1],
+                        [0, 1, 1, 1, 0],
+                        [0, 0, 1, 0, 0]
+                    ]
+
+                    lit_pixels = []  # Keep track of three active pixels
+
+                    while True:
+                        for y in range(5):
+                            for x in range(5):
+                                if heart[y][x]:  # Only process active parts of the heart shape
+                                    display.set_pixel(x, y, 9)
+                                    lit_pixels.append((x, y))  # Store pixel coordinates
+
+                                    # If more than 3 pixels are lit, remove the oldest one
+                                    if len(lit_pixels) > 3:
+                                        old_x, old_y = lit_pixels.pop(0)
+                                        display.set_pixel(old_x, old_y, 0)
+
+                                    sleep(100)
+
+                        sleep(500)
+                        display.clear()
+                        sleep(500)
+
+            .. tab-item:: Q2
+
+                Here is some fun code that displays a heart image as a series of shown pixels. Change the pop parameter to pop the last item via -1 to clear the image in reverse.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    heart = [
+                        [0, 1, 1, 1, 0],
+                        [1, 1, 1, 1, 1],
+                        [1, 1, 1, 1, 1],
+                        [0, 1, 1, 1, 0],
+                        [0, 0, 1, 0, 0]
+                    ]
+
+                    lit_pixels = []  # Keep track of active pixels
+
+                    while True:
+                        # Light up pixels one by one
+                        for y in range(5):
+                            for x in range(5):
+                                if heart[y][x]:  # Only process active parts of the heart shape
+                                    display.set_pixel(x, y, 9)
+                                    lit_pixels.append((x, y))  # Store pixel coordinates
+                                    sleep(100)
+
+                        # Fade out pixels one by one instead of clearing all at once
+                        while lit_pixels:
+                            old_x, old_y = lit_pixels.pop(0)
+                            display.set_pixel(old_x, old_y, 0)
+                            sleep(100)
+
+                        sleep(500)
+
