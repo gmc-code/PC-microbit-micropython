@@ -50,10 +50,13 @@ ustruct
     unpacked_data = ustruct.unpack('hhl', packed_data)
     print(unpacked_data)  # Output: (1, 2, 3)
 
+
+----
+
 Radio send and receive bytes
 ----------------------------------
 
-| THer are two microbits communicating via radio.
+| There are two microbits communicating via radio.
 | Send accelerometer data from one microbit to another.
 | Using ustruct.pack ensures the data is sent in a compact binary format.
 | Using ustruct.unpack to convert the data back.

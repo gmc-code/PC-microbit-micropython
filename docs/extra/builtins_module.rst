@@ -397,7 +397,7 @@ Ellipsis
 
 | See: https://docs.python.org/3/library/constants.html
 | The ellipsis can be uses instead of pass as a placeholder in functions.
-| THis is useful during development so that the unfinished function doesn't return an error.
+| This is useful during development so that the unfinished function doesn't return an error.
 
 .. code-block:: python
 

@@ -764,7 +764,7 @@ All Images
 
 
 
-    Advanced code to print the list of all image objects using their pixel data is below.
+    Advanced code to print the list of all image objects using their pixel data and display the images is below.
 
     .. code-block:: python
 
