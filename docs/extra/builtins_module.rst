@@ -13,15 +13,14 @@ abs
 
 .. function:: abs(number)
 
-    Returns the absolute value of a number.
+    Returns the absolute value of a number. This is the values made positive.
     Arguments can be integers or floating-point numbers.
 
-| The code deletes the file at index 1 in the list.
+| The code scrolls the absolute value of -2.3.
 
 .. code-block:: python
 
     from microbit import *
-    # import builtins
 
     while True:
         display.scroll(abs(-2.3))
@@ -35,17 +34,87 @@ all
 
     If all elements of `iterable` are true (or the iterator is empty), return `True`, otherwise `False`.
 
+| The code below gives examples of lists that evaluate to True or False.
+
 .. code-block:: python
 
     from microbit import *
-    # import builtins
 
-    list1 = [1, 0, 1]
-    list2 = [1, 1, 1]
+    listA = [1, 0, 1]  # Evaluates to False
+    listB = [1, 1, 1]  # Evaluates to True
+    listC = [True, False, True]  # Evaluates to False
+    listD = [True, True, True]  # Evaluates to True
+    listE = ["hello", "world", "microbit"]  # Evaluates to True (non-empty strings)
+    listF = ["hello", "", "microbit"]  # Evaluates to False (contains an empty string)
+    listG = ["", "", ""]  # Evaluates to False (all empty strings)
+    listH = [Image.HEART, Image.HAPPY, Image.SAD]  # Evaluates to True (valid images)
+    listI = [Image.HEART, None, Image.SAD]  # Evaluates to False (contains `None`)
+    listJ = [0, "", None]  # Evaluates to False
+
+
     while True:
-        display.scroll(all(all_list1))
-        display.scroll("_")
-        display.scroll(all(all_list2))
+        display.scroll("A", 60)
+        display.scroll(all(listA), 60)
+        display.scroll("B", 60)
+        display.scroll(all(listB), 60)
+        display.scroll("C", 60)
+        display.scroll(all(listC), 60)
+        display.scroll("D", 60)
+        display.scroll(all(listD), 60)
+        display.scroll("E", 60)
+        display.scroll(all(listE), 60)
+        display.scroll("F", 60)
+        display.scroll(all(listF), 60)
+        display.scroll("G", 60)
+        display.scroll(all(listG), 60)
+        display.scroll("H", 60)
+        display.scroll(all(listH), 60)
+        display.scroll("I", 60)
+        display.scroll(all(listI), 60)
+        display.scroll("J", 60)
+        display.scroll(all(listJ), 60)
+
+| The code below gives examples of lists that evaluate to True or False.
+| It converts the booleans True or False to a string then takes a slice iva [0] to scroll just "T" or "F".
+
+.. code-block:: python
+
+    from microbit import *
+
+    listA = [1, 0, 1]  # False
+    listB = [1, 1, 1]  # True
+    listC = [True, False, True]  # False
+    listD = [True, True, True]  # True
+    listE = ["hello", "world", "microbit"]  # True
+    listF = ["hello", "", "microbit"]  # False
+    listG = ["", "", ""]  # False
+    listH = [Image.HEART, Image.HAPPY, Image.SAD]  # True
+    listI = [Image.HEART, None, Image.SAD]  # False
+    listJ = [0, "", None]  # False
+
+    while True:
+        display.scroll("A", 60)
+        display.scroll(str(all(listA))[0], 60)
+        display.scroll("B", 60)
+        display.scroll(str(all(listB))[0], 60)
+        display.scroll("C", 60)
+        display.scroll(str(all(listC))[0], 60)
+        display.scroll("D", 60)
+        display.scroll(str(all(listD))[0], 60)
+        display.scroll("E", 60)
+        display.scroll(str(all(listE))[0], 60)
+        display.scroll("F", 60)
+        display.scroll(str(all(listF))[0], 60)
+        display.scroll("G", 60)
+        display.scroll(str(all(listG))[0], 60)
+        display.scroll("H", 60)
+        display.scroll(str(all(listH))[0], 60)
+        display.scroll("I", 60)
+        display.scroll(str(all(listI))[0], 60)
+        display.scroll("J", 60)
+        display.scroll(str(all(listJ))[0], 60)
+
+
 
 ----
 
@@ -363,9 +432,10 @@ dir
 
 .. function:: dir(object)
 
-dir() When a function has no parameters, it returns the list of variables, methods and defined types in the current range; when it has parameters, it returns the list of properties and methods of parameters.
-If the parameter contains  __dir__(), if it doesn't contains __dir__(), This method will maximize the collection of parameter information.
-- ``object`` -- object, variable, type.
+    dir() When a function has no parameters, it returns the list of variables, methods and defined types in the current range.
+    When it has parameters, it returns the list of properties and methods of parameters.
+    If the parameter contains  __dir__(), if it doesn't contains __dir__(), This method will maximize the collection of parameter information.
+    - ``object`` -- object, variable, type.
 
 
 ----
@@ -381,13 +451,13 @@ In any case, Q * B + a% B and a are basically equal; if a% B is not zero, Its sy
 
 ::
 
-         divmod(7, 2)
-    (3, 1)h
-         divmod(8, 2)
+    divmod(7, 2)
+    (3, 1)
+    divmod(8, 2)
     (4, 0)
-         divmod(8, -2)
+    divmod(8, -2)
     (-4, 0)
-         divmod(3, 1.3)
+    divmod(3, 1.3)
     (2.0, 0.4000001)
 
 ----
@@ -649,9 +719,9 @@ Converts an integer to a lowercase hexadecimal string prefixed with "0x".
 
 ::
 
-         hex(255)
+    hex(255)
     '0xff'
-         hex(-42)
+    hex(-42)
     '-0x2a'
 
 ----
