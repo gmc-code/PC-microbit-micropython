@@ -39,6 +39,11 @@ Model
 Write digital
 ----------------------------------------
 
+.. py:function:: pinx.write_digital(value)
+
+    | ``pinx`` is the pin. e.g pin0, pin1, pin2.
+    | ``value`` is 1 for on and 0 for off.
+
 | To turn the motor on fully, use ``pin0.write_digital(1)``.
 | To turn the motor off, use ``pin0.write_digital(0)``.
 
@@ -238,6 +243,11 @@ Turn on and off pin0
 
 Write analog
 ----------------------------------------
+
+.. py:function:: pinx.write_analog(value)
+
+    | ``pinx`` is the pin. e.g pin0, pin1, pin2.
+    | ``value`` is an integer from 0 to 1023.
 
 | To turn the motor on fully use ``pin0.write_analog(1023)``.
 | To turn the LED off use ``pin0.write_analog(0)``.

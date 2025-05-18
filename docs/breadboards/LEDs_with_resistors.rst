@@ -54,6 +54,12 @@ Model
 Write digital
 ----------------------------------------
 
+.. py:function:: pinx.write_digital(value)
+
+    | ``pinx`` is the pin. e.g pin0, pin1, pin2.
+    | ``value`` is 1 for on and 0 for off.
+
+
 | To turn the LED on fully use ``pin0.write_digital(1)`` for the LED on pin0.
 | To turn the LED off use ``pin0.write_digital(0)`` for the LED on pin0.
 | For the other pins, just replace ``pin0`` with ``pin1`` or ``pin2``.
@@ -313,6 +319,12 @@ Blink using for i in range
 
 Write analog
 ----------------------------------------
+
+.. py:function:: pinx.write_analog(value)
+
+    | ``pinx`` is the pin. e.g pin0, pin1, pin2.
+    | ``value`` is an integer from 0 to 1023.
+
 
 | To turn the LED on fully use ``pin0.write_analog(1023)`` for the LED on pin0.
 | To turn the LED off use ``pin0.write_analog(0)`` for the LED on pin0.

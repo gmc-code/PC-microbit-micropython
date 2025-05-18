@@ -5,6 +5,11 @@ For loops
 For loops with strings
 ----------------------------------------
 
+.. py:function:: for char in str:
+
+    | the string is looped through with each character in the string, ``str``, being placed in the ``char`` variable for use in the for loop block code.
+
+
 | The code below loops through each character in a string and does something with it.
 | ``for welcome_character in welcome_string`` takes each character in the string ``welcome_string`` and puts it in the variable ``welcome_character``.
 | ``display.scroll(welcome_character)`` then scrolls the character.
@@ -18,7 +23,7 @@ For loops with strings
         for welcome_character in welcome_string:
             display.scroll(welcome_character)
         sleep(300)
-        
+
 ----
 
 .. admonition:: Tasks
@@ -134,6 +139,11 @@ Add actions to a for-loop
 
 For loops with lists
 ----------------------------------------
+
+.. py:function:: for item in lst:
+
+    | The list is looped through with each element in the list, ``lst``, being placed in the ``item`` variable for use in the for loop block code.
+
 
 | Python can loop through each element in a list and do something with it.
 | In the code below, each element in the list is displayed.
@@ -362,4 +372,3 @@ For loops with mixed lists
                             display.show(element, delay=200)
                             sleep(700)
                         sleep(1000)
-                        
