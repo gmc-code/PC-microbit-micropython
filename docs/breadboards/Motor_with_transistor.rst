@@ -156,7 +156,75 @@ Write analog
 | ``write_analog`` can have values from 0 to 1023.
 | ``write_analog`` can be used to power the motor at different speeds.
 
-| Here is some sample code making use of ``write_analog`` to change the speed of the motor.
+
+| Here is some sample code making use of a list and ``write_analog`` to change the speed of the motor.
+
+.. code-block:: python
+
+    from microbit import *
+    import random
+
+    power_levels = [0, 50, 100, 200, 400, 1023]
+    while True:
+        if button_a.is_pressed():
+            for power in power_levels:
+                pin0.write_analog(power)
+                sleep(1000)
+        sleep(500)
+
+----
+
+.. admonition:: Tasks
+
+    #. Modify the code so it has 3 power levels: 0, 200, 1023.
+    #. Modify the code so it has 3 power levels: 200, 500, 1023, but the motor is stopped for 500ms between each.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Modify the code so it has 3 power levels: 0, 200, 1023.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import random
+
+                    power_levels = [0, 200, 1023]
+                    while True:
+                        if button_a.is_pressed():
+                            for power in power_levels:
+                                pin0.write_analog(power)
+                                sleep(1000)
+                        sleep(500)
+
+            .. tab-item:: Q2
+
+                Modify the code so it has 3 power levels: 200, 500, 1023, but the motor is stopped for 500ms between each.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import random
+
+                    power_levels = [200, 500, 1023]
+                    while True:
+                        if button_a.is_pressed():
+                            for power in power_levels:
+                                pin0.write_analog(power)
+                                sleep(1000)
+                                pin0.write_analog(0)
+                                sleep(1000)
+                        sleep(500)
+
+----
+
+| Here is some sample code making use of the range function and ``write_analog`` to change the speed of the motor.
 
 .. code-block:: python
 
@@ -227,7 +295,7 @@ Write analog
 
             .. tab-item:: Q2
 
-                Modify the start and stop values to between 200 and 350 with a step size of 10. Further modify the start and stop values so that the blades spin slowly enough to count them.
+                Modify the start and stop values to between 0 and 250 with a step size of 10. Further modify the start and stop values so that the blades spin slowly enough to count them.
 
                 .. code-block:: python
 
@@ -237,17 +305,17 @@ Write analog
                     while True:
                         if button_a.is_pressed():
                             # pulse on
-                            sleep_time = 500
+                            sleep_time = 50
                             step_size = 10
-                            for i in range(200, 350, step_size):
+                            for i in range(0, 250, step_size):
                                 pin0.write_analog(i)
                                 sleep(sleep_time)
                             pin0.write_analog(1023)
                         elif button_b.is_pressed():
                             # pulse off
-                            sleep_time = 500
+                            sleep_time = 50
                             step_size = 10
-                            for i in range(300, 200, -step_size):
+                            for i in range(250, 0, -step_size):
                                 pin0.write_analog(i)
                                 sleep(sleep_time)
                             pin0.write_analog(0)
@@ -255,7 +323,7 @@ Write analog
 
 ----
 
-Scaling the readings
+EXT: Scaling the readings
 ----------------------------------------
 
 | The analog range, from 0 to 1023, can roughly be converted to a scaled range of 0 to 9 by dividing by 100.
