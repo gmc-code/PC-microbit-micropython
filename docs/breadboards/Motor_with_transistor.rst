@@ -225,7 +225,7 @@ Write analog
                             pin0.write_analog(0)
                         sleep(500)
 
-            .. tab-item:: Q1
+            .. tab-item:: Q2
 
                 Modify the start and stop values to between 200 and 350 with a step size of 10. Further modify the start and stop values so that the blades spin slowly enough to count them.
 
