@@ -187,6 +187,8 @@ Write analog
 .. admonition:: Tasks
 
     #. Modify the pulse_on code so it has twice as many steps. Modify the pulse_off code so each step is half as long.
+    #. Modify the start and stop values to between 200 and 350 with a step size of 10. Further modify the start and stop values so that the blades spin slowly enough to count them.
+
 
     .. dropdown::
         :icon: codescan
@@ -218,6 +220,34 @@ Write analog
                             sleep_time = 250
                             step_size = 200
                             for i in range(1023, 200, -step_size):
+                                pin0.write_analog(i)
+                                sleep(sleep_time)
+                            pin0.write_analog(0)
+                        sleep(500)
+
+            .. tab-item:: Q1
+
+                Modify the start and stop values to between 200 and 350 with a step size of 10. Further modify the start and stop values so that the blades spin slowly enough to count them.
+
+                .. code-block:: python
+
+                    from microbit import *
+                    import random
+
+                    while True:
+                        if button_a.is_pressed():
+                            # pulse on
+                            sleep_time = 500
+                            step_size = 10
+                            for i in range(200, 350, step_size):
+                                pin0.write_analog(i)
+                                sleep(sleep_time)
+                            pin0.write_analog(1023)
+                        elif button_b.is_pressed():
+                            # pulse off
+                            sleep_time = 500
+                            step_size = 10
+                            for i in range(300, 200, -step_size):
                                 pin0.write_analog(i)
                                 sleep(sleep_time)
                             pin0.write_analog(0)
