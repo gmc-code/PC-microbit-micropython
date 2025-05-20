@@ -36,6 +36,38 @@ Model
 
 ----
 
+Model: Moved to side for better terminal block attachment
+--------------------------------------------------------------
+
+#.  Place the resistor and transistor first.
+#.  Make sure the transistor front flat edge is facing forwards.
+#.  Connect with the motor via the pins at the end of wires.
+#.  Connect with the jumper wires.
+
+.. image:: images/motor_1c_bb.png
+    :scale: 50 %
+
+.. image:: images/motor_2c_bb.png
+    :scale: 50 %
+
+----
+
+Model: Motor without terminal block
+----------------------------------------
+
+#.  Place the resistor and transistor first.
+#.  Make sure the transistor front flat edge is facing forwards.
+#.  Connect with the motor via the pins at the end of wires.
+#.  Connect with the jumper wires.
+
+.. image:: images/motor_1_bb.png
+    :scale: 50 %
+
+.. image:: images/motor_2_bb.png
+    :scale: 50 %
+
+----
+
 Write digital
 ----------------------------------------
 
