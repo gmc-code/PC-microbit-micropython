@@ -60,10 +60,10 @@ Model: Motor without terminal block
 #.  Connect with the motor via the pins at the end of wires.
 #.  Connect with the jumper wires.
 
-.. image:: images/motor_1_bb.png
+.. image:: images/motor_1d_bb.png
     :scale: 50 %
 
-.. image:: images/motor_2_bb.png
+.. image:: images/motor_2d_bb.png
     :scale: 50 %
 
 ----
