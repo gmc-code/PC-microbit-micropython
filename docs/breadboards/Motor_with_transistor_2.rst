@@ -18,7 +18,7 @@ Connections
 ----
 
 Model
-----------------------------------------
+----------
 
 #.  Place the resistor and transistor first.
 #.  Make sure the transistor front flat edge is facing forwards.
