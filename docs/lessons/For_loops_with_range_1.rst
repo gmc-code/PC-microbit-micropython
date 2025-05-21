@@ -2,6 +2,95 @@
 EXT: For loops using the range function
 ====================================================
 
+
+Looping Through a List of Values using element index from range function
+------------------------------------------------------------------------------
+
+.. py:function:: for i in range(len(value_list))
+
+    Iterates through all elements in ``value_list``, using `i` as the index.
+
+| e.g. ``value_list = ["D", "O", "G"]`` stores predefined values.
+| e.g. ``for i in range(len(value_list))`` loops over the list using index positions.
+
+| The code below will display each number in `value_list`, scrolling them one by one.
+
+.. code-block:: python
+
+    from microbit import *
+
+    value_list = ["D", "O", "G"]
+
+    while True:
+        for i in range(len(value_list)):
+            display.scroll(i, delay=50)
+            display.scroll(value_list[i], delay=80)
+        sleep(500)
+
+| The code below moves left to right on the display and turns on a pixel using the y values.
+
+.. code-block:: python
+
+    from microbit import *
+
+    y_list = [1, 4, 2, 3, 0]  # max of 5 values, with each from 0 to 4
+
+    while True:
+        for x in range(len(y_list)):
+            y = y_list[x]
+            display.clear()  # Clear previous pixel
+            display.set_pixel(x, y, 9)  # Set pixel brightness to max
+            sleep(500)
+
+----
+
+.. admonition:: Tasks
+
+    #. Modify the "DOG" example above to work for "STAR".
+    #. Modify the pixel example to work for [2, 3, 2].
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Modify the "DOG" example above to work for "STAR".
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    value_list = ["S", "T", "A", "R"]
+
+                    while True:
+                        for i in range(len(value_list)):
+                            display.scroll(i, delay=50)
+                            display.scroll(value_list[i], delay=80)
+                        sleep(500)
+
+            .. tab-item:: Q2
+
+                Modify the pixel example to work for [2, 3, 2, 1].
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    y_list = [2, 3, 2, 1]  # max of 5 values, with each from 0 to 4
+
+                    while True:
+                        for x in range(len(y_list)):
+                            y = y_list[x]
+                            display.clear()  # Clear previous pixel
+                            display.set_pixel(x, y, 9)  # Set pixel brightness to max
+                            sleep(500)
+
+----
+
 Range function with start and stop values
 --------------------------------------------
 
