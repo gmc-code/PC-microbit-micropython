@@ -337,56 +337,29 @@ Write analog
 
     from microbit import *
 
-    brightness = [0, 205, 511, 716, 1023]
+    brightness_list = [0, 256, 512, 768, 1023]
     sleep_time = 250
     while True:
         if button_a.is_pressed():
             # pulse_on
-            for i in brightness:
+            for i in brightness_list:
                 pin0.write_analog(i)
                 sleep(sleep_time)
             pin0.write_analog(0)
         elif button_b.is_pressed():
             # pulse_off
-            for i in brightness:
+            for i in brightness_list:
                 pin0.write_analog(1023-i)
                 sleep(sleep_time)
             pin0.write_analog(0)
         sleep(500)
 
 
-| Here is some sample code which pulses the LED on and off.
-
-.. code-block:: python
-
-    from microbit import *
-
-
-    while True:
-        if button_a.is_pressed():
-            # pulse_on
-            sleep_time = 40
-            step_size = 30
-            for i in range(0, 1024, step_size):
-                pin0.write_analog(i)
-                sleep(sleep_time)
-            pin0.write_analog(0)
-        elif button_b.is_pressed():
-            # pulse_off
-            sleep_time = 40
-            step_size = 30
-            for i in range(1023, -1, -step_size):
-                pin0.write_analog(i)
-                sleep(sleep_time)
-            pin0.write_analog(0)
-        sleep(500)
-
 ----
 
 .. admonition:: Tasks
 
     #. Modify the code to pulse on and off all 3 LEDs together.
-    #. Write code to pulse all 3 LEDs but with an analog difference of about 340, so that when the red LED is at 1023 the yellow is at (1023 - 340) and the green LED is at (1023 - 340 -340).
 
     .. dropdown::
         :icon: codescan
@@ -403,65 +376,31 @@ Write analog
 
                     from microbit import *
 
-
+                    brightness_list = [0, 256, 512, 768, 1023]
+                    sleep_time = 250
                     while True:
                         if button_a.is_pressed():
                             # pulse_all_on
-                            sleep_time = 40
-                            step_size = 30
-                            for i in range(0, 1024, step_size):
+                            for i in brightness_list:
                                 pin0.write_analog(i)
                                 pin1.write_analog(i)
                                 pin2.write_analog(i)
                                 sleep(sleep_time)
                         elif button_b.is_pressed():
                             # pulse_all_off
-                            sleep_time = 40
-                            step_size = 30
-                            for i in range(1023, -1, -step_size):
-                                pin0.write_analog(i)
-                                pin1.write_analog(i)
-                                pin2.write_analog(i)
+                            for i in brightness_list:
+                                pin0.write_analog(1023-i)
+                                pin1.write_analog(1023-i)
+                                pin2.write_analog(1023-i)
                                 sleep(sleep_time)
                         sleep(500)
 
-            .. tab-item:: Q2
 
-                Write code to pulse all 3 LEDs but with an analog difference of about 340, so that when the red LED is at 1023 the yellow is at (1023 - 340) and the green LED is at (1023 - 340 -340).
+----
 
-                .. code-block:: python
+.. admonition:: EXT Exercise
 
-                    from microbit import *
-
-
-                    while True:
-                        if button_a.is_pressed():
-                            # pulse_all_diff_on
-                            sleep_time = 50
-                            step_size = 30
-                            for i in range(0, 1704, step_size):
-                                pin0.write_analog(min(1023, i))
-                                pin1.write_analog(max(0, min(1023, i - 340)))
-                                pin2.write_analog(max(0, min(1023, i - 680)))
-                                sleep(sleep_time)
-                        elif button_b.is_pressed():
-                            # pulse_all_diff_off
-                            sleep_time = 50
-                            step_size = 30
-                            for i in range(1704, -1, -step_size):
-                                pin0.write_analog(min(1023, i))
-                                pin1.write_analog(max(0, min(1023, i - 340)))
-                                pin2.write_analog(max(0, min(1023, i - 680)))
-                                sleep(sleep_time)
-                            pin0.write_analog(0)
-                        sleep(500)
-
- ----
-
-.. admonition:: Exercises
-
-    #. Investigate the use of the randrange function for creating random light displays. See: https://www.w3schools.com/python/ref_random_randrange.asp
-    #. Investigate the use of the choice function for creating random light displays. Use ``pin_list = [pin0, pin1, pin2]`` to make a list of pins to choose from. See: https://www.w3schools.com/python/ref_random_choice.asp.
+    #. Write code to pulse all 3 LEDs but with delay of 1 step in the list for yellow using ``brightness_list[i - 1]`` and 2 steps for green using ``brightness_list[i - 2]``.
 
     .. dropdown::
         :icon: codescan
@@ -472,40 +411,38 @@ Write analog
 
             .. tab-item:: Q1
 
-                .. code-block:: python
-
-                    from microbit import *
-                    import random
-
-
-                    while True:
-                        # random_colors
-                        rand_val = random.randrange(0, 1024)
-                        rand_pin = random.randrange(0, 3)
-                        if rand_pin = 0:
-                            pin0.write_analog(rand_val)
-                        elif rand_pin = 1:
-                            pin1.write_analog(rand_val)
-                        elif rand_pin = 2:
-                            pin2.write_analog(rand_val)
-                        sleep(100)
-
-            .. tab-item:: Q2
+                Write code to pulse all 3 LEDs but with delay of 1 step in the list for yellow using ``brightness_list[i - 1]`` and 2 steps for green using ``brightness_list[i - 2]``.
 
                 .. code-block:: python
 
                     from microbit import *
-                    import random
 
-                    pin_list = [pin0, pin1, pin2]
+                    brightness_list = [0, 256, 512, 768, 1023, 1279, 1535, 1791]
+                    sleep_time = 250
 
                     while True:
-                        # random_pin_brightness
-                        rand_val = random.randrange(0, 1024)
-                        rand_pin = random.choice(pin_list)
-                        rand_pin.write_analog(rand_val)
-                        sleep(100)
+                        if button_a.is_pressed():
+                            # Pulse LEDs with staggered delays
+                            for i in range(len(brightness_list)):
+                                pin0.write_analog(min(1023, brightness_list[i]))  # Red LED
+                                if i >= 1:
+                                    pin1.write_analog(min(1023, brightness_list[i - 1]))  # Yellow LED (1 step delay)
+                                if i >= 2:
+                                    pin2.write_analog(min(1023, brightness_list[i - 2]))  # Green LED (2 step delay)
+                                sleep(sleep_time)
 
+                        elif button_b.is_pressed():
+                            # Pulse LEDs using inverted brightness values
+                            for i in range(len(brightness_list)):
+                                pin0.write_analog(max(0, 1023 - brightness_list[i]))  # Red LED (inverted brightness)
+                                if i >= 1:
+                                    pin1.write_analog(max(0, 1023 - brightness_list[i - 1]))  # Yellow LED (1 step delay, inverted)
+                                if i >= 2:
+                                    pin2.write_analog(max(0, 1023 - brightness_list[i - 2]))  # Green LED (2 step delay, inverted)
+                                sleep(sleep_time)
 
+                            pin0.write_analog(0)  # Reset LED state
+
+                        sleep(500)
 
 

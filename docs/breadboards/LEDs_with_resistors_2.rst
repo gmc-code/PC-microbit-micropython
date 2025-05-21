@@ -1,5 +1,5 @@
 ==========================
-LEDs_with_resistors
+EXT: LEDs_with_resistors
 ==========================
 
 The examples below use definition blocks to better organize the code.
@@ -302,7 +302,7 @@ Write analog
 
     from microbit import *
 
-    brightness = [0, 205, 511, 716, 1023]
+    brightness = [0, 256, 512, 768, 1023]
     sleep_time = 250
 
     def pulse_on():

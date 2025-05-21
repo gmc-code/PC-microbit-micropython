@@ -1,6 +1,6 @@
-=============================
-Combined iteration using zip
-=============================
+====================================
+EXT: Combined iteration using zip
+====================================
 
 | The zip function can combine multiple lists so that they can be iterated over together.
 | See: https://www.w3schools.com/python/ref_func_zip.asp
@@ -60,10 +60,38 @@ zip 2 lists
             display.clear()
             break
 
+| The code is similar, but uses a list of notes to play.
+
+
+.. code-block:: python
+
+    from microbit import *
+    import music
+
+    # freqs = range(1760, 880, -128)
+    notes = ["A6", "G#6", "F#6", "E6", "D#6", "C#6", "B5"]
+    music.set_tempo(ticks=4, bpm=120)
+    animal_images = [
+        Image.RABBIT,
+        Image.COW,
+        Image.DUCK,
+        Image.TORTOISE,
+        Image.BUTTERFLY,
+        Image.GIRAFFE,
+        Image.SNAKE,
+    ]
+    while True:
+        for note, img in zip(notes, animal_images):
+            music.play(note)
+            display.show(img, delay=250)
+        if button_a.is_pressed():
+            display.clear()
+            break
+
 ----
 
 | The code below zips the list of images and the list of frequencies in the A minor scale.
-| ``for freq, img in zip(Am_freqs, animal_images)`` iterates over the zipped object, placing each frequency and each Image into the ``freq`` and ``img`` variables for use. 
+| ``for freq, img in zip(Am_freqs, animal_images)`` iterates over the zipped object, placing each frequency and each Image into the ``freq`` and ``img`` variables for use.
 | The A-button can be pressed to exit the while-loop using ``break`` so that the sounds can be easily stopped.
 | Pressing the reset button on the back of the microbit will restart the code.
 
@@ -130,7 +158,7 @@ zip 3 lists
 | The code below requires a breadboard with 3 LEDS.
 | See: https://pc-microbit-micropython.readthedocs.io/en/latest/breadboards/LEDs_with_resistors.html
 | The code below zips the list of images, the list of frequencies in the A minor scale as well as a list of pins to use.
-| ``for freq, img, pin_x in zip(freqs, animal_images, pins)`` iterates over the zipped object, placing each frequency, each Image, and each pin into the ``freq``, ``img`` and ``pins`` variables for use. 
+| ``for freq, img, pin_x in zip(freqs, animal_images, pins)`` iterates over the zipped object, placing each frequency, each Image, and each pin into the ``freq``, ``img`` and ``pins`` variables for use.
 | This allows a sound, an image and an LED to be used in the same for-loop.
 | The A-button can be pressed to exit the while-loop using ``break`` so that the actions can be easily stopped.
 | Pressing the reset button on the back of the microbit will restart the code.
@@ -191,3 +219,4 @@ zip 3 lists
                 .. code-block:: python
 
                     from microbit import *
+

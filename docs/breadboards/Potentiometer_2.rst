@@ -1,5 +1,5 @@
 ==========================
-Potentiometer
+EXT: Potentiometer
 ==========================
 
 The examples below use definition blocks to better organize the code.

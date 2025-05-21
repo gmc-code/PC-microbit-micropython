@@ -1,6 +1,6 @@
-==========================
-Piezo_Buzzer_and_music
-==========================
+============================
+EXT: Piezo_Buzzer_and_music
+============================
 
 The examples below use definition blocks to better organize the code.
 
