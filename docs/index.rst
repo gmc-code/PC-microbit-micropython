@@ -91,6 +91,7 @@ Index:
     lessons/For_loops.rst
     lessons/For_loops_2.rst
     lessons/For_loops_with_range.rst
+    lessons/For_loops_with_range_1.rst
     lessons/For_loops_with_range_2.rst
 
     lessons/While_loops.rst

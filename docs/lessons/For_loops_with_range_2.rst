@@ -6,7 +6,7 @@ Set pixels
 ----------------
 
 | Turning on and off pixels is explained at https://pc-microbit-micropython.readthedocs.io/en/latest/images/setting_pixels.html
-| Read the above examples before reading further to see how they illustrate nested loops. 
+| Read the above examples before reading further to see how they illustrate nested loops.
 
 ----
 
@@ -76,7 +76,7 @@ Advanced: nested for-loops with range function
 | What are the values of start_num in the nested loop?
 
 .. code-block:: python
-    
+
     from microbit import *
 
     while True:

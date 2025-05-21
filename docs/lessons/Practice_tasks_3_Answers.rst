@@ -10,18 +10,17 @@ Practice tasks 2 Answers
     4.  Write code in a ``while True`` loop to respond to button pressing such that when A is pressed the numbers 1,3,5,7,9 are scrolled quickly using the **range** function, when B is pressed the numbers 8,6,4,2,0 are scrolled quickly using the **range** function, and when no button is pressed the screen is **cleared**.
     5.  Write code to scroll **99 100 101 0 1 2** in three different ways: using a string, using a list and using 2 range functions.
 
+----
 
-1.  Write code to repetitively scroll (quickly) each character in 'go team' using a for-loop, when the A-button is pressed.
+5.  Write code to repetitively scroll the numbers 1 to 9 using a for-loop.
 
 .. code-block:: python
 
     from microbit import *
 
     while True:
-        if button_a.is_pressed():
-            for char in 'go team':
-                display.scroll(char, delay=80)
-
+        for num in range(1, 10):
+            display.scroll(num, delay=50)
 
 ----
 
