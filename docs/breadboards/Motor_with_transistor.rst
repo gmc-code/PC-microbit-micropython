@@ -257,37 +257,29 @@ Write analog
 ----
 
 | Here is some sample code making use of the range function and ``write_analog`` to change the speed of the motor.
+| It starts with a value of 100, and goes up in 10 steps of 20.
 
 .. code-block:: python
 
     from microbit import *
-    import random
 
+    sleep_time = 500
+    start_val = 100
     while True:
         if button_a.is_pressed():
-            # pulse on
-            sleep_time = 500
-            step_size = 200
-            for i in range(200, 1023, step_size):
-                pin0.write_analog(i)
+            # increase speed
+            for i in range(10):
+                pin0.write_analog(start_val + 20 * i)
                 sleep(sleep_time)
-            pin0.write_analog(1023)
-        elif button_b.is_pressed():
-            # pulse off
-            sleep_time = 500
-            step_size = 200
-            for i in range(1023, 200, -step_size):
-                pin0.write_analog(i)
-                sleep(sleep_time)
-            pin0.write_analog(0)
-        sleep(500)
+        pin0.write_analog(0)
+        sleep(1000)
 
 ----
 
 .. admonition:: Tasks
 
-    #. Modify the pulse_on code so it has twice as many steps. Modify the pulse_off code so each step is half as long.
-    #. Modify the start and stop values to between 200 and 350 with a step size of 10. Further modify the start and stop values so that the blades spin slowly enough to count them.
+    #. Modify the code so it starts at 50 and speeds up in 5 steps of 50.
+    #. Modify the code so it starts at 320 and slows down in 4 steps of 80.
 
 
     .. dropdown::
@@ -299,115 +291,39 @@ Write analog
 
             .. tab-item:: Q1
 
-                Modify the pulse_on code so it has twice as many steps. Modify the pulse_off code so each step is half as long.
+                Modify the code so it starts at 50 and speeds up in 5 steps of 50.
 
                 .. code-block:: python
 
                     from microbit import *
-                    import random
 
+                    sleep_time = 500
+                    start_val = 50
                     while True:
                         if button_a.is_pressed():
-                            # pulse on
-                            sleep_time = 500
-                            step_size = 100
-                            for i in range(200, 1023, step_size):
-                                pin0.write_analog(i)
+                            # increase speed using i = 0 to 5
+                            for i in range(6):
+                                pin0.write_analog(start_val + 50 * i)
                                 sleep(sleep_time)
-                            pin0.write_analog(1023)
-                        elif button_b.is_pressed():
-                            # pulse off
-                            sleep_time = 250
-                            step_size = 200
-                            for i in range(1023, 200, -step_size):
-                                pin0.write_analog(i)
-                                sleep(sleep_time)
-                            pin0.write_analog(0)
-                        sleep(500)
+                        pin0.write_analog(0)
+                        sleep(1000)
 
             .. tab-item:: Q2
 
-                Modify the start and stop values to between 0 and 250 with a step size of 10. Further modify the start and stop values so that the blades spin slowly enough to count them.
+                Modify the code so it starts at 320 and slows down in 4 steps of 80.
 
                 .. code-block:: python
 
                     from microbit import *
-                    import random
 
+                    sleep_time = 500
+                    start_val = 320
                     while True:
                         if button_a.is_pressed():
-                            # pulse on
-                            sleep_time = 50
-                            step_size = 10
-                            for i in range(0, 250, step_size):
-                                pin0.write_analog(i)
+                            # decrease speed using i = 0 to 4
+                            for i in range(5):
+                                pin0.write_analog(start_val - 80 * i)
                                 sleep(sleep_time)
-                            pin0.write_analog(1023)
-                        elif button_b.is_pressed():
-                            # pulse off
-                            sleep_time = 50
-                            step_size = 10
-                            for i in range(250, 0, -step_size):
-                                pin0.write_analog(i)
-                                sleep(sleep_time)
-                            pin0.write_analog(0)
-                        sleep(500)
+                        pin0.write_analog(0)
+                        sleep(1000)
 
-----
-
-EXT: Scaling the readings
-----------------------------------------
-
-| The analog range, from 0 to 1023, can roughly be converted to a scaled range of 0 to 9 by dividing by 100.
-| The expression below uses `int` to round down to an integer and `min` to keep the maximum value at 9.
-
-.. py:function:: min(9, int(analog_val / 100))
-
-    Converts an analog value from a range of 0 to 1023 to 0 to 9.
-
-    e.g. scaled_value = min(9, int(analog_val / 100))
-
-
-.. admonition:: Tasks
-
-    #. Modify the pulse_on and pulse_off code to show the motor speed as a value from 0 to 9.
-
-    .. dropdown::
-        :icon: codescan
-        :color: primary
-        :class-container: sd-dropdown-container
-
-        .. tab-set::
-
-            .. tab-item:: Q1
-
-                Modify the pulse_on and pulse_off code to show the motor speed as a value from 0 to 9.
-
-                .. code-block:: python
-
-
-                    from microbit import *
-                    import random
-
-                    while True:
-                        if button_a.is_pressed():
-                            # pulse on
-                            sleep_time = 500
-                            step_size = 100
-                            for i in range(200, 1023, step_size):
-                                pin0.write_analog(i)
-                                display.show(min(9, int(i / 100)))
-                                sleep(sleep_time)
-                            pin0.write_analog(1023)
-                            display.show(min(9, int(1023 / 100)))
-                        elif button_b.is_pressed():
-                            # pulse off
-                            sleep_time = 250
-                            step_size = 200
-                            for i in range(1023, 200, -step_size):
-                                pin0.write_analog(i)
-                                display.show(min(9, int(i / 100)))
-                                sleep(sleep_time)
-                            pin0.write_analog(0)
-                            display.show(min(9, int(0 / 100)))
-                        sleep(500)
