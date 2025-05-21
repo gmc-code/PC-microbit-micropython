@@ -457,7 +457,7 @@ Write analog
                                 sleep(sleep_time)
                         sleep(500)
 
-           .. tab-item:: Q2
+            .. tab-item:: Q2
 
                 Write code to pulse off all 3 LEDs but with delay of 1 step in the list for yellow using ``brightness_list[i - 1]`` and 2 steps for green using ``brightness_list[i - 2]``.
 
