@@ -8,31 +8,31 @@ if - else with break
 | ``break`` is used to stop the while true loop.
 
 
-| The code below counts up in steps of 1 from 0 to a target number, but does not display the number till the target number is reached after which program breaks out of the loop and displays the message "target reached". 
+| The code below counts up in steps of 1 from 1 to a target number, display the number till the target number is reached after which program breaks out of the loop and displays the message "target reached".
 
 .. code-block:: python
 
     from microbit import *
 
-    num = 0
+    num = 1
     target = 5
     while True:
+        display.scroll(num)
         if num == target:
-            display.scroll(num)
             break
         else:
             num = num + 1
         sleep(200)
     display.scroll("target reached", delay=50)
 
-| The code below counts up in steps of 1 from 0 to a target number, displaying the number till the target number is reached after which program breaks out of the loop and displays the message "target reached".
+| The code below counts up in steps of 1 from 1 up to but not including the target number, displaying the number till the target number is reached after which program breaks out of the loop and displays the message "target reached".
 | Notice that the condition uses "less than" rather than "equal".
 
 .. code-block:: python
 
     from microbit import *
 
-    num = 0
+    num = 1
     target = 5
     while True:
         if num < target:
@@ -41,9 +41,29 @@ if - else with break
         else:
             break
         sleep(200)
-    display.scroll(target, delay=50)
     display.scroll("target reached", delay=50)
-    
+
+----
+
+break on button pressing
+----------------------------------------
+
+| The code below counts up in steps of 1 from 1 till the A button is pressed, after which program breaks out of the loop and displays the message "A pressed".
+
+.. code-block:: python
+
+    from microbit import *
+
+    num = 1
+    while True:
+        display.scroll(num)
+        if button_a.is_pressed():
+            break
+        else:
+            num = num + 1
+        sleep(200)
+    display.scroll("A pressed", delay=50)
+
 ----
 
 String slices
@@ -81,7 +101,7 @@ Changing values with A and B-buttons
 
 | Use the A-button to increase a variable.
 | Use the B-button to decrease a variable.
-| In the code below, the ``delay_time`` variable is increased in steps of 10 by the A-button admonition decreased in steps of 10 by the B-button. 
+| In the code below, the ``delay_time`` variable is increased in steps of 10 by the A-button admonition decreased in steps of 10 by the B-button.
 | Finally, text is scrolled with a delay of ``delay_time``.
 
 .. code-block:: python
@@ -97,7 +117,7 @@ Changing values with A and B-buttons
             delay_time -= 10
         else:
             sleep(100)
-        display.scroll("ABC", delay=delay_time)    
+        display.scroll("ABC", delay=delay_time)
 
 | The code above fails when the delay_time goes below 0.
 | The variable, ``delay_time``, can be restricted to a set range of values using the min and max functions.
@@ -117,13 +137,13 @@ Changing values with A and B-buttons
             delay_time = max(50, delay_time - 10)
         else:
             sleep(100)
-        display.scroll("ABC", delay=delay_time)  
+        display.scroll("ABC", delay=delay_time)
 
 ----
 
 .. admonition:: Tasks
 
-    #. Edit the code to adjust the scroll delay in steps of 25.
+    #. Edit the code to adjust the scroll delay in steps of 20.
     #. Write code to alter a ``guess_number`` variable in steps of 1 by the buttons. Use both buttons to set the number and show it. Start the number at 5 and limit it to a minimum of 1 and a maximum of 9.
 
     .. dropdown::
@@ -135,22 +155,24 @@ Changing values with A and B-buttons
 
             .. tab-item:: Q1
 
-                Edit the code to adjust the scroll delay in steps of 25.
+                Edit the code to adjust the scroll delay in steps of 20.
 
                 .. code-block:: python
 
                     from microbit import *
 
                     delay_time = 80
+                    delay_time_step = 20
 
                     while True:
                         if button_a.is_pressed():
-                            delay_time += 25
+                            delay_time = min(400, delay_time + delay_time_step)
                         elif button_b.is_pressed():
-                            delay_time -= 25
+                            delay_time = max(50, delay_time - delay_time_step)
                         else:
                             sleep(100)
-                        display.scroll("ABC", delay=delay_time) 
+                        display.scroll("ABC", delay=delay_time)
+
 
 
             .. tab-item:: Q2
