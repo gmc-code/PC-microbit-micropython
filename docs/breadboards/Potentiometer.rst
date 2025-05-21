@@ -44,6 +44,9 @@ Read analog
 
 ----
 
+Scaling potentiometer readings
+----------------------------------------
+
 .. py:function:: scale(value, from_, to)
 
     Converts a value from a range to another range.
