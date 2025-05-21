@@ -517,20 +517,22 @@ Write analog
 
                     from microbit import *
 
-                    brightness_list = [0, 256, 512, 768, 1023, 1279, 1535]
+                    brightness_list = [0, 256, 512, 768, 1023, 1023, 1023]
                     sleep_time = 250
 
                     while True:
                         if button_a.is_pressed():
                             # Pulse LEDs with staggered delays
                             for i in range(len(brightness_list)):
-                                pin0.write_analog(min(1023, brightness_list[i]))  # Red LED
+                                pin0.write_analog(brightness_list[i])  # Red LED
                                 if i >= 1:
-                                    pin1.write_analog(min(1023, brightness_list[i - 1]))  # Yellow LED (1 step delay)
+                                    pin1.write_analog(brightness_list[i - 1])  # Yellow LED (1 step delay)
                                 if i >= 2:
-                                    pin2.write_analog(min(1023, brightness_list[i - 2]))  # Green LED (2 step delay)
+                                    pin2.write_analog(brightness_list[i - 2])  # Green LED (2 step delay)
                                 sleep(sleep_time)
+
                         sleep(500)
+
 
             .. tab-item:: Q2
 
@@ -540,20 +542,21 @@ Write analog
 
                     from microbit import *
 
-                    brightness_list = [0, 256, 512, 768, 1023, 1279, 1535]
+                    brightness_list = [0, 256, 512, 768, 1023, 1023, 1023]  # Adjusted valid range with max brightness at end
                     sleep_time = 250
 
                     while True:
                         if button_b.is_pressed():
                             # Pulse LEDs using inverted brightness values
                             for i in range(len(brightness_list)):
-                                pin0.write_analog(max(0, 1023 - brightness_list[i]))  # Red LED (inverted brightness)
+                                pin0.write_analog(1023 - brightness_list[i])  # Red LED (inverted brightness)
                                 if i >= 1:
-                                    pin1.write_analog(max(0, 1023 - brightness_list[i - 1]))  # Yellow LED (1 step delay, inverted)
+                                    pin1.write_analog(1023 - brightness_list[i - 1])  # Yellow LED (1 step delay, inverted)
                                 if i >= 2:
-                                    pin2.write_analog(max(0, 1023 - brightness_list[i - 2]))  # Green LED (2 step delay, inverted)
+                                    pin2.write_analog(1023 - brightness_list[i - 2])  # Green LED (2 step delay, inverted)
                                 sleep(sleep_time)
                         sleep(500)
+
 
 
 
