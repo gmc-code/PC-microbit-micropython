@@ -84,7 +84,7 @@ Read analog
 ----
 
 
-Advanced: Power meter simulation
+EXT: Demo: Power meter simulation
 ----------------------------------------
 
 .. image:: images/potentiometer_level.png
@@ -95,56 +95,23 @@ Advanced: Power meter simulation
 | See the custom images lesson for more on ``display.set_pixel``.
 | The maximum potentiometer reading is 1023, so this can be treated as 1000 for simplicity.
 | This gives 5 levels in steps of 200.
-| Each row step of 200 can be divided into 10 steps of brightness from 0 to 9.
-| 3 variables are used for each section of the display: **y_clear_list** for the blank rows, **y_list** for the full brightness rows and **y_val** for the row in between that is of partial brightness.
-| **y_clear_list** has the rows which are at brightness of 0.
-| **y_list** has the rows which are at brightness of 9.
-| **y_val** is the row with variable brightness.
-| Each of these variables is first checked to see if it is ``None`` before setting the pixels it controls.
-
-
+|
 .. code-block:: python
 
     from microbit import *
 
     while True:
         level = pin2.read_analog()
-        x_list = [0, 1, 2, 3, 4]
-
-        # display
         val = int((level % 200) * 9 / 200)
-        if level < 200:
-            y_val = 4
-            y_list = None
-            y_clear_list = [0, 1, 2, 3]
-        elif level < 400:
-            y_val = 3
-            y_list = [4]
-            y_clear_list = [0, 1, 2]
-        elif level < 600:
-            y_val = 2
-            y_list = [3, 4]
-            y_clear_list = [0, 1]
-        elif level < 800:
-            y_val = 1
-            y_list = [2, 3, 4]
-            y_clear_list = [0]
-        elif level < 1000:
-            y_val = 0
-            y_list = [1, 2, 3, 4]
-            y_clear_list = None
-        else:
-            y_val = None
-            y_list = [0, 1, 2, 3, 4]
-            y_clear_list = None
 
-        for x in x_list:
-            if y_val is not None:
-                display.set_pixel(x, y_val, val)
-            if y_list is not None:
-                for y in y_list:
-                    display.set_pixel(x, y, 9)
-            if y_clear_list is not None:
-                for y in y_clear_list:
-                    display.set_pixel(x, y, 0)
+        # Determine row position for the bar
+        y_val = max(0, 4 - (level // 50)) if level > 0 else 5
+
+        # Update display pixels
+        for x in range(5):
+            if y_val < 5:
+                display.set_pixel(x, y_val, val)  # Set active pixel brightness
+            for y in range(5):
+                display.set_pixel(x, y, 9 if y >= y_val else 0)  # Set other pixels
+
         sleep(20)
