@@ -331,6 +331,79 @@ Write analog
 | ``write_analog`` can have values from 0 to 1023.
 | ``write_analog`` can be used to dim the LED.
 
+| Here is some sample code that set various brightnesses using ``write_analog`` on pin0.
+
+.. code-block:: python
+
+    from microbit import *
+
+    while True:
+        if button_a.is_pressed():
+            pin0.write_analog(512)
+            sleep(500)
+            pin0.write_analog(256)
+            sleep(500)
+            pin0.write_analog(1023)
+            sleep(500)
+            pin0.write_analog(768)
+            sleep(500)
+        sleep(500)
+
+----
+
+.. admonition:: Tasks
+
+    #. Write code to use the A button to turn on all 3 LEDs at half brightness and the B button to turn them all off.
+    #. Write code to use the A button to turn on the red LED at half brightness, yellow at three quarter brightness and green at full brightness and the B button to turn them all off.
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Write code to use the A button to turn on all 3 LEDs at half brightness and the B button to turn them all off.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        if button_a.is_pressed():
+                            pin0.write_analog(512)
+                            pin1.write_analog(512)
+                            pin2.write_analog(512)
+                        if button_a.is_pressed():
+                            pin0.write_analog(0)
+                            pin1.write_analog(0)
+                            pin2.write_analog(0)
+                        sleep(500)
+
+            .. tab-item:: Q2
+
+                Write code to use the A button to turn on the red LED at half brightness, yellow at three quarter brightness and green at full brightness and the B button to turn them all off.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    while True:
+                        if button_a.is_pressed():
+                            pin0.write_analog(512)
+                            pin1.write_analog(768)
+                            pin2.write_analog(1023)
+                        if button_a.is_pressed():
+                            pin0.write_analog(0)
+                            pin1.write_analog(0)
+                            pin2.write_analog(0)
+                        sleep(500)
+
+
+----
+
 | Here is some sample code that cycles through a brightness list using ``write_analog`` on pin0.
 
 .. code-block:: python
