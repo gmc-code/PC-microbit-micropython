@@ -339,13 +339,15 @@ Write analog
 
     while True:
         if button_a.is_pressed():
+            pin0.write_analog(256)
+            sleep(500)
             pin0.write_analog(512)
             sleep(500)
-            pin0.write_analog(256)
+            pin0.write_analog(768)
             sleep(500)
             pin0.write_analog(1023)
             sleep(500)
-            pin0.write_analog(768)
+            pin0.write_analog(0)
             sleep(500)
         sleep(500)
 
@@ -376,7 +378,7 @@ Write analog
                             pin0.write_analog(512)
                             pin1.write_analog(512)
                             pin2.write_analog(512)
-                        if button_a.is_pressed():
+                        elif button_b.is_pressed():
                             pin0.write_analog(0)
                             pin1.write_analog(0)
                             pin2.write_analog(0)
@@ -395,7 +397,7 @@ Write analog
                             pin0.write_analog(512)
                             pin1.write_analog(768)
                             pin2.write_analog(1023)
-                        if button_a.is_pressed():
+                        elif button_b.is_pressed():
                             pin0.write_analog(0)
                             pin1.write_analog(0)
                             pin2.write_analog(0)
