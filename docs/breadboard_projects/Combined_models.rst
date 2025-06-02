@@ -2,6 +2,43 @@
 Combined models
 ==========================
 
+
+Scaffold for code:
+---------------------
+
+.. code-block:: python
+
+    from microbit import *
+
+    import music
+    speaker.off()
+
+    # insert optional code
+    while True:
+        if button_a.is_pressed():
+            # insert code
+
+        elif button_b.is_pressed():
+            # insert code
+
+        else:
+            # insert code
+
+    # things to include
+    # display.scroll("?")
+    # display.scroll(Image.YES)
+    # mynotes = ["C", "D", "E"]
+    # music.play(mynotes)
+    # pin1.write_digital(1)
+    # pin2.write_digital(1)
+    # pin1.write_digital(0)
+    # pin2.write_digital(0)
+    # sleep(500)
+    # for i in range(3):
+
+
+----
+
 Tasks
 --------------------------
 
