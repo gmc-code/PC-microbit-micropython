@@ -9,7 +9,6 @@ Scaffold for code:
 .. code-block:: python
 
     from microbit import *
-
     import music
     speaker.off()
 
