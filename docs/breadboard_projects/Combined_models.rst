@@ -25,7 +25,7 @@ Scaffold for code:
 
     # things to include
     # display.scroll("?")
-    # display.scroll(Image.YES)
+    # display.show(Image.YES)
     # mynotes = ["C", "D", "E"]
     # music.play(mynotes)
     # pin1.write_digital(1)
