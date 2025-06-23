@@ -127,10 +127,6 @@ Index:
     breadboard_projects/Combined_iteration_using_zip.rst
 
 
-
-
-
-
 .. toctree::
     :maxdepth: 2
     :caption: Sensors
