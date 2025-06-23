@@ -22,10 +22,6 @@ Index:
     ..introduction/Mu_editor_Errors.rst
 
 
-
-
-
-
 .. toctree::
     :maxdepth: 2
     :caption: Lessons
