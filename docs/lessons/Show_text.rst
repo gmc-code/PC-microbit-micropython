@@ -46,7 +46,7 @@ To show the float, ``3.14``, one digit at a time on the display, use ``display.s
 
 .. admonition:: Tasks
 
-    #. Write code to show your school house color. 
+    #. Write code to show your school house color.
     #. Write code to show your height in cm.
     #. Write code to show the chances of getting a 6 on a die throw.
 
@@ -104,6 +104,18 @@ Display.clear
 | Use ``display.clear()`` to remove the last digit or character from the display.
 | Use a sleep after the clear so that the display remains blank for a short time.
 
+| Compare the 2 following examples to see the effect of clear.
+| The first sample code leaves a "4" showing.
+
+.. code-block:: python
+
+    from microbit import *
+
+
+    display.show(3.14)
+
+| The second sample code leaves a clear the 4 and pauses for 2 seconds before repeating the show.
+
 .. code-block:: python
 
     from microbit import *
@@ -153,7 +165,7 @@ Display.clear
                         display.show("ABC")
                         display.clear()
                         sleep(500)
-                        
+
 ----
 
 
@@ -162,7 +174,7 @@ display.show with clear
 
 .. py:function:: show(value, clear=False)
 
-    | Display letters/digits of a string, float, in sequence. 
+    | Display letters/digits of a string, float, in sequence.
     | If ``clear`` is ``True``, the display will be cleared after it has finished. Its default value is False, in which case, the last character is left displayed.
 
 
@@ -437,8 +449,8 @@ Show full syntax
 
 .. py:function:: show(value, delay=400, \*, wait=True, loop=False, clear=False)
 
-    | Display letters/digits of a string, float, in sequence. 
-    | Each letter, digit or image is shown with ``delay`` milliseconds between them. 
+    | Display letters/digits of a string, float, in sequence.
+    | Each letter, digit or image is shown with ``delay`` milliseconds between them.
     | The default delay is 400ms. When no delay is specified the default of 400ms is used.
 
     The use of ``\*,`` in the syntax is to indicate that for those parameters after it, ``wait``, ``loop`` and ``clear``, the arguments must be specified using their keyword.
@@ -460,7 +472,7 @@ Show full syntax
 
 .. admonition:: Tip
 
-    | **display.show** has a ``wait`` parameter that can be set to ``False`` so that displaying information on the microbit display doesn't hold up other actions like driving motors on a bot. 
+    | **display.show** has a ``wait`` parameter that can be set to ``False`` so that displaying information on the microbit display doesn't hold up other actions like driving motors on a bot.
     | e.g. ``display.show(motor_speed, wait=False)``
 
 
