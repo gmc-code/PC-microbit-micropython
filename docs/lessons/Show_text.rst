@@ -114,7 +114,7 @@ Display.clear
 
     display.show(3.14)
 
-| The second sample code leaves a clear the 4 and pauses for 2 seconds before repeating the show.
+| The second sample code clears the "4" and pauses for 2 seconds before repeating the show.
 
 .. code-block:: python
 
