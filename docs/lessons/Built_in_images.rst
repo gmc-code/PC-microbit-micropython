@@ -539,11 +539,11 @@ Image sentences using "mixed" lists
 
     from microbit import *
 
-        # snake ate rabbit
-        mixed_list = [Image.SNAKE, "8", Image.RABBIT]
-        while True:
-            display.show(mixed_list, delay=300, clear=True)
-            sleep(300)
+    # snake ate rabbit
+    mixed_list = [Image.SNAKE, "8", Image.RABBIT]
+    while True:
+        display.show(mixed_list, delay=300, clear=True)
+        sleep(300)
 
 
 ----
