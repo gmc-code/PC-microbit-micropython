@@ -35,7 +35,7 @@ All Images
 
 .. image:: images/built_in_images.png
     :scale: 50 %
-    
+
 ----
 
 .. admonition:: Tasks
@@ -44,7 +44,7 @@ All Images
     #. Edit the built-in images list from above to just include faces.
     #. Edit the built-in images list from above to just include objects.
     #. Edit the built-in images list from above to just include shapes.
-    
+
     .. dropdown::
         :icon: codescan
         :color: primary
@@ -107,11 +107,11 @@ All Images
                     object_images = [
                                     Image.CHESSBOARD,
                                     Image.PITCHFORK,
-                                    Image.TARGET, 
+                                    Image.TARGET,
                                     Image.TSHIRT,
-                                    Image.ROLLERSKATE, 
+                                    Image.ROLLERSKATE,
                                     Image.HOUSE,
-                                    Image.STICKFIGURE, 
+                                    Image.STICKFIGURE,
                                     Image.GHOST,
                                     Image.SWORD,
                                     Image.SKULL,
@@ -142,11 +142,11 @@ All Images
                     while True:
                         display.show(shape_images, delay=250)
 
- 
+
 .. admonition:: Tip
 
     Advanced code to collect the list of all images is below.
-    
+
     .. code-block:: python
 
         from microbit import *
@@ -154,8 +154,43 @@ All Images
         dir_images = dir(Image)
         built_in_images = ["Image." + img for img in dir_images if type(getattr(Image, img)) == Image]
         built_in_images_string = ", ".join(built_in_images)
-        built_in_images_string.replace('"', '')
+        built_in_images_string = built_in_images_string.replace('"', '')
         print(built_in_images_string)
+
+    Alternative advanced code to collect the list of all images is below.
+
+    .. code-block:: python
+
+        from microbit import *
+
+        # Get a list of built-in images
+        dir_images = dir(Image)
+        built_in_images = ["Image." + img for img in dir_images if isinstance(getattr(Image, img, None), Image)]
+
+        # Convert list to a string and clean it up
+        built_in_images_string = ", ".join(built_in_images)
+        built_in_images_string = built_in_images_string.replace('"', '')
+        # Print the result to the terminal
+        print(built_in_images_string)
+
+
+
+    Advanced code to print the list of all image objects using their pixel data and display the images is below.
+
+    .. code-block:: python
+
+        from microbit import *
+
+        # Get a list of built-in image objects
+        dir_images = dir(Image)
+        built_in_images = [getattr(Image, img) for img in dir_images if isinstance(getattr(Image, img, None), Image)]
+
+        # Print the result to check the built-in images
+        print(built_in_images)
+
+        # Display each built-in image
+        while True:
+            display.show(built_in_images, delay=100)
 
 ----
 
@@ -166,7 +201,7 @@ Random times for flashing an image
 
 .. py:function:: random.randint(a, b)
 
-    Return a random integer from a to b, including both. 
+    Return a random integer from a to b, including both.
 
 | The code below gets a random integer from 600 to 900 and uses that for the sleep time during which the image is shown.
 | Then it is used to calculate sleep time during which the display is cleared.
@@ -191,7 +226,7 @@ Random times for flashing an image
 
     #. Write the code to have the heart appear for 500ms, but clear the screen for a random time ranging from 100 to 500ms.
     #. Write the code to have the heart appear for a random time ranging from 100 to 500ms, but clear the screen for 500ms.
-    
+
     .. dropdown::
         :icon: codescan
         :color: primary
@@ -242,7 +277,7 @@ Random images
 
 .. py:function:: random.choice(image_list)
 
-    Return a random image from the list of images: image_list. 
+    Return a random image from the list of images: image_list.
 
 | The code below shows a random image from a list every 500ms.
 
@@ -250,7 +285,7 @@ Random images
 
     from microbit import *
     import random
-    
+
     shape_list = [
         Image.TRIANGLE,
         Image.TRIANGLE_LEFT,
@@ -270,7 +305,7 @@ Random images
 
     #. Write the code to show a random face image every second.
     #. Write the code to show a random animal image every 800ms.
-    
+
     .. dropdown::
         :icon: codescan
         :color: primary
@@ -338,7 +373,7 @@ Image sentences using "mixed" lists
 | The text images must be one character in quotes.
 | Normally, a text image requires **Image** as in Image("U").
 | But the list input for **display.show** automatically treats "U" as Image("U").
-| Single quoted digits, e.g. "4", work in a similar way. 
+| Single quoted digits, e.g. "4", work in a similar way.
 | Multiple digits in an image, as in Image("12345"), set the pixel brightness for those pixels.
 | Strings, such as "1234" or "abcd", will be ignored.
 
