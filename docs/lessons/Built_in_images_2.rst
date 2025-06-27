@@ -174,7 +174,6 @@ All Images
         print(built_in_images_string)
 
 
-
     Advanced code to print the list of all image objects using their pixel data and display the images is below.
 
     .. code-block:: python
@@ -304,6 +303,7 @@ Random times for flashing an image
                         sleep(on_time)
                         display.clear()
                         sleep(off_time)
+
 
 ----
 
