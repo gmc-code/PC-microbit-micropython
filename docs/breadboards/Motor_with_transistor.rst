@@ -327,3 +327,27 @@ Write analog
                         pin0.write_analog(0)
                         sleep(1000)
 
+
+----
+
+
+| Here is some sample code making use of the range function and ``write_analog`` to change the speed of the motor in an attempt to find values ot just get the motor spinning.
+
+.. code-block:: python
+
+
+    from microbit import *
+    import random
+
+    power_level_start = 140
+    power_step = 2
+    while True:
+        if button_a.is_pressed():
+            for power_rep in range(20):
+                power = power_level_start + power_step * power_rep
+                display.scroll(power)
+                pin0.write_analog(power)
+                sleep(1000)
+                pin0.write_analog(0)
+                sleep(500)
+        sleep(500)
