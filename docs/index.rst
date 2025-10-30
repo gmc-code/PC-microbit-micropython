@@ -36,6 +36,16 @@ Index:
 
 
 
+.
+..  toctree::
+    :maxdepth: 2
+    :caption: BreadBoard_projects
+    :numbered:
+
+    breadboard_projects/Combined_models.rst
+
+
+
 .. toctree::
     :maxdepth: 2
     :caption: Lessons
