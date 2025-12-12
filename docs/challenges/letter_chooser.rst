@@ -12,11 +12,11 @@ Letter chooser: simple version
 
 | The code below, sets a variable, **char_index**, to a starting number, 2.
 | It then displays the character with index 2 in the list, **chars**.
-| When the A-button is pressed, **char_index** is increased by 1. 
+| When the A-button is pressed, **char_index** is increased by 1.
 | To make sure **char_index** doesn't just keep increasing without limit, if it has reached 4 when the A-button is pressed, it is reset to 0.
 
 .. code-block:: python
-    
+
     from microbit import *
 
     chars = ["A", "B", "C", "D", "E"]
@@ -41,10 +41,10 @@ Letter chooser: by function
 | In the main while-loop, **select_char** is called to choose a letter, **letter**, which is then displayed.
 | The function, **select_char(** starts the variable, **char_index**, at the middle index position of the **chars** list. The **middle_index** is previously calculated by halving the length of the **chars** list. **middle_index = int(max_char_index / 2)**
 | The while-loop keeps running until the B-button is pressed, then **chars[char_index]** is returned.
-| In the while-loop, button-A pressing is used to increase the variable, **char_index**, until it gets to its biggest allowed value, **max_char_index**, then it restarts at 0. 
+| In the while-loop, button-A pressing is used to increase the variable, **char_index**, until it gets to its biggest allowed value, **max_char_index**, then it restarts at 0.
 
 .. code-block:: python
-    
+
     from microbit import *
 
     chars = ["A", "B", "C", "D", "E"]
@@ -75,18 +75,18 @@ Letter chooser: by function
 
 .. admonition:: Tasks
 
-    #. Add the parameter **start_char** parameter to **select_char**, so it looks like: **select_char(start_char)**. Use the index method to get the corresponding index for the letter.
+    #. Add the parameter **start_char** to **select_char**, so it looks like: **select_char(start_char)**. Use the index method to get the corresponding index for the letter.
 
     .. dropdown::
             :icon: codescan
             :color: primary
             :class-container: sd-dropdown-container
- 
+
             .. tab-set::
 
                 .. tab-item:: Q1
 
-                    Add the parameter **start_char** parameter to **select_char**, so it looks like: **select_char(start_char)**. Use the index method to get the corresponding index for the letter.
+                    Add the parameter **start_char** to **select_char**, so it looks like: **select_char(start_char)**. Use the index method to get the corresponding index for the letter.
 
                     .. code-block:: python
 
@@ -96,7 +96,7 @@ Letter chooser: by function
                         max_char_index = len(chars) - 1
 
 
-                        def select_char(start_char): 
+                        def select_char(start_char):
                             index = chars.index(start_char)
                             display.show(chars[index])
                             while button_b.was_pressed() is False:
@@ -117,4 +117,3 @@ Letter chooser: by function
 
 
 
-                

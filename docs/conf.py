@@ -79,7 +79,6 @@ html_static_path = ['_static']
 
 html_theme_options = {
     'logo_only': False,  # False so text is shown
-    'display_version': False,  # False so doc version not shown
     'prev_next_buttons_location': 'both',  # Can be bottom, top, both , or None
     'style_external_links': True,  # True to Add an icon next to external links
     # 'style_nav_header_background': 'blue',

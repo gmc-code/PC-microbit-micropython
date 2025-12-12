@@ -817,12 +817,12 @@ exec Execute Python statements stored in strings or files, Exec can execute more
         exec('print("Hello World")')
     Hello World
     # Single line statement string
-         exec("print ('runoob.com')")
+         exec("print('runoob.com')")
     runoob.com
 
     #  Single line statement string
          exec ("""for i in range(5):
-   ...     print ("iter time: %d" % i)
+   ...     print("iter time: %d" % i)
    ... """)
     iter time: 0
     iter time: 1
@@ -1111,11 +1111,11 @@ Used to convert a tuple or string to a list.
 
     aTuple = (123, 'Google', 'baidu', 'Taobao')
     list1 = list(aTuple)
-    print ("element list : ", list1)
+    print("element list : ", list1)
 
     str="Hello World"
     list2=list(str)
-    print ("element list : ", list2)
+    print("element list : ", list2)
 
 the output::
 
@@ -1135,7 +1135,7 @@ Returns all local variables in the current location as dictionary type.
 
         def runoob(arg):    # Two local variables: arg、z
    ...     z = 1
-   ...     print (locals())
+   ...     print(locals())
    ...
          runoob(4)
     {'z': 1, 'arg': 4}      # Returns a dictionary of name / value pairs
@@ -1173,14 +1173,14 @@ max
 
 .. function:: max()
 
-Returns the maximum value of the given parameter, which can be a sequence
+Returns the maximum value of the given argument, which can be a sequence
 
 ::
 
-    print ("max(80, 100, 1000) : ", max(80, 100, 1000))
-    print ("max(-20, 100, 400) : ", max(-20, 100, 400))
-    print ("max(-80, -20, -10) : ", max(-80, -20, -10))
-    print ("max(0, 100, -400) : ", max(0, 100, -400))
+    print("max(80, 100, 1000) : ", max(80, 100, 1000))
+    print("max(-20, 100, 400) : ", max(-20, 100, 400))
+    print("max(-80, -20, -10) : ", max(-80, -20, -10))
+    print("max(0, 100, -400) : ", max(0, 100, -400))
 
 The output::
 
@@ -1200,14 +1200,17 @@ Returns the memory view object for the given parameter. The so-called memory vie
 
 ::
 
-        v = memoryview(bytearray("abcefg"))
-         v[1]
+    v = memoryview(bytearray("abcefg"))
+
+    v[1]
     98
-         v[-1]
+    v[-1]
+
     103
-         v[1:4]
+    v[1:4]
+
     <memoryview>
-         bytes(v[1:4)
+    bytes(v[1:4)
     b'bce'
 
 
@@ -1221,10 +1224,10 @@ min
 Returns the minimum value of a given parameter, which can be a sequence.
 ::
 
-    print ("min(80, 100, 1000) : ", min(80, 100, 1000))
-    print ("min(-20, 100, 400) : ", min(-20, 100, 400))
-    print ("min(-80, -20, -10) : ", min(-80, -20, -10))
-    print ("min(0, 100, -400) : ", min(0, 100, -400))
+    print("min(80, 100, 1000) : ", min(80, 100, 1000))
+    print("min(-20, 100, 400) : ", min(-20, 100, 400))
+    print("min(-80, -20, -10) : ", min(-80, -20, -10))
+    print("min(0, 100, -400) : ", min(0, 100, -400))
 
 The output::
 
@@ -1341,10 +1344,10 @@ Returns the value of X Y (Y power of x).
 
 ::
 
-    print ("pow(100, 2) : ", pow(100, 2))
-    print ("pow(100, -2) : ", pow(100, -2))
-    print ("pow(2, 4) : ", pow(2, 4))
-    print ("pow(3, 0) : ", pow(3, 0))
+    print("pow(100, 2) : ", pow(100, 2))
+    print("pow(100, -2) : ", pow(100, -2))
+    print("pow(2, 4) : ", pow(2, 4))
+    print("pow(3, 0) : ", pow(3, 0))
 
 The output::
 
@@ -1525,11 +1528,11 @@ Returns the rounding value of floating-point number x.
 
 ::
 
-    print ("round(70.23456) : ", round(70.23456))
-    print ("round(56.659,1) : ", round(56.659,1))
-    print ("round(80.264, 2) : ", round(80.264, 2))
-    print ("round(100.000056, 3) : ", round(100.000056, 3))
-    print ("round(-100.000056, 3) : ", round(-100.000056, 3))
+    print("round(70.23456) : ", round(70.23456))
+    print("round(56.659,1) : ", round(56.659,1))
+    print("round(80.264, 2) : ", round(80.264, 2))
+    print("round(100.000056, 3) : ", round(100.000056, 3))
+    print("round(-100.000056, 3) : ", round(-100.000056, 3))
 
 The output::
 
