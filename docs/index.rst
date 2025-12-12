@@ -140,6 +140,10 @@ Index:
     sensors/gestures.rst
     sensors/movement.rst
 
+    wearables/wearable.rst
+    createAI/AI_introduction.rst
+
+
 
 .. toctree::
     :maxdepth: 2

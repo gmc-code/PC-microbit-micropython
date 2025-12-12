@@ -2,6 +2,13 @@
 Introduction
 ====================================================
 
+Video introduction
+-------------------------
+
+`Watch on YouTube <https://www.youtube.com/watch?v=7WMCgUIcKnk>`_
+
+----
+
 PC-Microbit
 ----------------------------------------
 
@@ -10,6 +17,8 @@ PC-Microbit
 
 .. image:: images/microbit_happy.png
     :scale: 30 %
+
+
 
 ----
 
