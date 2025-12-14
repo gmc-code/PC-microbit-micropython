@@ -21,10 +21,14 @@ extensions = [
     'sphinx.ext.autodoc',
     'sphinx_togglebutton',
     'sphinx_design',
+    "sphinx_new_tab_link",
 ]
 
 # for copybutton to allow use of :class: no-copybutton  in code blocks
 # copybutton_selector = "div:not(.no-copybutton) > div.highlight > pre"
+
+# for sphinx_new_tab_link
+new_tab_link_show_external_link_icon = True
 
 
 # Add any paths that contain templates here, relative to this directory.
@@ -275,7 +279,5 @@ latex_toplevel_sectioning = 'chapter'
 # for manual can use report
 latex_documents = [
     (master_doc, 'PC-Microbit-Micropython.tex', 'PC-Microbit-Micropython',
-    'GMC', 'manual'),
+     'GMC', 'manual'),
 ]
-
-
