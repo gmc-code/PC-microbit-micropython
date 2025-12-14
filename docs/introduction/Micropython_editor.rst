@@ -2,12 +2,13 @@
 Micropython editor
 ====================================================
 
-| The standard online **micropython** editor is at: `https://python.microbit.org/v/3`_.
-| See the guide at: `https://support.microbit.org/support/solutions/articles/19000135210_`
+| The standard online **micropython** editor is at: `<https://python.microbit.org/v/3>`_.
+| See the guide at: `<https://support.microbit.org/support/solutions/articles/19000135210>`_
 
 
 `Micro:bit Educational Foundation YouTube Video introduction to the editor <https://www.youtube.com/watch?v=mREwMW69qKc>`_
 
+External link: :icon-link:`Micropython editor <https://python.microbit.org/v/3>`
 
 ----
 
