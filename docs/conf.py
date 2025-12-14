@@ -3,7 +3,6 @@
 
 # -- Project information -----------------------------------------------------
 
-import sphinx_rtd_theme
 project = 'PC-Microbit'
 copyright = '2021-26, GMC'
 author = 'GMC'
