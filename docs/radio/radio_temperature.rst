@@ -9,7 +9,7 @@ Indoor and outdoor temperature
 | Turn on the radio using: ``radio.on()``
 | Use different code for the outdoor microbit compared to the indoor.
 
-| Outdoor: Set up the outdoor microbit so that it only sends the temperature every minute  
+| Outdoor: Set up the outdoor microbit so that it only sends the temperature every minute
 
 .. code-block:: python
 
@@ -29,7 +29,7 @@ Indoor and outdoor temperature
 | Indoor: Set up the indoor microbit so that pressing the A-button displays the indoor temperature and pressing the B-button displays the outdoor temperature.
 
 .. code-block:: python
-    
+
     from microbit import *
     import radio
 
@@ -68,7 +68,7 @@ Indoor and outdoor temperature
                 Modify the code of the microbits so that they both scroll the outdoor temperature every 60 seconds.
 
                 .. code-block:: python
-                                        
+
                     from microbit import *
                     import radio
 
@@ -84,7 +84,7 @@ Indoor and outdoor temperature
                         sleep(60000)
 
                 .. code-block:: python
-                                        
+
                     from microbit import *
                     import radio
 
@@ -112,7 +112,7 @@ Indoor and outdoor temperature
                 Modify the code of the outdoor microbit so that when the outdoor microbit is reset along with pressing the A-button, the time between sends is 10 seconds. When it is reset along with pressing the B-button, the time between sends is 30 seconds. On reset with button pressing the sleep time is 60 seconds.
 
                 .. code-block:: python
-                    
+
                     from microbit import *
                     import radio
 
@@ -127,7 +127,7 @@ Indoor and outdoor temperature
                         sleep_time = 30000
                     else:
                         sleep_time = 60000
-                        
+
                     while True:
                         outdoor_temp = temperature()
                         radio.send(str(outdoor_temp))
@@ -139,7 +139,7 @@ Indoor and outdoor temperature
 
 .. admonition:: Tasks
 
-    #. See: https://pc-microbit-micropython.readthedocs.io/en/latest/introduction/power_management.html#deep-sleep-wake-via-run-every
+    #. See: `<https://pc-microbit-micropython.readthedocs.io/en/latest/introduction/power_management.html>`#deep-sleep-wake-via-run-every
     Modify the code of the outdoor microbit so that it uses deep sleep which is renewed every 24 hours, along with run_every to send the temperature every 60 seconds.
 
     .. dropdown::
@@ -154,7 +154,7 @@ Indoor and outdoor temperature
                 Modify the code of the outdoor microbit so that it uses deep sleep which is renewed every 24 hours, along with run_every to send the temperature every 60 seconds.
 
                 .. code-block:: python
-                                        
+
                     from microbit import *
                     import power
                     import radio

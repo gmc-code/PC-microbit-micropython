@@ -2,9 +2,9 @@
 Audio
 ==========================
 
-| See: https://microbit-micropython.readthedocs.io/en/stable/audio.html
+| See: `<https://microbit-micropython.readthedocs.io/en/stable/audio.html>`
 | For control of the speaker and volume in V2 see:
-| https://pc-microbit-micropython.readthedocs.io/en/latest/lessons2/music.html#v2-volume
+| `<https://pc-microbit-micropython.readthedocs.io/en/latest/lessons2/music.html>`#v2-volume
 
 ----
 
@@ -120,7 +120,7 @@ All Built in sounds
 .. admonition:: Tasks
 
     #. Play any 3 built-in sounds using a list, separating them with a 1 second pause.
-    #. Use the choice function to randomly pick a built-in sound from a sound list. See: https://www.w3schools.com/python/ref_random_choice.asp. Use button pressing to break out of the while-loop to stop playing sounds.
+    #. Use the choice function to randomly pick a built-in sound from a sound list. See: `<https://www.w3schools.com/python/ref_random_choice.asp. Use button pressing to break out of the while-loop to stop playing sounds.
 
     .. dropdown::
         :icon: codescan
@@ -145,7 +145,7 @@ All Built in sounds
 
             .. tab-item:: Q2
 
-                Use the choice function to randomly pick a built-in sound from a sound list. See: https://www.w3schools.com/python/ref_random_choice.asp. Use button pressing to break out of the while-loop to stop playing sounds.
+                Use the choice function to randomly pick a built-in sound from a sound list. See: `<https://www.w3schools.com/python/ref_random_choice.asp. Use button pressing to break out of the while-loop to stop playing sounds.
 
                 .. code-block:: python
 

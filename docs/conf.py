@@ -28,7 +28,7 @@ extensions = [
 # copybutton_selector = "div:not(.no-copybutton) > div.highlight > pre"
 
 # for sphinx_new_tab_link  False si default
-new_tab_link_show_external_link_icon = False
+# new_tab_link_show_external_link_icon = False
 
 
 # Add any paths that contain templates here, relative to this directory.

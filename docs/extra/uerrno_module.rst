@@ -59,7 +59,7 @@ File open error
 Error code meanings
 ------------------------
 
-| See: https://docs.python.org/3.12/library/errno.html#module-errno
+| See: `<https://docs.python.org/3.12/library/errno.html>`#module-errno
 | Here are the meanings of each error code in the provided list:
 
 1. **EPERM (1)**: Operation not permitted.

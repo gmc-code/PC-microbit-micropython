@@ -2,7 +2,7 @@
 while True loops
 ====================================================
 
-| See: https://www.w3schools.com/python/python_while_loops.asp
+| See: `<https://www.w3schools.com/python/python_while_loops.asp
 | While loops run a set of statements as long as a test condition is true.
 
 

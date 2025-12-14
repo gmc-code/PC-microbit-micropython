@@ -3,11 +3,11 @@ Piezo_Buzzer_and_music
 ==========================
 
 | The examples below use sequence without definition blocks which are preferred to better organize the code.
-| See https://pc-microbit-micropython.readthedocs.io/en/latest/breadboards/Piezo_Buzzer_and_music_2.html
+| See `<https://pc-microbit-micropython.readthedocs.io/en/latest/breadboards/Piezo_Buzzer_and_music_2.html>`
 
 ----
 
-| See: https://microbit-micropython.readthedocs.io/en/stable/music.html
+| See: `<https://microbit-micropython.readthedocs.io/en/stable/music.html>`
 
 .. admonition:: Warning
 
@@ -301,7 +301,7 @@ Tuple unpacking of get_tempo()
 
 | For advanced users, tuple unpacking can be used instead of indices:
 | ``bpm, ticks = music.get_tempo()``
-| See: https://www.w3schools.com/python/python_tuples_unpack.asp
+| See: `<https://www.w3schools.com/python/python_tuples_unpack.asp
 
 .. code-block:: python
 
@@ -344,8 +344,8 @@ Scales
 
 .. admonition:: Tasks
 
-    #. Play the 8 notes of D major. See: https://www.pianoscales.org/major.html
-    #. Play the 8 notes of F minor. See: https://www.pianoscales.org/minor.html
+    #. Play the 8 notes of D major. See: `<https://www.pianoscales.org/major.html>`
+    #. Play the 8 notes of F minor. See: `<https://www.pianoscales.org/minor.html>`
     #. Play the D major scale when the A-button is pressed and the F minor scale when the B-button is pressed.
     #. Play the C major scale combined with an animation of the heart beating.
 
@@ -448,7 +448,7 @@ Built in music
 
 
 | The code below uses a for-loop to loop through each melody in the ``melodies_list`` and play it.
-| For a list of built-in melodies see: https://microbit-micropython.readthedocs.io/en/stable/music.html
+| For a list of built-in melodies see: `<https://microbit-micropython.readthedocs.io/en/stable/music.html>`
 
 .. code-block:: python
 
@@ -496,7 +496,7 @@ All Built in melodies
 .. admonition:: Tasks
 
     #. Play any 3 melodies using a list.
-    #. Use the choice function to randomly pick melodies from a melody list. See: https://www.w3schools.com/python/ref_random_choice.asp. Use https://python.microbit.org/v/3.
+    #. Use the choice function to randomly pick melodies from a melody list. See: `<https://www.w3schools.com/python/ref_random_choice.asp. Use `<https://python.microbit.org/v/3.
 
     .. dropdown::
         :icon: codescan
@@ -521,7 +521,7 @@ All Built in melodies
 
             .. tab-item:: Q2
 
-                Use the choice function to randomly pick melodies from a melody list. See: https://www.w3schools.com/python/ref_random_choice.asp.
+                Use the choice function to randomly pick melodies from a melody list. See: `<https://www.w3schools.com/python/ref_random_choice.asp.
 
                 .. code-block:: python
 
@@ -645,8 +645,8 @@ A	    1760
 
 .. admonition:: Tasks
 
-    #. Modify the code to play the pitches of the E minor scale. See: https://www.piano-keyboard-guide.com/e-minor-scale.html.
-    #. Modify the code to play the pitches of the D major scale. See: http://www.piano-keyboard-guide.com/d-major-scale.html.
+    #. Modify the code to play the pitches of the E minor scale. See: `<https://www.piano-keyboard-guide.com/e-minor-scale.html>`.
+    #. Modify the code to play the pitches of the D major scale. See: http://www.piano-keyboard-guide.com/d-major-scale.html>`.
 
     .. dropdown::
         :icon: codescan
@@ -657,7 +657,7 @@ A	    1760
 
             .. tab-item:: Q1
 
-                Modify the code to play the pitches of the E minor scale. See: https://www.piano-keyboard-guide.com/e-minor-scale.html.
+                Modify the code to play the pitches of the E minor scale. See: `<https://www.piano-keyboard-guide.com/e-minor-scale.html>`.
 
                 .. code-block:: python
 
@@ -675,7 +675,7 @@ A	    1760
 
             .. tab-item:: Q2
 
-                Modify the code to play the pitches of the D major scale. See: http://www.piano-keyboard-guide.com/d-major-scale.html.
+                Modify the code to play the pitches of the D major scale. See: http://www.piano-keyboard-guide.com/d-major-scale.html>`.
 
                 .. code-block:: python
 

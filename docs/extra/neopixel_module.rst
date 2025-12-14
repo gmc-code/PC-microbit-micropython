@@ -7,7 +7,7 @@ neopixel module
 The ``neopixel`` module lets you use NeoPixel (WS2812) individually addressable
 RGB and RGBW LED strips with the microbit.
 
-See: https://microbit-micropython.readthedocs.io/en/v2-docs/neopixel.html
+See: `<https://microbit-micropython.readthedocs.io/en/v2-docs/neopixel.html>`
 
 ----
 

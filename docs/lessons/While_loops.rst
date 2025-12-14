@@ -2,7 +2,7 @@
 EXT: While loops
 ====================================================
 
-| See: https://www.w3schools.com/python/python_while_loops.asp
+| See: `<https://www.w3schools.com/python/python_while_loops.asp
 | While loops run a set of statements as long as a test condition is true.
 | The statements within the loop are indented.
 
@@ -83,7 +83,7 @@ Counters
 
 | A counter can be used in the while-loop condition.
 | The counter is set before the while-loop.
-| The counter is incremented (increased by a constant amount) in a while-loop. 
+| The counter is incremented (increased by a constant amount) in a while-loop.
 
 ----
 
@@ -136,7 +136,7 @@ Counting down
 Step size
 ----------------------------------------
 
-| The code below counts up from 0 to 10 in steps of 2. 
+| The code below counts up from 0 to 10 in steps of 2.
 | ``i += 2`` sets a step size of 2.
 
 .. code-block:: python
@@ -158,7 +158,7 @@ Step size
     #. Write a while-loop that counts down from 9 to 1, showing the numbers 9, 8, 7, 6, 5, 4, 3, 2, 1.
     #. Write a while-loop that counts down from 24 to 18 in steps of 2, scrolling the numbers 24, 22, 20, 18.
     #. Write 2 while loops to scroll 0 to 8 going up in 2s then 9 down to 1 going down in 2s.
- 
+
     .. dropdown::
         :icon: codescan
         :color: primary

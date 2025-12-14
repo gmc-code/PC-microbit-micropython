@@ -28,8 +28,8 @@ Scales
 
 .. admonition:: Tasks
 
-    #. Play the 8 notes of G major. See: https://www.pianoscales.org/major.html
-    #. Play the 8 notes of E minor. See: https://www.pianoscales.org/minor.html
+    #. Play the 8 notes of G major. See: `<https://www.pianoscales.org/major.html>`
+    #. Play the 8 notes of E minor. See: `<https://www.pianoscales.org/minor.html>`
     #. Play the G major scale when the A-button is pressed and the E minor scale when the B-button is pressed.
     #. Play the F major scale when the A-button is pressed and the D minor scale when the B-button is pressed.
 
@@ -118,7 +118,7 @@ Scales
 Major Scales
 ----------------------------------------
 
-| See: https://musictheory.pugetsound.edu/mt21c/MajorKeySignatures.html
+| See: `<https://musictheory.pugetsound.edu/mt21c/MajorKeySignatures.html>`
 
 | The code below plays the Major scales.
 | Replacements for sharp major scales; B# = C; E# = F
@@ -151,7 +151,7 @@ Major Scales
     G_flat_major = {"name": "Gb", "notes": "Gb4 Ab Bb B Db5 Eb F Gb"}
     C_flat_major = {"name": "Cb", "notes": "B3 Db4 Eb E Gb Ab Bb B"}
 
-    circle_of_fifths_sharp_scales = [C_major, G_major, D_major, A_major, 
+    circle_of_fifths_sharp_scales = [C_major, G_major, D_major, A_major,
                                     E_major, B_major, F_sharp_major, C_sharp_major]
 
     circle_of_fifths_flat_scales = [C_major, F_major, B_flat_major, E_flat_major,
@@ -179,7 +179,7 @@ Major Scales
 Minor Scales
 ----------------------------------------
 
-| See: https://musictheory.pugetsound.edu/mt21c/MinorKeySignatures.html
+| See: `<https://musictheory.pugetsound.edu/mt21c/MinorKeySignatures.html>`
 
 | The code below plays the minor scales.
 | Replacements for sharp minor scales; B# = C; E# = F
@@ -235,7 +235,7 @@ Minor Scales
 ----
 
 .. admonition:: Challenges
-    
+
     #. Modify the code to play the major scales when the A button is pressed and the minor scales when the B button is pressed. Check for a second pressing of each button to stop the playing.
 
 ----
@@ -253,7 +253,7 @@ Triads
     import music
 
     music.set_tempo(ticks=8, bpm=240)
-    triads = [["C4", "E4", "G4"], ["D4", "F4", "A4"], ["E4", "G4", "B4"], 
+    triads = [["C4", "E4", "G4"], ["D4", "F4", "A4"], ["E4", "G4", "B4"],
             ["F4", "A4", "C5"], ["G4", "B4", "D5"], ["A4", "C5", "E5"], ["B4", "D5", "F5"]]
 
     while True:
@@ -288,7 +288,7 @@ Triads
                     import music
 
                     music.set_tempo(ticks=8, bpm=240)
-                    triads = [["C4", "E4", "G4"], ["D4", "F4", "A4"], ["E4", "G4", "B4"], 
+                    triads = [["C4", "E4", "G4"], ["D4", "F4", "A4"], ["E4", "G4", "B4"],
                             ["F4", "A4", "C5"], ["G4", "B4", "D5"], ["A4", "C5", "E5"], ["B4", "D5", "F5"]]
 
                     while True:
@@ -309,7 +309,7 @@ Triads
                     import music
 
                     music.set_tempo(ticks=8, bpm=240)
-                    triads = [["C4", "E4", "G4"], ["D4", "F4", "A4"], ["E4", "G4", "B4"], 
+                    triads = [["C4", "E4", "G4"], ["D4", "F4", "A4"], ["E4", "G4", "B4"],
                             ["F4", "A4", "C5"], ["G4", "B4", "D5"], ["A4", "C5", "E5"], ["B4", "D5", "F5"]]
 
                     while True:
@@ -328,7 +328,7 @@ Triads
                     import music
 
                     music.set_tempo(ticks=8, bpm=240)
-                    triads = [["C4", "E4", "G4"], ["D4", "F4", "A4"], ["E4", "G4", "B4"], 
+                    triads = [["C4", "E4", "G4"], ["D4", "F4", "A4"], ["E4", "G4", "B4"],
                             ["F4", "A4", "C5"], ["G4", "B4", "D5"], ["A4", "C5", "E5"], ["B4", "D5", "F5"]]
 
                     while True:

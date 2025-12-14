@@ -2,7 +2,7 @@
 Music pitch
 ==========================
 
-| See: https://microbit-micropython.readthedocs.io/en/stable/music.html
+| See: `<https://microbit-micropython.readthedocs.io/en/stable/music.html>`
 
 .. py:module:: music
 
@@ -172,8 +172,8 @@ A	    1760
 
 .. admonition:: Tasks
 
-    #. Modify the code to play the pitches of the E minor scale. See: https://www.piano-keyboard-guide.com/e-minor-scale.html.
-    #. Modify the code to play the pitches of the D major scale. See: http://www.piano-keyboard-guide.com/d-major-scale.html.
+    #. Modify the code to play the pitches of the E minor scale. See: `<https://www.piano-keyboard-guide.com/e-minor-scale.html>`.
+    #. Modify the code to play the pitches of the D major scale. See: http://www.piano-keyboard-guide.com/d-major-scale.html>`.
 
     .. dropdown::
         :icon: codescan
@@ -184,7 +184,7 @@ A	    1760
 
             .. tab-item:: Q1
 
-                Modify the code to play the pitches of the E minor scale. See: https://www.piano-keyboard-guide.com/e-minor-scale.html.
+                Modify the code to play the pitches of the E minor scale. See: `<https://www.piano-keyboard-guide.com/e-minor-scale.html>`.
 
                 .. code-block:: python
 
@@ -202,7 +202,7 @@ A	    1760
 
             .. tab-item:: Q2
 
-                Modify the code to play the pitches of the D major scale. See: http://www.piano-keyboard-guide.com/d-major-scale.html.
+                Modify the code to play the pitches of the D major scale. See: http://www.piano-keyboard-guide.com/d-major-scale.html>`.
 
                 .. code-block:: python
 
@@ -221,7 +221,7 @@ A	    1760
 
 .. admonition:: Tasks
 
-    #. Begin with the scale Am_4 = [440, 494, 523, 587, 659, 698, 784, 880]. Use list comprehension to create a new list, Am_5, in which the frequencies are multiplied by 2, but include the condition that the frequency is not 440. Scroll the octave number, without blocking the sound, when the octave list sounds start. See: https://pc-python.readthedocs.io/en/latest/python_advanced/list_comprehensions.html
+    #. Begin with the scale Am_4 = [440, 494, 523, 587, 659, 698, 784, 880]. Use list comprehension to create a new list, Am_5, in which the frequencies are multiplied by 2, but include the condition that the frequency is not 440. Scroll the octave number, without blocking the sound, when the octave list sounds start. See: `<https://pc-python.readthedocs.io/en/latest/python_advanced/list_comprehensions.html>`
     #. Begin with the scale Am_4= [440, 494, 523, 587, 659, 698, 784, 880]. Use list comprehension to create a new list, Am_5, excluding 440 and a new list, Am_3, in which the frequencies are divided by 2, excluding 880. Scroll the octave number, without blocking the sound, when the octave list sounds start.
     #. Begin with the scale Am_4= [440, 494, 523, 587, 659, 698, 784, 880]. Use list comprehension to create a new list, Am_54_rev, which is the reverse of Am_4, excluding 880. Show an up arrow when Am_4 is played and a down arrow for Am_54_rev.
 

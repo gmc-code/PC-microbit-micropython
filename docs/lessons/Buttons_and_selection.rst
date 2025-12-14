@@ -3,7 +3,7 @@ Buttons and selection
 ====================================================
 
 | The A and B-buttons can be used to carry out various actions on the microbit.
-| See https://microbit-micropython.readthedocs.io/en/latest/tutorials/buttons.html
+| See `<https://microbit-micropython.readthedocs.io/en/latest/tutorials/buttons.html>`
 
 ----
 
@@ -34,7 +34,7 @@ Button is pressed
 .. admonition:: Tasks
 
     #. Edit the code to indicate whether the B-button is being pressed or not.
-    
+
     .. dropdown::
         :icon: codescan
         :color: primary
@@ -61,7 +61,7 @@ Button was pressed
 ----------------------------------------
 
 | The ``.was_pressed`` method is used to detect button pressing since the last check or since the device started.
-| The ``.was_pressed`` method will clear the press state so that the button must be pressed again before this method will return True again. 
+| The ``.was_pressed`` method will clear the press state so that the button must be pressed again before this method will return True again.
 
 .. py:function:: button_a.was_pressed()
 
@@ -86,7 +86,7 @@ Button was pressed
 .. admonition:: Tasks
 
     #. Edit the code to indicate whether the A-button was pressed or not.
-    
+
     .. dropdown::
         :icon: codescan
         :color: primary
@@ -242,7 +242,7 @@ if
                         if button_b.is_pressed():
                             display.show(Image.SAD)
                         sleep(200)
-                                                                                 
+
 ----
 
 if - else
@@ -276,7 +276,7 @@ if - else
     #. Edit the code to scroll your name when the A-button is pressed and to show "?" when nothing is pressed.
     #. Edit the code to display a happy face when the A-button is pressed and a sad face when nothing is pressed.
     #. Edit the code to display a sad face when the B-button is pressed and a confused face when nothing is pressed.
-    
+
     .. dropdown::
         :icon: codescan
         :color: primary
@@ -359,7 +359,7 @@ if - elif
 
     #. Edit the code to scroll your name when the A-button is pressed and your tutor group when the B-button is pressed.
     #. Edit the code to display a happy face when the A-button is pressed and a sad face when the B-button is pressed.
-    
+
     .. dropdown::
         :icon: codescan
         :color: primary
@@ -473,7 +473,7 @@ If - elif - else
                         else:
                             display.show(Image.CONFUSED)
                         sleep(200)
- 
+
 ----
 
 If - elif - elif - else
@@ -484,7 +484,7 @@ If - elif - elif - else
     :align: center
 
 | Using ``if``, two ``elif`` and ``else`` together provides 4 branches in the code.
-| The code below first checks whether both buttons are pressed. 
+| The code below first checks whether both buttons are pressed.
 | The logical keyword ``and`` requires both conditions to be True for the combined condition to be True.
 | If either button is not pressed the combined condition, ``button_a.is_pressed() and button_b.is_pressed()``, will be False.
 
@@ -579,7 +579,7 @@ Changing values with A and B-buttons
             delay_time -= 10
         else:
             sleep(100)
-        display.scroll("ABC", delay=delay_time)    
+        display.scroll("ABC", delay=delay_time)
 
 | The code above fails when the delay_time goes below 0.
 | The variable, ``delay_time``, can be restricted to a set range of values using the min and max functions.
@@ -599,7 +599,7 @@ Changing values with A and B-buttons
             delay_time = max(50, delay_time - 10)
         else:
             sleep(100)
-        display.scroll("ABC", delay=delay_time)  
+        display.scroll("ABC", delay=delay_time)
 
 ----
 
@@ -633,12 +633,12 @@ Changing values with A and B-buttons
                             delay_time -= 25
                         else:
                             sleep(100)
-                        display.scroll("ABC", delay=delay_time) 
+                        display.scroll("ABC", delay=delay_time)
 
 
             .. tab-item:: Q2
 
-                Write code to alter a ``guess_number`` variable in steps of 1 by the buttons. Start the number at 5 and limit it to a minimum of 1 and a maximum of 9. Use was_pressed.  
+                Write code to alter a ``guess_number`` variable in steps of 1 by the buttons. Start the number at 5 and limit it to a minimum of 1 and a maximum of 9. Use was_pressed.
 
                 .. code-block:: python
 

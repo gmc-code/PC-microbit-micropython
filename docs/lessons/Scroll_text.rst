@@ -9,7 +9,7 @@ Display.scroll simple version
 
 .. py:function:: scroll(value)
 
-    | Scrolls ``value`` horizontally on the microbit LED display. 
+    | Scrolls ``value`` horizontally on the microbit LED display.
     | ``value`` can be an integer or float (a decimal) or a string (text in quotes).
 
 To scroll the string (in single quotes), '``Hi``', across the display, use ``display.scroll('Hi')``:
@@ -120,9 +120,9 @@ Display.scroll with delay
 
 .. py:function:: scroll(value, delay=150)
 
-    | Scrolls ``value`` horizontally on the display. 
+    | Scrolls ``value`` horizontally on the display.
     | ``value`` can be an integer or float (a decimal) or a string.
-    | The ``delay`` parameter controls how fast the text scrolls. 
+    | The ``delay`` parameter controls how fast the text scrolls.
     | The default delay is 150ms. When no delay is specified the default of 150ms is used.
     | The delay can be specified with the parameter name as in ``display.scroll('Hi', delay=150)``, or just as a number as the second argument as in ``display.scroll('Hi', 150)``.
 
@@ -302,8 +302,8 @@ Display.scroll using variables
         display.scroll(goals_per_game, 300)
 
 
-| For rules on variable names see: 
-| https://pc-microbit-micropython.readthedocs.io/en/latest/python_basics/variables.html
+| For rules on variable names see:
+| `<https://pc-microbit-micropython.readthedocs.io/en/latest/python_basics/variables.html>`
 
 ----
 

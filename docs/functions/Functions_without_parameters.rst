@@ -2,10 +2,10 @@
 Functions without parameters
 ===================================
 
-| See: https://www.w3schools.com/python/python_functions.asp
+| See: `<https://www.w3schools.com/python/python_functions.asp
 
 
-| Functions are blocks of code that can be used many times in a program. 
+| Functions are blocks of code that can be used many times in a program.
 | They avoid code repetition.
 | Functions can **do something** or **return values**.
 | Functions are defined using the ``def`` keyword.
@@ -35,7 +35,7 @@ Functions that do something
 .. admonition:: Tasks
 
     #. Write a function called ``scroll_name`` that scrolls your name.
-    #. Write a function called ``countdown`` that counts down from 5 to 1, showing each number. 
+    #. Write a function called ``countdown`` that counts down from 5 to 1, showing each number.
 
     .. dropdown::
         :icon: codescan

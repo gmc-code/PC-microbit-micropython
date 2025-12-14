@@ -133,7 +133,7 @@ Add actions to a for-loop
 
 | The disadvantage of this approach is that the spacing character is also added to the end, after the last character.
 | e.g "a*c*e*"
-| See the `Spacing characters under EXT: for-loops <https://pc-microbit-micropython.readthedocs.io/en/latest/lessons/For_loops_2.html#spacing-characters>`_ for ideas to get "a*c*e" instead of "a*c*e*".
+| See the `Spacing characters under EXT: for-loops <https://pc-microbit-micropython.readthedocs.io/en/latest/lessons/For_loops_2.html>`#spacing-characters>`_ for ideas to get "a*c*e" instead of "a*c*e*".
 
 ----
 
@@ -309,7 +309,7 @@ Nested For loops
 
 
 
-| For examples of using nested for-loops specific to the microbit display see the `Setting Pixels page under Images <https://pc-microbit-micropython.readthedocs.io/en/latest/images/setting_pixels.html#pixel-rows-and-columns-lists>`_.
+| For examples of using nested for-loops specific to the microbit display see the `Setting Pixels page under Images <https://pc-microbit-micropython.readthedocs.io/en/latest/images/setting_pixels.html>`#pixel-rows-and-columns-lists>`_.
 
 ----
 

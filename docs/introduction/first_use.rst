@@ -6,15 +6,15 @@ Firmware
 ------------
 
 | Some Microbits can have their firmware updated depending on the microbit version.
-| See: https://microbit.org/get-started/user-guide/firmware/
-| See: https://tech.microbit.org/software/daplink-interface/#daplink-software
+| See: `<https://microbit.org/get-started/user-guide/firmware/
+| See: `<https://tech.microbit.org/software/daplink-interface/#daplink-software
 
 ----
 
 Out of Box hex file v2
 --------------------------
 
-| The hex file that is on new microbits can be found at: https://microbit.org/get-started/user-guide/out-of-box-experience/
+| The hex file that is on new microbits can be found at: `<https://microbit.org/get-started/user-guide/out-of-box-experience/
 | The code below is similar to the out-of-box-experience that occurs when a new microbit is first started.
 
 .. code-block:: python
@@ -47,7 +47,7 @@ Out of Box hex file v2
         display.clear()
 
     def on_gesture_screen_down():
-        # https://microbit-micropython.readthedocs.io/en/stable/audio.html#built-in-sounds-v2
+        # `<https://microbit-micropython.readthedocs.io/en/stable/audio.html>`#built-in-sounds-v2
         display.show(Image.ASLEEP)
         sound_effect = audio.SoundEffect(freq_start=5849, freq_end=1, vol_start=255, vol_end=0, duration=1000,
                     waveform=audio.SoundEffect.WAVEFORM_SINE,shape=audio.SoundEffect.SHAPE_LINEAR)

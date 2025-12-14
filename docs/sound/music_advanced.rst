@@ -51,7 +51,7 @@ Random notes Task
         .. tab-set::
 
             .. tab-item:: play random notes
-                
+
                 .. code-block:: python
 
                     from microbit import *
@@ -180,7 +180,7 @@ Random notes Task
 
 
                     def get_random_notes(note_count):
-                        return [get_random_note(notes, octaves, durations) for i in range(note_count)] 
+                        return [get_random_note(notes, octaves, durations) for i in range(note_count)]
 
 
                     while True:
@@ -194,11 +194,11 @@ Random notes Task
 Scales generator
 ----------------------------------------
 
-| See: https://piano-music-theory.com/2016/05/31/major-scales/
-| See: https://appliedguitartheory.com/lessons/how-to-determine-the-key-of-a-song/
-| See: https://en.wikipedia.org/wiki/Key_signature#Scales_with_sharp_key_signatures
+| See: `<https://piano-music-theory.com/2016/05/31/major-scales/
+| See: `<https://appliedguitartheory.com/lessons/how-to-determine-the-key-of-a-song/
+| See: `<https://en.wikipedia.org/wiki/Key_signature#Scales_with_sharp_key_signatures
 
-| Design code to generate the notes in a major scale, given the key and the octave. 
+| Design code to generate the notes in a major scale, given the key and the octave.
 | Research the intervals for major and natural minor scales and place them in lists, **major_steps** and **minor_steps**. Define a function, **get_scale_steps(key_type)**, that returns the scale intervals for a Major or minor key based on passing "M" for major and "m" for minor.
 | Define a function, **get_2oct**,  to return 2 octaves of notes, starting at **c**,  given the start octave and the notes. Use list comprehension to take each note and add the octave to it as a string. e.g "c" and 4 are joined to become "c4".
 | Define a function, **get_key_notes**,  to return the notes in a key given the key. Research the keys that have sharps in them (see: circle of fifths) and make a list of them, **sharp_keys**. Check to see if the key is in that list and return a list of all possible notes, starting at c, that include sharps, **["c", "c#", ...]**, or return the list of notes that includes flats, **["c", "db", ...]**.
@@ -287,7 +287,7 @@ Scales generator
     .. tab-set::
 
         .. tab-item:: Scales generator
-            
+
             .. code-block:: python
 
                 from microbit import *
@@ -371,7 +371,7 @@ Scales generator
         .. tab-set::
 
             .. tab-item:: Scales generator
-                
+
                 .. code-block:: python
 
                     from microbit import *
@@ -461,9 +461,9 @@ Accelerometer based notes
 
     accelerometer.set_range(1)
 
-    play_notes = ["E3", "F#3", "G3", "A3", "B3", 
-            "E4", "F#4", "G4", "A4", "B4", 
-            "E5", "F#5", "G5", "A5", "B5", 
+    play_notes = ["E3", "F#3", "G3", "A3", "B3",
+            "E4", "F#4", "G4", "A4", "B4",
+            "E5", "F#5", "G5", "A5", "B5",
             "E6", "F#6", "G6", "A6", "B6"]
     play_durations = ["1", "2", "4", "8", "16"]
     duration_len = len(play_durations)

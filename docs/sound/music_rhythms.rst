@@ -5,12 +5,12 @@ Music Rhythms
 Rhythm: Shave and a hair cut: two bits
 -----------------------------------------
 
-| See: https://en.wikipedia.org/wiki/Shave_and_a_Haircut
+| See: `<https://en.wikipedia.org/wiki/Shave_and_a_Haircut
 | The rhythm below is given by saying aloud: "Shave and a hair cut: two bits".
 | Play this rhythm.
 
 .. code-block:: python
-    
+
     from microbit import *
     import music
 
@@ -78,7 +78,7 @@ Rhythm: Famous movie series 1
 | Can you identify the movie theme?
 
 .. code-block:: python
-    
+
     from microbit import *
     import music
 
@@ -127,7 +127,7 @@ Rhythm: Famous movie series 2
 | Can you identify the movie theme?
 
 .. code-block:: python
-    
+
     from microbit import *
     import music
 

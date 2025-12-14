@@ -8,7 +8,6 @@ Micropython editor
 
 `Micro:bit Educational Foundation YouTube Video introduction to the editor <https://www.youtube.com/watch?v=mREwMW69qKc>`_
 
-External link: :icon-link:`Micropython editor <https://python.microbit.org/v/3>`
 
 ----
 

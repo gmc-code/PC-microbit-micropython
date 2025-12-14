@@ -5,7 +5,7 @@ Radio Treasure Hunt
 | For a treasure hunt, have some microbits to act as hidden treasure beacons; some as treasure hunters.
 
 ----
- 
+
 Treasure
 -------------------------
 
@@ -15,7 +15,7 @@ Treasure
 | Hide the treasure beacons.
 
 .. code-block:: python
-    
+
     from microbit import *
     import radio
 
@@ -33,7 +33,7 @@ Treasure
         radio.send(treasure_id)
         sleep(200)
 
-    
+
 ----
 
 .. admonition:: Tasks
@@ -49,7 +49,7 @@ Treasure
 
             .. tab-item:: Q1
 
-                Modify the code so that on pressing the A button the treasure_id is scrolled. 
+                Modify the code so that on pressing the A button the treasure_id is scrolled.
 
                 .. code-block:: python
 
@@ -76,10 +76,10 @@ Treasure
 Treasure hunters
 -------------------------
 
-| The treasure hunters look for treasure beacons and display the treasure id value.  
+| The treasure hunters look for treasure beacons and display the treasure id value.
 
 .. code-block:: python
-    
+
     from microbit import *
     import radio
 
@@ -97,7 +97,7 @@ Treasure hunters
 ----
 
 .. admonition:: Challenges
-    
+
     #. See who can find the treasure first.
 
 ----
@@ -107,10 +107,10 @@ Buried Treasure
 
 | Use the random module to set the treasure beacons id to a random single digit integer as a string. ``treasure_id = str(random.randint(1, 9))``
 | Use the power module deep_sleep method to conserve power: ``power.deep_sleep(wake_on=button_a, ms=min_ms, run_every=True)``
-| Use run_every as a decorator to send the radio message every 5 seconds using ``send_id``. 
+| Use run_every as a decorator to send the radio message every 5 seconds using ``send_id``.
 
 .. code-block:: python
-    
+
     from microbit import *
     import power
     import radio
@@ -154,7 +154,7 @@ Buried Treasure
 
             .. tab-item:: Q1
 
-               Modify the code so that pressing the B button changes the treasure_id to a new random integer between 1 and 9. 
+               Modify the code so that pressing the B button changes the treasure_id to a new random integer between 1 and 9.
 
                 .. code-block:: python
 
@@ -199,7 +199,7 @@ Treasure collectors
 | Use a list to store the treasure ids, but check if the treasure_id is in the list to avoid adding duplicate values.
 
 .. code-block:: python
-    
+
     from microbit import *
     import radio
 
@@ -233,11 +233,11 @@ Sorting a list using a function as a sort key
 .. py:function:: list.sort(reverse=True|False, key=myFunc)
 
     Sorts the list, ascending by default.
-    
+
     :param reverse	Optional: reverse=True will sort the list descending. Default is reverse=False
     :param key	Optional: A function to specify the sorting criteria.
 
-See: https://www.w3schools.com/python/ref_list_sort.asp
+See: `<https://www.w3schools.com/python/ref_list_sort.asp
 
 | The list below has strings of integers.
 | A sort key is required to sort them numerically.
@@ -261,7 +261,7 @@ See: https://www.w3schools.com/python/ref_list_sort.asp
     for int_str in int_strings:
         display.scroll(int_str, delay=70)
 
-| Alternatively, a function, sort_int_strings, can return the sorted list. 
+| Alternatively, a function, sort_int_strings, can return the sorted list.
 
 .. code-block:: python
 
@@ -280,7 +280,7 @@ See: https://www.w3schools.com/python/ref_list_sort.asp
 
 .. admonition:: Tasks
 
-    #. Modify the treasure collector code to scroll the treasure ids in ascending order. 
+    #. Modify the treasure collector code to scroll the treasure ids in ascending order.
 
     .. dropdown::
         :icon: codescan
@@ -291,7 +291,7 @@ See: https://www.w3schools.com/python/ref_list_sort.asp
 
             .. tab-item:: Q1
 
-                Modify the code to scroll the treasure ids in ascending order. 
+                Modify the code to scroll the treasure ids in ascending order.
 
                 .. code-block:: python
 
@@ -337,7 +337,7 @@ Find all the treasure
 .. admonition:: Tasks
 
     #. Modify the treasure beacon code so that the treasure_id is changed every 12 seconds. Increment the id and loop it.
-    #. Modify the treasure collector code so that the B button is used to display the number of treasure ids collected. 
+    #. Modify the treasure collector code so that the B button is used to display the number of treasure ids collected.
 
     .. dropdown::
         :icon: codescan
@@ -348,7 +348,7 @@ Find all the treasure
 
             .. tab-item:: Q1
 
-                Modify the treasure beacon code so that the treasure_id is changed every 12 seconds. Increment the id from 1 to 9 over and over again. 
+                Modify the treasure beacon code so that the treasure_id is changed every 12 seconds. Increment the id from 1 to 9 over and over again.
 
                 .. code-block:: python
 
@@ -401,7 +401,7 @@ Find all the treasure
 
             .. tab-item:: Q2
 
-                Modify the treasure collector code so that the B button is used to display the number of treasure ids collected. 
+                Modify the treasure collector code so that the B button is used to display the number of treasure ids collected.
 
                 .. code-block:: python
 

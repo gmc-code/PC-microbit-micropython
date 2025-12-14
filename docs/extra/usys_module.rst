@@ -3,7 +3,7 @@ usys module
 ==========================
 
 
-| See: https://docs.micropython.org/en/latest/library/sys.html
+| See: `<https://docs.micropython.org/en/latest/library/sys.html>`
 | Some functions are listed below. Use ``print(help(usys))`` to get the full list.
 
 .. py:function::  usys.version_info

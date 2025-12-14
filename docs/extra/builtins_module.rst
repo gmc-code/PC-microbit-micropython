@@ -3,8 +3,8 @@ builtins
 ==========================
 
 | All built-in functions do not require explicit importing of the builtins module.
-| See: https://docs.python.org/3/library/functions.html
-| See: https://mpython.readthedocs.io/en/master/library/pythonStd/builtins.html
+| See: `<https://docs.python.org/3/library/functions.html>`
+| See: `<https://mpython.readthedocs.io/en/master/library/pythonStd/builtins.html>`
 
 ----
 
@@ -204,7 +204,7 @@ bool
 | * constants defined to be false: None and False.
 | * zero of any numeric type: 0, 0.0, 0j, Decimal(0), Fraction(0, 1)
 | * empty sequences and collections: '', (), [], {}, set(), range(0)
-| See: https://www.w3schools.com/python/python_booleans.asp
+| See: `<https://www.w3schools.com/python/python_booleans.asp
 
 .. code-block:: python
 
@@ -262,7 +262,7 @@ bytearray
     | From an iterable of integers, e.g. bytearray(range(4))
     | From text given the encoding, e.g. bytearray("mb", 'utf-8')
 
-See: https://www.programiz.com/python-programming/methods/built-in/bytearray
+See: `<https://www.programiz.com/python-programming/methods/built-in/bytearray
 
 .. code-block:: python
 
@@ -371,7 +371,7 @@ classmethod
 
 | Think of a normal method as specific to an object, while a class method is shared across all objects of the class.
 
-See: https://www.programiz.com/python-programming/methods/built-in/classmethod
+See: `<https://www.programiz.com/python-programming/methods/built-in/classmethod
 
 .. decorator:: classmethod()
 
@@ -727,7 +727,7 @@ Ellipsis
     | Equivalent to `pass`, meaning it does nothing when executed.
 
 
-| See: https://docs.python.org/3/library/constants.html
+| See: `<https://docs.python.org/3/library/constants.html>`
 | The ellipsis can be uses instead of pass as a placeholder in functions.
 | This is useful during development so that the unfinished function doesn't return an error.
 
@@ -878,7 +878,7 @@ format
 
 .. function:: format(value[, format_spec])
 
-Functions for formatting strings str.format(), It enhances string formatting. format Function can accept unlimited arguments, position may not in sequence. The basic syntax is to replace the previous% with {} and:.  For more detailed syntax, please refer to CPython 'Format String Syntax'  <https://docs.python.org/zh-cn/3.7/library/string.html#format-specification-mini-language>`_
+Functions for formatting strings str.format(), It enhances string formatting. format Function can accept unlimited arguments, position may not in sequence. The basic syntax is to replace the previous% with {} and:.  For more detailed syntax, please refer to CPython 'Format String Syntax'  <`<https://docs.python.org/zh-cn/3.7/library/string.html>`#format-specification-mini-language>`_
 
 ::
 
@@ -1817,7 +1817,7 @@ We can use the list() transformation to output the list. If the number of elemen
 Exceptions
 ----------
 
-See: https://docs.python.org/3/library/exceptions.html
+See: `<https://docs.python.org/3/library/exceptions.html>`
 
 .. exception:: ArithmeticError
 

@@ -1,8 +1,8 @@
 ================================
-Audio: built in sounds **V2** 
+Audio: built in sounds **V2**
 ================================
 
-Expressive sounds  **V2** 
+Expressive sounds  **V2**
 --------------------------
 
 | The built-in expressive sounds can be called using ``audio.play(Sound.SOUNDNAME)`` where SOUNDNAME is replaced with the name of a sound in capital letters.
@@ -72,7 +72,7 @@ The built in sounds are
             .. tab-item:: Q2
 
                 Play the HELLO sound and scroll "hello" using wait=False for the sound and wait=True for the text.
-                
+
                 .. code-block:: python
 
                     from microbit import *
@@ -109,7 +109,7 @@ All Built in sounds
         Sound.TWINKLE,
         Sound.YAWN,
     ]
- 
+
     while True:
         for sound in built_in_sounds:
             if button_a.was_pressed():
@@ -124,7 +124,7 @@ All Built in sounds
 .. admonition:: Tasks
 
     #. Play any 3 built-in sounds using a list, separating them with a 1 second pause.
-    #. Use the choice function to randomly pick a built-in sound from a sound list. See: https://www.w3schools.com/python/ref_random_choice.asp. Use button pressing to break out of the while-loop to stop playing sounds.
+    #. Use the choice function to randomly pick a built-in sound from a sound list. See: `<https://www.w3schools.com/python/ref_random_choice.asp. Use button pressing to break out of the while-loop to stop playing sounds.
 
     .. dropdown::
         :icon: codescan
@@ -149,7 +149,7 @@ All Built in sounds
 
             .. tab-item:: Q2
 
-                Use the choice function to randomly pick a built-in sound from a sound list. See: https://www.w3schools.com/python/ref_random_choice.asp. Use button pressing to break out of the while-loop to stop playing sounds.
+                Use the choice function to randomly pick a built-in sound from a sound list. See: `<https://www.w3schools.com/python/ref_random_choice.asp. Use button pressing to break out of the while-loop to stop playing sounds.
 
                 .. code-block:: python
 
@@ -224,7 +224,7 @@ Sound name with sound
                         sound_name = str(sound).replace("Sound('", '').replace("')", '')
                         audio.play(sound, wait=False)
                         display.scroll(sound_name, delay=80, wait=True)
-                        
+
 ----
 
 Built in sounds and images

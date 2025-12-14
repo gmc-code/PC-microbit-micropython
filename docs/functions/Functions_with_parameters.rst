@@ -288,7 +288,7 @@ Functions returning information
     #. Define a function ``convert_cm_to_m(cm)`` that returns the result of converting a length in cm to metres.
     #. Define a function ``convert_m_to_cm(m)`` that returns the result of converting a length in metres to cm.
     #. Define a function ``area_square(length)`` that returns the area of a square.
-    #. Write a function called ``random_greeting`` that returns a random greeting that is randomly chosen from a list of greetings: ``["Hi", "Hello", "G'day"]``. See: https://www.w3schools.com/python/ref_random_choice.asp
+    #. Write a function called ``random_greeting`` that returns a random greeting that is randomly chosen from a list of greetings: ``["Hi", "Hello", "G'day"]``. See: `<https://www.w3schools.com/python/ref_random_choice.asp
 
     .. dropdown::
         :icon: codescan

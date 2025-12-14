@@ -6,7 +6,7 @@ Flame simulation
 The Flame simulation
 -------------------------
 
-| See: https://github.com/bbcmicrobit/micropython/blob/master/examples/flame_simulation.py
+| See: `<https://github.com/bbcmicrobit/micropython/blob/master/examples/flame_simulation.py
 | The simulation uses a mask to multiply the brightness of each pixel by a given factor.
 | Pixels are shifted up the display, taking into account the pixel brightness of those around them.
 

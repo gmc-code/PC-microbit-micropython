@@ -2,7 +2,7 @@
 Image arithmetic
 ====================================================
 
-See: https://microbit-micropython.readthedocs.io/en/stable/image.html
+See: `<https://microbit-micropython.readthedocs.io/en/stable/image.html>`
 
 Image objects
 -----------------------------
@@ -718,7 +718,7 @@ Pulsing HEART
 List comprehension for a series of images
 --------------------------------------------
 
-See: https://www.w3schools.com/python/python_lists_comprehension.asp
+See: `<https://www.w3schools.com/python/python_lists_comprehension.asp
 
 .. function:: new_list = [expression for item in iterable]
 

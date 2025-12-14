@@ -2,5 +2,5 @@
 AI introduction
 ====================================================
 
-https://www.youtube.com/watch?v=atSuPhD5MwY
-https://createai.microbit.org/
+`<https://www.youtube.com/watch?v=atSuPhD5MwY>`_
+`<https://createai.microbit.org/>`_

@@ -18,7 +18,7 @@ Advanced use of Built-in Image lists
 
 | Once converted to a list of Images, the list can be reversed to so that the images can be displayed in an anticlockwise direction instead of clockwise.
 
-| ``list(Image.ALL_CLOCKS)`` can convert **Image.ALL_CLOCKS** to the list: 
+| ``list(Image.ALL_CLOCKS)`` can convert **Image.ALL_CLOCKS** to the list:
 | [Image.CLOCK12, Image.CLOCK1, Image.CLOCK2, Image.CLOCK3, Image.CLOCK4, Image.CLOCK5, Image.CLOCK6, Image.CLOCK7, Image.CLOCK8, Image.CLOCK9, Image.CLOCK10, Image.CLOCK11]
 
 | ``list(Image.ALL_ARROWS)`` can convert **Image.ALL_ARROWS** to the list:
@@ -54,7 +54,7 @@ Reverse direction of a list using the reverse method
 
 | A list, **clock_list**, can be reversed using the **reverse** **method**: ``clock_list.reverse()``.
 | The original list has its elements reversed.
-| Note that is it necessary to create the list from Image.ALL_CLOCKS, since the reverse method doesn't work directly on Image.ALL_CLOCKS.  
+| Note that is it necessary to create the list from Image.ALL_CLOCKS, since the reverse method doesn't work directly on Image.ALL_CLOCKS.
 
 .. code-block:: python
 
@@ -92,7 +92,7 @@ Reverse direction of list using the reversed function
     while True:
         display.show(clock_list_anticlockwise, delay=200)
 
-| The python object obtained from the reversed function can be converted to a list for reuse by using ``list(reversed(clock_list))`` and placing the result in the variable **clock_list_anticlockwise**. 
+| The python object obtained from the reversed function can be converted to a list for reuse by using ``list(reversed(clock_list))`` and placing the result in the variable **clock_list_anticlockwise**.
 
 .. code-block:: python
 
@@ -135,7 +135,7 @@ Reverse direction of list using the reversed function
                     while True:
                         display.show(arrow_list, delay=200)
                         display.show(arrow_list_anticlockwise, delay=200)
-                        
+
             .. tab-item:: Q2
 
                 Write code that uses the **reverse** method to display all the clock images clockwise then anticlockwise.
@@ -150,7 +150,7 @@ Reverse direction of list using the reversed function
                     while True:
                         display.show(clock_list, delay=200)
                         display.show(clock_list_anticlockwise, delay=200)
-                       
+
             .. tab-item:: Q3
 
                 Write code that uses the **reversed** function to display all the clock images clockwise then anticlockwise.
@@ -193,7 +193,7 @@ Randomize list
 | A parameter is required, since the sorted function will pass in the object from a list that is being sorted. The parameter used below is **element**. It is needed to work. Note that it is not used in the function code itself.
 
 .. code-block:: python
-    
+
     def random_key(element):
         return random.random()
 
@@ -237,7 +237,7 @@ Randomize list
                     Modify the orig_list to be the list of letters "a", "e", "t".
 
                     .. code-block:: python
-                        
+
                         from microbit import *
                         import random
 
@@ -258,7 +258,7 @@ Randomize list
                     A string can be turned to a list using the list function. Modify the orig_list to be list("ate").
 
                     .. code-block:: python
-                        
+
                         from microbit import *
                         import random
 
@@ -279,7 +279,7 @@ Randomize list
                     Modify the orig_list to be the list of characters from list("ab12")
 
                     .. code-block:: python
-                        
+
                         from microbit import *
                         import random
 
@@ -402,7 +402,7 @@ Randomize image list
                 .. tab-item:: Q4
 
                     Create a list of the 4 main compass direction arrow images, then randomly sort them and display them then display them in reverse order using the **reverse** **method**.
-    
+
                     .. code-block:: python
 
                         from microbit import *
@@ -513,7 +513,7 @@ Enumerate to show the clock time
     | start A number defining the start number of the enumerate object. Default 0.
 
 
-See: https://realpython.com/python-enumerate/
+See: `<https://realpython.com/python-enumerate/
 
 | The code below uses enumerate to create an object made up of tuples consisting of the count number (set to start at 0 using the optional start number; even though the default is 0 when the start parameter is left out).
 | The enumerate object is used up when iterated through, so it must either be placed in the **while True** loop to be recreated each time or converted to a list to be reused.
@@ -524,7 +524,7 @@ See: https://realpython.com/python-enumerate/
     from microbit import *
 
     all_img = list(enumerate(Image.ALL_CLOCKS, start=0))
-    
+
     while True:
         for count, img in all_img:
             display.show(img)
@@ -541,7 +541,7 @@ See: https://realpython.com/python-enumerate/
 | Here is the list, **all_img**:
 
 .. code-block:: python
-    
+
     [
         (0, Image("00900:00900:00900:00000:00000:")),
         (1, Image("00090:00090:00900:00000:00000:")),

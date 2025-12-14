@@ -6,8 +6,8 @@ uarray
 
 | MicroPython contains an ``uarray`` module based upon the ``array`` module in the
 Python standard library.
-| See: https://docs.python.org/3.9/library/array.html#module-array
-| See: https://www.dummies.com/article/technology/programming-web-design/c/determining-types-of-numbers-in-c-199399/
+| See: `<https://docs.python.org/3.9/library/array.html>`#module-array
+| See: `<https://www.dummies.com/article/technology/programming-web-design/c/determining-types-of-numbers-in-c-199399/
 
 | An array is an object type which can compactly contain integers or floating point numbers. Arrays are sequence types and behave like lists, except that the type of objects stored in them is constrained. The type is specified at object creation time by using a type code, which is a single character.
 

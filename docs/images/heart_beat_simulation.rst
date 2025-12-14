@@ -96,7 +96,7 @@ Pulse design
     :scale: 20 %
     :align: center
 
-|  
+|
 
 .. admonition:: Tasks
 
@@ -105,7 +105,7 @@ Pulse design
 ----
 
 | The code has 7 heart beat images which are combined in a list called **heart_beat**.
-| When pin0 is touched, the sequence of images is show with 100ms between images. 
+| When pin0 is touched, the sequence of images is show with 100ms between images.
 
 .. code-block:: python
 
@@ -134,13 +134,13 @@ Pulse design
 | Use the formula to calculate the delay: delay = 60000/(HR * 7)
 | For a heart rate of 65 bpm (beats per minute), the delay is 132.
 
-| Use google metronome https://g.co/kgs/Rjdr6e.
-| Use https://www.musicca.com/metronome as an alternative metronome.
+| Use google metronome `<https://g.co/kgs/Rjdr6e.
+| Use `<https://www.musicca.com/metronome as an alternative metronome.
 
 .. admonition:: Tasks
 
-    #. Set the google metronome https://g.co/kgs/Rjdr6e  to 65 and see if a delay of 132 keeps in time with the metronome.
-    #. Set the google metronome https://g.co/kgs/Rjdr6e  to 100. Use the formula to calculate the delay required for a HR of 100 bpm. See if this keeps in time with the metronome.
+    #. Set the google metronome `<https://g.co/kgs/Rjdr6e  to 65 and see if a delay of 132 keeps in time with the metronome.
+    #. Set the google metronome `<https://g.co/kgs/Rjdr6e  to 100. Use the formula to calculate the delay required for a HR of 100 bpm. See if this keeps in time with the metronome.
 
     .. dropdown::
         :icon: codescan
@@ -151,7 +151,7 @@ Pulse design
 
             .. tab-item:: Q1
 
-                Set the google metronome https://g.co/kgs/Rjdr6e  to 65 and see if a delay of 132 keeps in time with the metronome.
+                Set the google metronome `<https://g.co/kgs/Rjdr6e  to 65 and see if a delay of 132 keeps in time with the metronome.
 
                 Use:
 
@@ -161,7 +161,7 @@ Pulse design
 
             .. tab-item:: Q2
 
-                Set the google metronome https://g.co/kgs/Rjdr6e  to 100. Use the formula to calculate the delay required for a HR of 100 bpm. See if this keeps in time with the metronome.
+                Set the google metronome `<https://g.co/kgs/Rjdr6e  to 100. Use the formula to calculate the delay required for a HR of 100 bpm. See if this keeps in time with the metronome.
 
                 Use:
 
@@ -175,7 +175,7 @@ Pulse design
 Using a function to calculate the delay for a Heart rate
 --------------------------------------------------------------
 
-| Define a function, delay_for_heart_rate(hr), to return the delay needed to simulate a specified heart rate. 
+| Define a function, delay_for_heart_rate(hr), to return the delay needed to simulate a specified heart rate.
 | Give the ``hr`` parameter a default value of 60 as in ``def delay_for_heart_rate(hr=60)`` to have a default heart rate of 60 bpm.
 | Use the ``int`` function to convert a decimal to a whole number.
 | Below is the function.
@@ -207,7 +207,7 @@ Using a function to calculate the delay for a Heart rate
     def delay_for_heart_rate(hr=60):
         return int(60000/(hr * 7))
 
- 
+
     display.show(hb7)
 
     while True:
