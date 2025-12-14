@@ -3,4 +3,5 @@ sphinx_rtd_theme
 sphinx-copybutton
 sphinx-design
 sphinx-togglebutton
+sphinx-new-tab-link
 urllib3 < 2.0.0
