@@ -5,7 +5,7 @@
 
 import sphinx_rtd_theme
 project = 'PC-Microbit'
-copyright = '2021-25, GMC'
+copyright = '2021-26, GMC'
 author = 'GMC'
 
 
@@ -14,7 +14,6 @@ author = 'GMC'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 extensions = [
-    'sphinx.ext.autosectionlabel',
     'sphinx_rtd_theme',
     'sphinx_copybutton',
     'sphinx.ext.todo',
@@ -23,6 +22,7 @@ extensions = [
     'sphinx_design',
     "sphinx_new_tab_link",
 ]
+
 
 # for copybutton to allow use of :class: no-copybutton  in code blocks
 # copybutton_selector = "div:not(.no-copybutton) > div.highlight > pre"
