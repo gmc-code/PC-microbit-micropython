@@ -3,11 +3,11 @@ Piezo_Buzzer_and_music
 ==========================
 
 | The examples below use sequence without definition blocks which are preferred to better organize the code.
-| See `<https://pc-microbit-micropython.readthedocs.io/en/latest/breadboards/Piezo_Buzzer_and_music_2.html>`
+| See `<https://pc-microbit-micropython.readthedocs.io/en/latest/breadboards/Piezo_Buzzer_and_music_2.html>`_
 
 ----
 
-| See: `<https://microbit-micropython.readthedocs.io/en/stable/music.html>`
+| See: `<https://microbit-micropython.readthedocs.io/en/stable/music.html>`_
 
 .. admonition:: Warning
 
@@ -344,8 +344,8 @@ Scales
 
 .. admonition:: Tasks
 
-    #. Play the 8 notes of D major. See: `<https://www.pianoscales.org/major.html>`
-    #. Play the 8 notes of F minor. See: `<https://www.pianoscales.org/minor.html>`
+    #. Play the 8 notes of D major. See: `<https://www.pianoscales.org/major.html>`_
+    #. Play the 8 notes of F minor. See: `<https://www.pianoscales.org/minor.html>`_
     #. Play the D major scale when the A-button is pressed and the F minor scale when the B-button is pressed.
     #. Play the C major scale combined with an animation of the heart beating.
 
@@ -448,7 +448,7 @@ Built in music
 
 
 | The code below uses a for-loop to loop through each melody in the ``melodies_list`` and play it.
-| For a list of built-in melodies see: `<https://microbit-micropython.readthedocs.io/en/stable/music.html>`
+| For a list of built-in melodies see: `<https://microbit-micropython.readthedocs.io/en/stable/music.html>`_
 
 .. code-block:: python
 
@@ -645,8 +645,8 @@ A	    1760
 
 .. admonition:: Tasks
 
-    #. Modify the code to play the pitches of the E minor scale. See: `<https://www.piano-keyboard-guide.com/e-minor-scale.html>`.
-    #. Modify the code to play the pitches of the D major scale. See: http://www.piano-keyboard-guide.com/d-major-scale.html>`.
+    #. Modify the code to play the pitches of the E minor scale. See: `<https://www.piano-keyboard-guide.com/e-minor-scale.html>`_.
+    #. Modify the code to play the pitches of the D major scale. See: http://www.piano-keyboard-guide.com/d-major-scale.html>`_.
 
     .. dropdown::
         :icon: codescan
@@ -657,7 +657,7 @@ A	    1760
 
             .. tab-item:: Q1
 
-                Modify the code to play the pitches of the E minor scale. See: `<https://www.piano-keyboard-guide.com/e-minor-scale.html>`.
+                Modify the code to play the pitches of the E minor scale. See: `<https://www.piano-keyboard-guide.com/e-minor-scale.html>`_.
 
                 .. code-block:: python
 
@@ -675,7 +675,7 @@ A	    1760
 
             .. tab-item:: Q2
 
-                Modify the code to play the pitches of the D major scale. See: http://www.piano-keyboard-guide.com/d-major-scale.html>`.
+                Modify the code to play the pitches of the D major scale. See: http://www.piano-keyboard-guide.com/d-major-scale.html>`_.
 
                 .. code-block:: python
 

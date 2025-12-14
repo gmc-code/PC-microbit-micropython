@@ -450,8 +450,8 @@ Write analog
 
 .. admonition:: Exercises
 
-    #. Investigate the use of the randrange function for creating random light displays. See: `<https://www.w3schools.com/python/ref_random_randrange.asp>`_
-    #. Investigate the use of the choice function for creating random light displays. Use ``pin_list = [pin0, pin1, pin2]`` to make a list of pins to choose from. See: `<https://www.w3schools.com/python/ref_random_choice.asp>`_
+    #. Investigate the use of the randrange function for creating random light displays. See: `<https://www.w3schools.com/python/ref_random_randrange.asp>`__
+    #. Investigate the use of the choice function for creating random light displays. Use ``pin_list = [pin0, pin1, pin2]`` to make a list of pins to choose from. See: `<https://www.w3schools.com/python/ref_random_choice.asp>`__
 
     .. dropdown::
         :icon: codescan

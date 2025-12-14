@@ -2,9 +2,9 @@
 Audio
 ==========================
 
-| See: `<https://microbit-micropython.readthedocs.io/en/stable/audio.html>`
+| See: `<https://microbit-micropython.readthedocs.io/en/stable/audio.html>`_
 | For control of the speaker and volume in V2 see:
-| `<https://pc-microbit-micropython.readthedocs.io/en/latest/lessons2/music.html>`#v2-volume
+| `<https://pc-microbit-micropython.readthedocs.io/en/latest/lessons2/music.html>`_#v2-volume
 
 ----
 

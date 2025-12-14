@@ -3,8 +3,8 @@ builtins
 ==========================
 
 | All built-in functions do not require explicit importing of the builtins module.
-| See: `<https://docs.python.org/3/library/functions.html>`
-| See: `<https://mpython.readthedocs.io/en/master/library/pythonStd/builtins.html>`
+| See: `<https://docs.python.org/3/library/functions.html>`_
+| See: `<https://mpython.readthedocs.io/en/master/library/pythonStd/builtins.html>`_
 
 ----
 
@@ -727,7 +727,7 @@ Ellipsis
     | Equivalent to `pass`, meaning it does nothing when executed.
 
 
-| See: `<https://docs.python.org/3/library/constants.html>`
+| See: `<https://docs.python.org/3/library/constants.html>`_
 | The ellipsis can be uses instead of pass as a placeholder in functions.
 | This is useful during development so that the unfinished function doesn't return an error.
 
@@ -878,7 +878,7 @@ format
 
 .. function:: format(value[, format_spec])
 
-Functions for formatting strings str.format(), It enhances string formatting. format Function can accept unlimited arguments, position may not in sequence. The basic syntax is to replace the previous% with {} and:.  For more detailed syntax, please refer to CPython 'Format String Syntax'  <`<https://docs.python.org/zh-cn/3.7/library/string.html>`#format-specification-mini-language>`_
+Functions for formatting strings str.format(), It enhances string formatting. format Function can accept unlimited arguments, position may not in sequence. The basic syntax is to replace the previous% with {} and:.  For more detailed syntax, please refer to CPython 'Format String Syntax'  <`<https://docs.python.org/zh-cn/3.7/library/string.html>`_#format-specification-mini-language>`__
 
 ::
 
@@ -1817,7 +1817,7 @@ We can use the list() transformation to output the list. If the number of elemen
 Exceptions
 ----------
 
-See: `<https://docs.python.org/3/library/exceptions.html>`
+See: `<https://docs.python.org/3/library/exceptions.html>`_
 
 .. exception:: ArithmeticError
 

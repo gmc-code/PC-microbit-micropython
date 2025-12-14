@@ -3,8 +3,8 @@ EXT: Combined iteration using zip
 ====================================
 
 | The zip function can combine multiple lists so that they can be iterated over together.
-| See: `<https://www.w3schools.com/python/ref_func_zip.asp>`_
-| See: `<https://realpython.com/python-zip-function/#traversing-lists-in-parallel>`_
+| See: `<https://www.w3schools.com/python/ref_func_zip.asp>`__
+| See: `<https://realpython.com/python-zip-function/#traversing-lists-in-parallel>`__
 
 ----
 
@@ -156,7 +156,7 @@ zip 3 lists
 ------------------
 
 | The code below requires a breadboard with 3 LEDS.
-| See: `<https://pc-microbit-micropython.readthedocs.io/en/latest/breadboards/LEDs_with_resistors.html>`_
+| See: `<https://pc-microbit-micropython.readthedocs.io/en/latest/breadboards/LEDs_with_resistors.html>`__
 | The code below zips the list of images, the list of frequencies in the A minor scale as well as a list of pins to use.
 | ``for freq, img, pin_x in zip(freqs, animal_images, pins)`` iterates over the zipped object, placing each frequency, each Image, and each pin into the ``freq``, ``img`` and ``pins`` variables for use.
 | This allows a sound, an image and an LED to be used in the same for-loop.

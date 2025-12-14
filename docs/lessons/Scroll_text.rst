@@ -303,7 +303,7 @@ Display.scroll using variables
 
 
 | For rules on variable names see:
-| `<https://pc-microbit-micropython.readthedocs.io/en/latest/python_basics/variables.html>`
+| `<https://pc-microbit-micropython.readthedocs.io/en/latest/python_basics/variables.html>`_
 
 ----
 

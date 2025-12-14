@@ -139,7 +139,7 @@ Indoor and outdoor temperature
 
 .. admonition:: Tasks
 
-    #. See: `<https://pc-microbit-micropython.readthedocs.io/en/latest/introduction/power_management.html>`#deep-sleep-wake-via-run-every
+    #. See: `<https://pc-microbit-micropython.readthedocs.io/en/latest/introduction/power_management.html>`_#deep-sleep-wake-via-run-every
     Modify the code of the outdoor microbit so that it uses deep sleep which is renewed every 24 hours, along with run_every to send the temperature every 60 seconds.
 
     .. dropdown::

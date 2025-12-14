@@ -3,7 +3,7 @@ Classes for the microbit
 ==========================
 
 | See: `<https://www.w3schools.com/python/python_classes.asp
-| See: `<https://pc-microbit-extension.readthedocs.io/en/latest/classes/classes_for_the_microbit.html>`
+| See: `<https://pc-microbit-extension.readthedocs.io/en/latest/classes/classes_for_the_microbit.html>`_
 
 | Practical examples of using classes in coding on the microbit are found in pages with **Class** in their name.
 

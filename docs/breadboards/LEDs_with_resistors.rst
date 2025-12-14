@@ -3,7 +3,7 @@ LEDs_with_resistors
 ==========================
 
 | The examples below use sequence only. No definition blocks are used.
-| For better organising code into def blocks see: `<https://pc-microbit-micropython.readthedocs.io/en/latest/breadboards/LEDs_with_resistors_2.html>`_
+| For better organising code into def blocks see: `<https://pc-microbit-micropython.readthedocs.io/en/latest/breadboards/LEDs_with_resistors_2.html>`__
 
 ----
 Connections

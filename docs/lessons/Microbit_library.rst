@@ -161,13 +161,13 @@ Micropython API
 ------------------------------------------
 
 | The main reference for using micropython with the microbit is at:
-| `<https://microbit-micropython.readthedocs.io/en/v1.0.1/index.html>`
+| `<https://microbit-micropython.readthedocs.io/en/v1.0.1/index.html>`_
 | For new microbits (v2) from 2022 see:
-| `<https://microbit-micropython.readthedocs.io/en/stable/index.html>`
+| `<https://microbit-micropython.readthedocs.io/en/stable/index.html>`_
 
 | For a list of what is available in the microbit library see:
-| `<https://microbit-micropython.readthedocs.io/en/v1.0.1/microbit_micropython_api.html>`
+| `<https://microbit-micropython.readthedocs.io/en/v1.0.1/microbit_micropython_api.html>`_
 | For new microbits (v2) from 2022 see:
-| `<https://microbit-micropython.readthedocs.io/en/stable/microbit_micropython_api.html>`
+| `<https://microbit-micropython.readthedocs.io/en/stable/microbit_micropython_api.html>`_
 
 

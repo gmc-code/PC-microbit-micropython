@@ -5,7 +5,7 @@ EXT: nested for-loops using the range function
 Set pixels
 ----------------
 
-| Turning on and off pixels is explained at `<https://pc-microbit-micropython.readthedocs.io/en/latest/images/setting_pixels.html>`
+| Turning on and off pixels is explained at `<https://pc-microbit-micropython.readthedocs.io/en/latest/images/setting_pixels.html>`_
 | Read the above examples before reading further to see how they illustrate nested loops.
 
 ----

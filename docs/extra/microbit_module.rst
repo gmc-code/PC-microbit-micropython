@@ -6,7 +6,7 @@ microbit module
 
 
 | The ``microbit`` module gives access to all the hardware that is built-in on the microbit.
-| See: `<https://microbit-micropython.readthedocs.io/en/stable/microbit.html>`
+| See: `<https://microbit-micropython.readthedocs.io/en/stable/microbit.html>`_
 | Some useful methods from the microbit module are below.
 
 sleep

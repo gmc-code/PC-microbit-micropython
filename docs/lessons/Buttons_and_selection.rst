@@ -3,7 +3,7 @@ Buttons and selection
 ====================================================
 
 | The A and B-buttons can be used to carry out various actions on the microbit.
-| See `<https://microbit-micropython.readthedocs.io/en/latest/tutorials/buttons.html>`
+| See `<https://microbit-micropython.readthedocs.io/en/latest/tutorials/buttons.html>`_
 
 ----
 

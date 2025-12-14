@@ -28,8 +28,8 @@ Scales
 
 .. admonition:: Tasks
 
-    #. Play the 8 notes of G major. See: `<https://www.pianoscales.org/major.html>`
-    #. Play the 8 notes of E minor. See: `<https://www.pianoscales.org/minor.html>`
+    #. Play the 8 notes of G major. See: `<https://www.pianoscales.org/major.html>`_
+    #. Play the 8 notes of E minor. See: `<https://www.pianoscales.org/minor.html>`_
     #. Play the G major scale when the A-button is pressed and the E minor scale when the B-button is pressed.
     #. Play the F major scale when the A-button is pressed and the D minor scale when the B-button is pressed.
 
@@ -118,7 +118,7 @@ Scales
 Major Scales
 ----------------------------------------
 
-| See: `<https://musictheory.pugetsound.edu/mt21c/MajorKeySignatures.html>`
+| See: `<https://musictheory.pugetsound.edu/mt21c/MajorKeySignatures.html>`_
 
 | The code below plays the Major scales.
 | Replacements for sharp major scales; B# = C; E# = F
@@ -179,7 +179,7 @@ Major Scales
 Minor Scales
 ----------------------------------------
 
-| See: `<https://musictheory.pugetsound.edu/mt21c/MinorKeySignatures.html>`
+| See: `<https://musictheory.pugetsound.edu/mt21c/MinorKeySignatures.html>`_
 
 | The code below plays the minor scales.
 | Replacements for sharp minor scales; B# = C; E# = F

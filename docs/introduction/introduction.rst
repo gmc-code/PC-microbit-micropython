@@ -5,7 +5,7 @@ Introduction
 Video introduction
 -------------------------
 
-`Watch on YouTube <https://www.youtube.com/watch?v=7WMCgUIcKnk>`_
+`Watch on YouTube <https://www.youtube.com/watch?v=7WMCgUIcKnk>`__
 
 ----
 
@@ -26,16 +26,16 @@ Home pages:
 ---------------------
 
 | **year 7**
-| microbit: `<https://pc-microbit-micropython.readthedocs.io/en/latest/index.html>`
-| bots: `<https://pc-microbit-extension.readthedocs.io/en/latest/index.html>`
+| microbit: `<https://pc-microbit-micropython.readthedocs.io/en/latest/index.html>`_
+| bots: `<https://pc-microbit-extension.readthedocs.io/en/latest/index.html>`_
 
 | **year 9-10**
-| algorithms: `<https://pc-algorithms.readthedocs.io/en/latest/index.html>`
-| app development: `<https://pc-app-development.readthedocs.io/en/latest/index.html>`
+| algorithms: `<https://pc-algorithms.readthedocs.io/en/latest/index.html>`_
+| app development: `<https://pc-app-development.readthedocs.io/en/latest/index.html>`_
 
 | **python**
-| python: `<https://pc-python.readthedocs.io/en/latest/index.html>`
-| pillow: `<https://pc-pillow.readthedocs.io/en/latest/index.html>`
+| python: `<https://pc-python.readthedocs.io/en/latest/index.html>`_
+| pillow: `<https://pc-pillow.readthedocs.io/en/latest/index.html>`_
 
 ----
 
@@ -43,9 +43,9 @@ Key microbit references:
 --------------------------
 
 | **microbit**:
-| latest:  `<https://microbit-micropython.readthedocs.io/en/latest/index.html>`
-| v2 from 2022: `<https://microbit-micropython.readthedocs.io/en/stable/index.html>`
-| v1 in 2021: `<https://microbit-micropython.readthedocs.io/en/v1.0.1/index.html>`
+| latest:  `<https://microbit-micropython.readthedocs.io/en/latest/index.html>`_
+| v2 from 2022: `<https://microbit-micropython.readthedocs.io/en/stable/index.html>`_
+| v1 in 2021: `<https://microbit-micropython.readthedocs.io/en/v1.0.1/index.html>`_
 | Features: `<https://microbit.org/get-started/user-guide/features-in-depth/
 | Microbit website: `<https://microbit.org/
 
@@ -59,7 +59,7 @@ Microbit software using micropython:
 | The standard online **micropython** editor: `<https://python.microbit.org/v3.
 
 | **Thonny** for laptops, can be downloaded from `<https://thonny.org/.
-| See: `<https://core-electronics.com.au/tutorials/how-to-program-a-microbit-using-thonny.html>` for setting up the microbit to use Thonny.
+| See: `<https://core-electronics.com.au/tutorials/how-to-program-a-microbit-using-thonny.html>`_ for setting up the microbit to use Thonny.
 
 .. image:: images/thonny_install_micropython.jpg
     :scale: 50 %
@@ -112,7 +112,7 @@ Useful sites:
 ------------------
 
 * http://multiwingspan.co.uk/micro.php (no access from school)
-* `<https://microbit.pinout.xyz/pin-3v-power.html>`
+* `<https://microbit.pinout.xyz/pin-3v-power.html>`_
 
 ----
 
@@ -127,8 +127,8 @@ Python references:
 
 For an introduction to python see:
 
-* `<https://docs.python.org/3.12/tutorial/introduction.html>`
-* `<https://docs.python.org/3.12/tutorial/index.html>`
+* `<https://docs.python.org/3.12/tutorial/introduction.html>`_
+* `<https://docs.python.org/3.12/tutorial/index.html>`_
 * `<https://www.w3schools.com/python/default.asp
 * `<https://www.programiz.com/python-programming
 * `<https://www.geeksforgeeks.org/python-programming-language/?ref=shm

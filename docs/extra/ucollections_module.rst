@@ -6,8 +6,8 @@ ucollections
 
 | MicroPython contains an ``ucollections`` module based upon the ``collections`` module in the Python standard library.
 | This module has 2 collections from the standard python collections module.
-| See: `<https://docs.micropython.org/en/latest/library/collections.html>`#collections.namedtuple
-| See: `<https://docs.micropython.org/en/latest/library/collections.html>`#collections.OrderedDict
+| See: `<https://docs.micropython.org/en/latest/library/collections.html>`_#collections.namedtuple
+| See: `<https://docs.micropython.org/en/latest/library/collections.html>`_#collections.OrderedDict
 
 ----
 

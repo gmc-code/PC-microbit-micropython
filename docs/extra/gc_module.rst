@@ -3,7 +3,7 @@ gc module
 ==========================
 
 | Garbage Collector: A background process that runs in MicroPython to reclaim unused memory in the heap.
-| See: `<https://docs.micropython.org/en/latest/library/gc.html>`
+| See: `<https://docs.micropython.org/en/latest/library/gc.html>`_
 | Normally, a collection is triggered only when a new allocation cannot be satisfied, i.e. on an out-of-memory condition.
 | In most cases, the microbit handles memory management efficiently on its own.
 | However, if you are working on a memory-intensive application or notice memory issues, you can manually trigger the garbage collector using the gc module.

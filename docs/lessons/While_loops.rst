@@ -118,7 +118,7 @@ Counting down
 
 | In the code below, ``i`` starts off at 5 and is decreased by 1 in the while-loop line: ``i -= 1``.
 | ``i -+= 1`` is the same as ``i = i - 1``
-| The test uses a ``>`` sign when counting down.
+| The test uses a ``>`_` sign when counting down.
 | The loop below stops when ``i`` is no longer greater than 1, i.e. when it is 1.
 
 .. code-block:: python

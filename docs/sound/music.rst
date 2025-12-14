@@ -2,7 +2,7 @@
 Music
 ==========================
 
-| See: `<https://microbit-micropython.readthedocs.io/en/stable/music.html>`
+| See: `<https://microbit-micropython.readthedocs.io/en/stable/music.html>`_
 
 .. py:module:: music
 

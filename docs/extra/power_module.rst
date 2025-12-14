@@ -75,7 +75,7 @@ Functions
     when the USB cable is inserted.
 
     When the ``run_every`` parameter is set to ``True`` (the default), any
-    function scheduled with :py:meth:`microbit.run_every<microbit.run_every>`
+    function scheduled with :py:meth:`microbit.run_every<microbit.run_every>`_
     will momentarily wake up the board to run and when it finishes it will go
     back to sleep.
 

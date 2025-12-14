@@ -6,7 +6,7 @@ ustruct
 
 | The `ustruct` module in MicroPython is used to pack and unpack primitive data types.
 | This module is particularly useful for handling binary data and interfacing with hardware that expects data in specific formats.
-| see: `<https://docs.micropython.org/en/latest/library/struct.html>`
+| see: `<https://docs.micropython.org/en/latest/library/struct.html>`_
 
 .. function:: calcsize(fmt)
 

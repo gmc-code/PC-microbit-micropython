@@ -3,7 +3,7 @@ Potentiometer
 ==========================
 
 | The examples below use sequence without definition blocks which are preferred to better organize the code.
-| See `<https://pc-microbit-micropython.readthedocs.io/en/latest/breadboards/Potentiometer_2.html>`
+| See `<https://pc-microbit-micropython.readthedocs.io/en/latest/breadboards/Potentiometer_2.html>`_
 
 ----
 

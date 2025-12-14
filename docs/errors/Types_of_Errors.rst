@@ -4,7 +4,7 @@ Types of Errors
 
 | Working out what has gone wrong and how to fix it is a key part of everyday programming.
 
-| This section refers to errors using the online editor at: `<https://python.microbit.org/v/3>`_
+| This section refers to errors using the online editor at: `<https://python.microbit.org/v/3>`__
 
 | Most errors will be indicated by a red dot in the left margin and by red underlines or a small red triangle.
 

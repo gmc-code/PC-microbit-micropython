@@ -37,7 +37,7 @@ Power module
 --------------------------
 
 | This module lets you manage the power modes of the microbit V2.
-| See: `<https://microbit-micropython.readthedocs.io/en/stable/power.html>`
+| See: `<https://microbit-micropython.readthedocs.io/en/stable/power.html>`_
 
 ----
 
@@ -149,7 +149,7 @@ Deep Sleep
     | Deep Sleep mode will consume more battery power than Off mode.
     | The wake up sources are configured via arguments.
     | If no wake up sources have been configured it will sleep until the reset button is pressed (which resets the board) or, if on battery power, when the USB cable is inserted.
-    | See: `<https://microbit-micropython.readthedocs.io/en/stable/microbit.html>`
+    | See: `<https://microbit-micropython.readthedocs.io/en/stable/microbit.html>`_
 
 
 | The code below uses button-B pressing to go into a deep sleep.

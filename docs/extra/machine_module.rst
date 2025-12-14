@@ -6,7 +6,7 @@ machine module
 .. py:module:: machine
 
 | MicroPython contains a ``machine`` module with specific functions related to the microbit.
-| See: `<https://microbit-micropython.readthedocs.io/en/stable/machine.html>`
+| See: `<https://microbit-micropython.readthedocs.io/en/stable/machine.html>`_
 | Some useful methods from the machine module are below.
 
 ----
@@ -15,7 +15,7 @@ time_pulse_us
 ----------------
 
 | ``time_pulse_us`` is used by distance sensors.
-| See an example of its use at: `<https://pc-microbit-extension.readthedocs.io/en/latest/bots/Maqueen/Maqueen_distance_sensors.html>`
+| See an example of its use at: `<https://pc-microbit-extension.readthedocs.io/en/latest/bots/Maqueen/Maqueen_distance_sensors.html>`_
 
 .. method:: machine.time_pulse_us(pin, pulse_level, timeout_us=1000000)
 

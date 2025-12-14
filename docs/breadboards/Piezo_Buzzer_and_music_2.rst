@@ -6,7 +6,7 @@ The examples below use definition blocks to better organize the code.
 
 ----
 
-| See: `<https://microbit-micropython.readthedocs.io/en/stable/music.html>`_
+| See: `<https://microbit-micropython.readthedocs.io/en/stable/music.html>`__
 
 .. admonition:: Warning
 
@@ -301,7 +301,7 @@ Tuple unpacking of get_tempo()
 
 | For advanced users, tuple unpacking can be used instead of indices:
 | ``bpm, ticks = music.get_tempo()``
-| See: `<https://www.w3schools.com/python/python_tuples_unpack.asp>`_
+| See: `<https://www.w3schools.com/python/python_tuples_unpack.asp>`__
 
 .. code-block:: python
 
@@ -344,8 +344,8 @@ Scales
 
 .. admonition:: Tasks
 
-    #. Play the 8 notes of D major. See: `<https://www.pianoscales.org/major.html>`_
-    #. Play the 8 notes of F minor. See: `<https://www.pianoscales.org/minor.html>`_
+    #. Play the 8 notes of D major. See: `<https://www.pianoscales.org/major.html>`__
+    #. Play the 8 notes of F minor. See: `<https://www.pianoscales.org/minor.html>`__
     #. Play the D major scale when the A-button is pressed and the F minor scale when the B-button is pressed.
     #. Play the C major scale combined with an animation of the heart beating.
 
@@ -448,7 +448,7 @@ Built in music
 
 
 | The code below uses a for-loop to loop through each melody in the ``melodies_list`` and play it.
-| For a list of built-in melodies see: `<https://microbit-micropython.readthedocs.io/en/stable/music.html>`_
+| For a list of built-in melodies see: `<https://microbit-micropython.readthedocs.io/en/stable/music.html>`__
 
 .. code-block:: python
 
@@ -496,7 +496,7 @@ All Built in melodies
 .. admonition:: Tasks
 
     #. Play any 3 melodies using a list.
-    #. Use the choice function to randomly pick melodies from a melody list. See: `<https://www.w3schools.com/python/ref_random_choice.asp>`_. Use `<https://python.microbit.org/v/3>`_.
+    #. Use the choice function to randomly pick melodies from a melody list. See: `<https://www.w3schools.com/python/ref_random_choice.asp>`__. Use `<https://python.microbit.org/v/3>`__.
 
     .. dropdown::
         :icon: codescan
@@ -521,7 +521,7 @@ All Built in melodies
 
             .. tab-item:: Q2
 
-                Use the choice function to randomly pick melodies from a melody list. See: `<https://www.w3schools.com/python/ref_random_choice.asp>`_.
+                Use the choice function to randomly pick melodies from a melody list. See: `<https://www.w3schools.com/python/ref_random_choice.asp>`__.
 
                 .. code-block:: python
 
@@ -713,8 +713,8 @@ A	    1760
 
 .. admonition:: Tasks
 
-    #. Modify the code to play the pitches of the E minor scale. See: `<https://www.piano-keyboard-guide.com/e-minor-scale.html>`_.
-    #. Modify the code to play the pitches of the D major scale. See: `<https://www.piano-keyboard-guide.com/d-major-scale.html>`_.
+    #. Modify the code to play the pitches of the E minor scale. See: `<https://www.piano-keyboard-guide.com/e-minor-scale.html>`__.
+    #. Modify the code to play the pitches of the D major scale. See: `<https://www.piano-keyboard-guide.com/d-major-scale.html>`__.
 
     .. dropdown::
         :icon: codescan
@@ -725,7 +725,7 @@ A	    1760
 
             .. tab-item:: Q1
 
-                Modify the code to play the pitches of the E minor scale. See: `<https://www.piano-keyboard-guide.com/e-minor-scale.html>`_.
+                Modify the code to play the pitches of the E minor scale. See: `<https://www.piano-keyboard-guide.com/e-minor-scale.html>`__.
 
                 .. code-block:: python
 
@@ -743,7 +743,7 @@ A	    1760
 
             .. tab-item:: Q2
 
-                Modify the code to play the pitches of the D major scale. See: http://www.piano-keyboard-guide.com/d-major-scale.html>`.
+                Modify the code to play the pitches of the D major scale. See: http://www.piano-keyboard-guide.com/d-major-scale.html>`_.
 
                 .. code-block:: python
 

@@ -47,7 +47,7 @@ Out of Box hex file v2
         display.clear()
 
     def on_gesture_screen_down():
-        # `<https://microbit-micropython.readthedocs.io/en/stable/audio.html>`#built-in-sounds-v2
+        # `<https://microbit-micropython.readthedocs.io/en/stable/audio.html>`_#built-in-sounds-v2
         display.show(Image.ASLEEP)
         sound_effect = audio.SoundEffect(freq_start=5849, freq_end=1, vol_start=255, vol_end=0, duration=1000,
                     waveform=audio.SoundEffect.WAVEFORM_SINE,shape=audio.SoundEffect.SHAPE_LINEAR)

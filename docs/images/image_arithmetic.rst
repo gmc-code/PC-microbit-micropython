@@ -2,7 +2,7 @@
 Image arithmetic
 ====================================================
 
-See: `<https://microbit-micropython.readthedocs.io/en/stable/image.html>`
+See: `<https://microbit-micropython.readthedocs.io/en/stable/image.html>`_
 
 Image objects
 -----------------------------
