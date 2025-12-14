@@ -58,16 +58,6 @@ Microbit software using micropython:
 
 | The standard online **micropython** editor: https://python.microbit.org/v3.
 
-| The **Mu** editor for laptops, https://codewith.mu/en/tutorials/1.1/microbit, is a simple editor but is out of date and behind the standard online editor .
-
-.. admonition:: Warning
-
-    | As of Sep 2022, Mu v1.1.1 uses micropython 1.15 and so doesn't support some newer features.
-    | The **micropython online editor** uses micropython 1.18.
-    | **Thonny v4** uses micropython 1.18.
-    | When flashing from the online editor the micropython will be flashed as well.
-
-
 | **Thonny** for laptops, can be downloaded from https://thonny.org/.
 | See: https://core-electronics.com.au/tutorials/how-to-program-a-microbit-using-thonny.html for setting up the microbit to use Thonny.
 

@@ -3,7 +3,15 @@ Micropython editor
 ====================================================
 
 | The standard online **micropython** editor is at: https://python.microbit.org/v/3.
+| See the guide at: https://support.microbit.org/support/solutions/articles/19000135210
 
+`Video introduction to the editor <https://www.youtube.com/watch?v=mREwMW69qKc>`_
+
+.. raw:: html
+
+   <p><a href="https://www.youtube.com/watch?v=mREwMW69qKc" target="_blank" rel="noopener noreferrer">
+       (Open in new tab)
+   </a></p>
 
 ----
 

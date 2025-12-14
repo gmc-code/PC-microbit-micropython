@@ -31,15 +31,6 @@ Pressing the power/reset again when in sleep/power-off mode will wake the microb
 
 Removing the USB power cable and re-adding it will also wake the microbit.
 
-
-----
-
-.. admonition:: Warning
-
-    | Mu v1.1.1 doesn't yet support the power module. Sep 2022.
-    | Use the online micropython editor instead: https://python.microbit.org/v/3
-    | Thonny v 4 can also be used.
-
 ----
 
 Power module
