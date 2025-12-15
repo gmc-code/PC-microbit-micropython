@@ -5,7 +5,9 @@ Introduction
 Video introduction
 -------------------------
 
-`Watch on YouTube <https://www.youtube.com/watch?v=7WMCgUIcKnk>`_
+`Get to know the BBC micro:bit's features <https://www.youtube.com/watch?v=7WMCgUIcKnk>`_
+
+`Introduction to the BBC micro:bit <https://www.youtube.com/watch?v=u2u7UJSRuko&list=PLEo0hMrjdofusveMscRFN9FeqKzDBzuXr&index=1>`_
 
 ----
 
