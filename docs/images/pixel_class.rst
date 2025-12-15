@@ -6,10 +6,10 @@ Pixel animation using classes
 -------------------------------
 
 | The Class ``LED`` is used to create several LED objects used in the animation.
-| e.g **led02 = LED(0, 2)** creates a pixel at x = 0 and y = 2. 
-| The **on** method controls the microbit LED brightness. 
+| e.g **led02 = LED(0, 2)** creates a pixel at x = 0 and y = 2.
+| The **on** method controls the microbit LED brightness.
 | e.g. **led02.on()** set the pixel at x = 0 and y = 2 to the default brightness of 9.
-| The **off** method sets the pixel to 0 brightness. 
+| The **off** method sets the pixel to 0 brightness.
 
 | A list of LED objects can be used in an animation: led_list = [led02, led12, led22, led32, led42]
 
@@ -19,10 +19,10 @@ Pixel animation using classes
 
 
     class LED():
-        def __init__(self, x=2, y=2):
+        def _init_(self, x=2, y=2):
             self.x = x
             self.y = y
-        
+
         def on(self, brightness=9):
             display.set_pixel(self.x, self.y, brightness)
 
@@ -48,10 +48,10 @@ Pixel animation using classes
 
 .. admonition:: Tasks
 
-    #. Modify the code to use a default **brightness** of 6.    
-    #. Modify the code to use a **brightness** of 3 when the led is turned on in the **for-loop**. 
-    #. Modify the code to use a **brightness** of 1, 3, 5, 7, 9 for each led from left to right. Do this by incrementing a counter called **brightness_val**.   
-    #. Modify the code to use ``brightness_val_list = [9, 7, 5, 3, 1]`` to store the led brightnesses for the 5 leds from left to right. Use the zip function to zip the led list and the brightness list. Then loop though the zipped list to display the leds with decreasing brightness.   
+    #. Modify the code to use a default **brightness** of 6.
+    #. Modify the code to use a **brightness** of 3 when the led is turned on in the **for-loop**.
+    #. Modify the code to use a **brightness** of 1, 3, 5, 7, 9 for each led from left to right. Do this by incrementing a counter called **brightness_val**.
+    #. Modify the code to use ``brightness_val_list = [9, 7, 5, 3, 1]`` to store the led brightnesses for the 5 leds from left to right. Use the zip function to zip the led list and the brightness list. Then loop though the zipped list to display the leds with decreasing brightness.
 
     .. dropdown::
         :icon: codescan
@@ -62,7 +62,7 @@ Pixel animation using classes
 
             .. tab-item:: Q1
 
-                Modify the code to use a default **brightness** of 6.  
+                Modify the code to use a default **brightness** of 6.
 
                 .. code-block:: python
 
@@ -70,10 +70,10 @@ Pixel animation using classes
 
 
                     class LED():
-                        def __init__(self, x=2, y=2):
+                        def _init_(self, x=2, y=2):
                             self.x = x
                             self.y = y
-                        
+
                         def on(self, brightness=6):
                             display.set_pixel(self.x, self.y, brightness)
 
@@ -99,7 +99,7 @@ Pixel animation using classes
 
             .. tab-item:: Q2
 
-                Modify the code to use a **brightness** of 3 when the led is turned on in the **for-loop**. 
+                Modify the code to use a **brightness** of 3 when the led is turned on in the **for-loop**.
 
                 .. code-block:: python
 
@@ -107,10 +107,10 @@ Pixel animation using classes
 
 
                     class LED():
-                        def __init__(self, x=2, y=2):
+                        def _init_(self, x=2, y=2):
                             self.x = x
                             self.y = y
-                        
+
                         def on(self, brightness=6):
                             display.set_pixel(self.x, self.y, brightness)
 
@@ -136,7 +136,7 @@ Pixel animation using classes
 
             .. tab-item:: Q3
 
-                Modify the code to use a **brightness** of 1, 3, 5, 7, 9 for each led from left to right. Do this by incrementing a counter called **brightness_val**. 
+                Modify the code to use a **brightness** of 1, 3, 5, 7, 9 for each led from left to right. Do this by incrementing a counter called **brightness_val**.
 
                 .. code-block:: python
 
@@ -144,10 +144,10 @@ Pixel animation using classes
 
 
                     class LED():
-                        def __init__(self, x=2, y=2):
+                        def _init_(self, x=2, y=2):
                             self.x = x
                             self.y = y
-                        
+
                         def on(self, brightness=6):
                             display.set_pixel(self.x, self.y, brightness)
 
@@ -175,7 +175,7 @@ Pixel animation using classes
 
             .. tab-item:: Q4
 
-                Modify the code to use ``brightness_val_list = [9, 7, 5, 3, 1]`` to store the led brightnesses for the 5 leds from left to right. Use the zip function to zip the led list and the brightness list. Then loop though the zipped list to display the leds with decreasing brightness. 
+                Modify the code to use ``brightness_val_list = [9, 7, 5, 3, 1]`` to store the led brightnesses for the 5 leds from left to right. Use the zip function to zip the led list and the brightness list. Then loop though the zipped list to display the leds with decreasing brightness.
 
                 .. code-block:: python
 
@@ -183,7 +183,7 @@ Pixel animation using classes
 
 
                     class LED:
-                        def __init__(self, x=2, y=2):
+                        def _init_(self, x=2, y=2):
                             self.x = x
                             self.y = y
 
@@ -203,8 +203,8 @@ Pixel animation using classes
                     led_list = [led02, led12, led22, led32, led42]
                     brightness_val_list = [9, 7, 5, 3, 1]
                     # Convert zip object to list since the zip object would be used up in a for-loop
-                    leds_brightness_list = list(zip(led_list, brightness_val_list))  
-                    
+                    leds_brightness_list = list(zip(led_list, brightness_val_list))
+
 
                     while True:
 
@@ -221,7 +221,7 @@ Pixel animation using classes
 Pixel Classes using accelerometer
 -------------------------------------------
 
-| The code below draws a pixel on the display. 
+| The code below draws a pixel on the display.
 | The Pixel class keeps track of the pixel position, but leaves a trail of where it has been.
 | The ``acc_x_change()`` and ``acc_y_change()`` functions return the change in x and y as the microbit is tilted.
 | These are passed to the ``move`` method of the Pixel object as in ``my_pix.move(acc_x_change(),acc_y_change())``
@@ -235,7 +235,7 @@ Pixel Classes using accelerometer
 
 
     class Pixel:
-        def __init__(self, x_position=2, y_position=2):
+        def _init_(self, x_position=2, y_position=2):
             self.x_position = x_position
             self.y_position = y_position
 
@@ -248,7 +248,7 @@ Pixel Classes using accelerometer
             sleep(50)
             display.set_pixel(self.x_position, self.y_position, 2)
 
-        
+
     def acc_x_change():
         sensitivity = 100
         acc_x = accelerometer.get_x()
@@ -259,7 +259,7 @@ Pixel Classes using accelerometer
         else:
             xd = 0
         return xd
-        
+
 
     def acc_y_change():
         sensitivity = 100
@@ -283,10 +283,10 @@ Pixel Classes using accelerometer
 
 
 ----
- 
+
 .. admonition:: Tasks
 
-    #. Modify the code to use a **brightness** parameter in the init function and replace the **2** in the **show** method with the parameter variable. Create **my_pix** with a brightness of 6.   
+    #. Modify the code to use a **brightness** parameter in the init function and replace the **2** in the **show** method with the parameter variable. Create **my_pix** with a brightness of 6.
     #. Add a **clear** method to the class, and use it to clear the display if the A-button was pressed.
 
     .. dropdown::
@@ -306,7 +306,7 @@ Pixel Classes using accelerometer
 
 
                     class Pixel:
-                        def __init__(self, x_position=2, y_position=2, brightness=2):
+                        def _init_(self, x_position=2, y_position=2, brightness=2):
                             self.x_position = x_position
                             self.y_position = y_position
                             self.brightness = brightness
@@ -331,7 +331,7 @@ Pixel Classes using accelerometer
                         else:
                             xd = 0
                         return xd
-                        
+
 
                     def acc_y_change():
                         sensitivity = 100
@@ -363,7 +363,7 @@ Pixel Classes using accelerometer
 
 
                     class Pixel:
-                        def __init__(self, x_position=2, y_position=2, brightness=2):
+                        def _init_(self, x_position=2, y_position=2, brightness=2):
                             self.x_position = x_position
                             self.y_position = y_position
                             self.brightness = brightness

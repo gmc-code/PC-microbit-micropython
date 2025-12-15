@@ -2,6 +2,11 @@
 Built-in images
 ====================================================
 
+Micro:bit Educational Foundation YouTube Video:
+`Editing code in the micro:bit Python Editor <https://www.youtube.com/watch?v=9tt95qUMO7s>`_
+
+----
+
 | The microbit library contains over 60 built-in images that have specific names.
 | e.g ``Image.HEART``
 | The **Image** object must have a capital **I**.

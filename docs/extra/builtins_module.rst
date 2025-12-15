@@ -189,7 +189,7 @@ bin
         display.scroll(val1)
         display.scroll("_")
         display.scroll(val2)
-        display.scroll("__")
+        display.scroll("_")
 
 ----
 
@@ -550,7 +550,7 @@ dir
 
     dir() When a function has no parameters, it returns the list of variables, methods and defined types in the current range.
     When it has parameters, it returns the list of properties and methods of parameters.
-    If the parameter contains  __dir__(), if it doesn't contains __dir__(), This method will maximize the collection of parameter information.
+    If the parameter contains  _dir_(), if it doesn't contains _dir_(), This method will maximize the collection of parameter information.
     - ``object`` -- object, variable, type.
 
 
@@ -575,9 +575,9 @@ dir
     def display_attributes(obj_name, obj):
         print(obj_name + ": ")
         for attribute in dir(obj):
-            if not attribute.startswith("__"):  # Skip dunder methods
+            if not attribute.startswith("_"):  # Skip dunder methods
                 print(attribute)
-        print("____________")
+        print("______")
 
     # Loop through objects and print attributes
     for name, obj in objects_to_check:
@@ -588,7 +588,7 @@ dir
     get_presses
     is_pressed
     was_pressed
-    ____________
+    ______
     Display:
     clear
     get_pixel
@@ -599,7 +599,7 @@ dir
     scroll
     set_pixel
     show
-    ____________
+    ______
     Accelerometer:
     current_gesture
     get_gestures
@@ -611,11 +611,11 @@ dir
     is_gesture
     set_range
     was_gesture
-    ____________
+    ______
     Temperature:
     from_bytes
     to_bytes
-    ____________
+    ______
     Compass:
     calibrate
     clear_calibration
@@ -625,7 +625,7 @@ dir
     get_z
     heading
     is_calibrated
-    ____________
+    ______
     Pins:
     CAPACITIVE
     NO_PULL
@@ -644,7 +644,7 @@ dir
     set_touch_mode
     write_analog
     write_digital
-    ____________
+    ______
     music:
     stop
     BADDY
@@ -673,7 +673,7 @@ dir
     play
     reset
     set_tempo
-    __________
+    _____
 
     '''
 
@@ -878,7 +878,7 @@ format
 
 .. function:: format(value[, format_spec])
 
-Functions for formatting strings str.format(), It enhances string formatting. format Function can accept unlimited arguments, position may not in sequence. The basic syntax is to replace the previous% with {} and:.  For more detailed syntax, please refer to CPython 'Format String Syntax'  <`<https://docs.python.org/zh-cn/3.7/library/string.html>`_#format-specification-mini-language>`__
+Functions for formatting strings str.format(), It enhances string formatting. format Function can accept unlimited arguments, position may not in sequence. The basic syntax is to replace the previous% with {} and:.  For more detailed syntax, please refer to CPython 'Format String Syntax'  <`<https://docs.python.org/zh-cn/3.7/library/string.html>`_#format-specification-mini-language>`_
 
 ::
 
@@ -1069,7 +1069,7 @@ iter
 
 Used to generate iterators.
 - ``object`` -- Object gather that support iterations.
-- ``sentinel`` -- If the second parameter is sent, the parameter object must be a callable object (such as a function). At this time, ITER creates an iterator object, which will be called every time the iterator object's __next__() method, object is called.
+- ``sentinel`` -- If the second parameter is sent, the parameter object must be a callable object (such as a function). At this time, ITER creates an iterator object, which will be called every time the iterator object's _next_() method, object is called.
 
 ::
 
@@ -1245,7 +1245,7 @@ next
 .. function:: next(iterator[, default])
 
 
-Returns the next entry for the iterator. Get the next element by calling the iterator's __next__(). If the iterator is exhausted, the given default is returned, and if there is no default value, StopIteration is triggered.
+Returns the next entry for the iterator. Get the next element by calling the iterator's _next_(). If the iterator is exhausted, the given default is returned, and if there is no default value, StopIteration is triggered.
 ::
 
     # First, to get the iterator object:
@@ -1400,7 +1400,7 @@ property() Function to return property values in a new class. Using the 'propert
 Property's getter, setter and delete methods can also be used as decorators::
 
     class C(object):
-        def __init__(self):
+        def _init_(self):
             self._x = None
 
         @property
@@ -1766,7 +1766,7 @@ type() Function returns the type of object if ave only the first argument, Three
    ...
          X = type('X', (object,), dict(a=1))  # Generate a new type X
          X
-    <class '__main__.X'>
+    <class '_main_.X'>
 
 type() and isinstance() differences::
 

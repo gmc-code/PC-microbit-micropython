@@ -5,13 +5,13 @@ Potentiometer Class
 | A potentiometer can be connected to a microbit using a breadboard.
 | Create a class for the Potentiometer that makes it easy to:
 
-    - get the potentiometer analog reading, 
-    - keep track of the last reading, 
-    - be able to tell if the potentiometer analog reading has changed 
+    - get the potentiometer analog reading,
+    - keep track of the last reading,
+    - be able to tell if the potentiometer analog reading has changed
     - and to convert the reading to a particular range, such as, from 0 to 10.
-  
+
 | The code below, first checks to see if the value of the potentiometer has changed, and then if it has, displays the value as a scaled value in the range 0 to 10 via ``display.show(pot.get_range(10))``.
-| ``pot = Potentiometer()`` uses the default pin: pin0. 
+| ``pot = Potentiometer()`` uses the default pin: pin0.
 | The pin is kept track of via the **self.io_pin** variable.
 | To use **pin1** instead, use ``pot = Potentiometer(pin1)`` instead of ``pot = Potentiometer()``
 | The line ``self.last_val = -1`` sets **last_val** to be a value it cannot be, -1, so that the first reading will be recognized as a change.
@@ -23,7 +23,7 @@ Potentiometer Class
 
 
     class Potentiometer:
-        def __init__(self, io_pin=pin0):
+        def _init_(self, io_pin=pin0):
             self.io_pin = io_pin
             self.last_val = -1
 
@@ -59,13 +59,13 @@ Potentiometer Class
     #. Modify the code so that the potentiometer only displays values from 0 to 5.
 
 ----
- 
+
 .. admonition:: Tasks
 
     #. Modify the code to use a potentiometer to set the image to display.
 
         .. code-block:: python
-            
+
             from microbit import *
 
             images = [
@@ -82,11 +82,11 @@ Potentiometer Class
             img_num = 0
             while True:
                 display.show(images[img_num])
-            
+
     #. Modify the code to use a potentiometer to set the image to display.
 
         .. code-block:: python
-            
+
             from microbit import *
 
             images = [
@@ -134,7 +134,7 @@ Potentiometer Class
                     images_rng = len(images) - 1
 
                     class Potentiometer:
-                        def __init__(self, io_pin=pin0):
+                        def _init_(self, io_pin=pin0):
                             self.io_pin = io_pin
                             self.last_val = -1
 
@@ -185,7 +185,7 @@ Potentiometer Class
 
 
                     class Potentiometer:
-                        def __init__(self, io_pin=pin0):
+                        def _init_(self, io_pin=pin0):
                             self.io_pin = io_pin
                             self.last_val = -1
 

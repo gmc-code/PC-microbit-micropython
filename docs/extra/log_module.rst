@@ -9,7 +9,7 @@ os module
 a browser.
 
 See: `data logging page of the microbit.org website
-<`<https://microbit.org/get-started/user-guide/data-logging/>`__.
+<`<https://microbit.org/get-started/user-guide/data-logging/>`_.
 
 ----
 

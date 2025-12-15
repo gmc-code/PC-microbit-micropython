@@ -15,7 +15,7 @@ The output is:
 .. table:: Microbit modules
    :widths: auto
 =============     =============     =============     =============
-__main__          machine           power             urandom
+_main_          machine           power             urandom
 antigravity       math              radio             ustruct
 audio             microbit          speech            usys
 builtins          micropython       this              utime

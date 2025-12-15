@@ -3,7 +3,7 @@ Motor_with_transistor
 ==========================
 
 | The examples below use sequence without definition blocks which are preferred to better organize the code.
-| See `<https://pc-microbit-micropython.readthedocs.io/en/latest/breadboards/Motor_with_transistor_2.html>`__
+| See `<https://pc-microbit-micropython.readthedocs.io/en/latest/breadboards/Motor_with_transistor_2.html>`_
 
 ----
 Connections

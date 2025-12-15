@@ -2,12 +2,34 @@
 Micropython editor
 ====================================================
 
-| The standard online **micropython** editor is at: `<https://python.microbit.org/v/3>`__.
-| See the guide at: `<https://support.microbit.org/support/solutions/articles/19000135210>`__
+| The standard online **micropython** editor is at: `<https://python.microbit.org/v/3>`_.
+| See the guide at: `<https://support.microbit.org/support/solutions/articles/19000135210>`_
 
 
-`Micro:bit Educational Foundation YouTube Video introduction to the editor <https://www.youtube.com/watch?v=mREwMW69qKc>`__
+Micro:bit Educational Foundation YouTube Videos
+---------------------------------------------------------
 
+`Welcome to the micro:bit Python Editor <https://www.youtube.com/watch?v=mREwMW69qKc>`_
+
+`Editing code in the micro:bit Python Editor <https://www.youtube.com/watch?v=9tt95qUMO7s>`_
+
+`Simulator: micro:bit Python Editor <https://www.youtube.com/watch?v=FysIFdq3ZOE>`_
+
+`Direct flashing from Python to micro:bit <https://www.youtube.com/watch?v=2zumYE7Mk08>`_
+
+`Send to microbit without webUSB <https://www.youtube.com/watch?v=ZjhYiiFwm4E>`_
+
+`Opening a hex file <https://www.youtube.com/watch?v=z2jqwgR98rk>`_
+
+`Reference section: micro:bit Python Editor <https://www.youtube.com/watch?v=9vmrKgQRYjE>`_
+
+`Ideas Section <https://www.youtube.com/watch?v=mdJ_UszVj4c>`_
+
+`API Section: micro:bit Python Editor <https://www.youtube.com/watch?v=QX61MzdlFUI>`_
+
+`Setting language in the micro:bit Python Editor <https://www.youtube.com/watch?v=RD3XtCygsm4>`_
+
+`Projects section: micro:bit Python Editor <https://www.youtube.com/watch?v=TJKe16S2RmM>`_
 
 ----
 
