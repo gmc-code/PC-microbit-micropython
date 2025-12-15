@@ -9,11 +9,11 @@ Micropython editor
 Micro:bit Educational Foundation YouTube Videos
 ---------------------------------------------------------
 
-`Welcome to the micro:bit Python Editor <https://www.youtube.com/watch?v=mREwMW69qKc>`_
+`Welcome to the  micro:bit Python Editor <https://www.youtube.com/watch?v=mREwMW69qKc>`_
 
-`Editing code in the micro:bit Python Editor <https://www.youtube.com/watch?v=9tt95qUMO7s>`_
+`Editing code <https://www.youtube.com/watch?v=9tt95qUMO7s>`_
 
-`Simulator: micro:bit Python Editor <https://www.youtube.com/watch?v=FysIFdq3ZOE>`_
+`Simulator <https://www.youtube.com/watch?v=FysIFdq3ZOE>`_
 
 `Direct flashing from Python to micro:bit <https://www.youtube.com/watch?v=2zumYE7Mk08>`_
 
@@ -21,15 +21,15 @@ Micro:bit Educational Foundation YouTube Videos
 
 `Opening a hex file <https://www.youtube.com/watch?v=z2jqwgR98rk>`_
 
-`Reference section: micro:bit Python Editor <https://www.youtube.com/watch?v=9vmrKgQRYjE>`_
+`Reference section <https://www.youtube.com/watch?v=9vmrKgQRYjE>`_
 
 `Ideas Section <https://www.youtube.com/watch?v=mdJ_UszVj4c>`_
 
-`API Section: micro:bit Python Editor <https://www.youtube.com/watch?v=QX61MzdlFUI>`_
+`API Section <https://www.youtube.com/watch?v=QX61MzdlFUI>`_
 
-`Setting language in the micro:bit Python Editor <https://www.youtube.com/watch?v=RD3XtCygsm4>`_
+`Setting language <https://www.youtube.com/watch?v=RD3XtCygsm4>`_
 
-`Projects section: micro:bit Python Editor <https://www.youtube.com/watch?v=TJKe16S2RmM>`_
+`Projects section <https://www.youtube.com/watch?v=TJKe16S2RmM>`_
 
 ----
 
