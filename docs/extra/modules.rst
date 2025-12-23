@@ -7,7 +7,7 @@ Module list
 
 | To get a list of built-in modules for the microbit:
 
-| Open the REPL (3 white vertical dots drop down below simulator)
+| Open the serial terminal in the microbit online editor (3 white vertical dots drop down next to "Show Serial")
 | Type: help('modules')
 
 The output is:
@@ -30,9 +30,10 @@ The output is:
 
 .. code-block:: python
 
-    from microbit import *
+   from microbit import *
 
-    print(help('modules'))
+   print("===========================")
+   print(help('modules'))
 
 
 
