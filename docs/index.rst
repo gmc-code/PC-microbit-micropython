@@ -150,18 +150,18 @@ Index:
     :caption: Sounds
     :numbered:
 
-    sound/music.rst
-    sound/music_melodies.rst
-    sound/music_scales.rst
-    sound/music_rhythms.rst
-    sound/music_rhymes.rst
-    sound/music_xmas.rst
-    sound/music_pitch.rst
-    sound/music_advanced.rst
-    sound/audio.rst
-    sound/audio_sounds.rst
-    sound/audio_frames.rst
-    sound/audio_soundeffects.rst
+    sounds/music.rst
+    sounds/music_melodies.rst
+    sounds/music_scales.rst
+    sounds/music_rhythms.rst
+    sounds/music_rhymes.rst
+    sounds/music_xmas.rst
+    sounds/music_pitch.rst
+    sounds/music_advanced.rst
+    sounds/audio.rst
+    sounds/audio_sounds.rst
+    sounds/audio_frames.rst
+    sounds/audio_soundeffects.rst
 
 
 .. toctree::
