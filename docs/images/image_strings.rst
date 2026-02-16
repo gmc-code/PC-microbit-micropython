@@ -20,7 +20,7 @@ Image strings
 
 .. py:function:: Image(string)
 
-    | Create an image. 
+    | Create an image.
     | string is a string of 25 brightness values with every 5 separated by a colon.
     | e.g. '01234:56789:09090:98765:43210'
 
@@ -86,7 +86,7 @@ Image strings
     #. Write code for a large square of brightness 2.
     #. Write code for a vertical brightness gradient of bright to dull from the top down to the bottom.
     #. Write code for a horizontal brightness gradient of dull to bright from the left to right.
-    #. Write code for a diagonal brightness gradient of dull to bright from the bottom left to the top right.   
+    #. Write code for a diagonal brightness gradient of dull to bright from the bottom left to the top right.
 
     .. dropdown::
         :icon: codescan
@@ -127,14 +127,14 @@ Image strings
 
             .. tab-item:: Q4
 
-                Write code for a diagonal brightness gradient of dull to bright from the bottom left to the top right. 
+                Write code for a diagonal brightness gradient of dull to bright from the bottom left to the top right.
 
                 .. code-block:: python
 
                     from microbit import *
 
                     display.show(Image('56789:45678:34567:23456:12345'))
-                
+
 
 ----
 
@@ -144,7 +144,7 @@ Image strings: Multiplication of a line
 | Strings can be replicated using multiplication.
 
 .. py:function:: string * integer
-   
+
    | Returns string + string + string .... integer times.
 
 | e.g "Ha" * 3 returns "HaHaHa"
@@ -246,7 +246,7 @@ Image strings: line by line
 
     #. Write code for a large square of brightness 3 by lining up the 5 rows of the image under each other.
     #. Write code for a small central square of brightness 9 by lining up the 5 rows of the image under each other.
-    #. Write code for 2 symmetrically spaced central horizontal lines of brightness 5 by lining up the 5 rows of the image under each other. 
+    #. Write code for 2 symmetrically spaced central horizontal lines of brightness 5 by lining up the 5 rows of the image under each other.
     #. Write code for 2 symmetrically spaced central vertical lines of brightness 5 by lining up the 5 rows of the image under each other.
 
     .. dropdown::
@@ -374,6 +374,69 @@ Boat sinking animation
 
 .. admonition:: Tasks
 
+    #. Modify the code above to show a sinking diamond instead of a sinking boat. The first image should be a bright diamond and the last image should be all pixels off.
+
+
+
+    .. dropdown::
+        :icon: codescan
+        :color: primary
+        :class-container: sd-dropdown-container
+
+        .. tab-set::
+
+            .. tab-item:: Q1
+
+                Modify the code above to show a sinking diamond instead of a sinking boat. The first image should be a bright diamond and the last image should be all pixels off.
+
+                .. code-block:: python
+
+                    from microbit import *
+
+                    diam1 = Image('00900:'
+                                '09090:'
+                                '90009:'
+                                '09090:'
+                                '00900')
+
+                    diam2 = Image('00000:'
+                                '00900:'
+                                '09090:'
+                                '90009:'
+                                '09090:')
+
+                    diam3 = Image('00000:'
+                                '00000:'
+                                '00900:'
+                                '09090:'
+                                '90009:')
+
+                    diam4 = Image('00000:'
+                                '00000:'
+                                '00000:'
+                                '00900:'
+                                '09090:')
+
+                    diam5 = Image('00000:'
+                                '00000:'
+                                '00000:'
+                                '00000:'
+                                '00900:')
+
+                    diam6 = Image('00000:'
+                                '00000:'
+                                '00000:'
+                                '00000:'
+                                '00000:')
+
+                    sinking_diamonds = [diam1, diam2, diam3, diam4, diam5, diam6]
+                    while True:
+                        display.show(sinking_diamonds, delay=300)
+
+----
+
+.. admonition:: Tasks
+
     #. Write a list variable, ``rising_boats``, that lists the boats in reverse order and animates a rising boat. Rather than manually listing the order, use ``list(reversed(sinking_boats))``.
     #. Combine the 2 animations to show a boat sinking and rising over and over again.
 
@@ -386,7 +449,7 @@ Boat sinking animation
 
             .. tab-item:: Q1
 
-                Write a list variable, ``rising_boats``, that lists the boats in reverse order and animates a rising boat. Rather than manually listing the order, use ``list(reversed(sinking_boats))``. 
+                Write a list variable, ``rising_boats``, that lists the boats in reverse order and animates a rising boat. Rather than manually listing the order, use ``list(reversed(sinking_boats))``.
 
                 .. code-block:: python
 
@@ -452,7 +515,7 @@ Image gradients using  string definitions
 | **Image(horz_grad(5, 5))** results in **Image('12345:12345:12345:12345:12345:')**.
 
 .. code-block:: python
-        
+
     from microbit import *
 
 
