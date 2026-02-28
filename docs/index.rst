@@ -21,7 +21,7 @@ Index:
 
 .. toctree::
     :maxdepth: 2
-    :caption: BreadBoards
+    :caption: BreadBoards1
     :numbered:
 
     breadboards/Breadboard_connections.rst
