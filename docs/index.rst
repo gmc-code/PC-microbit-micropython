@@ -19,8 +19,6 @@ Index:
     introduction/power_management.rst
 
 
-
-
 .. toctree::
     :maxdepth: 2
     :caption: BreadBoards
@@ -33,8 +31,6 @@ Index:
     breadboards/Motor_with_transistor.rst
     breadboards/Potentiometer.rst
     breadboards/Potentiometer_with_LED.rst
-
-
 
 
 .. toctree::
