@@ -129,8 +129,8 @@ Python references:
 
 For an introduction to python see:
 
-* `<https://docs.python.org/3.12/tutorial/introduction.html>`_
-* `<https://docs.python.org/3.12/tutorial/index.html>`_
+* `<https://docs.python.org/3.13/tutorial/introduction.html>`_
+* `<https://docs.python.org/3.13/tutorial/index.html>`_
 * `<https://www.w3schools.com/python/default.asp>`_
 * `<https://www.programiz.com/python-programming>`_
 * `<https://www.geeksforgeeks.org/python-programming-language/?ref=shm>`_
