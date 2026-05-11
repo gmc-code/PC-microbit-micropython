@@ -231,6 +231,6 @@ Multiplying the range function variable
 
                     while True:
                         for n in range(4):
-                            display.scroll(n * -1*, delay=80)
+                            display.scroll(n * -1, delay=80)
                         sleep(500)
 
