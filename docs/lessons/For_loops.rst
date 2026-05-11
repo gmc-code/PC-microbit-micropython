@@ -309,7 +309,7 @@ Nested For loops
 
 
 
-| For examples of using nested for-loops specific to the microbit display see the `Setting Pixels page under Images <https://pc-microbit-micropython.readthedocs.io/en/latest/images/setting_pixels.html>`_#pixel-rows-and-columns-lists>`_.
+For examples of using nested for-loops specific to the microbit display, see the `Setting Pixels page <https://pc-microbit-micropython.readthedocs.io/en/latest/images/setting_pixels.html#pixel-rows-and-columns-lists>`_.
 
 ----
 
