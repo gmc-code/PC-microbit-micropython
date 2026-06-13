@@ -19,23 +19,6 @@ Index:
     introduction/power_management.rst
 
 
-
-.. toctree::
-    :maxdepth: 2
-    :caption: BreadBoards
-    :numbered:
-
-    breadboards/Breadboard_connections.rst
-    breadboards/Edge_Connector.rst
-    breadboards/LEDs_with_resistors.rst
-    breadboards/Piezo_Buzzer_and_music.rst
-    breadboards/Motor_with_transistor.rst
-    breadboards/Potentiometer.rst
-    breadboards/Potentiometer_with_LED.rst
-
-
-
-
 .. toctree::
     :maxdepth: 2
     :caption: Lessons
@@ -96,9 +79,6 @@ Index:
     errors/Variable_Errors.rst
     errors/Unwanted_Whitespace.rst
     errors/Whitespace_for_readability.rst
-
-
-
 
 
 .. toctree::
@@ -236,8 +216,6 @@ Index:
     radio/radio_treasure_hunt.rst
 
 
-
-
 .. toctree::
     :maxdepth: 2
     :caption: Classes
@@ -247,6 +225,14 @@ Index:
     classes/potentiometer_class.rst
     classes/pixel_class.rst
     classes/screen_class.rst
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Open Day
+    :numbered:
+
+    openday/open_day.rst
 
 
 .. toctree::

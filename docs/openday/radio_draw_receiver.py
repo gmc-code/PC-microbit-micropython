@@ -13,5 +13,3 @@ while True:
         # print(incoming_message)
         i = Image(incoming_message)
         display.show(i)
-
-

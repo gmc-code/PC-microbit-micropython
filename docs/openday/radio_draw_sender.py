@@ -43,8 +43,8 @@ def ImageString():
 
 
 while True:
-    tick +=1
-    if tick==2:
+    tick += 1
+    if tick == 2:
         tick = 0
     # check for movement
     dx = accelerometer.get_x()
