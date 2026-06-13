@@ -2,7 +2,7 @@
 Vehicle Systems Demonstrator
 
 A micro:bit-based embedded system that demonstrates three vehicle subsystems:
-air conditioning, audio, and headlights.
+air conditioning, sound, and lights.
 
 The program provides a menu-driven interface that allows the user to select
 a subsystem using Button A and demonstrate it using Button B. Each subsystem is
@@ -15,7 +15,7 @@ Inputs:
 
 Outputs:
     pin0 - Motor/fan output.
-    pin1 - Audio output.
+    pin1 - buzzer output.
     pin2 - LED output.
 
 The LED display is used to show menu selections, operating levels, and
@@ -31,7 +31,7 @@ speaker.off()
 # Initialise variables
 SCROLL_SPEED = 70
 MOTORPIN = pin0
-AUDIOPIN = pin1
+SOUNDPIN = pin1
 LEDPIN = pin2
 DEMO_TIME = 4000
 DEMO_GAP_TIME = 1000
@@ -51,11 +51,10 @@ def load_animation():
     sleep(250)
 
 
-# For the display, only repeat text every so often.
+ # Display immediately if the module changed, OR if DISPLAY_INTERVAL seconds have passed
 def show_current_option():
     global previous_module_selected, last_display_time
 
-    # Display immediately if the module changed, OR if DISPLAY_INTERVAL seconds have passed
     if (previous_module_selected != current_module_selected
             or running_time() - last_display_time > DISPLAY_INTERVAL):
 
@@ -67,15 +66,12 @@ def show_current_option():
 
 
 def display_current_option():
-    global current_module_name
-
     if current_module_selected == 1:
         current_module_name = 'AC'
     elif current_module_selected == 2:
-        current_module_name = 'Audio'
+        current_module_name = 'SOUND'
     elif current_module_selected == 3:
-        current_module_name = 'Lights'
-
+        current_module_name = 'LIGHTS'
     display.scroll(current_module_name, SCROLL_SPEED)
 
 
@@ -101,27 +97,27 @@ def demo_ac():
     display.clear()
 
 
-# audio module (buzzer)
-def demo_audio():
+# sound module (buzzer)
+def demo_sound():
     display.scroll('Demo...', SCROLL_SPEED)
 
-    for audio_preset in range(1, 4):
-        display.show(audio_preset)
+    for sound_preset in range(1, 4):
+        display.show(sound_preset)
 
-        if audio_preset == 1:
+        if sound_preset == 1:
             set_volume(155)
             music.set_tempo(bpm=120)
-            music.play(music.ENTERTAINER, wait=False, pin=AUDIOPIN)
+            music.play(music.ENTERTAINER, wait=False, pin=SOUNDPIN)
 
-        elif audio_preset == 2:
+        elif sound_preset == 2:
             set_volume(200)
             music.set_tempo(bpm=80)
-            music.play(music.BLUES, wait=False, pin=AUDIOPIN)
+            music.play(music.BLUES, wait=False, pin=SOUNDPIN)
 
-        elif audio_preset == 3:
+        elif sound_preset == 3:
             set_volume(255)
             music.set_tempo(bpm=150)
-            music.play(music.NYAN, wait=False, pin=AUDIOPIN)
+            music.play(music.NYAN, wait=False, pin=SOUNDPIN)
 
         sleep(DEMO_TIME)
         music.stop()
@@ -156,7 +152,7 @@ def demo_headlights():
 # Says welcome and "loads" the head unit
 display.scroll('WELCOME!', SCROLL_SPEED)
 load_animation()
-display.scroll('mode A -> Demo B', SCROLL_SPEED)
+display.scroll('MODE A -> DEMO B', SCROLL_SPEED)
 load_animation()
 
 # A to choose mode, B to Demo it.
@@ -175,11 +171,11 @@ while True:
         if current_module_selected == 1:
             demo_ac()
         elif current_module_selected == 2:
-            demo_audio()
+            demo_sound()
         elif current_module_selected == 3:
             demo_headlights()
 
         load_animation()
-        previous_module_selected = None
+        previous_module_selected = None   # to cause module display to update
 
     sleep(50)
