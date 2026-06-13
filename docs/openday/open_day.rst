@@ -5,7 +5,7 @@ Open Day
 guess_the_number_AB
 ----------------------------------------
 
-.. literalinclude:: openday/guess_the_number_AB.py
+.. literalinclude:: python/guess_the_number_AB.py
    :language: python
 
 ----
@@ -13,7 +13,7 @@ guess_the_number_AB
 random_pet
 ----------------------------------------
 
-.. literalinclude:: openday/random_pet.py
+.. literalinclude:: python/random_pet.py
    :language: python
 
 ----
@@ -21,7 +21,7 @@ random_pet
 maze
 ----------------------------------------
 
-.. literalinclude:: openday/maze.py
+.. literalinclude:: python/maze.py
    :language: python
 
 ----
@@ -29,7 +29,7 @@ maze
 space_invaders
 ----------------------------------------
 
-.. literalinclude:: openday/space_invaders.py
+.. literalinclude:: python/space_invaders.py
    :language: python
 
 ----
@@ -37,7 +37,7 @@ space_invaders
 vertical_scroller
 ----------------------------------------
 
-.. literalinclude:: openday/vertical_scroller.py
+.. literalinclude:: python/vertical_scroller.py
    :language: python
 
 ----
@@ -45,10 +45,10 @@ vertical_scroller
 radio_hotcold
 ----------------------------------------
 
-.. literalinclude:: openday/radio_hotcold_sender.py
+.. literalinclude:: python/radio_hotcold_sender.py
    :language: python
 
-.. literalinclude:: openday/radio_hotcold_receiver.py
+.. literalinclude:: python/radio_hotcold_receiver.py
    :language: python
 
 
@@ -57,9 +57,9 @@ radio_hotcold
 radio_draw
 ----------------------------------------
 
-.. literalinclude:: openday/radio_draw_sender.py
+.. literalinclude:: python/radio_draw_sender.py
    :language: python
 
-.. literalinclude:: openday/radio_draw_receiver.py
+.. literalinclude:: python/radio_draw_receiver.py
    :language: python
 
