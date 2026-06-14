@@ -107,17 +107,17 @@ def demo_sound():
         if sound_preset == 1:
             set_volume(155)
             music.set_tempo(bpm=120)
-            music.play(music.ENTERTAINER, wait=False, pin=SOUNDPIN)
+            music.play(music.BIRTHDAY, wait=False, pin=SOUNDPIN)
 
         elif sound_preset == 2:
             set_volume(200)
             music.set_tempo(bpm=80)
-            music.play(music.BLUES, wait=False, pin=SOUNDPIN)
+            music.play(music.WEDDING, wait=False, pin=SOUNDPIN)
 
         elif sound_preset == 3:
             set_volume(255)
-            music.set_tempo(bpm=150)
-            music.play(music.NYAN, wait=False, pin=SOUNDPIN)
+            music.set_tempo(bpm=100)
+            music.play(music.FUNERAL, wait=False, pin=SOUNDPIN)
 
         sleep(DEMO_TIME)
         music.stop()
@@ -134,7 +134,7 @@ def demo_headlights():
         display.show(brightness_level)
 
         if brightness_level == 1:
-            LEDPIN.write_analog(100)
+            LEDPIN.write_analog(250)
         elif brightness_level == 2:
             LEDPIN.write_analog(500)
         elif brightness_level == 3:
@@ -152,10 +152,10 @@ def demo_headlights():
 # Says welcome and "loads" the head unit
 display.scroll('WELCOME!', SCROLL_SPEED)
 load_animation()
-display.scroll('MODE A -> DEMO B', SCROLL_SPEED)
+display.scroll('MODULE A -> DEMO B', SCROLL_SPEED)
 load_animation()
 
-# A to choose mode, B to Demo it.
+# A to choose module, B to Demo it.
 while True:
     show_current_option()
 

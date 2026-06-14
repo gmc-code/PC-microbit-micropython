@@ -102,6 +102,7 @@ Index:
 
     breadboard_projects/Combined_models.rst
     breadboard_projects/Combined_iteration_using_zip.rst
+    breadboard_projects/Car_demo.rst
 
 
 .. toctree::
