@@ -9,6 +9,8 @@ EXT: Car demo
 | The program provides a menu-driven interface that allows the user to select a subsystem using Button A and demonstrate it using Button B.
 | Each subsystem is demonstrated using three predefined output levels to simulate different operating settings.
 
+| This is based on the work of Miles M. and Nate L. term2 2026.
+
 .. code-block:: python
 
     """
