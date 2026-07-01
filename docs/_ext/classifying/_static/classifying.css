@@ -1,0 +1,250 @@
+/* ==========================================================================
+   1. Design Token System & Global Variables
+   ========================================================================== */
+:root {
+  /* Common Core Tokens */
+  --cf-radius-lg: 8px;
+  --cf-radius-md: 6px;
+  --cf-radius-sm: 4px;
+  --cf-transition: all 0.2s ease;
+
+  /* Light Theme Palette (Matches Premium Slate Style Rules) */
+  --cf-light-bg: #f8fafc;         /* Slate 50 Base Canvas[cite: 5] */
+  --cf-light-border: #e2e8f0;     /* Slate 200 Outer Rim[cite: 5] */
+  --cf-light-text: #475569;       /* Slate 600 Instructions Text[cite: 5] */
+  --cf-light-runway: #f1f5f9;     /* Slate 100 Inner Container[cite: 5] */
+  --cf-light-row-bg: #ffffff;     /* Pure White Active Items[cite: 5] */
+  --cf-light-row-border: #cbd5e1; /* Slate 300 Item Border[cite: 5] */
+  --cf-light-code: #0f172a;       /* Slate 900 Ultra-Dark Text Clarity[cite: 5] */
+
+  /* Dark Theme Structural Palette (Synchronized with Pastel Blue Ordering Layout) */
+  --cf-dark-bg: #d8f1ff;          /* Soft Calming Pastel Sky/Ice Blue */
+  --cf-dark-border: #bae6fd;      /* Clean Outer Rim Accent Border */
+  --cf-dark-runway: #e0f2fe;      /* Softer Pastel Sky Runway Background */
+
+  /* Validation Feedback System Tokens */
+  --cf-correct-bg: #dcfce7;       /* Green 100[cite: 5] */
+  --cf-correct-border: #22c55e;   /* Green 500[cite: 5] */
+  --cf-correct-text: #14532d;     /* Green 900[cite: 5] */
+
+  --cf-incorrect-bg: #fee2e2;     /* Red 100[cite: 5] */
+  --cf-incorrect-border: #ef4444; /* Red 500[cite: 5] */
+  --cf-incorrect-text: #7f1d1d;   /* Red 900[cite: 5] */
+
+  --cf-tier-mid-bg: #fef08a;      /* Yellow 100[cite: 5] */
+  --cf-tier-mid-border: #eab308;  /* Yellow 500[cite: 5] */
+  --cf-tier-mid-text: #713f12;    /* Yellow 900[cite: 5] */
+}
+
+/* ==========================================================================
+   2. Component Base Structural Architecture (Standard Component Config)
+   ========================================================================== */
+.classifying-block {
+  background-color: var(--cf-light-bg);
+  border: 1px solid var(--cf-light-border);
+  border-radius: var(--cf-radius-lg);
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+  transition: var(--cf-transition);
+}
+
+.classifying-instructions {
+  font-weight: 600;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  color: var(--cf-light-text);
+  transition: var(--cf-transition);
+}
+
+.classifying-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding: 1rem;
+  border-radius: var(--cf-radius-md);
+  min-height: 100px;
+  background-color: var(--cf-light-runway);
+  border: 1px solid var(--cf-light-border);
+  transition: var(--cf-transition);
+}
+
+.classifying-line {
+  display: flex;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  background-color: var(--cf-light-row-bg);
+  border: 1px solid var(--cf-light-row-border);
+  border-radius: var(--cf-radius-md);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.02);
+  transition: var(--cf-transition);
+}
+
+.classifying-code {
+  font-family: "Consolas", "Courier New", Courier, monospace;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--cf-light-code) !important; /* Forces override of hardcoded inline style sheets[cite: 5] */
+}
+
+.classifying-indent-controls {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+/* Select Dropdown styling[cite: 5] */
+.sorting-select {
+  padding: 0.35rem 0.5rem;
+  border-radius: var(--cf-radius-sm);
+  border: 1px solid var(--cf-light-row-border) !important;
+  background-color: var(--cf-light-row-bg);
+  color: var(--cf-light-code);
+  font-size: 0.9rem;
+  outline: none;
+  cursor: pointer;
+  transition: var(--cf-transition);
+}
+
+.sorting-select:focus {
+  border-color: #3b82f6 !important;
+  box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.15);
+}
+
+.sorting-select:disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
+/* ==========================================================================
+   3. Unified Dark Theme Layout Inversions (Blocks & Containers Only)
+   ========================================================================== */
+.classifying-block.dark,
+.classifying-block:has(.theme-dark) {
+  background-color: var(--cf-dark-bg) !important;
+  border-color: var(--cf-dark-border) !important;
+}
+
+.classifying-block.dark .classifying-container,
+.classifying-block .classifying-container.theme-dark {
+  background-color: var(--cf-dark-runway) !important;
+  border-color: var(--cf-dark-border) !important;
+}
+
+/* ==========================================================================
+   4. Control Interface Action Triggers & Buttons
+   ========================================================================== */
+.classifying-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1.25rem;
+}
+
+.classifying-btn-score,
+.classifying-btn-reset {
+  padding: 0.5rem 1.25rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: var(--cf-radius-md);
+  cursor: pointer;
+  transition: var(--cf-transition);
+}
+
+/* Primary Action: Check Button[cite: 5] */
+.classifying-btn-score {
+  background-color: #2563eb;
+  color: #ffffff;
+  border: 1px solid #2563eb;
+}
+
+.classifying-btn-score:hover {
+  background-color: #1d4ed8;
+  border-color: #1d4ed8;
+}
+
+/* Secondary Action: Reset Button Layout Rules[cite: 5] */
+.classifying-btn-reset {
+  background-color: transparent;
+  color: #475569;
+  border: 1px solid var(--cf-light-row-border);
+}
+
+.classifying-btn-reset:hover {
+  background-color: #e2e8f0;
+  color: #0f172a;
+}
+
+/* ==========================================================================
+   5. Interactive Evaluation Logic States (Inline Verification Icons)
+   ========================================================================== */
+.classifying-line.correct-line {
+  background-color: var(--cf-correct-bg) !important;
+  border-color: var(--cf-correct-border) !important;
+}
+
+.classifying-line.incorrect-line {
+  background-color: var(--cf-incorrect-bg) !important;
+  border-color: var(--cf-incorrect-border) !important;
+}
+
+/* Inline Checkmark and Cross Feedback Indicators[cite: 5] */
+.classifying-line .classifying-code::after {
+  font-weight: bold;
+  margin-left: 0.75rem;
+  font-size: 1.1rem;
+  display: inline-block;
+  transition: transform 0.2s ease;
+}
+
+.classifying-line.correct-line .classifying-code {
+  color: var(--cf-correct-text) !important;
+}
+
+.classifying-line.correct-line .classifying-code::after {
+  content: " ✓";
+  color: var(--cf-correct-border);
+}
+
+.classifying-line.incorrect-line .classifying-code {
+  color: var(--cf-incorrect-text) !important;
+}
+
+.classifying-line.incorrect-line .classifying-code::after {
+  content: " ✗";
+  color: var(--cf-incorrect-border);
+  transform: scale(1.1);
+}
+
+/* ==========================================================================
+   6. Dynamic Score Tier Badges (Right Aligned Container)
+   ========================================================================== */
+.classifying-feedback-badge {
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  border-radius: var(--cf-radius-md);
+  display: none;
+  font-size: 0.95rem;
+  border: 1px solid transparent;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  margin-left: auto;
+  text-align: right;
+}
+
+.classifying-feedback-badge.high {
+  background-color: var(--cf-correct-bg);
+  border-color: var(--cf-correct-border);
+  color: var(--cf-correct-text);
+}
+
+.classifying-feedback-badge.medium {
+  background-color: var(--cf-tier-mid-bg);
+  border-color: var(--cf-tier-mid-border);
+  color: var(--cf-tier-mid-text);
+}
+
+.classifying-feedback-badge.low {
+  background-color: var(--cf-incorrect-bg);
+  border-color: var(--cf-incorrect-border);
+  color: var(--cf-incorrect-text);
+}

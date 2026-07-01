@@ -1,0 +1,377 @@
+/* ==========================================================================
+   1. Design Token System & Global Variables
+   ========================================================================== */
+:root {
+  /* Common Core Tokens */
+  --cloze-radius-lg: 8px;
+  --cloze-radius-md: 6px;
+  --cloze-radius-sm: 4px;
+  --cloze-transition-fast: all 0.1s ease;
+  --cloze-transition-normal: all 0.15s ease;
+
+  /* Light Theme Canvas Tokens */
+  --cloze-light-bg: #ffffff;
+  --cloze-light-border: #e3e6ea;
+  --cloze-light-text: #1e293b;
+  --cloze-light-tray-bg: #f0fdfa; /* Teal Tint */
+  --cloze-light-tray-border: #0d9488; /* Teal 600 */
+  --cloze-light-title: #475569;
+  --cloze-light-divider: #e2e8f0;
+
+  /* Dark Theme Canvas Tokens  */
+  --cloze-dark-bg: #d8f1ff;
+  --cloze-dark-border: #bae6fd;
+  --cloze-dark-text: #1e293b;
+  --cloze-dark-title: #475569;
+  --cloze-dark-divider: #334155;
+
+
+  /* Draggable Item Tokens (Teal Engine) */
+  --cloze-drag-bg: #ffffff;
+  --cloze-drag-border: #0f766e;
+  --cloze-drag-text: #111827;
+  --cloze-drag-hover-bg: #ccfbf1;
+
+  /* Drop Zone Interactive Tokens (Indigo Engine) */
+  --cloze-drop-text: #4f46e5;
+  --cloze-drop-bg: #eef2ff;
+  --cloze-drop-border: #818cf8;
+  --cloze-drop-hover-bg: #e0e7ff;
+  --cloze-drop-hover-text: #4338ca;
+  --cloze-drop-token-bg: #e0f2fe;
+  --cloze-drop-token-text: #0369a1;
+
+  /* Validation Feedback System Tokens */
+  --cloze-correct-bg: #f0fdf4;
+  --cloze-correct-border: #22c55e;
+  --cloze-correct-text: #16a34a;
+  --cloze-correct-token-bg: #cbd5e1;
+  --cloze-correct-token-text: #1e293b;
+
+  --cloze-incorrect-bg: #fef2f2;
+  --cloze-incorrect-border: #ef4444;
+  --cloze-incorrect-text: #dc2626;
+  --cloze-incorrect-token-bg: #fca5a5;
+  --cloze-incorrect-token-text: #7f1d1d;
+
+  /* Evaluation Score Performance Badges */
+  --cloze-tier-high-bg: #edfdf3;
+  --cloze-tier-high-border: #22c55e;
+  --cloze-tier-high-text: #166534;
+
+  --cloze-tier-mid-bg: #fff7ed;
+  --cloze-tier-mid-border: #f59e0b;
+  --cloze-tier-mid-text: #9a3412;
+
+  --cloze-tier-low-bg: #fff1f2;
+  --cloze-tier-low-border: #ef4444;
+  --cloze-tier-low-text: #9f1239;
+}
+
+/* ==========================================================================
+   2. Core Layout Container & Structure
+   ========================================================================== */
+.cloze-block {
+  background-color: var(--cloze-light-bg);
+  border: 1px solid var(--cloze-light-border);
+  border-radius: var(--cloze-radius-lg);
+  padding: 1.4em;
+  margin-bottom: 1.8em;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  transition: var(--cloze-transition-normal);
+}
+
+.cloze-divider {
+  border: 0;
+  border-top: 1px solid var(--cloze-light-divider);
+  margin: 1.4rem 0;
+}
+
+/* --- Theme Variants --- */
+.cloze-block.theme-light {
+  background-color: var(--cloze-light-bg);
+  border-color: var(--cloze-light-border);
+}
+
+.cloze-block.theme-dark {
+  background-color: var(--cloze-dark-bg);
+  border-color: var(--cloze-dark-border);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.15);
+}
+
+.cloze-block.theme-dark .cloze-divider {
+  border-top-color: var(--cloze-dark-divider);
+}
+
+/* ==========================================================================
+   3. Word Bank Tray & Draggable Items (Teal Theme)
+   ========================================================================== */
+.cloze-wordbank-title {
+  font-size: 0.85em;
+  font-weight: 700;
+  color: var(--cloze-light-title);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.6rem;
+  transition: var(--cloze-transition-normal);
+}
+
+.cloze-wordbank-tray {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  padding: 0.8rem;
+  background-color: var(--cloze-light-tray-bg);
+  border: 2px dashed var(--cloze-light-tray-border);
+  border-radius: var(--cloze-radius-lg);
+  min-height: 45px;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.03);
+  align-items: center;
+}
+
+.cloze-draggable {
+  padding: 0.3rem 0.7rem;
+  background-color: var(--cloze-drag-bg);
+  border: 1px solid var(--cloze-drag-border);
+  color: var(--cloze-drag-text);
+  border-radius: var(--cloze-radius-md);
+  cursor: grab;
+  font-weight: 600;
+  user-select: none;
+  box-shadow: 0 2px 4px rgba(13, 148, 136, 0.12);
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.1s ease;
+}
+
+.cloze-draggable:hover {
+  background-color: var(--cloze-drag-hover-bg);
+  transform: translateY(-1px);
+}
+
+.cloze-draggable:active {
+  cursor: grabbing;
+}
+
+.cloze-draggable.dragging {
+  opacity: 0.3;
+}
+
+/* --- Theme Variants --- */
+.cloze-block.theme-dark .cloze-wordbank-title {
+  color: var(--cloze-dark-title);
+}
+
+/* ==========================================================================
+   4. Main Content Passage & Preformatted Prose
+   ========================================================================== */
+.cloze-content {
+  font-size: 1.05em;
+  line-height: 2.6;
+  color: var(--cloze-light-text);
+  transition: var(--cloze-transition-normal);
+}
+
+pre.cloze-content {
+  font-family: "Consolas", "Courier New", Courier, monospace;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0.5rem;
+  background: transparent;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-x: hidden;
+}
+
+/* --- Theme Variants --- */
+.cloze-block.theme-dark .cloze-content {
+  color: var(--cloze-dark-text);
+}
+
+/* ==========================================================================
+   5. Sentence Drop Zones (Indigo Theme)
+   ========================================================================== */
+.cloze-wrapper {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+}
+
+.cloze-dropzone {
+  display: inline-block;
+  min-width: 100px;
+  text-align: center;
+  padding: 0 0.6rem;
+  margin: 0 0.3rem;
+  font-size: 0.9em;
+  font-weight: 600;
+  color: var(--cloze-drop-text);
+  background-color: var(--cloze-drop-bg);
+  border: 2px dashed var(--cloze-drop-border);
+  border-radius: var(--cloze-radius-md);
+  line-height: 2.0;
+  transition: var(--cloze-transition-normal);
+  box-shadow: inset 0 1px 2px rgba(79, 70, 229, 0.05);
+}
+
+.cloze-dropzone.hovered {
+  border-color: var(--cloze-drop-hover-text);
+  background-color: var(--cloze-drop-hover-bg);
+  color: var(--cloze-drop-hover-text);
+  transform: scale(1.03);
+}
+
+.cloze-dropzone.occupied {
+  background-color: var(--cloze-light-bg);
+  border: 2px solid var(--cloze-drop-text);
+  padding: 0;
+}
+
+.cloze-dropped-token {
+  display: block;
+  padding: 0 0.6rem;
+  background-color: var(--cloze-drop-token-bg);
+  color: var(--cloze-drop-token-text);
+  font-weight: 700;
+  border-radius: var(--cloze-radius-sm);
+}
+
+/* --- Ultra-Compact Preformatted Layout Overrides --- */
+.cloze-content .cloze-wrapper {
+  display: inline-flex;
+  align-items: center;
+  vertical-align: middle;
+  margin: 0 0.15rem;
+  padding: 0;
+}
+
+.cloze-content .cloze-dropzone {
+  display: inline-block;
+  padding: 0.1rem 0.4rem;
+  font-size: 0.95rem;
+  font-family: inherit;
+  font-weight: 500;
+  border-radius: var(--cloze-radius-sm);
+  min-width: 65px;
+  text-align: center;
+  line-height: 1.2;
+}
+
+/* ==========================================================================
+   6. Validation Feedback States
+   ========================================================================== */
+.cloze-dropzone.correct {
+  border-color: var(--cloze-correct-border) !important;
+  background-color: var(--cloze-correct-bg) !important;
+}
+
+.cloze-dropzone.correct .cloze-dropped-token {
+  background-color: var(--cloze-correct-token-bg);
+  color: var(--cloze-correct-token-text);
+  opacity: 0.85;
+}
+
+.cloze-dropzone.incorrect {
+  border-color: var(--cloze-incorrect-border) !important;
+  background-color: var(--cloze-incorrect-bg) !important;
+}
+
+.cloze-dropzone.incorrect .cloze-dropped-token {
+  background-color: var(--cloze-incorrect-token-bg);
+  color: var(--cloze-incorrect-token-text);
+  text-decoration: line-through;
+}
+
+.cloze-inline-feedback {
+  font-weight: bold;
+  font-size: 1em;
+  margin-left: 8px;
+  white-space: nowrap;
+  display: inline-block !important;
+  visibility: visible !important;
+  vertical-align: middle;
+}
+
+.cloze-inline-feedback.text-correct {
+  color: var(--cloze-correct-text) !important;
+}
+
+.cloze-inline-feedback.text-incorrect {
+  color: var(--cloze-incorrect-text) !important;
+}
+
+/* --- Ultra-Compact Preformatted Layout Overrides --- */
+.cloze-content .cloze-inline-feedback {
+  font-size: 1rem;
+  margin-left: 0.2rem;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+/* ==========================================================================
+   7. Global Control Panel & Evaluation Output
+   ========================================================================== */
+.cloze-global-panel {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-top: 1.5rem;
+  padding: 1rem 0;
+  border-top: 1px solid var(--cloze-light-divider);
+  border-bottom: 1px solid var(--cloze-light-divider);
+}
+
+.cloze-global-panel button {
+  font-size: 0.95em;
+  padding: 0.55em 1.1em;
+  border-radius: var(--cloze-radius-md);
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background-color 0.1s ease, transform 0.05s ease;
+}
+
+.cloze-global-panel button:hover {
+  filter: brightness(0.93);
+}
+
+.cloze-global-panel button:active {
+  transform: scale(0.97);
+}
+
+.cloze-btn-score {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.cloze-btn-reset {
+  background-color: #f3f4f6;
+  color: #4b5563;
+  border: 1px solid #e5e7eb !important;
+}
+
+.cloze-output {
+  margin-left: auto;
+  font-weight: 700;
+  padding: 0.4em 0.9em;
+  border-radius: var(--cloze-radius-md);
+  display: none;
+  border: 1px solid transparent;
+}
+
+.cloze-output.high {
+  background-color: var(--cloze-tier-high-bg) !important;
+  border-color: var(--cloze-tier-high-border) !important;
+  color: var(--cloze-tier-high-text) !important;
+}
+
+.cloze-output.medium {
+  background-color: var(--cloze-tier-mid-bg) !important;
+  border-color: var(--cloze-tier-mid-border) !important;
+  color: var(--cloze-tier-mid-text) !important;
+}
+
+.cloze-output.low {
+  background-color: var(--cloze-tier-low-bg) !important;
+  border-color: var(--cloze-tier-low-border) !important;
+  color: var(--cloze-tier-low-text) !important;
+}

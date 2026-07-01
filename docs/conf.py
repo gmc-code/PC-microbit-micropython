@@ -20,6 +20,11 @@ extensions = [
     'sphinx_togglebutton',
     'sphinx_design',
     "sphinx_new_tab_link",
+    "classifying.classifying",  # custom directive
+    "ordering.ordering",  # custom directive
+    "gapfill.gapfill",  # custom directive
+    "cloze.cloze",  # custom directive
+    "multichoice.multichoice",  # custom directive
 ]
 
 
@@ -67,15 +72,52 @@ html_theme = 'sphinx_rtd_theme'
 #html_title = None
 html_title = "PC-Microbit-Micropython"
 
-# Use custom css
-html_css_files = ["css/custom.css"]
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ['_static']
+html_static_path = ["_static",
+                    "_ext/multichoice/_static",
+                    "_ext/gapfill/_static",
+                    "_ext/cloze/_static",
+                    "_ext/ordering/_static",
+                    "_ext/classifying/_static"]
 
 # html_static_path = ['../_static/'] # for jupyter
+
+# Use custom css  html_css_files = ["custom.css"]
+html_css_files = [
+    "css/custom.css",
+]
+
+# Custom JS
+html_js_files = []
+
+# for rtd
+
+def setup(app):
+    for css in ["css/custom.css"]:
+        app.add_css_file(css)
+
+    # for js in ["parsons/parsons.js","parsons/Sortable.min.js",]:
+    #     app.add_js_file(js)
+
+    app.add_js_file("multichoice.js")
+    app.add_css_file("multichoice.css")
+
+    app.add_js_file("gapfill.js")
+    app.add_css_file("gapfill.css")
+
+    app.add_js_file("cloze.js")
+    app.add_css_file("cloze.css")
+
+    app.add_js_file("ordering.js")
+    app.add_css_file("ordering.css")
+
+    app.add_js_file("classifying.js")
+    app.add_css_file("classifying.css")
+
+
 
 # -- sphinx-rtd-theme Theme Options ------
 # See: https://sphinx-rtd-theme.readthedocs.io/en/latest/configuring.html
