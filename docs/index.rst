@@ -51,6 +51,14 @@ Index:
 
 .. toctree::
     :maxdepth: 2
+    :caption: Lessons_Quizzes
+    :numbered:
+
+    quizzes/library_sleep_while_mc_quiz.rst
+
+
+.. toctree::
+    :maxdepth: 2
     :caption: Lessons_Practice
     :numbered:
 
