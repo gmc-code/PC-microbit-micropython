@@ -1,6 +1,15 @@
 # Configuration file for the Sphinx documentation builder.
 # see https://www.sphinx-doc.org/en/master/usage/configuration.html
 
+import os
+import sys
+import sphinx_rtd_theme
+
+# Ensure custom extension path is available
+sys.path.append(os.path.abspath("./_ext"))
+
+
+
 # -- Project information -----------------------------------------------------
 
 project = 'PC-Microbit'
