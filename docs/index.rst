@@ -60,7 +60,7 @@ Index:
     quizzes/images_quiz.rst
     quizzes/buttons_and_selection_quiz.rst
     quizzes/for_loops_quiz.rst
-    quizzes/for_loops_with_range_quiz.rst
+    quizzes/for_loops_with_range_quiz1.rst
 
 
 
