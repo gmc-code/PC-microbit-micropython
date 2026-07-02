@@ -7,6 +7,15 @@ ustruct
 | The `ustruct` module in MicroPython is used to pack and unpack primitive data types.
 | This module is particularly useful for handling binary data and interfacing with hardware that expects data in specific formats.
 | see: `<https://docs.micropython.org/en/latest/library/struct.html>`_
+| See: `<https://www.educative.io/answers/what-is-the-python-struct-module>`_
+
+| The struct module in Python is used to convert native Python data types such as strings and numbers into a string of bytes and vice versa.
+
+| Supported size/byte order prefixes: @, <, >, !.
+
+| Supported format codes: b, B, h, H, i, I, l, L, q, Q, s, P, f, d (the latter 2 depending on the floating-point support).
+
+----
 
 .. function:: calcsize(fmt)
 
@@ -34,7 +43,9 @@ ustruct
    *fmt*. *offset* may be negative to count from the end of *data*. The return
    value is a tuple of the unpacked values.
 
- Pack and unpack
+----
+
+Pack and unpack
 -------------------
 
 .. code-block:: python

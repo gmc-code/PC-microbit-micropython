@@ -268,7 +268,7 @@ Index:
     extra/usys_module.rst
     extra/gc_module.rst
     extra/uerrno_module.rst
-    .. extra/ustruct_module.rs
+    extra/ustruct_module.rst
 
     extra/antigravity_love_this.rst
 
@@ -277,6 +277,8 @@ Index:
     extra/uarray_module.rst
     extra/ucollections_module.rst
     extra/math_module.rst
+
+    extra/micropython_module.rst
 
 
 

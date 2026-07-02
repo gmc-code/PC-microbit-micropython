@@ -5,11 +5,10 @@ os module
 .. py:module:: log
 
 | This module lets you log data to a ``MY_DATA`` file saved on a microbit.
-| The data is structured in a table format and it can be viewed and plotted with
-a browser.
+| The data is structured in a table format and it can be viewed and plotted with a browser.
 
-See: data logging page of the microbit.org website
-`<https://microbit.org/get-started/user-guide/data-logging/>`_.
+| See: data logging page of the microbit.org website
+| `<https://microbit.org/get-started/user-guide/data-logging/>`_.
 
 ----
 

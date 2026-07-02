@@ -6,28 +6,27 @@ usys module
 | See: `<https://docs.micropython.org/en/latest/library/sys.html>`_
 | Some functions are listed below. Use ``print(help(usys))`` to get the full list.
 
-.. py:function::  usys.version_info
+.. py:function::  usys.version_info()
+    :no-index:
 
     | Returns the Python language version, as a tuple of ints.
     | e.g. (3, 4, 0)
 
-.. py:function::  usys.version
-
-    | Returns the Python language version, as a string.
-    | e.g. 3.4.0
-
-.. py:function::  usys.platform
+.. py:function::  usys.version()
+    :no-index:
 
     | Returns the platform that MicroPython is running on.
     | e.g. microbit
 
-.. py:function::  usys.implementation
+.. py:function::  usys.implementation()
+    :no-index:
 
     | Returns a tuple, (name='micropython', version=(1, 18, 0)), with information about the current MicroPython implementation with following attributes:
     | name - string e.g. micropython. Also returned directly by: usys.implementation.name
     | version - tuple (major, minor, micro), e.g. (1, 18, 0) Also returned by: usys.implementation.version
 
-.. py:function::  usys.maxsize
+.. py:function::  usys.maxsize()
+    :no-index:
 
     | Returns the maximum integer value that can be represented on the platform, which is 2,147,483,647 for a 32-bit system.
 

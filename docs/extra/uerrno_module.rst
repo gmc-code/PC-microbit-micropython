@@ -6,6 +6,7 @@ errno
 
 | The `errno` module in MicroPython provides access to symbolic error codes for `OSError` exceptions.
 | These error codes are useful for handling specific error conditions in your code.
+| See: `<https://mpython.readthedocs.io/en/master/library/pythonStd/uerrno.html>`_
 
 Error codes
 ---------------------
@@ -17,8 +18,11 @@ Error codes
     from microbit import *
     import errno
 
-    # print(help(errno))
-    print(errno.errorcode)
+    print(help(uerrno))
+    error_codes = uerrno.errorcode
+    print(error_codes)
+    print(uerrno.errorcode[uerrno.EINVAL])
+    print(uerrno.errorcode[22])
 
 ::
 
@@ -59,7 +63,7 @@ File open error
 Error code meanings
 ------------------------
 
-| See: `<https://docs.python.org/3/library/errno.html>`_#module-errno
+| See: `<https://docs.python.org/3/library/errno.html>`_
 | Here are the meanings of each error code in the provided list:
 
 1. **EPERM (1)**: Operation not permitted.

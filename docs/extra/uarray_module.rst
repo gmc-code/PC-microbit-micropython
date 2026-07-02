@@ -4,8 +4,7 @@ uarray
 
 .. py:module:: uarray
 
-| MicroPython contains an ``uarray`` module based upon the ``array`` module in the
-Python standard library.
+| MicroPython contains an ``uarray`` module based upon the ``array`` module in the Python standard library.
 | See: `<https://docs.python.org/3/library/array.html>`_
 | See: `<https://www.dummies.com/article/technology/programming-web-design/c/determining-types-of-numbers-in-c-199399/>`_
 

@@ -906,17 +906,17 @@ Used to return an object property value.
 
 ::
 
-class A(object):
-...     bar = 1
-...
-a = A()
-getattr(a, 'bar')        # Get property bar value
-1
-getattr(a, 'bar2')       # Property bar2 does not exist, triggering exception
-Traceback (most recent call last):
-File "<stdin>", line 1, in <module>
-AttributeError: 'A' object has no attribute 'bar2'
-getattr(a, 'bar2', 3)    # Property bar2 does not exist, but the default value is set
+    class A(object):
+    ...     bar = 1
+    ...
+    a = A()
+    getattr(a, 'bar')        # Get property bar value
+    1
+    getattr(a, 'bar2')       # Property bar2 does not exist, triggering exception
+    Traceback (most recent call last):
+    File "<stdin>", line 1, in <module>
+    AttributeError: 'A' object has no attribute 'bar2'
+    getattr(a, 'bar2', 3)    # Property bar2 does not exist, but the default value is set
 
 
 ----
@@ -1227,6 +1227,7 @@ min
 -------------------
 
 .. function:: min()
+    :no-index:
 
 Returns the minimum value of a given parameter, which can be a sequence.
 ::
@@ -1558,17 +1559,19 @@ set
 
 set() Function to create an unordered and unrepeatable element set, which can be used for relationship testing, deletion of duplicate data, and calculation of intersection, subtraction, union, etc
 
-x = set('runoob')
-y = set('google')
-x, y
-({'b', 'u', 'n', 'o', 'r'}, {'e', 'l', 'g', 'o'})     # Deleted duplicate
-x & y         # intersection
-{'o'}
-x | y         # union
-{'e', 'u', 'o', 'n', 'r', 'l', 'g', 'b'}
-x - y         # subtraction
-{'b', 'u', 'n', 'r'}
->
+::
+
+    x = set('runoob')
+    y = set('google')
+    x, y
+    ({'b', 'u', 'n', 'o', 'r'}, {'e', 'l', 'g', 'o'})     # Deleted duplicate
+    x & y         # intersection
+    {'o'}
+    x | y         # union
+    {'e', 'u', 'o', 'n', 'r', 'l', 'g', 'b'}
+    x - y         # subtraction
+    {'b', 'u', 'n', 'r'}
+    >
 
 ----
 
@@ -1579,27 +1582,31 @@ setattr
 
 setattr() Function corresponding Function getattr(), Used to set the value of a property that does not necessarily exist.
 
-Assign values to existing properties::
+Assign values to existing properties
 
-class A(object):
-...     bar = 1
-...
-a = A()
-getattr(a, 'bar')          # get attribute bar value
-1
-setattr(a, 'bar', 5)       # set attribute bar value
-a.bar
-5
+::
 
-If the property does not exist, a new object property will be created and assigned::
+    class A(object):
+    ...     bar = 1
+    ...
+    a = A()
+    getattr(a, 'bar')          # get attribute bar value
+    1
+    setattr(a, 'bar', 5)       # set attribute bar value
+    a.bar
+    5
 
-class A():
-...     name = "runoob"
-...
-a = A()
-setattr(a, "age", 28)
-print(a.age)
-28
+If the property does not exist, a new object property will be created and assigned
+
+::
+
+    class A():
+    ...     name = "runoob"
+    ...
+    a = A()
+    setattr(a, "age", 28)
+    print(a.age)
+    28
 
 
 ----
@@ -1624,22 +1631,22 @@ Sort all objects that can be iterated
 
 sorted the easiest way to use::
 
-sorted([5, 2, 3, 1, 4])
-[1, 2, 3, 4, 5]                      # ascending order as default
+    sorted([5, 2, 3, 1, 4])
+    [1, 2, 3, 4, 5]                      # ascending order as default
 
 Using key to sort in reverse order::
 
-example_list = [5, 0, 6, 1, 2, 7, 3, 4]
-result_list = sorted(example_list, key=lambda x: x*-1)
-print(result_list)
-[7, 6, 5, 4, 3, 2, 1, 0]
+    example_list = [5, 0, 6, 1, 2, 7, 3, 4]
+    result_list = sorted(example_list, key=lambda x: x*-1)
+    print(result_list)
+    [7, 6, 5, 4, 3, 2, 1, 0]
 
 
 To reverse sorting, also by passing into the third parameter::
 
-example_list = [5, 0, 6, 1, 2, 7, 3, 4]
-sorted(example_list, reverse=True)
-[7, 6, 5, 4, 3, 2, 1, 0]
+    example_list = [5, 0, 6, 1, 2, 7, 3, 4]
+    sorted(example_list, reverse=True)
+    [7, 6, 5, 4, 3, 2, 1, 0]
 
 ----
 
