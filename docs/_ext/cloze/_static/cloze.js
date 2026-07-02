@@ -7,7 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
   blocks.forEach(block => {
     const draggables = block.querySelectorAll(".cloze-draggable")
     const dropzones = block.querySelectorAll(".cloze-dropzone")
+    const btnScore = block.querySelector(".cloze-btn-score")
+    const btnReset = block.querySelector(".cloze-btn-reset")
+    const scoreBadge = block.querySelector(".cloze-output")
 
+    // Drag and Drop Handling bounded inside block instances
     draggables.forEach(draggable => {
       draggable.addEventListener("dragstart", (e) => {
         draggedElement = draggable
@@ -39,102 +43,106 @@ document.addEventListener("DOMContentLoaded", () => {
 
         const existingToken = zone.querySelector(".cloze-dropped-token")
         if (existingToken) {
-          const originalValue = existingToken.dataset.word
-          const hiddenTrayItem = block.querySelector(`.cloze-draggable[data-word="${originalValue}"]`)
-          if (hiddenTrayItem) hiddenTrayItem.style.display = "inline-block"
+          const originalWord = existingToken.textContent
+          const putBackItem = Array.from(block.querySelectorAll(".cloze-draggable")).find(
+            d => d.dataset.word === existingToken.dataset.word && d.style.display === "none"
+          )
+          if (putBackItem) putBackItem.style.display = "inline-block"
         }
 
-        const wordValue = draggedElement.dataset.word
-        const wordText = draggedElement.textContent
-
-        zone.innerHTML = `<span class="cloze-dropped-token" data-word="${wordValue}">${wordText}</span>`
+        zone.innerHTML = `<span class="cloze-dropped-token" data-word="${draggedElement.dataset.word}">${draggedElement.textContent}</span>`
         zone.classList.add("occupied")
         draggedElement.style.display = "none"
       })
-    })
-  })
 
-  const panel = document.createElement("div")
-  panel.className = "cloze-global-panel"
-
-  const btnScore = document.createElement("button")
-  btnScore.type = "button"
-  btnScore.className = "cloze-btn-score"
-  btnScore.textContent = "Score Page"
-
-  const btnReset = document.createElement("button")
-  btnReset.type = "button"
-  btnReset.className = "cloze-btn-reset"
-  btnReset.textContent = "Reset Page"
-
-  const scoreBadge = document.createElement("span")
-  scoreBadge.className = "cloze-output"
-
-  panel.append(btnScore, btnReset, scoreBadge)
-  const lastBlock = blocks[blocks.length - 1]
-  lastBlock.parentNode.insertBefore(panel, lastBlock.nextSibling)
-
-  btnScore.addEventListener("click", () => {
-    let totalGaps = 0
-    let correctGaps = 0
-
-    blocks.forEach(block => {
-      block.querySelectorAll(".cloze-dropzone").forEach(zone => {
-        totalGaps++
-        zone.classList.add("disabled")
-
+      // Double click removal
+      zone.addEventListener("dblclick", () => {
+        if (zone.classList.contains("disabled")) return
         const token = zone.querySelector(".cloze-dropped-token")
-        const val = token ? token.dataset.word : ""
-        const expected = zone.dataset.correct
+        if (!token) return
 
-        const wrapper = zone.closest(".cloze-wrapper")
-        const feedback = wrapper ? wrapper.querySelector(".cloze-inline-feedback") : null
+        const putBackItem = Array.from(block.querySelectorAll(".cloze-draggable")).find(
+          d => d.dataset.word === token.dataset.word && d.style.display === "none"
+        )
+        if (putBackItem) putBackItem.style.display = "inline-block"
 
-        zone.classList.remove("correct", "incorrect")
+        zone.innerHTML = "Drop here"
+        zone.classList.remove("occupied", "correct", "incorrect")
+      })
+    })
 
-        if (feedback) {
-          if (val && val.trim() === expected.trim()) {
+    // Localized Scoped Section Evaluation Logic
+    if (btnScore) {
+      btnScore.addEventListener("click", () => {
+        let correctGaps = 0
+        const totalGaps = dropzones.length
+
+        dropzones.forEach(zone => {
+          zone.classList.add("disabled")
+          const token = zone.querySelector(".cloze-dropped-token")
+          const expected = zone.dataset.correct ? zone.dataset.correct.trim().toLowerCase() : ""
+          const actual = token ? token.dataset.word.trim().toLowerCase() : ""
+
+          const wrapper = zone.closest(".cloze-wrapper")
+          const feedback = wrapper ? wrapper.querySelector(".cloze-inline-feedback") : null
+
+          zone.classList.remove("correct", "incorrect")
+
+          if (actual === expected) {
             zone.classList.add("correct")
-            feedback.textContent = " ✓ Correct!"
-            feedback.className = "cloze-inline-feedback text-correct"
+            if (feedback) {
+              feedback.textContent = " ✓ Correct!"
+              feedback.className = "cloze-inline-feedback text-correct"
+            }
             correctGaps++
           } else {
             zone.classList.add("incorrect")
-            feedback.textContent = ` ✕ (Ans: ${expected})`
-            feedback.className = "cloze-inline-feedback text-incorrect"
+            if (feedback) {
+              feedback.textContent = ` ✕ (Ans: ${zone.dataset.correct})`
+              feedback.className = "cloze-inline-feedback text-incorrect"
+            }
           }
+        })
+
+        // Display Score output locally on *this* panel
+        if (scoreBadge) {
+          scoreBadge.textContent = `Score: ${correctGaps} / ${totalGaps}`
+          scoreBadge.style.display = "inline-block"
+          scoreBadge.classList.remove("high", "medium", "low")
+
+          const percent = totalGaps === 0 ? 0 : correctGaps / totalGaps
+          if (percent >= 0.8) scoreBadge.classList.add("high")
+          else if (percent >= 0.5) scoreBadge.classList.add("medium")
+          else scoreBadge.classList.add("low")
         }
+
+        btnScore.disabled = true
       })
-    })
+    }
 
-    scoreBadge.textContent = `Score: ${correctGaps} / ${totalGaps}`
-    scoreBadge.style.display = "inline-block"
-    scoreBadge.classList.remove("high", "medium", "low")
+    // Localized Scoped Section Reset Logic
+    if (btnReset) {
+      btnReset.addEventListener("click", () => {
+        if (scoreBadge) scoreBadge.style.display = "none"
 
-    const percent = totalGaps === 0 ? 0 : correctGaps / totalGaps
-    if (percent >= 0.8) scoreBadge.classList.add("high")
-    else if (percent >= 0.5) scoreBadge.classList.add("medium")
-    else scoreBadge.classList.add("low")
-  })
+        dropzones.forEach(zone => {
+          zone.innerHTML = "Drop here"
+          zone.className = "cloze-dropzone"
 
-  btnReset.addEventListener("click", () => {
-    scoreBadge.style.display = "none"
-    blocks.forEach(block => {
-      block.querySelectorAll(".cloze-dropzone").forEach(zone => {
-        zone.innerHTML = "Drop here"
-        zone.className = "cloze-dropzone"
+          const wrapper = zone.closest(".cloze-wrapper")
+          const feedback = wrapper ? wrapper.querySelector(".cloze-inline-feedback") : null
+          if (feedback) {
+            feedback.textContent = ""
+            feedback.className = "cloze-inline-feedback"
+          }
+        })
 
-        const wrapper = zone.closest(".cloze-wrapper")
-        const feedback = wrapper ? wrapper.querySelector(".cloze-inline-feedback") : null
-        if (feedback) {
-          feedback.textContent = ""
-          feedback.className = "cloze-inline-feedback"
-        }
+        draggables.forEach(d => {
+          d.style.display = "inline-block"
+        })
+
+        if (btnScore) btnScore.disabled = false
       })
-      block.querySelectorAll(".cloze-draggable").forEach(item => {
-        item.style.display = "inline-block"
-        item.classList.remove("dragging")
-      })
-    })
+    }
   })
 })

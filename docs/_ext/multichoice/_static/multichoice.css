@@ -379,3 +379,27 @@
   border-top-color: var(--mcq-dark-divider);
   border-bottom-color: var(--mcq-dark-divider);
 }
+
+/* ==========================================================================
+   9.
+   ========================================================================== */
+/* Ensure explanation cards display text visibility properly during evaluation checks */
+.multichoice-choice.multichoice-answer:not(.selected) .multichoice-explanation {
+  display: block;
+  color: var(--mcq-missed-text) !important;
+}
+
+/* Ensure global reset parameters override display constraints cleanly */
+.multichoice-toggle-wrapper input[type="checkbox"] {
+  margin: 0 !important;
+  cursor: pointer;
+}
+
+.multichoice-toggle-wrapper input[type="checkbox"]:disabled {
+  cursor: not-allowed;
+}
+
+/* Strip hardcoded layout force displays to allow JS toggling to govern visibility */
+.multichoice-choice.multichoice-answer:not(.selected) .multichoice-explanation {
+  color: var(--mcq-missed-text) !important;
+}

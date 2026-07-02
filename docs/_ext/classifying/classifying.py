@@ -1,5 +1,7 @@
 import html
 import random
+from pathlib import Path
+
 from docutils import nodes
 from docutils.parsers.rst import directives
 from sphinx.util.docutils import SphinxDirective
@@ -91,7 +93,12 @@ def setup(app):
     app.add_node(sorting_node, html=(visit_sorting_html, depart_sorting_html))
     app.add_directive("classifying", classifyingDirective)
 
-    # Make sure these match your newly renamed files!
+    # 1. Dynamically locate this extension's local static directory
+    static_path = Path(__file__).parent / "_static"
+    if str(static_path) not in app.config.html_static_path:
+        app.config.html_static_path.append(str(static_path))
+
+    # 2. Tell Sphinx to load the file from the flat output root directory
     app.add_js_file("classifying.js")
     app.add_css_file("classifying.css")
 

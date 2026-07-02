@@ -85,12 +85,7 @@ html_title = "PC-Microbit-Micropython"
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
-html_static_path = ["_static",
-                    "_ext/multichoice/_static",
-                    "_ext/gapfill/_static",
-                    "_ext/cloze/_static",
-                    "_ext/ordering/_static",
-                    "_ext/classifying/_static"]
+html_static_path = ["_static"]
 
 # html_static_path = ['../_static/'] # for jupyter
 
@@ -103,28 +98,6 @@ html_css_files = [
 html_js_files = []
 
 # for rtd
-
-def setup(app):
-    for css in ["css/custom.css"]:
-        app.add_css_file(css)
-
-    # for js in ["parsons/parsons.js","parsons/Sortable.min.js",]:
-    #     app.add_js_file(js)
-
-    app.add_js_file("multichoice.js")
-    app.add_css_file("multichoice.css")
-
-    app.add_js_file("gapfill.js")
-    app.add_css_file("gapfill.css")
-
-    app.add_js_file("cloze.js")
-    app.add_css_file("cloze.css")
-
-    app.add_js_file("ordering.js")
-    app.add_css_file("ordering.css")
-
-    app.add_js_file("classifying.js")
-    app.add_css_file("classifying.css")
 
 
 

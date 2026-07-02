@@ -1,6 +1,8 @@
 import html
 import random
 import re
+from pathlib import Path
+
 from docutils import nodes
 from docutils.parsers.rst import directives
 from sphinx.util.docutils import SphinxDirective
@@ -103,8 +105,19 @@ class OrderingDirective(SphinxDirective):
 
 
 def setup(app):
-    app.add_node(ordering_node, html=(visit_ordering_html, depart_ordering_html))
+    app.add_node(ordering_node,
+                 html=(visit_ordering_html, depart_ordering_html))
     app.add_directive("ordering", OrderingDirective)
+
+    # 1. Dynamically locate this extension's local static directory
+    static_path = Path(__file__).parent / "_static"
+    if str(static_path) not in app.config.html_static_path:
+        app.config.html_static_path.append(str(static_path))
+
     app.add_js_file("ordering.js")
     app.add_css_file("ordering.css")
-    return {"version": "1.4", "parallel_read_safe": True, "parallel_write_safe": True}
+    return {
+        "version": "1.4",
+        "parallel_read_safe": True,
+        "parallel_write_safe": True
+    }

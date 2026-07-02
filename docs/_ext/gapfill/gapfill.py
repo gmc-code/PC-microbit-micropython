@@ -1,6 +1,7 @@
 import html
 import random
 import re
+from pathlib import Path
 from docutils import nodes
 from docutils.parsers.rst import directives
 from sphinx.util.docutils import SphinxDirective
@@ -123,10 +124,23 @@ class GapFillDirective(SphinxDirective):
 
         return [node]
 
+
 def setup(app):
     app.add_node(gapfill_node, html=(visit_gapfill_html, depart_gapfill_html))
     app.add_directive("gapfill", GapFillDirective)
+
+    # 1. Dynamically locate this extension's local static directory
+    static_path = Path(__file__).parent / "_static"
+    if str(static_path) not in app.config.html_static_path:
+        app.config.html_static_path.append(str(static_path))
+
+    # 2. Tell Sphinx to load the file from the flat output root directory
     app.add_js_file("gapfill.js")
     app.add_css_file("gapfill.css")
 
-    return {"version": "2.1", "parallel_read_safe": True, "parallel_write_safe": True}
+
+    return {
+        "version": "2.1",
+        "parallel_read_safe": True,
+        "parallel_write_safe": True
+    }
