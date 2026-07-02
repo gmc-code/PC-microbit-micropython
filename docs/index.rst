@@ -54,7 +54,12 @@ Index:
     :caption: Lessons_Quizzes
     :numbered:
 
-    quizzes/library_sleep_while_mc_quiz.rst
+    quizzes/basics_quiz.rst
+    quizzes/scroll_text_quiz.rst
+    quizzes/show_text_quiz.rst
+
+
+
 
 
 .. toctree::

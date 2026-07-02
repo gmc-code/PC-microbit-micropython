@@ -13,6 +13,7 @@
   --mcq-light-border: #e3e6ea;
   --mcq-light-text: #1e293b;
   --mcq-light-letter: #333333;
+  --mcq-light-explanation: #555555;
   --mcq-light-hover-bg: #f6f9ff;
   --mcq-light-selected-bg: #eaf2ff;
   --mcq-light-selected-border: #3a8bfd;
@@ -23,28 +24,20 @@
   --mcq-dark-border: #334155;
   --mcq-dark-divider: #334155;
 
-  /* Base Explanation Styling */
-  --mcq-base-explanation-color: #ff0000; /* Red Default Feedback State */
-
   /* Validation Feedback States */
   --mcq-answer-bg: #f6fff8;
   --mcq-answer-border: #bbf7d0;
   --mcq-answer-marker: #22c55e;
 
-  /* Evaluation Variant States */
   --mcq-correct-bg: #edfdf3;
   --mcq-correct-border: #bbf7d0;
   --mcq-correct-accent: #22c55e;
-  --mcq-correct-text: #16a34a; /* Forest Green */
+  --mcq-correct-text: #16a34a;
 
   --mcq-incorrect-bg: #fff1f1;
   --mcq-incorrect-border: #fecdd3;
   --mcq-incorrect-accent: #ef4444;
-  --mcq-incorrect-text: #dc2626; /* Crimson Red */
-
-  --mcq-missed-bg: #f5f3ff;
-  --mcq-missed-border: #ddd6fe;
-  --mcq-missed-text: #7c3aed; /* Vivid Purple */
+  --mcq-incorrect-text: #dc2626;
 
   /* Global Score Performance Badges */
   --mcq-tier-high-bg: #edfdf3;
@@ -92,14 +85,14 @@
   transition: var(--mcq-transition);
   border: 1px solid transparent;
   border-left: 4px solid transparent;
-  padding: 0.3em 0.5em;
+  padding: 0.3em 0.5em; /* Cleaner breathing room inside choice row */
 }
 
-/* Flexbox Layout Alignment Mapping */
+/* Perfect Top Alignment Layout System */
 .multichoice-choice label {
   display: flex;
-  align-items: flex-start;
-  gap: 0.5em;
+  align-items: flex-start; /* Perfectly aligns elements along their top boundaries */
+  gap: 0.5em;              /* Equalized clean spacing map */
   margin: 0;
   padding: 0;
   width: 100%;
@@ -107,22 +100,24 @@
   color: var(--mcq-light-text);
 }
 
-/* Form inputs & static alignment */
+/* Radio / Checkbox Input Alignment Tuning */
 .multichoice-choice input {
-  margin: 0 !important;
+  margin: 0 !important;      /* Clears stray side gaps */
   align-self: flex-start;
-  margin-top: 0.25em !important;
+  margin-top: 0.25em !important; /* Forces strict vertical alignment with uppercase letters */
   pointer-events: none;
 }
 
+/* Choice Option Letter Block (e.g., A, B, C) */
 .multichoice-letter {
   font-weight: 600;
   min-width: 1.2em;
   color: var(--mcq-light-letter);
   align-self: flex-start;
-  line-height: 1.4;
+  line-height: 1.4;           /* Coordinates layout height with the label context text */
 }
 
+/* Choice Label Layout Wrapper Box */
 .multichoice-choice-label {
   line-height: 1.4;
   flex: 1;
@@ -131,53 +126,66 @@
 }
 
 /* ==========================================================================
-   4. Explanation Card Layouts & Dynamic Color Mappings
+   4. Explanation Block Formatting & Spacing
    ========================================================================== */
 .multichoice-explanation {
   margin-top: 0.4em;
-  padding-bottom: 0.4em;
+  padding-bottom: 0.4em;     /* Added small padding beneath each explanation */
   font-size: 0.9em;
   line-height: 1.45;
   display: none;
 }
 
-/* Base State Color Fallbacks */
+/* ==========================================================================
+   Custom Evaluation State Colors for Explanations
+   ========================================================================== */
+
+   /* Explicit Custom red Color Overrides */
 .multichoice-explanation,
 .multichoice-explanation p,
 .multichoice-explanation blockquote,
 .multichoice-explanation div {
-  color: var(--mcq-base-explanation-color) !important;
+  color: #ff0080 !important; /* red */
 }
 
-/* --- State Variant Color Modifiers --- */
-
-/* 1. Correct Selected Option (Forest Green) */
+/* 1. When the choice is correct, make its explanation a distinct color (e.g., Forest Green) */
 .multichoice-choice.multichoice-correct .multichoice-explanation,
 .multichoice-choice.multichoice-correct .multichoice-explanation p,
 .multichoice-choice.multichoice-correct .multichoice-explanation blockquote,
 .multichoice-choice.multichoice-correct .multichoice-explanation div {
-  color: var(--mcq-correct-text) !important;
+  color: #16a34a !important; /* Forest Green */
 }
 
-/* 2. Incorrect Selected Option (Crimson Red) */
+/* 2. Optional: If you want to change the incorrect answer's explanation color explicitly */
 .multichoice-choice.multichoice-incorrect .multichoice-explanation,
 .multichoice-choice.multichoice-incorrect .multichoice-explanation p,
 .multichoice-choice.multichoice-incorrect .multichoice-explanation blockquote,
 .multichoice-choice.multichoice-incorrect .multichoice-explanation div {
-  color: var(--mcq-incorrect-text) !important;
+  color: #dc2626 !important; /* Crimson Red */
 }
 
-/* 3. Missed Correct Option (Vivid Purple) */
+/* ==========================================================================
+   Unanswered Correct Questions Distinct Color Style
+   ========================================================================== */
+
+/* Target a choice that IS the correct answer, but was NOT selected by the user */
 .multichoice-choice.multichoice-answer:not(.selected) .multichoice-explanation,
 .multichoice-choice.multichoice-answer:not(.selected) .multichoice-explanation p,
 .multichoice-choice.multichoice-answer:not(.selected) .multichoice-explanation blockquote,
 .multichoice-choice.multichoice-answer:not(.selected) .multichoice-explanation div {
-  color: var(--mcq-missed-text) !important;
+  color: #7c3aed !important; /* Distinct Vivid Purple for missed/unanswered correct options */
+}
+
+/* Optional: You can also style the background border of the missed option card to match */
+.multichoice-choice.multichoice-answer:not(.selected) {
+  border-color: #ddd6fe !important;      /* Soft purple border outline */
+  background-color: #f5f3ff !important;  /* Extremely soft purple background tint */
 }
 
 /* ==========================================================================
    5. Clean Global Structural Normalizations (Docutils / Browser Overrides)
    ========================================================================== */
+/* Strip heavy blockquote indentation rules injected from RST */
 .multichoice-choice blockquote,
 .multichoice-explanation blockquote,
 .multichoice-choice blockquote > div,
@@ -186,6 +194,7 @@
   padding: 0 !important;
 }
 
+/* Compact layout normalizations inside text paragraph layouts */
 .multichoice-choice-label p,
 .multichoice-explanation p {
   margin: 0 !important;
@@ -193,6 +202,7 @@
   line-height: 1.4;
 }
 
+/* Compact rules keeping Code block elements tight within items */
 .multichoice-choice-label pre,
 .multichoice-explanation pre {
   margin-top: 0.3em !important;
@@ -200,30 +210,15 @@
   padding: 0.3em !important;
 }
 
-/* Collapse Sphinx's default heavy code block container margins */
-.multichoice-choice-label div[class*="highlight"],
-.multichoice-choice-label .highlight,
-.multichoice-explanation div[class*="highlight"],
-.multichoice-explanation .highlight {
-  margin-bottom: 0 !important; /* Forces the default heavy bottom gap to disappear */
-}
-
-/* Also ensure the code pre block has matching compact boundaries */
-.multichoice-choice-label pre,
-.multichoice-explanation pre {
-  margin-top: 0.3em !important;
-  margin-bottom: 0 !important; /* Overriding previous margin-bottom placeholder */
-  padding: 0.3em !important;
-}
-
 /* ==========================================================================
    6. Interactive States & Evaluation Engine Layouts
    ========================================================================== */
+/* --- Choice Interactive Hover States --- */
 .multichoice-choice:not(.multichoice-disabled):hover {
   background-color: var(--mcq-light-hover-bg);
 }
 
-.multichoice-choice:active:not(.multichoice-disabled) {
+.multichoice-choice:active {
   transform: scale(0.995);
 }
 
@@ -243,7 +238,7 @@
   background: none;
 }
 
-/* --- Live Scoring Evaluation Container States --- */
+/* --- Live Scoring Evaluation Engine Card Classes --- */
 .multichoice-choice.multichoice-answer {
   border-color: var(--mcq-answer-border);
   background-color: var(--mcq-answer-bg);
@@ -261,13 +256,7 @@
   border-left: 6px solid var(--mcq-incorrect-accent) !important;
 }
 
-/* Missed / Unanswered Answer Card State Modification */
-.multichoice-choice.multichoice-answer:not(.selected) {
-  border-color: var(--mcq-missed-border) !important;
-  background-color: var(--mcq-missed-bg) !important;
-}
-
-/* --- Validation Element Feedback Indicators --- */
+/* --- Validation Icons --- */
 .multichoice-choice label::after {
   font-weight: 600;
   padding-left: 0.5em;

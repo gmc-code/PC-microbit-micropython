@@ -6,9 +6,15 @@ from docutils.parsers.rst import directives, DirectiveError
 from sphinx.util.docutils import SphinxDirective
 
 # ─────────────────────────────────────
-# Node
+# Nodes
 # ─────────────────────────────────────
 class multichoice_node(nodes.General, nodes.Element):
+    pass
+
+class choice_container_node(nodes.General, nodes.Element):
+    pass
+
+class choice_label_node(nodes.General, nodes.Element):
     pass
 
 # ─────────────────────────────────────
@@ -30,6 +36,26 @@ def visit_multichoice_html(self, node):
 def depart_multichoice_html(self, node):
     self.body.append("</div>")
 
+def visit_choice_container_html(self, node):
+    is_correct = str(node.get("correct", False)).lower()
+    self.body.append(f'<div class="multichoice-choice" data-correct="{is_correct}">')
+
+def depart_choice_container_html(self, node):
+    self.body.append("</div>")
+
+def visit_choice_label_html(self, node):
+    input_type = node.get("input_type", "radio")
+    group_name = node.get("group_name", "")
+
+    self.body.append('<label>')
+    self.body.append(f'<input type="{input_type}" name="multichoice-{group_name}">')
+    self.body.append('<span class="multichoice-letter"></span>')
+    self.body.append('<div class="multichoice-choice-label">')
+
+def depart_choice_label_html(self, node):
+    self.body.append('</div>')
+    self.body.append('</label>')
+
 # ─────────────────────────────────────
 # Directive
 # ─────────────────────────────────────
@@ -45,7 +71,7 @@ class multichoiceDirective(SphinxDirective):
     def run(self):
         node = multichoice_node()
 
-        # Core options
+        # Core configuration options
         node["shuffle"] = "no-shuffle" not in self.options
         node["letters"] = "no-letters" not in self.options
         node["theme"] = self.options.get("theme", "light")
@@ -75,114 +101,119 @@ class multichoiceDirective(SphinxDirective):
         node += question_container
 
         # ─────────────────────────────────────
-        # Robust Multi-line Choice Parser
+        # Multi-line Choice Parser
         # ─────────────────────────────────────
-        choices = []
+        raw_choices = []
         current_choice = None
-        in_explanation_mode = False
 
-        for line in choice_lines:
+        for line_idx, line in enumerate(choice_lines):
             stripped = line.strip()
 
-            # Case 1: Detect a brand new choice starting block
             if stripped.startswith("[") and "]" in stripped:
                 marker = stripped[1].lower()
                 is_correct = marker == "x"
 
-                raw_text = stripped[stripped.index("]") + 1:].strip()
-
-                # Check if an explanation starts on this very first line
-                if "|" in raw_text:
-                    text, explanation = raw_text.split("|", 1)
-                    text = text.strip()
-                    explanation = explanation.strip()
-                    in_explanation_mode = True
-                else:
-                    text = raw_text
-                    explanation = ""
-                    in_explanation_mode = False
+                right_bracket_idx = line.find("]")
+                content_start = line[right_bracket_idx + 1:]
 
                 current_choice = {
-                    "text": text,
                     "correct": is_correct,
-                    "explanation": explanation
+                    "text_lines": [],
+                    "explanation_lines": [],
+                    "in_explanation": False
                 }
-                choices.append(current_choice)
+                raw_choices.append(current_choice)
 
-            # Case 2: Continuation lines (Multi-line text or multi-line explanation)
-            elif current_choice is not None and stripped:
-                if "|" in stripped:
-                    text_part, exp_part = stripped.split("|", 1)
-
-                    if text_part.strip():
-                        current_choice["text"] += " " + text_part.strip()
-
-                    current_choice["explanation"] = exp_part.strip()
-                    in_explanation_mode = True
+                if "|" in content_start:
+                    txt, exp = content_start.split("|", 1)
+                    if txt.strip():
+                        current_choice["text_lines"].append(txt)
+                    if exp.strip():
+                        current_choice["explanation_lines"].append(exp)
+                    current_choice["in_explanation"] = True
                 else:
-                    if in_explanation_mode:
-                        if current_choice["explanation"]:
-                            current_choice["explanation"] += " " + stripped
-                        else:
-                            current_choice["explanation"] = stripped
+                    if content_start.strip():
+                        current_choice["text_lines"].append(content_start)
+
+            elif current_choice is not None:
+                if "|" in line:
+                    txt, exp = line.split("|", 1)
+                    if txt.strip():
+                        current_choice["text_lines"].append(txt)
+                    if exp.strip():
+                        current_choice["explanation_lines"].append(exp)
+                    current_choice["in_explanation"] = True
+                else:
+                    if current_choice["in_explanation"]:
+                        current_choice["explanation_lines"].append(line)
                     else:
-                        current_choice["text"] += " " + stripped
+                        current_choice["text_lines"].append(line)
 
-        # Clean up any trailing whitespace strings from empty explanation nodes
-        for ch in choices:
-            ch["explanation"] = ch["explanation"].strip() if ch["explanation"] else None
-
-        # ─────────────────────────────────────
-        # Validation & Auto-Mode Selection
-        # ─────────────────────────────────────
-        if not choices:
+        if not raw_choices:
             raise DirectiveError(3, "MCQ error: Missing answer choices block.")
 
-        correct_count = sum(c["correct"] for c in choices)
+        correct_count = sum(c["correct"] for c in raw_choices)
         if correct_count == 0:
             raise DirectiveError(3, "MCQ error: Must mark at least one option correct [x].")
 
         is_multi = correct_count > 1
         node["single_correct"] = not is_multi
+        input_type = "checkbox" if is_multi else "radio"
 
-        seed_string = "".join(c["text"] for c in choices)
+        # Create a stable unique name based on option texts
+        seed_string = "".join("".join(c["text_lines"]) for c in raw_choices)
         group_name = hashlib.md5(seed_string.encode("utf-8")).hexdigest()
 
         # ─────────────────────────────────────
-        # Generate Choice Elements HTML
+        # Convert Choices into Natively Parsed Structural Trees
         # ─────────────────────────────────────
-        input_type = "checkbox" if is_multi else "radio"
+        from docutils.statemachine import StringList
 
-        for ch in choices:
-            input_html = f'<input type="{input_type}" name="multichoice-{group_name}">'
+        for ch in raw_choices:
+            # 1. Main Outer Choice Wrap Element (div.multichoice-choice)
+            choice_wrap = choice_container_node(correct=ch["correct"])
 
-            html_str = f'''
-<div class="multichoice-choice" data-correct="{str(ch["correct"]).lower()}">
-  <label>
-    {input_html}
-    <span class="multichoice-letter"></span>
-    <span class="multichoice-choice-label">{html.escape(ch["text"])}</span>
-  </label>
-'''
-            if ch["explanation"]:
-                html_str += (
-                    f'<div class="multichoice-explanation">'
-                    f'{html.escape(ch["explanation"])}'
-                    f'</div>'
-                )
+            # 2. Inside label wrapper element (<label> + div.multichoice-choice-label)
+            label_element = choice_label_node(input_type=input_type, group_name=group_name)
 
-            html_str += "</div>"
-            node += nodes.raw("", html_str, format="html")
+            # Sub-parse option text natively into a proxy block container
+            text_proxy = nodes.container()
+            text_proxy.document = self.state.document
+            choice_text_list = StringList(ch["text_lines"], source=self.content.source(0))
+            self.state.nested_parse(choice_text_list, self.content_offset, text_proxy)
+
+            label_element.extend(text_proxy.children)
+            choice_wrap += label_element
+
+            # 3. Independent Explanation Element (Sits below label, within choice_wrap)
+            if ch["explanation_lines"]:
+                exp_container = nodes.container(classes=["multichoice-explanation"])
+                exp_container.document = self.state.document
+
+                explanation_text_list = StringList(ch["explanation_lines"], source=self.content.source(0))
+                self.state.nested_parse(explanation_text_list, self.content_offset, exp_container)
+
+                choice_wrap += exp_container
+
+            node += choice_wrap
 
         return [node]
 
 # ─────────────────────────────────────
-# Setup
+# Setup Configuration Hook
 # ─────────────────────────────────────
 def setup(app):
     app.add_node(
         multichoice_node,
         html=(visit_multichoice_html, depart_multichoice_html)
+    )
+    app.add_node(
+        choice_container_node,
+        html=(visit_choice_container_html, depart_choice_container_html)
+    )
+    app.add_node(
+        choice_label_node,
+        html=(visit_choice_label_html, depart_choice_label_html)
     )
 
     app.add_directive("multichoice", multichoiceDirective)
