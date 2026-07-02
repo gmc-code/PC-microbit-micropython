@@ -70,10 +70,10 @@ Question 5
 .. multichoice::
 
     A student wants to loop through code a specified number of times. According to the reference guide, which Python function is designed for this task?
-    [ ] ``display.scroll()`` | Incorrect. This function animates data values on the screen but does not manage loops.
-    [ ] ``sleep()`` | Incorrect. This function pauses execution timing instead of generating loop counts.
-    [x] ``range()`` | Correct. To loop through a set of code a specified number of times, use the range() function.
-    [ ] ``loop()`` | Incorrect. There is no built-in function named loop() for sequence generation in Python.
+    [ ] display.scroll() | Incorrect. This function animates data values on the screen but does not manage loops.
+    [ ] sleep() | Incorrect. This function pauses execution timing instead of generating loop counts.
+    [x] range() | Correct. To loop through a set of code a specified number of times, use the range() function.
+    [ ] loop() | Incorrect. There is no built-in function named loop() for sequence generation in Python.
 
 ----
 
@@ -174,9 +174,9 @@ Question 10
 .. multichoice::
 
     A student wants to use the range function to display the numbers from 0 up to but not including 5. Which range loop statement is correct?
-    [ ] ``range(4)`` | Incorrect. This stops before 4, only generating numbers up to 3.
-    [x] ``range(5)`` | Correct. range(5) yields numbers starting at 0 and stops before the stop value of 5, which matches 0, 1, 2, 3, 4.
-    [ ] ``range(6)`` | Incorrect. This generates numbers up to 5, which violates the requirement.
-    [ ] ``range(0)`` | Incorrect. This evaluates to an empty sequence and won't execute the loop block.
+    [ ] range(4) | Incorrect. This stops before 4, only generating numbers up to 3.
+    [x] range(5) | Correct. range(5) yields numbers starting at 0 and stops before the stop value of 5, which matches 0, 1, 2, 3, 4.
+    [ ] range(6) | Incorrect. This generates numbers up to 5, which violates the requirement.
+    [ ] range(0) | Incorrect. This evaluates to an empty sequence and won't execute the loop block.
 
 

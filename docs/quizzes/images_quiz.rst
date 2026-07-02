@@ -73,10 +73,10 @@ Question 6
 .. multichoice::
 
     Which function is used to output a built-in image to the micro:bit LED grid?
-    [ ] ``display.scroll()`` | Incorrect. Scrolling is primarily for animating text messages across the screen horizontally.
-    [x] ``display.show()`` | Correct. The exact same syntax used to show sequential text is utilized to display images.
-    [ ] ``display.draw()`` | Incorrect. There is no draw function for displaying standard built-in images.
-    [ ] ``display.image()`` | Incorrect. Image is a class structure reference, not a direct display function name.
+    [ ] display.scroll() | Incorrect. Scrolling is primarily for animating text messages across the screen horizontally.
+    [x] display.show() | Correct. The exact same syntax used to show sequential text is utilized to display images.
+    [ ] display.draw() | Incorrect. There is no draw function for displaying standard built-in images.
+    [ ] display.image() | Incorrect. Image is a class structure reference, not a direct display function name.
 
 ----
 
@@ -140,9 +140,9 @@ Question 10
 .. multichoice::
 
     Which of the following lists contains only valid geometric shape image names as structured in the documentation exercises?
-    [x] Image.TRIANGLE, Image.DIAMOND, Image.SQUARE | Correct. These are all accurately classified as shape constants inside the code challenges.
-    [ ] Image.GHOST, Image.SWORD, Image.SKULL | Incorrect. These item constants are categorized as object images rather than shapes.
-    [ ] Image.triangle, Image.diamond, Image.square | Incorrect. These options fail because constant names are completely lowercase.
-    [ ] Image.TARGET, Image.HOUSE, Image.UMBRELLA | Incorrect. These represent object entities instead of shape models.
+    [x] ``[Image.TRIANGLE, Image.DIAMOND, Image.SQUARE]`` | Correct. These are all accurately classified as shape constants inside the code challenges.
+    [ ] ``[Image.GHOST, Image.SWORD, Image.SKULL]`` | Incorrect. These item constants are categorized as object images rather than shapes.
+    [ ] ``[Image.triangle, Image.diamond, Image.square]`` | Incorrect. These options fail because constant names are completely lowercase.
+    [ ] ``[Image.TARGET, Image.HOUSE, Image.UMBRELLA]`` | Incorrect. These represent object entities instead of shape models.
 
 

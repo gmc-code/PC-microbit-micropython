@@ -70,10 +70,10 @@ Question 5
 .. multichoice::
 
     Which function is used to set the individual brightness level of a specific LED on the micro:bit grid?
-    [ ] ``display.show_pixel(x, y, brightness)`` | Incorrect. This function name does not exist in the micro:bit library.
-    [x] ``display.set_pixel(x, y, brightness)`` | Correct. The documentation challenges show that display.set_pixel() targets specific row and column coordinates.
-    [ ] ``display.scroll_pixel(x, y)`` | Incorrect. Scrolling is an automated text/sequence function, not an individual LED setup tool.
-    [ ] ``display.light(x, y)`` | Incorrect. This is incorrect method syntax.
+    [ ] display.show_pixel(x, y, brightness) | Incorrect. This function name does not exist in the micro:bit library.
+    [x] display.set_pixel(x, y, brightness) | Correct. The documentation challenges show that display.set_pixel() targets specific row and column coordinates.
+    [ ] display.scroll_pixel(x, y) | Incorrect. Scrolling is an automated text/sequence function, not an individual LED setup tool.
+    [ ] display.light(x, y) | Incorrect. This is incorrect method syntax.
 
 ----
 

@@ -56,10 +56,10 @@ Question 4
 .. multichoice::
 
     Which of the following code patterns checks if BOTH buttons are being held down simultaneously?
-    [x] ``if button_a.is_pressed() and button_b.is_pressed():`` | Correct. The ``and`` logical operator requires both individual button states to evaluate to True at the same time.
-    [ ] ``if button_a.is_pressed() or button_b.is_pressed():`` | Incorrect. The ``or`` operator requires only one or the other button to be down, not necessarily both.
-    [ ] ``if button_a.is_pressed() + button_b.is_pressed():`` | Incorrect. Combining button conditional methods with addition operators is improper syntax.
-    [ ] ``if button_a.was_pressed() or button_b.was_pressed():`` | Incorrect. This checks if either button had a historical click event independently.
+    [x] if button_a.is_pressed() and button_b.is_pressed(): | Correct. The ``and`` logical operator requires both individual button states to evaluate to True at the same time.
+    [ ] if button_a.is_pressed() or button_b.is_pressed(): | Incorrect. The ``or`` operator requires only one or the other button to be down, not necessarily both.
+    [ ] if button_a.is_pressed() + button_b.is_pressed(): | Incorrect. Combining button conditional methods with addition operators is improper syntax.
+    [ ] if button_a.was_pressed() or button_b.was_pressed(): | Incorrect. This checks if either button had a historical click event independently.
 
 ----
 
