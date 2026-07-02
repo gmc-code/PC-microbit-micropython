@@ -2,8 +2,6 @@
 Scroll text
 ====================================================
 
-.. py:module:: display
-
 Display.scroll simple version
 ----------------------------------------
 
@@ -119,6 +117,7 @@ Display.scroll with delay
 ----------------------------------------
 
 .. py:function:: scroll(value, delay=150)
+    :no-index:
 
     | Scrolls ``value`` horizontally on the display.
     | ``value`` can be an integer or float (a decimal) or a string.

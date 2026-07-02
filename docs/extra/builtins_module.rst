@@ -204,7 +204,7 @@ bool
 | * constants defined to be false: None and False.
 | * zero of any numeric type: 0, 0.0, 0j, Decimal(0), Fraction(0, 1)
 | * empty sequences and collections: '', (), [], {}, set(), range(0)
-| See: `<https://www.w3schools.com/python/python_booleans.asp
+| See: `<https://www.w3schools.com/python/python_booleans.asp>`_
 
 .. code-block:: python
 
@@ -262,7 +262,7 @@ bytearray
     | From an iterable of integers, e.g. bytearray(range(4))
     | From text given the encoding, e.g. bytearray("mb", 'utf-8')
 
-See: `<https://www.programiz.com/python-programming/methods/built-in/bytearray
+See: `<https://www.programiz.com/python-programming/methods/built-in/bytearray>`_
 
 .. code-block:: python
 
@@ -344,6 +344,7 @@ chr
 -------------------
 
 .. function:: chr(number)
+    :no-index:
 
     Returns the character that represents the specified unicode `number`.
 
@@ -371,7 +372,7 @@ classmethod
 
 | Think of a normal method as specific to an object, while a class method is shared across all objects of the class.
 
-See: `<https://www.programiz.com/python-programming/methods/built-in/classmethod
+See: `<https://www.programiz.com/python-programming/methods/built-in/classmethod>`_
 
 .. decorator:: classmethod()
 
@@ -505,8 +506,13 @@ dict
 -------------------
 
 .. class:: dict(**kwarg)
+    :no-index:
+
 .. class:: dict(mapping, **kwarg)
+    :no-index:
+
 .. class:: dict(iterable, **kwarg)
+    :no-index:
 
 - ``**kwargs`` -- keyword
 - ``mapping`` -- element container.
@@ -878,18 +884,16 @@ format
 
 .. function:: format(value[, format_spec])
 
-Functions for formatting strings str.format(), It enhances string formatting. format Function can accept unlimited arguments, position may not in sequence. The basic syntax is to replace the previous% with {} and:.  For more detailed syntax, please refer to CPython 'Format String Syntax'  <`<https://docs.python.org/zh-cn/3.7/library/string.html>`_#format-specification-mini-language>`_
+Functions for formatting strings str.format(), It enhances string formatting. format Function can accept unlimited arguments, position may not in sequence. The basic syntax is to replace the previous% with {} and:
 
-::
+"{} {}".format("hello", "world")    # Do not set the specified location, in the default order.
+'hello world'
 
-        "{} {}".format("hello", "world")    # Do not set the specified location, in the default order.
-    'hello world'
+"{0} {1}".format("hello", "world")  # Set specified location
+'hello world'
 
-         "{0} {1}".format("hello", "world")  # Set specified location
-    'hello world'
-
-         "{1} {0} {1}".format("hello", "world")  # Set specified location
-    'world hello world
+"{1} {0} {1}".format("hello", "world")  # Set specified location
+'world hello world
 
 ----
 
@@ -902,17 +906,17 @@ Used to return an object property value.
 
 ::
 
-        class A(object):
-   ...     bar = 1
-   ...
-         a = A()
-         getattr(a, 'bar')        # Get property bar value
-    1
-         getattr(a, 'bar2')       # Property bar2 does not exist, triggering exception
-    Traceback (most recent call last):
-    File "<stdin>", line 1, in <module>
-    AttributeError: 'A' object has no attribute 'bar2'
-         getattr(a, 'bar2', 3)    # Property bar2 does not exist, but the default value is set
+class A(object):
+...     bar = 1
+...
+a = A()
+getattr(a, 'bar')        # Get property bar value
+1
+getattr(a, 'bar2')       # Property bar2 does not exist, triggering exception
+Traceback (most recent call last):
+File "<stdin>", line 1, in <module>
+AttributeError: 'A' object has no attribute 'bar2'
+getattr(a, 'bar2', 3)    # Property bar2 does not exist, but the default value is set
 
 
 ----
@@ -1014,7 +1018,10 @@ int
 -------------------
 
 .. class:: int([x])
+    :no-index:
+
 .. class:: int(x,base=10)
+    :no-index:
 
 Converts a string or number to an integer.
 
@@ -1545,23 +1552,23 @@ The output::
 ----
 
 set
--------------------
+----------
 
 .. class:: set([iterable])
 
 set() Function to create an unordered and unrepeatable element set, which can be used for relationship testing, deletion of duplicate data, and calculation of intersection, subtraction, union, etc
 
-         x = set('runoob')
-         y = set('google')
-         x, y
-    ({'b', 'u', 'n', 'o', 'r'}, {'e', 'l', 'g', 'o'})     # Deleted duplicate
-         x & y         # intersection
-    {'o'}
-         x | y         # union
-    {'e', 'u', 'o', 'n', 'r', 'l', 'g', 'b'}
-         x - y         # subtraction
-    {'b', 'u', 'n', 'r'}
-    >
+x = set('runoob')
+y = set('google')
+x, y
+({'b', 'u', 'n', 'o', 'r'}, {'e', 'l', 'g', 'o'})     # Deleted duplicate
+x & y         # intersection
+{'o'}
+x | y         # union
+{'e', 'u', 'o', 'n', 'r', 'l', 'g', 'b'}
+x - y         # subtraction
+{'b', 'u', 'n', 'r'}
+>
 
 ----
 
@@ -1574,25 +1581,25 @@ setattr() Function corresponding Function getattr(), Used to set the value of a 
 
 Assign values to existing properties::
 
-        class A(object):
-   ...     bar = 1
-   ...
-         a = A()
-         getattr(a, 'bar')          # get attribute bar value
-    1
-         setattr(a, 'bar', 5)       # set attribute bar value
-         a.bar
-    5
+class A(object):
+...     bar = 1
+...
+a = A()
+getattr(a, 'bar')          # get attribute bar value
+1
+setattr(a, 'bar', 5)       # set attribute bar value
+a.bar
+5
 
 If the property does not exist, a new object property will be created and assigned::
 
-        class A():
-   ...     name = "runoob"
-   ...
-         a = A()
-         setattr(a, "age", 28)
-         print(a.age)
-    28
+class A():
+...     name = "runoob"
+...
+a = A()
+setattr(a, "age", 28)
+print(a.age)
+28
 
 
 ----
@@ -1617,22 +1624,22 @@ Sort all objects that can be iterated
 
 sorted the easiest way to use::
 
-        sorted([5, 2, 3, 1, 4])
-    [1, 2, 3, 4, 5]                      # ascending order as default
+sorted([5, 2, 3, 1, 4])
+[1, 2, 3, 4, 5]                      # ascending order as default
 
 Using key to sort in reverse order::
 
-        example_list = [5, 0, 6, 1, 2, 7, 3, 4]
-         result_list = sorted(example_list, key=lambda x: x*-1)
-         print(result_list)
-    [7, 6, 5, 4, 3, 2, 1, 0]
+example_list = [5, 0, 6, 1, 2, 7, 3, 4]
+result_list = sorted(example_list, key=lambda x: x*-1)
+print(result_list)
+[7, 6, 5, 4, 3, 2, 1, 0]
 
 
 To reverse sorting, also by passing into the third parameter::
 
-        example_list = [5, 0, 6, 1, 2, 7, 3, 4]
-         sorted(example_list, reverse=True)
-    [7, 6, 5, 4, 3, 2, 1, 0]
+example_list = [5, 0, 6, 1, 2, 7, 3, 4]
+sorted(example_list, reverse=True)
+[7, 6, 5, 4, 3, 2, 1, 0]
 
 ----
 

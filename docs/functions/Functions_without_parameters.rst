@@ -2,7 +2,7 @@
 Functions without parameters
 ===================================
 
-| See: `<https://www.w3schools.com/python/python_functions.asp
+| See: `<https://www.w3schools.com/python/python_functions.asp>`_
 
 
 | Functions are blocks of code that can be used many times in a program.

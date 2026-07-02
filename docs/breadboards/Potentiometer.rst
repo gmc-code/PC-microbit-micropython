@@ -98,7 +98,7 @@ EXT: Demo: Power meter simulation
 | See the custom images lesson for more on ``display.set_pixel``.
 | The maximum potentiometer reading is 1023, so this can be treated as 1000 for simplicity.
 | This gives 5 levels in steps of 200.
-|
+
 .. code-block:: python
 
     from microbit import *

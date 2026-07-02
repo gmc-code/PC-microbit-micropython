@@ -301,7 +301,7 @@ Tuple unpacking of get_tempo()
 
 | For advanced users, tuple unpacking can be used instead of indices:
 | ``bpm, ticks = music.get_tempo()``
-| See: `<https://www.w3schools.com/python/python_tuples_unpack.asp
+| See: `<https://www.w3schools.com/python/python_tuples_unpack.asp>`_>``
 
 .. code-block:: python
 
@@ -496,7 +496,8 @@ All Built in melodies
 .. admonition:: Tasks
 
     #. Play any 3 melodies using a list.
-    #. Use the choice function to randomly pick melodies from a melody list. See: `<https://www.w3schools.com/python/ref_random_choice.asp. Use `<https://python.microbit.org/v/3.
+    #. Use the choice function to randomly pick melodies from a melody list. See: `<https://www.w3schools.com/python/ref_random_choice.asp>`_.
+
 
     .. dropdown::
         :icon: codescan
@@ -521,7 +522,7 @@ All Built in melodies
 
             .. tab-item:: Q2
 
-                Use the choice function to randomly pick melodies from a melody list. See: `<https://www.w3schools.com/python/ref_random_choice.asp.
+                Use the choice function to randomly pick melodies from a melody list. See: `<https://www.w3schools.com/python/ref_random_choice.asp>`_.
 
                 .. code-block:: python
 
@@ -646,7 +647,7 @@ A	    1760
 .. admonition:: Tasks
 
     #. Modify the code to play the pitches of the E minor scale. See: `<https://www.piano-keyboard-guide.com/e-minor-scale.html>`_.
-    #. Modify the code to play the pitches of the D major scale. See: http://www.piano-keyboard-guide.com/d-major-scale.html>`_.
+    #. Modify the code to play the pitches of the D major scale. See: `<http://www.piano-keyboard-guide.com/d-major-scale.html>`_.
 
     .. dropdown::
         :icon: codescan
@@ -675,7 +676,7 @@ A	    1760
 
             .. tab-item:: Q2
 
-                Modify the code to play the pitches of the D major scale. See: http://www.piano-keyboard-guide.com/d-major-scale.html>`_.
+                Modify the code to play the pitches of the D major scale. See: `<http://www.piano-keyboard-guide.com/d-major-scale.html>`_.
 
                 .. code-block:: python
 

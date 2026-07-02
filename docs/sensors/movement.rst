@@ -8,8 +8,8 @@ Accelerometer
 
 Mobile phone knows which up to show the images on its screen because it uses an accelerometer. Game controllers also contain accelerometers to steer and move around in games.
 
-| The microbit accelerometer measures movement along three axes in milli-g's. 
-| When the reading is 0 the microbit is "level" along that particular axis. 
+| The microbit accelerometer measures movement along three axes in milli-g's.
+| When the reading is 0 the microbit is "level" along that particular axis.
 | tilting it in one direction will give a positive reading; in the opposite direction a negative reading is given.
 
 ``accelerometer.get_x()`` * X - tilting the left edge down (-) and the right edge down (+).
@@ -37,8 +37,8 @@ Spirit level
 -------------------
 
 | For example, here's a very simple spirit-level that uses ``get_x`` to measure
-how level the device is along the X axis.
-| A reading of 20 is small enough to make this very sensitive to a slight tilt. 
+| how level the device is along the X axis.
+| A reading of 20 is small enough to make this very sensitive to a slight tilt.
 
 .. code-block:: python
 
@@ -144,7 +144,7 @@ Z axis.
                         elif x_reading < -20:
                             x_val = "L"
                         else:
-                            x_val = "-"   
+                            x_val = "-"
                         y_reading = accelerometer.get_y()
                         if y_reading > 20:
                             y_val = "B"
@@ -269,16 +269,16 @@ Z axis.
                             elif x_reading < -20:
                                 x_val = "L"
                             else:
-                                x_val = "-"   
+                                x_val = "-"
                             if y_reading > 20:
                                 y_val = "B"
                             elif y_reading < -20:
                                 y_val = "T"
                             else:
                                 y_val = "-"
-                            display.scroll(x_val + y_val, delay=80)  
+                            display.scroll(x_val + y_val, delay=80)
 
-                        elif button_b.is_pressed():                    
+                        elif button_b.is_pressed():
                             if x_reading > 20:
                                 if y_reading > 20:
                                     display.show(Image.ARROW_SE)
@@ -302,7 +302,7 @@ Z axis.
                                     display.show("-")
 
                         else:
-                            display.clear() 
+                            display.clear()
 
                         sleep(250)
-    
+

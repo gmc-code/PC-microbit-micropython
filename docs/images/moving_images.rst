@@ -8,7 +8,7 @@ Moving images
 Shift left and right
 --------------------------------
 
-| An image can be shifted left or right. 
+| An image can be shifted left or right.
 | Parts of the image moved off screen are lost.
 | So, if making animations, it is best to reuse the original image rather than reuse moved images.
 
@@ -186,7 +186,7 @@ Shift up and down
 .. py:method:: shift_up(n)
 
     Return a new image by shifting the image up by **n** rows.
-        
+
 .. py:method:: shift_down(n)
 
     Return a new image by shifting the image down by **n** rows.
@@ -407,7 +407,7 @@ Shifting combined
     | x is an integer
     | **sleep_time** defaults to 80 ms. It is the sleep time after showing the shifted image.
 
-| The code below shifts a butterfly image clockwise in 4 moves. 
+| The code below shifts a butterfly image clockwise in 4 moves.
 
 
 .. code-block:: python
@@ -419,7 +419,7 @@ Shifting combined
         shift_img = shift_img.shift_down(y)
         display.show(shift_img)
         sleep(sleep_time)
-            
+
 
     img = Image.BUTTERFLY
     sleep_time = 200
@@ -459,9 +459,9 @@ Shifting combined
                         shift_img = shift_img.shift_down(y)
                         display.show(shift_img)
                         sleep(sleep_time)
-                            
 
-                    img = Image.BUTTERFLY   
+
+                    img = Image.BUTTERFLY
                     sleep_time = 200
                     while True:
                         display.show(img)
@@ -483,8 +483,8 @@ Shifting combined
                         shift_img = shift_img.shift_down(y)
                         display.show(shift_img)
                         sleep(sleep_time)
-                            
-                        
+
+
                     def shift_img_directions(img, directions, sleep_time=80):
                         for x,y in directions:
                             shift_x_y(img, x, y, sleep_time)
@@ -509,8 +509,8 @@ Shifting combined
                         shift_img = shift_img.shift_down(y)
                         display.show(shift_img)
                         sleep(sleep_time)
-                            
-                        
+
+
                     def shift_img_directions(img, directions, sleep_time=80):
                         for x,y in directions:
                             shift_x_y(img, x, y, sleep_time)
@@ -566,7 +566,7 @@ Cropping images and repositioning with blit
 .. py:method:: blit(src, x, y, w, h, xdest=0, ydest=0)
 
     | Copy the rectangle defined by **x**, **y**, **w**, **h** from an image **src** into
-    the image at **xdest**, **ydest**.
+    | the image at **xdest**, **ydest**.
     | Areas in the source rectangle, but outside the source image are given a value of 0.
 
 
@@ -575,7 +575,7 @@ Cropping images and repositioning with blit
 .. code-block:: python
 
     from microbit import *
-        
+
     def crop_to(source_img, x, y, w, h, i, j):
         res = Image(5, 5)
         res.blit(source_img, x, y, w, h, i, j)
@@ -587,7 +587,7 @@ Cropping images and repositioning with blit
 .. code-block:: python
 
     from microbit import *
-    
+
 
     def crop_to(source_img, x, y, w, h, i, j):
         res = Image(5, 5)
@@ -596,7 +596,7 @@ Cropping images and repositioning with blit
 
 
     img = Image.SQUARE_SMALL
-    img_00 = crop_to(img, 1, 1, 3, 3, 0, 0)    
+    img_00 = crop_to(img, 1, 1, 3, 3, 0, 0)
     img_10 = crop_to(img, 1, 1, 3, 3, 1, 0)
     img_20 = crop_to(img, 1, 1, 3, 3, 2, 0)
 
@@ -688,7 +688,7 @@ Repositioning a 3by3 image via accelerometer
 .. code-block:: python
 
     from microbit import *
-        
+
     def place_3by3(source_img, x, y):
         res = Image(5, 5)
         res.blit(source_img, 1, 1, 3, 3, x, y)
@@ -780,7 +780,7 @@ Filling images and repositioning with blit
 .. code-block:: python
 
     from microbit import *
-        
+
     def blit_fill_rect(w, h, brightness, x, y):
         src = Image(w, h)
         src.fill(brightness)
@@ -816,7 +816,7 @@ Filling images and repositioning with blit
     #.  Write code to place 4, 2 by 2 squares, of brightness 5, in each corner.
     #.  Write code to place 4, 2 by 2 squares, of brightness 5, in each corner using nested for-loops for the x and y values, adding them to the display with a 500ms delay.
     #.  Write a function, **rect_overlaps(count=2)**, to return a composite image of a given number of rectangles (default 2) of random size and position, of brightness 9. Restrict the width and height to 2 to 4. Restrict the top left to (0,0) to (3,3). Display a new composite image every 200ms.
-    
+
 
     .. dropdown::
         :icon: codescan
@@ -827,7 +827,7 @@ Filling images and repositioning with blit
 
             .. tab-item:: Q1
 
-                Write code to place 4, 2 by 2 squares, of brightness 5, in each corner. 
+                Write code to place 4, 2 by 2 squares, of brightness 5, in each corner.
 
                 .. code-block:: python
 
@@ -852,7 +852,7 @@ Filling images and repositioning with blit
 
             .. tab-item:: Q2
 
-                Write code to place 4, 2 by 2 squares, of brightness 5, in each corner. 
+                Write code to place 4, 2 by 2 squares, of brightness 5, in each corner.
 
                 .. code-block:: python
 

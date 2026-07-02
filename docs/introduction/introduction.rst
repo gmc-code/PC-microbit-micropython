@@ -78,7 +78,8 @@ Micropython simulator:
 | `<https://python.microbit.org/v/3>`_ uses the latest micropython for the latest version of the microbit.
 
 
-| Create with code UK, `<https://create.withcode.uk/>`_, works with standard python or micropython. Starting the code with "from microbit import /*" will pop up the simulator when the code is run.
+| Create with code UK, `<https://create.withcode.uk/>`_, works with standard python or micropython.
+| Starting the code with "from microbit import \*" will pop up the simulator when the code is run.
 
 ----
 
@@ -129,8 +130,8 @@ Python references:
 
 For an introduction to python see:
 
-* `<https://docs.python.org/3.13/tutorial/introduction.html>`_
-* `<https://docs.python.org/3.13/tutorial/index.html>`_
+* `<https://docs.python.org/3/tutorial/introduction.html>`_
+* `<https://docs.python.org/3/tutorial/index.html>`_
 * `<https://www.w3schools.com/python/default.asp>`_
 * `<https://www.programiz.com/python-programming>`_
 * `<https://www.geeksforgeeks.org/python-programming-language/?ref=shm>`_

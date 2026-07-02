@@ -9,14 +9,14 @@ Unwanted Whitespace
 ----
 
 Unwanted whitespace before parentheses
-------------------------------------
+-----------------------------------------------
 
 | In the if statement below an unwanted space has been placed before the parentheses.
-| Python's interpreter ignores the extra whitespace. 
+| Python's interpreter ignores the extra whitespace.
 | However, it's considered good practice to follow the convention and not include the space before the parentheses.
 
 .. code-block:: python
-    
+
     from microbit import *
 
     if button_a.is_pressed ():
@@ -32,11 +32,11 @@ Unwanted whitespace in parentheses
 ------------------------------------
 
 | In the if statement below, an unwanted space has been placed in the parentheses.
-| Python's interpreter ignores the extra whitespace. 
+| Python's interpreter ignores the extra whitespace.
 | However, it's considered good practice to follow the convention and not include the space in the parentheses.
 
 .. code-block:: python
-    
+
     from microbit import *
 
     if button_a.is_pressed( ):
@@ -55,7 +55,7 @@ Unwanted whitespace around equals in an argument
 | Pressing check will indicate that the space should not be there.
 | This is not an error. It will still work in the microbit.
 | ``delay=200`` is the preferred format.
-| Press the **tidy** button to remove the extra whitespace. 
+| Press the **tidy** button to remove the extra whitespace.
 
 .. code-block:: python
 
@@ -76,7 +76,7 @@ Unwanted whitespace before colon
 | Pressing check with not reveal an issue.
 | This is not an error. It will still work on the microbit.
 | ``while True:`` is the preferred format.
-| Press the **tidy** button to remove the extra whitespace. 
+| Press the **tidy** button to remove the extra whitespace.
 
 .. code-block:: python
 
@@ -97,7 +97,7 @@ Unwanted whitespace after keyword
 | Pressing check with not reveal an issue.
 | This is not an error. It will still work on the microbit.
 | ``while True:`` is the preferred format.
-| Press the **tidy** button to remove the extra whitespace. 
+| Press the **tidy** button to remove the extra whitespace.
 
 .. code-block:: python
 
@@ -116,7 +116,7 @@ Whitespace missing around equals operator
 
 | In the code below, ``total=2+5`` lacks spaces around both the '=' and the "+" operators.
 | ``total = 2 + 5`` is the preferred format.
-| Press the **tidy** button to add the extra whitespace. 
+| Press the **tidy** button to add the extra whitespace.
 
 .. code-block:: python
 

@@ -32,7 +32,7 @@ Sound Effect Syntax
 
 | The parameter values can all be modified via attributes of the same name.
 | For example, first create an effect ``my_effect = SoundEffect(duration=1000)``,
-then change its attribute for duration: ``my_effect.duration = 500``.
+| then change its attribute for duration: ``my_effect.duration = 500``.
 
 ----
 
@@ -201,6 +201,7 @@ microbit scale function
 -------------------------
 
 .. py:function:: scale(value, from_, to)
+    :no-index:
 
     Converts a value from a range to another range.
 
@@ -282,6 +283,7 @@ Copying sound effects
 | Copying a sound effects can be useful when a second sound effect is to be based on another.
 
 .. py:function:: copy()
+    :no-index:
 
     :returns: A copy of the SoundEffect.
 

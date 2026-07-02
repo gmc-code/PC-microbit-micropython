@@ -58,7 +58,7 @@ ustruct
 ----------------
 
 | See: `<https://mpython.readthedocs.io/en/master/library/pythonStd/ustruct.html>`_
-| See: `<https://www.educative.io/answers/what-is-the-python-struct-module
+| See: `<https://www.educative.io/answers/what-is-the-python-struct-module>`_
 | See: `<https://docs.micropython.org/en/latest/library/struct.html>`_
 
 | The struct module in Python is used to convert native Python data types such as strings and numbers into a string of bytes and vice versa.

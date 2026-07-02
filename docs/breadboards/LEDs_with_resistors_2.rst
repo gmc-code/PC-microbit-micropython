@@ -55,6 +55,7 @@ Write digital
 ----------------------------------------
 
 .. py:function:: pinx.write_digital(value)
+    :no-index:
 
     | ``pinx`` is the pin. e.g pin0, pin1, pin2.
     | ``value`` is 1 for on and 0 for off.
@@ -286,6 +287,7 @@ Write analog
 ----------------------------------------
 
 .. py:function:: pinx.write_analog(value)
+    :no-index:
 
     | ``pinx`` is the pin. e.g pin0, pin1, pin2.
     | ``value`` is an integer from 0 to 1023.
@@ -446,7 +448,7 @@ Write analog
                             pulse_all_diff_off()
                         sleep(500)
 
- ----
+----
 
 .. admonition:: Exercises
 

@@ -134,13 +134,13 @@ Pulse design
 | Use the formula to calculate the delay: delay = 60000/(HR * 7)
 | For a heart rate of 65 bpm (beats per minute), the delay is 132.
 
-| Use google metronome `<https://g.co/kgs/Rjdr6e.
-| Use `<https://www.musicca.com/metronome as an alternative metronome.
+| Use google metronome `<https://g.co/kgs/Rjdr6e>`_.
+| Use `<https://www.musicca.com/metronome>`_ as an alternative metronome.
 
 .. admonition:: Tasks
 
-    #. Set the google metronome `<https://g.co/kgs/Rjdr6e  to 65 and see if a delay of 132 keeps in time with the metronome.
-    #. Set the google metronome `<https://g.co/kgs/Rjdr6e  to 100. Use the formula to calculate the delay required for a HR of 100 bpm. See if this keeps in time with the metronome.
+    #. Set the google metronome `<https://g.co/kgs/Rjdr6e>`_  to 65 and see if a delay of 132 keeps in time with the metronome.
+    #. Set the google metronome `<https://g.co/kgs/Rjdr6e>`_  to 100. Use the formula to calculate the delay required for a HR of 100 bpm. See if this keeps in time with the metronome.
 
     .. dropdown::
         :icon: codescan
@@ -151,7 +151,7 @@ Pulse design
 
             .. tab-item:: Q1
 
-                Set the google metronome `<https://g.co/kgs/Rjdr6e  to 65 and see if a delay of 132 keeps in time with the metronome.
+                Set the google metronome `<https://g.co/kgs/Rjdr6e>`_ to 65 and see if a delay of 132 keeps in time with the metronome.
 
                 Use:
 
@@ -161,7 +161,7 @@ Pulse design
 
             .. tab-item:: Q2
 
-                Set the google metronome `<https://g.co/kgs/Rjdr6e  to 100. Use the formula to calculate the delay required for a HR of 100 bpm. See if this keeps in time with the metronome.
+                Set the google metronome `<https://g.co/kgs/Rjdr6e>`_  to 100. Use the formula to calculate the delay required for a HR of 100 bpm. See if this keeps in time with the metronome.
 
                 Use:
 

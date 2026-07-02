@@ -59,7 +59,7 @@ Question 5
 
 .. multichoice::
 
-    When importing a module using 'from microbit import *', how does it affect the syntax prefix for functions like display.scroll()?
+    When importing a module using ``from microbit import *``, how does it affect the syntax prefix for functions like display.scroll()?
     [x] The 'microbit.' prefix can be entirely omitted. | Correct. Using a wildcard import allows shorter forms like display.scroll().
     [ ] The prefix must be changed to 'microbit*.' | Incorrect. The asterisk is an import syntax operator and cannot be appended to object reference paths.
     [ ] The full prefix 'microbit.display.scroll()' becomes mandatory. | Incorrect. The long prefix is used when the module is imported via 'import microbit'.

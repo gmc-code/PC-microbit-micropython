@@ -5,7 +5,7 @@ Music Rhythms
 Rhythm: Shave and a hair cut: two bits
 -----------------------------------------
 
-| See: `<https://en.wikipedia.org/wiki/Shave_and_a_Haircut
+| See: `<https://en.wikipedia.org/wiki/Shave_and_a_Haircut>`_
 | The rhythm below is given by saying aloud: "Shave and a hair cut: two bits".
 | Play this rhythm.
 

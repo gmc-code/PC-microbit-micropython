@@ -8,6 +8,7 @@ Show image
 | The basic syntax for showing an image is:
 
 .. py:function:: display.show(image)
+    :no-index:
 
     | Display an image.
 
@@ -19,6 +20,7 @@ Image strings
 | The basic syntax for creating an image from a string of 25 brightness values is:
 
 .. py:function:: Image(string)
+    :no-index:
 
     | Create an image.
     | string is a string of 25 brightness values with every 5 separated by a colon.
@@ -152,6 +154,7 @@ Image strings: Multiplication of a line
 | The syntax for creating an Image by replicating a string representing one row is:
 
 .. py:function:: Image(line_string * 5)
+    :no-index:
 
     | line_string is the first 5 pixel brightness values. e.g. "00000:"
     | e.g. Image("00000:" * 5) create an image with all pixels off.

@@ -5,7 +5,7 @@ Accelerometer syntax
 .. py:module:: accelerometer
 
 | The accelerometer can measure changes in speed of movement in any direction.
-| The accelerometer also provides convenience functions for detecting gestures. 
+| The accelerometer also provides convenience functions for detecting gestures.
 | The recognized gestures are: ``up``, ``down``, ``left``, ``right``, ``face up``, ``face down``, ``freefall``, ``3g``, ``6g``, ``8g``, ``shake``.
 | The accelerometer range is from -2g to +2g.
 
@@ -20,6 +20,7 @@ Gesture Functions
 
 
 .. py:function:: current_gesture()
+    :no-index:
 
     Return the name of the current gesture as a string. The gestures are: ``"up"``, ``"down"``, ``"left"``, ``"right"``, ``"face up"``, ``"face down"``, ``"freefall"``, ``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``.
 
@@ -28,6 +29,7 @@ Gesture Functions
     Return True or False to indicate if the named gesture is currently active.
 
 .. py:function:: was_gesture(name)
+    :no-index:
 
     Return True or False to indicate if the named gesture was active since the
     last call.
@@ -36,7 +38,7 @@ Gesture Functions
 
     | Return a tuple of the gesture history. The most recent is listed last.
     | Also clears the gesture history before returning.
-    
+
 ----
 
 Acceleration Functions
@@ -67,5 +69,5 @@ Acceleration Functions
 
 .. py:function:: get_strength()
 
-    Return the combined acceleration strength of all the axes, in milli-g, as a positive integer using pythagorean addition. 
+    Return the combined acceleration strength of all the axes, in milli-g, as a positive integer using pythagorean addition.
 

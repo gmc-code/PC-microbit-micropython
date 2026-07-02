@@ -8,6 +8,7 @@ Random times for flashing an image
 | Import the random library. Then use randint to get a random times for flashing an image.
 
 .. py:function:: random.randint(a, b)
+    :no-index:
 
     Return a random integer from a to b, including both.
 
@@ -85,6 +86,7 @@ Random images
 | Import the random library. Then use random.choice to show a random image from a list.
 
 .. py:function:: random.choice(image_list)
+    :no-index:
 
     Return a random image from the list of images: image_list.
 

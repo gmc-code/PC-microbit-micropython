@@ -4,12 +4,12 @@ Music pitch
 
 | See: `<https://microbit-micropython.readthedocs.io/en/stable/music.html>`_
 
-.. py:module:: music
 
 Sound effects using pitch
 ----------------------------------------
 
 .. py:function::  music.pitch(frequency, duration=-1, pin=pin0, wait=True)
+    :no-index:
 
     | Plays a pitch at the integer frequency given for the duration specified in milliseconds.
     | Only one pitch can be played on one pin at any one time.

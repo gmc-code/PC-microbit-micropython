@@ -172,6 +172,7 @@ bytearray gradients using List multiplication
 
                         img = Image(5, 5, bytearray([9, 6, 3, 6, 9] * 5))
                         display.show(img)
+
 ----
 
 bytearray irregular patterns using List multiplication and concatenation
@@ -460,7 +461,7 @@ Random-integer-producing definitions for bytearray
 List comprehension for bytearray images
 --------------------------------------------
 
-See: `<https://www.w3schools.com/python/python_lists_comprehension.asp
+See: `<https://www.w3schools.com/python/python_lists_comprehension.asp>`_
 
 .. py:function:: new_list = [expression for item in iterable]
 
@@ -545,7 +546,7 @@ See: `<https://www.w3schools.com/python/python_lists_comprehension.asp
 List comprehension with alternatives for bytearray images
 ----------------------------------------------------------
 
-See: `<https://www.w3schools.com/python/python_lists_comprehension.asp
+See: `<https://www.w3schools.com/python/python_lists_comprehension.asp>`_
 
 .. py:function:: new_list = [expression if condition else expression2 for item in iterable]
 

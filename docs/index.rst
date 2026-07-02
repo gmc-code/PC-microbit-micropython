@@ -60,7 +60,7 @@ Index:
     quizzes/images_quiz.rst
     quizzes/buttons_and_selection_quiz.rst
     quizzes/for_loops_quiz.rst
-    quizzes/for_loops_with_range_quiz1.rst
+    quizzes/for_loops_with_range_quiz.rst
 
 
 
@@ -268,7 +268,8 @@ Index:
     extra/usys_module.rst
     extra/gc_module.rst
     extra/uerrno_module.rst
-    extra/ustruct_module.rs
+    .. extra/ustruct_module.rs
+
     extra/antigravity_love_this.rst
 
     extra/neopixel_module.rst

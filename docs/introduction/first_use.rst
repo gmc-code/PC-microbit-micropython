@@ -6,15 +6,15 @@ Firmware
 ------------
 
 | Some Microbits can have their firmware updated depending on the microbit version.
-| See: `<https://microbit.org/get-started/user-guide/firmware/
-| See: `<https://tech.microbit.org/software/daplink-interface/#daplink-software
+| See: `<https://microbit.org/get-started/user-guide/firmware/>`_
+| See: `<https://tech.microbit.org/software/daplink-interface/#daplink-software>`_
 
 ----
 
 Out of Box hex file v2
 --------------------------
 
-| The hex file that is on new microbits can be found at: `<https://microbit.org/get-started/user-guide/out-of-box-experience/
+| The hex file that is on new microbits can be found at: `<https://microbit.org/get-started/user-guide/out-of-box-experience/>`_
 | The code below is similar to the out-of-box-experience that occurs when a new microbit is first started.
 
 .. code-block:: python

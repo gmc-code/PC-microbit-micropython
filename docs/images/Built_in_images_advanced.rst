@@ -73,6 +73,7 @@ Reverse direction of list using the reversed function
 | The basic syntax to reverse a list using the **reversed** **function** is:
 
 .. py:function:: reversed(sequence)
+    :no-index:
 
     | sequence is the list to reverse.
 
@@ -177,6 +178,7 @@ Randomize list
 | The basic syntax is:
 
 .. py:function:: sorted(iterable, key=None, reverse=False)
+    :no-index:
 
     | iterable Required. The sequence to sort, list, dictionary, tuple etc.
     | key Optional. A Function to execute to decide the order. Default is None
@@ -508,12 +510,13 @@ Enumerate to show the clock time
 | The basic syntax is:
 
 .. py:function:: enumerate(iterable, start)
+    :no-index:
 
     | iterable An iterable object such as a list or tuple
     | start A number defining the start number of the enumerate object. Default 0.
 
 
-See: `<https://realpython.com/python-enumerate/
+See: `<https://realpython.com/python-enumerate/>`_
 
 | The code below uses enumerate to create an object made up of tuples consisting of the count number (set to start at 0 using the optional start number; even though the default is 0 when the start parameter is left out).
 | The enumerate object is used up when iterated through, so it must either be placed in the **while True** loop to be recreated each time or converted to a list to be reused.

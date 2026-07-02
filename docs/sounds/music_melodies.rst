@@ -4,7 +4,6 @@ Music built in melodies
 
 | See: `<https://microbit-micropython.readthedocs.io/en/stable/music.html>`_
 
-.. py:module:: music
 
 Built in music
 ----------------------------------------
@@ -60,12 +59,13 @@ All Built in melodies
                 break
         if button_a.is_pressed():
             break
+
 ----
 
 .. admonition:: Tasks
 
     #. Play any 3 melodies using a list.
-    #. Use the choice function to randomly pick melodies from a melody list. See: `<https://www.w3schools.com/python/ref_random_choice.asp
+    #. Use the choice function to randomly pick melodies from a melody list. See: `<https://www.w3schools.com/python/ref_random_choice.asp>`_
 
     .. dropdown::
         :icon: codescan
@@ -89,7 +89,7 @@ All Built in melodies
 
             .. tab-item:: Q2
 
-                Use the choice function to randomly pick melodies from a melody list. See: `<https://www.w3schools.com/python/ref_random_choice.asp
+                Use the choice function to randomly pick melodies from a melody list. See: `<https://www.w3schools.com/python/ref_random_choice.asp>`_
 
                 .. code-block:: python
 

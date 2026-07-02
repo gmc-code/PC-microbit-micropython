@@ -56,6 +56,7 @@ Power off
 -----------------------
 
 .. py:function:: power.off()
+    :no-index:
 
     | Power down the board to the lowest possible power mode.
     | This is the equivalent to pressing the reset button for a few seconds, to set the board to "Off mode".
@@ -138,6 +139,7 @@ Deep Sleep
 -----------------------
 
 .. py:function:: power.deep_sleep(ms=None, wake_on=None, run_every=False)
+    :no-index:
 
     :param ms: A time in milliseconds to wait before it wakes up.
     :param wake_on: A single instance or a tuple of pins and/or buttons to wake up the board, e.g. ``deep_sleep(wake_on=button_a)`` or ``deep_sleep(wake_on=(pin0, pin2, button_b))``.

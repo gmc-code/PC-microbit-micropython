@@ -2,14 +2,13 @@
 EXT: Scroll text
 ====================================================
 
-.. py:module:: display
-
 display.scroll full syntax
 ----------------------------------------
 
 | The use of the wait parameter is useful when wanting to scroll text and play sounds at the same time.
 
 .. py:function:: scroll(value, delay=150, \*, wait=True, loop=False, monospace=False)
+    :no-index:
 
     | Scrolls ``value`` horizontally on the display.
     | ``value`` can be an integer or float (a decimal) or a string.

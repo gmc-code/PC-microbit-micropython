@@ -56,10 +56,12 @@ Library
 | The **V2** built-in speaker can be turned off or on without affecting playing via pin0.
 
 .. py:function::  speaker.off()
+    :no-index:
 
     Use off() to turn off the speaker. This does not disable sound output to an edge connector pin.
 
 .. py:function::  speaker.on()
+    :no-index:
 
     Use on() to turn on the speaker.
 
@@ -71,6 +73,7 @@ Playing music notes
 -----------------------
 
 .. py:function::  music.play(music, pin=pin0, wait=True, loop=False)
+    :no-index:
 
     | Play the music.
     | If music can be a string, such as 'c4:4', or a list of notes as strings, such as ['c', 'd', 'e']
@@ -172,6 +175,7 @@ Tempo
 -----------
 
 .. py:function::  music.set_tempo(ticks=4, bpm=120)
+    :no-index:
 
     Sets the tempo for playback.
 
@@ -252,12 +256,14 @@ Other music methods
 -----------------------
 
 .. py:function::  music.stop(pin=pin0)
+    :no-index:
 
     Stops all music playback on the built-in speaker and any pin outputting sound.
 
     An optional argument can be provided to specify a pin, eg. music.stop(pin1).
 
 .. py:function::  music.reset()
+    :no-index:
 
     Resets the state of the following attributes as listed:
 
@@ -265,6 +271,7 @@ Other music methods
 
 
 .. py:function::  music.get_tempo()
+    :no-index:
 
     Gets the current tempo as a tuple of integers: (bpm, ticks).
 
@@ -542,6 +549,7 @@ All Built in melodies
 ---------------------
 
 .. py:function:: set_volume(volume)
+    :no-index:
 
     Configure the output volume of the microbit speaker and pins.
 
@@ -572,6 +580,7 @@ Sound effects using pitch
 ----------------------------------------
 
 .. py:function::  music.pitch(frequency, duration=-1, pin=pin0, wait=True)
+    :no-index:
 
     Plays a pitch at the integer frequency given for the duration specified in milliseconds.
 

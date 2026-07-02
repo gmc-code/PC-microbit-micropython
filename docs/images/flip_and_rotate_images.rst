@@ -14,9 +14,10 @@ Image repr
 ~~~~~~~~~~~
 
 .. py:function:: repr(image)
+    :no-index:
 
     | Get a compact string representation of the image.
-    
+
 ----
 
 String replace
@@ -36,6 +37,7 @@ Reverse list method syntax
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. py:function:: a_list.reverse()
+    :no-index:
 
     | Reverses a list. No parameters are involved.
 
@@ -49,9 +51,9 @@ Pixels from repr
 | Image('09900:99900:09999:09990:00000:')
 
 .. code-block:: python
-    
+
     from microbit import *
-    
+
     img0 = Image.DUCK
     img_repr = repr(img0)
     print(img_repr)
@@ -73,7 +75,7 @@ Brightness array
 | This produces the list for a DUCK: [0, 9, 9, 0, 0, 9, 9, 9, 0, 0, 0, 9, 9, 9, 9, 0, 9, 9, 9, 0, 0, 0, 0, 0, 0]
 
 .. code-block:: python
-    
+
     from microbit import *
 
     img_str = img_repr[7:-3]
@@ -112,14 +114,15 @@ Brightness array
 So far
 ---------
 
-| So far the code has gone from 
-| **Image.DUCK** 
-| to 
-| **Image('09900:99900:09999:09990:00000:')** 
-| to 
+| So far the code has gone from
+| **Image.DUCK**
+| to
+| **Image('09900:99900:09999:09990:00000:')**
+| to
 | **[0, 9, 9, 0, 0, 9, 9, 9, 0, 0, 0, 9, 9, 9, 9, 0, 9, 9, 9, 0, 0, 0, 0, 0, 0]**.
 
 | Now, functions need to be created for:
+
 * flipping horizontally
 * flipping vertically
 * rotating 90 degrees clockwise or 90 anticlockwise.
@@ -187,7 +190,7 @@ Flipping horizontally
                         row4.reverse()
                         output_array = row0 + row1 + row2 + row3 + row4
                         return output_array
-                        
+
                     img0 = Image.DUCK
                     img_array = get_img_arr_flip_hor(get_image_array(img0))
                     img0_flip_hor= Image(5, 5, bytearray(img_array))
@@ -272,7 +275,7 @@ Flipping vertically
 Flipping a list of images
 ---------------------------
 
-| Here is the list of some images that are not laterally symmetrical (left and right sides are different): 
+| Here is the list of some images that are not laterally symmetrical (left and right sides are different):
 | [Image.MUSIC_CROTCHET, Image.MUSIC_QUAVER, Image.MUSIC_QUAVERS, Image.PACMAN, Image.ROLLERSKATE, Image.TRIANGLE_LEFT, Image.UMBRELLA, Image.YES]
 | Create a function, **flip_image_list(image_list, transition_time=500)**, which creates img0, img0_flip_hor and img0_flip_vert for each image in the list, then creates a list of these, **[img0, img_flip_hor, img0, img_flip_vert, img0]** which are then displayed using a transition_time which defaults to a delay of 300ms between each image.
 
@@ -294,7 +297,7 @@ Flipping a list of images
 
                 .. code-block:: python
 
-                    from microbit import 
+                    from microbit import
 
 
                     def get_image_array(img=Image.DUCK):
@@ -383,7 +386,7 @@ Rotating 270 degrees
 
     .. image:: images/rotate_270_arrayQ.png
         :scale: 100 %
-        :align: center  
+        :align: center
 
     .. dropdown::
         :icon: codescan
@@ -477,7 +480,7 @@ Rotating 90 degrees clockwise
 
     .. image:: images/rotate_90_arrayQ.png
         :scale: 100 %
-        :align: center  
+        :align: center
 
     .. dropdown::
         :icon: codescan
@@ -560,7 +563,7 @@ Rotating 180 degrees
 .. admonition:: Tasks
 
     #. Write a function to combine flipping to rotate an image 180 degrees.
-    #. Write code to rotate the duck 180 degrees and swap between the display of the duck and the flipped duck. 
+    #. Write code to rotate the duck 180 degrees and swap between the display of the duck and the flipped duck.
 
     .. dropdown::
         :icon: codescan
@@ -720,7 +723,7 @@ Rotating image animation
                         row4 = [img_array[x] for x in range(24, -1, -5)]
                         output_array = row0 + row1 + row2 + row3 + row4
                         return output_array
-                        
+
                     def get_img_arr_rotate_180(img_array):
                         return get_img_arr_flip_vert(get_img_arr_flip_hor(img_array))
 
@@ -729,7 +732,7 @@ Rotating image animation
                     img90 = Image(5, 5, bytearray(get_img_arr_rotate_90(get_image_array(img0))))
                     img180 = Image(5, 5, bytearray(get_img_arr_rotate_180(get_image_array(img0))))
                     img270 = Image(5, 5, bytearray(get_img_arr_rotate_270(get_image_array(img0))))
-                    
+
 
                     img_seq = [img0, img90, img180, img270]
                     while True:
@@ -800,7 +803,7 @@ Rotating image animation
                         row4 = [img_array[x] for x in range(24, -1, -5)]
                         output_array = row0 + row1 + row2 + row3 + row4
                         return output_array
-                        
+
                     def get_img_arr_rotate_180(img_array):
                         return get_img_arr_flip_vert(get_img_arr_flip_hor(img_array))
 
@@ -809,7 +812,7 @@ Rotating image animation
                     img90 = Image(5, 5, bytearray(get_img_arr_rotate_90(get_image_array(img0))))
                     img180 = Image(5, 5, bytearray(get_img_arr_rotate_180(get_image_array(img0))))
                     img270 = Image(5, 5, bytearray(get_img_arr_rotate_270(get_image_array(img0))))
-                    
+
 
                     img_seq = [img0, img270, img180, img90]
                     while True:
@@ -820,7 +823,7 @@ Rotating image animation
 Rotating a list of images
 ---------------------------
 
-| Here is the list of animals: 
+| Here is the list of animals:
 | [Image.RABBIT, Image.COW, Image.DUCK, Image.TORTOISE, Image.BUTTERFLY, Image.GIRAFFE, Image.SNAKE]
 | Create a function, **rotate_image_list(image_list, transition_time=500)**, which creates img0, img90, img180 and img270 for each image in the list, then creates a list of these which are then displayed using a transition_time which defaults to 500ms.
 

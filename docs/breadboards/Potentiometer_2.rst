@@ -47,6 +47,7 @@ Scaling the readings
 ----------------------------------------
 
 .. py:function:: scale(value, from_, to)
+    :no-index:
 
     Converts a value from a range to another range.
 

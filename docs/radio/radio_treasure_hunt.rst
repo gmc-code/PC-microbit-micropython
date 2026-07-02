@@ -237,7 +237,7 @@ Sorting a list using a function as a sort key
     :param reverse	Optional: reverse=True will sort the list descending. Default is reverse=False
     :param key	Optional: A function to specify the sorting criteria.
 
-See: `<https://www.w3schools.com/python/ref_list_sort.asp
+See: `<https://www.w3schools.com/python/ref_list_sort.asp>`_
 
 | The list below has strings of integers.
 | A sort key is required to sort them numerically.

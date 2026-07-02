@@ -10,6 +10,7 @@ Image objects
 | The basic syntax for showing creating an Image object is:
 
 .. py:function:: Image()
+    :no-index:
 
     | Returns an image object, with each pixel of brightness 0.
     | **Image()** is equivalent to:
@@ -257,6 +258,7 @@ Image of a single string character
 -----------------------------------------
 
 .. py:function:: Image(character)
+    :no-index:
 
     | Returns an image object that represents the character. The characters must be in quotes.
 
@@ -718,7 +720,7 @@ Pulsing HEART
 List comprehension for a series of images
 --------------------------------------------
 
-See: `<https://www.w3schools.com/python/python_lists_comprehension.asp
+See: `<https://www.w3schools.com/python/python_lists_comprehension.asp>`_
 
 .. function:: new_list = [expression for item in iterable]
 

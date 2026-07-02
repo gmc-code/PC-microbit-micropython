@@ -6,6 +6,7 @@ LEDs_with_resistors
 | For better organising code into def blocks see: `<https://pc-microbit-micropython.readthedocs.io/en/latest/breadboards/LEDs_with_resistors_2.html>`_
 
 ----
+
 Connections
 --------------------------
 

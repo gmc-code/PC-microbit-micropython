@@ -2,8 +2,6 @@
 Show text
 ====================================================
 
-.. py:module:: display
-
 display.show simple version
 ----------------------------------------
 
@@ -173,6 +171,7 @@ display.show with clear
 ----------------------------------------
 
 .. py:function:: show(value, clear=False)
+    :no-index:
 
     | Display letters/digits of a string, float, in sequence.
     | If ``clear`` is ``True``, the display will be cleared after it has finished. Its default value is False, in which case, the last character is left displayed.
@@ -236,6 +235,7 @@ display.show with delay
 ----------------------------------------
 
 .. py:function:: show(value, delay=400)
+    :no-index:
 
     | Display letters, characters, and digits of a string, float or integer, in sequence.
     | Each letter, character or digit is shown with ``delay`` milliseconds between them.

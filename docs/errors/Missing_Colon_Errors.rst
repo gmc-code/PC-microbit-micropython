@@ -6,7 +6,7 @@ If: Missing colon
 -----------------------------------
 
 | If the colon is left out from the end of the ``if`` line, an error occurs.
-| A red triangle shows where the colon should have been. 
+| A red triangle shows where the colon should have been.
 
 .. code-block:: python
 
@@ -25,7 +25,7 @@ Elif: Missing colon
 -----------------------------------
 
 | If the colon is left out from the end of the ``elif`` line, an error occurs.
-| A red triangle shows where the colon should have been. 
+| A red triangle shows where the colon should have been.
 
 .. code-block:: python
 
@@ -35,7 +35,7 @@ Elif: Missing colon
         display.scroll('A')
     # elif:
     elif
-        display.scroll('X')  
+        display.scroll('X')
 
 .. image:: images/elif_colon_missing.png
     :scale: 50 %
@@ -43,10 +43,10 @@ Elif: Missing colon
 ----
 
 Else: Missing colon
------------------------------------       
+-----------------------------------
 
 | If the colon is left out from the end of the ``else`` line, an error occurs.
-| A red triangle shows where the colon should have been. 
+| A red triangle shows where the colon should have been.
 
 .. code-block:: python
 
@@ -56,7 +56,7 @@ Else: Missing colon
         display.scroll('A')
     # else:
     else
-        display.scroll('X')   
+        display.scroll('X')
 
 .. image:: images/else_colon_missing.png
     :scale: 50 %
@@ -67,7 +67,7 @@ While: Missing colon
 -----------------------------------
 
 | If the colon is left out from the end of the ``while`` line, an error occurs.
-| A red triangle shows where the colon should have been. 
+| A red triangle shows where the colon should have been.
 
 .. code-block:: python
 
@@ -85,7 +85,7 @@ For: Missing colon
 -----------------------------------
 
 | If the colon is left out from the end of the ``for`` line, an error occurs.
-| A red triangle shows where the colon should have been. 
+| A red triangle shows where the colon should have been.
 
 .. code-block:: python
 
@@ -97,4 +97,3 @@ For: Missing colon
 .. image:: images/for_colon_missing.png
     :scale: 50 %
 
-    

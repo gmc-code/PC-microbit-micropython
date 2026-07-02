@@ -8,8 +8,8 @@ os module
 | The data is structured in a table format and it can be viewed and plotted with
 a browser.
 
-See: `data logging page of the microbit.org website
-<`<https://microbit.org/get-started/user-guide/data-logging/>`_.
+See: data logging page of the microbit.org website
+`<https://microbit.org/get-started/user-guide/data-logging/>`_.
 
 ----
 
@@ -133,7 +133,7 @@ Temperature logging every 5 min
 
 
 Temperature and light logging every 5 min
--------------------------------------
+--------------------------------------------------
 
 .. code-block:: python
 

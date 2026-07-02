@@ -28,6 +28,7 @@ Display.show a built-in Image
 ----------------------------------------
 
 .. py:function:: display.show(image)
+    :no-index:
 
     | Display an image, where image is an image such as the built-in image **Image.Heart**.
 
@@ -156,6 +157,7 @@ Display.show a list of images
 | A list of images can be displayed in sequence.
 
 .. py:function:: display.show(image_list, delay=400)
+    :no-index:
 
     | Display images from a list in sequence.
     | Each image in a list of images is shown with ``delay`` milliseconds between them.

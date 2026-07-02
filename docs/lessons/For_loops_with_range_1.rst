@@ -95,6 +95,7 @@ Range function with start and stop values
 --------------------------------------------
 
 .. py:function:: range(start_value, stop_value)
+    :no-index:
 
     Returns a sequence of numbers, starting at the ``start_value`` number, and increments by 1 (by default), and ends before the ``stop_value`` number.
 
@@ -158,6 +159,7 @@ Range function with a step size
 --------------------------------------------
 
 .. py:function:: range(start_value, stop_value, step_size)
+    :no-index:
 
     Returns a sequence of numbers, starting at the ``start_value`` number, incremented by ``step_size``, and ending before the ``stop_value`` number.
 

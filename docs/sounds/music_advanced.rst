@@ -194,9 +194,9 @@ Random notes Task
 Scales generator
 ----------------------------------------
 
-| See: `<https://piano-music-theory.com/2016/05/31/major-scales/
-| See: `<https://appliedguitartheory.com/lessons/how-to-determine-the-key-of-a-song/
-| See: `<https://en.wikipedia.org/wiki/Key_signature#Scales_with_sharp_key_signatures
+| See: `<https://piano-music-theory.com/2016/05/31/major-scales/>`_
+| See: `<https://appliedguitartheory.com/lessons/how-to-determine-the-key-of-a-song/>`_
+| See: `<https://en.wikipedia.org/wiki/Key_signature#Scales_with_sharp_key_signatures>`_
 
 | Design code to generate the notes in a major scale, given the key and the octave.
 | Research the intervals for major and natural minor scales and place them in lists, **major_steps** and **minor_steps**. Define a function, **get_scale_steps(key_type)**, that returns the scale intervals for a Major or minor key based on passing "M" for major and "m" for minor.

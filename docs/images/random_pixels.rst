@@ -14,8 +14,9 @@ Random pixel randint
 -----------------------------------
 
 .. py:function:: random.randint(a, b)
+    :no-index:
 
-    Return a random integer from a to b, including both. 
+    Return a random integer from a to b, including both.
 
 | The code below displays a random pixel of random brightness every 50ms, then clears the display before showing the next one.
 
@@ -68,7 +69,7 @@ Random pixel randint
 Tuple unpacking using an asterisk in a function call
 -------------------------------------------------------
 
-| Unpacking a tuple means splitting the tuple's elements into individual variables. 
+| Unpacking a tuple means splitting the tuple's elements into individual variables.
 | From the code above, the three lines of code that generate the random values can be moved into a function that returns the three random values in a tuple.
 | The code below, uses the function, **rand_pix()**, to return a tuple of arguments for the **set_pixel** method.
 | Tuple unpacking is used to unpack the tuple returned by the function, **rand_pix()**, for the **set_pixel** method.
@@ -130,9 +131,9 @@ Tuple unpacking in multiple assignment
 -----------------------------------------
 
 | Instead of unpacking the returned tuple in the function call, multiple assignment is used in tuple unpacking.
-| Tuple unpacking is used to unpack the returned tuple into 3 variables: 
+| Tuple unpacking is used to unpack the returned tuple into 3 variables:
 | **random_x, random_y, random_brightness = rand_pix()**.
-| These variables can then be passed into the set_pixel method: 
+| These variables can then be passed into the set_pixel method:
 | **display.set_pixel(random_x, random_y, random_brightness)**.
 
 .. code-block:: python
@@ -256,6 +257,7 @@ Random pixel randrange(start, stop)
 --------------------------------------
 
 .. py:function:: random.randrange(start, stop)
+    :no-index:
 
     Return a randomly selected integer from **start** and up to (but not including) **stop**.
 
@@ -317,6 +319,7 @@ Random pixel randrange(start, stop, step)
 ------------------------------------------
 
 .. py:function:: random.randrange(start, stop, step)
+    :no-index:
 
     Return a randomly selected element from **start** and up to (but not including) **stop** in steps of **step**.
 
@@ -339,6 +342,7 @@ Random pixel randrange(start, stop, step)
         display.set_pixel(random_x, random_y, random_brightness)
         sleep(50)
         display.clear()
+
 ----
 
 .. admonition:: Tasks
@@ -354,7 +358,8 @@ Random pixel randrange(start, stop, step)
 
             .. tab-item:: Q1
 
-                    #. Modify the function, **rand_pix()**, to restrict the brightness to 1 to 3, and the pixels to columns 1 and 3 and the rows to 1 and 3.
+                #. Modify the function, **rand_pix()**, to restrict the brightness to 1 to 3, and the pixels to columns 1 and 3 and the rows to 1 and 3.
+
                 .. code-block:: python
 
                     from microbit import *
@@ -418,7 +423,7 @@ Random pixel random.choice
 
                     from microbit import *
                     import random
-                    
+
                     def rand_pix():
                         random_brightness = random.choice((1, 3, 5))
                         random_x = random.choice((0, 3, 4))
@@ -449,7 +454,7 @@ Random Pixel rows and columns
         for y in range(0, 5):
             display.set_pixel(rand_x(), y, 9)
         sleep(200)
-        display.clear() 
+        display.clear()
 
 ----
 
@@ -467,7 +472,7 @@ Random Pixel rows and columns
             .. tab-item:: Q1
 
                 Write code to set the brightness to 9 for a pixel in each column, with the row being random for each pixel.
-                
+
                 .. code-block:: python
 
                     from microbit import *
@@ -480,7 +485,7 @@ Random Pixel rows and columns
                         for x in range(0, 5):
                             display.set_pixel(x, rand_y(), 9)
                         sleep(200)
-                        display.clear() 
+                        display.clear()
 
 ----
 
@@ -510,7 +515,7 @@ Random Pixels
 .. admonition:: Tasks
 
     #. Modify the code above to produce 10 random pixels at a time.
-    #. Change the brightness to 5, and explore how many random pixels are needed so that only 1 to 3 pixels are left turned off. 
+    #. Change the brightness to 5, and explore how many random pixels are needed so that only 1 to 3 pixels are left turned off.
 
     .. dropdown::
         :icon: codescan
@@ -539,7 +544,7 @@ Random Pixels
 
             .. tab-item:: Q2
 
-                Change the brightness to 5, and explore how many random pixels are needed so that only 1 to 3 pixels are left turned off. 
+                Change the brightness to 5, and explore how many random pixels are needed so that only 1 to 3 pixels are left turned off.
 
                 About 60 to 75 are needed since the same pixel may be generated more than once.
 
@@ -589,7 +594,7 @@ Random Pixels choice Pixel rows and columns lists
 .. admonition:: Tasks
 
     #. Adjust the code to restrict the possible x and y values to the central 3 x 3 square, while showing 3 random pixels at a time.
-    
+
     .. dropdown::
         :icon: codescan
         :color: primary
@@ -637,7 +642,7 @@ get_pixel and set_pixel
 .. code-block:: python
 
     from microbit import *
-    
+
     def full_screen_on_check():
         for y in range(0, 5):
             for x in range(0, 5):
@@ -647,7 +652,7 @@ get_pixel and set_pixel
 
 
 | The code below creates changing displays of random pixels.
-| Start by just importing the **randint** function from the random module. 
+| Start by just importing the **randint** function from the random module.
 | **full_screen_on_check()** checks to see when the display has been filled with 25 pixels.
 | **fill_screen_with_counter** turns on random pixels with brightness between 5 and 9. It checks to see if the screen is filled, and returns the number of random pixels used in the process.
 | The number of random pixels used to fill the screen is then scrolled.

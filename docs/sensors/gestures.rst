@@ -2,8 +2,8 @@
 Gestures
 ====================================================
 
-| The accelerometer returns the following gestures when tilting and moving the microbit: ``up``, ``down``, ``left``, ``right``, ``face up``, ``face down``, ``freefall``, ``3g``, ``6g``, ``8g``, ``shake``. 
-| Gestures are always represented as strings. 
+| The accelerometer returns the following gestures when tilting and moving the microbit: ``up``, ``down``, ``left``, ``right``, ``face up``, ``face down``, ``freefall``, ``3g``, ``6g``, ``8g``, ``shake``.
+| Gestures are always represented as strings.
 | ``3g``, ``6g`` and ``8g`` gestures occur if the microbit experiences large levels of g-force as when the microbit is moved accelerated very rapidly.
 | ``face up`` occurs when the microbit is flat with the front facing upwards.
 | ``face down`` occurs when the microbit is flat with the front facing downwards.
@@ -21,7 +21,7 @@ current_gesture
 
     Return the name of the current gesture as a string. The gestures are: ``"up"``, ``"down"``, ``"left"``, ``"right"``, ``"face up"``, ``"face down"``, ``"freefall"``, ``"3g"``, ``"6g"``, ``"8g"``, ``"shake"``.
 
-| The code below displays the current gesture. 
+| The code below displays the current gesture.
 | It can be laggy, with the scrolled text lagging behind the actual tilt of the microbit.
 
 .. code-block:: python
@@ -32,6 +32,8 @@ current_gesture
         gesture = accelerometer.current_gesture()
         display.scroll(gesture, delay=80)
         sleep(50)
+
+
 ----
 
 .. admonition:: Exercises
@@ -290,7 +292,7 @@ was_gesture
 
 .. py:function:: was_gesture(name)
 
-    | Return True or False to indicate if the named gesture was active since the last check. 
+    | Return True or False to indicate if the named gesture was active since the last check.
     | ``was_gesture`` will not return True again for the same gesture unless another gesture has occurred.
 
 
@@ -443,7 +445,7 @@ was_gesture counts
                         if count == 0:
                             count = 5
                             display.scroll(count, delay=60)
-                            sleep(200)                        
+                            sleep(200)
 
             .. tab-item:: Q2
 

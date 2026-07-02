@@ -11,7 +11,7 @@ Radio Module
 | Firstly, import the ``radio`` module.
 
 .. py:attribute:: import radio
-    
+
     Import the radio module
 
 .. code-block:: python
@@ -86,8 +86,8 @@ Radio send and receive
 
 | `send()`: This method is used to send a string. The string is converted to bytes before it is transmitted. It's useful when you want to send text messages or commands that can be represented as strings. If you send a string with `send()`, you should use `receive()` to get the data as a string on the other end.
 
-| When sending messages via the radio on the microbit, each character in the message will be converted to its ASCII representation, then to binary, and sent as a series of bytes. 
-| In ASCII, A is represented by the number 65. In binary, 65 is 01000001. This is 8 bits of information, or 1 byte. 
+| When sending messages via the radio on the microbit, each character in the message will be converted to its ASCII representation, then to binary, and sent as a series of bytes.
+| In ASCII, A is represented by the number 65. In binary, 65 is 01000001. This is 8 bits of information, or 1 byte.
 | The length parameter in the radio configuration determines how many bytes (or characters) that can be sent in a single message.
 | A byte is a unit of digital information that consists of 8 bits. A bit is the most basic unit of information in computing and can have only one of two values, 0 or 1.
 
@@ -130,7 +130,7 @@ Radio send and receive
 
     radio.on()
     radio.config(group=8, length=251)
-    
+
 
     while True:
         # send
@@ -148,7 +148,7 @@ bytes
 -------------
 
 | `send_bytes()`: This method is used to send bytes. This is useful when you want to send data that can't be easily represented as a string, such as sensor data or binary data.
-| If you send bytes with `send_bytes()`, you should use `receive_bytes()` to get the data as bytes on the other end. 
+| If you send bytes with `send_bytes()`, you should use `receive_bytes()` to get the data as bytes on the other end.
 
 
 .. py:function:: send_bytes(message)
@@ -174,7 +174,7 @@ bytes
 
     radio.on()
     radio.config(group=8, length=251)
-    
+
 
     while True:
         # send
@@ -201,7 +201,7 @@ Msg, Signal strength, timestamps
     * the next incoming message on the message queue as bytes.
     * the RSSI (signal strength): a value between 0 (strongest) and -255 (weakest) as measured in dBm.
     * a microsecond timestamp: the value returned by ``time.ticks_us()`` when the message was received.
-    
+
     This function is useful for providing information needed for triangulation
     and/or trilateration (using distances) with other microbit devices.
 
@@ -238,16 +238,17 @@ Msg, Signal strength, timestamps
 Radio settings
 -----------------------
 
-| The full list of config settings are below. 
+| The full list of config settings are below.
 | If ``config`` is not called then the defaults are used.
 
 .. py:function:: config(length=32, queue=3, channel=7, power=6, address=0x75626974, group=0, data_rate=radio.RATE_1MBIT)
+    :no-index:
 
     Configures various keyword based settings relating to the radio.
 
     The ``length`` (default=32) defines the maximum length, in bytes, of a
     message sent via the radio. 1 character = 1 byte. It can be up to 251 bytes long (254 - 3 bytes
-    for S0, LENGTH and S1 preamble; the S0, LENGTH, and S1 are parts of the packet structure used in radio communication and are used to indicate the start of a packet, the length of the packet, and for error checking, respectively). 
+    for S0, LENGTH and S1 preamble; the S0, LENGTH, and S1 are parts of the packet structure used in radio communication and are used to indicate the start of a packet, the length of the packet, and for error checking, respectively).
 
     The ``queue`` (default=3) specifies the number of messages that can be
     stored on the incoming message queue. If there are no spaces left on the

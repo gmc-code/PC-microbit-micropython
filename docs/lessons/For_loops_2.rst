@@ -73,22 +73,24 @@ Spacing characters
 Code shifts
 -----------------------------------------
 
-| ASCII stands for American Standard Code for Information Interchange. 
+| ASCII stands for American Standard Code for Information Interchange.
 | ASCII is a character encoding standard used in electronic communication to represent text. Each character (like letters, numbers, and symbols) is assigned a unique numeric value.
 | Characters can be converted to ASCII numbers, and back.
 
 .. py:function:: ord(character)
+    :no-index:
 
     | returns the ASCII value for character.
     | e.g ``display.scroll(ord('a'))`` scrolls 97.
 
 .. py:function:: chr(number)
+    :no-index:
 
     | returns the character for the ASCII number.
     | e.g ``display.scroll(chr(97))`` scrolls 'a'.
 
 | The code below converts the character to its ASCII number, decreases the ASCII number by 2, then converts the modified ASCII number back to a character.
-| e.g `h` is converted to ascii_num `104`, `104` is changed to `102`, then ascii_num `102` is converted to `f`. 
+| e.g `h` is converted to ascii_num `104`, `104` is changed to `102`, then ascii_num `102` is converted to `f`.
 | `'h'` (ASCII 104) becomes `'f'` (ASCII 102)
 | `'q'` (ASCII 113) becomes `'o'` (ASCII 111)
 | `'z'` (ASCII 122) becomes `'x'` (ASCII 120)
@@ -207,6 +209,7 @@ Abbreviations
 --------------------------------------
 
 .. py:attribute:: string[start:stop]
+    :no-index:
 
     | returns character `start` up to but not including character `stop` of the string.
     | ``'January'[0:3]`` returns characters 0 to 2 which is 'Jan'.
