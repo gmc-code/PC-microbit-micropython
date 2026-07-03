@@ -133,6 +133,17 @@ Index:
 
 .. toctree::
     :maxdepth: 2
+    :caption: BreadBoard_quizzes
+    :numbered:
+
+    breadboard_quizzes/LED_ordering.rst
+    breadboard_quizzes/Motor_ordering.rst
+    breadboard_quizzes/Potentiometer_ordering.rst
+
+
+
+.. toctree::
+    :maxdepth: 2
     :caption: BreadBoard_projects
     :numbered:
 

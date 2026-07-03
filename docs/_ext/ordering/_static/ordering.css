@@ -387,3 +387,15 @@
 .theme-dark .ordering-line.blank-line-placeholder .ordering-code::before {
   color: #a3a3a3 !important;
 }
+
+/* ==========================================================================
+   8. Feature Additions: Compact Padding Modifier Option
+   ========================================================================== */
+.ordering-block.ordering-no-padding .ordering-line {
+  padding-top: 0px !important;
+  padding-bottom: 0px !important;
+}
+
+.ordering-block.ordering-no-padding .ordering-line.blank-line-placeholder {
+  min-height: 1.5rem; /* Reduces empty rows gracefully to look better without padding */
+}
