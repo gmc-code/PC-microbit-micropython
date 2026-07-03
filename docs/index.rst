@@ -63,6 +63,28 @@ Index:
     quizzes/for_loops_with_range_quiz.rst
 
 
+.. toctree::
+    :maxdepth: 2
+    :caption: Lessons_Code_Ordering
+    :numbered:
+
+    quizzes/scroll_text_ordering.rst
+    quizzes/show_text_ordering.rst
+    quizzes/images_ordering.rst
+    quizzes/buttons_and_selection_ordering.rst
+    quizzes/for_loops_ordering.rst
+    quizzes/for_loops_with_range_ordering.rst
+
+
+.. toctree::
+    :maxdepth: 2
+    :caption: Lessons_Clozes
+    :numbered:
+
+    quizzes/lessons_cloze.rst
+    quizzes/lessons_gapfill.rst
+
+
 
 .. toctree::
     :maxdepth: 2
