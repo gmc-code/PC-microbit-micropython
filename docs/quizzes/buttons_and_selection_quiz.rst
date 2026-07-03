@@ -7,11 +7,11 @@ Question 1
 
 .. multichoice::
 
-    What is the primary operational difference between the ``.is_pressed()`` method and the ``.was_pressed()`` method?
-    [ ] They are identical methods and can be used completely interchangeably. | Incorrect. They track button states using different historical timing logic.
-    [x] ``.is_pressed()`` checks if the button is down at that exact moment, while ``.was_pressed()`` checks if it was pressed since the last time the code checked. | Correct. The text outlines that `.is_pressed` looks at the active moment, whereas `.was_pressed` tracks state history since the last device check.
-    [ ] ``.was_pressed()`` only works if the micro:bit is powered off. | Incorrect. Both require active live execution on powered hardware.
-    [ ] ``.is_pressed()`` triggers an automatic 1000ms delay internally. | Incorrect. Any delays must be programmed explicitly using sleep statements.
+    Which button is located on the left-hand side of the micro:bit front panel?
+    [x] Button A | Correct. Button A is on the left side, and Button B is on the right side.
+    [ ] Button B | Incorrect. Button B is positioned on the right side of the board.
+    [ ] Button C | Incorrect. There is no physical button named Button C on the micro:bit.
+    [ ] The Reset Button | Incorrect. The reset button is located on the back of the micro:bit next to the USB plug.
 
 ----
 
@@ -20,11 +20,11 @@ Question 2
 
 .. multichoice::
 
-    What data type is returned when evaluating a button checking method like ``button_a.is_pressed()``?
-    [ ] String | Incorrect. It does not return text characters inside quotation marks.
-    [ ] Integer | Incorrect. It does not output raw whole numbers like 1 or 0.
-    [x] Boolean | Correct. The documentation explicitly states that it returns either ``True`` or ``False``.
-    [ ] Float | Incorrect. It does not return fractional decimal numbers.
+    Which method should you call if you want to check whether Button A is actively being held down at this exact instant?
+    [x] button_a.is_pressed() | Correct. The ``.is_pressed()`` method checks the immediate, current state of the button.
+    [ ] button_a.was_pressed() | Incorrect. This checks if the button was pressed at some point in the past since the last check.
+    [ ] button_a.hold_down() | Incorrect. There is no method named hold_down() in the microbit library.
+    [ ] button_a.click() | Incorrect. The microbit library does not use a method named click() to detect inputs.
 
 ----
 
@@ -33,20 +33,11 @@ Question 3
 
 .. multichoice::
 
-    Look at the following selection control block code:
-
-    .. code-block:: python
-
-        if button_a.is_pressed():
-            display.show("A")
-        elif button_b.is_pressed():
-            display.show("B")
-
-    What occurs if a user presses both Button A and Button B down at the exact same fraction of a second?
-    [ ] The micro:bit displays the character "A" and then immediately flashes "B". | Incorrect. An `if-elif` chain stops evaluating after finding its first matching match.
-    [x] Only the letter "A" is shown on the display. | Correct. Because the ``if`` condition is evaluated first, its block triggers and the ``elif`` branch for Button B is skipped entirely.
-    [ ] The display panels clears itself automatically due to a runtime error. | Incorrect. This is structured logically and will not crash.
-    [ ] A new custom combination image is drawn onto the screen matrix. | Incorrect. No graphic combinations occur unless explicitly programmed.
+    What type of answer (data type) do you get back when you ask ``button_b.is_pressed()``?
+    [ ] A string (text inside quotes) | Incorrect. It returns a logical state, not a string of letters.
+    [ ] An integer (a whole number like 1) | Incorrect. It does not return numbers.
+    [x] A boolean value (True or False) | Correct. It returns True if the button is pressed, or False if it is not.
+    [ ] A decimal float (like 1.0) | Incorrect. It only returns true/false conditions, never decimals.
 
 ----
 
@@ -55,11 +46,11 @@ Question 4
 
 .. multichoice::
 
-    Which of the following code patterns checks if BOTH buttons are being held down simultaneously?
-    [x] if button_a.is_pressed() and button_b.is_pressed(): | Correct. The ``and`` logical operator requires both individual button states to evaluate to True at the same time.
-    [ ] if button_a.is_pressed() or button_b.is_pressed(): | Incorrect. The ``or`` operator requires only one or the other button to be down, not necessarily both.
-    [ ] if button_a.is_pressed() + button_b.is_pressed(): | Incorrect. Combining button conditional methods with addition operators is improper syntax.
-    [ ] if button_a.was_pressed() or button_b.was_pressed(): | Incorrect. This checks if either button had a historical click event independently.
+    If a micro:bit program checks ``button_a.is_pressed()`` while nobody is touching the board, what value does it return?
+    [ ] True | Incorrect. It will only return True if the button is physically pushed down.
+    [x] False | Correct. Because the button is up and resting, the check evaluates to False.
+    [ ] None | Incorrect. It consistently provides a clear boolean True or False answer.
+    [ ] 0 | Incorrect. Button checks only return True or False.
 
 ----
 
@@ -68,11 +59,18 @@ Question 5
 
 .. multichoice::
 
-    What is the purpose of using the ``min()`` and ``max()`` functions when updating game variables like a ``guess_number``?
-    [ ] To increase the execution speed of the tracking loop. | Incorrect. Math boundaries do not alter physical code execution velocities.
-    [x] To set upper and lower boundaries (limits) so the variable doesn't go out of bounds. | Correct. The tasks demonstrate using functions like ``min(9, guess_number + 1)`` to prevent values from skipping outside specified limits.
-    [ ] To clear out old values stored inside the micro:bit system memory. | Incorrect. Variable cleanup is handled natively by the runtime environment.
-    [ ] To display multiple integers simultaneously on a single screen framework. | Incorrect. Numeric display limits are dictated by matrix resolutions.
+    Look at the code statement below:
+
+    .. code-block:: python
+
+        if button_a.is_pressed():
+            display.show("A")
+
+    When will the letter "A" appear on the LED screen grid?
+    [ ] Every time the micro:bit turns on. | Incorrect. It relies strictly on checking the physical button state.
+    [ ] Only when Button B is held down. | Incorrect. This line explicitly tests the button_a hardware object.
+    [x] When a user pushes down Button A. | Correct. The conditional code block only runs if button_a.is_pressed() evaluates to True.
+    [ ] Never, because the code contains a logic error. | Incorrect. This is the standard syntax pattern used to check an input condition.
 
 ----
 
@@ -81,21 +79,11 @@ Question 6
 
 .. multichoice::
 
-    Consider the following program loop:
-
-    .. code-block:: python
-
-        while True:
-            if button_a.was_pressed():
-                display.show("A")
-            else:
-                sleep(100)
-
-    Why is the ``sleep(100)`` statement placed inside the ``else:`` clause block?
-    [ ] To speed up the processing capability of the selection structure. | Incorrect. Sleeping intentionally slows processing down.
-    [ ] To clear out any existing images currently rendering on the grid matrix. | Incorrect. Clearing requires explicit command lines like ``display.clear()``.
-    [x] To give the system a short rest and save processing resources when no button actions are happening. | Correct. It stops the loop from running at maximum speed when idle, which provides efficiency pauses.
-    [ ] To force the loop condition to evaluate as False and exit. | Incorrect. A ``while True`` container loops infinitely until forced by a break statement.
+    If a program checks ``button_a.is_pressed()`` while the button is physically held down continuously, what value will it evaluate to on every check?
+    [x] True | Correct. As long as the button remains actively pressed down, the method will consistently return True at that moment.
+    [ ] False | Incorrect. It only returns False if the button is not being pressed at the exact moment of evaluation.
+    [ ] None | Incorrect. The method returns a boolean value, not a None type object.
+    [ ] 1 | Incorrect. Button state methods return booleans (True/False), not integers.
 
 ----
 
@@ -104,11 +92,11 @@ Question 7
 
 .. multichoice::
 
-    What happens to the internal click history counter immediately after you call the ``button_a.was_pressed()`` method?
-    [ ] The history counter doubles its tracking capacity automatically. | Incorrect. It does not accumulate continuously after interrogation.
-    [x] The counter resets back to False. | Correct. Calling ``.was_pressed()`` clears the history buffer status so it can start fresh tracking for future clicks.
-    [ ] The micro:bit pauses execution mechanics for exactly 1000ms. | Incorrect. System delays are governed strictly by sleep statements.
-    [ ] The button stops accepting any new real-world physical interactions. | Incorrect. Buttons stay continuously receptive during standard loop cycles.
+    What happens if you run a loop that continuously calls ``button_a.was_pressed()`` while the button is held down continuously?
+    [ ] It returns True on every single loop iteration. | Incorrect. It only captures the initial transition event, not the ongoing state.
+    [x] It returns True on the first check, and then returns False on subsequent checks until released and pressed again. | Correct. The method resets its history counter back to False immediately after being called, so it will not return True again until a new press occurs.
+    [ ] It causes the micro:bit hardware to lock up. | Incorrect. This is normal conditional logic and will not cause a hardware freeze.
+    [ ] It returns None. | Incorrect. It always returns a boolean value (True or False).
 
 ----
 
@@ -117,20 +105,20 @@ Question 8
 
 .. multichoice::
 
-    A student writes the code block below to increase a score value when pressing Button A:
+    Look at the following selection code block:
 
     .. code-block:: python
 
-        # Start value
-        score = 5
-        if button_a.was_pressed():
-            score = min(9, score + 2)
+        if button_a.is_pressed() or button_b.is_pressed():
+            display.show(Image.HAPPY)
+        else:
+            display.clear()
 
-    If the current value of ``score`` is 8, and the user presses Button A, what is the new value stored inside ``score``?
-    [ ] 10 | Incorrect. The bounding check sets a structural cap that prevents it from reaching 10.
-    [ ] 8 | Incorrect. The baseline number increases because it has space before hitting the absolute ceiling limit.
-    [x] 9 | Correct. Adding 2 to 8 yields 10, but ``min(9, 10)`` returns 9, limiting the value to the max boundary.
-    [ ] 5 | Incorrect. The value updates upward rather than resetting to its base initial state.
+    Under what condition will the micro:bit display the happy face image?
+    [ ] Only when Button A is pressed alone. | Incorrect. The statement can also evaluate to True if Button B is pressed.
+    [ ] Only when both Button A and Button B are pressed together. | Incorrect. That would require the 'and' operator instead of 'or'.
+    [x] When either Button A is pressed, Button B is pressed, or both are pressed. | Correct. The logical 'or' operator returns True if at least one of the conditions is true.
+    [ ] Only when neither button is pressed. | Incorrect. If neither is pressed, the code branches to the 'else' block and clears the display.
 
 ----
 
@@ -139,39 +127,62 @@ Question 9
 
 .. multichoice::
 
-    Which of the following code blocks demonstrates the correct way to continuously decrease a variable called ``level`` by a step of 1 down to a minimum floor value of 1 using Button B?
-    [x] .. code-block:: python
+    Look at the following selection control structure:
 
-            if button_b.was_pressed():
-                level = max(1, level - 1)
-        | Correct. Subtracting 1 decreases the value, and passing it to ``max(1, ...)`` ensures it cannot fall below 1.
-    [ ] .. code-block:: python
+    .. code-block:: python
 
-            if button_b.was_pressed():
-                level = min(1, level - 1)
-        | Incorrect. This forces the level to immediately drop to 1 or lower.
-    [ ] .. code-block:: python
+        if button_a.is_pressed():
+            display.show("A")
+        elif button_b.is_pressed():
+            display.show("B")
+        else:
+            display.show("C")
 
-            if button_b.is_pressed():
-                level = max(9, level + 1)
-        | Incorrect. This adds to the level variable and checks against an incorrect upper constraint.
-    [ ] .. code-block:: python
-
-            if button_b.was_pressed():
-                level = level - 1
-        | Incorrect. This fails to implement a safety ceiling or floor value constraint entirely.
+    If neither Button A nor Button B is pressed, what will be displayed on the micro:bit?
+    [ ] The letter "A" | Incorrect. The "if" condition requires Button A to be pressed.
+    [ ] The letter "B" | Incorrect. The "elif" condition requires Button B to be pressed.
+    [x] The letter "C" | Correct. When all preceding conditions in an if-elif chain evaluate to False, the final "else" block executes by default.
+    [ ] The screen will remain completely clear. | Incorrect. The "else" block explicitly runs display.show("C").
 
 ----
 
 Question 10
------------
+-------------
 
 .. multichoice::
 
-    If you run code that contains an infinite ``while True:`` loop without adding any internal ``sleep()`` delays or scrolling actions, what is the resulting negative outcome?
-    [ ] The Python editor automatically deletes the script files from storage. | Incorrect. Program tracking logic does not modify code storage spaces.
-    [ ] The micro:bit changes its display parameters to reverse text orientation. | Incorrect. Formatting layouts are not dynamically inverted by processor load.
-    [x] The processor will run continuously at maximum capacity without a rest, wasting power. | Correct. Including minor delay offsets keeps processing loops efficient.
-    [ ] The hardware permanently locks up and can never be reprogrammed. | Incorrect. Micro:bits can always be safely rewritten with fresh code flashing sequences.
+    Which of the following code blocks will display the letter "A" when Button A is pressed, display the letter "B" when Button B is pressed, and keep the screen clear when neither button is pressed?
+    [x] .. code-block:: python
+
+            if button_a.is_pressed():
+                display.show("A")
+            elif button_b.is_pressed():
+                display.show("B")
+            else:
+                display.clear()
+        | Correct. This properly routes each button state and uses the ``else`` clause to clear the screen when both conditions evaluate to False.
+    [ ] .. code-block:: python
+
+            if button_a.is_pressed():
+                display.show("A")
+            if button_b.is_pressed():
+                display.show("B")
+            else:
+                display.clear()
+        | Incorrect. Using two independent ``if`` statements means if Button A is pressed, the second ``if`` condition is evaluated separately, causing the ``else`` block to execute and clear the screen immediately.
+    [ ] .. code-block:: python
+
+            if button_a.is_pressed():
+                display.show("A")
+            elif button_b.is_pressed():
+                display.show("B")
+        | Incorrect. This block lacks an final ``else`` structural branch to clear the screen when idle.
+    [ ] .. code-block:: python
+
+            if button_a.is_pressed() and button_b.is_pressed():
+                display.show("A")
+            else:
+                display.clear()
+        | Incorrect. This checks if both buttons are held together, rather than handling them as separate, distinct button inputs.
 
 
