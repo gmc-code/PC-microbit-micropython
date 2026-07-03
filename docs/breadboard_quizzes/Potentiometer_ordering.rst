@@ -84,10 +84,11 @@ Question 5
 
 .. ordering::
     :theme: light
+    :no-padding:
 
     from microbit import *
 
-      while True:
+    while True:
         pot_val = pin2.read_analog()
         if pot_val >= 500:
             pin0.write_digital(0)
