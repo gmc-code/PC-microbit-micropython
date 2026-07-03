@@ -139,7 +139,7 @@ Index:
     breadboard_quizzes/LED_ordering.rst
     breadboard_quizzes/Motor_ordering.rst
     breadboard_quizzes/Potentiometer_ordering.rst
-
+    breadboard_quizzes/Buzzer_ordering.rst
 
 
 .. toctree::
