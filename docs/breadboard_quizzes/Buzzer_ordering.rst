@@ -44,7 +44,6 @@ Question 3
 
 .. ordering::
     :theme: light
-    :no-padding:
 
     from microbit import *
     import music
@@ -64,7 +63,6 @@ Question 4
 
 .. ordering::
     :theme: light
-    :no-padding:
 
     from microbit import *
     import music
