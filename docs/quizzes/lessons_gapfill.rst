@@ -78,8 +78,10 @@ Question 5
     from microbit import *
 
     for spray_count in *[range(4)/range(5)]*:
+        display.show(*[spray_count+1/"spray_count"]*)
+        sleep(500)
         display.show(Image.STICKFIGURE)
-        sleep(800)
+        sleep(500)
         display.clear()
         sleep(200)
 
