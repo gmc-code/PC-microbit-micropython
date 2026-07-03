@@ -82,7 +82,7 @@
 }
 
 /* ==========================================================================
-   3. MCQ Answer Card Choice Items
+   3. MCQ Answer Card Choice Items (Top Alignment with Text Nudge)
    ========================================================================== */
 .multichoice-choice {
   margin: 0.3em 0;
@@ -95,11 +95,11 @@
   padding: 0.3em 0.5em;
 }
 
-/* Flexbox Layout Alignment Mapping */
+/* Keeps everything aligned to the top */
 .multichoice-choice label {
   display: flex;
   align-items: flex-start;
-  gap: 0.5em;
+  gap: 0.5rem;
   margin: 0;
   padding: 0;
   width: 100%;
@@ -107,27 +107,44 @@
   color: var(--mcq-light-text);
 }
 
-/* Form inputs & static alignment */
-.multichoice-choice input {
+/* Nudge the radio button down slightly to match the text baseline */
+.multichoice-choice input[type="radio"] {
   margin: 0 !important;
+  padding: 0 !important;
   align-self: flex-start;
-  margin-top: 0.25em !important;
+  position: relative;
+  top: 3px; /* Adjust this value (e.g., 2px to 4px) to center it with line 1 */
   pointer-events: none;
 }
 
+/* Nudge the letter (A, B, C...) down to match the docutils paragraph baseline */
 .multichoice-letter {
   font-weight: 600;
   min-width: 1.2em;
   color: var(--mcq-light-letter);
   align-self: flex-start;
   line-height: 1.4;
+  position: relative;
+  font-size: 1.1em;
+  top: 0px; /* Tweak this by 1px or 2px until it perfectly mirrors the choice text */
 }
 
+/* Choice label container holds the deep docutils tags */
 .multichoice-choice-label {
   line-height: 1.4;
   flex: 1;
   min-width: 0;
   align-self: flex-start;
+}
+
+/* Clean up inside margins so docutils block elements don't add extra top gaps */
+.multichoice-choice-label blockquote,
+.multichoice-choice-label div,
+.multichoice-choice-label p {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
 }
 
 /* ==========================================================================
