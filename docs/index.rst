@@ -51,7 +51,7 @@ Index:
 
 .. toctree::
     :maxdepth: 2
-    :caption: Lessons_Quizzes
+    :caption: Lesson_Quizzes
     :numbered:
 
     quizzes/basics_quiz.rst
@@ -65,7 +65,7 @@ Index:
 
 .. toctree::
     :maxdepth: 2
-    :caption: Lessons_Code_Ordering
+    :caption: Lesson_Code_Ordering
     :numbered:
 
     quizzes/scroll_text_ordering.rst
@@ -78,12 +78,11 @@ Index:
 
 .. toctree::
     :maxdepth: 2
-    :caption: Lessons_Clozes
+    :caption: Lesson_Clozes
     :numbered:
 
     quizzes/lessons_cloze.rst
     quizzes/lessons_gapfill.rst
-
 
 
 .. toctree::
