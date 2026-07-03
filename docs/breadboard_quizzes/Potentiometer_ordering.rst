@@ -130,7 +130,8 @@ Question 7
 | Usse 3 zone switches to handle low dial signals on Pin 0, middle dial signals on Pin 1, and high dial signals on Pin 8 sequentially while ensuring that only one zone is active at a time.
 
 .. ordering::
-    :theme: light
+    :theme: light:
+    :no-padding:
 
     from microbit import *
 
