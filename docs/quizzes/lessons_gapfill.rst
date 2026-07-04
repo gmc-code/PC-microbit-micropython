@@ -152,7 +152,7 @@ Question 9
 
     lap_time = 14.2
     while True:
-        display.scroll("LAP TIME=", *[75 | delay=75]*)
+        display.scroll("LAP TIME=", *[75 | delay=750]*)
         display.scroll(*[lap_time | time]*)
 
 ----
