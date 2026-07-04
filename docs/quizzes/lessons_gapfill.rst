@@ -13,7 +13,7 @@ Question 1
     from microbit import *
 
     while True:
-        display.*[show/scroll]*("UP", *[150/delay=150s]*)
+        display.*[show | scroll]*("UP", *[150 | delay=150s]*)
 
 ----
 
@@ -28,7 +28,7 @@ Question 2
     from microbit import *
 
     while True:
-        display.*[scroll/show]*("PANEL ALIGNED TO EAST")
+        display.*[scroll | show]*("PANEL ALIGNED TO EAST")
 
 ----
 
@@ -43,9 +43,9 @@ Question 3
     from microbit import *
 
     while True:
-        if button_a.*[is_pressed/was_pressed]*():
+        if button_a.*[is_pressed | was_pressed]*():
             display.show(Image.HAPPY)
-        *[else/elif]*:
+        *[else | elif]*:
             display.clear()
 
 ----
@@ -61,7 +61,7 @@ Question 4
     from microbit import *
 
     health_bar = "HEARTS"
-    *[for/while]* char *[in/of]* health_bar:
+    *[for | while]* char *[in | of]* health_bar:
         display.show(char)
         sleep(500)
 
@@ -77,8 +77,8 @@ Question 5
 
     from microbit import *
 
-    for spray_count in *[range(4)/range(5)]*:
-        display.show(*[spray_count+1/"spray_count"]*)
+    for spray_count in *[range(4) | range(5)]*:
+        display.show(*[spray_count+1 | "spray_count"]*)
         sleep(500)
         display.show(Image.STICKFIGURE)
         sleep(500)
@@ -100,9 +100,9 @@ Question 6
     while True:
         if button_a.is_pressed():
             display.show("A")
-        *[elif/else if]* button_b.is_pressed():
+        *[elif | else if]* button_b.is_pressed():
             display.show("B")
-        *[else/default]*:
+        *[else | default]*:
             display.clear()
 
 ----
@@ -118,7 +118,7 @@ Question 7
     from microbit import *
 
     while True:
-        if button_b.*[was_pressed/is_pressed]*():
+        if button_b.*[was_pressed | is_pressed]*():
             display.scroll("POINT ADDED")
         sleep(100)
 
@@ -135,8 +135,8 @@ Question 8
     from microbit import *
 
     passcode = "9021"
-    for digit in *[passcode/digits]*:
-        display.*[show/scroll]*(digit)
+    for digit in *[passcode | digits]*:
+        display.*[show | scroll]*(digit)
         sleep(300)
 
 ----
@@ -152,8 +152,8 @@ Question 9
 
     lap_time = 14.2
     while True:
-        display.scroll("LAP TIME=", *[75/delay=75]*)
-        display.scroll(*[lap_time/time]*)
+        display.scroll("LAP TIME=", *[75 | delay=75]*)
+        display.scroll(*[lap_time | time]*)
 
 ----
 
@@ -169,8 +169,8 @@ Question 10
     current_score = 5
     while True:
         if button_a.was_pressed():
-            current_score = *[min/max]*(9, *[current_score + 1/current_score - 1]*)
-        display.show(*[current_score/current_score+2]*)
+            current_score = *[min | max]*(9, *[current_score + 1 | current_score - 1]*)
+        display.show(*[current_score | current_score+2]*)
 
 
 
