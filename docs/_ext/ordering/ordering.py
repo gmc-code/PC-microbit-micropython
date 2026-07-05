@@ -16,13 +16,17 @@ def visit_ordering_html(self, node):
 def depart_ordering_html(self, node):
     pass
 
+
 class OrderingDirective(SphinxDirective):
     has_content = True
 
     option_spec = {
         'theme': directives.unchanged,
         'no-solution': directives.flag,  # Registers the boolean flag option
-        'no-padding': directives.flag,   # New flag definition to toggle vertical padding
+        'no-padding':
+        directives.flag,  # New flag definition to toggle vertical padding
+        'no-reorder':
+        directives.flag,  # Keeps the original order but strips indentation
     }
 
     def run(self):
@@ -37,14 +41,13 @@ class OrderingDirective(SphinxDirective):
         if chosen_theme not in ['light', 'dark']:
             chosen_theme = 'light'
 
-        # Check if the :no-solution: flag was provided in rST
+        # Check if flags were provided in rST
         hide_solution = 'no-solution' in self.options
+        use_no_padding = 'no-padding' in self.options
+        no_reorder = 'no-reorder' in self.options
 
         # FIXED: Safe inline style variable that keeps JS happy but hides the button visually
         solution_btn_style = 'style="display: none !important;"' if hide_solution else ''
-
-        # Check if the :no-padding: flag was explicitly set in rST
-        use_no_padding = 'no-padding' in self.options
         padding_class = ' ordering-no-padding' if use_no_padding else ''
 
         line_items = []
@@ -62,14 +65,26 @@ class OrderingDirective(SphinxDirective):
                 'is_blank': is_blank
             })
 
-        shuffled_items = line_items.copy()
-        random.shuffle(shuffled_items)
+        # Keep original order if :no-reorder: flag is passed, otherwise shuffle
+        processed_items = line_items.copy()
+        if not no_reorder:
+            random.shuffle(processed_items)
 
         html_output = f'<div class="ordering-block{padding_class}">'
-        html_output += '<div class="ordering-instructions">Drag and drop lines into the correct order and click to adjust indentation:</div>'
-        html_output += f'<div class="ordering-container theme-{chosen_theme}">'
 
-        for item in shuffled_items:
+        # Adjust prompt instruction text based on whether shuffling is active
+        if no_reorder:
+            instructions = 'Click to adjust indentation into the correct structural hierarchy:'
+        else:
+            instructions = 'Drag and drop lines into the correct order and click to adjust indentation:'
+
+        html_output += f'<div class="ordering-instructions">{instructions}</div>'
+
+        # --- UPDATE THIS LINE TO PASS THE FLAG TO JS ---
+        no_reorder_attr = ' data-no-reorder="true"' if no_reorder else ''
+        html_output += f'<div class="ordering-container theme-{chosen_theme}"{no_reorder_attr}>'
+
+        for item in processed_items:
             if item['is_blank']:
                 display_text = " "
                 extra_class = " blank-line-placeholder"
@@ -77,9 +92,13 @@ class OrderingDirective(SphinxDirective):
                 display_text = html.escape(item['text'])
                 extra_class = ""
 
+            # If no-reorder is active, we can optionally make draggable false,
+            # but leaving it handles standard drag/drop UI safely without disrupting layouts.
+            is_draggable = "false" if no_reorder else "true"
+
             html_output += f'''
             <div class="ordering-line{extra_class}"
-                 draggable="true"
+                 draggable="{is_draggable}"
                  data-correct-idx="{item['correct_idx']}"
                  data-correct-indent="{item['indent']}"
                  data-current-indent="0"
@@ -94,10 +113,11 @@ class OrderingDirective(SphinxDirective):
             '''
         html_output += '</div>'
 
-        # Control panel containing the safely hidden inline solution button
+        # Control panel containing the safely hidden inline solution button and continue button
         html_output += f'''
         <div class="ordering-controls">
             <button type="button" class="ordering-btn-score">Check Order</button>
+            <button type="button" class="ordering-btn-continue" style="display: none;">Continue</button>
             <button type="button" class="ordering-btn-solution" {solution_btn_style}>Show Solution</button>
             <button type="button" class="ordering-btn-reset">Reset</button>
             <span class="ordering-feedback-badge"></span>
