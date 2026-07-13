@@ -111,7 +111,7 @@ Question 9
 
 .. multichoice::
 
-    If you need a secondary pause to last for a quarter of a second, what value should be passed to the sleep statement?
+    If you need a pause to last for a quarter of a second, what value should be passed to the sleep statement?
     [x] sleep(250) | Correct. Since 1000 milliseconds equals one second, a quarter of that duration is exactly 250 milliseconds.
     [ ] sleep(0.25) | Incorrect. Passing 0.25 pauses for a quarter of one millisecond.
     [ ] sleep(25) | Incorrect. This would result in a pause lasting 25 milliseconds, which is only 1/40th of a second.
