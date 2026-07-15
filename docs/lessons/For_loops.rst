@@ -263,7 +263,7 @@ Nested For loops
 
 .. admonition:: Tasks
 
-    #. Write a for-loop that scrolls all the letter pairings from the 2 lists: ["A", "B", "C"] and ["X", "Y", "Z"] taking one letter from each with the first letter always beng form the first list given.
+    #. Write a for-loop that scrolls all the letter pairings from the 2 lists: ["A", "B", "C"] and ["X", "Y", "Z"] taking one letter from each with the first letter always beng from the first list given.
     #. Write a nested for-loop that tuns on and off pixels at points (x,y) using the lists:   ``x_positions = [0, 1, 2, 3, 4]`` and ``y_positions = [4, 3, 2, 1, 0]``. Use ``display.set_pixel(x, y, 9)`` to turn on the pixel and ``display.set_pixel(x, y, 0)`` to turn it off after a short sleep.
 
     .. dropdown::
