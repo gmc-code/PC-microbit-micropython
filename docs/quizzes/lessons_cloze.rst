@@ -113,15 +113,15 @@ Question 7
 Question 8
 ----------
 
-| Finish the loop punctuation and matching variable setup to scroll the text elements of the liststep-by-step.
+| Finish the loop punctuation and matching variable setup to scroll the characters of the string step-by-step.
 
 .. cloze::
 
     from microbit import *
 
-    *[level|levels]* = ["LOW", "HIGH"]
-    for status in levels*[ : | ; | , ]*
-        display.scroll(*[ status | levels ]*)
+    *[level|levels]* = "level 1 to 9"
+    for char in levels*[ : | ; | , ]*
+        display.scroll(*[ char | levels ]*)
 
 ----
 
