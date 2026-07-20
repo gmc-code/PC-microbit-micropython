@@ -119,7 +119,7 @@ Question 8
 
     from microbit import *
 
-    *[level|levels]* = "level 1 to 9"
+    *[levels|char]* = "level 1 to 9"
     for char in levels*[ : | ; | , ]*
         display.scroll(*[ char | levels ]*)
 
