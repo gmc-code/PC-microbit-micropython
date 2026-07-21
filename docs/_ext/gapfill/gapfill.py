@@ -42,21 +42,21 @@ class GapFillDirective(SphinxDirective):
         all_words_in_text = re.findall(r'\b[a-zA-Z_][a-zA-Z0-9_]*\b', full_text)
         context_distractors = list(set([w for w in all_words_in_text if len(w) > 2]))
 
-        # Matches the exact cloze syntax: optional outer asterisks followed by *[ content ]*
-        gap_pattern = re.compile(r'\*?(\*?)\*\[([^\]]+)\]\*\1\*?')
+        # Updated regex to match @@ choice1 | choice2 @@ syntax securely without touching Python lists [...]
+        gap_pattern = re.compile(r'@@([^@]+)@@')
         parsed_html_parts = []
         remaining_text = full_text
 
         while True:
-            match = pattern = gap_pattern.search(remaining_text)
+            match = gap_pattern.search(remaining_text)
             if not match:
                 break
 
             start_idx, end_idx = match.span()
             parsed_html_parts.append(html.escape(remaining_text[:start_idx]))
 
-            # Isolate content within the brackets and clean internal spaces
-            raw_choices_str = match.group(2).strip()
+            # Isolate content within the @@ delimiters and clean internal spaces
+            raw_choices_str = match.group(1).strip()
 
             # Split exclusively on vertical pipes '|'
             if '|' in raw_choices_str:
@@ -115,7 +115,7 @@ def setup(app):
     app.add_js_file("gapfill.js")
     app.add_css_file("gapfill.css")
     return {
-        "version": "2.8",
+        "version": "2.9",
         "parallel_read_safe": True,
         "parallel_write_safe": True
     }

@@ -9,10 +9,10 @@ Question 1
 
 .. cloze::
 
-    from microbit *[ import | include ]* *
+    from microbit @@ import | include @@ *
 
     while True:
-        display.*[ scroll | show ]*("Hello")
+        display.@@ scroll | show @@("Hello")
 
 ----
 
@@ -26,7 +26,7 @@ Question 2
     from microbit import *
 
     while True:
-        if button_a.*[ is_pressed | was_pressed | has_pressed ]*():
+        if button_a.@@ is_pressed | was_pressed | has_pressed @@():
             display.show("A")
 
 ----
@@ -41,8 +41,8 @@ Question 3
     from microbit import *
 
     passcode = "ZEBRA"
-    for letter *[ in | of | range ]* passcode:
-        display.*[ show | write ]*(letter)
+    for letter @@ in | of | range @@ passcode:
+        display.@@ show | write @@(letter)
         sleep(300)
 
 ----
@@ -56,9 +56,9 @@ Question 4
 
     from microbit import *
 
-    for count in range(*[ 3 | 2 | 1 ]*):
+    for count in range(@@ 3 | 2 | 1 @@):
         display.show(count)
-        sleep(*[ 400 | "400" | delay=400 ]*)
+        sleep(@@ 400 | "400" | delay=400 @@)
 
 ----
 
@@ -71,9 +71,9 @@ Question 5
 
     if button_a.is_pressed():
         display.show("A")
-    *[ elif | if | else if ]* button_b.is_pressed():
+    @@ elif | if | else if @@ button_b.is_pressed():
         display.show("B")
-    *[ else | default | finish ]*:
+    @@ else | default | finish @@:
         display.clear()
 
 ----
@@ -88,9 +88,9 @@ Question 6
     from microbit import *
 
     while True:
-        if button_b.*[ was_pressed | is_pressed | cleared ]*():
+        if button_b.@@ was_pressed | is_pressed | cleared @@():
             display.show(Image.HAPPY)
-        *[ sleep | wait | pause ]*(100)
+        @@ sleep | wait | pause @@(100)
 
 ----
 
@@ -105,7 +105,7 @@ Question 7
 
     score = 950
     while True:
-        display.scroll("SCORE=", *[ 50 | delay=500 | "50" ]*)
+        display.scroll("SCORE=", @@ 50 | delay=500 | "50" @@)
         display.scroll(score)
 
 ----
@@ -119,9 +119,9 @@ Question 8
 
     from microbit import *
 
-    *[levels|char]* = "level 1 to 9"
-    for char in levels*[ : | ; | , ]*
-        display.scroll(*[ char | levels ]*)
+    @@levels|char@@ = "level 1 to 9"
+    for char in levels@@ : | ; | , @@
+        display.scroll(@@ char | levels @@)
 
 ----
 
@@ -135,7 +135,7 @@ Question 9
     from microbit import *
 
     while True:
-        display.show("GO", *[ 150 | 400 | "150ms" ]*)
+        display.show("GO", @@ 150 | 400 | "150ms" @@)
 
 ----
 
@@ -151,7 +151,7 @@ Question 10
     guess_number = 5
     while True:
         if button_a.was_pressed():
-            guess_number = *[ min | max | limit ]*(9, guess_number + 1)
+            guess_number = @@ min | max | limit @@(9, guess_number + 1)
         display.show(guess_number)
 
 

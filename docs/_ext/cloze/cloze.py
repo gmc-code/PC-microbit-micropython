@@ -35,7 +35,9 @@ class ClozeDirective(SphinxDirective):
         node['theme'] = f"theme-{theme_val}"
 
         auto_distract = 'auto-distract' in self.options
-        gap_pattern = re.compile(r'\*?(\*?)\[([^\]]+)\]\1\*?')
+
+        # Updated regex to match @@ content @@ safely without breaking python lists [...]
+        gap_pattern = re.compile(r'@@([^@]+)@@')
 
         # Extract all potential words from the sentence context to use as distractors
         # We strip away syntax tokens and find unique words longer than 2 characters
@@ -46,17 +48,11 @@ class ClozeDirective(SphinxDirective):
         word_bank_items = []
         gap_counter = 0
 
-        inner_pattern = re.compile(r'\[([^\]]+)\]')
-
         def extract_words(match):
             nonlocal gap_counter
             gap_counter += 1
 
-            inner_match = inner_pattern.search(match.group(0))
-            if not inner_match:
-                return match.group(0)
-
-            raw_content = inner_match.group(1).strip('*').strip()
+            raw_content = match.group(1).strip()
 
             # SUPPORT MULTIPLE SEPARATORS: matches |, /, \, or ,
             if re.search(r'[|/\\,]', raw_content):
@@ -138,7 +134,7 @@ def setup(app):
     app.add_css_file("cloze.css")
 
     return {
-        "version": "4.0",
+        "version": "4.1",
         "parallel_read_safe": True,
         "parallel_write_safe": True
     }
