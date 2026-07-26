@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
 
       const finalPercentage = Math.round((correctCount / totalLines) * 100);
-      feedbackBadge.style.display = "inline-block";
+      feedbackBadge.style.display = "inline-flex";
       feedbackBadge.className = "ordering-feedback-badge";
 
       if (finalPercentage === 100) {
@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
         feedbackBadge.classList.add("high");
         btnContinue.style.display = "none"; // Perfect score means no need to continue
       } else {
-        btnContinue.style.display = "inline-block"; // Show continue button for less than 100%
+        btnContinue.style.display = "inline-flex"; // Show continue button for less than 100%
 
         if (finalPercentage >= 50) {
           feedbackBadge.textContent = `⚠ Getting Close! ${correctCount}/${totalLines} (${finalPercentage}%)`;
@@ -165,7 +165,7 @@ document.addEventListener("DOMContentLoaded", () => {
       btnScore.disabled = true;
       btnContinue.style.display = "none";
 
-      feedbackBadge.style.display = "inline-block";
+      feedbackBadge.style.display = "inline-flex";
       feedbackBadge.textContent = "ℹ Solution Displayed";
       feedbackBadge.className = "ordering-feedback-badge medium";
     });

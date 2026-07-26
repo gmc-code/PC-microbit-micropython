@@ -211,21 +211,38 @@
 
 .ordering-controls {
   display: flex;
-  align-items: center;
-  gap: 0.75rem;
+  align-items: center;        /* Ensures center cross-axis baseline */
+  gap: 0.5rem;
   margin-top: 1.25rem;
   width: 100%;
+  flex-wrap: nowrap !important;
+  overflow-x: auto;
+  min-height: 2.5rem;          /* Locks vertical container height */
+}
+
+.ordering-controls button,
+.ordering-feedback-badge {
+  box-sizing: border-box;     /* Includes border & padding in total height calculation */
+  height: 2.3rem;             /* Fixed uniform height for both buttons and badge */
+  display: inline-flex;       /* Perfect vertical centering inside the button/badge */
+  align-items: center;
+  justify-content: center;
+  line-height: 1;             /* Prevents font line-height discrepancies */
 }
 
 .ordering-controls button {
-  padding: 0.55rem 1.2rem;
+  padding: 0 0.8rem;           /* Use horizontal padding only; height handles vertical */
   font-weight: 600;
   border-radius: var(--or-radius-md);
-  border: none;
+  border: 1px solid transparent; /* Gives all buttons an identical 1px border box */
   cursor: pointer;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   transition: background-color 0.1s ease, transform 0.05s ease;
+  white-space: nowrap;
+  flex-shrink: 0;
 }
+
+
 
 .ordering-controls button:active {
   transform: scale(0.98);
@@ -324,16 +341,28 @@
 /* ==========================================================================
    6. Dynamic Score Tier Badges (Right Aligned Container)
    ========================================================================== */
-.ordering-feedback-badge {
+
+   .ordering-feedback-badge {
   font-weight: 700;
-  padding: 0.5rem 1rem;
+  padding: 0 0.75rem;          /* Horizontal padding */
   border-radius: var(--or-radius-md);
-  display: none;
-  font-size: 0.95rem;
+  font-size: 0.85rem;
   border: 1px solid transparent;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
   margin-left: auto;
-  text-align: right;
+  white-space: nowrap;
+  flex-shrink: 1;
+
+  /* Uniform Sizing */
+  height: 2.3rem;
+  box-sizing: border-box;
+
+  /* Perfect Vertical & Optical Centering */
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;              /* Tight bounding box */
+  padding-top: 2px;            /* Subtle downward push to correct font baseline offset */
 }
 
 /* Light Theme Badges */
