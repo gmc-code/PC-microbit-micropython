@@ -1,0 +1,406 @@
+/* ==========================================================================
+   1. Design Token System & Global Variables
+   ========================================================================== */
+:root {
+  /* Common Core Tokens */
+  --label-radius-lg: 8px;
+  --label-radius-md: 6px;
+  --label-radius-sm: 4px;
+  --label-transition-fast: all 0.1s ease;
+  --label-transition-normal: all 0.15s ease;
+
+  /* Font Size Defaults (Overridden dynamically by inline --label-font-size if set in RST) */
+  --label-base-font-size: 1.0rem;
+  --label-drop-font-size: 0.95rem;
+
+  /* Canvas Tokens */
+  --label-canvas-bg: #f1f5f9;
+  --label-canvas-border: #333333;
+
+  /* Draggable Item Tokens (Teal Engine) */
+  --label-drag-bg: #ffffff;
+  --label-drag-border: #0f766e;
+  --label-drag-text: #111827;
+  --label-drag-hover-bg: #ccfbf1;
+  --label-drag-selected-bg: #99f6e4;
+  --label-drag-selected-border: #0d9488;
+  --label-tray-bg: #f0fdfa;
+  --label-tray-border: #0d9488;
+
+  /* Drop Zone Tokens (Indigo Engine) */
+  --label-drop-bg: rgba(238, 242, 255, 0.85);
+  --label-drop-border: #818cf8;
+  --label-drop-hover-bg: #e0e7ff;
+  --label-drop-hover-border: #4338ca;
+  --label-drop-token-text: #0369a1;
+
+  /* Validation Feedback System Tokens */
+  --label-correct-bg: rgba(240, 253, 244, 0.95);
+  --label-correct-border: #22c55e;
+  --label-correct-text: #166534;
+
+  --label-incorrect-bg: rgba(254, 242, 242, 0.95);
+  --label-incorrect-border: #ef4444;
+  --label-incorrect-text: #9f1239;
+
+  /* Control Panel & Buttons */
+  --label-btn-check-bg: #2563eb;
+  --label-btn-check-text: #ffffff;
+  --label-btn-answers-bg: #059669;
+  --label-btn-answers-text: #ffffff;
+  --label-btn-reset-bg: #f3f4f6;
+  --label-btn-reset-text: #4b5563;
+  --label-btn-reset-border: #e5e7eb;
+  --label-btn-ref-bg: #8b5cf6;
+  --label-btn-ref-active-bg: #6d28d9;
+  --label-btn-ref-text: #ffffff;
+
+  /* Evaluation Score Performance Badges */
+  --label-tier-high-bg: #edfdf3;
+  --label-tier-high-border: #22c55e;
+  --label-tier-high-text: #166534;
+
+  --label-tier-mid-bg: #fff7ed;
+  --label-tier-mid-border: #f59e0b;
+  --label-tier-mid-text: #9a3412;
+
+  --label-tier-low-bg: #fff1f2;
+  --label-tier-low-border: #ef4444;
+  --label-tier-low-text: #9f1239;
+}
+
+/* ==========================================================================
+   2. Core Layout Container & Structure
+   ========================================================================== */
+.label-activity-container {
+  margin: 1.5rem 0 !important;
+  display: block !important;
+}
+
+/* Canvas 1:1 positioning context */
+.label-diagram-canvas {
+  position: relative !important;
+  display: block !important;
+  box-sizing: content-box !important;
+  margin-top: 0 !important;
+  padding: 0 !important;
+  border: 1px solid var(--label-canvas-border) !important;
+  background-color: var(--label-canvas-bg) !important;
+  border-radius: var(--label-radius-sm) !important;
+}
+
+/* ==========================================================================
+   Wordbank Tray Fixed Height & Layout Lock
+   ========================================================================== */
+
+.label-wordbank-tray {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-content: flex-start !important; /* Keeps remaining items docked to the top */
+  gap: 8px !important;
+  padding: 12px !important;
+  background-color: var(--label-tray-bg, #f8f9fa) !important;
+  border: 2px dashed var(--label-tray-border, #ccc) !important;
+  border-radius: 8px !important;
+  margin-bottom: 12px !important;
+  box-sizing: border-box !important;
+
+  /* Default fixed minimum height */
+  min-height: 52px !important;
+}
+
+/* Pseudo-element forces the tray to keep full line-height even when 0 items remain */
+.label-wordbank-tray::before {
+  content: "" !important;
+  display: inline-block !important;
+  height: 28px !important;
+  width: 0 !important;
+  visibility: hidden !important;
+}
+
+/* Specific Multi-line Height Locks */
+.label-wordbank-tray.lines-1 { min-height: 52px !important; }
+.label-wordbank-tray.lines-2 { min-height: 92px !important; }
+.label-wordbank-tray.lines-3 { min-height: 132px !important; }
+.label-wordbank-tray.lines-4 { min-height: 172px !important; }
+
+
+.label-draggable {
+  display: inline-block !important;
+  padding: 4px 10px !important;
+  background-color: var(--label-drag-bg) !important;
+  border: 1px solid var(--label-drag-border) !important;
+  color: var(--label-drag-text) !important;
+  border-radius: var(--label-radius-md) !important;
+
+  /* Inherits inline RST custom property or falls back to token */
+  font-size: var(--label-font-size, var(--label-base-font-size)) !important;
+  font-weight: 600 !important;
+  line-height: 1.2 !important;
+  cursor: pointer !important;
+  user-select: none !important;
+  box-shadow: 0 2px 4px rgba(13, 148, 136, 0.12) !important;
+  transition: transform var(--label-transition-fast), background-color var(--label-transition-fast), box-shadow var(--label-transition-fast), border-color var(--label-transition-fast) !important;
+}
+
+.label-draggable:hover {
+  background-color: var(--label-drag-hover-bg) !important;
+  transform: translateY(-1px) !important;
+}
+
+/* Selected State (Click-to-Click) */
+.label-draggable.selected {
+  outline: 2px solid var(--label-drag-selected-border) !important;
+  outline-offset: 1px !important;
+  background-color: var(--label-drag-selected-bg) !important;
+  border-color: var(--label-drag-selected-border) !important;
+  transform: translateY(-2px) scale(1.03) !important;
+  box-shadow: 0 4px 8px rgba(13, 148, 136, 0.25) !important;
+}
+
+.label-draggable:active,
+.label-draggable.dragging {
+  cursor: grabbing !important;
+  opacity: 0.4 !important;
+}
+
+.label-draggable * {
+  pointer-events: none !important;
+}
+
+/* ==========================================================================
+   4. Drop Zones (Dynamic Expansion & Position Anchoring)
+   ========================================================================== */
+.label-dropzone {
+  position: absolute !important;
+  margin: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  box-sizing: border-box !important;
+  border: 2px dashed var(--label-drop-border) !important;
+  background-color: var(--label-drop-bg) !important;
+  border-radius: var(--label-radius-sm) !important;
+  cursor: pointer !important;
+  transition: background-color var(--label-transition-normal), border-color var(--label-transition-normal) !important;
+
+  /* Expansion controls */
+  width: max-content !important;
+  min-width: var(--min-w, 40px) !important;
+  overflow: visible !important;
+}
+
+/* LEFT ALIGNED: Anchors to left edge, grows to the RIGHT */
+.label-dropzone[data-align="left"] {
+  left: var(--left-pos) !important;
+  right: auto !important;
+  justify-content: flex-start !important;
+}
+
+/* RIGHT ALIGNED: Anchors to right edge, grows to the LEFT */
+.label-dropzone[data-align="right"] {
+  right: var(--right-pos) !important;
+  left: auto !important;
+  justify-content: flex-end !important;
+}
+
+/* CENTER ALIGNED: Anchors center point, grows EQUALLY outwards */
+.label-dropzone[data-align="center"] {
+  left: var(--center-pos) !important;
+  right: auto !important;
+  transform: translateX(-50%) !important;
+  justify-content: center !important;
+}
+
+.label-dropzone.hovered {
+  border-color: var(--label-drop-hover-border) !important;
+  background-color: var(--label-drop-hover-bg) !important;
+}
+
+/* Placed Draggable inside Dropzone */
+.label-dropzone .label-draggable {
+  width: auto !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 6px !important;
+  border: none !important;
+  background-color: transparent !important;
+  color: var(--label-drop-token-text) !important;
+  display: flex !important;
+  align-items: center !important;
+  font-size: var(--label-font-size, var(--label-drop-font-size)) !important;
+  font-weight: 700 !important;
+  line-height: 1 !important;
+  box-shadow: none !important;
+  white-space: nowrap !important;
+  overflow: visible !important;
+}
+
+.label-dropzone[data-align="left"] .label-draggable {
+  justify-content: flex-start !important;
+  text-align: left !important;
+}
+
+.label-dropzone[data-align="right"] .label-draggable {
+  justify-content: flex-end !important;
+  text-align: right !important;
+}
+
+.label-dropzone[data-align="center"] .label-draggable {
+  justify-content: center !important;
+  text-align: center !important;
+}
+
+.label-dropzone .label-draggable.selected {
+  background-color: rgba(153, 246, 228, 0.5) !important;
+  outline: none !important;
+}
+
+/* ==========================================================================
+   5. Validation Feedback States
+   ========================================================================== */
+.label-dropzone.correct {
+  border: 2px solid var(--label-correct-border) !important;
+  background-color: var(--label-correct-bg) !important;
+}
+
+.label-dropzone.correct .label-draggable {
+  color: var(--label-correct-text) !important;
+}
+
+.label-dropzone.incorrect {
+  border: 2px solid var(--label-incorrect-border) !important;
+  background-color: var(--label-incorrect-bg) !important;
+}
+
+.label-dropzone.incorrect .label-draggable {
+  color: var(--label-incorrect-text) !important;
+  text-decoration: line-through !important;
+}
+
+/* ==========================================================================
+   6. Controls & Score Display
+   ========================================================================== */
+.label-controls {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center !important; /* Locks all buttons & text to the vertical center */
+  gap: 10px !important;
+  margin-top: 12px !important;
+
+  /* Lock container height so text appearing never expands or shifts the row */
+  min-height: 38px !important;
+}
+
+.label-btn {
+  padding: 6px 14px !important;
+  font-weight: 600 !important;
+  border-radius: var(--label-radius-md) !important;
+  cursor: pointer !important;
+  border: none !important;
+  transition: background-color var(--label-transition-fast), transform var(--label-transition-fast) !important;
+}
+
+/* Button Styling for Ref Mode */
+.label-btn-reference {
+  background-color: var(--label-btn-ref-bg) !important;
+  color: var(--label-btn-ref-text) !important;
+
+  /* Lock button width so text toggles don't cause dynamic resize */
+  min-width: 135px !important;
+  text-align: center !important;
+}
+
+.label-btn:hover {
+  filter: brightness(0.93) !important;
+}
+
+.label-btn:active {
+  transform: scale(0.97) !important;
+}
+
+.label-btn-check {
+  background-color: var(--label-btn-check-bg) !important;
+  color: var(--label-btn-check-text) !important;
+}
+
+.label-btn-answers {
+  background-color: var(--label-btn-answers-bg) !important;
+  color: var(--label-btn-answers-text) !important;
+}
+
+.label-btn-reset {
+  background-color: var(--label-btn-reset-bg) !important;
+  color: var(--label-btn-reset-text) !important;
+  border: 1px solid var(--label-btn-reset-border) !important;
+}
+
+/* ==========================================================================
+   7. Reference Mode & Prefix Badges (A, B, C...)
+   ========================================================================== */
+.label-activity-container.reference-mode-active .label-dropzone:not(:has(.label-draggable))::after {
+  content: attr(data-prefix);
+  display: inline-block;
+  font-weight: 700;
+  font-size: 1.0rem !important;
+  color: var(--label-drop-token-text);
+  padding: 1px 6px;
+  border-radius: var(--label-radius-sm);
+  margin: 0 auto !important;
+}
+
+/* Button Styling for Ref Mode */
+.label-btn-reference {
+  background-color: var(--label-btn-ref-bg) !important;
+  color: var(--label-btn-ref-text) !important;
+}
+
+.label-btn-reference.active {
+  background-color: var(--label-btn-ref-active-bg) !important;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.25) !important;
+}
+
+/* ==========================================================================
+   8. Evaluation Score Performance Badges
+   ========================================================================== */
+/* .label-score-display {
+  font-weight: 700 !important;
+  padding: 0.4em 0.9em !important;
+  border-radius: var(--label-radius-md) !important;
+  border: 1px solid transparent !important;
+  display: inline-block !important;
+  margin-left: auto !important;
+  transition: var(--label-transition-normal) !important;
+} */
+
+.label-score-display {
+  display: inline-flex !important;
+  align-items: center !important;
+  font-weight: 600 !important;
+  font-size: 0.95rem !important;
+  color: var(--label-text, #333) !important;
+
+  /* Reserve horizontal space and force height parity with buttons */
+  height: 34px !important;
+  line-height: 34px !important;
+  margin-left: 6px !important;
+  box-sizing: border-box !important;
+}
+
+/* Tiered Score Variants */
+.label-score-display.high {
+  background-color: var(--label-tier-high-bg) !important;
+  border-color: var(--label-tier-high-border) !important;
+  color: var(--label-tier-high-text) !important;
+}
+
+.label-score-display.medium {
+  background-color: var(--label-tier-mid-bg) !important;
+  border-color: var(--label-tier-mid-border) !important;
+  color: var(--label-tier-mid-text) !important;
+}
+
+.label-score-display.low {
+  background-color: var(--label-tier-low-bg) !important;
+  border-color: var(--label-tier-low-border) !important;
+  color: var(--label-tier-low-text) !important;
+}

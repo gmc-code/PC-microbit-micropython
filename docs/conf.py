@@ -8,14 +8,11 @@ import sphinx_rtd_theme
 # Ensure custom extension path is available
 sys.path.append(os.path.abspath("./_ext"))
 
-
-
 # -- Project information -----------------------------------------------------
 
-project = 'PC-Microbit'
+project = 'PC-Microbit-Micropython'
 copyright = '2021-26, GMC'
 author = 'GMC'
-
 
 # -- General configuration ---------------------------------
 # Add any Sphinx extension module names here, as strings. They can be
@@ -34,6 +31,7 @@ extensions = [
     "gapfill.gapfill",  # custom directive
     "cloze.cloze",  # custom directive
     "multichoice.multichoice",  # custom directive
+    "labels.labels",  # custom directive
 ]
 
 

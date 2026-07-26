@@ -26,11 +26,17 @@
   --cloze-dark-divider: #334155;
 
 
+  /* font sizes */
+  --cloze-base-font-size: 1.2em;
+  --cloze-code-font-size: 1.1em;
+
   /* Draggable Item Tokens (Teal Engine) */
   --cloze-drag-bg: #ffffff;
   --cloze-drag-border: #0f766e;
   --cloze-drag-text: #111827;
   --cloze-drag-hover-bg: #ccfbf1;
+  --cloze-drag-selected-bg: #99f6e4;
+  --cloze-drag-selected-border: #0d9488;
 
   /* Drop Zone Interactive Tokens (Indigo Engine) */
   --cloze-drop-text: #4f46e5;
@@ -45,13 +51,13 @@
   --cloze-correct-bg: #f0fdf4;
   --cloze-correct-border: #22c55e;
   --cloze-correct-text: #16a34a;
-  --cloze-correct-token-bg: #cbd5e1;
+  --cloze-correct-token-bg: #f0fdf4;
   --cloze-correct-token-text: #1e293b;
 
-  --cloze-incorrect-bg: #fef2f2;
+  --cloze-incorrect-bg: #ffe1e1;
   --cloze-incorrect-border: #ef4444;
   --cloze-incorrect-text: #dc2626;
-  --cloze-incorrect-token-bg: #fca5a5;
+  --cloze-incorrect-token-bg: #ffe1e1;
   --cloze-incorrect-token-text: #7f1d1d;
 
   /* Evaluation Score Performance Badges */
@@ -66,6 +72,7 @@
   --cloze-tier-low-bg: #fff1f2;
   --cloze-tier-low-border: #ef4444;
   --cloze-tier-low-text: #9f1239;
+
 }
 
 /* ==========================================================================
@@ -127,6 +134,7 @@
   min-height: 45px;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.03);
   align-items: center;
+  cursor: pointer;
 }
 
 .cloze-draggable {
@@ -135,16 +143,31 @@
   border: 1px solid var(--cloze-drag-border);
   color: var(--cloze-drag-text);
   border-radius: var(--cloze-radius-md);
-  cursor: grab;
+  cursor: pointer;
   font-weight: 600;
+
+  /* CRITICAL: Match font size across draggables and dropzones */
+  font-size: var(--cloze-base-font-size);
+  line-height: 1.2;
+
   user-select: none;
   box-shadow: 0 2px 4px rgba(13, 148, 136, 0.12);
-  transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.1s ease;
+  transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.1s ease, border-color 0.1s ease;
 }
 
 .cloze-draggable:hover {
   background-color: var(--cloze-drag-hover-bg);
   transform: translateY(-1px);
+}
+
+/* Click-to-Select Active State */
+.cloze-draggable.selected {
+  outline: 2px solid var(--cloze-drag-selected-border) !important;
+  outline-offset: 1px !important;
+  background-color: var(--cloze-drag-selected-bg) !important;
+  border-color: var(--cloze-drag-selected-border) !important;
+  transform: translateY(-2px) scale(1.03) !important;
+  box-shadow: 0 4px 8px rgba(13, 148, 136, 0.25) !important;
 }
 
 .cloze-draggable:active {
@@ -164,7 +187,7 @@
    4. Main Content Passage & Preformatted Prose
    ========================================================================== */
 .cloze-content {
-  font-size: 1.05em;
+  font-size: var(--cloze-base-font-size);
   line-height: 2.6;
   color: var(--cloze-light-text);
   transition: var(--cloze-transition-normal);
@@ -172,7 +195,7 @@
 
 pre.cloze-content {
   font-family: "Consolas", "Courier New", Courier, monospace;
-  font-size: 1.05rem;
+  font-size: var(--cloze-code-font-size);
   line-height: 1.6;
   margin: 0;
   padding: 0.5rem;
@@ -197,63 +220,53 @@ pre.cloze-content {
 }
 
 .cloze-dropzone {
-  display: inline-block;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   min-width: 100px;
   text-align: center;
-  padding: 0 0.6rem;
-  margin: 0 0.3rem;
-  font-size: 0.9em;
+
+  /* FIXED: Standardized padding, font size, and height */
+  padding: 0.15rem 0.5rem !important;
+  margin: 0;
+  font-size: var(--cloze-base-font-size) !important;
   font-weight: 600;
+  line-height: 1.2 !important;
+
   color: var(--cloze-drop-text);
   background-color: var(--cloze-drop-bg);
   border: 2px dashed var(--cloze-drop-border);
   border-radius: var(--cloze-radius-md);
-  line-height: 2.0;
+  cursor: pointer;
   transition: var(--cloze-transition-normal);
   box-shadow: inset 0 1px 2px rgba(79, 70, 229, 0.05);
+  box-sizing: border-box !important;
 }
 
-.cloze-dropzone.hovered {
-  border-color: var(--cloze-drop-hover-text);
-  background-color: var(--cloze-drop-hover-bg);
-  color: var(--cloze-drop-hover-text);
-  transform: scale(1.03);
-}
-
+/* Maintain identical padding when occupied */
+.label-dropzone.occupied,
 .cloze-dropzone.occupied {
   background-color: var(--cloze-light-bg);
-  border: 2px solid var(--cloze-drop-text);
-  padding: 0;
+  border-style: solid;
 }
 
 .cloze-dropped-token {
-  display: block;
-  padding: 0 0.6rem;
-  background-color: var(--cloze-drop-token-bg);
-  color: var(--cloze-drop-token-text);
-  font-weight: 700;
-  border-radius: var(--cloze-radius-sm);
-}
-
-/* --- Ultra-Compact Preformatted Layout Overrides --- */
-.cloze-content .cloze-wrapper {
-  display: inline-flex;
-  align-items: center;
-  vertical-align: middle;
-  margin: 0 0.15rem;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
   padding: 0;
+  margin: 0;
+  font-size: inherit !important;
+  font-weight: 700;
+  line-height: 1.2 !important;
+  border-radius: var(--cloze-radius-sm);
 }
 
-.cloze-content .cloze-dropzone {
-  display: inline-block;
-  padding: 0.1rem 0.4rem;
-  font-size: 0.95rem;
-  font-family: inherit;
-  font-weight: 500;
-  border-radius: var(--cloze-radius-sm);
+/* --- Preformatted Code Block Overrides --- */
+pre.cloze-content .cloze-dropzone {
+  font-size: var(--cloze-code-font-size) !important;
+  padding: 0.1rem 0.4rem !important;
   min-width: 65px;
-  text-align: center;
-  line-height: 1.2;
 }
 
 /* ==========================================================================
@@ -265,9 +278,7 @@ pre.cloze-content {
 }
 
 .cloze-dropzone.correct .cloze-dropped-token {
-  background-color: var(--cloze-correct-token-bg);
-  color: var(--cloze-correct-token-text);
-  opacity: 0.85;
+  color: var(--cloze-correct-token-text) !important;
 }
 
 .cloze-dropzone.incorrect {
@@ -276,19 +287,21 @@ pre.cloze-content {
 }
 
 .cloze-dropzone.incorrect .cloze-dropped-token {
-  background-color: var(--cloze-incorrect-token-bg);
-  color: var(--cloze-incorrect-token-text);
-  text-decoration: line-through;
+  color: var(--cloze-incorrect-token-text) !important;
 }
 
+/* Inline Checkmark / Cross Feedback Icons */
 .cloze-inline-feedback {
-  font-weight: bold;
-  font-size: 1em;
-  margin-left: 8px;
-  white-space: nowrap;
-  display: inline-block !important;
-  visibility: visible !important;
-  vertical-align: middle;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-weight: 700;
+  font-size: var(--cloze-base-font-size) !important;
+  line-height: 1.0 !important; /* Critical to prevent line-height expansion */
+  margin-left: 0.35rem !important;
+  height: 1em !important; /* Locks height to font baseline */
+  vertical-align: middle !important;
+  white-space: nowrap !important;
 }
 
 .cloze-inline-feedback.text-correct {
@@ -299,12 +312,10 @@ pre.cloze-content {
   color: var(--cloze-incorrect-text) !important;
 }
 
-/* --- Ultra-Compact Preformatted Layout Overrides --- */
-.cloze-content .cloze-inline-feedback {
-  font-size: 1rem;
-  margin-left: 0.2rem;
-  display: inline-block;
-  vertical-align: middle;
+/* Preformatted Overrides */
+pre.cloze-content .cloze-inline-feedback {
+  font-size: var(--cloze-code-font-size) !important;
+  margin-left: 0.2rem !important;
 }
 
 /* ==========================================================================
@@ -321,7 +332,7 @@ pre.cloze-content {
 }
 
 .cloze-global-panel button {
-  font-size: 0.95em;
+  font-size: var(--cloze-base-font-size);
   padding: 0.55em 1.1em;
   border-radius: var(--cloze-radius-md);
   border: none;
