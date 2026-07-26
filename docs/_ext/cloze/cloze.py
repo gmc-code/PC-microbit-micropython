@@ -71,8 +71,8 @@ class ClozeDirective(SphinxDirective):
                     for item in shuffled_pool:
                         if added_count >= 1:  # Add up to 1 distractors from the sentence
                             break
-                        # Enforce strict casing mismatch checks and make sure it's not already in the bank
-                        if item.lower() != raw_content.lower() and item.lower() not in [w.lower() for w in word_bank_items]:
+                        # Enforce strict casing checks without converting to lowercase
+                        if item != raw_content and item not in word_bank_items:
                             word_bank_items.append(item)
                             added_count += 1
 
@@ -90,7 +90,7 @@ class ClozeDirective(SphinxDirective):
             raw_content = match.group(1).strip()
 
             final_correct = raw_content
-            drop_zone_html = f'<span class="cloze-wrapper"><span class="cloze-dropzone" data-gap-id="{gap_counter}" data-correct="{html.escape(final_correct.lower())}">Drop here</span><span class="cloze-inline-feedback"></span></span>'
+            drop_zone_html = f'<span class="cloze-wrapper"><span class="cloze-dropzone" data-gap-id="{gap_counter}" data-correct="{html.escape(final_correct)}">Drop here</span><span class="cloze-inline-feedback"></span></span>'
             return drop_zone_html
 
         escaped_text = html.escape(cleaned_text)
@@ -105,7 +105,7 @@ class ClozeDirective(SphinxDirective):
         bank_html = '<div class="cloze-wordbank-title">Word Bank (Drag items below):</div>'
         bank_html += '<div class="cloze-wordbank-tray">'
         for word in word_bank_items:
-            bank_html += f'<div class="cloze-draggable" draggable="true" data-word="{html.escape(word.lower())}">{html.escape(word)}</div>'
+            bank_html += f'<div class="cloze-draggable" draggable="true" data-word="{html.escape(word)}">{html.escape(word)}</div>'
         bank_html += '</div><hr class="cloze-divider">'
 
         control_panel_html = '''
