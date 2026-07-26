@@ -154,8 +154,10 @@ document.addEventListener("DOMContentLoaded", () => {
         dropzones.forEach(zone => {
           zone.classList.add("disabled")
           const token = zone.querySelector(".cloze-dropped-token")
-          const expected = zone.dataset.correct ? zone.dataset.correct.trim().toLowerCase() : ""
-          const actual = token ? token.dataset.word.trim().toLowerCase() : ""
+
+          // REMOVED .toLowerCase() to preserve case sensitivity
+          const expected = zone.dataset.correct ? zone.dataset.correct.trim() : ""
+          const actual = token ? token.dataset.word.trim() : ""
 
           const wrapper = zone.closest(".cloze-wrapper")
           const feedback = wrapper ? wrapper.querySelector(".cloze-inline-feedback") : null
