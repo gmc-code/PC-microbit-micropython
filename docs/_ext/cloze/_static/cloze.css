@@ -386,3 +386,14 @@ pre.cloze-content .cloze-inline-feedback {
   border-color: var(--cloze-tier-low-border) !important;
   color: var(--cloze-tier-low-text) !important;
 }
+
+
+/* ==========================================================================
+   8. Feature Additions & Completed Code Section
+   ========================================================================== */
+.cloze-completed-code {
+  display: none; /* Keeps block hidden on initial page load / refresh */
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  transition: opacity 0.2s ease-in-out;
+}

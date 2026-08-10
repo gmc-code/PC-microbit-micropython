@@ -211,38 +211,36 @@
 
 .ordering-controls {
   display: flex;
-  align-items: center;        /* Ensures center cross-axis baseline */
+  align-items: center;
   gap: 0.5rem;
   margin-top: 1.25rem;
   width: 100%;
   flex-wrap: nowrap !important;
   overflow-x: auto;
-  min-height: 2.5rem;          /* Locks vertical container height */
+  min-height: 2.5rem;
 }
 
 .ordering-controls button,
 .ordering-feedback-badge {
-  box-sizing: border-box;     /* Includes border & padding in total height calculation */
-  height: 2.3rem;             /* Fixed uniform height for both buttons and badge */
-  display: inline-flex;       /* Perfect vertical centering inside the button/badge */
+  box-sizing: border-box;
+  height: 2.3rem;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  line-height: 1;             /* Prevents font line-height discrepancies */
+  line-height: 1;
 }
 
 .ordering-controls button {
-  padding: 0 0.8rem;           /* Use horizontal padding only; height handles vertical */
+  padding: 0 0.8rem;
   font-weight: 600;
   border-radius: var(--or-radius-md);
-  border: 1px solid transparent; /* Gives all buttons an identical 1px border box */
+  border: 1px solid transparent;
   cursor: pointer;
   font-size: 0.9rem;
   transition: background-color 0.1s ease, transform 0.05s ease;
   white-space: nowrap;
   flex-shrink: 0;
 }
-
-
 
 .ordering-controls button:active {
   transform: scale(0.98);
@@ -282,7 +280,7 @@
   background-color: #0f766e;
 }
 
-/* ---- Dark Theme Control Custom Overrides ---- */
+/* Dark Theme Control Custom Overrides */
 .ordering-block:has(.theme-dark) .ordering-btn-reset {
   background-color: #ffffff;
   color: var(--or-dark-text);
@@ -302,9 +300,8 @@
 }
 
 /* ==========================================================================
-   5. Interactive Evaluation Logic States (Inline & Full Container Verification)
+   5. Interactive Evaluation Logic States
    ========================================================================== */
-/* Light Theme Feedback Evaluation States */
 .ordering-container.theme-light .ordering-line.correct-line {
   border-color: var(--or-correct-border) !important;
   background-color: var(--or-correct-bg) !important;
@@ -321,7 +318,6 @@
   color: var(--or-incorrect-text) !important;
 }
 
-/* Dark Theme Feedback Evaluation States */
 .ordering-container.theme-dark .ordering-line.correct-line {
   border-color: var(--or-correct-border-dark) !important;
   background-color: var(--or-correct-bg) !important;
@@ -339,12 +335,11 @@
 }
 
 /* ==========================================================================
-   6. Dynamic Score Tier Badges (Right Aligned Container)
+   6. Dynamic Score Tier Badges
    ========================================================================== */
-
-   .ordering-feedback-badge {
+.ordering-feedback-badge {
   font-weight: 700;
-  padding: 0 0.75rem;          /* Horizontal padding */
+  padding: 0 0.75rem;
   border-radius: var(--or-radius-md);
   font-size: 0.85rem;
   border: 1px solid transparent;
@@ -352,20 +347,15 @@
   margin-left: auto;
   white-space: nowrap;
   flex-shrink: 1;
-
-  /* Uniform Sizing */
   height: 2.3rem;
   box-sizing: border-box;
-
-  /* Perfect Vertical & Optical Centering */
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  line-height: 1;              /* Tight bounding box */
-  padding-top: 2px;            /* Subtle downward push to correct font baseline offset */
+  line-height: 1;
+  padding-top: 2px;
 }
 
-/* Light Theme Badges */
 .ordering-feedback-badge.high {
   background-color: var(--or-correct-bg);
   border-color: var(--or-correct-border);
@@ -382,7 +372,6 @@
   color: var(--or-incorrect-text);
 }
 
-/* Dark Theme Badge Overrides */
 .ordering-block:has(.theme-dark) .ordering-feedback-badge.high {
   background-color: #bbf7d0;
   border-color: var(--or-correct-border);
@@ -418,7 +407,7 @@
 }
 
 /* ==========================================================================
-   8. Feature Additions: Compact Padding Modifier Option
+   8. Feature Additions & Completed Code Section
    ========================================================================== */
 .ordering-block.ordering-no-padding .ordering-line {
   padding-top: 0px !important;
@@ -426,5 +415,12 @@
 }
 
 .ordering-block.ordering-no-padding .ordering-line.blank-line-placeholder {
-  min-height: 1.5rem; /* Reduces empty rows gracefully to look better without padding */
+  min-height: 1.5rem;
+}
+
+.ordering-completed-code {
+  display: none; /* Keeps block hidden on initial page load / refresh */
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+  transition: opacity 0.2s ease-in-out;
 }

@@ -19,6 +19,22 @@ Index:
     introduction/power_management.rst
 
 
+
+.. toctree::
+    :maxdepth: 2
+    :caption: BreadBoards
+    :numbered:
+
+    breadboards/Breadboard_connections.rst
+    breadboards/Edge_Connector.rst
+    breadboards/LEDs_with_resistors.rst
+    breadboards/Piezo_Buzzer_and_music.rst
+    breadboards/Motor_with_transistor.rst
+    breadboards/Potentiometer.rst
+    breadboards/Potentiometer_with_LED.rst
+
+
+
 .. toctree::
     :maxdepth: 2
     :caption: Lessons
@@ -85,6 +101,7 @@ Index:
     quizzes/lessons_gapfill.rst
 
 
+
 .. toctree::
     :maxdepth: 2
     :caption: Lessons_Practice
@@ -94,6 +111,7 @@ Index:
     lessons/Practice_tasks_2.rst
 
 
+
 .. toctree::
     :maxdepth: 2
     :caption: Lessons_Practice_Answers
@@ -101,6 +119,7 @@ Index:
 
     lessons/Practice_tasks_1_Answers.rst
     lessons/Practice_tasks_2_Answers.rst
+
 
 
 .. toctree::
@@ -115,6 +134,7 @@ Index:
     errors/Variable_Errors.rst
     errors/Unwanted_Whitespace.rst
     errors/Whitespace_for_readability.rst
+
 
 
 .. toctree::
@@ -149,7 +169,7 @@ Index:
 
     breadboard_projects/Combined_models.rst
     breadboard_projects/Combined_iteration_using_zip.rst
-    breadboard_projects/Car_demo.rst
+    .. breadboard_projects/Car_demo.rst
 
 
 .. toctree::

@@ -4,16 +4,19 @@ import re
 from pathlib import Path
 
 from docutils import nodes
-from docutils.parsers.rst import Directive
 from docutils.parsers.rst import directives
+from sphinx.directives.code import CodeBlock
 from sphinx.util.docutils import SphinxDirective
+
 
 class cloze_node(nodes.General, nodes.Element):
     pass
 
+
 def visit_cloze_html(self, node):
     theme_class = node.get("theme", "theme-light")
     self.body.append(f'<div class="cloze-block {theme_class}">')
+
 
 def depart_cloze_html(self, node):
     self.body.append('</div>')
@@ -21,37 +24,33 @@ def depart_cloze_html(self, node):
 
 class ClozeDirective(SphinxDirective):
     has_content = True
+    optional_arguments = 1  # Optional language argument (e.g., .. cloze:: python)
 
     option_spec = {
         'auto-distract': directives.flag,
         'theme': lambda argument: directives.choice(argument, ('light', 'dark')),
+        'show-code': directives.flag,
     }
 
     def run(self):
         full_text = "\n".join(self.content).strip()
-        node = cloze_node()
-
+        language = self.arguments[0] if self.arguments else "python"
         theme_val = self.options.get('theme', 'light')
-        node['theme'] = f"theme-{theme_val}"
-
         auto_distract = 'auto-distract' in self.options
+        show_code = 'show-code' in self.options
 
         # Updated regex to match @@ content @@ safely without breaking python lists [...]
         gap_pattern = re.compile(r'@@([^@]+)@@')
 
         # Extract all potential words from the sentence context to use as distractors
-        # We strip away syntax tokens and find unique words longer than 2 characters
         all_words_in_text = re.findall(r'\b[a-zA-Z_][a-zA-Z0-9_]*\b', full_text)
         context_distractors = list(set([w for w in all_words_in_text if len(w) > 2]))
 
         # 1. FIRST PASS: Extract answers and clean markup
         word_bank_items = []
-        gap_counter = 0
+        raw_code_lines = []  # Store original text without gap syntax for the complete code block
 
         def extract_words(match):
-            nonlocal gap_counter
-            gap_counter += 1
-
             raw_content = match.group(1).strip()
 
             # SUPPORT MULTIPLE SEPARATORS: matches |, /, \, or ,
@@ -63,15 +62,13 @@ class ClozeDirective(SphinxDirective):
             else:
                 word_bank_items.append(raw_content)
 
-                # FIXED LOGIC: Extract distractors directly from the surrounding text context
                 if auto_distract:
                     shuffled_pool = context_distractors.copy()
                     random.shuffle(shuffled_pool)
                     added_count = 0
                     for item in shuffled_pool:
-                        if added_count >= 1:  # Add up to 1 distractors from the sentence
+                        if added_count >= 1:  # Add up to 1 distractor
                             break
-                        # Enforce strict casing checks without converting to lowercase
                         if item != raw_content and item not in word_bank_items:
                             word_bank_items.append(item)
                             added_count += 1
@@ -79,6 +76,10 @@ class ClozeDirective(SphinxDirective):
                 return f"*[ {raw_content} ]*"
 
         cleaned_text = gap_pattern.sub(extract_words, full_text)
+
+        # Build clean raw lines without gap markers (@@ ... @@) for code block output
+        clean_full_text = gap_pattern.sub(lambda m: re.split(r'[|/\\,]', m.group(1))[0].strip(), full_text)
+        raw_code_lines = clean_full_text.splitlines()
 
         # 2. SECOND PASS: Construct HTML nodes layout
         gap_counter = 0
@@ -90,7 +91,12 @@ class ClozeDirective(SphinxDirective):
             raw_content = match.group(1).strip()
 
             final_correct = raw_content
-            drop_zone_html = f'<span class="cloze-wrapper"><span class="cloze-dropzone" data-gap-id="{gap_counter}" data-correct="{html.escape(final_correct)}">Drop here</span><span class="cloze-inline-feedback"></span></span>'
+            drop_zone_html = (
+                f'<span class="cloze-wrapper">'
+                f'<span class="cloze-dropzone" data-gap-id="{gap_counter}" data-correct="{html.escape(final_correct)}">Drop here</span>'
+                f'<span class="cloze-inline-feedback"></span>'
+                f'</span>'
+            )
             return drop_zone_html
 
         escaped_text = html.escape(cleaned_text)
@@ -117,9 +123,42 @@ class ClozeDirective(SphinxDirective):
         '''
 
         final_html = f'{bank_html}<pre class="cloze-content">{combined_text_html}</pre>{control_panel_html}'
-        node += nodes.raw("", final_html, format="html")
 
-        return [node]
+        wrapper_node = cloze_node()
+        wrapper_node['theme'] = f"theme-{theme_val}"
+        wrapper_node += nodes.raw("", final_html, format="html")
+
+        result_nodes = [wrapper_node]
+
+        # 3. Generate hidden Sphinx CodeBlock node if :show-code: flag is set
+        # 3. Generate hidden Sphinx CodeBlock node if :show-code: flag is set
+        if show_code:
+            code_block_dir = CodeBlock(
+                name='code-block',
+                arguments=[language],
+                options={},
+                content=raw_code_lines,
+                lineno=self.lineno,
+                content_offset=self.content_offset,
+                block_text=self.block_text,
+                state=self.state,
+                state_machine=self.state_machine
+            )
+
+            code_nodes = code_block_dir.run()
+
+            # Container starts hidden (using native style attribute assignment)
+            completed_container = nodes.container(classes=['cloze-completed-code'])
+            completed_container['style'] = 'display: none;'
+
+            # Heading
+            heading = nodes.rubric(text="Complete code for copying", classes=['cloze-code-heading'])
+            completed_container += heading
+            completed_container.extend(code_nodes)
+
+            result_nodes.append(completed_container)
+
+        return result_nodes
 
 
 def setup(app):
@@ -134,7 +173,7 @@ def setup(app):
     app.add_css_file("cloze.css")
 
     return {
-        "version": "4.1",
+        "version": "4.2",
         "parallel_read_safe": True,
         "parallel_write_safe": True
     }

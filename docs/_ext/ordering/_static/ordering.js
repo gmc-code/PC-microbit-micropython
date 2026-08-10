@@ -3,6 +3,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
   containers.forEach(container => {
     const block = container.closest(".ordering-block");
+    const parentWrapper = block.parentElement || block;
+    const completedCodeBlock = parentWrapper.querySelector(".ordering-completed-code");
+
     const btnScore = block.querySelector(".ordering-btn-score");
     const btnContinue = block.querySelector(".ordering-btn-continue");
     const btnSolution = block.querySelector(".ordering-btn-solution");
@@ -27,11 +30,16 @@ document.addEventListener("DOMContentLoaded", () => {
     function clearFeedback() {
       feedbackBadge.style.display = "none";
       feedbackBadge.textContent = "";
-      btnContinue.style.display = "none"; // Hide continue button once feedback is cleared
+      btnContinue.style.display = "none";
       const lines = container.querySelectorAll(".ordering-line");
       lines.forEach(line => {
         line.classList.remove("correct-line", "incorrect-line");
       });
+
+      // Ensure completed code block is hidden during active user attempts
+      if (completedCodeBlock) {
+        completedCodeBlock.style.display = "none";
+      }
     }
 
     // Initializes dragging mechanics, click-to-indent listeners, and DOM listeners
@@ -123,9 +131,18 @@ document.addEventListener("DOMContentLoaded", () => {
       if (finalPercentage === 100) {
         feedbackBadge.textContent = `✓ Perfect! ${correctCount}/${totalLines} (${finalPercentage}%)`;
         feedbackBadge.classList.add("high");
-        btnContinue.style.display = "none"; // Perfect score means no need to continue
+        btnContinue.style.display = "none";
+
+        // Show completed code block ONLY when student gets 100% on their own
+        if (completedCodeBlock) {
+          completedCodeBlock.style.display = "block";
+        }
       } else {
-        btnContinue.style.display = "inline-flex"; // Show continue button for less than 100%
+        btnContinue.style.display = "inline-flex";
+
+        if (completedCodeBlock) {
+          completedCodeBlock.style.display = "none";
+        }
 
         if (finalPercentage >= 50) {
           feedbackBadge.textContent = `⚠ Getting Close! ${correctCount}/${totalLines} (${finalPercentage}%)`;
@@ -137,12 +154,12 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // 2. Continue Engine Mechanics (Clears state but PRESERVES layout position)
+    // 2. Continue Engine Mechanics
     btnContinue.addEventListener("click", () => {
       clearFeedback();
     });
 
-    // 3. Solution Engine Mechanics (Locks scoring button completely)
+    // 3. Solution Engine Mechanics
     btnSolution.addEventListener("click", () => {
       const currentLines = Array.from(container.querySelectorAll(".ordering-line"));
 
@@ -168,9 +185,14 @@ document.addEventListener("DOMContentLoaded", () => {
       feedbackBadge.style.display = "inline-flex";
       feedbackBadge.textContent = "ℹ Solution Displayed";
       feedbackBadge.className = "ordering-feedback-badge medium";
+
+      // Explicitly keep the code block hidden when revealing the solution automatically
+      if (completedCodeBlock) {
+        completedCodeBlock.style.display = "none";
+      }
     });
 
-    // 4. Reset Engine Mechanics (Restores default state from scratch)
+    // 4. Reset Engine Mechanics
     btnReset.addEventListener("click", () => {
       container.innerHTML = initialHTML;
       feedbackBadge.style.display = "none";
@@ -178,6 +200,11 @@ document.addEventListener("DOMContentLoaded", () => {
       btnContinue.style.display = "none";
 
       btnScore.disabled = false;
+
+      // Re-hide code block on reset
+      if (completedCodeBlock) {
+        completedCodeBlock.style.display = "none";
+      }
 
       shuffleLines();
       initPuzzleEvents();
