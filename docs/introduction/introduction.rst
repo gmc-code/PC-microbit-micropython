@@ -28,6 +28,7 @@ Home pages:
 ---------------------
 
 | **year 7**
+| simple microbit: `<https://pc-microbit.readthedocs.io/index.html>`_
 | microbit: `<https://pc-microbit-micropython.readthedocs.io/en/latest/index.html>`_
 | bots: `<https://pc-microbit-extension.readthedocs.io/en/latest/index.html>`_
 
@@ -107,7 +108,7 @@ See: `<https://microbit.org/get-started/user-guide/firmware/>`_
 Sleep, Power off, wake
 -----------------------
 
-See: `<https://support.microbit.org/support/solutions/articles/19000120358-how-do-i-power-off-or-put-the-micro-bit-to-sleep->`
+See: `<https://support.microbit.org/support/solutions/articles/19000120358-how-do-i-power-off-or-put-the-micro-bit-to-sleep->`_
 
 ----
 

@@ -5,7 +5,7 @@ Potentiometer Code Ordering
 Question 1
 ----------------------
 
-| Put the snippets in order to read the dial position on Pin 2 and immediately output the raw data sequence onto the scrolling LED screen.
+| Put the snippets in order to read the potentiometer position on Pin 2 and immediately output the raeding onto the scrolling LED screen before pausing for a short delay.
 
 .. ordering::
     :theme: light
@@ -22,8 +22,8 @@ Question 1
 Question 2
 -----------------
 
-| A student hooks up an external LED component to Pin 0 alongside their dial on Pin 2.
-| Order the blocks below to feed the incoming analog dial values straight out to control the LED brightness level.
+| A student hooks up an external LED to Pin 0 alongside their potentiometer on Pin 2.
+| Order the blocks below to feed the incoming analog potentiometer values straight out to control the LED brightness level.
 
 .. ordering::
     :theme: light
@@ -41,7 +41,7 @@ Question 3
 -----------------
 
 | Put the code snippets in order to build a dual-fading light system.
-| As Pin 0 gets brighter when the dial turns up, Pin 1 must safely dim down by subtracting the dial position from the maximum value.
+| As Pin 0 gets brighter when the potentiometer turns up, Pin 1 must safely dim down by subtracting the potentiometer position from the maximum value.
 
 .. ordering::
     :theme: light
@@ -60,7 +60,7 @@ Question 4
 -------------------
 
 | Put the instructions in the correct order to create a low-threshold safety sensor switch.
-| If the dial value on Pin 2 drops strictly below 500, a warning indicator light on Pin 0 must switch to fully ON.
+| If the potentiometer value on Pin 2 drops strictly below 500, a warning indicator light on Pin 0 must switch to fully ON.
 
 .. ordering::
     :theme: light
@@ -80,7 +80,7 @@ Question 5
 -----------------
 
 | Order the lines below to build a high-threshold logic split circuit with an embedded status icon tracker.
-| When the dial crosses 500 or more, turn on Pin 1 and display a built-in happy face icon to show authorization.
+| When the potentiometer crosses 500 or more, turn off Pin 0 and turn on Pin 1 and display a built-in happy face icon to show authorization.
 
 .. ordering::
     :theme: light
@@ -106,7 +106,7 @@ Question 6
 ------------------------------
 
 | Rearrange the code segments to create a multi-level signal routing system.
-| Handle low dial signals on Pin 0, middle dial signals on Pin 1, and high dial signals on Pin 8 sequentially.
+| Handle low potentiometer signals on Pin 0, middle potentiometer signals on Pin 1, and high potentiometer signals on Pin 8 sequentially.
 
 .. ordering::
     :theme: light
@@ -128,7 +128,7 @@ Question 7
 ------------------------------
 
 | Rearrange the code segments to create a multi-level signal routing system.
-| Usse 3 zone switches to handle low dial signals on Pin 0, middle dial signals on Pin 1, and high dial signals on Pin 8 sequentially while ensuring that only one zone is active at a time.
+| Use 3 zone switches to handle low potentiometer signals on Pin 0, middle potentiometer signals on Pin 1, and high potentiometer signals on Pin 8 sequentially while ensuring that only one zone is active at a time.
 
 .. ordering::
     :theme: light:
