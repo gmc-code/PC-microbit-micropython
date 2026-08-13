@@ -37,6 +37,18 @@ Index:
 
 .. toctree::
     :maxdepth: 2
+    :caption: BreadBoard_quizzes
+    :numbered:
+
+    breadboard_quizzes/LED_ordering.rst
+    breadboard_quizzes/Motor_ordering.rst
+    breadboard_quizzes/Potentiometer_ordering.rst
+    breadboard_quizzes/Buzzer_ordering.rst
+
+
+
+.. toctree::
+    :maxdepth: 2
     :caption: Lessons
     :numbered:
 
@@ -135,31 +147,6 @@ Index:
     errors/Unwanted_Whitespace.rst
     errors/Whitespace_for_readability.rst
 
-
-
-.. toctree::
-    :maxdepth: 2
-    :caption: BreadBoards
-    :numbered:
-
-    breadboards/Breadboard_connections.rst
-    breadboards/Edge_Connector.rst
-    breadboards/LEDs_with_resistors.rst
-    breadboards/Piezo_Buzzer_and_music.rst
-    breadboards/Motor_with_transistor.rst
-    breadboards/Potentiometer.rst
-    breadboards/Potentiometer_with_LED.rst
-
-
-.. toctree::
-    :maxdepth: 2
-    :caption: BreadBoard_quizzes
-    :numbered:
-
-    breadboard_quizzes/LED_ordering.rst
-    breadboard_quizzes/Motor_ordering.rst
-    breadboard_quizzes/Potentiometer_ordering.rst
-    breadboard_quizzes/Buzzer_ordering.rst
 
 
 .. toctree::
