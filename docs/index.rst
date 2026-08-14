@@ -40,6 +40,8 @@ Index:
     :caption: BreadBoard_quizzes
     :numbered:
 
+
+    breadboard_quizzes/LEDs_quiz.rst
     breadboard_quizzes/LED_ordering.rst
     breadboard_quizzes/Motor_ordering.rst
     breadboard_quizzes/Potentiometer_ordering.rst
