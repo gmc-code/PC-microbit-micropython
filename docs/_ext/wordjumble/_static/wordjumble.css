@@ -1,0 +1,212 @@
+/* ==========================================================================
+   0. Buttons & Control Panel UI
+   ========================================================================== */
+
+.wordjumble-global-panel {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #e2e8f0;
+}
+
+.wordjumble-btn-score,
+.wordjumble-btn-reset {
+  padding: 0.45rem 0.9rem;
+  font-size: 0.95rem;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease-in-out;
+  border: 1px solid transparent;
+}
+
+.wordjumble-btn-score {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.wordjumble-btn-score:hover {
+  background-color: #1d4ed8;
+}
+
+.wordjumble-btn-score:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  filter: grayscale(100%);
+}
+
+.wordjumble-btn-reset {
+  background-color: #ffffff;
+  color: #475569;
+  border-color: #cbd5e1;
+}
+
+.wordjumble-btn-reset:hover {
+  background-color: #f8fafc;
+  color: #1e293b;
+}
+
+.wordjumble-output {
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.35rem 0.65rem;
+  border-radius: 6px;
+  margin-left: auto;
+  background-color: #ffffff;
+  color: #334155;
+  border: 1px solid #e2e8f0;
+}
+
+/* Score Badges */
+.wordjumble-output.high {
+  background-color: #dcfce7;
+  color: #15803d;
+  border-color: #bbf7d0;
+}
+
+.wordjumble-output.medium {
+  background-color: #fef9c3;
+  color: #a16207;
+  border-color: #fef08a;
+}
+
+.wordjumble-output.low {
+  background-color: #fee2e2;
+  color: #b91c1c;
+  border-color: #fca5a5;
+}
+
+/* ==========================================================================
+   1. Base Component Layout
+   ========================================================================== */
+.wordjumble-block {
+  padding: 0.8rem;
+  margin-bottom: 0.8rem;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+  border: 1px solid #cbd5e1;
+  background-color: #ffffff;
+}
+
+.wordjumble-instructions {
+  font-weight: 600;
+  margin-bottom: 0.6em;
+  font-size: 1rem;
+  color: #334155;
+}
+
+/* ==========================================================================
+   2. Instruction Colors
+   ========================================================================== */
+.wordjumble-block.wj-color-red .wordjumble-instructions,
+.wordjumble-block.wj-color-participant .wordjumble-instructions { color: #d62728; }
+
+.wordjumble-block.wj-color-green .wordjumble-instructions,
+.wordjumble-block.wj-color-process .wordjumble-instructions { color: #2ca02c; }
+
+.wordjumble-block.wj-color-blue .wordjumble-instructions,
+.wordjumble-block.wj-color-circumstance .wordjumble-instructions { color: #4a3dff; }
+
+.wordjumble-block.wj-color-conj .wordjumble-instructions,
+.wordjumble-block.wj-color-part .wordjumble-instructions { color: #6b7280; }
+
+.wordjumble-block.wj-color-theme .wordjumble-instructions { color: #1f77b4; }
+.wordjumble-block.wj-color-rheme .wordjumble-instructions { color: #111827; }
+
+/* ==========================================================================
+   3. Themes & Style Variants
+   ========================================================================== */
+.wordjumble-block.theme-white { background-color: #ffffff !important; border-color: #cbd5e1 !important; }
+.wordjumble-block.theme-light { background-color: #f8fafc !important; border-color: #e2e8f0 !important; }
+
+.wordjumble-block.wj-style-filled { border-width: 1px; border-style: solid; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02); }
+.wordjumble-block.wj-style-plain { background-color: transparent !important; border: none !important; box-shadow: none !important; padding-left: 0; padding-right: 0; }
+
+/* ==========================================================================
+   4. Single-Column Layout & Interactive Inputs
+   ========================================================================== */
+.wordjumble-content {
+  display: flex;
+  flex-direction: column; /* Forces one word-input pair per line */
+  gap: 0.25rem;           /* Reduces vertical space between lines */
+  font-family: "Consolas", "Courier New", Courier, monospace;
+  font-size: 18px;
+  margin: 0.3em 0;
+  color: #0f172a;
+}
+
+/* Individual word item layout */
+.wj-item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.1rem 0;     /* Tight line height */
+}
+
+/* Jumbled word label styling */
+.wj-word {
+  font-weight: 500;
+  font-size: 16px;
+  padding: 0.2rem 0.2rem;
+  /* background-color: #f1f5f9; */
+  border-radius: 4px;
+  min-width: 18ch;       /* Gives words uniform starting alignment */
+  text-align: left;
+}
+
+/* Input field sizing for 25 characters */
+.wj-input {
+  font-family: inherit;
+  font-size: 18px !important;       /* Explicit 16px font */
+  width: 25ch !important;           /* Comfortably handles 25 characters */
+  max-width: 100%;                  /* Responsive safeguard */
+  padding: 0.2rem 0.2rem;          /* Compact vertical padding */
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  box-sizing: border-box;            /* Ensures padding stays inside input width */
+  outline: none;
+  transition: all 0.15s ease-in-out;
+}
+
+.wj-input:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+.wj-input:disabled {
+  background-color: #f8fafc;
+  cursor: not-allowed;
+}
+
+.wj-input.wj-correct {
+  border-color: #22c55e !important;
+  background-color: #f0fdf4 !important;
+  color: #15803d !important;
+  font-weight: 600;
+}
+
+.wj-input.wj-incorrect {
+  border-color: #ef4444 !important;
+  background-color: #fef2f2 !important;
+  color: #b91c1c !important;
+  text-decoration: line-through;
+}
+
+.wj-correct-answer {
+  font-size: 16px;
+  font-weight: 600;
+  color: #15803d;
+  margin-left: 0.3em;
+}
+
+.wj-space {
+  display: inline-block;
+  width: 0.45em;
+}
+
+/* Hide line break tags in favor of flex column */
+.wordjumble-content br {
+  display: none;
+}

@@ -165,7 +165,7 @@ class LabelDirective(SphinxDirective):
         # Controls
         html_out += '''
         <div class="label-controls">
-            <button class="label-btn label-btn-check" type="button" onclick="scoreLabels(this)">Check Answers</button>
+            <button class="label-btn label-btn-check" type="button" onclick="scoreLabels(this)">Check</button>
             <button class="label-btn label-btn-reference" type="button" onclick="toggleReferenceMode(this)">A,B,C Mode</button>
             <button class="label-btn label-btn-answers" type="button" onclick="showAnswers(this)">Show Answers</button>
             <button class="label-btn label-btn-reset" type="button" onclick="resetLabels(this)">Reset</button>

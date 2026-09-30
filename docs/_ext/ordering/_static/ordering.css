@@ -8,54 +8,44 @@
   --or-radius-sm: 4px;
   --or-transition: all 0.2s ease;
 
-  /* Light Theme Palette (Default Style Configuration) */
-  --or-light-bg: #ffffff;         /* Pure White Base Canvas */
-  --or-light-border: #e2e8f0;     /* Slate 200 Outer Rim */
-  --or-light-text: #334155;       /* Slate 700 Instructions Text */
-  --or-light-runway: #f8fafc;     /* Slate 50 Inner Runway Container */
-  --or-light-row-bg: #ffffff;     /* Active Draggable Items Background */
-  --or-light-row-border: #e2e8f0; /* Item Border Rim */
-  --or-light-code: #0f172a;       /* Slate 900 Code Typography Clarity */
+  /* DEFAULT: Pure White Theme Palette */
+  --or-default-bg: #ffffff;         /* Pure White Base Canvas */
+  --or-default-border: #e2e8f0;     /* Slate 200 Outer Rim */
+  --or-default-text: #334155;       /* Slate 700 Text */
+  --or-default-runway: #ffffff;     /* Pure White Inner Runway */
+  --or-default-row-bg: #ffffff;     /* Pure White Draggable Items */
+  --or-default-row-border: #cbd5e1; /* Item Border Rim */
+  --or-default-code: #0f172a;       /* Slate 900 Code Typography */
 
-  /* Dark Theme Structural Palette (Premium Pastel Sky/Ice Blue Layout) */
-  --or-dark-bg: #d8f1ff;          /* Soft Calming Pastel Sky/Ice Blue */
-  --or-dark-border: #bae6fd;      /* Clean Outer Rim Accent Border */
-  --or-dark-text: #0369a1;        /* Deep Ocean Blue High Contrast Instructions */
-  --or-dark-runway: #e0f2fe;      /* Softer Pastel Sky Runway Background */
-  --or-dark-row-bg: #eef6ff;      /* Draggable Code Lines Base White/Blue Tint */
-  --or-dark-row-border: #cbd5e1;  /* Medium Light Grey Structural Row Seam */
-  --or-dark-code: #0f172a;        /* Crystal Clear Dark Text Vector Ink */
+  /* OPTIONAL: Soft Light Theme Palette (.light or .theme-light) */
+  --or-light-bg: #f8fafc;          /* Slate 50 Canvas Background */
+  --or-light-border: #cbd5e1;      /* Slate 300 Rim */
+  --or-light-runway: #f1f5f9;      /* Slate 100 Inner Runway */
+  --or-light-row-bg: #ffffff;      /* Pure White Draggable Row */
 
   /* Validation Feedback System Tokens */
-  --or-correct-bg: #f0fdf4;
+  --or-correct-bg: #dcfce7;
   --or-correct-border: #22c55e;
-  --or-correct-border-dark: #4ade80;
-  --or-correct-text: #15803d;
-  --or-correct-text-dark: #166534;
+  --or-correct-text: #14532d;
 
-  --or-incorrect-bg: #fef2f2;
+  --or-incorrect-bg: #fee2e2;
   --or-incorrect-border: #ef4444;
-  --or-incorrect-border-dark: #f87171;
-  --or-incorrect-text: #b91c1c;
-  --or-incorrect-text-dark: #991b1b;
+  --or-incorrect-text: #7f1d1d;
 
-  --or-tier-mid-bg: #fef3c7;
-  --or-tier-mid-border: #f59e0b;
-  --or-tier-mid-text: #78350f;
-  --or-tier-mid-bg-dark: #fef08a;
-  --or-tier-mid-border-dark: #eab308;
-  --or-tier-mid-text-dark: #713f12;
+  --or-tier-mid-bg: #fef08a;
+  --or-tier-mid-border: #eab308;
+  --or-tier-mid-text: #713f12;
 }
 
 /* ==========================================================================
-   2. Component Base Structural Architecture (Standard Component Config)
+   2. Component Base Structural Architecture (Default: White Theme)
    ========================================================================== */
 .ordering-block {
-  background-color: var(--or-light-bg);
-  border: 1px solid var(--or-light-border);
+  background-color: var(--or-default-bg);
+  border: 1px solid var(--or-default-border);
   border-radius: var(--or-radius-lg);
-  padding: 1.5rem;
-  margin-bottom: 2rem;
+  padding: 0.8rem;
+  margin-bottom: 0.8rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
   transition: var(--or-transition);
 }
@@ -64,18 +54,18 @@
   font-weight: 600;
   margin-bottom: 1rem;
   font-size: 1rem;
-  color: var(--or-light-text);
+  color: var(--or-default-text);
   transition: var(--or-transition);
 }
 
 .ordering-container {
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
-  padding: 1rem;
+  gap: 0.25rem;
+  padding: 0.6rem;
   border-radius: var(--or-radius-md);
   min-height: 100px;
-  background-color: var(--or-light-runway);
+  background-color: var(--or-default-runway);
   border: 1px solid #cbd5e1;
   transition: var(--or-transition);
 }
@@ -83,9 +73,9 @@
 .ordering-line {
   display: flex;
   align-items: center;
-  padding: 0.85rem 0.95rem;
-  background-color: var(--or-light-row-bg);
-  border: 1px solid var(--or-light-row-border);
+  padding: 0.6rem 0.6rem;
+  background-color: var(--or-default-row-bg);
+  border: 1px solid var(--or-default-row-border);
   border-radius: var(--or-radius-md);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   cursor: grab;
@@ -99,7 +89,7 @@
 }
 
 .ordering-line:hover {
-  border-color: #cbd5e1;
+  border-color: #94a3b8;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
@@ -115,7 +105,7 @@
   font-size: 1.1rem;
   flex-grow: 1;
   white-space: pre;
-  color: var(--or-light-code);
+  color: var(--or-default-code);
 }
 
 .ordering-indent-controls {
@@ -149,58 +139,42 @@
 }
 
 /* ==========================================================================
-   3. Unified Dark Theme Layout Inversions
+   3. Soft Light Theme Layout Overrides (.light or .theme-light)
    ========================================================================== */
-.ordering-block:has(.theme-dark) {
-  background-color: var(--or-dark-bg);
-  border-color: var(--or-dark-border);
+.ordering-block.light,
+.ordering-block.theme-light,
+.ordering-block:has(.theme-light) {
+  background-color: var(--or-light-bg) !important;
+  border-color: var(--or-light-border) !important;
 }
 
-.ordering-block:has(.theme-dark) .ordering-instructions {
-  color: var(--or-dark-text);
-}
-
-.ordering-container.theme-dark {
-  background-color: var(--or-dark-runway);
-  border-color: var(--or-dark-border);
-}
-
-.ordering-container.theme-dark .ordering-line {
-  background-color: var(--or-dark-row-bg);
-  border-color: var(--or-dark-row-border);
-  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
-}
-
-.ordering-container.theme-dark .ordering-line:hover {
-  border-color: #94a3b8;
-  box-shadow: 0 4px 6px -1px rgba(15, 23, 42, 0.08);
-}
-
-.ordering-container.theme-dark .ordering-code {
-  color: var(--or-dark-code) !important;
-}
-
-.ordering-container.theme-dark .indent-btn {
-  background-color: #f1f5f9;
-  color: #475569;
-  border: 1px solid #cbd5e1;
-}
-
-.ordering-container.theme-dark .indent-btn:hover {
-  background-color: #e2e8f0;
-  color: #0f172a;
-}
-
-.ordering-container.theme-dark .ordering-line.dragging {
-  opacity: 0.6;
-  border: 2px dashed #38bdf8;
-  background-color: #f0f9ff;
-  box-shadow: none;
+.ordering-block.light .ordering-container,
+.ordering-block.theme-light .ordering-container,
+.ordering-block .ordering-container.theme-light {
+  background-color: var(--or-light-runway) !important;
+  border-color: var(--or-light-border) !important;
 }
 
 /* ==========================================================================
    4. Control Interface Action Triggers & Buttons
    ========================================================================== */
+/* Multi-line Paragraph Styling Adjustments */
+.ordering-line.ordering-paragraph {
+  align-items: flex-start;
+  padding: 0.8rem 1rem;
+}
+
+.ordering-line.ordering-paragraph .ordering-handle {
+  margin-top: 0.2rem;
+}
+
+.ordering-line.ordering-paragraph .ordering-code {
+  white-space: pre-wrap;
+  font-family: inherit; /* Uses textbook font for prose */
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
 .ordering-line.disabled {
   cursor: not-allowed;
   pointer-events: none;
@@ -212,8 +186,8 @@
 .ordering-controls {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
-  margin-top: 1.25rem;
+  gap: 0.25rem;
+  margin-top: 1.0rem;
   width: 100%;
   flex-wrap: nowrap !important;
   overflow-x: auto;
@@ -231,12 +205,12 @@
 }
 
 .ordering-controls button {
-  padding: 0 0.8rem;
-  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  font-weight: 500;
   border-radius: var(--or-radius-md);
   border: 1px solid transparent;
   cursor: pointer;
-  font-size: 0.9rem;
+  font-size: 1.0rem;
   transition: background-color 0.1s ease, transform 0.05s ease;
   white-space: nowrap;
   flex-shrink: 0;
@@ -246,10 +220,17 @@
   transform: scale(0.98);
 }
 
+/* Disabled State Rules - Forces cursor: not-allowed over disabled buttons */
 .ordering-controls button:disabled {
   opacity: 0.5;
-  cursor: not-allowed;
-  pointer-events: none;
+  cursor: not-allowed !important;
+  pointer-events: auto !important;
+  filter: grayscale(100%);
+}
+
+.ordering-block[data-disabled="true"] .ordering-controls button:disabled {
+  pointer-events: auto !important;
+  cursor: not-allowed !important;
 }
 
 /* Primary Action: Check Button */
@@ -263,12 +244,13 @@
 
 /* Secondary Action: Reset Button Layout Rules */
 .ordering-btn-reset {
-  background-color: #f1f5f9;
+  background-color: #ffffff;
   color: #475569;
   border: 1px solid #cbd5e1 !important;
 }
 .ordering-btn-reset:hover {
-  background-color: #e2e8f0;
+  background-color: #f8fafc;
+  color: #0f172a;
 }
 
 /* Tertiary Action: Solution View Button Styling */
@@ -280,58 +262,23 @@
   background-color: #0f766e;
 }
 
-/* Dark Theme Control Custom Overrides */
-.ordering-block:has(.theme-dark) .ordering-btn-reset {
-  background-color: #ffffff;
-  color: var(--or-dark-text);
-  border: 1px solid var(--or-dark-border) !important;
-}
-.ordering-block:has(.theme-dark) .ordering-btn-reset:hover {
-  background-color: #f0f9ff;
-  color: var(--or-dark-text);
-}
-
-.ordering-block:has(.theme-dark) .ordering-btn-solution {
-  background-color: #0f766e;
-  color: #ffffff !important;
-}
-.ordering-block:has(.theme-dark) .ordering-btn-solution:hover {
-  background-color: #115e59;
-}
-
 /* ==========================================================================
    5. Interactive Evaluation Logic States
    ========================================================================== */
-.ordering-container.theme-light .ordering-line.correct-line {
+.ordering-container .ordering-line.correct-line {
   border-color: var(--or-correct-border) !important;
   background-color: var(--or-correct-bg) !important;
 }
-.ordering-container.theme-light .ordering-line.correct-line .ordering-code {
+.ordering-container .ordering-line.correct-line .ordering-code {
   color: var(--or-correct-text) !important;
 }
 
-.ordering-container.theme-light .ordering-line.incorrect-line {
+.ordering-container .ordering-line.incorrect-line {
   border-color: var(--or-incorrect-border) !important;
   background-color: var(--or-incorrect-bg) !important;
 }
-.ordering-container.theme-light .ordering-line.incorrect-line .ordering-code {
+.ordering-container .ordering-line.incorrect-line .ordering-code {
   color: var(--or-incorrect-text) !important;
-}
-
-.ordering-container.theme-dark .ordering-line.correct-line {
-  border-color: var(--or-correct-border-dark) !important;
-  background-color: var(--or-correct-bg) !important;
-}
-.ordering-container.theme-dark .ordering-line.correct-line .ordering-code {
-  color: var(--or-correct-text-dark) !important;
-}
-
-.ordering-container.theme-dark .ordering-line.incorrect-line {
-  border-color: var(--or-incorrect-border-dark) !important;
-  background-color: var(--or-incorrect-bg) !important;
-}
-.ordering-container.theme-dark .ordering-line.incorrect-line .ordering-code {
-  color: var(--or-incorrect-text-dark) !important;
 }
 
 /* ==========================================================================
@@ -361,31 +308,17 @@
   border-color: var(--or-correct-border);
   color: var(--or-correct-text);
 }
+
 .ordering-feedback-badge.medium {
   background-color: var(--or-tier-mid-bg);
   border-color: var(--or-tier-mid-border);
   color: var(--or-tier-mid-text);
 }
+
 .ordering-feedback-badge.low {
   background-color: var(--or-incorrect-bg);
   border-color: var(--or-incorrect-border);
   color: var(--or-incorrect-text);
-}
-
-.ordering-block:has(.theme-dark) .ordering-feedback-badge.high {
-  background-color: #bbf7d0;
-  border-color: var(--or-correct-border);
-  color: #14532d;
-}
-.ordering-block:has(.theme-dark) .ordering-feedback-badge.medium {
-  background-color: var(--or-tier-mid-bg-dark);
-  border-color: var(--or-tier-mid-border-dark);
-  color: var(--or-tier-mid-text-dark);
-}
-.ordering-block:has(.theme-dark) .ordering-feedback-badge.low {
-  background-color: #fecaca;
-  border-color: var(--or-incorrect-border);
-  color: #7f1d1d;
 }
 
 /* ==========================================================================
@@ -402,16 +335,12 @@
   opacity: 0.4;
 }
 
-.theme-dark .ordering-line.blank-line-placeholder .ordering-code::before {
-  color: #a3a3a3 !important;
-}
-
 /* ==========================================================================
    8. Feature Additions & Completed Code Section
    ========================================================================== */
 .ordering-block.ordering-no-padding .ordering-line {
-  padding-top: 0px !important;
-  padding-bottom: 0px !important;
+  padding-top: 0.08rem !important;
+  padding-bottom: 0.05rem !important;
 }
 
 .ordering-block.ordering-no-padding .ordering-line.blank-line-placeholder {
@@ -419,7 +348,7 @@
 }
 
 .ordering-completed-code {
-  display: none; /* Keeps block hidden on initial page load / refresh */
+  display: none;
   margin-top: 1rem;
   margin-bottom: 2rem;
   transition: opacity 0.2s ease-in-out;

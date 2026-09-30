@@ -1,5 +1,5 @@
 /* ==========================================================================
-   1. Design Token System & Global Variables
+   1. Design Token System & control Variables
    ========================================================================== */
 :root {
   /* Common Core Structural Tokens */
@@ -8,23 +8,25 @@
   --mcq-radius-sm: 6px;
   --mcq-transition: background 0.12s ease, transform 0.05s ease, border-color 0.12s ease;
 
-  /* Shared Core Typography & Interface Colors */
-  --mcq-light-bg: #ffffff;
-  --mcq-light-border: #e3e6ea;
-  --mcq-light-text: #1e293b;
-  --mcq-light-letter: #333333;
-  --mcq-light-hover-bg: #f6f9ff;
-  --mcq-light-selected-bg: #eaf2ff;
-  --mcq-light-selected-border: #3a8bfd;
-  --mcq-light-divider: #e3e6ea;
+  /* White Theme Tokens (Clean, White Canvas) */
+  --mcq-white-bg: #ffffff;
+  --mcq-white-border: #e2e8f0;
+  --mcq-white-divider: #e2e8f0;
 
-  /* Dark Theme Structural Alterations */
-  --mcq-dark-bg: #d8f1ff;
-  --mcq-dark-border: #334155;
-  --mcq-dark-divider: #334155;
+  /* Light Theme Tokens (Soft Off-White Tint) */
+  --mcq-light-bg: #f8fafc;
+  --mcq-light-border: #cbd5e1;
+  --mcq-light-divider: #cbd5e1;
+
+  /* Shared Core Typography & Interface Colors */
+  --mcq-text: #1e293b;
+  --mcq-letter: #333333;
+  --mcq-hover-bg: #f1f5f9;
+  --mcq-selected-bg: #e2e8f0;
+  --mcq-selected-border: #3b82f6;
 
   /* Base Explanation Styling */
-  --mcq-base-explanation-color: #ff0000; /* Red Default Feedback State */
+  --mcq-base-explanation-color: #ef4444; /* Default Red Feedback */
 
   /* Validation Feedback States */
   --mcq-answer-bg: #f6fff8;
@@ -46,7 +48,7 @@
   --mcq-missed-border: #ddd6fe;
   --mcq-missed-text: #7c3aed; /* Vivid Purple */
 
-  /* Global Score Performance Badges */
+  /* control Score Performance Badges */
   --mcq-tier-high-bg: #edfdf3;
   --mcq-tier-high-border: #22c55e;
   --mcq-tier-high-text: #166534;
@@ -61,75 +63,96 @@
 }
 
 /* ==========================================================================
-   2. MCQ Block Core Containers
+   2. MCQ Block Core Containers & Theme Variants
    ========================================================================== */
 .multichoice-block {
-  background-color: var(--mcq-light-bg);
-  border: 1px solid var(--mcq-light-border);
   border-radius: var(--mcq-radius-lg);
-  padding: 1.1em 1.2em;
-  margin-bottom: 1.6em;
+  padding: 0.8em;
+  margin-bottom: 0.8em;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
   transition: var(--mcq-transition);
 }
 
+/* Theme: White */
+.multichoice-block.theme-white {
+  background-color: var(--mcq-white-bg);
+  border: 1px solid var(--mcq-white-border);
+}
+
+.multichoice-block.theme-white .multichoice-control-panel {
+  border-top-color: var(--mcq-white-divider);
+  border-bottom-color: var(--mcq-white-divider);
+}
+
+/* Theme: Light */
+.multichoice-block.theme-light {
+  background-color: var(--mcq-light-bg);
+  border: 1px solid var(--mcq-light-border);
+}
+
+.multichoice-block.theme-light .multichoice-control-panel {
+  border-top-color: var(--mcq-light-divider);
+  border-bottom-color: var(--mcq-light-divider);
+}
+
 .multichoice-question {
   font-weight: 600;
-  margin-bottom: 0.9em;
+  margin-bottom: 0.2em;
   font-size: 1.08em;
   line-height: 1.4;
-  color: var(--mcq-light-text);
+  color: var(--mcq-text);
+}
+
+.multichoice-question p {
+  margin-bottom:  0.4em !important;
 }
 
 /* ==========================================================================
-   3. MCQ Answer Card Choice Items (Top Alignment with Text Nudge)
+   3. MCQ Answer Card Choice Items
    ========================================================================== */
 .multichoice-choice {
-  margin: 0.3em 0;
+  margin: 0.1em 0;
   border-radius: var(--mcq-radius-md);
   cursor: pointer;
   display: block;
   transition: var(--mcq-transition);
   border: 1px solid transparent;
   border-left: 4px solid transparent;
-  padding: 0.3em 0.5em;
+  padding: 0.1em 0.2em;
 }
 
-/* Keeps everything aligned to the top */
 .multichoice-choice label {
   display: flex;
   align-items: flex-start;
-  gap: 0.5rem;
+  gap: 0.5em;
   margin: 0;
   padding: 0;
   width: 100%;
   cursor: pointer;
-  color: var(--mcq-light-text);
+  color: var(--mcq-text);
 }
 
-/* Nudge the radio button down slightly to match the text baseline */
-.multichoice-choice input[type="radio"] {
+.multichoice-choice input[type="radio"],
+.multichoice-choice input[type="checkbox"] {
   margin: 0 !important;
   padding: 0 !important;
   align-self: flex-start;
   position: relative;
-  top: 3px; /* Adjust this value (e.g., 2px to 4px) to center it with line 1 */
+  top: 3px;
   pointer-events: none;
 }
 
-/* Nudge the letter (A, B, C...) down to match the docutils paragraph baseline */
 .multichoice-letter {
   font-weight: 600;
   min-width: 1.2em;
-  color: var(--mcq-light-letter);
+  color: var(--mcq-letter);
   align-self: flex-start;
   line-height: 1.4;
   position: relative;
   font-size: 1.1em;
-  top: 0px; /* Tweak this by 1px or 2px until it perfectly mirrors the choice text */
+  top: 0px;
 }
 
-/* Choice label container holds the deep docutils tags */
 .multichoice-choice-label {
   line-height: 1.4;
   flex: 1;
@@ -137,7 +160,6 @@
   align-self: flex-start;
 }
 
-/* Clean up inside margins so docutils block elements don't add extra top gaps */
 .multichoice-choice-label blockquote,
 .multichoice-choice-label div,
 .multichoice-choice-label p {
@@ -158,7 +180,6 @@
   display: none;
 }
 
-/* Base State Color Fallbacks */
 .multichoice-explanation,
 .multichoice-explanation p,
 .multichoice-explanation blockquote,
@@ -166,9 +187,6 @@
   color: var(--mcq-base-explanation-color) !important;
 }
 
-/* --- State Variant Color Modifiers --- */
-
-/* 1. Correct Selected Option (Forest Green) */
 .multichoice-choice.multichoice-correct .multichoice-explanation,
 .multichoice-choice.multichoice-correct .multichoice-explanation p,
 .multichoice-choice.multichoice-correct .multichoice-explanation blockquote,
@@ -176,7 +194,6 @@
   color: var(--mcq-correct-text) !important;
 }
 
-/* 2. Incorrect Selected Option (Crimson Red) */
 .multichoice-choice.multichoice-incorrect .multichoice-explanation,
 .multichoice-choice.multichoice-incorrect .multichoice-explanation p,
 .multichoice-choice.multichoice-incorrect .multichoice-explanation blockquote,
@@ -184,7 +201,6 @@
   color: var(--mcq-incorrect-text) !important;
 }
 
-/* 3. Missed Correct Option (Vivid Purple) */
 .multichoice-choice.multichoice-answer:not(.selected) .multichoice-explanation,
 .multichoice-choice.multichoice-answer:not(.selected) .multichoice-explanation p,
 .multichoice-choice.multichoice-answer:not(.selected) .multichoice-explanation blockquote,
@@ -193,7 +209,7 @@
 }
 
 /* ==========================================================================
-   5. Clean Global Structural Normalizations (Docutils / Browser Overrides)
+   5. Clean control Structural Normalizations
    ========================================================================== */
 .multichoice-choice blockquote,
 .multichoice-explanation blockquote,
@@ -217,40 +233,29 @@
   padding: 0.3em !important;
 }
 
-/* Collapse Sphinx's default heavy code block container margins */
 .multichoice-choice-label div[class*="highlight"],
 .multichoice-choice-label .highlight,
 .multichoice-explanation div[class*="highlight"],
 .multichoice-explanation .highlight {
-  margin-bottom: 0 !important; /* Forces the default heavy bottom gap to disappear */
-}
-
-/* Also ensure the code pre block has matching compact boundaries */
-.multichoice-choice-label pre,
-.multichoice-explanation pre {
-  margin-top: 0.3em !important;
-  margin-bottom: 0 !important; /* Overriding previous margin-bottom placeholder */
-  padding: 0.3em !important;
+  margin-bottom: 0 !important;
 }
 
 /* ==========================================================================
    6. Interactive States & Evaluation Engine Layouts
    ========================================================================== */
 .multichoice-choice:not(.multichoice-disabled):hover {
-  background-color: var(--mcq-light-hover-bg);
+  background-color: var(--mcq-hover-bg);
 }
 
 .multichoice-choice:active:not(.multichoice-disabled) {
   transform: scale(0.995);
 }
 
-/* --- Selection / Active States --- */
 .multichoice-choice.selected {
-  background-color: var(--mcq-light-selected-bg);
-  border-left-color: var(--mcq-light-selected-border);
+  background-color: var(--mcq-selected-bg);
+  border-left-color: var(--mcq-selected-border);
 }
 
-/* --- Disabled State Cards --- */
 .multichoice-choice.multichoice-disabled {
   opacity: 0.65;
   cursor: not-allowed;
@@ -260,7 +265,6 @@
   background: none;
 }
 
-/* --- Live Scoring Evaluation Container States --- */
 .multichoice-choice.multichoice-answer {
   border-color: var(--mcq-answer-border);
   background-color: var(--mcq-answer-bg);
@@ -278,13 +282,11 @@
   border-left: 6px solid var(--mcq-incorrect-accent) !important;
 }
 
-/* Missed / Unanswered Answer Card State Modification */
 .multichoice-choice.multichoice-answer:not(.selected) {
   border-color: var(--mcq-missed-border) !important;
   background-color: var(--mcq-missed-bg) !important;
 }
 
-/* --- Validation Element Feedback Indicators --- */
 .multichoice-choice label::after {
   font-weight: 600;
   padding-left: 0.5em;
@@ -309,23 +311,22 @@
 }
 
 /* ==========================================================================
-   7. Action Controls Global Panel & Scoring Output
+   7. Action Controls Control Panel & Scoring Output
    ========================================================================== */
-.multichoice-global-panel {
+
+.multichoice-control-panel {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
-  margin-top: 1.2rem;
-  padding: 0.8rem 0;
-  margin-bottom: 1.2rem;
-  border-top: 1px solid var(--mcq-light-divider);
-  border-bottom: 1px solid var(--mcq-light-divider);
+  gap: 0.6em;
+  margin-top: 0.8em;
+  padding-top: 0.6em;
+  border-top: 1px solid var(--mcq-white-divider);
   transition: border-color 0.12s ease;
 }
 
-.multichoice-global-panel button {
-  font-size: 0.95em;
-  padding: 0.5em 1em;
+.multichoice-control-panel button {
+  font-size: 0.9em;
+  padding: 0.3em 0.7em;
   border-radius: var(--mcq-radius-sm);
   border: none;
   cursor: pointer;
@@ -333,11 +334,17 @@
   transition: var(--mcq-transition);
 }
 
-.multichoice-global-panel button:hover {
+.multichoice-control-panel button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+
+.multichoice-control-panel button:hover {
   filter: brightness(0.92);
 }
 
-.multichoice-global-panel button:active {
+.multichoice-control-panel button:active {
   transform: scale(0.97);
 }
 
@@ -352,7 +359,7 @@
   border: 1px solid #e5e7eb !important;
 }
 
-.multichoice-global-panel button:disabled {
+.multichoice-control-panel button:disabled {
   opacity: 0.4;
   cursor: not-allowed;
 }
@@ -385,28 +392,13 @@
 }
 
 /* ==========================================================================
-   8. Explicit Dark Theme Target Variant Configuration
+   8. Overrides & Reset Safety Rules
    ========================================================================== */
-.multichoice-block.theme-dark {
-  background-color: var(--mcq-dark-bg);
-  border-color: var(--mcq-dark-border);
-}
-
-.multichoice-block.theme-dark .multichoice-global-panel {
-  border-top-color: var(--mcq-dark-divider);
-  border-bottom-color: var(--mcq-dark-divider);
-}
-
-/* ==========================================================================
-   9.
-   ========================================================================== */
-/* Ensure explanation cards display text visibility properly during evaluation checks */
 .multichoice-choice.multichoice-answer:not(.selected) .multichoice-explanation {
   display: block;
   color: var(--mcq-missed-text) !important;
 }
 
-/* Ensure global reset parameters override display constraints cleanly */
 .multichoice-toggle-wrapper input[type="checkbox"] {
   margin: 0 !important;
   cursor: pointer;
@@ -414,9 +406,4 @@
 
 .multichoice-toggle-wrapper input[type="checkbox"]:disabled {
   cursor: not-allowed;
-}
-
-/* Strip hardcoded layout force displays to allow JS toggling to govern visibility */
-.multichoice-choice.multichoice-answer:not(.selected) .multichoice-explanation {
-  color: var(--mcq-missed-text) !important;
 }

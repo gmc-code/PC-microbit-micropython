@@ -17,18 +17,25 @@ document.addEventListener("DOMContentLoaded", function () {
 
     classificationBlocks.forEach((block) => {
         const scoreBtn = block.querySelector(".classifying-btn-score");
+        const solutionBtn = block.querySelector(".classifying-btn-solution");
         const resetBtn = block.querySelector(".classifying-btn-reset");
         const feedbackBadge = block.querySelector(".classifying-feedback-badge");
         const container = block.querySelector(".classifying-container");
 
         if (!scoreBtn || !resetBtn || !container) return;
 
-        // FIXED: Run an initial shuffle right when the page finishes loading
-        shuffleRows(container);
+        const shouldShuffle = container.getAttribute("data-shuffle") !== "false";
+
+        // Run an initial shuffle right when the page finishes loading (if enabled)
+        if (shouldShuffle) {
+            shuffleRows(container);
+        }
 
         // 1. Check Evaluation Logic
         scoreBtn.addEventListener("click", function () {
-            // Re-query select boxes and lines because their order changed during shuffling!
+            block.dataset.disabled = "true";
+            scoreBtn.disabled = true;
+
             const selects = block.querySelectorAll(".sorting-select");
             const rows = block.querySelectorAll(".classifying-line");
 
@@ -45,7 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     allAnswered = false;
                 }
 
-                // Lock dropdown so they can review their submitted answers safely
                 select.disabled = true;
 
                 if (selectedValue === correctValue) {
@@ -79,14 +85,44 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
 
-        // 2. Reset Layout Logic
+        // 2. Solution Logic
+        if (solutionBtn) {
+            solutionBtn.addEventListener("click", function () {
+                block.dataset.disabled = "true";
+                scoreBtn.disabled = true;
+
+                const selects = block.querySelectorAll(".sorting-select");
+                const rows = block.querySelectorAll(".classifying-line");
+
+                selects.forEach((select, idx) => {
+                    const parentRow = rows[idx];
+                    const correctValue = select.getAttribute("data-correct-bin");
+
+                    select.value = correctValue;
+                    select.disabled = true;
+
+                    parentRow.classList.remove("incorrect-line");
+                    parentRow.classList.add("correct-line");
+                });
+
+                feedbackBadge.classList.remove("medium", "low");
+                feedbackBadge.classList.add("high");
+                feedbackBadge.style.display = "inline-block";
+                feedbackBadge.textContent = "Solution Revealed";
+            });
+        }
+
+        // 3. Reset Layout Logic
         resetBtn.addEventListener("click", function () {
+            block.dataset.disabled = "false";
+            scoreBtn.disabled = false;
+
             const selects = block.querySelectorAll(".sorting-select");
             const rows = block.querySelectorAll(".classifying-line");
 
             selects.forEach((select) => {
                 select.value = "";
-                select.disabled = false; // Unlock dropdowns for another attempt
+                select.disabled = false;
             });
 
             rows.forEach((row) => {
@@ -97,8 +133,10 @@ document.addEventListener("DOMContentLoaded", function () {
             feedbackBadge.textContent = "";
             feedbackBadge.classList.remove("high", "medium", "low");
 
-            // FIXED: Automatically shuffle the lines again for a fresh attempt!
-            shuffleRows(container);
+            // Shuffle again if enabled
+            if (shouldShuffle) {
+                shuffleRows(container);
+            }
         });
     });
-});
+})

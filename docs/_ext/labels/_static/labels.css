@@ -98,7 +98,7 @@
   flex-wrap: wrap !important;
   align-content: flex-start !important; /* Keeps remaining items docked to the top */
   gap: 8px !important;
-  padding: 12px !important;
+  padding: 0.8rem !important;
   background-color: var(--label-tray-bg, #f8f9fa) !important;
   border: 2px dashed var(--label-tray-border, #ccc) !important;
   border-radius: 8px !important;

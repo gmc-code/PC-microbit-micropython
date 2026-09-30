@@ -1,0 +1,219 @@
+/* ==========================================================================
+   1. Design Token System & Global Variables
+   ========================================================================== */
+:root {
+  /* Common Core Tokens */
+  --fi-radius-lg: 8px;
+  --fi-radius-md: 6px;
+  --fi-radius-sm: 4px;
+  --fi-transition: all 0.2s ease;
+
+  /* White Theme Palette (Default Configuration) */
+  --fi-white-bg: #ffffff;         /* Pure White Canvas */
+  --fi-white-border: #cbd5e1;     /* Soft Slate Rim */
+  --fi-white-text: #0f172a;       /* Dark Ink */
+  --fi-white-divider: #e2e8f0;    /* Divider Line */
+
+  /* Light Theme Palette (Soft Slate 50) */
+  --fi-light-bg: #f8fafc;         /* Soft Slate 50 Inner Runway */
+  --fi-light-border: #94a3b8;     /* Slate Rim */
+  --fi-light-text: #0f172a;       /* Reading Ink */
+  --fi-light-divider: #cbd5e1;    /* Divider Line */
+
+  /* Validation Feedback System Tokens */
+  --fi-correct-bg: #f0fdf4;
+  --fi-correct-border: #22c55e;
+  --fi-correct-text: #15803d;
+
+  --fi-incorrect-bg: #fef2f2;
+  --fi-incorrect-border: #ef4444;
+  --fi-incorrect-text: #b91c1c;
+}
+
+/* ==========================================================================
+   2. Component Base Structural Architecture (Default White Theme)
+   ========================================================================== */
+.fillin-block {
+  background-color: var(--fi-white-bg);
+  border: 1px solid var(--fi-white-border);
+  padding: 0.8rem;
+  margin-bottom: 0.8rem;
+  border-radius: var(--fi-radius-lg);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  transition: var(--fi-transition);
+}
+
+.fillin-content {
+  font-family: "Consolas", "Courier New", Courier, monospace;
+  font-size: 1.05em;
+  line-height: 2.2;
+  color: var(--fi-white-text);
+  margin: 0 0 1.5em 0;
+  white-space: pre-wrap;
+}
+
+/* Base Wrapper for Inline Alignment */
+.fillin-wrapper {
+  display: inline-flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.fillin-input {
+  display: inline-block;
+  padding: 0.2em 0.5em;
+  font-family: inherit;
+  font-size: 1rem !important; /* Updated input text font height to 1rem */
+  line-height: 1rem;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--fi-radius-sm);
+  background-color: #f8fafc;
+  color: #0f172a;
+  outline: none;
+  transition: var(--fi-transition);
+}
+
+.fillin-input:focus {
+  border-color: #2563eb;
+  background-color: #ffffff;
+  box-shadow: 0 0 0 2px rgba(37, 99, 235, 0.2);
+}
+
+/* Validation Feedback Input Modifiers */
+.fillin-input.correct {
+  border-color: var(--fi-correct-border) !important;
+  background-color: var(--fi-correct-bg) !important;
+  color: var(--fi-correct-text) !important;
+  box-shadow: none !important;
+}
+
+.fillin-input.incorrect {
+  border-color: var(--fi-incorrect-border) !important;
+  background-color: var(--fi-incorrect-bg) !important;
+  color: var(--fi-incorrect-text) !important;
+  box-shadow: none !important;
+}
+
+/* Inline Verification Icon Embellishments */
+.fillin-inline-feedback {
+  font-weight: 600;
+  font-size: 0.95em;
+  margin-left: 0.3em;
+  margin-right: 0.3em;
+}
+
+.text-correct {
+  color: var(--fi-correct-border);
+}
+
+.text-incorrect {
+  color: var(--fi-incorrect-border);
+}
+
+/* Instruction Header */
+.fillin-instructions {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #475569;
+  margin-bottom: 1rem;
+}
+
+/* ==========================================================================
+   3. Light Theme Modifiers (`:option: theme: light`)
+   ========================================================================== */
+.fillin-block.theme-light {
+  background-color: var(--fi-light-bg) !important;
+  border-color: var(--fi-light-border) !important;
+}
+
+.fillin-block.theme-light .fillin-content {
+  color: var(--fi-light-text) !important;
+}
+
+.fillin-block.theme-light .fillin-global-panel {
+  border-top-color: var(--fi-light-divider);
+}
+
+.fillin-block.theme-light .fillin-input {
+  background-color: #ffffff;
+}
+
+/* ==========================================================================
+   4. Control Interface Action Triggers & Toolbars
+   ========================================================================== */
+
+.fillin-global-panel {
+  display: flex;
+  align-items: center;
+  gap: 0.8em;
+  margin-top: 1em;
+  border-top: 1px solid var(--fi-white-divider);
+  padding-top: 1em;
+  transition: border-color 0.15s ease;
+}
+
+.fillin-global-panel button {
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--fi-radius-md);
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.12s ease, transform 0.05s ease, opacity 0.12s ease;
+}
+
+.fillin-global-panel button:hover:not(:disabled) {
+  filter: brightness(0.92);
+}
+
+.fillin-global-panel button:active:not(:disabled) {
+  transform: scale(0.97);
+}
+
+.fillin-btn-score {
+  background: #2563eb;
+  color: white;
+}
+
+/* Disabled styling for the scoring button */
+.fillin-btn-score:disabled {
+  background: #94a3b8 !important;
+  color: #f1f5f9 !important;
+  cursor: not-allowed !important;
+  opacity: 0.65;
+  transform: none !important;
+  filter: none !important;
+}
+
+.fillin-btn-reset {
+  background: #ffffff;
+  color: #4b5563;
+  border: 1px solid #cbd5e1 !important;
+}
+
+/* Score Panel Outputs */
+.fillin-output {
+  margin-left: auto;
+  font-weight: 700;
+  padding: 0.4em 0.8em;
+  border-radius: var(--fi-radius-md);
+  display: none;
+  border: 1px solid transparent;
+}
+
+.fillin-output.high {
+  background: var(--fi-correct-bg) !important;
+  border-color: var(--fi-correct-border) !important;
+  color: var(--fi-correct-text) !important;
+}
+
+.fillin-output.medium {
+  background: #fff7ed !important;
+  border-color: #f59e0b !important;
+  color: #9a3412 !important;
+}
+
+.fillin-output.low {
+  background: var(--fi-incorrect-bg) !important;
+  border-color: var(--fi-incorrect-border) !important;
+  color: var(--fi-incorrect-text) !important;
+}

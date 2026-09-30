@@ -9,25 +9,23 @@
   --cloze-transition-fast: all 0.1s ease;
   --cloze-transition-normal: all 0.15s ease;
 
-  /* Light Theme Canvas Tokens */
-  --cloze-light-bg: #ffffff;
+  /* Pure White Theme Canvas Tokens (Default) */
+  --cloze-white-bg: #ffffff;
+  --cloze-white-border: #e2e8f0;
+
+  /* Light Theme Canvas Tokens (Soft Slate 50 Runway) */
+  --cloze-light-bg: #f8fafc;
   --cloze-light-border: #e3e6ea;
-  --cloze-light-text: #1e293b;
-  --cloze-light-tray-bg: #f0fdfa; /* Teal Tint */
-  --cloze-light-tray-border: #0d9488; /* Teal 600 */
-  --cloze-light-title: #475569;
-  --cloze-light-divider: #e2e8f0;
 
-  /* Dark Theme Canvas Tokens  */
-  --cloze-dark-bg: #d8f1ff;
-  --cloze-dark-border: #bae6fd;
-  --cloze-dark-text: #1e293b;
-  --cloze-dark-title: #475569;
-  --cloze-dark-divider: #334155;
+  /* Shared Text and UI Tokens */
+  --cloze-text: #1e293b;
+  --cloze-tray-bg: #f0fdfa; /* Teal Tint */
+  --cloze-tray-border: #0d9488; /* Teal 600 */
+  --cloze-title: #475569;
+  --cloze-divider: #e2e8f0;
 
-
-  /* font sizes */
-  --cloze-base-font-size: 1.2em;
+  /* Font Sizes */
+  --cloze-base-font-size: 1.0em;
   --cloze-code-font-size: 1.1em;
 
   /* Draggable Item Tokens (Teal Engine) */
@@ -43,22 +41,15 @@
   --cloze-drop-bg: #eef2ff;
   --cloze-drop-border: #818cf8;
   --cloze-drop-hover-bg: #e0e7ff;
-  --cloze-drop-hover-text: #4338ca;
-  --cloze-drop-token-bg: #e0f2fe;
-  --cloze-drop-token-text: #0369a1;
 
   /* Validation Feedback System Tokens */
   --cloze-correct-bg: #f0fdf4;
   --cloze-correct-border: #22c55e;
   --cloze-correct-text: #16a34a;
-  --cloze-correct-token-bg: #f0fdf4;
-  --cloze-correct-token-text: #1e293b;
 
   --cloze-incorrect-bg: #ffe1e1;
   --cloze-incorrect-border: #ef4444;
   --cloze-incorrect-text: #dc2626;
-  --cloze-incorrect-token-bg: #ffe1e1;
-  --cloze-incorrect-token-text: #7f1d1d;
 
   /* Evaluation Score Performance Badges */
   --cloze-tier-high-bg: #edfdf3;
@@ -72,51 +63,53 @@
   --cloze-tier-low-bg: #fff1f2;
   --cloze-tier-low-border: #ef4444;
   --cloze-tier-low-text: #9f1239;
-
 }
 
 /* ==========================================================================
-   2. Core Layout Container & Structure
+   2. Core Layout Container & Theme Variants
    ========================================================================== */
 .cloze-block {
-  background-color: var(--cloze-light-bg);
-  border: 1px solid var(--cloze-light-border);
   border-radius: var(--cloze-radius-lg);
-  padding: 1.4em;
-  margin-bottom: 1.8em;
+  padding: 0.8rem;
+  margin-bottom: 0.8rem;
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
   transition: var(--cloze-transition-normal);
 }
 
+/* Default Theme: Pure White (#ffffff) */
+.cloze-block,
+.cloze-block.theme-white {
+  background-color: var(--cloze-white-bg);
+  border: 1px solid var(--cloze-white-border);
+}
+
+/* Optional Light Theme: Soft Slate (#f8fafc) */
+.cloze-block.theme-light {
+  background-color: var(--cloze-light-bg);
+  border: 1px solid var(--cloze-light-border);
+}
+
 .cloze-divider {
   border: 0;
-  border-top: 1px solid var(--cloze-light-divider);
+  border-top: 1px solid var(--cloze-divider);
   margin: 1.4rem 0;
 }
 
-/* --- Theme Variants --- */
-.cloze-block.theme-light {
-  background-color: var(--cloze-light-bg);
-  border-color: var(--cloze-light-border);
-}
-
-.cloze-block.theme-dark {
-  background-color: var(--cloze-dark-bg);
-  border-color: var(--cloze-dark-border);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.2), 0 2px 4px -1px rgba(0, 0, 0, 0.15);
-}
-
-.cloze-block.theme-dark .cloze-divider {
-  border-top-color: var(--cloze-dark-divider);
-}
-
 /* ==========================================================================
-   3. Word Bank Tray & Draggable Items (Teal Theme)
+   3. Word Bank Tray & Draggable Items
    ========================================================================== */
+.cloze-instructions {
+  font-size: 0.95em;
+  font-weight: 500;
+  color: var(--cloze-text);
+  margin-bottom: 0.8rem;
+  line-height: 1.4;
+}
+
 .cloze-wordbank-title {
   font-size: 0.85em;
   font-weight: 700;
-  color: var(--cloze-light-title);
+  color: var(--cloze-title);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   margin-bottom: 0.6rem;
@@ -128,8 +121,8 @@
   flex-wrap: wrap;
   gap: 0.6rem;
   padding: 0.8rem;
-  background-color: var(--cloze-light-tray-bg);
-  border: 2px dashed var(--cloze-light-tray-border);
+  background-color: var(--cloze-tray-bg);
+  border: 2px dashed var(--cloze-tray-border);
   border-radius: var(--cloze-radius-lg);
   min-height: 45px;
   box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.03);
@@ -138,18 +131,15 @@
 }
 
 .cloze-draggable {
-  padding: 0.3rem 0.7rem;
+  padding: 0.2rem 0.6rem;
   background-color: var(--cloze-drag-bg);
   border: 1px solid var(--cloze-drag-border);
   color: var(--cloze-drag-text);
   border-radius: var(--cloze-radius-md);
   cursor: pointer;
   font-weight: 600;
-
-  /* CRITICAL: Match font size across draggables and dropzones */
   font-size: var(--cloze-base-font-size);
   line-height: 1.2;
-
   user-select: none;
   box-shadow: 0 2px 4px rgba(13, 148, 136, 0.12);
   transition: transform 0.1s ease, box-shadow 0.1s ease, background-color 0.1s ease, border-color 0.1s ease;
@@ -160,7 +150,6 @@
   transform: translateY(-1px);
 }
 
-/* Click-to-Select Active State */
 .cloze-draggable.selected {
   outline: 2px solid var(--cloze-drag-selected-border) !important;
   outline-offset: 1px !important;
@@ -178,18 +167,13 @@
   opacity: 0.3;
 }
 
-/* --- Theme Variants --- */
-.cloze-block.theme-dark .cloze-wordbank-title {
-  color: var(--cloze-dark-title);
-}
-
 /* ==========================================================================
    4. Main Content Passage & Preformatted Prose
    ========================================================================== */
 .cloze-content {
   font-size: var(--cloze-base-font-size);
   line-height: 2.6;
-  color: var(--cloze-light-text);
+  color: var(--cloze-text);
   transition: var(--cloze-transition-normal);
 }
 
@@ -205,13 +189,8 @@ pre.cloze-content {
   overflow-x: hidden;
 }
 
-/* --- Theme Variants --- */
-.cloze-block.theme-dark .cloze-content {
-  color: var(--cloze-dark-text);
-}
-
 /* ==========================================================================
-   5. Sentence Drop Zones (Indigo Theme)
+   5. Sentence Drop Zones
    ========================================================================== */
 .cloze-wrapper {
   display: inline-flex;
@@ -225,14 +204,11 @@ pre.cloze-content {
   justify-content: center !important;
   min-width: 100px;
   text-align: center;
-
-  /* FIXED: Standardized padding, font size, and height */
   padding: 0.15rem 0.5rem !important;
   margin: 0;
   font-size: var(--cloze-base-font-size) !important;
   font-weight: 600;
   line-height: 1.2 !important;
-
   color: var(--cloze-drop-text);
   background-color: var(--cloze-drop-bg);
   border: 2px dashed var(--cloze-drop-border);
@@ -243,9 +219,12 @@ pre.cloze-content {
   box-sizing: border-box !important;
 }
 
-/* Maintain identical padding when occupied */
-.label-dropzone.occupied,
-.cloze-dropzone.occupied {
+.cloze-block.theme-white .cloze-dropzone.occupied {
+  background-color: var(--cloze-white-bg);
+  border-style: solid;
+}
+
+.cloze-block.theme-light .cloze-dropzone.occupied {
   background-color: var(--cloze-light-bg);
   border-style: solid;
 }
@@ -262,7 +241,6 @@ pre.cloze-content {
   border-radius: var(--cloze-radius-sm);
 }
 
-/* --- Preformatted Code Block Overrides --- */
 pre.cloze-content .cloze-dropzone {
   font-size: var(--cloze-code-font-size) !important;
   padding: 0.1rem 0.4rem !important;
@@ -278,7 +256,7 @@ pre.cloze-content .cloze-dropzone {
 }
 
 .cloze-dropzone.correct .cloze-dropped-token {
-  color: var(--cloze-correct-token-text) !important;
+  color: var(--cloze-correct-text) !important;
 }
 
 .cloze-dropzone.incorrect {
@@ -287,19 +265,18 @@ pre.cloze-content .cloze-dropzone {
 }
 
 .cloze-dropzone.incorrect .cloze-dropped-token {
-  color: var(--cloze-incorrect-token-text) !important;
+  color: var(--cloze-incorrect-text) !important;
 }
 
-/* Inline Checkmark / Cross Feedback Icons */
 .cloze-inline-feedback {
   display: inline-flex !important;
   align-items: center !important;
   justify-content: center !important;
   font-weight: 700;
   font-size: var(--cloze-base-font-size) !important;
-  line-height: 1.0 !important; /* Critical to prevent line-height expansion */
+  line-height: 1.0 !important;
   margin-left: 0.35rem !important;
-  height: 1em !important; /* Locks height to font baseline */
+  height: 1em !important;
   vertical-align: middle !important;
   white-space: nowrap !important;
 }
@@ -312,7 +289,6 @@ pre.cloze-content .cloze-dropzone {
   color: var(--cloze-incorrect-text) !important;
 }
 
-/* Preformatted Overrides */
 pre.cloze-content .cloze-inline-feedback {
   font-size: var(--cloze-code-font-size) !important;
   margin-left: 0.2rem !important;
@@ -325,33 +301,39 @@ pre.cloze-content .cloze-inline-feedback {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  margin-top: 1.5rem;
+  margin-top: 1.2rem;
   padding: 1rem 0;
-  border-top: 1px solid var(--cloze-light-divider);
-  border-bottom: 1px solid var(--cloze-light-divider);
+  border-top: 1px solid var(--cloze-divider);
+  border-bottom: 1px solid var(--cloze-divider);
 }
 
 .cloze-global-panel button {
   font-size: var(--cloze-base-font-size);
-  padding: 0.55em 1.1em;
+  padding: 0.4rem 0.8rem;
   border-radius: var(--cloze-radius-md);
   border: none;
   cursor: pointer;
-  font-weight: 600;
-  transition: background-color 0.1s ease, transform 0.05s ease;
+  font-weight: 500;
+  transition: background-color 0.1s ease, transform 0.05s ease, opacity 0.15s ease;
 }
 
-.cloze-global-panel button:hover {
+.cloze-global-panel button:hover:not(:disabled) {
   filter: brightness(0.93);
 }
 
-.cloze-global-panel button:active {
+.cloze-global-panel button:active:not(:disabled) {
   transform: scale(0.97);
 }
 
 .cloze-btn-score {
   background-color: #2563eb;
   color: #ffffff;
+}
+
+.cloze-btn-score:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+  filter: grayscale(40%);
 }
 
 .cloze-btn-reset {
@@ -362,7 +344,7 @@ pre.cloze-content .cloze-inline-feedback {
 
 .cloze-output {
   margin-left: auto;
-  font-weight: 700;
+  font-weight: 600;
   padding: 0.4em 0.9em;
   border-radius: var(--cloze-radius-md);
   display: none;
@@ -387,12 +369,11 @@ pre.cloze-content .cloze-inline-feedback {
   color: var(--cloze-tier-low-text) !important;
 }
 
-
 /* ==========================================================================
-   8. Feature Additions & Completed Code Section
+   8. Completed Code Section
    ========================================================================== */
 .cloze-completed-code {
-  display: none; /* Keeps block hidden on initial page load / refresh */
+  display: none;
   margin-top: 1rem;
   margin-bottom: 2rem;
   transition: opacity 0.2s ease-in-out;

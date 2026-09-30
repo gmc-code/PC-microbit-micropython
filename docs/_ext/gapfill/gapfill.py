@@ -10,10 +10,12 @@ class gapfill_node(nodes.General, nodes.Element):
     pass
 
 def visit_gapfill_html(self, node):
-    chosen_theme = node.get('theme', 'light')
-    theme_class = "gapfill-block theme-dark" if chosen_theme == "dark" else "gapfill-block theme-light"
+    chosen_theme = node.get('theme', 'white')
+    theme_class = "gapfill-block theme-light" if chosen_theme == "light" else "gapfill-block theme-white"
 
     self.body.append(f'<div class="{theme_class}">')
+    # Render instruction header from node attribute
+    self.body.append(f'<div class="gapfill-instructions">{node.get("instructions", "")}</div>')
     self.body.append(f'<pre class="gapfill-content">{node.get("html_content", "")}</pre>')
     self.body.append('</div>')
     raise nodes.SkipNode
@@ -27,22 +29,26 @@ class GapFillDirective(SphinxDirective):
 
     option_spec = {
         'theme': directives.unchanged,
+        'instructions': directives.unchanged,  # Added instructions option
     }
 
     def run(self):
         full_text = "\n".join(self.content)
         node = gapfill_node()
 
-        chosen_theme = self.options.get('theme', 'light').strip().lower()
-        if chosen_theme not in ['light', 'dark']:
-            chosen_theme = 'light'
+        chosen_theme = self.options.get('theme', 'white').strip().lower()
+        if chosen_theme not in ['white', 'light']:
+            chosen_theme = 'white'
         node['theme'] = chosen_theme
 
-        # Harvest potential distractors directly from the text block context (ignoring syntax)
+        default_instructions = "Choose from the drop downs to fill in the missing gaps below:"
+        custom_instructions = self.options.get('instructions', default_instructions)
+        node['instructions'] = html.escape(custom_instructions)
+
+        # Harvest potential distractors directly from the text block context
         all_words_in_text = re.findall(r'\b[a-zA-Z_][a-zA-Z0-9_]*\b', full_text)
         context_distractors = list(set([w for w in all_words_in_text if len(w) > 2]))
 
-        # Updated regex to match @@ choice1 | choice2 @@ syntax securely without touching Python lists [...]
         gap_pattern = re.compile(r'@@([^@]+)@@')
         parsed_html_parts = []
         remaining_text = full_text
@@ -55,10 +61,8 @@ class GapFillDirective(SphinxDirective):
             start_idx, end_idx = match.span()
             parsed_html_parts.append(html.escape(remaining_text[:start_idx]))
 
-            # Isolate content within the @@ delimiters and clean internal spaces
             raw_choices_str = match.group(1).strip()
 
-            # Split exclusively on vertical pipes '|'
             if '|' in raw_choices_str:
                 raw_options = [opt.strip() for opt in raw_choices_str.split('|') if opt.strip()]
             else:
@@ -72,7 +76,6 @@ class GapFillDirective(SphinxDirective):
             correct_answer = raw_options[0]
             options = set(raw_options)
 
-            # If exactly 1 option is provided, extract exactly 1 distractor from the question text
             if len(raw_options) == 1:
                 shuffled_pool = context_distractors.copy()
                 random.shuffle(shuffled_pool)
@@ -81,12 +84,10 @@ class GapFillDirective(SphinxDirective):
                         options.add(alt)
                         break
 
-            # Build dropdown markup container node
             dropdown_html = f'<span class="gapfill-wrapper">'
             dropdown_html += f'<select class="gapfill-dropdown gapfill-input" data-correct="{html.escape(correct_answer)}">'
             dropdown_html += '<option value="">-- Choose --</option>'
 
-            # Sort items in their exact specified casing styles cleanly
             for opt in sorted(options, key=str.lower):
                 dropdown_html += f'<option value="{html.escape(opt)}">{html.escape(opt)}</option>'
             dropdown_html += '</select>'
@@ -115,7 +116,7 @@ def setup(app):
     app.add_js_file("gapfill.js")
     app.add_css_file("gapfill.css")
     return {
-        "version": "2.9",
+        "version": "3.0",
         "parallel_read_safe": True,
         "parallel_write_safe": True
     }

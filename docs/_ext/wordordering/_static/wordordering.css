@@ -1,0 +1,191 @@
+/* ==========================================================================
+   1. Design Token System
+   ========================================================================== */
+:root {
+  --wor-radius-lg: 8px;
+  --wor-radius-md: 6px;
+  --wor-radius-sm: 4px;
+  --wor-transition: all 0.2s ease;
+
+  --wor-default-bg: #ffffff;
+  --wor-default-border: #e2e8f0;
+  --wor-default-text: #334155;
+  --wor-default-runway: #f8fafc;
+  --wor-default-row-bg: #ffffff;
+  --wor-default-row-border: #cbd5e1;
+
+  --wor-correct-bg: #dcfce7;
+  --wor-correct-border: #22c55e;
+  --wor-correct-text: #14532d;
+
+  --wor-incorrect-bg: #fee2e2;
+  --wor-incorrect-border: #ef4444;
+  --wor-incorrect-text: #7f1d1d;
+
+  --wor-tier-mid-bg: #fef08a;
+  --wor-tier-mid-border: #eab308;
+  --wor-tier-mid-text: #713f12;
+}
+
+/* ==========================================================================
+   2. Component Architecture
+   ========================================================================== */
+.wordordering-block,
+.ordering-block {
+  background-color: var(--wor-default-bg);
+  border: 1px solid var(--wor-default-border);
+  border-radius: var(--wor-radius-lg);
+  padding: 0.8rem;
+  margin-bottom: 0.8rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.ordering-instructions {
+  font-weight: 600;
+  margin-bottom: 0.8rem;
+  font-size: 1rem;
+  color: var(--wor-default-text);
+}
+
+.ordering-container.sentence-inline-container {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: wrap !important;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.8rem;
+  border-radius: var(--wor-radius-md);
+  min-height: 60px;
+  background-color: var(--wor-default-runway);
+  border: 1px solid #cbd5e1;
+}
+
+.ordering-line.sentence-chip {
+  display: inline-flex !important;
+  align-items: center;
+  padding: 0.4rem 0.75rem !important;
+  background-color: var(--wor-default-row-bg);
+  border: 1px solid var(--wor-default-row-border);
+  border-radius: var(--wor-radius-md);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+  cursor: grab;
+  user-select: none;
+  margin: 0 !important;
+  width: auto !important;
+  transition: all 0.15s ease;
+}
+
+.ordering-line.sentence-chip:active {
+  cursor: grabbing;
+}
+
+.ordering-line.sentence-chip:hover {
+  border-color: #94a3b8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.08);
+}
+
+.ordering-line.sentence-chip .ordering-handle {
+  color: #94a3b8;
+  margin-right: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.ordering-line.sentence-chip .ordering-code {
+  font-family: inherit !important;
+  font-size: 1rem;
+  white-space: nowrap !important;
+}
+
+.ordering-line.dragging {
+  opacity: 0.5;
+  border: 2px dashed #3b82f6 !important;
+  background-color: #eff6ff !important;
+}
+
+.ordering-line.disabled {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+/* ==========================================================================
+   3. Control Buttons & Status Badges
+   ========================================================================== */
+.ordering-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1.0rem;
+  width: 100%;
+}
+
+.ordering-controls button {
+  padding: 0.4rem 0.8rem;
+  font-weight: 500;
+  border-radius: var(--wor-radius-md);
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-size: 0.95rem;
+  white-space: nowrap;
+}
+
+.ordering-controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed !important;
+}
+
+.ordering-btn-score {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+.ordering-btn-score:hover { background-color: #1d4ed8; }
+
+.ordering-btn-reset {
+  background-color: #ffffff;
+  color: #475569;
+  border: 1px solid #cbd5e1 !important;
+}
+.ordering-btn-reset:hover { background-color: #f8fafc; }
+
+.ordering-btn-solution {
+  background-color: #0d9488;
+  color: #ffffff !important;
+}
+.ordering-btn-solution:hover { background-color: #0f766e; }
+
+/* Validation States */
+.ordering-container .ordering-line.correct-line {
+  border-color: var(--wor-correct-border) !important;
+  background-color: var(--wor-correct-bg) !important;
+}
+
+.ordering-container .ordering-line.incorrect-line {
+  border-color: var(--wor-incorrect-border) !important;
+  background-color: var(--wor-incorrect-bg) !important;
+}
+
+.ordering-feedback-badge {
+  font-weight: 700;
+  padding: 0.4rem 0.75rem;
+  border-radius: var(--wor-radius-md);
+  font-size: 0.85rem;
+  margin-left: auto;
+}
+
+.ordering-feedback-badge.high {
+  background-color: var(--wor-correct-bg);
+  border: 1px solid var(--wor-correct-border);
+  color: var(--wor-correct-text);
+}
+
+.ordering-feedback-badge.medium {
+  background-color: var(--wor-tier-mid-bg);
+  border: 1px solid var(--wor-tier-mid-border);
+  color: var(--wor-tier-mid-text);
+}
+
+.ordering-feedback-badge.low {
+  background-color: var(--wor-incorrect-bg);
+  border: 1px solid var(--wor-incorrect-border);
+  color: var(--wor-incorrect-text);
+}

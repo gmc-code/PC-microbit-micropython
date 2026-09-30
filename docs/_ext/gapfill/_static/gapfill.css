@@ -8,17 +8,17 @@
   --gf-radius-sm: 4px;
   --gf-transition: all 0.2s ease;
 
-  /* Light Theme Palette (Default Configuration) */
-  --gf-light-bg: #ffffff;         /* Pure White Canvas */
-  --gf-light-border: #969798;     /* Clean Outer Rim */
-  --gf-light-text: #0f172a;       /* Dark Typography Ink */
-  --gf-light-divider: #969798;     /* match border */
+  /* White Theme Palette (Default Configuration) */
+  --gf-white-bg: #ffffff;         /* Pure White Canvas */
+  --gf-white-border: #cbd5e1;     /* Soft Slate Rim */
+  --gf-white-text: #0f172a;       /* Dark Ink */
+  --gf-white-divider: #e2e8f0;    /* Divider Line */
 
-  /* Dark Theme Structural Palette (Premium Ice Blue / Pastel Sky Layout from Ordering) */
-  --gf-dark-bg: #d8f1ff;          /* Soft Calming Pastel Sky/Ice Blue */
-  --gf-dark-border: #42bbfc;      /* Clean Outer Rim Accent Border */
-  --gf-dark-text: #0f172a;        /* High Contrast Reading Ink */
-  --gf-dark-divider: #42bbfc;   /* match border */
+  /* Light Theme Palette (Soft Slate 50) */
+  --gf-light-bg: #f8fafc;         /* Soft Slate 50 Inner Runway */
+  --gf-light-border: #94a3b8;     /* Slate Rim */
+  --gf-light-text: #0f172a;       /* Reading Ink */
+  --gf-light-divider: #cbd5e1;    /* Divider Line */
 
   /* Validation Feedback System Tokens */
   --gf-correct-bg: #f0fdf4;
@@ -31,23 +31,23 @@
 }
 
 /* ==========================================================================
-   2. Component Base Structural Architecture
+   2. Component Base Structural Architecture (Default White Theme)
    ========================================================================== */
 .gapfill-block {
-  background-color: var(--gf-light-bg);
-  border: 1px solid var(--gf-light-border);
-  padding: 1.2em;
-  margin-bottom: 1.5em;
+  background-color: var(--gf-white-bg);
+  border: 1px solid var(--gf-white-border);
+  padding: 0.8rem;
+  margin-bottom: 0.8rem;
   border-radius: var(--gf-radius-lg);
-  box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
   transition: var(--gf-transition);
 }
 
 .gapfill-content {
   font-family: "Consolas", "Courier New", Courier, monospace;
   font-size: 1.05em;
-  line-height: 2.2; /* Extra breathing room for nested dropdown text wrappers */
-  color: var(--gf-light-text);
+  line-height: 2.2;
+  color: var(--gf-white-text);
   margin: 0 0 1.5em 0;
   white-space: pre-wrap;
 }
@@ -101,16 +101,32 @@
   color: var(--gf-incorrect-border);
 }
 
-/* ==========================================================================
-   3. Unified Dark Theme Layout Inversions (Blocks & Layout Only)
-   ========================================================================== */
-.gapfill-block.theme-dark {
-  background-color: var(--gf-dark-bg) !important;
-  border-color: var(--gf-dark-border) !important;
+/* Instruction Header */
+.gapfill-instructions {
+  font-weight: 600;
+  font-size: 1 rem;
+  color: #475569;
+  margin-bottom: 1rem;
 }
 
-.gapfill-block.theme-dark .gapfill-content {
-  color: var(--gf-dark-text) !important;
+/* ==========================================================================
+   3. Light Theme Modifiers (`:option: theme: light`)
+   ========================================================================== */
+.gapfill-block.theme-light {
+  background-color: var(--gf-light-bg) !important;
+  border-color: var(--gf-light-border) !important;
+}
+
+.gapfill-block.theme-light .gapfill-content {
+  color: var(--gf-light-text) !important;
+}
+
+.gapfill-block.theme-light .gapfill-global-panel {
+  border-top-color: var(--gf-light-divider);
+}
+
+.gapfill-block.theme-light .gapfill-input {
+  background-color: #ffffff;
 }
 
 /* ==========================================================================
@@ -122,31 +138,25 @@
   align-items: center;
   gap: 0.8em;
   margin-top: 1em;
-  border-top: 1px solid var(--gf-light-divider);
+  border-top: 1px solid var(--gf-white-divider);
   padding-top: 1em;
   transition: border-color 0.15s ease;
 }
 
-/* --- Theme Variant Modifiers --- */
-/* Automatically apply dark line color when the panel sits inside a dark block */
-.gapfill-block.theme-dark .gapfill-global-panel {
-  border-top-color: var(--gf-dark-divider);
-}
-
 .gapfill-global-panel button {
-  padding: 0.5em 1em;
+  padding: 0.4rem 0.8rem;
   border-radius: var(--gf-radius-md);
   border: none;
   cursor: pointer;
-  font-weight: 600;
-  transition: background 0.12s ease, transform 0.05s ease;
+  font-weight: 500;
+  transition: background 0.12s ease, transform 0.05s ease, opacity 0.12s ease;
 }
 
-.gapfill-global-panel button:hover {
+.gapfill-global-panel button:hover:not(:disabled) {
   filter: brightness(0.92);
 }
 
-.gapfill-global-panel button:active {
+.gapfill-global-panel button:active:not(:disabled) {
   transform: scale(0.97);
 }
 
@@ -155,10 +165,20 @@
   color: white;
 }
 
+/* Disabled styling for the scoring button */
+.gapfill-btn-score:disabled {
+  background: #94a3b8 !important;
+  color: #f1f5f9 !important;
+  cursor: not-allowed !important;
+  opacity: 0.65;
+  transform: none !important;
+  filter: none !important;
+}
+
 .gapfill-btn-reset {
-  background: #f3f4f6;
+  background: #ffffff;
   color: #4b5563;
-  border: 1px solid #e5e7eb !important;
+  border: 1px solid #cbd5e1 !important;
 }
 
 /* Score Panel Outputs */
@@ -188,4 +208,3 @@
   border-color: var(--gf-incorrect-border) !important;
   color: var(--gf-incorrect-text) !important;
 }
-
