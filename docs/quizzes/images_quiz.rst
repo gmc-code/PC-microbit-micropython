@@ -2,147 +2,151 @@
 Built-in Images Quiz
 ====================================================
 
-Question 1
-----------
+.. mcqgroup::
+    :show_instant_feedback:
 
-.. multichoice::
 
-    How many built-in images are roughly available within the microbit library according to the documentation?
-    [ ] Around 10 images | Incorrect. There are far more than 10 built-in choices.
-    [ ] Exactly 25 images | Incorrect. The library offers a much wider variety of pre-drawn selections.
-    [x] Over 60 images | Correct. The library contains over 60 built-in images that have specific names.
-    [ ] More than 500 images | Incorrect. While extensive, it does not contain hundreds of images by default.
+    Question 1
+    ----------
 
-----
+    .. multichoice::
 
-Question 2
-----------
+        How many built-in images are roughly available within the microbit library according to the documentation?
+        [ ] Around 10 images | Incorrect. There are far more than 10 built-in choices.
+        [ ] Exactly 25 images | Incorrect. The library offers a much wider variety of pre-drawn selections.
+        [x] Over 60 images | Correct. The library contains over 60 built-in images that have specific names.
+        [ ] More than 500 images | Incorrect. While extensive, it does not contain hundreds of images by default.
 
-.. multichoice::
+    ----
 
-    Which of the following lines correctly displays a built-in heart image on the micro:bit?
-    [x] display.show(Image.HEART) | Correct. This uses a capital 'I' for Image, all uppercase for HEART, and no quotes.
-    [ ] display.show(image.HEART) | Incorrect. The Image object must be written with a capital 'I'.
-    [ ] display.show(Image.heart) | Incorrect. The built-in image name must be written in full capitals.
-    [ ] display.show('Image.HEART') | Incorrect. No quotation marks should be used around the image reference.
+    Question 2
+    ----------
 
-----
+    .. multichoice::
 
-Question 3
-----------
+        Which of the following lines correctly displays a built-in heart image on the micro:bit?
+        [x] display.show(Image.HEART) | Correct. This uses a capital 'I' for Image, all uppercase for HEART, and no quotes.
+        [ ] display.show(image.HEART) | Incorrect. The Image object must be written with a capital 'I'.
+        [ ] display.show(Image.heart) | Incorrect. The built-in image name must be written in full capitals.
+        [ ] display.show('Image.HEART') | Incorrect. No quotation marks should be used around the image reference.
 
-.. multichoice::
+    ----
 
-    According to standard code naming principles, what case style should be used for naming constants?
-    [ ] lower case letters | Incorrect. Lowercase is typically reserved for variables and functions.
-    [ ] CapWords formatting | Incorrect. CapWords (CamelCase) is standard formatting for class structures.
-    [x] ALLCAPS formatting | Correct. Naming principles specify that constants should be written in ALLCAPS, such as PIN or HEART.
-    [ ] snake_case with numbers | Incorrect. Standard constants avoid mixed or lowercase configurations.
+    Question 3
+    ----------
 
-----
+    .. multichoice::
 
-Question 4
-----------
+        According to standard code naming principles, what case style should be used for naming constants?
+        [ ] lower case letters | Incorrect. Lowercase is typically reserved for variables and functions.
+        [ ] CapWords formatting | Incorrect. CapWords (CamelCase) is standard formatting for class structures.
+        [x] ALLCAPS formatting | Correct. Naming principles specify that constants should be written in ALLCAPS, such as PIN or HEART.
+        [ ] snake_case with numbers | Incorrect. Standard constants avoid mixed or lowercase configurations.
 
-.. multichoice::
+    ----
 
-    In Python code architecture, how are the components ``Image`` and ``HEART`` classified?
-    [ ] Image is a variable and HEART is a function. | Incorrect. Neither component represents an action function or plain value variable.
-    [x] Image is a class and HEART is a constant within that class. | Correct. Image with a capital letter behaves as a class, and HEART is a constant within it.
-    [ ] Image is a string literal and HEART is a keyword argument. | Incorrect. They lack quotation marks and do not behave as keyword parameters.
-    [ ] Both components are considered standard variables. | Incorrect. Variables use lower case letters, unlike these components.
+    Question 4
+    ----------
 
-----
+    .. multichoice::
 
-Question 5
-----------
+        In Python code architecture, how are the components ``Image`` and ``HEART`` classified?
+        [ ] Image is a variable and HEART is a function. | Incorrect. Neither component represents an action function or plain value variable.
+        [x] Image is a class and HEART is a constant within that class. | Correct. Image with a capital letter behaves as a class, and HEART is a constant within it.
+        [ ] Image is a string literal and HEART is a keyword argument. | Incorrect. They lack quotation marks and do not behave as keyword parameters.
+        [ ] Both components are considered standard variables. | Incorrect. Variables use lower case letters, unlike these components.
 
-.. multichoice::
+    ----
 
-    What convenient feature triggers automatically inside the Python Editor when you type ``Image.`` (including the dot)?
-    [ ] The code executes and uploads onto your connected micro:bit automatically. | Incorrect. Typing code does not trigger immediate script flashing.
-    [ ] The editor highlights the phrase with a syntax error warning instantly. | Incorrect. This is proper syntax and does not prompt warnings.
-    [x] A drop list of available images is displayed for easy selection. | Correct. As soon as the stop/dot is typed after Image, a drop list appears to let you pick an image.
-    [ ] The editor automatically converts the expression into a text string. | Incorrect. It is unchanged by the editor.
+    Question 5
+    ----------
 
-----
+    .. multichoice::
 
-Question 6
-----------
+        What convenient feature triggers automatically inside the Python Editor when you type ``Image.`` (including the dot)?
+        [ ] The code executes and uploads onto your connected micro:bit automatically. | Incorrect. Typing code does not trigger immediate script flashing.
+        [ ] The editor highlights the phrase with a syntax error warning instantly. | Incorrect. This is proper syntax and does not prompt warnings.
+        [x] A drop list of available images is displayed for easy selection. | Correct. As soon as the stop/dot is typed after Image, a drop list appears to let you pick an image.
+        [ ] The editor automatically converts the expression into a text string. | Incorrect. It is unchanged by the editor.
 
-.. multichoice::
+    ----
 
-    Which function is used to output a built-in image to the micro:bit LED grid?
-    [ ] display.scroll() | Incorrect. Scrolling is for numbers and text strings, not image objects.
-    [x] display.show() | Correct. Images are shown, not scrolled.
-    [ ] display.draw() | Incorrect. There is no draw function.
-    [ ] display.image() | Incorrect. There is no image function.
+    Question 6
+    ----------
 
-----
+    .. multichoice::
 
-Question 7
-----------
+        Which function is used to output a built-in image to the micro:bit LED grid?
+        [ ] display.scroll() | Incorrect. Scrolling is for numbers and text strings, not image objects.
+        [x] display.show() | Correct. Images are shown, not scrolled.
+        [ ] display.draw() | Incorrect. There is no draw function.
+        [ ] display.image() | Incorrect. There is no image function.
 
-.. multichoice::
+    ----
 
-    Look at the following code snippet:
+    Question 7
+    ----------
 
-    .. code-block:: python
+    .. multichoice::
 
-        from microbit import *
+        Look at the following code snippet:
 
-        shape_images = [
-                        Image.TRIANGLE,
-                        Image.DIAMOND,
-                        Image.SQUARE,
-                    ]
+        .. code-block:: python
 
-        while True:
-            display.show(shape_images, delay=250)
+            from microbit import *
 
-    What is the outcome when this script runs on the micro:bit?
-    [ ] An error occurs because display.show() cannot accept list structures. | Incorrect. Lists are fully supported to create animations.
-    [ ] The word "shape_images" scrolls across the display panel horizontally. | Incorrect. It displays the referenced image data types, not text strings.
-    [x] The micro:bit plays an animation cycling through a triangle, diamond, and square sequentially. | Correct. Passing an array list of images to display.show() loops through them sequentially.
-    [ ] The screen displays all three geometric shapes simultaneously stacked together. | Incorrect. The 5x5 LED matrix can only show one Image at a time.
+            shape_images = [
+                            Image.TRIANGLE,
+                            Image.DIAMOND,
+                            Image.SQUARE,
+                        ]
 
-----
+            while True:
+                display.show(shape_images, delay=250)
 
-Question 8
-----------
+        What is the outcome when this script runs on the micro:bit?
+        [ ] An error occurs because display.show() cannot accept list structures. | Incorrect. Lists are fully supported to create animations.
+        [ ] The word "shape_images" scrolls across the display panel horizontally. | Incorrect. It displays the referenced image data types, not text strings.
+        [x] The micro:bit plays an animation cycling through a triangle, diamond, and square sequentially. | Correct. Passing an array list of images to display.show() loops through them sequentially.
+        [ ] The screen displays all three geometric shapes simultaneously stacked together. | Incorrect. The 5x5 LED matrix can only show one Image at a time.
 
-.. multichoice::
+    ----
 
-    When animating a list of images using ``display.show(object_images, delay=250)``, what does the ``delay`` parameter represent?
-    [ ] The duration in seconds that the entire animation loop runs before stopping. | Incorrect. Delay sets a millisecond value, and loops continuously within while structures.
-    [x] The time interval in milliseconds between showing each consecutive image. | Correct. The delay controls the timing pause separating each listed image during playback.
-    [ ] The quantity of individual LED lights activated on each step. | Incorrect. LED activation depends on the brightness level set by each image.
-    [ ] The pause duration applied prior to starting the program script. | Incorrect. It determines live runtime animation transition speeds instead.
+    Question 8
+    ----------
 
-----
+    .. multichoice::
 
-Question 9
-----------
+        When animating a list of images using ``display.show(object_images, delay=250)``, what does the ``delay`` parameter represent?
+        [ ] The duration in seconds that the entire animation loop runs before stopping. | Incorrect. Delay sets a millisecond value, and loops continuously within while structures.
+        [x] The time interval in milliseconds between showing each consecutive image. | Correct. The delay controls the timing pause separating each listed image during playback.
+        [ ] The quantity of individual LED lights activated on each step. | Incorrect. LED activation depends on the brightness level set by each image.
+        [ ] The pause duration applied prior to starting the program script. | Incorrect. It determines live runtime animation transition speeds instead.
 
-.. multichoice::
+    ----
 
-    Which of the following Image objects is an example of a valid built-in object image name?
-    [ ] Image.triangle | Incorrect. Built-in constants require fully capitalized text strings.
-    [ ] Image.ROLLERSKATE_SMALL | Incorrect. Small variations are noted for shapes like DIAMOND_SMALL, but not rollerskate.
-    [x] Image.ROLLERSKATE | Correct. Image.ROLLERSKATE is explicitly included under the valid object image listings within the documentation tasks.
-    [ ] Image.CHESS_BOARD | Incorrect. The constant name is written together as CHESSBOARD without an underscore separator.
+    Question 9
+    ----------
 
-----
+    .. multichoice::
 
-Question 10
------------
+        Which of the following Image objects is an example of a valid built-in object image name?
+        [ ] Image.triangle | Incorrect. Built-in constants require fully capitalized text strings.
+        [ ] Image.ROLLERSKATE_SMALL | Incorrect. Small variations are noted for shapes like DIAMOND_SMALL, but not rollerskate.
+        [x] Image.ROLLERSKATE | Correct. Image.ROLLERSKATE is explicitly included under the valid object image listings within the documentation tasks.
+        [ ] Image.CHESS_BOARD | Incorrect. The constant name is written together as CHESSBOARD without an underscore separator.
 
-.. multichoice::
+    ----
 
-    Which of the following lists contains only valid geometric shape image names as structured in the documentation exercises?
-    [x] ``[Image.TRIANGLE, Image.DIAMOND, Image.SQUARE]`` | Correct. These are all accurately classified as shape constants.
-    [ ] ``[Image.GHOST, Image.SWORD, Image.SKULL]`` | Incorrect. These item constants are categorized as object images rather than shapes.
-    [ ] ``[Image.triangle, Image.diamond, Image.square]`` | Incorrect. These options fail because constant names used lowercase instead of the required uppercase format.
-    [ ] ``[Image.TARGET, Image.HOUSE, Image.UMBRELLA]`` | Incorrect. These represent object entities instead of shapes.
+    Question 10
+    -----------
+
+    .. multichoice::
+
+        Which of the following lists contains only valid geometric shape image names as structured in the documentation exercises?
+        [x] ``[Image.TRIANGLE, Image.DIAMOND, Image.SQUARE]`` | Correct. These are all accurately classified as shape constants.
+        [ ] ``[Image.GHOST, Image.SWORD, Image.SKULL]`` | Incorrect. These item constants are categorized as object images rather than shapes.
+        [ ] ``[Image.triangle, Image.diamond, Image.square]`` | Incorrect. These options fail because constant names used lowercase instead of the required uppercase format.
+        [ ] ``[Image.TARGET, Image.HOUSE, Image.UMBRELLA]`` | Incorrect. These represent object entities instead of shapes.
 
 
