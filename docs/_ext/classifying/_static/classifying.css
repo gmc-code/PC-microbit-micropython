@@ -283,29 +283,36 @@
    7. * Custom rST Role Styling in Classifying Directive *
    ========================================================================== */
 
-.classifying-code .rst-role {
-    display: inline; /* Keep inline flow with surrounding text */
-    border-radius: 3px;
-    padding: 1px 4px;
-    margin: 0 1px;
-    background-color: #e6f4ea;
-    border: 1px solid #a8dab5;
+/* Outer role badge wrapper */
+.rst-role,
+span[class^="rst-role-"],
+span[class*=" rst-role-"] {
+    display: inline-block;
+    border-radius: 4px;
+    padding: 1px 6px;
+    margin: 0 2px;
+    background-color: transparent !important;
+    border: 1px solid currentColor !important;
+    vertical-align: baseline;
 }
 
-/* Hide the literal ":process:" text prefix */
-.classifying-code .rst-role-name {
-    display: none;
+/* Hide the literal role name prefix */
+.rst-role-name {
+    display: none !important;
 }
 
-/* Ensure font properties strictly inherit from parent .classifying-code */
-.classifying-code .rst-role-content {
+/* Inner text styling */
+.rst-role-content,
+.rst-role *,
+span[class^="rst-role-"] *,
+span[class*=" rst-role-"] * {
     font-family: inherit !important;
-    font-size: 1em !important;          /* Inherit parent text size */
-    line-height: inherit !important;      /* Match line spacing */
-    font-weight: 600;                     /* Keep bold highlight */
-    color: #137333;
-    background: transparent;
-    padding: 0;
-    margin: 0;
-    border: none;
+    font-size: 1em !important;
+    line-height: inherit !important;
+    font-weight: 600 !important;
+    color: inherit !important;
+    background: transparent !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
 }
