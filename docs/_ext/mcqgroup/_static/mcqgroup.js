@@ -69,19 +69,23 @@ document.addEventListener("DOMContentLoaded", () => {
     if (totalValue) totalValue.textContent = blocks.length;
     if (totalIdxSpan) totalIdxSpan.textContent = blocks.length;
 
-    // Lock all question inputs by default until Start Quiz is pressed
+    // Hard lock all option inputs until Start Quiz is clicked
     function lockAllInputs() {
       blocks.forEach((block) => {
-        const inputs = Array.from(block.querySelectorAll("input"));
-        inputs.forEach((input) => (input.disabled = true));
+        const inputs = Array.from(block.querySelectorAll("input[type='radio'], input[type='checkbox']"));
+        inputs.forEach((input) => {
+          input.disabled = true;
+        });
       });
     }
 
     function unlockUncheckedInputs() {
       blocks.forEach((block) => {
         if (block.dataset.checked !== "true") {
-          const inputs = Array.from(block.querySelectorAll("input"));
-          inputs.forEach((input) => (input.disabled = false));
+          const inputs = Array.from(block.querySelectorAll("input[type='radio'], input[type='checkbox']"));
+          inputs.forEach((input) => {
+            input.disabled = false;
+          });
         }
       });
     }
@@ -214,14 +218,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if (btnCheck) btnCheck.disabled = false;
       if (scoreValue) scoreValue.textContent = "0";
-      setCheckboxesLock(false);
       currentIndex = 0;
       renderView();
       updateGroupStats();
     }
 
-    // Initialize: Ensure checkboxes are responsive and inputs are locked prior to start
+    // Explicit Page Load Locks
     setCheckboxesLock(false);
+    resetQuizState();
     lockAllInputs();
 
     // Scroll Back to Top Handler
@@ -346,10 +350,18 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     }
 
+    // Intercept clicks before native radio selection happens if not started
+    group.addEventListener("click", (e) => {
+      const choice = e.target.closest(".multichoice-choice");
+      if (choice && !isQuizStarted) {
+        e.preventDefault();
+        e.stopPropagation();
+      }
+    }, true);
+
     // Event Delegation for Option Selection
     group.addEventListener("change", (e) => {
       if (e.target.matches("input[type='radio'], input[type='checkbox']")) {
-        // Ignore header control checkboxes
         if (e.target.classList.contains("mcqgroup-show-feedback") || e.target.classList.contains("mcqgroup-instant-feedback")) {
           return;
         }
@@ -365,23 +377,23 @@ document.addEventListener("DOMContentLoaded", () => {
           const isSingle = block.dataset.multichoiceSingle === "true";
           const choices = Array.from(block.querySelectorAll(".multichoice-choice"));
 
-          choices.forEach((choice) => {
-            const input = choice.querySelector("input");
-            choice.classList.toggle("selected", input && input.checked);
+          choices.forEach((c) => {
+            const input = c.querySelector("input");
+            c.classList.toggle("selected", input && input.checked);
           });
 
           if (instantFeedbackCb && instantFeedbackCb.checked && isSingle) {
             block.dataset.checked = "true";
             const radioInputs = Array.from(block.querySelectorAll("input[type='radio']"));
 
-            choices.forEach((choice) => {
-              const input = choice.querySelector("input");
-              const isCorrect = choice.dataset.correct === "true";
+            choices.forEach((c) => {
+              const input = c.querySelector("input");
+              const isCorrect = c.dataset.correct === "true";
 
-              choice.classList.remove("multichoice-correct", "multichoice-incorrect");
+              c.classList.remove("multichoice-correct", "multichoice-incorrect");
 
               if (input && input.checked) {
-                choice.classList.add(isCorrect ? "multichoice-correct" : "multichoice-incorrect");
+                c.classList.add(isCorrect ? "multichoice-correct" : "multichoice-incorrect");
               }
             });
 
