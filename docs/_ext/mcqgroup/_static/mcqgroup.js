@@ -41,6 +41,16 @@ document.addEventListener("DOMContentLoaded", () => {
     const blocks = Array.from(group.querySelectorAll(".multichoice-block"));
     if (blocks.length === 0) return;
 
+    // Dynamically insert compact "Question X" auto-numbering headers
+    blocks.forEach((block, index) => {
+      if (!block.querySelector(".mcqgroup-question-header")) {
+        const header = document.createElement("div");
+        header.className = "mcqgroup-question-header";
+        header.textContent = `Question ${index + 1}`;
+        block.prepend(header);
+      }
+    });
+
     let currentIndex = 0;
     let isWizardMode = true;
     let isQuizStarted = false;
@@ -97,6 +107,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function renderView() {
       if (isWizardMode) {
+        group.setAttribute("data-view-mode", "wizard");
         blocks.forEach((block, i) => {
           block.style.display = i === currentIndex ? "block" : "none";
         });
@@ -114,6 +125,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (btnToggle) btnToggle.textContent = "All Q Mode";
       } else {
+        group.setAttribute("data-view-mode", "all");
         blocks.forEach((block) => {
           block.style.display = "block";
         });

@@ -344,3 +344,27 @@
   padding-left: 24px;
   font-style: italic;
 }
+
+/* ==========================================================================
+   Compact Question Header for All Q Mode
+   ========================================================================== */
+
+.mcqgroup-question-header {
+  display: none; /* Hidden by default in 1 Q Mode */
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #0d6efd;
+  background-color: #e7f1ff;
+  border: 1px solid #b6d4fe;
+  padding: 2px 8px;
+  border-radius: 4px;
+  margin-bottom: 8px;
+  width: fit-content;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Display header only when All Q Mode is active */
+.mcqgroup-block[data-view-mode="all"] .mcqgroup-question-header {
+  display: inline-block;
+}
