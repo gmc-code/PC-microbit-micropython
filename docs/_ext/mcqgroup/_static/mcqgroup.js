@@ -1,494 +1,623 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const groupBlocks = Array.from(document.querySelectorAll(".mcqgroup-block"));
+    const groups = document.querySelectorAll(".mcqgroup-block");
 
-    function shuffleArray(arr) {
-        for (let i = arr.length - 1; i > 0; i--) {
+    function shuffle(a) {
+        for (let i = a.length - 1; i > 0; i--) {
             const j = Math.floor(Math.random() * (i + 1));
-            [arr[i], arr[j]] = [arr[j], arr[i]];
+            [a[i], a[j]] = [a[j], a[i]];
         }
     }
 
     function assignLetters(choices) {
         const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
         choices.forEach((c, i) => {
-            const span = c.querySelector(".multichoice-letter");
-            if (span) {
-                span.textContent = letters[i] || "";
-            }
+            const s = c.querySelector(".multichoice-letter");
+            if (s) s.textContent = letters[i] || "";
         });
     }
 
-    function shuffleBlockChoices(block) {
-        const choices = Array.from(block.querySelectorAll(".multichoice-choice"));
-        if (choices.length <= 1) return;
-
-        const container = choices[0].parentNode;
-        if (!container) return;
-
-        shuffleArray(choices);
-        choices.forEach((c) => container.appendChild(c));
-
+    function shuffleChoices(block) {
+        const choices = [...block.querySelectorAll(".multichoice-choice")];
+        if (choices.length < 2) return;
+        const parent = choices[0].parentNode;
+        shuffle(choices);
+        choices.forEach(c => parent.appendChild(c));
         if (block.dataset.multichoiceLetters !== "false") {
             assignLetters(choices);
         }
     }
 
-    function shuffleQuestions(group) {
+    groups.forEach(group => {
         const container = group.querySelector(".mcqgroup-questions-container");
         if (!container) return;
 
-        const blocks = Array.from(container.querySelectorAll(".multichoice-block"));
-        if (blocks.length <= 1) return;
+        /*
+         * Do NOT remove individual MCQ controls here.
+         * CSS already hides them.
+         */
 
-        shuffleArray(blocks);
-        blocks.forEach((b) => container.appendChild(b));
-    }
+        const progress = group.querySelector(".mcqgroup-progress-count");
+        const progressBar = group.querySelector(".mcqgroup-progress-bar-fill");
+        const score = group.querySelector(".mcqgroup-score-value");
+        const total = group.querySelector(".mcqgroup-total-value");
 
-    groupBlocks.forEach((group) => {
-        // Remove individual question control panels inside the group block
-        const individualControls = group.querySelectorAll(".multichoice-control-panel");
-        individualControls.forEach((panel) => panel.remove());
+        const start = group.querySelector(".mcqgroup-btn-start");
+        const toggle = group.querySelector(".mcqgroup-btn-toggle");
+        const check = group.querySelector(".mcqgroup-btn-check");
+        const reset = group.querySelector(".mcqgroup-btn-reset");
 
-        const allOriginalBlocks = Array.from(group.querySelectorAll(".multichoice-block"));
-        if (allOriginalBlocks.length === 0) return;
+        const feedback = group.querySelector(".mcqgroup-show-feedback");
+        const instant = group.querySelector(".mcqgroup-instant-feedback");
 
-        // Read num_questions option
-        const numQAttr = group.dataset.numQuestions;
-        const numQuestionsTarget = numQAttr ? parseInt(numQAttr, 10) : null;
+        const navBars = group.querySelectorAll(".mcqgroup-nav-bar");
+        const bottomBar = group.querySelector(".mcqgroup-bottom-bar");
+        const scrollTop = group.querySelector(".mcqgroup-btn-scroll-top");
+
+        const firstBtns = group.querySelectorAll(".mcqgroup-btn-first");
+        const prevBtns = group.querySelectorAll(".mcqgroup-btn-prev");
+        const nextBtns = group.querySelectorAll(".mcqgroup-btn-next");
+        const lastBtns = group.querySelectorAll(".mcqgroup-btn-last");
+
+        const currentSpans = group.querySelectorAll(".mcqgroup-current-idx");
+        const totalSpans = group.querySelectorAll(".mcqgroup-total-idx");
+
+        const numQ = group.dataset.numQuestions
+            ? parseInt(group.dataset.numQuestions, 10)
+            : null;
+
+        const shuffleQuestions =
+            group.dataset.shuffleQuestions === "true";
 
         let activeBlocks = [];
         let currentIndex = 0;
-        let isWizardMode = true;
-        let isQuizStarted = false;
+        let wizardMode = true;
+        let quizStarted = false;
 
-        const progressCount = group.querySelector(".mcqgroup-progress-count");
-        const progressBarFill = group.querySelector(".mcqgroup-progress-bar-fill");
-        const scoreValue = group.querySelector(".mcqgroup-score-value");
-        const totalValue = group.querySelector(".mcqgroup-total-value");
-        const btnStart = group.querySelector(".mcqgroup-btn-start");
-        const btnToggle = group.querySelector(".mcqgroup-btn-toggle");
-        const btnCheck = group.querySelector(".mcqgroup-btn-check");
-        const btnReset = group.querySelector(".mcqgroup-btn-reset");
-        const showFeedbackCb = group.querySelector(".mcqgroup-show-feedback");
-        const instantFeedbackCb = group.querySelector(".mcqgroup-instant-feedback");
+        function prepareQuestions() {
+            let blocks = [...container.querySelectorAll(".multichoice-block")];
 
-        // Support multiple nav bars (top, bottom, or both)
-        const navBars = group.querySelectorAll(".mcqgroup-nav-bar");
-        const bottomBar = group.querySelector(".mcqgroup-bottom-bar");
-        const btnScrollTop = group.querySelector(".mcqgroup-btn-scroll-top");
-
-        const btnsFirst = Array.from(group.querySelectorAll(".mcqgroup-btn-first"));
-        const btnsPrev = Array.from(group.querySelectorAll(".mcqgroup-btn-prev"));
-        const btnsNext = Array.from(group.querySelectorAll(".mcqgroup-btn-next"));
-        const btnsLast = Array.from(group.querySelectorAll(".mcqgroup-btn-last"));
-
-        const currentIdxSpans = group.querySelectorAll(".mcqgroup-current-idx");
-        const totalIdxSpans = group.querySelectorAll(".mcqgroup-total-idx");
-
-        function updateQuestionSubsetAndHeaders() {
-            // 1. Reshuffle full list if shuffle option is set or subsetting is needed
-            if (group.dataset.shuffleQuestions === "true" || numQuestionsTarget) {
-                shuffleQuestions(group);
+            if (
+                shuffleQuestions ||
+                (numQ && numQ < blocks.length)
+            ) {
+                shuffle(blocks);
+                blocks.forEach(b => container.appendChild(b));
             }
 
-            const currentDOMBlocks = Array.from(group.querySelectorAll(".multichoice-block"));
+            activeBlocks =
+                numQ && numQ < blocks.length
+                    ? blocks.slice(0, numQ)
+                    : blocks;
 
-            // 2. Select active subset vs hidden questions
-            if (numQuestionsTarget && numQuestionsTarget < currentDOMBlocks.length) {
-                activeBlocks = currentDOMBlocks.slice(0, numQuestionsTarget);
-                const hiddenBlocks = currentDOMBlocks.slice(numQuestionsTarget);
+            blocks.forEach(b => {
+                b.style.display = activeBlocks.includes(b) ? "" : "none";
+                delete b.dataset.activeQuestion;
+            });
 
-                activeBlocks.forEach((b) => (b.dataset.activeQuestion = "true"));
-                hiddenBlocks.forEach((b) => {
-                    delete b.dataset.activeQuestion;
-                    b.style.display = "none";
-                });
-            } else {
-                activeBlocks = currentDOMBlocks;
-                activeBlocks.forEach((b) => (b.dataset.activeQuestion = "true"));
-            }
+            activeBlocks.forEach((block, i) => {
+                block.dataset.activeQuestion = "true";
 
-            // 3. Update headers and totals for active subset
-            activeBlocks.forEach((block, index) => {
-                let header = block.querySelector(".mcqgroup-question-header");
+                let header =
+                    block.querySelector(".mcqgroup-question-header");
+
                 if (!header) {
                     header = document.createElement("div");
                     header.className = "mcqgroup-question-header";
                     block.prepend(header);
                 }
-                header.textContent = `Question ${index + 1}`;
+
+                header.textContent = `Question ${i + 1}`;
             });
 
-            if (totalValue) totalValue.textContent = activeBlocks.length;
-            totalIdxSpans.forEach((span) => (span.textContent = activeBlocks.length));
+            if (total) total.textContent = activeBlocks.length;
+            totalSpans.forEach(s => s.textContent = activeBlocks.length);
+
+            if (currentIndex >= activeBlocks.length) {
+                currentIndex = Math.max(0, activeBlocks.length - 1);
+            }
         }
 
-        function lockAllInputs() {
-            activeBlocks.forEach((block) => {
-                const inputs = Array.from(block.querySelectorAll("input[type='radio'], input[type='checkbox']"));
-                inputs.forEach((input) => {
-                    input.disabled = true;
-                });
+        function lockInputs() {
+            activeBlocks.forEach(block => {
+                block.querySelectorAll(
+                    "input[type='radio'],input[type='checkbox']"
+                ).forEach(input => input.disabled = true);
             });
         }
 
-        function unlockUncheckedInputs() {
-            activeBlocks.forEach((block) => {
+        function unlockInputs() {
+            activeBlocks.forEach(block => {
                 if (block.dataset.checked !== "true") {
-                    const inputs = Array.from(block.querySelectorAll("input[type='radio'], input[type='checkbox']"));
-                    inputs.forEach((input) => {
-                        input.disabled = false;
-                    });
+                    block.querySelectorAll(
+                        "input[type='radio'],input[type='checkbox']"
+                    ).forEach(input => input.disabled = false);
                 }
             });
         }
 
-        function setCheckboxesLock(locked) {
-            if (showFeedbackCb) showFeedbackCb.disabled = locked;
-            if (instantFeedbackCb) instantFeedbackCb.disabled = locked;
+        function lockControls(locked) {
+            if (feedback) feedback.disabled = locked;
+            if (instant) instant.disabled = locked;
         }
 
-        function renderView() {
-            if (isWizardMode) {
-                group.setAttribute("data-view-mode", "wizard");
+        function render() {
+            if (wizardMode) {
+                group.dataset.viewMode = "wizard";
+
                 activeBlocks.forEach((block, i) => {
-                    block.style.display = i === currentIndex ? "block" : "none";
+                    block.style.display =
+                        i === currentIndex ? "block" : "none";
                 });
 
-                navBars.forEach((bar) => (bar.style.display = "flex"));
+                navBars.forEach(b => b.style.display = "flex");
                 if (bottomBar) bottomBar.style.display = "none";
 
-                currentIdxSpans.forEach((span) => (span.textContent = currentIndex + 1));
+                currentSpans.forEach(
+                    s => s.textContent = currentIndex + 1
+                );
 
-                const isAtStart = currentIndex === 0;
-                const isAtEnd = currentIndex === activeBlocks.length - 1;
+                const first = currentIndex === 0;
+                const last =
+                    currentIndex === activeBlocks.length - 1;
 
-                btnsFirst.forEach((btn) => (btn.disabled = isAtStart));
-                btnsPrev.forEach((btn) => (btn.disabled = isAtStart));
-                btnsNext.forEach((btn) => (btn.disabled = isAtEnd));
-                btnsLast.forEach((btn) => (btn.disabled = isAtEnd));
+                firstBtns.forEach(b => b.disabled = first);
+                prevBtns.forEach(b => b.disabled = first);
+                nextBtns.forEach(b => b.disabled = last);
+                lastBtns.forEach(b => b.disabled = last);
 
-                if (btnToggle) btnToggle.textContent = "All Q Mode";
+                if (toggle) toggle.textContent = "All Q Mode";
             } else {
-                group.setAttribute("data-view-mode", "all");
-                activeBlocks.forEach((block) => {
-                    block.style.display = "block";
-                });
+                group.dataset.viewMode = "all";
 
-                navBars.forEach((bar) => (bar.style.display = "none"));
+                activeBlocks.forEach(
+                    block => block.style.display = "block"
+                );
+
+                navBars.forEach(b => b.style.display = "none");
                 if (bottomBar) bottomBar.style.display = "flex";
 
-                if (btnToggle) btnToggle.textContent = "1 Q Mode";
+                if (toggle) toggle.textContent = "1 Q Mode";
             }
         }
 
-        function updateGroupStats(forceScoreCalculation = false) {
+        function updateStats(forceScore = false) {
             let answered = 0;
-            let score = 0;
-            const isInstant = instantFeedbackCb ? instantFeedbackCb.checked : false;
+            let points = 0;
 
-            activeBlocks.forEach((block) => {
-                const inputs = Array.from(block.querySelectorAll("input"));
-                const isAnswered = inputs.some((input) => input.checked);
-                if (isAnswered) answered++;
+            activeBlocks.forEach(block => {
+                const inputs = [...block.querySelectorAll("input")];
+                const answeredThis =
+                    inputs.some(input => input.checked);
 
-                if (isInstant || forceScoreCalculation || block.dataset.checked === "true") {
-                    const isSingle = block.dataset.multichoiceSingle === "true";
-                    if (isSingle) {
-                        const selected = block.querySelector("input:checked");
-                        if (selected && selected.closest(".multichoice-choice")?.dataset.correct === "true") {
-                            score++;
-                        }
-                    } else {
-                        const choices = Array.from(block.querySelectorAll(".multichoice-choice"));
-                        const allCorrect = choices.every((c) => {
-                            const isChecked = c.querySelector("input")?.checked;
-                            const isCorrect = c.dataset.correct === "true";
-                            return isChecked === isCorrect;
-                        });
-                        if (allCorrect && isAnswered) score++;
+                if (answeredThis) answered++;
+
+                const shouldScore =
+                    forceScore ||
+                    (instant && instant.checked) ||
+                    block.dataset.checked === "true" ||
+                    group.dataset.groupChecked === "true";
+
+                if (!shouldScore || !answeredThis) return;
+
+                const single =
+                    block.dataset.multichoiceSingle === "true";
+
+                if (single) {
+                    const selected =
+                        block.querySelector("input:checked");
+
+                    if (
+                        selected &&
+                        selected.closest(".multichoice-choice")
+                            ?.dataset.correct === "true"
+                    ) {
+                        points++;
                     }
-                }
-            });
+                } else {
+                    const choices =
+                        [...block.querySelectorAll(".multichoice-choice")];
 
-            if (progressCount) progressCount.textContent = `${answered} / ${activeBlocks.length}`;
-            if (progressBarFill) {
-                const percentage = activeBlocks.length > 0 ? (answered / activeBlocks.length) * 100 : 0;
-                progressBarFill.style.width = `${percentage}%`;
-            }
-
-            if (scoreValue) {
-                if (isInstant || forceScoreCalculation || group.dataset.groupChecked === "true") {
-                    scoreValue.textContent = score;
-                }
-            }
-        }
-
-        function updateExplanationsDisplay() {
-            const shouldShow = showFeedbackCb ? showFeedbackCb.checked : false;
-
-            activeBlocks.forEach((block) => {
-                const isChecked = block.dataset.checked === "true";
-                const choices = Array.from(block.querySelectorAll(".multichoice-choice"));
-
-                choices.forEach((choice) => {
-                    const exp = choice.querySelector(".multichoice-explanation");
-                    if (!exp) return;
-
-                    if (isChecked && shouldShow) {
+                    const correct = choices.every(choice => {
                         const input = choice.querySelector("input");
-                        const isCorrect = choice.dataset.correct === "true";
-                        if ((input && input.checked) || isCorrect) {
-                            exp.style.display = "block";
-                        }
-                    } else {
-                        exp.style.display = "none";
-                    }
-                });
+                        return (
+                            (input?.checked || false) ===
+                            (choice.dataset.correct === "true")
+                        );
+                    });
+
+                    if (correct) points++;
+                }
+            });
+
+            if (progress) {
+                progress.textContent =
+                    `${answered} / ${activeBlocks.length}`;
+            }
+
+            if (progressBar) {
+                progressBar.style.width =
+                    `${activeBlocks.length
+                        ? answered / activeBlocks.length * 100
+                        : 0}%`;
+            }
+
+            if (
+                score &&
+                (forceScore ||
+                    (instant && instant.checked) ||
+                    group.dataset.groupChecked === "true")
+            ) {
+                score.textContent = points;
+            }
+        }
+
+        function showExplanations() {
+            const show = feedback ? feedback.checked : false;
+
+            activeBlocks.forEach(block => {
+                const checked = block.dataset.checked === "true";
+
+                block.querySelectorAll(".multichoice-choice")
+                    .forEach(choice => {
+                        const exp =
+                            choice.querySelector(".multichoice-explanation");
+
+                        if (!exp) return;
+
+                        const input = choice.querySelector("input");
+                        const correct =
+                            choice.dataset.correct === "true";
+
+                        exp.style.display =
+                            checked &&
+                            show &&
+                            ((input && input.checked) || correct)
+                                ? "block"
+                                : "none";
+                    });
             });
         }
 
+        /*
+         * Reset ANSWERS only.
+         *
+         * IMPORTANT:
+         * Instant Feedback is deliberately untouched.
+         */
         function resetQuizState() {
             delete group.dataset.groupChecked;
 
-            // Reset instant feedback checkbox to its HTML default state
-            if (instantFeedbackCb) {
-                instantFeedbackCb.checked = instantFeedbackCb.defaultChecked;
-            }
+            prepareQuestions();
 
-            // Pick a fresh random subset / reshuffle
-            updateQuestionSubsetAndHeaders();
+            container.querySelectorAll(".multichoice-block")
+                .forEach(block => {
+                    delete block.dataset.checked;
 
-            // Reset state for all blocks in full container
-            const allBlocks = Array.from(group.querySelectorAll(".multichoice-block"));
-            allBlocks.forEach((block) => {
-                delete block.dataset.checked;
+                    block.querySelectorAll("input").forEach(
+                        input => input.checked = false
+                    );
 
-                const inputs = Array.from(block.querySelectorAll("input"));
-                inputs.forEach((input) => {
-                    input.checked = false;
+                    block.querySelectorAll(".multichoice-choice")
+                        .forEach(choice => {
+                            choice.classList.remove(
+                                "multichoice-correct",
+                                "multichoice-incorrect",
+                                "multichoice-answer",
+                                "selected"
+                            );
+
+                            const exp =
+                                choice.querySelector(
+                                    ".multichoice-explanation"
+                                );
+
+                            if (exp) exp.style.display = "none";
+                        });
+
+                    const shouldShuffle =
+                        block.dataset.multichoiceShuffle === "true" ||
+                        block.dataset.shuffle === "true" ||
+                        block.classList.contains("multichoice-shuffle");
+
+                    if (shouldShuffle) shuffleChoices(block);
                 });
 
-                const choices = Array.from(block.querySelectorAll(".multichoice-choice"));
-                choices.forEach((choice) => {
-                    choice.classList.remove("multichoice-correct", "multichoice-incorrect", "multichoice-answer", "selected");
-                    const exp = choice.querySelector(".multichoice-explanation");
-                    if (exp) exp.style.display = "none";
-                });
+            if (check) check.disabled = true;
+            if (score) score.textContent = "0";
 
-                const isShuffle =
-                    block.dataset.multichoiceShuffle === "true" ||
-                    block.dataset.shuffle === "true" ||
-                    block.classList.contains("multichoice-shuffle");
-
-                if (isShuffle) {
-                    shuffleBlockChoices(block);
-                }
-            });
-
-            // Keep Check Group Answers button disabled until quiz is started
-            if (btnCheck) btnCheck.disabled = true;
-            if (scoreValue) scoreValue.textContent = "0";
             currentIndex = 0;
-            renderView();
-            updateGroupStats();
+            render();
+            updateStats();
         }
 
-        // Explicit Page Load Locks
-        setCheckboxesLock(false);
+        /*
+         * INITIALISE
+         */
+        prepareQuestions();
+
+        if (feedback) feedback.checked = false;
+
+        /*
+         * Do NOT reset instant.checked here.
+         * Its original HTML state is preserved.
+         */
         resetQuizState();
-        lockAllInputs();
+        lockInputs();
+        lockControls(false);
 
-        // Scroll Back to Top Handler
-        if (btnScrollTop) {
-            btnScrollTop.addEventListener("click", () => {
-                group.scrollIntoView({ behavior: "smooth", block: "start" });
-            });
-        }
+        /*
+         * START
+         */
+        if (start) {
+            start.addEventListener("click", () => {
+                quizStarted = true;
 
-        // Start Quiz Handler
-        if (btnStart) {
-            btnStart.addEventListener("click", () => {
-                isQuizStarted = true;
+                /*
+                 * Reset answers only.
+                 * Instant Feedback checkbox is NOT changed.
+                 */
                 resetQuizState();
-                unlockUncheckedInputs();
-                setCheckboxesLock(true);
-                btnStart.disabled = true;
-                if (btnCheck) btnCheck.disabled = false; // Enable Check Answers on start
+
+                unlockInputs();
+                lockControls(true);
+
+                start.disabled = true;
+                if (check) check.disabled = false;
             });
         }
 
-        // Wizard Navigation Handlers (Attached to all top/bottom buttons)
-        btnsFirst.forEach((btn) => {
+        /*
+         * NAVIGATION
+         */
+        firstBtns.forEach(btn => {
             btn.addEventListener("click", () => {
                 currentIndex = 0;
-                renderView();
+                render();
             });
         });
 
-        btnsPrev.forEach((btn) => {
+        prevBtns.forEach(btn => {
             btn.addEventListener("click", () => {
                 if (currentIndex > 0) {
                     currentIndex--;
-                    renderView();
+                    render();
                 }
             });
         });
 
-        btnsNext.forEach((btn) => {
+        nextBtns.forEach(btn => {
             btn.addEventListener("click", () => {
                 if (currentIndex < activeBlocks.length - 1) {
                     currentIndex++;
-                    renderView();
+                    render();
                 }
             });
         });
 
-        btnsLast.forEach((btn) => {
+        lastBtns.forEach(btn => {
             btn.addEventListener("click", () => {
                 currentIndex = activeBlocks.length - 1;
-                renderView();
+                render();
             });
         });
 
-        if (btnToggle) {
-            btnToggle.addEventListener("click", () => {
-                isWizardMode = !isWizardMode;
-                renderView();
+        /*
+         * WIZARD / ALL Q
+         */
+        if (toggle) {
+            toggle.addEventListener("click", () => {
+                wizardMode = !wizardMode;
+                render();
             });
         }
 
-        // Check Group Answers Handler
-        if (btnCheck) {
-            btnCheck.addEventListener("click", () => {
+        /*
+         * CHECK GROUP
+         */
+        if (check) {
+            check.addEventListener("click", () => {
                 group.dataset.groupChecked = "true";
-                setCheckboxesLock(false);
-                if (btnStart) btnStart.disabled = false;
-                btnCheck.disabled = true;
 
-                activeBlocks.forEach((block) => {
+                /*
+                 * Do not change Instant Feedback.
+                 */
+                lockControls(false);
+
+                if (start) start.disabled = false;
+                check.disabled = true;
+
+                activeBlocks.forEach(block => {
                     block.dataset.checked = "true";
-                    const choices = Array.from(block.querySelectorAll(".multichoice-choice"));
-                    const inputs = Array.from(block.querySelectorAll("input"));
 
-                    inputs.forEach((input) => {
-                        input.disabled = true;
-                    });
+                    const choices =
+                        [...block.querySelectorAll(".multichoice-choice")];
 
-                    choices.forEach((choice) => {
+                    block.querySelectorAll("input").forEach(
+                        input => input.disabled = true
+                    );
+
+                    choices.forEach(choice => {
                         const input = choice.querySelector("input");
-                        const isCorrect = choice.dataset.correct === "true";
+                        const correct =
+                            choice.dataset.correct === "true";
+
+                        choice.classList.remove(
+                            "multichoice-correct",
+                            "multichoice-incorrect"
+                        );
 
                         if (input && input.checked) {
-                            choice.classList.add(isCorrect ? "multichoice-correct" : "multichoice-incorrect");
-                        } else if (isCorrect) {
-                            choice.classList.add("multichoice-answer");
+                            choice.classList.add(
+                                correct
+                                    ? "multichoice-correct"
+                                    : "multichoice-incorrect"
+                            );
+                        } else if (correct) {
+                            choice.classList.add(
+                                "multichoice-answer"
+                            );
                         }
                     });
                 });
 
-                updateExplanationsDisplay();
-                updateGroupStats(true);
+                showExplanations();
+                updateStats(true);
             });
         }
 
-        // Show Feedback Checkbox Toggle Handler
-        if (showFeedbackCb) {
-            showFeedbackCb.addEventListener("change", () => {
-                updateExplanationsDisplay();
-            });
+        /*
+         * SHOW FEEDBACK
+         */
+        if (feedback) {
+            feedback.addEventListener("change", showExplanations);
         }
 
-        // Instant Feedback Checkbox Toggle Handler
-        if (instantFeedbackCb) {
-            instantFeedbackCb.addEventListener("change", () => {
-                const isEnabled = instantFeedbackCb.checked;
-                if (!isEnabled && isQuizStarted && group.dataset.groupChecked !== "true") {
-                    unlockUncheckedInputs();
-                }
-                updateGroupStats();
-            });
-        }
-
-        // Reset Group Handler
-        if (btnReset) {
-            btnReset.addEventListener("click", () => {
-                isQuizStarted = false;
-                if (btnStart) btnStart.disabled = false;
-                if (showFeedbackCb) showFeedbackCb.checked = false;
-                // instantFeedbackCb setting is intentionally preserved
-                resetQuizState();
-                lockAllInputs();
-            });
-        }
-
-        // Intercept clicks before native radio selection happens if not started
-        group.addEventListener(
-            "click",
-            (e) => {
-                const choice = e.target.closest(".multichoice-choice");
-                if (choice && !isQuizStarted) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                }
-            },
-            true
-        );
-
-        // Event Delegation for Option Selection
-        group.addEventListener("change", (e) => {
-            if (e.target.matches("input[type='radio'], input[type='checkbox']")) {
+        /*
+         * INSTANT FEEDBACK
+         */
+        if (instant) {
+            instant.addEventListener("change", () => {
                 if (
-                    e.target.classList.contains("mcqgroup-show-feedback") ||
-                    e.target.classList.contains("mcqgroup-instant-feedback")
+                    !instant.checked &&
+                    quizStarted &&
+                    group.dataset.groupChecked !== "true"
                 ) {
-                    return;
+                    unlockInputs();
                 }
 
-                if (!isQuizStarted) {
-                    e.target.checked = false;
-                    return;
-                }
+                updateStats();
+                showExplanations();
+            });
+        }
 
-                const block = e.target.closest(".multichoice-block");
+        /*
+         * RESET
+         */
+        if (reset) {
+            reset.addEventListener("click", () => {
+                quizStarted = false;
 
-                if (block && block.dataset.checked !== "true" && group.dataset.groupChecked !== "true") {
-                    const isSingle = block.dataset.multichoiceSingle === "true";
-                    const choices = Array.from(block.querySelectorAll(".multichoice-choice"));
+                if (start) start.disabled = false;
 
-                    choices.forEach((c) => {
-                        const input = c.querySelector("input");
-                        c.classList.toggle("selected", input && input.checked);
-                    });
+                if (feedback) feedback.checked = false;
 
-                    if (instantFeedbackCb && instantFeedbackCb.checked && isSingle) {
-                        block.dataset.checked = "true";
-                        const radioInputs = Array.from(block.querySelectorAll("input[type='radio']"));
+                /*
+                 * IMPORTANT:
+                 * Instant Feedback is deliberately preserved.
+                 */
 
-                        choices.forEach((c) => {
-                            const input = c.querySelector("input");
-                            const isCorrect = c.dataset.correct === "true";
+                resetQuizState();
+                lockInputs();
+                lockControls(false);
+            });
+        }
 
-                            c.classList.remove("multichoice-correct", "multichoice-incorrect");
+        /*
+         * QUESTION INPUT CHANGES
+         *
+         * No capture-phase click interception.
+         * This allows the individual multichoice JS to continue
+         * receiving its normal events.
+         */
+        group.addEventListener("change", e => {
+            const input = e.target;
 
-                            if (input && input.checked) {
-                                c.classList.add(isCorrect ? "multichoice-correct" : "multichoice-incorrect");
-                            }
-                        });
-
-                        radioInputs.forEach((input) => {
-                            input.disabled = true;
-                        });
-
-                        updateExplanationsDisplay();
-                    }
-
-                    updateGroupStats();
-                }
+            if (
+                !input.matches(
+                    "input[type='radio'],input[type='checkbox']"
+                )
+            ) {
+                return;
             }
+
+            if (
+                input.classList.contains("mcqgroup-show-feedback") ||
+                input.classList.contains("mcqgroup-instant-feedback")
+            ) {
+                return;
+            }
+
+            if (!quizStarted) return;
+
+            const block = input.closest(".multichoice-block");
+
+            if (
+                !block ||
+                block.dataset.checked === "true" ||
+                group.dataset.groupChecked === "true"
+            ) {
+                return;
+            }
+
+            block.querySelectorAll(".multichoice-choice")
+                .forEach(choice => {
+                    const choiceInput =
+                        choice.querySelector("input");
+
+                    choice.classList.toggle(
+                        "selected",
+                        !!(choiceInput && choiceInput.checked)
+                    );
+                });
+
+            /*
+             * Single-answer instant feedback.
+             */
+            if (
+                instant &&
+                instant.checked &&
+                block.dataset.multichoiceSingle === "true"
+            ) {
+                block.dataset.checked = "true";
+
+                const choices =
+                    [...block.querySelectorAll(".multichoice-choice")];
+
+                choices.forEach(choice => {
+                    const choiceInput =
+                        choice.querySelector("input");
+
+                    const correct =
+                        choice.dataset.correct === "true";
+
+                    choice.classList.remove(
+                        "multichoice-correct",
+                        "multichoice-incorrect"
+                    );
+
+                    if (choiceInput && choiceInput.checked) {
+                        choice.classList.add(
+                            correct
+                                ? "multichoice-correct"
+                                : "multichoice-incorrect"
+                        );
+                    }
+                });
+
+                block.querySelectorAll(
+                    "input[type='radio']"
+                ).forEach(input => input.disabled = true);
+
+                showExplanations();
+            }
+
+            updateStats();
         });
 
-        renderView();
-        updateGroupStats();
+        /*
+         * BACK TO TOP
+         */
+        if (scrollTop) {
+            scrollTop.addEventListener("click", () => {
+                group.scrollIntoView({
+                    behavior: "smooth",
+                    block: "start"
+                });
+            });
+        }
+
+        render();
+        updateStats();
     });
 });
+
