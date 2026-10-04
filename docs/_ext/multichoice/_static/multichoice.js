@@ -36,7 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   blocks.forEach((block, blockIndex) => {
-    // Track feedback toggle preference across resets per block
     let feedbackCheckedState = false;
 
     function initBlock() {
@@ -47,7 +46,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       let choices = Array.from(container.children);
 
-      // Enforce True options first if True/False mode is active
       if (block.dataset.multichoiceTorf === "true") {
         choices.sort((a, b) => {
           const textA = a.innerText.trim().toLowerCase();
@@ -143,8 +141,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const chkShowFeedback = document.createElement("input");
       chkShowFeedback.type = "checkbox";
-
-      // Preserve prior toggle setting on reset
       chkShowFeedback.checked = feedbackCheckedState;
 
       chkShowFeedback.addEventListener("change", () => {
@@ -188,10 +184,12 @@ document.addEventListener("DOMContentLoaded", () => {
               blockIsFullyCorrect = false;
             }
           }
-        });
 
-        block.querySelectorAll(".multichoice-explanation").forEach(e => {
-          e.style.display = displayFeedback ? "block" : "none";
+          // Toggle explanation visibility strictly for selected options when 'Show feedback' is checked
+          const exp = c.querySelector(".multichoice-explanation");
+          if (exp) {
+            exp.style.display = (displayFeedback && isChecked) ? "block" : "none";
+          }
         });
 
         block.querySelectorAll("input").forEach(i => {

@@ -394,10 +394,10 @@
 /* ==========================================================================
    8. Overrides & Reset Safety Rules
    ========================================================================== */
-.multichoice-choice.multichoice-answer:not(.selected) .multichoice-explanation {
+/* .multichoice-choice.multichoice-answer:not(.selected) .multichoice-explanation {
   display: block;
   color: var(--mcq-missed-text) !important;
-}
+} */
 
 .multichoice-toggle-wrapper input[type="checkbox"] {
   margin: 0 !important;

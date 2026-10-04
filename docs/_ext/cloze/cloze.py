@@ -159,7 +159,7 @@ class ClozeDirective(SphinxDirective):
 
         control_panel_html = """
         <div class="cloze-global-panel">
-          <button type="button" class="cloze-btn-score">Score</button>
+          <button type="button" class="cloze-btn-score">Check</button>
           <button type="button" class="cloze-btn-reset">Reset</button>
           <span class="cloze-output"></span>
         </div>
