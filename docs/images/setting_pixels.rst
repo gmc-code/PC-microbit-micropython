@@ -106,7 +106,7 @@ Set pixel
                 .. code-block:: python
 
                     from microbit import *
-                    
+
                     display.set_pixel(4, 4, 9)
 
             .. tab-item:: Q5
@@ -317,12 +317,161 @@ Pixel rows and columns lists
                     for x in x_list:
                         for y in y_list:
                             display.set_pixel(x, y, 9)
-                            
+
                     x_list = [0, 4]
                     y_list = [1, 2, 3]
                     for x in x_list:
                         for y in y_list:
                             display.set_pixel(x, y, 9)
 
+----
+
+Varying brightness
+---------------------------
+
+| Try this code and experiment with the list values.
+
+.. code-block:: python
+
+    from microbit import *
+
+    pause = 20
+    while True:
+        for b in [5,7,9,7]:
+            for x in range(5):
+                for y in [0,2,4]:
+                    display.set_pixel(x,y,b)
+                    sleep(pause)
+
+            for y in range(5):
+                for x in [1,3]:
+                    display.set_pixel(x,y,b)
+                    sleep(pause)
+
+----
+
+Pulse vertical and horizontal lines independently
+-------------------------------------------------------
+
+| Try this code and experiment with the variable values.
+
+.. code-block:: python
+
+    from microbit import *
+
+    # Define brightness pulse sequence (0 to 9 brightness levels)
+    brightness_levels = [2, 9]
+
+    # Timing parameters (in milliseconds)
+    HORIZ_INTERVAL = 800  # Speed for horizontal lines
+    VERT_INTERVAL = 200    # Speed for vertical lines
+
+    # State tracking variables
+    h_index = 0
+    v_index = 0
+
+    last_horiz_update = running_time()
+    last_vert_update = running_time()
+
+    while True:
+        now = running_time()
+
+        # 1. Update Horizontal Lines (rows 0, 2, 4) independently
+        if now - last_horiz_update >= HORIZ_INTERVAL:
+            b_horiz = brightness_levels[h_index]
+            for x in range(5):
+                for y in [0, 2, 4]:
+                    display.set_pixel(x, y, b_horiz)
+
+            # Advance brightness state for horizontal lines
+            h_index = (h_index + 1) % len(brightness_levels)
+            last_horiz_update = now
+
+        # 2. Update Vertical Lines (columns 1, 3) independently
+        if now - last_vert_update >= VERT_INTERVAL:
+            b_vert = brightness_levels[v_index]
+            for y in range(5):
+                for x in [1, 3]:
+                    display.set_pixel(x, y, b_vert)
+
+            # Advance brightness state for vertical lines
+            v_index = (v_index + 1) % len(brightness_levels)
+            last_vert_update = now
+
+        # Short delay to prevent CPU overheating and save energy
+        sleep(10)
 
 
+----
+
+Pulse random vertical and horizontal lines independently
+---------------------------------------------------------
+
+| Try this code and experiment with the variable values.
+
+.. code-block:: python
+
+
+    from microbit import *
+    import urandom
+
+    brightness_levels = [9,0]
+
+    HORIZ_INTERVAL = 800  # Speed for horizontal lines
+    VERT_INTERVAL = 300    # Speed for vertical lines
+
+    h_index = 0
+    v_index = 0
+
+    last_horiz_update = running_time()
+    last_vert_update = running_time()
+
+    # Available row and column options
+    ALL_ROWS = [0, 1, 2, 3, 4]
+    ALL_COLS = [0, 1, 2, 3, 4]
+
+    # Helper function to select N random items without repeats
+    def get_random_selection(lst, count):
+        pool = list(lst)
+        selected = []
+        for _ in range(min(count, len(pool))):
+            idx = urandom.randint(0, len(pool) - 1)
+            selected.append(pool.pop(idx))
+        return selected
+
+    while True:
+        now = running_time()
+
+        # 1. Update Horizontal Lines with randomized row count (1 to 4)
+        if now - last_horiz_update >= HORIZ_INTERVAL:
+            b_horiz = brightness_levels[h_index]
+
+            # Pick 1 to 4 random rows
+            num_rows = urandom.randint(1, 4)
+            active_rows = get_random_selection(ALL_ROWS, num_rows)
+
+            # Clear previous display and draw selected rows
+            display.clear()
+            for y in active_rows:
+                for x in range(5):
+                    display.set_pixel(x, y, b_horiz)
+
+            h_index = (h_index + 1) % len(brightness_levels)
+            last_horiz_update = now
+
+        # 2. Update Vertical Lines with randomized column count (1 to 4)
+        if now - last_vert_update >= VERT_INTERVAL:
+            b_vert = brightness_levels[v_index]
+
+            # Pick 1 to 4 random columns
+            num_cols = urandom.randint(1, 4)
+            active_cols = get_random_selection(ALL_COLS, num_cols)
+
+            for x in active_cols:
+                for y in range(5):
+                    display.set_pixel(x, y, b_vert)
+
+            v_index = (v_index + 1) % len(brightness_levels)
+            last_vert_update = now
+
+        sleep(10)
