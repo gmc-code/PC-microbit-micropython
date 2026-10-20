@@ -1,9 +1,16 @@
+
+/* Read the docs flyout menu
+If you’re hiding the floating flyout permanently, switching it off in the RTD dashboard (Settings → Addons → Flyout) is slightly cleaner. The element is never added, rather than added and then hidden. The CSS approach is fine too, and has the advantage of living in your repo. */
+
 /* remove read the docs fly out menu */
 
-.your-floating-element-class {
+readthedocs-flyout {
     display: none !important;
+    /* bottom: -200px !important;
+    opacity: 0.2; */
 }
 
+/* remove read the docs sidebar selectors */
 .switch-menus {
     display: none !important;
 }
