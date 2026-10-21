@@ -325,3 +325,41 @@ div.highlight-default div.highlight {
     margin-right: auto;
 }
 
+/* ========================================== */
+/* left sidebar: visible scrollbar            */
+/* ========================================== */
+.wy-nav-side {
+    overflow: hidden;            /* outer frame stays fixed */
+}
+
+/* Theme sets this to 320px inside a 300px parent to hide the bar.
+   Pull it back to 100% so the scrollbar sits inside the visible area. */
+.wy-side-scroll {
+    width: 100% !important;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto !important;
+    scrollbar-width: thin;                                  /* Firefox */
+    scrollbar-color: rgba(255,255,255,0.4) rgba(0,0,0,0.2); /* Firefox */
+}
+
+/* The menu and search box are fixed at 300px; let them shrink to make room for the bar */
+.wy-side-scroll .wy-menu-vertical,
+.wy-side-scroll .wy-side-nav-search {
+    width: auto !important;
+}
+
+/* Chrome / Edge / Safari: show the bar instead of an invisible overlay */
+.wy-side-scroll::-webkit-scrollbar {
+    width: 10px;
+}
+.wy-side-scroll::-webkit-scrollbar-track {
+    background: rgba(0,0,0,0.2);
+}
+.wy-side-scroll::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,0.35);
+    border-radius: 5px;
+}
+.wy-side-scroll::-webkit-scrollbar-thumb:hover {
+    background: rgba(255,255,255,0.6);
+}
