@@ -1,12 +1,13 @@
 ==========================
-errno
+uerrno
 ==========================
 
-.. py:module:: errno
+.. py:module:: uerrno
 
-| The `errno` module in MicroPython provides access to symbolic error codes for `OSError` exceptions.
+| The ``uerrno`` module in MicroPython provides access to symbolic error codes for ``OSError`` exceptions.
+| It can also be imported as ``errno``.
 | These error codes are useful for handling specific error conditions in your code.
-| See: `<https://mpython.readthedocs.io/en/master/library/pythonStd/uerrno.html>`_
+| See: `<https://docs.micropython.org/en/latest/library/errno.html>`_
 
 Error codes
 ---------------------
@@ -16,9 +17,9 @@ Error codes
 .. code-block:: python
 
     from microbit import *
-    import errno
+    import uerrno
 
-    print(help(uerrno))
+    help(uerrno)
     error_codes = uerrno.errorcode
     print(error_codes)
     print(uerrno.errorcode[uerrno.EINVAL])
@@ -47,13 +48,13 @@ File open error
 
     # Imports go at the top
     from microbit import *
-    import errno
+    import uerrno
 
     try:
         with open('non_existent_file.txt', 'r') as file:
             content = file.read()
     except OSError as e:
-        if e.errno == errno.ENOENT:
+        if e.errno == uerrno.ENOENT:
             print("Error: File not found.")
         else:
             print("Error: {}".format(e))

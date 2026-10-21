@@ -13,7 +13,7 @@ abs
 
 .. function:: abs(number)
 
-    Returns the absolute value of a number. This is the values made positive.
+    Returns the absolute value of a number. Negative numbers are made positive.
     Arguments can be integers or floating-point numbers.
 
 | The code scrolls the absolute value of -2.3.
@@ -32,7 +32,7 @@ all
 
 .. function:: all(iterable)
 
-    If all elements of `iterable` are true (or the iterator is empty), return `True`, otherwise `False`.
+    If all elements of ``iterable`` are true (or the iterable is empty), return ``True``, otherwise ``False``.
 
 | The code below gives examples of lists that evaluate to True or False.
 
@@ -75,7 +75,7 @@ all
         display.scroll(all(listJ), 60)
 
 | The code below gives examples of lists that evaluate to True or False.
-| It converts the booleans True or False to a string then takes a slice iva [0] to scroll just "T" or "F".
+| It converts the booleans True or False to a string then uses index [0] to scroll just "T" or "F".
 
 .. code-block:: python
 
@@ -123,7 +123,7 @@ any
 
 .. function:: any(iterable)
 
-    If any element of `iterable` is true, return `True`. If the iterator is empty, return `False`.
+    If any element of ``iterable`` is true, return ``True``. If the iterable is empty, return ``False``.
 
 
 .. code-block:: python
@@ -198,12 +198,14 @@ bool
 
 .. class:: bool(boolean)
 
-    Used to convert a given parameter to a boolean type. If there is no parameter, return `False`.
+    Used to convert a given parameter to a boolean type. If there is no parameter, return ``False``.
 
-| False is returned by:
-| * constants defined to be false: None and False.
-| * zero of any numeric type: 0, 0.0, 0j, Decimal(0), Fraction(0, 1)
-| * empty sequences and collections: '', (), [], {}, set(), range(0)
+False is returned by:
+
+* constants defined to be false: ``None`` and ``False``.
+* zero of any numeric type: ``0``, ``0.0``
+* empty sequences and collections: ``''``, ``()``, ``[]``, ``{}``, ``set()``, ``range(0)``
+
 | See: `<https://www.w3schools.com/python/python_booleans.asp>`_
 
 .. code-block:: python
@@ -325,7 +327,7 @@ callable
 
 .. function:: callable(object)
 
-    Returns True if the specified `object` is callable, otherwise it returns False.
+    Returns ``True`` if the specified ``object`` is callable, otherwise it returns ``False``.
 
 .. code-block:: python
 
@@ -346,7 +348,7 @@ chr
 .. function:: chr(number)
     :no-index:
 
-    Returns the character that represents the specified unicode `number`.
+    Returns the character that represents the specified Unicode ``number``.
 
 .. code-block:: python
 
@@ -357,7 +359,7 @@ chr
     print(chr(8364))
     display.scroll(chr(0x30))
     display.scroll(chr(97))
-    display.scroll(chr(8364))  #--can't display so ? instead
+    display.scroll(chr(8364))  # can't be displayed, so ? is shown instead
 
     '''
     0
@@ -441,7 +443,7 @@ complex
 .. class:: complex([real[, imag]])
 
     | Returns a complex number with a value of real + imag * 1J, or converts a string or number to a complex number.
-    |  If the first parameter is a character string, it is interpreted as a complex number and must be called without a second parameter.
+    | If the first parameter is a character string, it is interpreted as a complex number and must be called without a second parameter.
     | The second parameter cannot be a character string.
     | Each argument can be of any numeric type (including complex numbers).
     | If imag is omitted, the default value is zero, and the constructor performs numerical conversion like int and float.
@@ -496,8 +498,8 @@ delattr
     print('x =',point1.x)
     print('y =',point1.y)
 
-    # Trigger error
-    print('z = ',point1.z)
+    # Trigger an AttributeError, since z no longer exists
+    print('z =', point1.z)
 
 
 ----
@@ -514,13 +516,11 @@ dict
 .. class:: dict(iterable, **kwarg)
     :no-index:
 
-- ``**kwargs`` -- keyword
-- ``mapping`` -- element container.
-- ``iterable`` -- iteratable object.
+Create a dictionary.
 
-.. function:: dict()
-
-    | create a dictionary
+- ``**kwarg`` -- keyword arguments, e.g. ``dict(a=1, b=2)``.
+- ``mapping`` -- another dictionary.
+- ``iterable`` -- an iterable of ``(key, value)`` pairs.
 
 
 .. code-block:: python
@@ -554,10 +554,10 @@ dir
 
 .. function:: dir(object)
 
-    dir() When a function has no parameters, it returns the list of variables, methods and defined types in the current range.
-    When it has parameters, it returns the list of properties and methods of parameters.
-    If the parameter contains  _dir_(), if it doesn't contains _dir_(), This method will maximize the collection of parameter information.
-    - ``object`` -- object, variable, type.
+    With no argument, ``dir()`` returns a list of the names in the current scope.
+    With an argument, it returns a list of the attributes and methods of that object.
+
+    - ``object`` -- object, variable, type or module.
 
 
 .. code-block:: python
@@ -571,7 +571,7 @@ dir
         ("Button A", button_a),
         ("Display", display),
         ("Accelerometer", accelerometer),
-        ("Temperature", temperature()),
+        ("Integer (temperature reading)", temperature()),
         ("Compass", compass),
         ("Pins", pin0),
         ("music", music)
@@ -581,7 +581,7 @@ dir
     def display_attributes(obj_name, obj):
         print(obj_name + ": ")
         for attribute in dir(obj):
-            if not attribute.startswith("_"):  # Skip dunder methods
+            if not attribute.startswith("_"):  # Skip names starting with _
                 print(attribute)
         print("______")
 
@@ -618,7 +618,7 @@ dir
     set_range
     was_gesture
     ______
-    Temperature:
+    Integer (temperature reading):
     from_bytes
     to_bytes
     ______
@@ -679,7 +679,7 @@ dir
     play
     reset
     set_tempo
-    _____
+    ______
 
     '''
 
@@ -691,11 +691,11 @@ divmod
 .. function:: divmod(a, b)
 
     | Perform integer division and return the quotient and remainder as a tuple.
-    | `a` and `b` are non-complex numbers.
-    | For integers, the result is `(a // b, a % b)`, following standard division rules.
-    | For floating-point numbers, the result is `(q, a % b)`, where `q` is usually `math.floor(a / b)`, but may be smaller than 1.
-    | The relationship `q * b + a % b == a` holds, ensuring consistency.
-    | If `a % b` is not zero, it has the same sign as `b`, with `0 <= abs(a % b) < abs(b)`.
+    | ``a`` and ``b`` are numbers.
+    | For integers, the result is ``(a // b, a % b)``.
+    | For floating-point numbers, the result is ``(q, a % b)``, where ``q`` is usually ``math.floor(a / b)``, but may be 1 less than that.
+    | The relationship ``q * b + a % b == a`` holds (very nearly, for floats).
+    | If ``a % b`` is not zero, it has the same sign as ``b``, with ``0 <= abs(a % b) < abs(b)``.
 
 
 .. code-block:: python
@@ -710,7 +710,7 @@ divmod
         ("3//1.3", divmod(3, 1.3))
     ]
 
-    # Scroll results on micro:bit
+    # Print results to the REPL
     for label, result in calculations:
         print(label + " = " + str(result))
 
@@ -726,15 +726,15 @@ divmod
 Ellipsis
 -------------------
 
-.. function:: ...
+.. data:: Ellipsis
 
-    | Represents an **ellipsis** (three dots) used as a placeholder.
+    | Written as ``...`` (three dots). It can be used as a placeholder.
     | Commonly used inside functions to indicate future implementation.
-    | Equivalent to `pass`, meaning it does nothing when executed.
+    | Used on its own line, it does nothing when executed, like ``pass``.
 
 
 | See: `<https://docs.python.org/3/library/constants.html>`_
-| The ellipsis can be uses instead of pass as a placeholder in functions.
+| The ellipsis can be used instead of pass as a placeholder in functions.
 | This is useful during development so that the unfinished function doesn't return an error.
 
 .. code-block:: python
@@ -785,25 +785,29 @@ eval
 
 .. function:: eval(expression[, globals[, locals]])
 
-eval() Function to execute a string expression and return the value of the expression.
+    Evaluate a string containing a Python expression and return its value.
 
-- ``expression`` -- expression form.
-- ``globals`` -- variable scope, global namespace, if provided, it must be a dictionary object.
-- ``locals`` -- variable scope, global namespace, if provided, can be any mapping object.
+    - ``expression`` -- the expression, as a string.
+    - ``globals`` -- (optional) a dictionary to use as the global namespace.
+    - ``locals`` -- (optional) a mapping to use as the local namespace.
 
+.. code-block:: python
 
-::
+    from microbit import *
 
-        x = 7
-         eval( '3 * x' )
+    x = 7
+    print(eval('3 * x'))
+    print(eval('pow(2, 2)'))
+    print(eval('2 + 2'))
+    n = 81
+    print(eval('n + 4'))
+
+    '''
     21
-         eval('pow(2,2)')
     4
-         eval('2 + 2')
     4
-         n=81
-         eval("n + 4")
     85
+    '''
 
 ----
 
@@ -812,29 +816,30 @@ exec
 
 .. function:: exec(object[, globals[, locals]])
 
-exec Execute Python statements stored in strings or files, Exec can execute more complex Python code than eval.
+    Execute Python statements stored in a string. ``exec`` can run more complex code than ``eval``, such as loops, but it always returns ``None``.
 
-- ``object``: Required parameter, indicating the Python code to be specified. It must be a string or code object. If the object is a string, the string is first parsed into a set of Python statements and then executed (unless a syntax error occurs). If the object is a code object, it is simply executed.
-- ``globals``: Optional parameter, representing the global namespace (storing global variables), If provided, it must be a dictionary object.
-- ``locals``: Optional parameter indicating the current local namespace (storing local variables), If provided, it can be any mapping object. If this parameter is ignored, it will take the same value as globals.
+    - ``object`` -- the code to run, as a string.
+    - ``globals`` -- (optional) a dictionary to use as the global namespace.
+    - ``locals`` -- (optional) a mapping to use as the local namespace. If omitted, it is the same as ``globals``.
 
-::
+.. code-block:: python
 
-        exec('print("Hello World")')
+    from microbit import *
+
+    # Single line statement
+    exec('print("Hello World")')
+
+    # Multi-line statement
+    exec("""for i in range(3):
+        print("loop:", i)
+    """)
+
+    '''
     Hello World
-    # Single line statement string
-         exec("print('runoob.com')")
-    runoob.com
-
-    #  Single line statement string
-         exec ("""for i in range(5):
-   ...     print("iter time: %d" % i)
-   ... """)
-    iter time: 0
-    iter time: 1
-    iter time: 2
-    iter time: 3
-    iter time: 4
+    loop: 0
+    loop: 1
+    loop: 2
+    '''
 
 ----
 
@@ -843,19 +848,27 @@ filter
 
 .. function:: filter(function, iterable)
 
-Used to filter sequence and filter out unqualified elements, Returns an iterator object. If you want to convert it to a list, you can use list () to convert it.
+    Keep only the items of ``iterable`` for which ``function`` returns ``True``.
+    It returns an iterator. Use ``list()`` to convert it to a list.
 
-- ``function`` -- Judgement function.
-- ``iterable`` -- Iterable objects.
+    - ``function`` -- a function that returns ``True`` or ``False``.
+    - ``iterable`` -- the items to filter.
 
-Filter out all the odd numbers in the list::
+| The code keeps only the odd numbers in the list.
+
+.. code-block:: python
+
+    from microbit import *
 
     def is_odd(n):
         return n % 2 == 1
 
-    tmplist = filter(is_odd, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
-    new_list = list(tmplist)
-    print(new_list)
+    odd_numbers = list(filter(is_odd, [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]))
+    print(odd_numbers)
+
+    '''
+    [1, 3, 5, 7, 9]
+    '''
 
 ----
 
@@ -864,36 +877,50 @@ float
 
 .. class:: float([x])
 
-float() Function to convert integers and strings to floating-point numbers.
+    Convert an integer or a string to a floating-point number.
 
-::
+.. code-block:: python
 
-        float(1)
+    from microbit import *
+
+    print(float(1))
+    print(float(112))
+    print(float(-123.6))
+    print(float('123'))  # from a string
+
+    '''
     1.0
-         float(112)
     112.0
-         float(-123.6)
     -123.6
-         float('123')     # string
     123.0
+    '''
 
 ----
 
-format
+str.format
 -------------------
 
-.. function:: format(value[, format_spec])
+.. method:: str.format(*args, **kwargs)
 
-Functions for formatting strings str.format(), It enhances string formatting. format Function can accept unlimited arguments, position may not in sequence. The basic syntax is to replace the previous% with {} and:
+    | Insert values into the ``{}`` placeholders of a string.
+    | Placeholders can be left empty (used in order) or numbered (used by position).
+    | MicroPython on the micro:bit does not have the separate ``format()`` builtin function, so use the ``str.format()`` method instead.
 
-"{} {}".format("hello", "world")    # Do not set the specified location, in the default order.
-'hello world'
+.. code-block:: python
 
-"{0} {1}".format("hello", "world")  # Set specified location
-'hello world'
+    from microbit import *
 
-"{1} {0} {1}".format("hello", "world")  # Set specified location
-'world hello world
+    print("{} {}".format("hello", "world"))       # default order
+    print("{0} {1}".format("hello", "world"))     # by position
+    print("{1} {0} {1}".format("hello", "world")) # positions can be repeated
+    print("Temp: {}C".format(temperature()))
+
+    '''
+    hello world
+    hello world
+    world hello world
+    Temp: 21C
+    '''
 
 ----
 
@@ -902,22 +929,26 @@ getattr
 
 .. function:: getattr(object, name[, default])
 
-Used to return an object property value.
+    Return the value of the attribute called ``name`` (a string) of an object.
+    If the attribute does not exist, ``default`` is returned. With no default, an ``AttributeError`` occurs.
 
-::
+.. code-block:: python
 
-    class A(object):
-    ...     bar = 1
-    ...
+    from microbit import *
+
+    class A:
+        bar = 1
+
     a = A()
-    getattr(a, 'bar')        # Get property bar value
-    1
-    getattr(a, 'bar2')       # Property bar2 does not exist, triggering exception
-    Traceback (most recent call last):
-    File "<stdin>", line 1, in <module>
-    AttributeError: 'A' object has no attribute 'bar2'
-    getattr(a, 'bar2', 3)    # Property bar2 does not exist, but the default value is set
+    print(getattr(a, 'bar'))      # attribute bar exists
+    print(getattr(a, 'bar2', 3))  # bar2 does not exist, so the default 3 is returned
+    print(getattr(a, 'bar2'))     # bar2 does not exist and no default: AttributeError
 
+    '''
+    1
+    3
+    AttributeError: 'A' object has no attribute 'bar2'
+    '''
 
 ----
 
@@ -926,7 +957,7 @@ globals
 
 .. function:: globals()
 
-globals() Function returns all global variables in the current location as dictionary type.
+    Return a dictionary of all the global variables.
 
 ----
 
@@ -935,12 +966,14 @@ hasattr
 
 .. function:: hasattr(object, name)
 
-Judgement object if it contains corresponding attributes.
+    Return ``True`` if the object has an attribute called ``name``, otherwise ``False``.
 
-- ``object`` -- object.
-- ``name`` -- string, property name.
+    - ``object`` -- the object.
+    - ``name`` -- the attribute name, as a string.
 
-::
+.. code-block:: python
+
+    from microbit import *
 
     class Coordinate:
         x = 10
@@ -953,12 +986,12 @@ Judgement object if it contains corresponding attributes.
     print(hasattr(point1, 'z'))
     print(hasattr(point1, 'no'))  # no such attribute
 
-The output::
-
+    '''
     True
     True
     True
     False
+    '''
 
 ----
 
@@ -967,7 +1000,7 @@ hash
 
 .. function:: hash(object)
 
-Returns the hash value of the object, (if any). Hash value is an integer. The quick key  use to compare elements in the dictionary. Numeric variables of the same size have the same hash value.
+    Return the hash value of the object (if it has one). The hash value is an integer, used to look up dictionary keys quickly. Numbers that are equal have the same hash value, e.g. ``hash(1) == hash(1.0)``.
 
 ----
 
@@ -976,7 +1009,8 @@ help
 
 .. function:: help([object])
 
-Check the detail description for purpose of the function or module.
+    Print a description of an object or module, e.g. ``help(display)``.
+    ``help('modules')`` lists the built-in modules.
 
 ----
 
@@ -985,23 +1019,28 @@ hex
 
 .. function:: hex(x)
 
-Converts an integer to a lowercase hexadecimal string prefixed with "0x".
+    Convert an integer to a lowercase hexadecimal string prefixed with "0x".
 
-::
+.. code-block:: python
 
-    hex(255)
-    '0xff'
-    hex(-42)
-    '-0x2a'
+    from microbit import *
+
+    print(hex(255))
+    print(hex(-42))
+
+    '''
+    0xff
+    -0x2a
+    '''
 
 ----
 
 id
 -------------------
 
-.. function:: id([object])
+.. function:: id(object)
 
-Get the id of the object.
+    Return the identity of an object, an integer that is unique to that object while it exists.
 
 ----
 
@@ -1010,7 +1049,7 @@ input
 
 .. function:: input([prompt])
 
-Receive a standard input data and return it as string type.
+    Read a line of text typed into the serial terminal and return it as a string.
 
 ----
 
@@ -1020,13 +1059,29 @@ int
 .. class:: int([x])
     :no-index:
 
-.. class:: int(x,base=10)
+.. class:: int(x, base=10)
     :no-index:
 
-Converts a string or number to an integer.
+Convert a string or number to an integer.
 
-- ``x`` -- String or number.
-- ``base`` -- Decimal number, default decimal
+- ``x`` -- a string or number. Floats are rounded towards zero.
+- ``base`` -- the number base of the string (default 10).
+
+.. code-block:: python
+
+    from microbit import *
+
+    print(int(3.9))
+    print(int('42'))
+    print(int('ff', 16))
+    print(int('101', 2))
+
+    '''
+    3
+    42
+    255
+    5
+    '''
 
 ----
 
@@ -1035,17 +1090,29 @@ isinstance
 
 .. function:: isinstance(object, classinfo)
 
-Returns true if the object argument is an instance of the classInfo argument, or an instance of a (direct, indirect, or virtual) subclass.
-If the object is not an object of the given type, the function always returns false. Returns true if classInfo is a tuple of object type (or multiple recursion element groups), and if object is an instance of any of them.
-If classInfo is neither a type nor a type tuple or a recursive tuple of type, a typeError exception will be triggered.
-
+    Return ``True`` if ``object`` is an instance of ``classinfo``, or of a subclass of it, otherwise ``False``.
+    ``classinfo`` can be a tuple of types, in which case ``True`` is returned if the object is an instance of any of them.
 
 .. admonition:: isinstance() and type() differences
 
-    - `type()` does not consider a subclass as a parent type, and does not consider inheritance.
-    - `isinstance()` Consider that the subclass is a parent type, and consider inheritance relationship.
+    - ``type()`` does not treat a subclass as being the same type as its parent class.
+    - ``isinstance()`` treats a subclass as being the same type as its parent class.
 
-    To judge whether two types are the same, it is recommended to use isinstance().
+    To check whether an object is of a given type, it is recommended to use ``isinstance()``.
+
+.. code-block:: python
+
+    from microbit import *
+
+    print(isinstance(5, int))
+    print(isinstance(5.0, int))
+    print(isinstance("hi", (int, str)))
+
+    '''
+    True
+    False
+    True
+    '''
 
 ----
 
@@ -1054,80 +1121,99 @@ issubclass
 
 .. function:: issubclass(class, classinfo)
 
-Returns true if class is a subclass (direct, indirect, or virtual) of classInfo. ClassInfo can be a tuple of a class object, and each element in classInfo is checked.
-In other cases, a typeError exception will be triggered.
+    Return ``True`` if ``class`` is a subclass (direct or indirect) of ``classinfo``.
+    ``classinfo`` can be a tuple of classes, in which case each one is checked.
 
-::
+.. code-block:: python
+
+    from microbit import *
 
     class A:
         pass
+
     class B(A):
         pass
 
-    print(issubclass(B,A))    # return True
+    print(issubclass(B, A))
+    print(issubclass(A, B))
 
+    '''
+    True
+    False
+    '''
 
 ----
 
 iter
 -------------------
 
-.. function:: iter(object[, sentinel])
+.. function:: iter(object)
 
-Used to generate iterators.
-- ``object`` -- Object gather that support iterations.
-- ``sentinel`` -- If the second parameter is sent, the parameter object must be a callable object (such as a function). At this time, ITER creates an iterator object, which will be called every time the iterator object's _next_() method, object is called.
+    Return an iterator for an object that supports iteration, such as a list.
+    Each call to ``next()`` on the iterator returns the next item.
 
-::
+.. code-block:: python
 
-        lst = [1, 2, 3]
-         for i in iter(lst):
-   ...     print(i)
-   ...
+    from microbit import *
+
+    lst = [1, 2, 3]
+    for i in iter(lst):
+        print(i)
+
+    '''
     1
     2
     3
+    '''
 
 ----
 
 len
 -------------------
 
-.. function:: len()
+.. function:: len(s)
 
-Returns the length of an object (character, list, tuple, etc.) or the number of items.
-::
+    Return the length (number of items) of a string, list, tuple, dictionary, etc.
 
-        str = "runoob"
-         len(str)             # String length
-    6
-         l = [1,2,3,4,5]
-         len(l)               # Number of list elements
+.. code-block:: python
+
+    from microbit import *
+
+    word = "microbit"
+    print(len(word))     # string length
+    numbers = [1, 2, 3, 4, 5]
+    print(len(numbers))  # number of list items
+
+    '''
+    8
     5
+    '''
 
 ----
 
 list
 -------------------
 
-.. class:: list()
+.. class:: list([iterable])
 
-Used to convert a tuple or string to a list.
+    Create a list, e.g. from a tuple or a string.
 
-::
+.. code-block:: python
 
-    aTuple = (123, 'Google', 'baidu', 'Taobao')
-    list1 = list(aTuple)
-    print("element list : ", list1)
+    from microbit import *
 
-    str="Hello World"
-    list2=list(str)
-    print("element list : ", list2)
+    colours = ('red', 'green', 'blue')
+    list1 = list(colours)
+    print("list1:", list1)
 
-the output::
+    word = "Hello"
+    list2 = list(word)
+    print("list2:", list2)
 
-    element list :  [123, 'Google', 'Runoob', 'Taobao']
-    element list :  ['H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd']
+    '''
+    list1: ['red', 'green', 'blue']
+    list2: ['H', 'e', 'l', 'l', 'o']
+    '''
 
 ----
 
@@ -1136,114 +1222,128 @@ locals
 
 .. function:: locals()
 
-Returns all local variables in the current location as dictionary type.
+    Return a dictionary of all the local variables.
 
-::
+.. code-block:: python
 
-        def runoob(arg):    # Two local variables: arg、z
-   ...     z = 1
-   ...     print(locals())
-   ...
-         runoob(4)
-    {'z': 1, 'arg': 4}      # Returns a dictionary of name / value pairs
+    from microbit import *
 
+    def show_locals(arg):
+        z = 1
+        print(locals())
+
+    show_locals(4)
+
+    '''
+    {'z': 1, 'arg': 4}
+    '''
+
+| The order of the items in the dictionary may vary.
 
 ----
 
 map
 -------------------
 
-.. function:: map(function, iterable,...)
+.. function:: map(function, iterable, ...)
 
-map() The specified sequence is mapped according to the provided function. Returns an iterator that applies a function to each item in Iterable and outputs its result.
-If an additional Iterable parameter is entered, the function must accept the same number of arguments and be applied to items obtained in parallel from all iteratable objects.
-When there are multiple iterable objects, the whole iteration will end when the shortest one is exhausted.
+    Apply ``function`` to every item of ``iterable`` and return an iterator of the results. Use ``list()`` to convert it to a list.
+    If more than one iterable is given, the function must take that many arguments, and items are taken from each iterable in parallel. It stops when the shortest iterable runs out.
 
-::
+.. code-block:: python
 
-        def square(x) :            # compute square sum
-   ...     return x ** 2
-   ...
-         map(square, [1,2,3,4,5])   # compute the square sum of each element list
+    from microbit import *
+
+    def square(x):
+        return x ** 2
+
+    print(list(map(square, [1, 2, 3, 4, 5])))                    # square each item
+    print(list(map(lambda x: x ** 2, [1, 2, 3, 4, 5])))          # using a lambda function
+    print(list(map(lambda x, y: x + y, [1, 3, 5, 7, 9], [2, 4, 6, 8, 10])))  # add two lists
+
+    '''
     [1, 4, 9, 16, 25]
-         map(lambda x: x ** 2, [1, 2, 3, 4, 5])  # use lambda anonymous function
     [1, 4, 9, 16, 25]
-
-    # Two lists are provided to add the list data in the same location
-         map(lambda x, y: x + y, [1, 3, 5, 7, 9], [2, 4, 6, 8, 10])
     [3, 7, 11, 15, 19]
+    '''
 
 ----
 
 max
 -------------------
 
-.. function:: max()
+.. function:: max(iterable)
+              max(a, b, ...)
 
-Returns the maximum value of the given argument, which can be a sequence
+    Return the largest item in an iterable, or the largest of two or more arguments.
 
-::
+.. code-block:: python
 
-    print("max(80, 100, 1000) : ", max(80, 100, 1000))
-    print("max(-20, 100, 400) : ", max(-20, 100, 400))
-    print("max(-80, -20, -10) : ", max(-80, -20, -10))
-    print("max(0, 100, -400) : ", max(0, 100, -400))
+    from microbit import *
 
-The output::
+    print("max(80, 100, 1000):", max(80, 100, 1000))
+    print("max(-20, 100, 400):", max(-20, 100, 400))
+    print("max(-80, -20, -10):", max(-80, -20, -10))
+    print("max([0, 100, -400]):", max([0, 100, -400]))
 
-    max(80, 100, 1000) :  1000
-    max(-20, 100, 400) :  400
-    max(-80, -20, -10) :  -10
-    max(0, 100, -400) :  100
+    '''
+    max(80, 100, 1000): 1000
+    max(-20, 100, 400): 400
+    max(-80, -20, -10): -10
+    max([0, 100, -400]): 100
+    '''
 
 ----
 
 memoryview
 -------------------
 
-.. class:: memoryview()
+.. class:: memoryview(object)
 
-Returns the memory view object for the given parameter. The so-called memory view object refers to packaging the data supporting the buffer protocol and allowing Python code access without copying the object.
+    Return a memory view of an object that supports the buffer protocol, such as ``bytes`` or ``bytearray``.
+    A memory view lets code access the data without copying it.
 
-::
+.. code-block:: python
 
-    v = memoryview(bytearray("abcefg"))
+    from microbit import *
 
-    v[1]
+    v = memoryview(bytearray(b"abcdef"))
+    print(v[1])          # the byte value of 'b'
+    print(v[-1])         # the byte value of 'f'
+    print(bytes(v[1:4]))
+
+    '''
     98
-    v[-1]
-
-    103
-    v[1:4]
-
-    <memoryview>
-    bytes(v[1:4)
-    b'bce'
-
+    102
+    b'bcd'
+    '''
 
 ----
 
 min
 -------------------
 
-.. function:: min()
+.. function:: min(iterable)
+              min(a, b, ...)
     :no-index:
 
-Returns the minimum value of a given parameter, which can be a sequence.
-::
+    Return the smallest item in an iterable, or the smallest of two or more arguments.
 
-    print("min(80, 100, 1000) : ", min(80, 100, 1000))
-    print("min(-20, 100, 400) : ", min(-20, 100, 400))
-    print("min(-80, -20, -10) : ", min(-80, -20, -10))
-    print("min(0, 100, -400) : ", min(0, 100, -400))
+.. code-block:: python
 
-The output::
+    from microbit import *
 
-    min(80, 100, 1000) :  80
-    min(-20, 100, 400) :  -20
-    min(-80, -20, -10) :  -80
-    min(0, 100, -400) :  -400
+    print("min(80, 100, 1000):", min(80, 100, 1000))
+    print("min(-20, 100, 400):", min(-20, 100, 400))
+    print("min(-80, -20, -10):", min(-80, -20, -10))
+    print("min([0, 100, -400]):", min([0, 100, -400]))
 
+    '''
+    min(80, 100, 1000): 80
+    min(-20, 100, 400): -20
+    min(-80, -20, -10): -80
+    min([0, 100, -400]): -400
+    '''
 
 ----
 
@@ -1252,20 +1352,19 @@ next
 
 .. function:: next(iterator[, default])
 
+    Return the next item from the iterator. If the iterator is finished, ``default`` is returned; with no default, a ``StopIteration`` exception occurs.
 
-Returns the next entry for the iterator. Get the next element by calling the iterator's _next_(). If the iterator is exhausted, the given default is returned, and if there is no default value, StopIteration is triggered.
-::
+.. code-block:: python
 
-    # First, to get the iterator object:
+    from microbit import *
+
     it = iter([1, 2, 3, 4, 5])
-    # loop:
     while True:
         try:
-            # Get the next value:
             x = next(it)
             print(x)
         except StopIteration:
-            # Exit loop when StopIteration is encountered
+            # Exit the loop when there are no more items
             break
 
 ----
@@ -1275,54 +1374,68 @@ object
 
 .. class:: object()
 
+    Return a new featureless object. ``object`` is the base class of all classes.
+
 ----
 
 oct
 -------------------
 
-.. function:: oct()
+.. function:: oct(x)
 
-Convert an integer to an octal string.
+    Convert an integer to an octal string prefixed with "0o".
 
-::
+.. code-block:: python
 
-        oct(10)
-    '012'
-         oct(20)
-    '024'
-         oct(15)
-    '017'
+    from microbit import *
 
+    print(oct(10))
+    print(oct(20))
+    print(oct(15))
+
+    '''
+    0o12
+    0o24
+    0o17
+    '''
 
 ----
 
 open
 -------------------
 
-.. function:: open()
+.. function:: open(file, mode='r')
 
-open() Method is used to open a file and return the file object. This function is required during the processing of the file. If the file cannot be opened, an oserror will be thrown.
-Note: used open() Method must close the file object, that is, call the close() method.
+    Open a file on the micro:bit's file system and return a file object.
+    If the file cannot be opened, an ``OSError`` occurs.
 
-open() The common form of a function is to receive two parameters: file name and mode::
-
-    open(file, mode='r')
-
-mode Is an optional string that specifies the mode of opening the file. The default value is ' r ' , which means it opens in text mode and reads. Other common modes are: write 'w' (Truncate existing files)  ;
-Exclusive creation 'x'  ; write to add 'a'  (On some UNIX systems, no matter where the current file pointer is, all writes are appended to the end of the file) 。Available modes are:
+The micro:bit supports these modes:
 
 =========  =================================
 Mode       Description
+=========  =================================
 'r'        Read (default)
-'w'        Write, and truncate the file first
-'x'        Exclusive creation, failure if file already exists
-'a'        Write, append at the end if the file exists
-'b'        binary mode
+'w'        Write, replacing any existing file
+'b'        Binary mode, e.g. 'rb' or 'wb'
 't'        Text mode (default)
-'+'        Update disk file (read and write)
 =========  =================================
 
-The default mode is 'r' (Open and read text, same as 'rt'). For binary write, Open 'w+b' mode and truncate file to 0 bytes;  'r+b' Will not be truncated。
+| Appending ('a'), exclusive creation ('x') and read/write ('+') modes are not available on the micro:bit.
+| Using ``with`` closes the file automatically when the block finishes.
+
+.. code-block:: python
+
+    from microbit import *
+
+    with open('data.txt', 'w') as f:
+        f.write('hello')
+
+    with open('data.txt') as f:
+        print(f.read())
+
+    '''
+    hello
+    '''
 
 ----
 
@@ -1331,70 +1444,82 @@ ord
 
 .. function:: ord(c)
 
-This is the inverse function of chr(). It takes a string (Unicode character) as a parameter and returns an integer representing the corresponding Unicode.
+    The inverse of ``chr()``. Takes a single character and returns the integer Unicode code for it.
 
-::
+.. code-block:: python
 
-        ord('a')
+    from microbit import *
+
+    print(ord('a'))
+    print(ord('€'))
+
+    '''
     97
-         ord('€')
     8364
-
+    '''
 
 ----
 
 pow
 -------------------
 
-.. function:: pow(x, y[, z])
+.. function:: pow(x, y)
 
-Returns the value of X Y (Y power of x).
+    Return ``x`` to the power of ``y``. The same as ``x ** y``.
 
-::
+.. code-block:: python
 
-    print("pow(100, 2) : ", pow(100, 2))
-    print("pow(100, -2) : ", pow(100, -2))
-    print("pow(2, 4) : ", pow(2, 4))
-    print("pow(3, 0) : ", pow(3, 0))
+    from microbit import *
 
-The output::
+    print("pow(100, 2):", pow(100, 2))
+    print("pow(100, -2):", pow(100, -2))
+    print("pow(2, 4):", pow(2, 4))
+    print("pow(3, 0):", pow(3, 0))
 
-    pow(100, 2) :  10000
-    pow(100, -2) :  0.0001
-    pow(2, 4) :  16
-    pow(3, 0) :  1
+    '''
+    pow(100, 2): 10000
+    pow(100, -2): 0.0001
+    pow(2, 4): 16
+    pow(3, 0): 1
+    '''
 
 ----
 
 print
 -------------------
 
-.. function:: print(*objects, sep=' ', end='\n', file=sys.stdout)
+.. function:: print(*objects, sep=' ', end='\n')
 
-In printout, the most common function.
+    Print objects to the serial output (the REPL).
 
-    - ``objects`` : Plural, indicating that multiple objects can be output once. When printing multiple objects, separate them.
-    - ``sep`` : Use a space as the interval to separate the multiple objects.
-    - ``end`` : Used to set what to end with. The default value is newline \n.
-    - ``file`` : The object to write.
+    - ``objects`` -- any number of objects to print, separated by commas.
+    - ``sep`` -- the text put between objects. The default is a space.
+    - ``end`` -- the text put at the end. The default is a newline ``\n``.
 
-::
+.. code-block:: python
 
-         print(1)
+    from microbit import *
+
+    print(1)
+    print("Hello World")
+    a = 1
+    b = 'microbit'
+    print(a, b)
+    print("aaa" "bbb")
+    print("aaa", "bbb")
+    print("www", "microbit", "org", sep=".")
+    print("no newline", end="")
+    print("!")
+
+    '''
     1
-         print("Hello World)
     Hello World
-         a = 1
-         b = 'w3school'
-         print(a, b)
-    1 w3school
-         print("aaa""bbb")
+    1 microbit
     aaabbb
-         print("aaa","bbb")
     aaa bbb
-
-         print("www","w3school","com",sep=".") # Set the interval space
-    www.w3school.com
+    www.microbit.org
+    no newline!
+    '''
 
 ----
 
@@ -1403,12 +1528,15 @@ property
 
 .. decorator:: property()
 
-property() Function to return property values in a new class. Using the 'property' function as a decorator can easily create read-only properties:
+    Turn a method into a property, so it can be used like an attribute.
+    The property's setter and deleter can also be defined with decorators.
 
-Property's getter, setter and delete methods can also be used as decorators::
+.. code-block:: python
 
-    class C(object):
-        def _init_(self):
+    from microbit import *
+
+    class C:
+        def __init__(self):
             self._x = None
 
         @property
@@ -1420,73 +1548,74 @@ Property's getter, setter and delete methods can also be used as decorators::
         def x(self, value):
             self._x = value
 
-        @x.deleter
-        def x(self):
-            del self._x
+    c = C()
+    c.x = 5    # uses the setter
+    print(c.x) # uses the getter
+
+    '''
+    5
+    '''
 
 ----
 
 range
 -------------------
 
-.. function:: range()
+.. class:: range(stop)
+           range(start, stop[, step])
 
-range() the function returns an iterable object (the type is an object), not a list type, so the list will not be printed when printing.
+    Return a range object, a sequence of integers from ``start`` up to but not including ``stop``.
+    A range is not a list. Use ``list()`` to see all its values.
 
-Function syntax:
+.. code-block:: python
 
-    - ``range(stop)``
-    - ``range(start, stop[, step])``
+    from microbit import *
 
-::
+    for i in range(5):
+        print(i)
 
-    range(5)
-    range(0, 5)
-         for i in range(5):
-   ...     print(i)
-   ...
+    print(list(range(5)))
+    print(list(range(0)))
+    print(list(range(0, 30, 5)))
+    print(list(range(0, 10, 2)))
+    print(list(range(0, -10, -1)))
+    print(list(range(1, 0)))
+
+    '''
     0
     1
     2
     3
     4
-    list(range(5))
     [0, 1, 2, 3, 4]
-    list(range(0))
     []
-
-
-For case with two or three parameters (second construction method)::
-
-        list(range(0, 30, 5))
     [0, 5, 10, 15, 20, 25]
-         list(range(0, 10, 2))
     [0, 2, 4, 6, 8]
-         list(range(0, -10, -1))
     [0, -1, -2, -3, -4, -5, -6, -7, -8, -9]
-         list(range(1, 0))
     []
-
-
-
+    '''
 
 ----
 
 repr
 -------------------
 
-.. function:: repr()
+.. function:: repr(object)
 
-Returns a string containing a printable representation of an object.
-::
+    Return a string containing a printable representation of an object. Strings include their quotes.
 
-        s = 'baidu'
-         repr(s)
-    "'baidu'"
-         dict = {'baidu': 'baidu.com', 'google': 'google.com'}
-         repr(dict)
-    "{'google': 'google.com', 'baidu': 'baidu.com'}"
+.. code-block:: python
 
+    from microbit import *
+
+    s = 'microbit'
+    print(str(s))
+    print(repr(s))
+
+    '''
+    microbit
+    'microbit'
+    '''
 
 ----
 
@@ -1495,60 +1624,60 @@ reversed
 
 .. function:: reversed(seq)
 
-Returns an inverted iterator.
+    Return an iterator that goes through a sequence in reverse order.
 
-::
+.. code-block:: python
+
+    from microbit import *
 
     # string
-    seqString = 'Runoob'
-    print(list(reversed(seqString)))
+    print(list(reversed('Python')))
 
     # tuple
-    seqTuple = ('R', 'u', 'n', 'o', 'o', 'b')
-    print(list(reversed(seqTuple)))
+    print(list(reversed(('P', 'y', 't', 'h', 'o', 'n'))))
 
     # range
-    seqRange = range(5, 9)
-    print(list(reversed(seqRange)))
+    print(list(reversed(range(5, 9))))
 
     # list
-    seqList = [1, 2, 4, 3, 5]
-    print(list(reversed(seqList)))
+    print(list(reversed([1, 2, 4, 3, 5])))
 
-The output::
-
-    ['b', 'o', 'o', 'n', 'u', 'R']
-    ['b', 'o', 'o', 'n', 'u', 'R']
+    '''
+    ['n', 'o', 'h', 't', 'y', 'P']
+    ['n', 'o', 'h', 't', 'y', 'P']
     [8, 7, 6, 5]
     [5, 3, 4, 2, 1]
+    '''
 
 ----
 
 round
 -------------------
 
-.. function:: round(x [, n])
+.. function:: round(x[, n])
 
-Returns the rounding value of floating-point number x.
+    Return ``x`` rounded to ``n`` decimal places.
 
-    - ``x`` - Numeric expression.
-    - ``n`` - Indicates from decimal places, where x needs to be rounded, and the default value is 0
+    - ``x`` -- a number.
+    - ``n`` -- the number of decimal places. The default is 0, which returns an integer.
 
-::
+.. code-block:: python
 
-    print("round(70.23456) : ", round(70.23456))
-    print("round(56.659,1) : ", round(56.659,1))
-    print("round(80.264, 2) : ", round(80.264, 2))
-    print("round(100.000056, 3) : ", round(100.000056, 3))
-    print("round(-100.000056, 3) : ", round(-100.000056, 3))
+    from microbit import *
 
-The output::
+    print("round(70.23456):", round(70.23456))
+    print("round(56.659, 1):", round(56.659, 1))
+    print("round(80.264, 2):", round(80.264, 2))
+    print("round(100.000056, 3):", round(100.000056, 3))
+    print("round(-100.000056, 3):", round(-100.000056, 3))
 
-    round(70.23456) :  70
-    round(56.659,1) :  56.7
-    round(80.264, 2) :  80.26
-    round(100.000056, 3) :  100.0
-    round(-100.000056, 3) :  -100.0
+    '''
+    round(70.23456): 70
+    round(56.659, 1): 56.7
+    round(80.264, 2): 80.26
+    round(100.000056, 3): 100.0
+    round(-100.000056, 3): -100.0
+    '''
 
 ----
 
@@ -1557,21 +1686,29 @@ set
 
 .. class:: set([iterable])
 
-set() Function to create an unordered and unrepeatable element set, which can be used for relationship testing, deletion of duplicate data, and calculation of intersection, subtraction, union, etc
+    Create an unordered collection with no repeated items. Sets can be used to remove duplicates and to find the intersection, union and difference of groups of items.
 
-::
+| Sets are unordered, so the items may print in a different order.
 
-    x = set('runoob')
-    y = set('google')
-    x, y
-    ({'b', 'u', 'n', 'o', 'r'}, {'e', 'l', 'g', 'o'})     # Deleted duplicate
-    x & y         # intersection
-    {'o'}
-    x | y         # union
-    {'e', 'u', 'o', 'n', 'r', 'l', 'g', 'b'}
-    x - y         # subtraction
-    {'b', 'u', 'n', 'r'}
-    >
+.. code-block:: python
+
+    from microbit import *
+
+    x = set('banana')
+    y = set('apple')
+    print(x)      # duplicates removed
+    print(y)
+    print(x & y)  # intersection: in both
+    print(x | y)  # union: in either
+    print(x - y)  # difference: in x but not y
+
+    '''
+    {'a', 'n', 'b'}
+    {'a', 'p', 'l', 'e'}
+    {'a'}
+    {'a', 'n', 'b', 'p', 'l', 'e'}
+    {'n', 'b'}
+    '''
 
 ----
 
@@ -1580,41 +1717,38 @@ setattr
 
 .. function:: setattr(object, name, value)
 
-setattr() Function corresponding Function getattr(), Used to set the value of a property that does not necessarily exist.
+    The partner of ``getattr()``. Set the attribute called ``name`` of an object to ``value``.
+    If the attribute does not exist, it is created.
 
-Assign values to existing properties
+.. code-block:: python
 
-::
+    from microbit import *
 
-    class A(object):
-    ...     bar = 1
-    ...
+    class A:
+        bar = 1
+
     a = A()
-    getattr(a, 'bar')          # get attribute bar value
-    1
-    setattr(a, 'bar', 5)       # set attribute bar value
-    a.bar
-    5
-
-If the property does not exist, a new object property will be created and assigned
-
-::
-
-    class A():
-    ...     name = "runoob"
-    ...
-    a = A()
-    setattr(a, "age", 28)
+    print(getattr(a, 'bar'))  # get attribute bar
+    setattr(a, 'bar', 5)      # change attribute bar
+    print(a.bar)
+    setattr(a, 'age', 28)     # create a new attribute
     print(a.age)
-    28
 
+    '''
+    1
+    5
+    28
+    '''
 
 ----
 
 slice
 -------------------
 
-.. class:: slice()
+.. class:: slice(stop)
+           slice(start, stop[, step])
+
+    Return a slice object, which can be used to slice a sequence. ``s[slice(1, 4)]`` is the same as ``s[1:4]``.
 
 ----
 
@@ -1623,30 +1757,26 @@ sorted
 
 .. function:: sorted(iterable, *, key=None, reverse=False)
 
-Sort all objects that can be iterated
+    Return a new sorted list from the items in ``iterable``.
 
-- ``iterable`` -- Iterable object.
-- ``key`` -- It is mainly used to compare elements with only one parameter. The parameters of specific functions are taken from the iterable objects, and one element of the iterable objects is specified for sorting.
-- ``reverse`` -- collation, reverse=True descending order ,  reverse=False ascending order (default) 。
+    - ``iterable`` -- the items to sort.
+    - ``key`` -- (optional) a function of one argument, applied to each item to decide its sort order.
+    - ``reverse`` -- ``True`` sorts in descending order. ``False`` (default) sorts in ascending order.
 
-sorted the easiest way to use::
+.. code-block:: python
 
-    sorted([5, 2, 3, 1, 4])
-    [1, 2, 3, 4, 5]                      # ascending order as default
-
-Using key to sort in reverse order::
+    from microbit import *
 
     example_list = [5, 0, 6, 1, 2, 7, 3, 4]
-    result_list = sorted(example_list, key=lambda x: x*-1)
-    print(result_list)
+    print(sorted(example_list))                       # ascending order as default
+    print(sorted(example_list, key=lambda x: x * -1)) # reverse order using key
+    print(sorted(example_list, reverse=True))         # reverse order using reverse
+
+    '''
+    [0, 1, 2, 3, 4, 5, 6, 7]
     [7, 6, 5, 4, 3, 2, 1, 0]
-
-
-To reverse sorting, also by passing into the third parameter::
-
-    example_list = [5, 0, 6, 1, 2, 7, 3, 4]
-    sorted(example_list, reverse=True)
     [7, 6, 5, 4, 3, 2, 1, 0]
+    '''
 
 ----
 
@@ -1655,34 +1785,47 @@ staticmethod
 
 .. decorator:: staticmethod()
 
-Method to convert to static method.
+    Convert a method into a static method. A static method does not receive ``self`` or ``cls`` as its first argument.
+    It can be called on the class, e.g. ``C.f()``, or on an instance, e.g. ``C().f()``.
 
-Static methods do not receive the first implicit parameter. To declare a static method, use this syntax::
+.. code-block:: python
+
+    from microbit import *
 
     class C:
         @staticmethod
-        def f(arg1, arg2,...):...
+        def add(a, b):
+            return a + b
 
-Static method calls can be made on a class (such as C.f()) It can also be done on the instance (such as C().f())。
+    print(C.add(2, 3))
+    print(C().add(2, 3))
+
+    '''
+    5
+    5
+    '''
 
 ----
 
 str
 -------------------
 
-.. class:: str()
+.. class:: str(object)
 
-Function to convert an object to a str object。
+    Convert an object to a string.
 
-::
+.. code-block:: python
 
-        s = 'w3cschool'
-         str(s)
-    'W3Cschool'
-         dict = {'w3cschool': 'w3cschool', 'google': 'google.com'};
-         str(dict)
-    "{'google': 'google.com', 'w3cschool': 'w3cschool.cn'}"
+    from microbit import *
 
+    print(str(42) + " degrees")
+    d = {'name': 'microbit', 'version': 2}
+    print(str(d))
+
+    '''
+    42 degrees
+    {'name': 'microbit', 'version': 2}
+    '''
 
 ----
 
@@ -1691,14 +1834,21 @@ sum
 
 .. function:: sum(iterable[, start])
 
-::
+    Return the total of the items in ``iterable``, plus ``start`` (default 0).
 
-        sum([0,1,2])
+.. code-block:: python
+
+    from microbit import *
+
+    print(sum([0, 1, 2]))
+    print(sum((2, 3, 4), 1))      # add 1 to the total of the tuple
+    print(sum([0, 1, 2, 3, 4], 2)) # add 2 to the total of the list
+
+    '''
     3
-         sum((2, 3, 4), 1) # Add 1 after calculating the sum of the tuples.
     10
-         sum([0,1,2,3,4], 2) # Add 2 after calculating the sum of the list.
     12
+    '''
 
 ----
 
@@ -1707,123 +1857,143 @@ super
 
 .. function:: super()
 
-super() Function is a method used to call the parent class (superclass)。
+    Used inside a class to call a method of its parent class (superclass).
 
-::
+.. code-block:: python
+
+    from microbit import *
 
     class A:
         def add(self, x):
-            y = x+1
+            y = x + 1
             print(y)
+
     class B(A):
         def add(self, x):
             super().add(x)
+
     b = B()
-    b.add(2)  # 3
+    b.add(2)
+
+    '''
+    3
+    '''
 
 ----
 
 tuple
 -------------------
 
-.. class:: tuple()
+.. class:: tuple([iterable])
 
-To convert list to tuple.
+    Create a tuple, e.g. from a list.
 
-::
+.. code-block:: python
 
-        list1= ['Google', 'Taobao', 'Runoob', 'Baidu']
-         tuple1=tuple(list1)
-         tuple1
-    ('Google', 'Taobao', 'Runoob', 'Baidu')
+    from microbit import *
+
+    list1 = ['red', 'green', 'blue']
+    tuple1 = tuple(list1)
+    print(tuple1)
+
+    '''
+    ('red', 'green', 'blue')
+    '''
 
 ----
 
 type
 -------------------
 
-.. function:: type()
+.. function:: type(object)
+              type(name, bases, dict)
 
-type() Function returns the type of object if ave only the first argument, Three parameters return the new type object.
+    With one argument, return the type of an object. With three arguments, create a new class.
 
-- ``type(object)``
-- ``type(name, bases, dict)``
+    - ``name`` -- the name of the class.
+    - ``bases`` -- a tuple of base classes.
+    - ``dict`` -- a dictionary of the class attributes.
 
-    - ``name`` -- Name of the class.
-    - ``bases`` -- Tuple of base class.
-    - ``dict`` -- Dictionaries, namespace changes defined within classes.
+.. hint:: isinstance() and type() differences
 
-.. Hint:: isinstance() 与 type() differences
+    - ``type()`` does not treat a subclass as being the same type as its parent class.
+    - ``isinstance()`` treats a subclass as being the same type as its parent class.
 
-    - type() The subclass is not considered as a parent type, and inheritance is not considered.
-    - isinstance() The subclass is considered as a type of parent class, and inheritance relationship is considered.
+    **To check whether an object is of a given type, it is recommended to use isinstance().**
 
-    **To judge whether two types are the same, recommended to use isinstance()。**
+.. code-block:: python
 
-::
+    from microbit import *
 
-         type(1)
-    <type 'int'>
-         type('runoob')
-    <type 'str'>
-         type([2])
-    <type 'list'>
-         type({0:'zero'})
-    <type 'dict'>
-         x = 1
-         type( x ) == int    # Judge whether the types are equal
+    print(type(1))
+    print(type('microbit'))
+    print(type([2]))
+    print(type({0: 'zero'}))
+    x = 1
+    print(type(x) == int)
+
+    # Three arguments: create a new class X
+    X = type('X', (object,), dict(a=1))
+    print(X.a)
+
+    '''
+    <class 'int'>
+    <class 'str'>
+    <class 'list'>
+    <class 'dict'>
     True
+    1
+    '''
 
-    # Three parameters
-         class X(object):
-   ...     a = 1
-   ...
-         X = type('X', (object,), dict(a=1))  # Generate a new type X
-         X
-    <class '_main_.X'>
+| type() and isinstance() differences:
 
-type() and isinstance() differences::
+.. code-block:: python
+
+    from microbit import *
 
     class A:
         pass
-    s
+
     class B(A):
         pass
 
-    isinstance(A(), A)    # returns True
-    type(A()) == A        # returns True
-    isinstance(B(), A)    # returns True
-    type(B()) == A        # returns False
+    print(isinstance(A(), A))  # True
+    print(type(A()) == A)      # True
+    print(isinstance(B(), A))  # True
+    print(type(B()) == A)      # False
 
 ----
 
 zip
 -------------------
 
-.. function:: zip([iterable,...])
+.. function:: zip(*iterables)
 
-zip() The function is used to package the iteratable objects as parameters, pack the object corresponding elements into tuples, and then return the objects composed of these tuples. The advantage of this is that it saves a lot of memory.
+    Combine iterables by pairing up their items in tuples, and return an iterator of the tuples. Use ``list()`` to convert it to a list.
+    If the iterables have different lengths, it stops when the shortest one runs out.
+    ``zip(*zipped)`` does the reverse, unzipping the tuples back into separate groups.
 
-We can use the list() transformation to output the list. If the number of elements of each iterator is different, the length of the returned list is the same as that of the shortest object. Using the * operator, the tuple can be decompressed into a list.
+.. code-block:: python
 
-::
+    from microbit import *
 
-        a = [1,2,3]
-         b = [4,5,6]
-         c = [4,5,6,7,8]
-         zipped = zip(a,b)     # Return an object
-         zipped
-    <zip object at 0x103abc288>
-         list(zipped)  # list() convert to list
+    a = [1, 2, 3]
+    b = [4, 5, 6]
+    c = [4, 5, 6, 7, 8]
+
+    print(list(zip(a, b)))
+    print(list(zip(a, c)))   # length matches the shortest list
+
+    a1, a2 = zip(*zip(a, b)) # unzip
+    print(list(a1))
+    print(list(a2))
+
+    '''
     [(1, 4), (2, 5), (3, 6)]
-         list(zip(a,c))              # The number of elements is consistent with the shortest list
     [(1, 4), (2, 5), (3, 6)]
-
-         a1, a2 = zip(*zip(a,b))          # 与 zip 相反, zip(*) It can be understood as decompression, returning to two-dimensional matrix
-         list(a1)
     [1, 2, 3]
-         list(a2)
     [4, 5, 6]
+    '''
 
 
 ----
@@ -1849,7 +2019,7 @@ See: `<https://docs.python.org/3/library/exceptions.html>`_
 
 .. exception:: ImportError
 
-.. exception:: IndentationErro
+.. exception:: IndentationError
 
 .. exception:: IndexError
 

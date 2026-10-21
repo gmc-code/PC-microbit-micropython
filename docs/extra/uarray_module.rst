@@ -6,7 +6,6 @@ uarray
 
 | MicroPython contains an ``uarray`` module based upon the ``array`` module in the Python standard library.
 | See: `<https://docs.python.org/3/library/array.html>`_
-| See: `<https://www.dummies.com/article/technology/programming-web-design/c/determining-types-of-numbers-in-c-199399/>`_
 
 | An array is an object type which can compactly contain integers or floating point numbers. Arrays are sequence types and behave like lists, except that the type of objects stored in them is constrained. The type is specified at object creation time by using a type code, which is a single character.
 
@@ -44,14 +43,14 @@ arrays
     from microbit import *
     import uarray
 
+    array_val = uarray.array("i", [1, 2, 3])
     while True:
-        array_val = uarray.array("i", [1, 2, 3])
         for i in array_val:
             display.scroll(i)
 
 ----
 
-.. function:: append(val)
+.. method:: array.append(val)
 
     Append new element val to the end of array, growing it.
 
@@ -68,7 +67,7 @@ arrays
 
 ----
 
-.. function:: extend(iterable)
+.. method:: array.extend(iterable)
 
     Append new elements as contained in iterable to the end of array, growing it.
 
@@ -124,8 +123,8 @@ Breadboard LED brightness via array
     from microbit import *
     import uarray
 
-    # Define brightness levels
-    brightness_levels = uarray.array('i', [0, 128, 255])
+    # Define brightness levels (write_analog uses 0 to 1023)
+    brightness_levels = uarray.array('i', [0, 512, 1023])
 
     while True:
         for brightness in brightness_levels:

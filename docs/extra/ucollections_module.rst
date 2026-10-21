@@ -7,14 +7,13 @@ ucollections
 | MicroPython contains an ``ucollections`` module based upon the ``collections`` module in the Python standard library.
 | This module has 2 collections from the standard python collections module.
 | See: `<https://docs.micropython.org/en/latest/library/collections.html>`_
-| See: `<https://docs.micropython.org/en/latest/library/collections.html>`_
 
 ----
 
 namedtuple
 --------------------------
 
-Create a new namedtuple type with a specific name and set of fields. A namedtuple allows access to its fields not just by numeric index, but also using field names. Fields is a sequence of strings specifying field names. It can also be a string with space-separated field named (but this is less efficient).
+Create a new namedtuple type with a specific name and set of fields. A namedtuple allows access to its fields not just by numeric index, but also using field names. Fields is a sequence of strings specifying field names. It can also be a string with space-separated field names (but this is less efficient).
 
 .. function:: ucollections.namedtuple(name, fields)
 
@@ -48,30 +47,30 @@ Logging button presses
 .. code-block:: python
 
     from microbit import *
-  from ucollections import namedtuple as nt
+    from ucollections import namedtuple as nt
 
-  # Define a namedtuple for button press events
-  ButtonEvent = nt('ButtonEvent', ['button', 'timestamp'])
+    # Define a namedtuple for button press events
+    ButtonEvent = nt('ButtonEvent', ['button', 'timestamp'])
 
-  events = []
+    events = []
 
-  while True:
-      if button_a.was_pressed():
-          event = ButtonEvent('A', running_time())
-          events.append(event)
-          display.scroll("A pressed")
-      elif button_b.was_pressed():
-          event = ButtonEvent('B', running_time())
-          events.append(event)
-          display.scroll("B pressed")
+    while True:
+        if button_a.was_pressed():
+            event = ButtonEvent('A', running_time())
+            events.append(event)
+            display.scroll("A pressed")
+        elif button_b.was_pressed():
+            event = ButtonEvent('B', running_time())
+            events.append(event)
+            display.scroll("B pressed")
 
-      # Display logged events
-      if button_a.is_pressed() and button_b.is_pressed():
-          for event in events:
-              display.scroll("Button:{} Time:{}".format(event.button, event.timestamp))
-          events.clear()
+        # Display logged events
+        if button_a.is_pressed() and button_b.is_pressed():
+            for event in events:
+                display.scroll("Button:{} Time:{}".format(event.button, event.timestamp))
+            events.clear()
 
-      sleep(100)
+        sleep(100)
 
 
 ----
@@ -82,10 +81,11 @@ OrderedDict
 | Create a dictionary type subclass which remembers and preserves the order of keys added.
 | When ordered dict is iterated over, keys or items are returned in the order they were added.
 
-.. function:: ucollections.OrderedDict(name, fields)
+.. function:: ucollections.OrderedDict()
+              ucollections.OrderedDict(items)
 
-    Create a dictionary type subclass which remembers and preserves the order of keys added.
-    When ordered dict is iterated over, keys or items are returned in the order they were added.
+    Create an ordered dictionary, either empty or from a list of ``(key, value)`` pairs,
+    e.g. ``OrderedDict([('a', 1), ('b', 2)])``.
 
 
 Using an OrderedDict to store LED patterns

@@ -6,7 +6,7 @@ ustruct
 
 | The `ustruct` module in MicroPython is used to pack and unpack primitive data types.
 | This module is particularly useful for handling binary data and interfacing with hardware that expects data in specific formats.
-| see: `<https://docs.micropython.org/en/latest/library/struct.html>`_
+| See: `<https://docs.micropython.org/en/latest/library/struct.html>`_
 | See: `<https://www.educative.io/answers/what-is-the-python-struct-module>`_
 
 | The struct module in Python is used to convert native Python data types such as strings and numbers into a string of bytes and vice versa.
@@ -71,6 +71,8 @@ Radio send and receive bytes
 | Send accelerometer data from one microbit to another.
 | Using ustruct.pack ensures the data is sent in a compact binary format.
 | Using ustruct.unpack to convert the data back.
+| Both micro:bits use the same radio group so that other micro:bits in the room don't interfere.
+| The receiver checks the message is 6 bytes long (3 values of 2 bytes each) before unpacking it.
 
 | Sender code:
 
@@ -80,6 +82,7 @@ Radio send and receive bytes
     import radio
     import ustruct
 
+    radio.config(group=7)
     radio.on()
 
     while True:
@@ -101,11 +104,12 @@ Radio send and receive bytes
     import radio
     import ustruct
 
+    radio.config(group=7)
     radio.on()
 
     while True:
         incoming = radio.receive_bytes()
-        if incoming:
+        if incoming and len(incoming) == 6:
             # Unpack the received binary data
             x, y, z = ustruct.unpack('>hhh', incoming)
             # Display the unpacked data

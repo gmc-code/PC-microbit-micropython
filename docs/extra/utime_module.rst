@@ -5,7 +5,7 @@ utime
 .. py:module:: utime
 
 | MicroPython contains an ``utime`` module based upon the ``time`` module in the Python standard library.
-| This module gets measure time intervals and create delays.
+| This module is used to measure time intervals and create delays.
 
 ----
 
@@ -15,17 +15,17 @@ sleep
 | The standard microbit library has its own sleep method (in milli-secs).
 | ``utime.sleep`` may be convenient for micro sleeps or sleeps in seconds.
 
-.. method:: utime.sleep(seconds)
+.. py:function:: utime.sleep(seconds)
 
     Sleep for the given number of seconds. ``seconds`` is an int or float.
 
-.. method:: utime.sleep_ms(ms)
+.. py:function:: utime.sleep_ms(ms)
 
-    Delay for given number of milliseconds. ``milliseconds`` is a positive int or 0.
+    Delay for given number of milliseconds. ``ms`` is a positive int or 0.
 
-.. method:: utime.sleep_us(us)
+.. py:function:: utime.sleep_us(us)
 
-    Delay for given number of microseconds. ``microseconds`` is a positive int or 0.
+    Delay for given number of microseconds. ``us`` is a positive int or 0.
 
 | The code below has a sleep of 2 seconds between scrolling text.
 
@@ -43,13 +43,13 @@ sleep
 ticks
 -------------------
 
-.. method:: utime.ticks_ms()
+.. py:function:: utime.ticks_ms()
 
     Returns an increasing millisecond counter with an arbitrary reference point,
     that wraps around after some value.
     This counter is useful for measuring time intervals and implementing delays.
 
-.. method:: utime.ticks_us()
+.. py:function:: utime.ticks_us()
 
     Returns an increasing microsecond counter with an arbitrary reference point,
     that wraps around after some value.
@@ -59,7 +59,7 @@ ticks
 ticks_add
 -------------------
 
-.. method:: utime.ticks_add(ticks, delta)
+.. py:function:: utime.ticks_add(ticks, delta)
 
     Offset ticks value by a given number, which can be either positive or
     negative. Given a ticks value, this function allows to calculate a ticks
@@ -75,8 +75,7 @@ ticks_add
     import utime
     import usys
 
-    # Find out TICKS_MAX used .e.g 1073741823
-    print(utime.ticks_add(0, -1))
+    # Find out TICKS_MAX used e.g. 1073741823
     val = utime.ticks_add(0, -1)
     print(val)
     max_sys = usys.maxsize
@@ -87,10 +86,10 @@ ticks_add
 ticks_diff
 -------------------
 
-.. method:: utime.ticks_diff(ticks1, ticks2)
+.. py:function:: utime.ticks_diff(ticks1, ticks2)
 
     Measure ticks difference between values returned from
-    :func:`utime.ticks_ms()` or :func:`ticks_us()` functions, as a signed value
+    :func:`utime.ticks_ms()` or :func:`utime.ticks_us()` functions, as a signed value
     which may wrap around.
 
     The argument order is the same as for subtraction operator,
@@ -99,6 +98,8 @@ ticks_diff
 
 TIMED_OUT
 ----------------------
+
+| The code waits up to 2 seconds for pin2 to go high, then stops waiting.
 
 .. code-block:: python
 
@@ -110,6 +111,7 @@ TIMED_OUT
     while pin2.read_digital() == 0:
         if utime.ticks_diff(utime.ticks_ms(), start) > 2000:
             display.scroll("TIMED_OUT")
+            break
 
 Deadline
 -----------------
@@ -142,7 +144,7 @@ countdown timer
         remaining_time = utime.ticks_diff(deadline, utime.ticks_ms())
 
         # Convert remaining time to seconds by integer division and display it
-        display.show(str(remaining_time // 1000), delay=200))
+        display.show(str(remaining_time // 1000))
 
         # Sleep for a short period to update the display
         utime.sleep_ms(200)

@@ -17,11 +17,11 @@ time_pulse_us
 | ``time_pulse_us`` is used by distance sensors.
 | See an example of its use at: `<https://pc-microbit-extension.readthedocs.io/en/latest/bots/Maqueen/Maqueen_distance_sensors.html>`_
 
-.. method:: machine.time_pulse_us(pin, pulse_level, timeout_us=1000000)
+.. py:function:: machine.time_pulse_us(pin, pulse_level, timeout_us=1000000)
 
    Return the duration of a pulse, in microseconds, on the given pin.
 
-   :param pin: The pin to measure the pulse on. This should be a `Pin` object.
+   :param pin: The pin to measure the pulse on. This should be a pin object, e.g. ``pin14``.
    :param pulse_level: The pulse level to measure (0 or 1).  0 to time a low pulse or
     1 to time a high pulse.
    :param timeout_us: The timeout in microseconds. Default is 1,000,000 microseconds (1 second).
@@ -38,7 +38,7 @@ time_pulse_us
 reset
 ---------
 
-.. method:: machine.reset()
+.. py:function:: machine.reset()
 
    Resets the microbit like pushing the external reset button and starts the program from the beginning.
 

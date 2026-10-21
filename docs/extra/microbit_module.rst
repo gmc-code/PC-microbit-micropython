@@ -26,7 +26,7 @@ temperature
 .. py:function:: temperature()
 
     :returns: An integer with the temperature of the micro:bit in degrees
-        Celcius.
+        Celsius.
 
 
 scale
@@ -87,4 +87,28 @@ running_time
 
     :returns: The number of milliseconds since the board was switched on or
         restarted.
+
+
+run_every **V2**
+--------------------
+
+.. py:function:: run_every(callback, days=None, h=None, min=None, s=None, ms=None)
+
+    Schedule a function to run repeatedly in the background, at the interval
+    given by the keyword arguments. The intervals add together, so
+    ``s=7, ms=500`` means every 7.5 seconds.
+
+    It is usually used as a decorator above the function, as in the example
+    below. It is used by the ``log`` and ``power`` module examples.
+
+.. code-block:: python
+
+    from microbit import *
+
+    @run_every(s=2)
+    def show_temperature():
+        display.scroll(temperature())
+
+    while True:
+        sleep(100)
 

@@ -33,19 +33,19 @@ remove
     Removes (deletes) the file named in the argument ``filename``. If the file
     does not exist an ``OSError`` exception will occur.
 
-| The code deletes the file at index 1 in the list.
+| The code creates a test file, then deletes it by name.
+| Deleting by name is safer than deleting by list position, which could remove ``main.py``.
 
 .. code-block:: python
 
     from microbit import *
     import os
 
-    file_list = os.listdir()
-    print(file_list)
-    file_to_delete = file_list[1]
-    os.remove(file_to_delete)
-    file_list = os.listdir()
-    print(file_list)
+    with open('test.txt', 'w') as f:
+        f.write('hello')
+    print(os.listdir())
+    os.remove('test.txt')
+    print(os.listdir())
 
 ----
 
@@ -106,7 +106,6 @@ uname
     release: 2.1.2
     version: micro:bit v2.1.2+0697c6d on 2023-10-30; MicroPython v1.18 on 2023-10-30
     machine: micro:bit with nRF52833
-    MicroPython v1.18 on 2023-10-30; micro:bit v2.1.2 with nRF52833
 
 ----
 
@@ -137,7 +136,7 @@ Micropython version
         # micro:bit v2.1.2+0697c6d on 2023-10-30; MicroPython v1.18 on 2023-10-30
         info = os.uname().version
         # last split "-" in case version has - in it.
-        mpv = info.split("MicroPython ")[1].split()[0].split("-",)[0]
+        mpv = info.split("MicroPython ")[1].split()[0].split("-")[0]
         return mpv
 
     mpv = micropython_version()

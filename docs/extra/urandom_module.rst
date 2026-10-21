@@ -42,15 +42,28 @@ Functions for integers
     The third form returns an integer from the start integer up to but not including the stop integer, in steps of **step**.  For instance, calling ``randrange(1, 10, 2)`` will
     return odd numbers from 1 to 9.
 
+| The code below scrolls a random number from 0 to 9, then a random even number from 0 to 8.
+
+.. code-block:: python
+
+    from microbit import *
+    import urandom
+
+    while True:
+        display.scroll(urandom.randrange(10), delay=80)
+        sleep(200)
+        display.scroll(urandom.randrange(0, 10, 2), delay=80)
+        sleep(200)
+
 ----
 
 .. function:: urandom.getrandbits(n)
 
-    Return an integer with *n* urandom bits where n is from 0 to 32.
+    Return an integer with *n* random bits where n is from 0 to 32.
     When n = 1, values are 0 or 1.
     When n = 2, values are 0, 1, 2 or 3.
     When n = 3, values are from 0 to 7.
-    The maximum value is found using (n**2 -1). eg. n**3 - 1 = 7
+    The maximum value is found using (2**n - 1). e.g. 2**3 - 1 = 7
     This may be useful for specifying random numbers based on powers of 2.
 
 | The code below scrolls a random number from 0 to 7.
@@ -71,7 +84,8 @@ Functions for floats
 
 .. function:: urandom.random()
 
-    Return a random floating point number from 0.0 up to but not including 1.0 with 7 decimal places.
+    Return a random floating point number from 0.0 up to but not including 1.0.
+    The micro:bit uses single-precision floats, so about 7 significant figures are shown.
 
 | The code below scrolls a random float from 0.0 up to but not including 1.0.
 
@@ -100,10 +114,10 @@ Functions for floats
 .. function:: urandom.uniform(a, b)
 
     Return a random floating point number between a and b inclusive of both.
-    b can be lower of higher than a. The order doesn't matter.
+    b can be lower or higher than a. The order doesn't matter.
     urandom.uniform(1, 3) is the same as urandom.uniform(3, 1)
 
-| The code below scrolls a random float from 0 to 3, then a float from 4 to 6.
+| The code below scrolls a random float from 1 to 3, then a float from 4 to 6.
 
 .. code-block:: python
 
@@ -155,13 +169,20 @@ seed
 
 .. function:: urandom.seed(n=None)
 
-    Initialize the urandom number generator module with the seed *n* which should
-    be an integer.  When no argument (or ``None``) is passed in, it will initialize the generator with a hardware generated random number.
+    Initialise the random number generator with the seed *n* which should
+    be an integer.  When no argument (or ``None``) is passed in, it will initialise the generator with a hardware generated random number.
 
+| Using the same seed gives the same sequence of "random" numbers every time.
+| The code below scrolls the same 3 numbers every time button A is pressed.
 
 .. code-block:: python
 
     from microbit import *
     import urandom
 
-    urandom.seed()
+    while True:
+        if button_a.was_pressed():
+            urandom.seed(42)
+            for _ in range(3):
+                display.scroll(urandom.randint(1, 9), delay=80)
+        sleep(100)

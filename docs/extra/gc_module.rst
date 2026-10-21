@@ -38,7 +38,7 @@ gc module
 
 .. py:function::  gc.isenabled()
 
-    Return True if garbage collection is enabled; False is disabled.
+    Return True if garbage collection is enabled; False if disabled.
 
 .. code-block:: python
 

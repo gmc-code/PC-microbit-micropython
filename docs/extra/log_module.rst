@@ -1,5 +1,5 @@
 ==========================
-os module
+log module
 ==========================
 
 .. py:module:: log
@@ -45,7 +45,7 @@ set_labels
 set_mirroring
 ----------------------
 
-| This means that when you enable serial mirroring, every row of data that is logged will also be printed to the serial output, allowing you to monitor the data in real-time via a serial console.
+| Serial mirroring lets you watch the data in real time as it is logged.
 
 .. py:function:: set_mirroring(serial)
 
@@ -67,7 +67,7 @@ delete
     :param full: ``True`` selects a "full" erase and ``False`` selects the
         "fast" erase method.
 
-    To add the log headers again the ``set_labels`` function should to be
+    To add the log headers again the ``set_labels`` function should be
     called after this function.
 
     There are two erase modes; "full" completely removes the data from the
@@ -131,7 +131,7 @@ Temperature logging every 5 min
         power.deep_sleep(wake_on=button_a, run_every=True)
 
 
-Temperature and light logging every 5 min
+Temperature and light logging every 7.5 s
 --------------------------------------------------
 
 .. code-block:: python

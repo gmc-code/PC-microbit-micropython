@@ -6,6 +6,9 @@ math module
 
 The ``math`` module provides some basic mathematical functions for working with floating-point numbers.
 
+| The micro:bit uses single-precision floats, so results are accurate to about 7 significant figures.
+| Angles are in radians. Use ``math.degrees()`` and ``math.radians()`` to convert.
+
 
 Functions
 ---------
@@ -127,3 +130,54 @@ Constants
 
    the ratio of a circle's circumference to its diameter
 
+----
+
+Tilt strength using sqrt
+-------------------------------
+
+| The accelerometer gives x, y and z values in milli-g.
+| Pythagoras in 3D gives the total strength of the acceleration. Resting flat, it is about 1000 (1 g).
+
+.. code-block:: python
+
+    from microbit import *
+    import math
+
+    while True:
+        x = accelerometer.get_x()
+        y = accelerometer.get_y()
+        z = accelerometer.get_z()
+        strength = math.sqrt(x**2 + y**2 + z**2)
+        display.scroll(int(strength))
+        sleep(500)
+
+Tilt angle using atan2
+-------------------------------
+
+| ``atan2`` gives the angle of tilt from the x and z accelerometer values.
+| ``degrees`` converts the angle from radians to degrees.
+
+.. code-block:: python
+
+    from microbit import *
+    import math
+
+    while True:
+        x = accelerometer.get_x()
+        z = accelerometer.get_z()
+        angle = math.degrees(math.atan2(x, -z))
+        display.scroll(round(angle))
+        sleep(500)
+
+Rounding with floor and ceil
+-------------------------------
+
+.. code-block:: python
+
+    from microbit import *
+    import math
+
+    print(math.floor(2.7))   # 2
+    print(math.ceil(2.1))    # 3
+    print(math.trunc(-2.7))  # -2
+    print(math.pi)           # 3.141593

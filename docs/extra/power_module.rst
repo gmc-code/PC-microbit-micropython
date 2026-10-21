@@ -10,7 +10,7 @@ There are two micro:bit board low power modes that can be requested from MicroPy
 
 - **Deep Sleep**: Low power mode. Woken up via multiple sources (pins, button presses, uart data, or a timer).
 - **Off**: Lowest power consumption. Woken via the reset button, or by plugging the USB cable while
-  on battery power, form which it will restart and execute the programme from the beginning.
+  on battery power, from which it will restart and execute the programme from the beginning.
 
 
 +------------------+-----------------+--------------------+
@@ -118,7 +118,7 @@ low power example
                 ms=20*1000,        # In 20 seconds it wakes up anyway
                 run_every=False,   # Stops run_every from waking up the board
             )
-            # When the micro:bit wakes up will it continue running from here
+            # When the micro:bit wakes up it will continue running from here
             # Blink a few times to show you are waking up
             display.show([Image("99099:09090:99099:09990"), Image.ASLEEP] * 3, 250)
         display.show(Image.HAPPY)

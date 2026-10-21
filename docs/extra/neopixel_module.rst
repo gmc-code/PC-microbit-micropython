@@ -33,6 +33,7 @@ Initialise neopixels
 
 .. code-block:: python
 
+    from microbit import *
     import neopixel
 
     np = neopixel.NeoPixel(pin0, 8)
@@ -51,7 +52,7 @@ Writing the colour doesn't update the display (use ``show()`` for that).
 .. code-block:: python
 
     np[0] = (255, 0, 0)  # first pixel red
-    np[-1] = (0, 255, 0)  # last pixel yellow
+    np[-1] = (0, 255, 0)  # last pixel green
     np.show()  # display updated values
 
 Show
@@ -66,7 +67,7 @@ Get colour
 
 Get the colour of a specific pixel just reference it.
 
-.. code::
+.. code-block:: python
 
     print(np[0])
 
@@ -76,7 +77,7 @@ Fill **V2**
 .. py:method:: fill(colour)
 
     Colour all pixels a given value.
-    e.g. `fill((0,0,255))`
+    e.g. ``np.fill((0, 0, 255))``
 
 Clear
 ------------
@@ -92,7 +93,7 @@ Random pixel colours
 .. code-block:: python
 
     """
-        Repeatedly displays random colours on the LED Neopixel strip on pin0 with a length of 8 pixels
+    Repeatedly displays random colours on the LED Neopixel strip on pin0 with a length of 8 pixels
     """
     from microbit import *
     import neopixel
@@ -102,8 +103,7 @@ Random pixel colours
     np = neopixel.NeoPixel(pin0, 8)
 
     while True:
-        #Iterate over each LED in the strip
-
+        # Iterate over each LED in the strip
         for pixel_id in range(0, len(np)):
             red = randint(0, 60)
             green = randint(0, 60)

@@ -2,52 +2,55 @@
 usys module
 ==========================
 
+.. py:module:: usys
 
 | See: `<https://docs.micropython.org/en/latest/library/sys.html>`_
-| Some functions are listed below. Use ``print(help(usys))`` to get the full list.
+| Some attributes are listed below. Use ``help(usys)`` to get the full list.
+| These are values, not functions, so they are used without brackets, e.g. ``usys.platform``.
 
-.. py:function::  usys.version_info()
-    :no-index:
+.. py:data::  version_info
 
-    | Returns the Python language version, as a tuple of ints.
+    | The Python language version, as a tuple of ints.
     | e.g. (3, 4, 0)
 
-.. py:function::  usys.version()
-    :no-index:
+.. py:data::  version
 
-    | Returns the platform that MicroPython is running on.
+    | The Python language version, as a string.
+    | e.g. 3.4.0
+
+.. py:data::  platform
+
+    | The platform that MicroPython is running on.
     | e.g. microbit
 
-.. py:function::  usys.implementation()
-    :no-index:
+.. py:data::  implementation
 
-    | Returns a tuple, (name='micropython', version=(1, 18, 0)), with information about the current MicroPython implementation with following attributes:
-    | name - string e.g. micropython. Also returned directly by: usys.implementation.name
-    | version - tuple (major, minor, micro), e.g. (1, 18, 0) Also returned by: usys.implementation.version
+    | Information about the current MicroPython implementation, with these attributes:
+    | name - string e.g. micropython, from ``usys.implementation.name``
+    | version - tuple (major, minor, micro), e.g. (1, 18, 0), from ``usys.implementation.version``
 
-.. py:function::  usys.maxsize()
-    :no-index:
+.. py:data::  maxsize
 
-    | Returns the maximum integer value that can be represented on the platform, which is 2,147,483,647 for a 32-bit system.
+    | The maximum integer value that can be stored in a native integer, which is 2,147,483,647 for a 32-bit system.
 
-.. py:function::  usys.modules
+.. py:data::  modules
 
-    | Returns a dictionary of loaded modules, not including builtin modules.
+    | A dictionary of loaded modules, not including builtin modules.
     | e.g. {'log': <module 'log'>, 'neopixel': <module 'neopixel'>}
 
-.. py:function::  usys.path
+.. py:data::  path
 
-    | Returns a list of directories to search for imported modules.
+    | A list of directories to search for imported modules.
     | e.g. ['', '.frozen']
 
-.. py:function::  usys.byteorder
+.. py:data::  byteorder
 
-    | Returns the byte order of the system ("little" or "big").
+    | The byte order of the system ("little" or "big").
     | e.g. little
 
-.. py:function::  usys.argv
+.. py:data::  argv
 
-    | Returns a list of arguments the current program was started with. e.g. []
+    | A list of arguments the current program was started with. e.g. []
 
 ----
 
