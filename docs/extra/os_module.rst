@@ -128,7 +128,7 @@ Micropython version
 | The code below uses a custom function to get the version.
 
 | e.g. **v1.18** from  **micro:bit v2.1.0+e4321a8 on 2022-09-26; MicroPython v1.18 on 2022-09-26**
-| e.g. **v1.15** from  **micro:bit v2.0.0+b51a405 on 2021-06-30; MicroPython v1.15-64-g1e2f0d280 on 2021-06-30**
+| e.g. **07b1ed7** from  **micro:bit v2.1.1+07b1ed7-dirty on 2024-11-25; MicroPython 07b1ed7-dirty on 2024-11-25**
 
 | The code uses consecutive splits and list indices.
 | Firstly the string is split at "MicroPython " and the first index is chosen.
@@ -143,7 +143,7 @@ Micropython version
     import os
 
     def micropython_version():
-        # micro:bit v2.1.2+0697c6d on 2023-10-30; MicroPython v1.18 on 2023-10-30
+        # micro:bit v2.1.1+07b1ed7-dirty on 2024-11-25; MicroPython 07b1ed7-dirty on 2024-11-25
         info = os.uname().version
         # last split "-" in case version has - in it.
         mpv = info.split("MicroPython ")[1].split()[0].split("-")[0]

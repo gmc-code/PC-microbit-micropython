@@ -32,8 +32,7 @@ The output is:
 
    from microbit import *
 
-   # print("===========================")
-   display.scroll("===========================", delay=80)
+   print("===========================")
    help('modules')
 
 

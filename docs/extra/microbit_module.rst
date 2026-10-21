@@ -70,8 +70,15 @@ scale
 
         temp_fahrenheit = scale(30, from_=(0.0, 100.0), to=(32.0, 212.0))
 
-    This can be useful to convert values between inputs and outputs,
-    for example an accelerometer x value to a speaker volume.
+.. code-block:: python
+
+    from microbit import *
+
+    while True:
+        temp_c = temperature()
+        temp_fahrenheit = scale(temp_c, from_=(0.0, 100.0), to=(32.0, 212.0))
+        display.scroll(str(temp_fahrenheit) + "F", delay=80)
+        sleep(1000)
 
     If one of the numbers in the ``to`` parameter is a floating point
     (i.e a decimal number like ``10.0``), this function will return a
@@ -83,6 +90,42 @@ scale
     Negative scaling is also supported, for example
     ``scale(25, from_=(0, 100), to=(0, -200))`` will return ``-50``.
 
+| The code below turns the light level (0 to 255) into a bar of 0 to 5 LEDs.
+| Both numbers in ``to`` are integers, so ``scale`` returns a whole number of LEDs.
+
+.. code-block:: python
+
+    from microbit import *
+
+    while True:
+        light = display.read_light_level()
+        bars = scale(light, from_=(0, 255), to=(0, 5))
+        display.clear()
+        for x in range(bars):
+            display.set_pixel(x, 4, 9)
+        sleep(100)
+
+| The code below tilts the micro:bit to change the pitch of a note.
+| Tilting left plays a low note and tilting right plays a high note.
+
+.. code-block:: python
+
+    from microbit import *
+    import music
+
+    while True:
+        x = accelerometer.get_x()
+        pitch = scale(x, from_=(-1000, 1000), to=(200, 1000))
+        music.pitch(pitch, 100)
+
+| The code below shows the difference between integer and float ``to`` values.
+
+.. code-block:: python
+
+    from microbit import *
+
+    display.scroll(scale(50, from_=(0, 100), to=(0, 10)), delay=80)      # 5
+    display.scroll(scale(50, from_=(0, 100), to=(0.0, 10.0)), delay=80)  # 5.0
 
 
 reset
