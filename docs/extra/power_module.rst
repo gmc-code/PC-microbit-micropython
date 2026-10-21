@@ -50,6 +50,22 @@ Functions
 
     When the board wakes up the programme will start running from the beginning.
 
+| Press button B to turn the micro:bit off. Press the reset button to start again.
+
+.. code-block:: python
+
+    from microbit import *
+    import power
+
+    while True:
+        display.show(Image.HAPPY)
+        if button_b.was_pressed():
+            display.scroll("Off", delay=80)
+            power.off()
+        sleep(100)
+
+
+
 
 .. py:function:: deep_sleep(ms=None, wake_on=None, run_every=True)
 
@@ -78,6 +94,23 @@ Functions
     function scheduled with microbit.run_every
     will momentarily wake up the board to run and when it finishes it will go
     back to sleep.
+
+| The micro:bit sleeps for 5 seconds, or until button A is pressed, then carries on.
+
+.. code-block:: python
+
+    from microbit import *
+    import power
+
+    while True:
+        display.show(Image.HAPPY)
+        sleep(1000)
+        display.show(Image.ASLEEP)
+        sleep(500)
+        display.clear()
+        power.deep_sleep(ms=5000, wake_on=button_a)
+
+
 
 
 ----

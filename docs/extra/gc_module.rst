@@ -45,11 +45,14 @@ gc module
     from microbit import *
     import gc
 
-    print(gc.isenabled())
+    # print(gc.isenabled())
+    display.scroll(str(gc.isenabled()), delay=80)
     gc.disable()
-    print(gc.isenabled())
+    # print(gc.isenabled())
+    display.scroll(str(gc.isenabled()), delay=80)
     gc.enable()
-    print(gc.isenabled())
+    # print(gc.isenabled())
+    display.scroll(str(gc.isenabled()), delay=80)
 
 ----
 
@@ -106,5 +109,6 @@ gc module
     import gc
 
     gc.threshold(1024)
-    print(gc.threshold())
+    # print(gc.threshold())
+    display.scroll(str(gc.threshold()), delay=80)
 

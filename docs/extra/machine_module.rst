@@ -33,6 +33,23 @@ time_pulse_us
 #. It then times the duration that the pin is equal to *pulse_level*. If the pin is already equal to *pulse_level* then timing starts straight away. The function will return -1 if there was timeout waiting for this condition.
 #. The timeout is the same for both cases and given by *timeout_us* in microseconds.
 
+| Button A is connected to pin5, which reads 0 while the button is held. The code shows how long button A was held, in milliseconds. No extra hardware is needed.
+
+.. code-block:: python
+
+    from microbit import *
+    import machine
+
+    display.scroll("Hold A", delay=80)
+    while True:
+        # Wait up to 5 seconds for a press, then time how long pin5 stays at 0
+        duration = machine.time_pulse_us(pin5, 0, 5000000)
+        if duration > 0:
+            display.scroll(duration // 1000, delay=80)
+        sleep(200)
+
+
+
 ----
 
 reset
@@ -41,4 +58,21 @@ reset
 .. py:function:: machine.reset()
 
    Resets the microbit like pushing the external reset button and starts the program from the beginning.
+
+| The count starts again from 0 when button A is pressed.
+
+.. code-block:: python
+
+    from microbit import *
+    import machine
+
+    count = 0
+    while True:
+        display.show(count % 10)
+        count += 1
+        if button_a.is_pressed():
+            machine.reset()
+        sleep(500)
+
+
 

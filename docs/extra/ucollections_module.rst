@@ -34,9 +34,11 @@ Create a new namedtuple type with a specific name and set of fields. A namedtupl
 
    Point = nt('Point', ['x', 'y'])
    p = Point(3, 4)     # instantiate with positional arguments
-   print(p.x, p.y)           # fields accessible by name
+   # print(p.x, p.y)           # fields accessible by name
+   display.scroll(str(p.x) + " " + str(p.y), delay=80)
    p2 = Point(x=2, y=5)     # instantiate keyword arguments
-   print(p2.x, p2.y)           # fields accessible by name
+   # print(p2.x, p2.y)           # fields accessible by name
+   display.scroll(str(p2.x) + " " + str(p2.y), delay=80)
 
 
 ----

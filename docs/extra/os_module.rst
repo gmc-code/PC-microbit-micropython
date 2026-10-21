@@ -21,7 +21,8 @@ listdir
     from microbit import *
     import os
 
-    print(os.listdir())
+    # print(os.listdir())
+    display.scroll(str(os.listdir()), delay=80)
 
 ----
 
@@ -43,9 +44,11 @@ remove
 
     with open('test.txt', 'w') as f:
         f.write('hello')
-    print(os.listdir())
+    # print(os.listdir())
+    display.scroll(str(os.listdir()), delay=80)
     os.remove('test.txt')
-    print(os.listdir())
+    # print(os.listdir())
+    display.scroll(str(os.listdir()), delay=80)
 
 ----
 
@@ -66,7 +69,8 @@ size
 
     files = os.listdir()
     for f in files:
-        print(f, os.size(f))
+        # print(f, os.size(f))
+        display.scroll(str(f) + " " + str(os.size(f)), delay=80)
 
 ----
 
@@ -89,12 +93,18 @@ uname
     import os
 
     info = os.uname()
-    print(info)
-    print("sysname:", info.sysname)
-    print("nodename:", info.nodename)
-    print("release:", info.release)
-    print("version:", info.version)
-    print("machine:", info.machine)
+    # print(info)
+    display.scroll(str(info), delay=80)
+    # print("sysname:", info.sysname)
+    display.scroll("sysname: " + str(info.sysname), delay=80)
+    # print("nodename:", info.nodename)
+    display.scroll("nodename: " + str(info.nodename), delay=80)
+    # print("release:", info.release)
+    display.scroll("release: " + str(info.release), delay=80)
+    # print("version:", info.version)
+    display.scroll("version: " + str(info.version), delay=80)
+    # print("machine:", info.machine)
+    display.scroll("machine: " + str(info.machine), delay=80)
 
 | The output from the code above was:
 

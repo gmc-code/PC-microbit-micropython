@@ -20,6 +20,20 @@ sleep
     :param n: An integer or floating point number indicating the number of
         milliseconds to wait.
 
+| The heart flashes on for 1 second and off for half a second.
+
+.. code-block:: python
+
+    from microbit import *
+
+    while True:
+        display.show(Image.HEART)
+        sleep(1000)
+        display.clear()
+        sleep(500)
+
+
+
 temperature
 -------------
 
@@ -27,6 +41,16 @@ temperature
 
     :returns: An integer with the temperature of the micro:bit in degrees
         Celsius.
+
+.. code-block:: python
+
+    from microbit import *
+
+    while True:
+        display.scroll(str(temperature()) + "C", delay=80)
+        sleep(1000)
+
+
 
 
 scale
@@ -68,6 +92,22 @@ reset
 
     Resets the microbit like pushing the external reset button and starts the program from the beginning.
 
+| The count starts again from 0 when button A is pressed.
+
+.. code-block:: python
+
+    from microbit import *
+
+    count = 0
+    while True:
+        display.show(count % 10)
+        count += 1
+        if button_a.is_pressed():
+            reset()
+        sleep(500)
+
+
+
 
 panic
 -------------
@@ -79,6 +119,20 @@ panic
 
     :param n: An arbitrary integer between 0 and 255 to indicate an error code.
 
+| Pressing button A stops the program with error code 42. Press the reset button to restart.
+
+.. code-block:: python
+
+    from microbit import *
+
+    while True:
+        display.show(Image.HAPPY)
+        if button_a.was_pressed():
+            panic(42)
+        sleep(100)
+
+
+
 
 running_time
 -------------
@@ -87,6 +141,19 @@ running_time
 
     :returns: The number of milliseconds since the board was switched on or
         restarted.
+
+| Press button A to see how many seconds the program has been running.
+
+.. code-block:: python
+
+    from microbit import *
+
+    while True:
+        if button_a.was_pressed():
+            display.scroll(running_time() // 1000, delay=80)
+        sleep(100)
+
+
 
 
 run_every **V2**

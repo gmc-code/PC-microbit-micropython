@@ -21,10 +21,35 @@ ustruct
 
    Return the number of bytes needed to store the given *fmt*.
 
+| '>hhh' is three 2-byte integers, so it needs 6 bytes.
+
+.. code-block:: python
+
+    from microbit import *
+    import ustruct
+
+    display.scroll(ustruct.calcsize('>hhh'), delay=80)  # 6
+    display.scroll(ustruct.calcsize('>bi'), delay=80)   # 5
+
+
+
 .. function:: pack(fmt, v1, v2, ...)
 
    Pack the values *v1*, *v2*, ... according to the format string *fmt*.
    The return value is a bytes object encoding the values.
+
+| The temperature is packed into 2 bytes.
+
+.. code-block:: python
+
+    from microbit import *
+    import ustruct
+
+    packed = ustruct.pack('>h', temperature())
+    display.scroll(len(packed), delay=80)  # 2
+    display.scroll(str(packed), delay=80)  # e.g. b'\x00\x15'
+
+
 
 .. function:: pack_into(fmt, buffer, offset, v1, v2, ...)
 
@@ -32,16 +57,53 @@ ustruct
    into a *buffer* starting at *offset*. *offset* may be negative to count
    from the end of *buffer*.
 
+| The values 100 and -5 are packed into an existing bytearray.
+
+.. code-block:: python
+
+    from microbit import *
+    import ustruct
+
+    buf = bytearray(4)
+    ustruct.pack_into('>hh', buf, 0, 100, -5)
+    display.scroll(str(buf), delay=80)  # bytearray(b'\x00d\xff\xfb')
+
+
+
 .. function:: unpack(fmt, data)
 
    Unpack from the *data* according to the format string *fmt*.
    The return value is a tuple of the unpacked values.
+
+.. code-block:: python
+
+    from microbit import *
+    import ustruct
+
+    data = b'\x00\x64\xff\xfb'
+    values = ustruct.unpack('>hh', data)
+    display.scroll(str(values), delay=80)  # (100, -5)
+
+
 
 .. function:: unpack_from(fmt, data, offset=0, /)
 
    Unpack from the *data* starting at *offset* according to the format string
    *fmt*. *offset* may be negative to count from the end of *data*. The return
    value is a tuple of the unpacked values.
+
+| The first 2 bytes are skipped by starting at offset 2.
+
+.. code-block:: python
+
+    from microbit import *
+    import ustruct
+
+    data = b'\x01\x02\x00\x64'
+    values = ustruct.unpack_from('>h', data, 2)
+    display.scroll(values[0], delay=80)  # 100
+
+
 
 ----
 
@@ -55,11 +117,13 @@ Pack and unpack
 
     # Pack data
     packed_data = ustruct.pack('hhl', 1, 2, 3)
-    print(packed_data)  # Output: b'\x01\x00\x02\x00\x03\x00\x00\x00'
+    # print(packed_data)  # Output: b'\x01\x00\x02\x00\x03\x00\x00\x00'
+    display.scroll(str(packed_data), delay=80)
 
     # Unpack data
     unpacked_data = ustruct.unpack('hhl', packed_data)
-    print(unpacked_data)  # Output: (1, 2, 3)
+    # print(unpacked_data)  # Output: (1, 2, 3)
+    display.scroll(str(unpacked_data), delay=80)
 
 
 ----

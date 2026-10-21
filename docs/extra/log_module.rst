@@ -40,6 +40,23 @@ set_labels
     unit can be selected via the ``timestamp`` argument, e.g.
     ``log.set_labels("temp", timestamp=log.MINUTES)``
 
+| The code sets up two columns, then logs one row each time button A is pressed.
+
+.. code-block:: python
+
+    from microbit import *
+    import log
+
+    log.set_labels('temperature', 'light', timestamp=log.SECONDS)
+
+    while True:
+        if button_a.was_pressed():
+            log.add(temperature=temperature(), light=display.read_light_level())
+            display.scroll("Logged", delay=80)
+        sleep(100)
+
+
+
 
 
 set_mirroring
@@ -55,6 +72,23 @@ set_mirroring
 
     Serial mirroring is disabled by default.
     When enabled, every row of data that is logged will also be printed to the serial output, allowing monitoring of the data in real-time via a serial console.
+
+| Open the serial terminal to see each row as it is logged.
+
+.. code-block:: python
+
+    from microbit import *
+    import log
+
+    log.set_labels('temp')
+    log.set_mirroring(True)
+
+    while True:
+        log.add(temp=temperature())
+        display.scroll(temperature(), delay=80)
+        sleep(5000)
+
+
 
 
 delete
@@ -72,6 +106,27 @@ delete
 
     There are two erase modes; "full" completely removes the data from the
     physical storage, and "fast" invalidates the data without removing it.
+
+| Button A logs a row. Button B deletes the log and sets up the labels again.
+
+.. code-block:: python
+
+    from microbit import *
+    import log
+
+    log.set_labels('temp')
+
+    while True:
+        if button_a.was_pressed():
+            log.add(temp=temperature())
+            display.scroll("Added", delay=80)
+        if button_b.was_pressed():
+            display.scroll("Deleting", delay=80)
+            log.delete()
+            log.set_labels('temp')
+        sleep(100)
+
+
 
 
 add
@@ -105,6 +160,26 @@ add
     :raise OSError: When the log is full this function raises an ``OSError``
         exception with error code 28 ``ENOSPC``, which indicates there is no
         space left in the device.
+
+| Button A logs with keyword arguments. Button B logs with a dictionary.
+
+.. code-block:: python
+
+    from microbit import *
+    import log
+
+    log.set_labels('x', 'y')
+
+    while True:
+        if button_a.was_pressed():
+            log.add(x=accelerometer.get_x(), y=accelerometer.get_y())
+            display.scroll("A", delay=80)
+        if button_b.was_pressed():
+            log.add({'x': accelerometer.get_x(), 'y': accelerometer.get_y()})
+            display.scroll("B", delay=80)
+        sleep(100)
+
+
 
 ----
 

@@ -51,6 +51,10 @@ Writing the colour doesn't update the display (use ``show()`` for that).
 
 .. code-block:: python
 
+    from microbit import *
+    import neopixel
+
+    np = neopixel.NeoPixel(pin0, 8)
     np[0] = (255, 0, 0)  # first pixel red
     np[-1] = (0, 255, 0)  # last pixel green
     np.show()  # display updated values
@@ -62,6 +66,22 @@ Show
 
     Show the pixels. Must be called for any updates to become visible.
 
+| The pixels light up red one at a time because ``show()`` is called after each one.
+
+.. code-block:: python
+
+    from microbit import *
+    import neopixel
+
+    np = neopixel.NeoPixel(pin0, 8)
+
+    for i in range(len(np)):
+        np[i] = (40, 0, 0)
+        np.show()
+        sleep(200)
+
+
+
 Get colour
 -----------------
 
@@ -69,7 +89,13 @@ Get the colour of a specific pixel just reference it.
 
 .. code-block:: python
 
-    print(np[0])
+    from microbit import *
+    import neopixel
+
+    np = neopixel.NeoPixel(pin0, 8)
+    np[0] = (255, 0, 0)
+    # print(np[0])
+    display.scroll(str(np[0]), delay=80)
 
 Fill **V2**
 ------------
@@ -79,12 +105,47 @@ Fill **V2**
     Colour all pixels a given value.
     e.g. ``np.fill((0, 0, 255))``
 
+| All the pixels change between blue and green.
+
+.. code-block:: python
+
+    from microbit import *
+    import neopixel
+
+    np = neopixel.NeoPixel(pin0, 8)
+
+    while True:
+        np.fill((0, 0, 40))
+        np.show()
+        sleep(500)
+        np.fill((0, 40, 0))
+        np.show()
+        sleep(500)
+
+
+
 Clear
 ------------
 
 .. py:method:: clear()
 
     Clear all the pixels.
+
+| The pixels turn white, then turn off after 1 second.
+
+.. code-block:: python
+
+    from microbit import *
+    import neopixel
+
+    np = neopixel.NeoPixel(pin0, 8)
+
+    np.fill((30, 30, 30))
+    np.show()
+    sleep(1000)
+    np.clear()
+
+
 
 
 Random pixel colours

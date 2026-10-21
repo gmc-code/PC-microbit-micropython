@@ -66,6 +66,7 @@ opt_level
     from microbit import *
     import micropython
 
-    print(micropython.opt_level())
+    # print(micropython.opt_level())
+    display.scroll(str(micropython.opt_level()), delay=80)
 
 

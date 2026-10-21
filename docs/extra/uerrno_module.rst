@@ -12,7 +12,7 @@ uerrno
 Error codes
 ---------------------
 
-| The code below uses the REPL to print the dictionary of error codes.
+| The code below scrolls the dictionary of error codes. ``help(uerrno)`` still prints to the REPL.
 
 .. code-block:: python
 
@@ -21,9 +21,12 @@ Error codes
 
     help(uerrno)
     error_codes = uerrno.errorcode
-    print(error_codes)
-    print(uerrno.errorcode[uerrno.EINVAL])
-    print(uerrno.errorcode[22])
+    # print(error_codes)
+    display.scroll(str(error_codes), delay=80)
+    # print(uerrno.errorcode[uerrno.EINVAL])
+    display.scroll(str(uerrno.errorcode[uerrno.EINVAL]), delay=80)
+    # print(uerrno.errorcode[22])
+    display.scroll(str(uerrno.errorcode[22]), delay=80)
 
 ::
 
@@ -42,7 +45,7 @@ Error codes
 File open error
 ---------------------
 
-| The code below uses the REPL to print the output.
+| The code below scrolls a message if the file does not exist.
 
 .. code-block:: python
 
@@ -55,9 +58,11 @@ File open error
             content = file.read()
     except OSError as e:
         if e.errno == uerrno.ENOENT:
-            print("Error: File not found.")
+            # print("Error: File not found.")
+            display.scroll("Error: File not found.", delay=80)
         else:
-            print("Error: {}".format(e))
+            # print("Error: {}".format(e))
+            display.scroll(str("Error: {}".format(e)), delay=80)
 
 ----
 

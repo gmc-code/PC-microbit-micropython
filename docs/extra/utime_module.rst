@@ -19,14 +19,6 @@ sleep
 
     Sleep for the given number of seconds. ``seconds`` is an int or float.
 
-.. py:function:: utime.sleep_ms(ms)
-
-    Delay for given number of milliseconds. ``ms`` is a positive int or 0.
-
-.. py:function:: utime.sleep_us(us)
-
-    Delay for given number of microseconds. ``us`` is a positive int or 0.
-
 | The code below has a sleep of 2 seconds between scrolling text.
 
 .. code-block:: python
@@ -37,6 +29,44 @@ sleep
     while True:
         display.scroll(".")
         utime.sleep(2)
+
+.. py:function:: utime.sleep_ms(ms)
+
+    Delay for given number of milliseconds. ``ms`` is a positive int or 0.
+
+| The dot moves along the top row every 200 milliseconds.
+
+.. code-block:: python
+
+    from microbit import *
+    import utime
+
+    while True:
+        for x in range(5):
+            display.clear()
+            display.set_pixel(x, 0, 9)
+            utime.sleep_ms(200)
+
+
+
+.. py:function:: utime.sleep_us(us)
+
+    Delay for given number of microseconds. ``us`` is a positive int or 0.
+
+| Pin 0 is switched on for 500 microseconds at a time, which makes a buzzing sound on a speaker or headphones connected to pin 0.
+
+.. code-block:: python
+
+    from microbit import *
+    import utime
+
+    for i in range(1000):
+        pin0.write_digital(1)
+        utime.sleep_us(500)
+        pin0.write_digital(0)
+        utime.sleep_us(500)
+
+
 
 ----
 
@@ -49,10 +79,46 @@ ticks
     that wraps around after some value.
     This counter is useful for measuring time intervals and implementing delays.
 
+| A reaction timer. Press button A as soon as the heart appears.
+
+.. code-block:: python
+
+    from microbit import *
+    import utime
+    import random
+
+    while True:
+        display.clear()
+        sleep(random.randint(1000, 4000))
+        display.show(Image.HEART)
+        start = utime.ticks_ms()
+        while not button_a.is_pressed():
+            utime.sleep_ms(1)
+        reaction = utime.ticks_diff(utime.ticks_ms(), start)
+        display.scroll(str(reaction) + "ms", delay=80)
+
+
+
 .. py:function:: utime.ticks_us()
 
     Returns an increasing microsecond counter with an arbitrary reference point,
     that wraps around after some value.
+
+| The code times how long a loop of 1000 additions takes, in microseconds.
+
+.. code-block:: python
+
+    from microbit import *
+    import utime
+
+    start = utime.ticks_us()
+    total = 0
+    for i in range(1000):
+        total += i
+    duration = utime.ticks_diff(utime.ticks_us(), start)
+    display.scroll(str(duration) + "us", delay=80)
+
+
 
 ----
 
@@ -77,9 +143,11 @@ ticks_add
 
     # Find out TICKS_MAX used e.g. 1073741823
     val = utime.ticks_add(0, -1)
-    print(val)
+    # print(val)
+    display.scroll(str(val), delay=80)
     max_sys = usys.maxsize
-    print(max_sys/val)
+    # print(max_sys/val)
+    display.scroll(str(max_sys/val), delay=80)
 
 ----
 
@@ -94,6 +162,26 @@ ticks_diff
 
     The argument order is the same as for subtraction operator,
     ``ticks_diff(ticks1, ticks2)`` has the same meaning as ``ticks1 - ticks2``.
+
+| A stopwatch. Button A starts it and button B stops it and shows the time in seconds.
+
+.. code-block:: python
+
+    from microbit import *
+    import utime
+
+    start = None
+    while True:
+        if button_a.was_pressed():
+            start = utime.ticks_ms()
+            display.show(Image.ARROW_E)
+        if button_b.was_pressed() and start is not None:
+            elapsed = utime.ticks_diff(utime.ticks_ms(), start)
+            display.scroll(round(elapsed / 1000, 1), delay=80)
+            start = None
+        sleep(10)
+
+
 
 
 TIMED_OUT
